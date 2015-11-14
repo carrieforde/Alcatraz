@@ -1,13 +1,10 @@
 <?php
 /**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Alcatraz custom template tags.
  *
  * @package alcatraz
  */
 
-if ( ! function_exists( 'alcatraz_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
@@ -35,24 +32,21 @@ function alcatraz_posted_on() {
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-
 }
-endif;
 
-if ( ! function_exists( 'alcatraz_entry_footer' ) ) :
 /**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function alcatraz_entry_footer() {
+
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
+
 		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ) );
 		if ( $categories_list && alcatraz_categorized_blog() ) {
 			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'alcatraz' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 		}
 
-		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ) );
 		if ( $tags_list ) {
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'alcatraz' ) . '</span>', $tags_list ); // WPCS: XSS OK.
@@ -75,7 +69,6 @@ function alcatraz_entry_footer() {
 		'</span>'
 	);
 }
-endif;
 
 /**
  * Returns true if a blog has more than 1 category.
@@ -107,6 +100,8 @@ function alcatraz_categorized_blog() {
 	}
 }
 
+add_action( 'edit_category', 'alcatraz_category_transient_flusher' );
+add_action( 'save_post',     'alcatraz_category_transient_flusher' );
 /**
  * Flush out the transients used in alcatraz_categorized_blog.
  */
@@ -117,5 +112,3 @@ function alcatraz_category_transient_flusher() {
 	// Like, beat it. Dig?
 	delete_transient( 'alcatraz_categories' );
 }
-add_action( 'edit_category', 'alcatraz_category_transient_flusher' );
-add_action( 'save_post',     'alcatraz_category_transient_flusher' );
