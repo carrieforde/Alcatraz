@@ -1,11 +1,9 @@
 <?php
 /**
- * The template for displaying comments.
+ * Template for displaying comments.
  *
- * This is the template that displays the area of the page that contains both the current comments
+ * This template displays the area of the page that contains both the current comments
  * and the comment form.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
  *
  * @package alcatraz
  */
@@ -43,8 +41,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'alcatraz' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'alcatraz' ) ); ?></div>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-above -->
+			</div>
+		</nav>
 		<?php endif; // Check for comment navigation. ?>
 
 		<ol class="comment-list">
@@ -54,7 +52,7 @@ if ( post_password_required() ) {
 					'short_ping' => true,
 				) );
 			?>
-		</ol><!-- .comment-list -->
+		</ol>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // Are there comments to navigate through? ?>
 		<nav id="comment-nav-below" class="navigation comment-navigation" role="navigation">
@@ -64,8 +62,8 @@ if ( post_password_required() ) {
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( 'Older Comments', 'alcatraz' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments', 'alcatraz' ) ); ?></div>
 
-			</div><!-- .nav-links -->
-		</nav><!-- #comment-nav-below -->
+			</div>
+		</nav>
 		<?php endif; // Check for comment navigation. ?>
 
 	<?php endif; // Check for have_comments(). ?>
@@ -79,4 +77,4 @@ if ( post_password_required() ) {
 
 	<?php comment_form(); ?>
 
-</div><!-- #comments -->
+</div>

@@ -1,24 +1,24 @@
 /**
- * customizer.js
- *
- * Theme Customizer enhancements for a better user experience.
- *
- * Contains handlers to make Theme Customizer preview reload changes asynchronously.
+ * Alcatraz Customizer JS.
  */
 
 ( function( $ ) {
-	// Site title and description.
+
+	// Handle live previewing for the site title.
 	wp.customize( 'blogname', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-title a' ).text( to );
 		} );
 	} );
+
+	// Handle live previewing for the site description.
 	wp.customize( 'blogdescription', function( value ) {
 		value.bind( function( to ) {
 			$( '.site-description' ).text( to );
 		} );
 	} );
-	// Header text color.
+
+	// Handle live previewing for the header text color.
 	wp.customize( 'header_textcolor', function( value ) {
 		value.bind( function( to ) {
 			if ( 'blank' === to ) {

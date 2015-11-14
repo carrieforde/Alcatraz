@@ -1,12 +1,9 @@
 <?php
 /**
- * Template part for displaying single posts.
- *
- * @link https://codex.wordpress.org/Template_Hierarchy
+ * Content template for single posts.
  *
  * @package alcatraz
  */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -15,8 +12,8 @@
 
 		<div class="entry-meta">
 			<?php alcatraz_posted_on(); ?>
-		</div><!-- .entry-meta -->
-	</header><!-- .entry-header -->
+		</div>
+	</header>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -26,10 +23,9 @@
 				'after'  => '</div>',
 			) );
 		?>
-	</div><!-- .entry-content -->
+	</div>
 
 	<footer class="entry-footer">
 		<?php alcatraz_entry_footer(); ?>
-	</footer><!-- .entry-footer -->
-</article><!-- #post-## -->
-
+	</footer>
+</article>
