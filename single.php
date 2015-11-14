@@ -1,8 +1,6 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
+ * Template for displaying all single posts.
  *
  * @package alcatraz
  */
@@ -19,16 +17,16 @@ get_header(); ?>
 			<?php the_post_navigation(); ?>
 
 			<?php
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
+				// Maybe load comments.
+				if ( comments_open() || get_comments_number() ) {
 					comments_template();
-				endif;
+				}
 			?>
 
-		<?php endwhile; // End of the loop. ?>
+		<?php endwhile; ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
