@@ -75,24 +75,6 @@ function alcatraz_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'alcatraz_content_width', 640 );
 }
 
-add_action( 'widgets_init', 'alcatraz_widgets_init' );
-/**
- * Register our widget areas.
- *
- * @since  1.0.0
- */
-function alcatraz_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'alcatraz' ),
-		'id'            => 'sidebar-1',
-		'description'   => '',
-		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</aside>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-
 add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
 /**
  * Enqueue scripts and styles.
@@ -131,32 +113,37 @@ function alcatraz_scripts() {
 /**
  * Utility functions.
  */
-require ALCATRAZ_PATH . 'inc/utilities.php';
+require_once ALCATRAZ_PATH . 'inc/utilities.php';
 
 /**
  * Custom Header feature.
  */
-require ALCATRAZ_PATH . 'inc/custom-header.php';
+require_once ALCATRAZ_PATH . 'inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.
  */
-require ALCATRAZ_PATH . 'inc/template-tags.php';
+require_once ALCATRAZ_PATH . 'inc/template-tags.php';
+
+/**
+ * Widget Areas.
+ */
+require_once ALCATRAZ_PATH . 'inc/widget-areas.php';
 
 /**
  * Custom functions that act independently of the theme templates.
  */
-require ALCATRAZ_PATH . 'inc/extras.php';
+require_once ALCATRAZ_PATH . 'inc/extras.php';
 
 /**
  * Customizer additions.
  */
-require ALCATRAZ_PATH . 'inc/admin/customizer.php';
+require_once ALCATRAZ_PATH . 'inc/admin/customizer.php';
 
 /**
  * Jetpack compatibility file.
  */
-require ALCATRAZ_PATH . 'inc/jetpack.php';
+require_once ALCATRAZ_PATH . 'inc/jetpack.php';
 
 /**
  * Admin-only functionality.
