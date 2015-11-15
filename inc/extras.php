@@ -30,6 +30,16 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = esc_attr( $options['page_layout'] );
 	}
 
+	// Page Banner class.
+	if ( isset( $options['page_banner_widget_area'] ) && $options['page_banner_widget_area'] && is_active_sidebar( 'page-banner' ) ) {
+		$classes[] = 'has-page-banner';
+	}
+
+	// Footer widget areas class.
+	if ( isset( $options['footer_widget_areas'] ) && 0 < (int)$options['footer_widget_areas'] ) {
+		$classes[] = 'footer-widget-areas-' . (int)$options['footer_widget_areas'];
+	}
+
 	// Custom page classes.
 	$custom_page_classes = get_post_meta( $post->ID, '_alcatraz_body_class', true );
 	if ( $custom_page_classes ) {

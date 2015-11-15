@@ -98,7 +98,7 @@ function alcatraz_output_page_banner_widget_area() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( isset( $options['page_banner_widget_area'] ) && (int)$options['page_banner_widget_area'] ) {
+	if ( isset( $options['page_banner_widget_area'] ) && (int)$options['page_banner_widget_area'] && is_active_sidebar( 'page-banner' ) ) {
 		?>
 		<section id="page-banner" class="page-banner page-banner-widget-area widget-area" role="complementary">
 			<?php dynamic_sidebar( 'page-banner' ); ?>
