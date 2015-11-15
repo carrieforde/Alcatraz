@@ -1,29 +1,40 @@
 <?php
 /**
- * Custom functions that act independently of the theme templates.
+ * Extras.
  *
- * Eventually, some of the functionality here could be replaced by core features.
+ * Functionality in this file should ideally find a better final home, eventually.
  *
  * @package alcatraz
  */
 
+add_filter( 'body_class', 'alcatraz_body_classes' );
 /**
- * Adds custom classes to the array of body classes.
+ * Add custom body classes.
  *
- * @param array $classes Classes for the body element.
- * @return array
+ * @since   1.0.0
+ *
+ * @param   array  $classes  Classes for the body element.
+ * @return  array
  */
 function alcatraz_body_classes( $classes ) {
-	// Adds a class of group-blog to blogs with more than 1 published author.
-	if ( is_multi_author() ) {
-		$classes[] = 'group-blog';
+
+	global $post;
+
+	$options = get_option( 'alcatraz_options' );
+
+	// Page layout class.
+	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
+	if ( $page_layout && 'default' != $page_layout ) {
+		$classes[] = esc_attr( $page_layout );
+	} elseif ( isset( $options['page_layout'] ) ) {
+		$classes[] = esc_attr( $options['page_layout'] );
 	}
 
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
+	// Custom page classes.
+	$custom_page_classes = get_post_meta( $post->ID, '_alcatraz_body_class', true );
+	if ( $custom_page_classes ) {
+		$classes[] = esc_attr( $custom_page_classes );
 	}
 
 	return $classes;
 }
-add_filter( 'body_class', 'alcatraz_body_classes' );

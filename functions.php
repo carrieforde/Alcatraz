@@ -129,12 +129,12 @@ function alcatraz_scripts() {
 }
 
 /**
- * Load utility functions.
+ * Utility functions.
  */
 require ALCATRAZ_PATH . 'inc/utilities.php';
 
 /**
- * Implement the Custom Header feature.
+ * Custom Header feature.
  */
 require ALCATRAZ_PATH . 'inc/custom-header.php';
 
@@ -151,9 +151,16 @@ require ALCATRAZ_PATH . 'inc/extras.php';
 /**
  * Customizer additions.
  */
-require ALCATRAZ_PATH . 'inc/customizer.php';
+require ALCATRAZ_PATH . 'inc/admin/customizer.php';
 
 /**
- * Load Jetpack compatibility file.
+ * Jetpack compatibility file.
  */
 require ALCATRAZ_PATH . 'inc/jetpack.php';
+
+/**
+ * Admin-only functionality.
+ */
+if ( is_admin() ) {
+	require_once ALCATRAZ_PATH . 'inc/admin/admin.php';
+}
