@@ -6,6 +6,8 @@
  */
 ?>
 
+<?php do_action( 'alcatraz_before_entry' ); ?>
+
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
@@ -25,3 +27,5 @@
 		<?php alcatraz_entry_footer(); ?>
 	</footer>
 </article>
+
+<?php do_action( 'alcatraz_after_entry' ); ?>
