@@ -30,6 +30,23 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = esc_attr( $options['page_layout'] );
 	}
 
+	// Transparent header class.
+	$transparent_header = get_post_meta( $post->ID, '_alcatraz_transparent_header', true );
+	if ( $transparent_header && 'on' == $transparent_header ) {
+		$classes[] = 'transparent-header';
+	}
+
+	// Header image class.
+	if ( get_header_image() ) {
+		$classes[] = 'has-header-image';
+	}
+
+	// Header text color.
+	$header_text_color = get_post_meta( $post->ID, '_alcatraz_header_text_color', true );
+	if ( $header_text_color && 'default' != $header_text_color ) {
+		$classes[] = 'header-' . esc_attr( $header_text_color );
+	}
+
 	// Page Banner class.
 	if ( isset( $options['page_banner_widget_area'] ) && $options['page_banner_widget_area'] && is_active_sidebar( 'page-banner' ) ) {
 		$classes[] = 'has-page-banner';
@@ -47,4 +64,19 @@ function alcatraz_body_classes( $classes ) {
 	}
 
 	return $classes;
+}
+
+add_action( 'alcatraz_before_header_inside', 'alcatraz_output_header_image', 0 );
+/**
+ * Maybe output a Header image.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_output_header_image() {
+
+	if ( get_header_image() ) : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image-wrap" rel="home">
+			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+		</a>
+	<?php endif;
 }

@@ -35,13 +35,30 @@ function alcatraz_page_options_metabox() {
 		'name'    => __( 'Layout', 'alcatraz' ),
 		'desc'    => __( 'Select the layout for this page', 'alcatraz' ),
 		'id'      => $prefix . 'page_layout',
-		'type'    => 'radio',
+		'type'    => 'select',
 		'options' => array(
 			'default'       => __( 'Default', 'alcatraz' ),
 			'full-width'    => __( 'Full Width', 'alcatraz' ),
 			'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
 			'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
 		),
+	) );
+
+	// Transparent header.
+	$page_options->add_field( array(
+		'name' => __( 'Transparent Header', 'alcatraz' ),
+		'desc' => __( 'Position the page content at the top of the screen and make the header transparent', 'alcatraz' ),
+		'id'   => $prefix . 'transparent_header',
+		'type' => 'checkbox',
+	) );
+
+	// Header text color.
+	$page_options->add_field( array(
+		'name'    => __( 'Header Text Color', 'alcatraz' ),
+		'desc'    => __( 'Select a Header Text Color for this page', 'alcatraz' ),
+		'id'      => $prefix . 'header_text_color',
+		'type'    => 'select',
+		'options' => alcatraz_get_text_colors( 'header' ),
 	) );
 
 	// Body class.
