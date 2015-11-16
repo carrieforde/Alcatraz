@@ -1,15 +1,8 @@
 <?php
 /**
- * Template for the primary sidebar.
+ * Template for the Primary Sidebar widget area.
  *
  * @package alcatraz
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
-	return;
-}
-?>
-
-<div id="secondary" class="widget-area" role="complementary">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
-</div>
+do_action( 'alcatraz_primary_sidebar' );
