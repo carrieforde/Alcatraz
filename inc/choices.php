@@ -22,5 +22,5 @@ function alcatraz_get_text_colors( $context = '' ) {
 		'text-light' => __( 'Light Text', 'alcatraz' ),
 	);
 
-	return apply_filters( 'alcatraz_text_colors', $default_colors );
+	return apply_filters( 'alcatraz_text_colors', $default_colors, $context );
 }
