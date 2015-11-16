@@ -41,7 +41,7 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'has-header-image';
 	}
 
-	// Header text color.
+	// Header text color class.
 	$header_text_color = get_post_meta( $post->ID, '_alcatraz_header_text_color', true );
 	if ( $header_text_color && 'default' != $header_text_color ) {
 		$classes[] = 'header-' . esc_attr( $header_text_color );
