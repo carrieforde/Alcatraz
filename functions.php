@@ -54,7 +54,19 @@ function alcatraz_setup() {
 		) );
 	}
 
-	// Enable the custom background functionality.
+	// Enable the custom header feature.
+	add_theme_support(
+		'custom-header',
+		apply_filters( 'alcatraz_custom_header_args', array(
+			'default-image'          => '',
+			'default-text-color'     => '000000',
+			'width'                  => 1200,
+			'height'                 => 320,
+			'flex-height'            => true,
+		)
+	) );
+
+	// Enable the custom background feature.
 	add_theme_support(
 		'custom-background',
 		apply_filters( 'alcatraz_custom_background_args', array(
@@ -116,9 +128,9 @@ function alcatraz_scripts() {
 require_once ALCATRAZ_PATH . 'inc/utilities.php';
 
 /**
- * Custom Header feature.
+ * Option choices.
  */
-require_once ALCATRAZ_PATH . 'inc/custom-header.php';
+require_once ALCATRAZ_PATH . 'inc/choices.php';
 
 /**
  * Custom template tags for this theme.
