@@ -13,7 +13,7 @@ A pretty good theme.
 
 == Description ==
 
-Coming soon...
+Coming soon...  This theme supports all the plugins.
 
 == Installation ==
 
