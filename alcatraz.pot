@@ -1,0 +1,163 @@
+# Copyright (C) 2015 Carrie Forde, Braad Martin, Jordan Gonzales
+# This file is distributed under the GNU General Public License v2 or later.
+msgid ""
+msgstr ""
+"Project-Id-Version: alcatraz 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2015-11-14 23:54:26+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
+
+#: 404.php:15
+msgid "Oops! That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:19
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
+msgstr ""
+
+#: 404.php:27
+msgid "Most Used Categories"
+msgstr ""
+
+#: 404.php:43
+msgid "Try looking in the monthly archives. %1$s"
+msgstr ""
+
+#: comments.php:38 comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr ""
+
+#: footer.php:16
+msgid "https://wordpress.org/"
+msgstr ""
+
+#: footer.php:16
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: footer.php:18
+msgid "Theme: %1$s by %2$s."
+msgstr ""
+
+#: functions.php:34 header.php:40
+msgid "Primary Menu"
+msgstr ""
+
+#: functions.php:86
+msgid "Sidebar"
+msgstr ""
+
+#: header.php:23
+msgid "Skip to content"
+msgstr ""
+
+#: inc/template-tags.php:45 inc/template-tags.php:50
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:47
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:65 template-parts/content-page.php:28
+#. translators: %s: Name of current post
+msgid "Edit %s"
+msgstr ""
+
+#: search.php:16
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:18 template-parts/content-single.php:22
+#: template-parts/content.php:30
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:23
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "alcatraz"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A pretty good theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Carrie Forde, Braad Martin, Jordan Gonzales"
+msgstr ""
+
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/template-tags.php:25
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr ""
+
+#: inc/template-tags.php:30
+msgctxt "post author"
+msgid "by %s"
+msgstr ""

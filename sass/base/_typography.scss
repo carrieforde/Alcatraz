@@ -1,3 +1,29 @@
+/**
+ * 1.5 Typography
+ */
+
+body,
+button,
+input,
+select,
+textarea {
+	color: $color__text-main;
+	font-family: $font__main;
+	@include font-size(1);
+	line-height: $font__line-height-body;
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	clear: both;
+}
+
+/* Copy */
 p {
 	margin-bottom: 1.5em;
 }
@@ -8,6 +34,15 @@ dfn, cite, em, i {
 
 blockquote {
 	margin: 0 1.5em;
+}
+
+blockquote, q {
+	quotes: "" "";
+
+	&:before,
+	&:after {
+		content: "";
+	}
 }
 
 address {
@@ -42,4 +77,31 @@ mark, ins {
 
 big {
 	font-size: 125%;
+}
+
+/* Lists */
+ul, ol {
+	margin: 0 0 1.5em 3em;
+}
+
+ul {
+	list-style: disc;
+}
+
+ol {
+	list-style: decimal;
+}
+
+li > ul,
+li > ol {
+	margin-bottom: 0;
+	margin-left: 1.5em;
+}
+
+dt {
+	font-weight: bold;
+}
+
+dd {
+	margin: 0 1.5em 1.5em;
 }
