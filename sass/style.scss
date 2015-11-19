@@ -25,14 +25,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *     1.1 Normalize
  *     1.2 Variables
  *     1.3 Mixins
- *     1.4 Grid
- *     1.5 Typography
+ *     1.4 Defaults
+ *     1.5 Grid
+ *     1.6 Typography
  * 2.0 Components
  *     2.1 Media
  *     2.2 Forms
- *     2.3 Buttons
- *     2.4 Tables
- *     2.5 Widgets
+ *     2.3 Tables
+ *     2.4 Widgets
  * 3.0 Layout
  *     3.1 Header
  *     3.2 Navigation
@@ -51,6 +51,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "base/normalize";
 @import "base/variables";
 @import "base/mixins";
+@import "base/defaults";
 @import "base/grid";
 @import "base/typography";
 
@@ -59,7 +60,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  */
 @import "components/media";
 @import "components/forms";
-@import "components/buttons";
 @import "components/tables";
 @import "components/widgets";
 

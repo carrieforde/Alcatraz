@@ -1,3 +1,12 @@
+/**
+ * 2.1 Media
+ */
+
+img {
+	height: auto; /* Make sure images are scaled correctly. */
+	max-width: 100%; /* Adhere to container width. */
+}
+
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
@@ -14,10 +23,10 @@ object {
 	max-width: 100%;
 }
 
+/**
+ * 2.1.1 Captions
+ */
 
-/*--------------------------------------------------------------
-## Captions
---------------------------------------------------------------*/
 .wp-caption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
@@ -35,10 +44,10 @@ object {
 	text-align: center;
 }
 
+/**
+ * 2.1.2 Galleries
+ */
 
-/*--------------------------------------------------------------
-## Galleries
---------------------------------------------------------------*/
 .gallery {
 	margin-bottom: 1.5em;
 }

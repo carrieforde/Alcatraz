@@ -1,6 +1,35 @@
-/*--------------------------------------------------------------
-# Accessibility
---------------------------------------------------------------*/
+/**
+ * 1.4 Defaults
+ *
+ * Sets basic defaults that are not set in normalize.scss.
+ */
+
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+}
+
+body {
+	background: $color__background-body; /* Fallback for when there is no custom background color defined. */
+}
+
+hr {
+	background-color: $color__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
+}
+
+/**
+ * 1.4.1 Accessibility
+ *
+/
+
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -34,10 +63,10 @@
 	outline: 0;
 }
 
+/**
+ * 1.4.2 Alignments
+ */
 
-/*--------------------------------------------------------------
-# Alignments
---------------------------------------------------------------*/
 .alignleft {
 	display: inline;
 	float: left;
@@ -56,9 +85,10 @@
 }
 
 
-/*--------------------------------------------------------------
-# Clearings
---------------------------------------------------------------*/
+/**
+ * 1.4.3 Clearings
+ */
+
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -84,9 +114,10 @@
 }
 
 
-/*--------------------------------------------------------------
-# Infinite Scroll
---------------------------------------------------------------*/
+/**
+ * 1.4.4 Infinite Scroll
+ */
+
 /* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation, /* Older / Newer Posts Navigation (always hidden) */
 .infinite-scroll.neverending .site-footer { /* Theme Footer (when set to scrolling) */
