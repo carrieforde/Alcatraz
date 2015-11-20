@@ -32,7 +32,6 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-
 /**
  * 1.2.2 Typography
  */
@@ -43,14 +42,23 @@ $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-
 /**
  * 1.2.3 Structure
  */
 
-$size__site-main: 100%;
-$size__site-sidebar: 25%;
+$size__site-width: 100%;
+$size__sidebar-width: 25%;
+$size__sidebar-content-width: $size__site-width - $size__sidebar-width;
+$size__default-padding: 20px;
 
 /**
  * 1.2.4 Media Query Break Points
  */
+
+$breakpoint__mobile-small: 360px;
+$breakpoint__mobile: 480px;
+$breakpoint__mobile-large: 600px;
+$breakpoint__tablet: 768px;
+$breakpoint__tablet-large: 900px;
+$breakpoint__desktop: 1024px;
+$breakpoint__desktop-large: 1440px;

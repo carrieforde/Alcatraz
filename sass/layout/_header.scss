@@ -1,3 +1,22 @@
 /**
  * 3.1 Header
  */
+
+.site-header {
+	position: relative;
+
+	.header-image-wrap {
+		position: absolute;
+		display: block;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+	}
+	.header-image {
+		width: 100%;
+		display: block;
+	}
+	.site-branding {
+		padding: $size__default-padding $size__default-padding 0;
+	}
+}

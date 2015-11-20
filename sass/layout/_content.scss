@@ -5,7 +5,21 @@
  */
 
 /**
- * 3.3.1 Posts & Pages
+ * 3.3.1 Structure
+ */
+
+.site-content {
+	overflow: hidden;
+}
+
+.content-area {
+	width: $size__site-width;
+	margin: 0 auto;
+	padding: $size__default-padding;
+}
+
+/**
+ * 3.3.2 Posts & Pages
  */
 
 .sticky {
@@ -38,7 +52,7 @@
 }
 
 /**
- * 3.3.2 Asides
+ * 3.3.3 Asides
  */
 
 .blog .format-aside .entry-title,
@@ -47,7 +61,7 @@
 }
 
 /**
- * 3.3.3 Comments
+ * 3.3.4 Comments
  */
 
 .comment-content a {
