@@ -399,6 +399,7 @@ hr {
   content: "";
   display: table;
   table-layout: fixed;
+  width: 100%;
 }
 
 .clear:after,
@@ -738,6 +739,27 @@ table {
 /**
  * 3.1 Header
  */
+.site-header {
+  position: relative;
+}
+
+.site-header .header-image-wrap {
+  position: absolute;
+  display: block;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+.site-header .header-image {
+  width: 100%;
+  display: block;
+}
+
+.site-header .site-branding {
+  padding: 20px 20px 0;
+}
+
 /**
  * 3.2 Navigation
  */
@@ -862,7 +884,20 @@ a:hover, a:active {
  * This sets basic styling for all pages including blog post pages.
  */
 /**
- * 3.3.1 Posts & Pages
+ * 3.3.1 Structure
+ */
+.site-content {
+  overflow: hidden;
+}
+
+.content-area {
+  width: 100%;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/**
+ * 3.3.2 Posts & Pages
  */
 .sticky {
   display: block;
@@ -894,7 +929,7 @@ a:hover, a:active {
 }
 
 /**
- * 3.3.2 Asides
+ * 3.3.3 Asides
  */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
@@ -902,7 +937,7 @@ a:hover, a:active {
 }
 
 /**
- * 3.3.3 Comments
+ * 3.3.4 Comments
  */
 .comment-content a {
   word-wrap: break-word;
@@ -915,53 +950,77 @@ a:hover, a:active {
 /**
  * 3.4 Sidebars
  */
-/* Left Sidebar */
-.content-area {
-  float: right;
-  margin: 0 0 0 -25%;
-  width: 100%;
+.primary-sidebar {
+  margin: 0;
+  padding: 20px;
 }
 
-.site-main {
-  margin: 0 0 0 25%;
-}
-
-.site-content .widget-area {
-  float: left;
-  overflow: hidden;
-  width: 25%;
-}
-
-.site-footer {
-  clear: both;
-  width: 100%;
-}
-
-/* Right Sidebar */
-.content-area {
-  float: left;
-  margin: 0 -25% 0 0;
-  width: 100%;
-}
-
-.site-main {
-  margin: 0 25% 0 0;
-}
-
-.site-content .widget-area {
-  float: right;
-  overflow: hidden;
-  width: 25%;
-}
-
-.site-footer {
-  clear: both;
-  width: 100%;
+@media (min-width: 768px) {
+  /* Left Sidebar */
+  .left-sidebar .content-area {
+    float: right;
+    width: 75%;
+  }
+  .left-sidebar .primary-sidebar {
+    float: left;
+    width: 25%;
+  }
+  /* Right Sidebar */
+  .right-sidebar .content-area {
+    float: left;
+    width: 75%;
+  }
+  .right-sidebar .primary-sidebar {
+    float: right;
+    width: 25%;
+  }
 }
 
 /**
  * 3.5 Footer
  */
+.site-footer {
+  clear: both;
+  width: 100%;
+  padding: 20px;
+}
+
+.site-footer .footer-widget-areas::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.site-footer .footer-widget-areas .widget-area {
+  float: left;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .footer-widget-areas-2 .footer-widget-areas .widget-area {
+    width: 49%;
+    margin-right: 2%;
+  }
+  .footer-widget-areas-2 .footer-widget-areas .widget-area:last-child {
+    margin-right: 0;
+  }
+  .footer-widget-areas-3 .footer-widget-areas .widget-area {
+    width: 32%;
+    margin-right: 2%;
+  }
+  .footer-widget-areas-3 .footer-widget-areas .widget-area:last-child {
+    margin-right: 0;
+  }
+  .footer-widget-areas-4 .footer-widget-areas .widget-area {
+    width: 23.5%;
+    margin-right: 2%;
+  }
+  .footer-widget-areas-4 .footer-widget-areas .widget-area:last-child {
+    margin-right: 0;
+  }
+}
+
 /**
  * 4.0 Vendor
  *

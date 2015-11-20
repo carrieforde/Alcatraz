@@ -1,3 +1,56 @@
 /**
  * 3.5 Footer
  */
+
+.site-footer {
+	clear: both;
+	width: $size__site-width;
+	padding: $size__default-padding;
+
+	.footer-widget-areas {
+		&::after {
+			@include clearfix;
+		}
+		.widget-area {
+			float: left;
+			width: 100%;
+		}
+	}
+}
+
+@media ( min-width: $breakpoint__tablet ) {
+
+	.footer-widget-areas-2 {
+		.footer-widget-areas {
+			.widget-area {
+				width: 49%;
+				margin-right: 2%;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	.footer-widget-areas-3 {
+		.footer-widget-areas {
+			.widget-area {
+				width: 32%;
+				margin-right: 2%;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+	.footer-widget-areas-4 {
+		.footer-widget-areas {
+			.widget-area {
+				width: 23.5%;
+				margin-right: 2%;
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}
