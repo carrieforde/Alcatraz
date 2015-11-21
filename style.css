@@ -434,7 +434,7 @@ hr {
  *
  * Columns are 52.5px and gutters are 30px.
  */
-.site-content > [class^="column-"] {
+.site-content [class^="column-"] {
   float: left;
   min-height: 1px;
   padding-left: 15px;
@@ -457,47 +457,47 @@ hr {
 }
 
 @media (min-width: 540px) {
-  .site-content > [class^="column-"] {
-    margin-left: 3.125%;
+  .site-content [class^="column-"] {
+    margin-left: 2.604166667%;
   }
-  .site-content > [class^="column-"]:first-child {
+  .site-content [class^="column-"]:first-child {
     margin-left: 0;
   }
-  .site-content > [class^="column-"]:last-child {
+  .site-content [class^="column-"]:last-child {
     float: right;
   }
   .column-1 {
-    width: 5.46875%;
+    width: 5.946180556%;
   }
   .column-2 {
-    width: 14.0625%;
+    width: 14.49652778%;
   }
   .column-3 {
-    width: 22.65625%;
+    width: 23.046875%;
   }
   .column-4 {
-    width: 31.25%;
+    width: 31.59722222%;
   }
   .column-5 {
-    width: 39.84375%;
+    width: 40.14756945%;
   }
   .column-6 {
-    width: 48.4375%;
+    width: 48.69791667%;
   }
   .column-7 {
-    width: 57.03125%;
+    width: 57.24826389%;
   }
   .column-8 {
-    width: 65.625%;
+    width: 65.79861111%;
   }
   .column-9 {
-    width: 74.21875%;
+    width: 74.34895834%;
   }
   .column-10 {
-    width: 82.8125%;
+    width: 82.89930556%;
   }
   .column-11 {
-    width: 91.40625%;
+    width: 91.44965278%;
   }
   .column-12 {
     width: 100%;
