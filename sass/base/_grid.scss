@@ -30,7 +30,7 @@
 	width: 100%;
 }
 
-@media #{$breakpoint__small-tablet} {
+@media (min-width: $breakpoint__600px) {
 	.site-content [class^="column-"] {
 		margin-left: 2.604166667%;
 	}

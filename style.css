@@ -270,21 +270,6 @@ th {
  * Include all site variables in this file.
  */
 /**
- * 1.2.1 Colors
- */
-/* Background Colors */
-/* Text Colors */
-/* Border Colors */
-/**
- * 1.2.2 Typography
- */
-/**
- * 1.2.3 Structure
- */
-/**
- * 1.2.4 Media Query Break Points
- */
-/**
  * 1.3 Mixins
  */
 /* Rem output with px fallback */
@@ -456,7 +441,7 @@ hr {
   width: 100%;
 }
 
-@media (min-width: 540px) {
+@media (min-width: 600px) {
   .site-content [class^="column-"] {
     margin-left: 2.604166667%;
   }

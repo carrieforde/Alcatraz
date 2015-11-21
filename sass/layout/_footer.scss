@@ -18,7 +18,7 @@
 	}
 }
 
-@media #{$breakpoint__tablet} {
+@media (min-width: $breakpoint__768px) {
 
 	.footer-widget-areas-2 {
 		.footer-widget-areas {

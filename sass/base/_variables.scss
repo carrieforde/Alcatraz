@@ -4,11 +4,10 @@
  * Include all site variables in this file.
  */
 
-/**
- * 1.2.1 Colors
- */
 
-/* Background Colors */
+// 1.2.1 Colors
+
+// Background Colors
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
@@ -16,7 +15,7 @@ $color__background-button: #e6e6e6;
 $color__background-pre: #eee;
 $color__background-ins: #fff9c0;
 
-/* Text Colors */
+// Text Colors
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
@@ -25,38 +24,27 @@ $color__link-visited: purple;
 $color__link-hover: midnightblue;
 $color__text-main: #404040;
 
-/* Border Colors */
+// Border Colors
 $color__border-button: #ccc #ccc #bbb;
 $color__border-button-hover: #ccc #bbb #aaa;
 $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 
-/**
- * 1.2.2 Typography
- */
 
+// 1.2.2 Typography
 $font__main: sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-/**
- * 1.2.3 Structure
- */
-
+// 1.2.3 Structure
 $size__site-width: 100%;
 $size__sidebar-width: 25%;
 $size__sidebar-content-width: $size__site-width - $size__sidebar-width;
 $size__default-padding: 20px;
 
-/**
- * 1.2.4 Media Query Break Points
- */
-
-$breakpoint__mobile-phone: "(min-width: 400px)";
-$breakpoint__small-tablet: "(min-width: 540px)";
-$breakpoint__tablet: "(min-width: 768px)";
-$breakpoint__desktop: "(min-width: 960px)";
-$breakpoint__desktop-large: "(min-width: 1200px)";
+// 1.2.4 Media Query Break Points
+$breakpoint__600px: 600px;
+$breakpoint__768px: 768px;

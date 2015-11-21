@@ -7,7 +7,7 @@
 	padding: $size__default-padding;
 }
 
-@media #{$breakpoint__tablet} {
+@media (min-width: $breakpoint__768px) {
 
 	/* Left Sidebar */
 	.left-sidebar {
