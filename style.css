@@ -430,6 +430,81 @@ hr {
  * 1.4 Grid
  */
 /**
+ * 1.4.1 Column Classes
+ *
+ * Columns are 52.5px and gutters are 30px.
+ */
+.site-content > [class^="column-"] {
+  float: left;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.column-1,
+.column-2,
+.column-3,
+.column-4,
+.column-5,
+.column-6,
+.column-7,
+.column-8,
+.column-9,
+.column-10,
+.column-11,
+.column-12 {
+  width: 100%;
+}
+
+@media (min-width: 540px) {
+  .site-content > [class^="column-"] {
+    margin-left: 3.125%;
+  }
+  .site-content > [class^="column-"]:first-child {
+    margin-left: 0;
+  }
+  .site-content > [class^="column-"]:last-child {
+    float: right;
+  }
+  .column-1 {
+    width: 5.46875%;
+  }
+  .column-2 {
+    width: 14.0625%;
+  }
+  .column-3 {
+    width: 22.65625%;
+  }
+  .column-4 {
+    width: 31.25%;
+  }
+  .column-5 {
+    width: 39.84375%;
+  }
+  .column-6 {
+    width: 48.4375%;
+  }
+  .column-7 {
+    width: 57.03125%;
+  }
+  .column-8 {
+    width: 65.625%;
+  }
+  .column-9 {
+    width: 74.21875%;
+  }
+  .column-10 {
+    width: 82.8125%;
+  }
+  .column-11 {
+    width: 91.40625%;
+  }
+  .column-12 {
+    width: 100%;
+  }
+}
+
+/**
  * 1.5 Typography
  */
 body,

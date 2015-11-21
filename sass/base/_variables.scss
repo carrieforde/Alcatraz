@@ -55,10 +55,8 @@ $size__default-padding: 20px;
  * 1.2.4 Media Query Break Points
  */
 
-$breakpoint__mobile-small: 360px;
-$breakpoint__mobile: 480px;
-$breakpoint__mobile-large: 600px;
-$breakpoint__tablet: 768px;
-$breakpoint__tablet-large: 900px;
-$breakpoint__desktop: 1024px;
-$breakpoint__desktop-large: 1440px;
+$breakpoint__mobile-phone: "(min-width: 400px)";
+$breakpoint__small-tablet: "(min-width: 540px)";
+$breakpoint__tablet: "(min-width: 768px)";
+$breakpoint__desktop: "(min-width: 960px)";
+$breakpoint__desktop-large: "(min-width: 1200px)";
