@@ -166,6 +166,22 @@ li > ol {
 	margin-left: em(5);
 }
 
+li > ul {
+	list-style-type: circle;
+
+	li > ul {
+		list-style-type: square;
+	}
+}
+
+li > ol {
+	list-style-type: lower-alpha;
+
+	li > ol {
+		list-style-type: lower-roman;
+	}
+}
+
 dt {
 	font-weight: bold;
 }

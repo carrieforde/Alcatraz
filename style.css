@@ -669,6 +669,22 @@ li > ol {
   margin-left: 0.3125em;
 }
 
+li > ul {
+  list-style-type: circle;
+}
+
+li > ul li > ul {
+  list-style-type: square;
+}
+
+li > ol {
+  list-style-type: lower-alpha;
+}
+
+li > ol li > ol {
+  list-style-type: lower-roman;
+}
+
 dt {
   font-weight: bold;
 }
