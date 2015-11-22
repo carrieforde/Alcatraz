@@ -21,32 +21,40 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 /**
  * Table of Contents
  *
- * 1.0 Base
- *     1.1 Normalize
- *     1.2 Variables
- *     1.3 Mixins
- *     1.4 Defaults
- *     1.5 Grid
- *     1.6 Typography
- * 2.0 Components
- *     2.1 Media
- *     2.2 Forms
- *     2.3 Tables
- *     2.4 Widgets
- * 3.0 Layout
- *     3.1 Header
- *     3.2 Navigation
- *     3.3 Content
- *     3.4 Sidebars
- *     3.5 Footer
- * 4.0 Vendor (Plugins)
- * 5.0 Page-Specific Styles
+ * 1.0 Sass Libraries
+ *     1.1 Bourbon
+ *     1.2 Neat
+ * 2.0 Base
+ *     2.1 Normalize
+ *     2.2 Variables
+ *     2.3 Mixins
+ *     2.4 Defaults
+ *     2.5 Grid
+ *     2.6 Typography
+ * 3.0 Components
+ *     3.1 Media
+ *     3.2 Forms
+ *     3.3 Tables
+ *     3.4 Widgets
+ * 4.0 Layout
+ *     4.1 Header
+ *     4.2 Navigation
+ *     4.3 Content
+ *     4.4 Sidebars
+ *     4.5 Footer
+ * 5.0 Plugins
+ * 6.0 Page-Specific Styles
  *
  */
 
+/**
+ * 1.0 Sass Libraries
+ */
+@import "bourbon/bourbon";
+@import "neat/neat";
 
 /**
- * 1.0 Base
+ * 2.0 Base
  */
 @import "base/normalize";
 @import "base/variables";
@@ -56,7 +64,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "base/typography";
 
 /**
- * 2.0 Components
+ * 3.0 Components
  */
 @import "components/media";
 @import "components/forms";
@@ -64,7 +72,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "components/widgets";
 
 /**
- * 3.0 Layout
+ * 4.0 Layout
  */
 @import "layout/header";
 @import "layout/navigation";
@@ -73,14 +81,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "layout/footer";
 
 /**
- * 4.0 Vendor
+ * 5.0 Plugins
  *
- * Add your own vendor style import statements here. This section is perfect for plugin styling.
+ * Add your own plugin style import statements here.
 */
-// @import "vendor";
+// @import "plugins";
 
 /**
- * 5.0 Page-Specific Styles
+ * 6.0 Page-Specific Styles
  *
  * Add your own page-specific style import statements here.
  */
