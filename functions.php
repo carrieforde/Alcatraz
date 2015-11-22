@@ -122,6 +122,27 @@ function alcatraz_scripts() {
 	}
 }
 
+add_action( 'init', 'alcatraz_init_bfa' );
+/**
+ * Include and initialize the Better Font Awesome Library.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_init_bfa() {
+
+	$args = array(
+		'version'             => 'latest',
+		'minified'            => true,
+		'remove_existing_fa'  => false,
+		'load_styles'         => true,
+		'load_admin_styles'   => true,
+		'load_shortcode'      => true,
+		'load_tinymce_plugin' => true,
+	);
+
+	Better_Font_Awesome_Library::get_instance( $args );
+}
+
 /**
  * Utility functions.
  */
@@ -143,7 +164,7 @@ require_once ALCATRAZ_PATH . 'inc/template-tags.php';
 require_once ALCATRAZ_PATH . 'inc/widget-areas.php';
 
 /**
- * Custom functions that act independently of the theme templates.
+ * Custom functions that act independent of the theme templates.
  */
 require_once ALCATRAZ_PATH . 'inc/extras.php';
 
@@ -156,6 +177,11 @@ require_once ALCATRAZ_PATH . 'inc/admin/customizer.php';
  * Jetpack compatibility file.
  */
 require_once ALCATRAZ_PATH . 'inc/jetpack.php';
+
+/**
+ * Better Font Awesome Library.
+ */
+require_once ALCATRAZ_PATH . 'lib/better-font-awesome-library/better-font-awesome-library.php';
 
 /**
  * Admin-only functionality.
