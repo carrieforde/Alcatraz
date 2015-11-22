@@ -73,25 +73,31 @@ blockquote {
 	background-color: $color__background-blockquote;
 	font-style: italic;
 
-	p {
-		margin: 0;
+	&::before {
+		float: left;
+		font: {
+			family: FontAwesome;
+			size: em(20);
+			style: normal;
+		}
+		content: "\f10d";
 	}
 
-	/*cite {
-		margin-top: em(10);
-	}*/
+	p {
+		padding-left: em(35);
+		margin: 0;
+	}
 }
 
 blockquote p {
 	margin: 0;
 }
 
-blockquote, q {
-	quotes: "" "";
-
-	&:before,
-	&:after {
-		content: "";
+q {
+	&::before {
+		@extend blockquote::before;
+		font-size: 18px;
+		padding-right: 10px;
 	}
 }
 

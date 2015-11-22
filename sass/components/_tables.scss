@@ -8,6 +8,16 @@ table {
 	width: 100%;
 }
 
+thead {
+	border-bottom: em(1) solid $color__border-table;
+	background-color: darken($color__background-table-row, 30%);
+	color: #fff;
+}
+
+tr:nth-child(even) {
+	background-color: $color__background-table-row;
+}
+
 th,
 td {
 	padding: em(8);
@@ -16,14 +26,4 @@ td {
 	:last-child {
 		border: none;
 	}
-}
-
-th {
-	border-bottom: em(1) solid $color__border-table;
-	background-color: darken($color__background-table-row, 30%);
-	color: #fff;
-}
-
-.even {
-	background-color: $color__background-table-row;
 }

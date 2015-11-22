@@ -577,12 +577,18 @@ blockquote {
   margin: 0 1.5em;
   background-color: #DEECF9;
   font-style: italic;
-  /*cite {
-		margin-top: em(10);
-	}*/
+}
+
+blockquote::before, q::before {
+  float: left;
+  font-family: FontAwesome;
+  font-size: 1.25em;
+  font-style: normal;
+  content: "\f10d";
 }
 
 blockquote p {
+  padding-left: 2.1875em;
   margin: 0;
 }
 
@@ -590,12 +596,9 @@ blockquote p {
   margin: 0;
 }
 
-blockquote, q {
-  quotes: "" "";
-}
-
-blockquote:before, blockquote:after, q:before, q:after {
-  content: "";
+q::before {
+  font-size: 18px;
+  padding-right: 10px;
 }
 
 cite {
@@ -877,6 +880,16 @@ table {
   width: 100%;
 }
 
+thead {
+  border-bottom: 0.0625em solid #eee;
+  background-color: #5da1e1;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #DEECF9;
+}
+
 th,
 td {
   padding: 0.5em;
@@ -886,16 +899,6 @@ td {
 th :last-child,
 td :last-child {
   border: none;
-}
-
-th {
-  border-bottom: 0.0625em solid #eee;
-  background-color: #5da1e1;
-  color: #fff;
-}
-
-.even {
-  background-color: #DEECF9;
 }
 
 /**
