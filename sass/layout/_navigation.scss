@@ -7,7 +7,10 @@
  */
 
 a {
+	padding-bottom: em(1);
+	border-bottom: em(1) solid $color__border-link;
 	color: $color__link;
+	text-decoration: none;
 
 	&:visited {
 		color: $color__link-visited;
@@ -15,6 +18,7 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
+		border-bottom-color: lighten($color__border-link, 40%);
 		color: $color__link-hover;
 	}
 	&:focus {
