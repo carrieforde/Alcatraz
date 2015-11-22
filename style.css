@@ -286,7 +286,7 @@ th {
 /**
  * 2.3 Mixins
  */
-/* Em output with px fallback */
+/* Em output with px fallback (pixel fall backs will make adjusting font sizing easier later) */
 /* Center block */
 /* Clearfix */
 /* Clear after (not all clearfix need this also) */
@@ -857,7 +857,29 @@ input[type="submit"]:focus {
 */
 table {
   margin: 0 0 1.5em;
+  border: 0.0625em solid #eee;
   width: 100%;
+}
+
+th,
+td {
+  padding: 0.5em;
+  border-right: 0.0625em solid #eee;
+}
+
+th :last-child,
+td :last-child {
+  border: none;
+}
+
+th {
+  border-bottom: 0.0625em solid #eee;
+  background-color: #5da1e1;
+  color: #fff;
+}
+
+.even {
+  background-color: #DEECF9;
 }
 
 /**

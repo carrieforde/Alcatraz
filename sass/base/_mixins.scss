@@ -2,7 +2,7 @@
  * 2.3 Mixins
  */
 
-/* Em output with px fallback */
+/* Em output with px fallback (pixel fall backs will make adjusting font sizing easier later) */
 @mixin font-size( $sizeValue: 16 ) {
 	font-size: $sizeValue * 1px;
 	font-size: em($sizeValue);
