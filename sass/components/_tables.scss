@@ -4,5 +4,26 @@
 
 table {
 	margin: 0 0 1.5em;
+	border: em(1) solid $color__border-table;
 	width: 100%;
+}
+
+th,
+td {
+	padding: em(8);
+	border-right: em(1) solid $color__border-table;
+
+	:last-child {
+		border: none;
+	}
+}
+
+th {
+	border-bottom: em(1) solid $color__border-table;
+	background-color: darken($color__background-table-row, 30%);
+	color: #fff;
+}
+
+.even {
+	background-color: $color__background-table-row;
 }

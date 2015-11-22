@@ -101,6 +101,12 @@ function alcatraz_scripts() {
 		ALCATRAZ_VERSION
 	);
 
+	wp_enqueue_style(
+		'alcatraz-fonts',
+		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700',
+		false
+	);
+
 	wp_enqueue_script(
 		'alcatraz-navigation',
 		ALCATRAZ_URL . 'js/navigation.js',

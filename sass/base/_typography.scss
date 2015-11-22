@@ -8,8 +8,11 @@ input,
 select,
 textarea {
 	color: $color__text-main;
-	font-family: $font__main;
-	@include font-size(1);
+	font: {
+		family: $font__main;
+		weight: 300;
+	}
+	@include font-size(18);
 	line-height: $font__line-height-body;
 }
 
@@ -20,7 +23,36 @@ h3,
 h4,
 h5,
 h6 {
+	margin: em(20) 0 em(10) 0;
+	font:{
+		family: $font__headings;
+		weight: 600;
+	}
 	clear: both;
+}
+
+h1 {
+	@include font-size(36);
+}
+
+h2 {
+	@include font-size(30);
+}
+
+h3 {
+	@include font-size(24);
+}
+
+h4 {
+	@include font-size(20);
+}
+
+h5 {
+	@include font-size(18);
+}
+
+h6 {
+	@include font-size(16);
 }
 
 /* Copy */
@@ -28,12 +60,30 @@ p {
 	margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn,
+em,
+i {
 	font-style: italic;
 }
 
 blockquote {
+	padding: em(15) em(20) em(15) em(15);
+	border-left: em(5) solid darken($color__background-blockquote, 80%);
 	margin: 0 1.5em;
+	background-color: $color__background-blockquote;
+	font-style: italic;
+
+	p {
+		margin: 0;
+	}
+
+	/*cite {
+		margin-top: em(10);
+	}*/
+}
+
+blockquote p {
+	margin: 0;
 }
 
 blockquote, q {
@@ -45,6 +95,15 @@ blockquote, q {
 	}
 }
 
+cite {
+	display: inline-block;
+	margin-top: em(10);
+	font: {
+		style: normal;
+		weight: 700;
+	}
+}
+
 address {
 	margin: 0 0 1.5em;
 }
@@ -52,7 +111,7 @@ address {
 pre {
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(0.9375);
+	@include font-size(14);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;
@@ -60,17 +119,22 @@ pre {
 	padding: 1.6em;
 }
 
-code, kbd, tt, var {
+code,
+kbd,
+tt,
+var {
 	font-family: $font__code;
-	@include font-size(0.9375);
+	@include font-size(14);
 }
 
-abbr, acronym {
+abbr,
+acronym {
 	border-bottom: 1px dotted $color__border-abbr;
 	cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
 	background: $color__background-ins;
 	text-decoration: none;
 }
@@ -80,8 +144,11 @@ big {
 }
 
 /* Lists */
-ul, ol {
-	margin: 0 0 1.5em 3em;
+ul,
+ol {
+	padding-left: em(20);
+	margin-bottom: 1.25em;
+	margin-left: em(20);
 }
 
 ul {
@@ -96,6 +163,23 @@ li > ul,
 li > ol {
 	margin-bottom: 0;
 	margin-left: 1.5em;
+	margin-left: em(5);
+}
+
+li > ul {
+	list-style-type: circle;
+
+	li > ul {
+		list-style-type: square;
+	}
+}
+
+li > ol {
+	list-style-type: lower-alpha;
+
+	li > ol {
+		list-style-type: lower-roman;
+	}
 }
 
 dt {

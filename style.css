@@ -286,7 +286,7 @@ th {
 /**
  * 2.3 Mixins
  */
-/* Rem output with px fallback */
+/* Em output with px fallback (pixel fall backs will make adjusting font sizing easier later) */
 /* Center block */
 /* Clearfix */
 /* Clear after (not all clearfix need this also) */
@@ -339,8 +339,8 @@ hr {
   clip: auto !important;
   color: #21759b;
   display: block;
-  font-size: 14px;
-  font-size: 0.875rem;
+  font-size: 0.875px;
+  font-size: 0.0546875em;
   font-weight: bold;
   height: auto;
   left: 5px;
@@ -509,10 +509,11 @@ button,
 input,
 select,
 textarea {
-  color: #404040;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-size: 1rem;
+  color: #040A0F;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 300;
+  font-size: 18px;
+  font-size: 1.125em;
   line-height: 1.5;
 }
 
@@ -523,7 +524,40 @@ h3,
 h4,
 h5,
 h6 {
+  margin: 1.25em 0 0.625em 0;
+  font-family: "Source Serif Pro", serif;
+  font-weight: 600;
   clear: both;
+}
+
+h1 {
+  font-size: 36px;
+  font-size: 2.25em;
+}
+
+h2 {
+  font-size: 30px;
+  font-size: 1.875em;
+}
+
+h3 {
+  font-size: 24px;
+  font-size: 1.5em;
+}
+
+h4 {
+  font-size: 20px;
+  font-size: 1.25em;
+}
+
+h5 {
+  font-size: 18px;
+  font-size: 1.125em;
+}
+
+h6 {
+  font-size: 16px;
+  font-size: 1em;
 }
 
 /* Copy */
@@ -531,12 +565,29 @@ p {
   margin-bottom: 1.5em;
 }
 
-dfn, cite, em, i {
+dfn,
+em,
+i {
   font-style: italic;
 }
 
 blockquote {
+  padding: 0.9375em 1.25em 0.9375em 0.9375em;
+  border-left: 0.3125em solid #0a2035;
   margin: 0 1.5em;
+  background-color: #DEECF9;
+  font-style: italic;
+  /*cite {
+		margin-top: em(10);
+	}*/
+}
+
+blockquote p {
+  margin: 0;
+}
+
+blockquote p {
+  margin: 0;
 }
 
 blockquote, q {
@@ -547,15 +598,22 @@ blockquote:before, blockquote:after, q:before, q:after {
   content: "";
 }
 
+cite {
+  display: inline-block;
+  margin-top: 0.625em;
+  font-style: normal;
+  font-weight: 700;
+}
+
 address {
   margin: 0 0 1.5em;
 }
 
 pre {
-  background: #eee;
-  font-family: "Courier 10 Pitch", Courier, monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+  background: #DEECF9;
+  font-family: "Source Code Pro", Courier, monospace;
+  font-size: 14px;
+  font-size: 0.875em;
   line-height: 1.6;
   margin-bottom: 1.6em;
   max-width: 100%;
@@ -563,18 +621,23 @@ pre {
   padding: 1.6em;
 }
 
-code, kbd, tt, var {
-  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-  font-size: 15px;
-  font-size: 0.9375rem;
+code,
+kbd,
+tt,
+var {
+  font-family: "Source Code Pro", monospace;
+  font-size: 14px;
+  font-size: 0.875em;
 }
 
-abbr, acronym {
+abbr,
+acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-mark, ins {
+mark,
+ins {
   background: #fff9c0;
   text-decoration: none;
 }
@@ -584,8 +647,11 @@ big {
 }
 
 /* Lists */
-ul, ol {
-  margin: 0 0 1.5em 3em;
+ul,
+ol {
+  padding-left: 1.25em;
+  margin-bottom: 1.25em;
+  margin-left: 1.25em;
 }
 
 ul {
@@ -600,6 +666,23 @@ li > ul,
 li > ol {
   margin-bottom: 0;
   margin-left: 1.5em;
+  margin-left: 0.3125em;
+}
+
+li > ul {
+  list-style-type: circle;
+}
+
+li > ul li > ul {
+  list-style-type: square;
+}
+
+li > ol {
+  list-style-type: lower-alpha;
+}
+
+li > ol li > ol {
+  list-style-type: lower-roman;
 }
 
 dt {
@@ -759,8 +842,8 @@ input[type="submit"] {
   background: #e6e6e6;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
-  font-size: 12px;
-  font-size: 0.75rem;
+  font-size: 0.75px;
+  font-size: 0.046875em;
   line-height: 1;
   padding: .6em 1em .4em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
@@ -790,7 +873,29 @@ input[type="submit"]:focus {
 */
 table {
   margin: 0 0 1.5em;
+  border: 0.0625em solid #eee;
   width: 100%;
+}
+
+th,
+td {
+  padding: 0.5em;
+  border-right: 0.0625em solid #eee;
+}
+
+th :last-child,
+td :last-child {
+  border: none;
+}
+
+th {
+  border-bottom: 0.0625em solid #eee;
+  background-color: #5da1e1;
+  color: #fff;
+}
+
+.even {
+  background-color: #DEECF9;
 }
 
 /**
@@ -839,15 +944,19 @@ table {
  * 4.2.1 Links
  */
 a {
-  color: royalblue;
+  padding-bottom: 0.0625em;
+  border-bottom: 0.0625em solid #040A0F;
+  color: #3897EF;
+  text-decoration: none;
 }
 
 a:visited {
-  color: purple;
+  color: #0b4983;
 }
 
 a:hover, a:focus, a:active {
-  color: midnightblue;
+  border-bottom-color: #2f75b0;
+  color: #0e64b3;
 }
 
 a:focus {
