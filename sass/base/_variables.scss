@@ -1,11 +1,11 @@
 /**
- * 1.2 Variables
+ * 2.2 Variables
  *
  * Include all site variables in this file.
  */
 
 
-// 1.2.1 Colors
+// 2.2.1 Colors
 
 // Background Colors
 $color__background-body: #fff;
@@ -32,19 +32,19 @@ $color__border-input: #ccc;
 $color__border-abbr: #666;
 
 
-// 1.2.2 Typography
+// 2.2.2 Typography
 $font__main: sans-serif;
 $font__code: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
 $font__pre: "Courier 10 Pitch", Courier, monospace;
 $font__line-height-body: 1.5;
 $font__line-height-pre: 1.6;
 
-// 1.2.3 Structure
+// 2.2.3 Structure
 $size__site-width: 100%;
 $size__sidebar-width: 25%;
 $size__sidebar-content-width: $size__site-width - $size__sidebar-width;
 $size__default-padding: 20px;
 
-// 1.2.4 Media Query Break Points
+// 2.2.4 Media Query Break Points
 $breakpoint__600px: 600px;
 $breakpoint__768px: 768px;
