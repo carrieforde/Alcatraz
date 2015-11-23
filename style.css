@@ -938,6 +938,24 @@ td :last-child {
 
 .site-header .site-branding {
   padding: 20px 20px 0;
+  position: relative;
+}
+
+.site-header .site-title {
+  margin: 0 0 10px;
+}
+
+.site-header .site-description {
+  margin: 10px 0;
+}
+
+.transparent-header .site-header {
+  position: absolute;
+  z-index: 99;
+}
+
+.transparent-header .site-header .header-image-wrap {
+  display: none;
 }
 
 /**
