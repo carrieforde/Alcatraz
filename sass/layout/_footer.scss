@@ -18,38 +18,26 @@
 	}
 }
 
-@media (min-width: $breakpoint__768px) {
+@media (min-width: em(768)) {
 
 	.footer-widget-areas-2 {
 		.footer-widget-areas {
 			.widget-area {
-				width: 49%;
-				margin-right: 2%;
-				&:last-child {
-					margin-right: 0;
-				}
+				@include span-columns( 6 of 12 );
 			}
 		}
 	}
 	.footer-widget-areas-3 {
 		.footer-widget-areas {
 			.widget-area {
-				width: 32%;
-				margin-right: 2%;
-				&:last-child {
-					margin-right: 0;
-				}
+				@include span-columns( 4 of 12 );
 			}
 		}
 	}
 	.footer-widget-areas-4 {
 		.footer-widget-areas {
 			.widget-area {
-				width: 23.5%;
-				margin-right: 2%;
-				&:last-child {
-					margin-right: 0;
-				}
+				@include span-columns( 3 of 12 );
 			}
 		}
 	}

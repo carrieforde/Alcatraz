@@ -1183,22 +1183,28 @@ a:hover, a:active {
 
 @media (min-width: 48em) {
   .footer-widget-areas-2 .footer-widget-areas .widget-area {
-    width: 49%;
-    margin-right: 2%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
   }
   .footer-widget-areas-2 .footer-widget-areas .widget-area:last-child {
     margin-right: 0;
   }
   .footer-widget-areas-3 .footer-widget-areas .widget-area {
-    width: 32%;
-    margin-right: 2%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
   }
   .footer-widget-areas-3 .footer-widget-areas .widget-area:last-child {
     margin-right: 0;
   }
   .footer-widget-areas-4 .footer-widget-areas .widget-area {
-    width: 23.5%;
-    margin-right: 2%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 23.2317613015%;
   }
   .footer-widget-areas-4 .footer-widget-areas .widget-area:last-child {
     margin-right: 0;
