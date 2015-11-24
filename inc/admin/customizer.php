@@ -21,8 +21,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Move the Header Image control into our header section.
-	$wp_customize->get_control( 'header_image' )->section = 'alcatraz_header_section';
+	// Move the Header Image control to the bottom of our header section.
+	$wp_customize->get_control( 'header_image' )->section  = 'alcatraz_header_section';
+	$wp_customize->get_control( 'header_image' )->priority = 120;
 
 	// Disable the Header Text Color control.
 	$wp_customize->remove_control( 'header_textcolor' );
