@@ -30,6 +30,11 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = esc_attr( $options['page_layout'] );
 	}
 
+	// Header style class.
+	if ( isset( $options['header_style'] ) && $options['header_style'] ) {
+		$classes[] = 'header-style-' . esc_attr( $options['header_style'] );
+	}
+
 	// Transparent header class.
 	$transparent_header = get_post_meta( $post->ID, '_alcatraz_transparent_header', true );
 	if ( $transparent_header && 'on' == $transparent_header ) {

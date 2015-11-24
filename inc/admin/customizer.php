@@ -108,6 +108,30 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Header style.
+	$wp_customize->add_setting(
+		'alcatraz_options[header_style]',
+		array(
+			'default'    => 'default',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_header_style_control',
+		array(
+			'type'     => 'radio',
+			'label'    => __( 'Header Style', 'alcatraz' ),
+			'section'  => 'alcatraz_header_section',
+			'settings' => 'alcatraz_options[header_style]',
+			'choices'  => array(
+				'default' => __( 'Default', 'alcatraz' ),
+				'short'   => __( 'Short', 'alcatraz' ),
+				'side'    => __( 'Side', 'alcatraz' ),
+			),
+		)
+	);
+
 	// Number of footer widget areas.
 	$wp_customize->add_setting(
 		'alcatraz_options[footer_widget_areas]',
