@@ -566,124 +566,70 @@ hr {
   .alcatraz-col-12:last-child {
     margin-right: 0;
   }
-  .no-gutter .alcatraz-col-1 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 6.1721527019%;
-    margin-right: 0;
+  .no-gutter {
+    width: 100%;
+    display: table;
+    width: 100%;
+    table-layout: fixed;
   }
-  .no-gutter .alcatraz-col-1:last-child {
+  .no-gutter .alcatraz-col-1 {
+    display: table-cell;
+    width: 8.3333333333%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-2 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 14.7019570017%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-2:last-child {
+    display: table-cell;
+    width: 16.6666666667%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-3 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-3:last-child {
+    display: table-cell;
+    width: 25%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-4 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-4:last-child {
+    display: table-cell;
+    width: 33.3333333333%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-5 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 40.2913699012%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-5:last-child {
+    display: table-cell;
+    width: 41.6666666667%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-6 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-6:last-child {
+    display: table-cell;
+    width: 50%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-7 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 57.3509785009%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-7:last-child {
+    display: table-cell;
+    width: 58.3333333333%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-8 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-8:last-child {
+    display: table-cell;
+    width: 66.6666666667%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-9 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 74.4105871005%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-9:last-child {
+    display: table-cell;
+    width: 75%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-10 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 82.9403914003%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-10:last-child {
+    display: table-cell;
+    width: 83.3333333333%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-11 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 91.4701957002%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-11:last-child {
+    display: table-cell;
+    width: 91.6666666667%;
     margin-right: 0;
   }
   .no-gutter .alcatraz-col-12 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
+    display: table-cell;
     width: 100%;
-    margin-right: 0;
-  }
-  .no-gutter .alcatraz-col-12:last-child {
     margin-right: 0;
   }
 }
@@ -1370,31 +1316,16 @@ a:hover, a:active {
 
 @media (min-width: 48em) {
   .footer-widget-areas-2 .footer-widget-areas .widget-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%;
-  }
-  .footer-widget-areas-2 .footer-widget-areas .widget-area:last-child {
-    margin-right: 0;
+    display: table-cell;
+    width: 50%;
   }
   .footer-widget-areas-3 .footer-widget-areas .widget-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-  }
-  .footer-widget-areas-3 .footer-widget-areas .widget-area:last-child {
-    margin-right: 0;
+    display: table-cell;
+    width: 33.3333333333%;
   }
   .footer-widget-areas-4 .footer-widget-areas .widget-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
-  }
-  .footer-widget-areas-4 .footer-widget-areas .widget-area:last-child {
-    margin-right: 0;
+    display: table-cell;
+    width: 25%;
   }
 }
 
