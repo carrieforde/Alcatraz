@@ -26,7 +26,7 @@
 	padding: em(15);
 }
 
-@media (min-width: $breakpoint__600px) {
+@media (min-width: em(600)) {
 
 	.alcatraz-col-1 {
 		@include span-columns( 1 of 12 );

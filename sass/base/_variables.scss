@@ -49,8 +49,3 @@ $size__site-width: 100%;
 $size__sidebar-width: 25%;
 $size__sidebar-content-width: $size__site-width - $size__sidebar-width;
 $size__default-padding: 20px;
-
-
-// 2.2.4 Media Query Break Points
-$breakpoint__600px: em(600px, $em-base);
-$breakpoint__768px: em(768px, $em-base);
