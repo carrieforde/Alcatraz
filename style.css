@@ -1274,22 +1274,56 @@ a:hover, a:active {
 
 @media (min-width: 48em) {
   /* Left Sidebar */
+  .left-sidebar {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    display: block;
+  }
   .left-sidebar .content-area {
     float: right;
-    width: 75%;
+    display: block;
+    margin-left: 2.3576515979%;
+    width: 65.8807828007%;
+  }
+  .left-sidebar .content-area:last-child {
+    margin-left: 0;
   }
   .left-sidebar .primary-sidebar {
-    float: left;
-    width: 25%;
+    float: right;
+    display: block;
+    margin-left: 2.3576515979%;
+    width: 31.7615656014%;
+  }
+  .left-sidebar .primary-sidebar:last-child {
+    margin-left: 0;
   }
   /* Right Sidebar */
+  .right-sidebar {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    display: block;
+  }
   .right-sidebar .content-area {
     float: left;
-    width: 75%;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 65.8807828007%;
+  }
+  .right-sidebar .content-area:last-child {
+    margin-right: 0;
   }
   .right-sidebar .primary-sidebar {
-    float: right;
-    width: 25%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+  }
+  .right-sidebar .primary-sidebar:last-child {
+    margin-right: 0;
   }
 }
 
@@ -1316,16 +1350,31 @@ a:hover, a:active {
 
 @media (min-width: 48em) {
   .footer-widget-areas-2 .footer-widget-areas .widget-area {
-    display: table-cell;
-    width: 50%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 48.821174201%;
+  }
+  .footer-widget-areas-2 .footer-widget-areas .widget-area:last-child {
+    margin-right: 0;
   }
   .footer-widget-areas-3 .footer-widget-areas .widget-area {
-    display: table-cell;
-    width: 33.3333333333%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+  }
+  .footer-widget-areas-3 .footer-widget-areas .widget-area:last-child {
+    margin-right: 0;
   }
   .footer-widget-areas-4 .footer-widget-areas .widget-area {
-    display: table-cell;
-    width: 25%;
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 23.2317613015%;
+  }
+  .footer-widget-areas-4 .footer-widget-areas .widget-area:last-child {
+    margin-right: 0;
   }
 }
 

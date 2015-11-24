@@ -7,29 +7,29 @@
 	padding: $size__default-padding;
 }
 
-@media (min-width: $breakpoint__768px) {
+@media (min-width: em(768)) {
 
 	/* Left Sidebar */
 	.left-sidebar {
+		@include row(block, rtl);
+
 		.content-area {
-			float: right;
-			width: $size__sidebar-content-width;
+			@include span-columns( 8 of 12 );
 		}
 		.primary-sidebar {
-			float: left;
-			width: $size__sidebar-width;
+			@include span-columns( 4 of 12 );
 		}
 	}
 
 	/* Right Sidebar */
 	.right-sidebar {
+		@include row(block, ltr);
+
 		.content-area {
-			float: left;
-			width: $size__sidebar-content-width;
+			@include span-columns( 8 of 12 );
 		}
 		.primary-sidebar {
-			float: right;
-			width: $size__sidebar-width;
+			@include span-columns( 4 of 12 );
 		}
 	}
 }
