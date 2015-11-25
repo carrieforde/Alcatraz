@@ -4,7 +4,6 @@
 
 .site-header {
 	position: relative;
-
 	.header-image-wrap {
 		position: absolute;
 		display: block;
@@ -18,5 +17,20 @@
 	}
 	.site-branding {
 		padding: $size__default-padding $size__default-padding 0;
+		position: relative;
+	}
+	.site-title {
+		margin: 0 0 10px;
+	}
+	.site-description {
+		margin: 10px 0;
+	}
+}
+
+.transparent-header .site-header {
+	position: absolute;
+	z-index: 99;
+	.header-image-wrap {
+		display: none;
 	}
 }
