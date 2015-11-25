@@ -21,8 +21,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Move the Header Image control into our header section.
-	$wp_customize->get_control( 'header_image' )->section = 'alcatraz_header_section';
+	// Move the Header Image control to the bottom of our header section.
+	$wp_customize->get_control( 'header_image' )->section  = 'alcatraz_header_section';
+	$wp_customize->get_control( 'header_image' )->priority = 120;
 
 	// Disable the Header Text Color control.
 	$wp_customize->remove_control( 'header_textcolor' );
@@ -105,6 +106,30 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Include Page Banner Widget Area?', 'alcatraz' ),
 			'section'  => 'alcatraz_layout_section',
 			'settings' => 'alcatraz_options[page_banner_widget_area]',
+		)
+	);
+
+	// Header style.
+	$wp_customize->add_setting(
+		'alcatraz_options[header_style]',
+		array(
+			'default'    => 'default',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_header_style_control',
+		array(
+			'type'     => 'radio',
+			'label'    => __( 'Header Style', 'alcatraz' ),
+			'section'  => 'alcatraz_header_section',
+			'settings' => 'alcatraz_options[header_style]',
+			'choices'  => array(
+				'default' => __( 'Default', 'alcatraz' ),
+				'short'   => __( 'Short', 'alcatraz' ),
+				'side'    => __( 'Side', 'alcatraz' ),
+			),
 		)
 	);
 
