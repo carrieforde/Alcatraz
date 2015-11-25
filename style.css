@@ -1076,6 +1076,10 @@ td :last-child {
 
 .site-header .site-title {
   margin: 0 0 10px;
+  font-size: 30px;
+  font-size: 1.875em;
+  font-family: "Source Serif Pro", serif;
+  font-weight: 600;
 }
 
 .site-header .site-description {
@@ -1091,6 +1095,22 @@ td :last-child {
   display: none;
 }
 
+@media (min-width: 48em) {
+  .header-style-short .site-branding {
+    float: left;
+    width: 300px;
+  }
+  .header-style-short .main-navigation {
+    float: right;
+    width: calc( 100% - 300px);
+    padding: 20px;
+    text-align: right;
+  }
+  .header-style-short .main-navigation > div {
+    display: inline-block;
+  }
+}
+
 /**
  * 4.2 Navigation
  */
@@ -1099,7 +1119,6 @@ td :last-child {
  */
 a {
   padding-bottom: 0.0625em;
-  border-bottom: 0.0625em solid #040A0F;
   color: #3897EF;
   text-decoration: none;
 }
@@ -1109,7 +1128,6 @@ a:visited {
 }
 
 a:hover, a:focus, a:active {
-  border-bottom-color: #2f75b0;
   color: #0e64b3;
 }
 
@@ -1125,7 +1143,6 @@ a:hover, a:active {
  * 4.2.2 Menus
  */
 .main-navigation {
-  clear: both;
   display: block;
   float: left;
   width: 100%;

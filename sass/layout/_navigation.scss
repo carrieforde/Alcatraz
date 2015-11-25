@@ -8,7 +8,6 @@
 
 a {
 	padding-bottom: em(1);
-	border-bottom: em(1) solid $color__border-link;
 	color: $color__link;
 	text-decoration: none;
 
@@ -18,7 +17,6 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		border-bottom-color: lighten($color__border-link, 40%);
 		color: $color__link-hover;
 	}
 	&:focus {
@@ -35,7 +33,6 @@ a {
  */
 
 .main-navigation {
-	clear: both;
 	display: block;
 	float: left;
 	width: 100%;

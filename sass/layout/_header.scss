@@ -21,6 +21,11 @@
 	}
 	.site-title {
 		margin: 0 0 10px;
+		@include font-size(30);
+		font: {
+			family: $font__headings;
+			weight: 600;
+		}
 	}
 	.site-description {
 		margin: 10px 0;
@@ -32,5 +37,27 @@
 	z-index: 99;
 	.header-image-wrap {
 		display: none;
+	}
+}
+
+@media (min-width: em(768)) {
+
+	.header-style-short {
+
+		.site-branding {
+			float: left;
+			width: $size__site-branding;
+		}
+
+		.main-navigation {
+			float: right;
+			width: calc( 100% - 300px );
+			padding: $size__default-padding;
+			text-align: right;
+
+			> div {
+				display: inline-block;
+			}
+		}
 	}
 }
