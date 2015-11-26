@@ -30,34 +30,40 @@
 
 	<header id="masthead" class="site-header" role="banner">
 
-		<?php do_action( 'alcatraz_before_header_inside' ); ?>
+	<?php add_action( 'alcatraz_header', 'alcatraz_header_output', 10 );
 
-		<div class="site-branding">
-			<?php if ( is_front_page() && is_home() ) : ?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<?php else : ?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-			<?php endif;
+	function alcatraz_header_output() {
 
 			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'alcatraz' ); ?></button>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-		</nav>
+			echo '<div class="inner-header">';
 
-		<?php do_action( 'alcatraz_after_header_inside' ); ?>
+			?>
 
-	</header>
+			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-	<?php do_action( 'alcatraz_after_header' ); ?>
+			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 
-	<?php do_action( 'alcatraz_before_content' ); ?>
+			<?php
 
-	<div id="content" class="site-content">
+			echo '</div>';
+		}
 
-		<?php do_action( 'alcatraz_before_content_inside' ); ?>
+	do_action( 'alcatraz_header' ); ?>
+
+	<nav id="site-navigation" class="main-navigation" role="navigation">
+		<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'alcatraz' ); ?></button>
+		<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+	</nav>
+
+	<?php do_action( 'alcatraz_after_header_inside' ); ?>
+
+</header>
+
+<?php do_action( 'alcatraz_after_header' ); ?>
+
+<?php do_action( 'alcatraz_before_content' ); ?>
+
+<div id="content" class="site-content">
+
+	<?php do_action( 'alcatraz_before_content_inside' ); ?>
