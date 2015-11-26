@@ -165,6 +165,11 @@ require_once ALCATRAZ_PATH . 'inc/choices.php';
 require_once ALCATRAZ_PATH . 'inc/template-tags.php';
 
 /**
+ * Theme hook output.
+ */
+require_once ALCATRAZ_PATH . 'inc/theme-hooks.php';
+
+/**
  * Widget Areas.
  */
 require_once ALCATRAZ_PATH . 'inc/widget-areas.php';
