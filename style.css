@@ -477,7 +477,7 @@ hr {
   padding: 0.9375em;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 48em) {
   .alcatraz-col-1 {
     float: left;
     display: block;
@@ -1126,15 +1126,6 @@ td :last-child {
 }
 
 @media (min-width: 60em) {
-  .header-style-side {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    width: 100%;
-    max-width: 68em;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .header-style-side .site-header {
     float: left;
     display: block;

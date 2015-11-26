@@ -61,7 +61,6 @@
 @media (min-width: em(960)) {
 	.header-style-side {
 		@include display-context() {
-			@include outer-container();
 			@include direction-context() {
 
 				.site-header {
