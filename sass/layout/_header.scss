@@ -47,15 +47,6 @@
 		.site-branding {
 			text-align: center;
 		}
-
-		.main-navigation {
-			float: none;
-			text-align: center;
-
-			> div {
-				display: inline-block;
-			}
-		}
 	}
 
 	.header-style-short {
@@ -63,17 +54,6 @@
 		.site-branding {
 			float: left;
 			width: $size__site-branding;
-		}
-
-		.main-navigation {
-			float: right;
-			width: calc( 100% - 300px );
-			padding: $size__default-padding;
-			text-align: right;
-
-			> div {
-				display: inline-block;
-			}
 		}
 	}
 }

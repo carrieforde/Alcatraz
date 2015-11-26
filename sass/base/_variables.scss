@@ -7,6 +7,10 @@
 
 // 2.2.1 Colors
 
+// Color Palette
+$text-color: #040a0f;
+$accent-blue: #3897ef;
+
 // Background Colors
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
@@ -21,10 +25,10 @@ $color__background-table-row: #DEECF9;
 $color__text-screen: #21759b;
 $color__text-input: #666;
 $color__text-input-focus: #111;
-$color__link: #3897EF;
-$color__link-visited: darken($color__link, 30%);
+$color__link: $accent-blue;
+$color__link-visited: darken($color__link, 40%);
 $color__link-hover: darken($color__link, 20%);
-$color__text-main: #040A0F;
+$color__text-main: $text-color;
 
 // Border Colors
 $color__border-button: #ccc #ccc #bbb;

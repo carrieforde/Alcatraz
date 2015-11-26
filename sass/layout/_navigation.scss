@@ -7,7 +7,6 @@
  */
 
 a {
-	padding-bottom: em(1);
 	color: $color__link;
 	text-decoration: none;
 
@@ -36,6 +35,34 @@ a {
 	display: block;
 	float: left;
 	width: 100%;
+
+	@media (min-width: em(768)) {
+		.header-style-default & {
+			float: none;
+			background-color: $accent-blue;
+			text-align: center;
+
+			> div {
+				display: inline-block;
+
+				a {
+					color: #fff;
+				}
+			}
+		}
+
+		.header-style-short & {
+			float: right;
+			width: calc(100% - 300px);
+			padding: $size__default-padding;
+			text-align: right;
+
+			> div {
+				display: inline-block;
+			}
+		}
+	}
+
 
 	ul {
 		display: none;
@@ -84,6 +111,7 @@ a {
 	li {
 		float: left;
 		position: relative;
+		padding: 10px 20px;
 
 		&:hover > a,
 		&.focus > a {
@@ -107,7 +135,7 @@ a {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media (min-width: em(768)) {
 	.menu-toggle {
 		display: none;
 	}

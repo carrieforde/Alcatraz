@@ -662,7 +662,7 @@ button,
 input,
 select,
 textarea {
-  color: #040A0F;
+  color: #040a0f;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -1119,25 +1119,9 @@ td :last-child {
   .header-style-default .site-branding {
     text-align: center;
   }
-  .header-style-default .main-navigation {
-    float: none;
-    text-align: center;
-  }
-  .header-style-default .main-navigation > div {
-    display: inline-block;
-  }
   .header-style-short .site-branding {
     float: left;
     width: 300px;
-  }
-  .header-style-short .main-navigation {
-    float: right;
-    width: calc( 100% - 300px);
-    padding: 20px;
-    text-align: right;
-  }
-  .header-style-short .main-navigation > div {
-    display: inline-block;
   }
 }
 
@@ -1183,13 +1167,12 @@ td :last-child {
  * 4.2.1 Links
  */
 a {
-  padding-bottom: 0.0625em;
-  color: #3897EF;
+  color: #3897ef;
   text-decoration: none;
 }
 
 a:visited {
-  color: #0b4983;
+  color: #072f54;
 }
 
 a:hover, a:focus, a:active {
@@ -1211,6 +1194,29 @@ a:hover, a:active {
   display: block;
   float: left;
   width: 100%;
+}
+
+@media (min-width: 48em) {
+  .header-style-default .main-navigation {
+    float: none;
+    background-color: #3897ef;
+    text-align: center;
+  }
+  .header-style-default .main-navigation > div {
+    display: inline-block;
+  }
+  .header-style-default .main-navigation > div a {
+    color: #fff;
+  }
+  .header-style-short .main-navigation {
+    float: right;
+    width: calc(100% - 300px);
+    padding: 20px;
+    text-align: right;
+  }
+  .header-style-short .main-navigation > div {
+    display: inline-block;
+  }
 }
 
 .main-navigation ul {
@@ -1251,6 +1257,7 @@ a:hover, a:active {
 .main-navigation li {
   float: left;
   position: relative;
+  padding: 10px 20px;
 }
 
 .main-navigation a {
@@ -1264,7 +1271,7 @@ a:hover, a:active {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media (min-width: 48em) {
   .menu-toggle {
     display: none;
   }
