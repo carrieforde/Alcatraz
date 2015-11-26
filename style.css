@@ -1069,7 +1069,7 @@ td :last-child {
   display: block;
 }
 
-.site-header .site-branding {
+.site-header .header-inner {
   padding: 20px 20px 0;
   position: relative;
 }
