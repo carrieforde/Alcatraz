@@ -44,7 +44,7 @@
 
 	.header-style-default {
 
-		.site-branding {
+		.header-inner {
 			text-align: center;
 		}
 	}
@@ -53,7 +53,7 @@
 		@include display-context() {
 			@include direction-context() {
 
-				.site-branding {
+				.header-inner {
 					@include span-columns(4 of 12);
 					padding: $size__default-padding;
 				}

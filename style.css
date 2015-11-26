@@ -1096,17 +1096,17 @@ td :last-child {
 }
 
 @media (min-width: 48em) {
-  .header-style-default .site-branding {
+  .header-style-default .header-inner {
     text-align: center;
   }
-  .header-style-short .site-branding {
+  .header-style-short .header-inner {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
     width: 31.7615656014%;
     padding: 20px;
   }
-  .header-style-short .site-branding:last-child {
+  .header-style-short .header-inner:last-child {
     margin-right: 0;
   }
   .header-style-short .main-navigation {
