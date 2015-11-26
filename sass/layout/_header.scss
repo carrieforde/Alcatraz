@@ -21,6 +21,11 @@
 	}
 	.site-title {
 		margin: 0 0 10px;
+		@include font-size(30);
+		font: {
+			family: $font__headings;
+			weight: 600;
+		}
 	}
 	.site-description {
 		margin: 10px 0;
@@ -32,5 +37,55 @@
 	z-index: 99;
 	.header-image-wrap {
 		display: none;
+	}
+}
+
+@media (min-width: em(768)) {
+
+	.header-style-default {
+
+		.site-branding {
+			text-align: center;
+		}
+	}
+
+	.header-style-short {
+		@include display-context() {
+			@include direction-context() {
+
+				.site-branding {
+					@include span-columns(4 of 12);
+					padding: $size__default-padding;
+				}
+
+				.main-navigation {
+					@include span-columns(8 of 12);
+					@include omega();
+				}
+			}
+		}
+	}
+}
+
+@media (min-width: em(960)) {
+	.header-style-side {
+		@include display-context() {
+			@include direction-context() {
+
+				.site-header {
+					@include span-columns(4 of 12);
+					padding: $size__default-padding;
+				}
+
+				.site-content {
+					@include span-columns(8 of 12);
+					@include omega();
+				}
+			}
+		}
+
+		/*.main-navigation li {
+			float: none;
+		}*/
 	}
 }

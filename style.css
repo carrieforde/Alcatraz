@@ -457,7 +457,7 @@ hr {
   padding: 0.9375em;
 }
 
-@media (min-width: 37.5em) {
+@media (min-width: 48em) {
   .alcatraz-col-1 {
     float: left;
     display: block;
@@ -642,7 +642,7 @@ button,
 input,
 select,
 textarea {
-  color: #040A0F;
+  color: #040a0f;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -1076,6 +1076,10 @@ td :last-child {
 
 .site-header .site-title {
   margin: 0 0 10px;
+  font-size: 30px;
+  font-size: 1.875em;
+  font-family: "Source Serif Pro", serif;
+  font-weight: 600;
 }
 
 .site-header .site-description {
@@ -1091,6 +1095,60 @@ td :last-child {
   display: none;
 }
 
+@media (min-width: 48em) {
+  .header-style-default .site-branding {
+    text-align: center;
+  }
+  .header-style-short .site-branding {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+    padding: 20px;
+  }
+  .header-style-short .site-branding:last-child {
+    margin-right: 0;
+  }
+  .header-style-short .main-navigation {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 65.8807828007%;
+    margin-right: 0;
+  }
+  .header-style-short .main-navigation:last-child {
+    margin-right: 0;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side {
+    /*.main-navigation li {
+			float: none;
+		}*/
+  }
+  .header-style-side .site-header {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+    padding: 20px;
+  }
+  .header-style-side .site-header:last-child {
+    margin-right: 0;
+  }
+  .header-style-side .site-content {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 65.8807828007%;
+    margin-right: 0;
+  }
+  .header-style-side .site-content:last-child {
+    margin-right: 0;
+  }
+}
+
 /**
  * 4.2 Navigation
  */
@@ -1098,18 +1156,15 @@ td :last-child {
  * 4.2.1 Links
  */
 a {
-  padding-bottom: 0.0625em;
-  border-bottom: 0.0625em solid #040A0F;
-  color: #3897EF;
+  color: #3897ef;
   text-decoration: none;
 }
 
 a:visited {
-  color: #0b4983;
+  color: #072f54;
 }
 
 a:hover, a:focus, a:active {
-  border-bottom-color: #2f75b0;
   color: #0e64b3;
 }
 
@@ -1125,10 +1180,36 @@ a:hover, a:active {
  * 4.2.2 Menus
  */
 .main-navigation {
-  clear: both;
   display: block;
   float: left;
   width: 100%;
+}
+
+@media (min-width: 48em) {
+  .header-style-default .main-navigation {
+    float: none;
+    background-color: #3897ef;
+    text-align: center;
+  }
+  .header-style-default .main-navigation > div {
+    display: inline-block;
+  }
+  .header-style-default .main-navigation > div a {
+    color: #fff;
+  }
+  .header-style-short .main-navigation {
+    padding: 20px;
+    text-align: right;
+  }
+  .header-style-short .main-navigation > div {
+    display: inline-block;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .main-navigation li {
+    float: none;
+  }
 }
 
 .main-navigation ul {
@@ -1169,6 +1250,7 @@ a:hover, a:active {
 .main-navigation li {
   float: left;
   position: relative;
+  padding: 10px 20px;
 }
 
 .main-navigation a {
@@ -1182,7 +1264,7 @@ a:hover, a:active {
   display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media (min-width: 48em) {
   .menu-toggle {
     display: none;
   }

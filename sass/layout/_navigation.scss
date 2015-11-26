@@ -7,8 +7,6 @@
  */
 
 a {
-	padding-bottom: em(1);
-	border-bottom: em(1) solid $color__border-link;
 	color: $color__link;
 	text-decoration: none;
 
@@ -18,7 +16,6 @@ a {
 	&:hover,
 	&:focus,
 	&:active {
-		border-bottom-color: lighten($color__border-link, 40%);
 		color: $color__link-hover;
 	}
 	&:focus {
@@ -35,10 +32,40 @@ a {
  */
 
 .main-navigation {
-	clear: both;
 	display: block;
 	float: left;
 	width: 100%;
+
+	@media (min-width: em(768)) {
+		.header-style-default & {
+			float: none;
+			background-color: $accent-blue;
+			text-align: center;
+
+			> div {
+				display: inline-block;
+
+				a {
+					color: #fff;
+				}
+			}
+		}
+
+		.header-style-short & {
+			padding: $size__default-padding;
+			text-align: right;
+
+			> div {
+				display: inline-block;
+			}
+		}
+	}
+
+	@media (min-width: em(960)) {
+		.header-style-side & li {
+			float: none;
+		}
+	}
 
 	ul {
 		display: none;
@@ -87,6 +114,7 @@ a {
 	li {
 		float: left;
 		position: relative;
+		padding: 10px 20px;
 
 		&:hover > a,
 		&.focus > a {
@@ -110,7 +138,7 @@ a {
 	display: block;
 }
 
-@media screen and (min-width: 37.5em) {
+@media (min-width: em(768)) {
 	.menu-toggle {
 		display: none;
 	}
