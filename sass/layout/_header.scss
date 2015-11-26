@@ -42,6 +42,22 @@
 
 @media (min-width: em(768)) {
 
+	.header-style-default {
+
+		.site-branding {
+			text-align: center;
+		}
+
+		.main-navigation {
+			float: none;
+			text-align: center;
+
+			> div {
+				display: inline-block;
+			}
+		}
+	}
+
 	.header-style-short {
 
 		.site-branding {
@@ -60,7 +76,9 @@
 			}
 		}
 	}
+}
 
+@media (min-width: em(960)) {
 	.header-style-side {
 		@include display-context() {
 			@include outer-container();
@@ -68,6 +86,7 @@
 
 				.site-header {
 					@include span-columns(4 of 12);
+					padding: $size__default-padding;
 				}
 
 				.site-content {
