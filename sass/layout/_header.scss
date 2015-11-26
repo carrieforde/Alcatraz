@@ -60,4 +60,25 @@
 			}
 		}
 	}
+
+	.header-style-side {
+		@include display-context() {
+			@include outer-container();
+			@include direction-context() {
+
+				.site-header {
+					@include span-columns(4 of 12);
+				}
+
+				.site-content {
+					@include span-columns(8 of 12);
+					@include omega();
+				}
+			}
+		}
+
+		.main-navigation li {
+			float: none;
+		}
+	}
 }

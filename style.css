@@ -1109,6 +1109,37 @@ td :last-child {
   .header-style-short .main-navigation > div {
     display: inline-block;
   }
+  .header-style-side {
+    content: "";
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    max-width: 68em;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header-style-side .site-header {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 31.7615656014%;
+  }
+  .header-style-side .site-header:last-child {
+    margin-right: 0;
+  }
+  .header-style-side .site-content {
+    float: left;
+    display: block;
+    margin-right: 2.3576515979%;
+    width: 65.8807828007%;
+    margin-right: 0;
+  }
+  .header-style-side .site-content:last-child {
+    margin-right: 0;
+  }
+  .header-style-side .main-navigation li {
+    float: none;
+  }
 }
 
 /**
