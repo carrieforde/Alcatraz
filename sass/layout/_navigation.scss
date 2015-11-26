@@ -52,8 +52,6 @@ a {
 		}
 
 		.header-style-short & {
-			float: right;
-			width: calc(100% - 300px);
 			padding: $size__default-padding;
 			text-align: right;
 
@@ -63,6 +61,11 @@ a {
 		}
 	}
 
+	@media (min-width: em(960)) {
+		.header-style-side & li {
+			float: none;
+		}
+	}
 
 	ul {
 		display: none;

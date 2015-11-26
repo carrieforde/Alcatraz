@@ -50,10 +50,19 @@
 	}
 
 	.header-style-short {
+		@include display-context() {
+			@include direction-context() {
 
-		.site-branding {
-			float: left;
-			width: $size__site-branding;
+				.site-branding {
+					@include span-columns(4 of 12);
+					padding: $size__default-padding;
+				}
+
+				.main-navigation {
+					@include span-columns(8 of 12);
+					@include omega();
+				}
+			}
 		}
 	}
 }
@@ -75,8 +84,8 @@
 			}
 		}
 
-		.main-navigation li {
+		/*.main-navigation li {
 			float: none;
-		}
+		}*/
 	}
 }
