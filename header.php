@@ -34,20 +34,20 @@
 
 	function alcatraz_header_output() {
 
-			$description = get_bloginfo( 'description', 'display' );
+		$description = get_bloginfo( 'description', 'display' );
 
-			echo '<div class="inner-header">';
+		echo '<div class="inner-header">';
 
-			?>
+		?>
 
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+		<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 
-			<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+		<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
 
-			<?php
+		<?php
 
-			echo '</div>';
-		}
+		echo '</div>';
+	}
 
 	do_action( 'alcatraz_header' ); ?>
 
