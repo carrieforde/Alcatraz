@@ -22,13 +22,18 @@ function alcatraz_body_classes( $classes ) {
 
 	$options = get_option( 'alcatraz_options' );
 
+	// Site layout class.
+	if ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
+		$classes[] = esc_attr( $options['site_layout'] );
+	}
+
 	// Page layout class.
 	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
 	if ( $page_layout && 'default' != $page_layout ) {
-		if ( 'full-width' != $page_layout ) {
+		if ( 'no-sidebar' != $page_layout ) {
 			$classes[] = esc_attr( $page_layout );
 		}
-	} elseif ( isset( $options['page_layout'] ) && 'full-width' != $options['page_layout'] ) {
+	} elseif ( isset( $options['page_layout'] ) && 'no-sidebar' != $options['page_layout'] ) {
 		$classes[] = esc_attr( $options['page_layout'] );
 	}
 
