@@ -66,6 +66,29 @@ function alcatraz_customize_register( $wp_customize ) {
 	 * Alcatraz theme controls.
 	 */
 
+	// Site layout.
+	$wp_customize->add_setting(
+		'alcatraz_options[site_layout]',
+		array(
+			'default'    => 'full-width',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_site_layout_control',
+		array(
+			'type'     => 'radio',
+			'label'    => __( 'Site Layout', 'alcatraz' ),
+			'section'  => 'alcatraz_layout_section',
+			'settings' => 'alcatraz_options[site_layout]',
+			'choices'  => array(
+				'full-width' => __( 'Full Width', 'alcatraz' ),
+				'boxed'      => __( 'Boxed', 'alcatraz' ),
+			),
+		)
+	);
+
 	// Page layout.
 	$wp_customize->add_setting(
 		'alcatraz_options[page_layout]',
@@ -83,7 +106,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'section'  => 'alcatraz_layout_section',
 			'settings' => 'alcatraz_options[page_layout]',
 			'choices'  => array(
-				'full-width'    => __( 'Full Width', 'alcatraz' ),
+				'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
 				'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
 				'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
 			),

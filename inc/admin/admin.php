@@ -38,7 +38,7 @@ function alcatraz_page_options_metabox() {
 		'type'    => 'select',
 		'options' => array(
 			'default'       => __( 'Default', 'alcatraz' ),
-			'full-width'    => __( 'Full Width', 'alcatraz' ),
+			'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
 			'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
 			'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
 		),
