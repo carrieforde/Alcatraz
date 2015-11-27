@@ -48,3 +48,21 @@ function alcatraz_output_site_description() {
 		);
 	}
 }
+
+add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
+/**
+ * Output the footer bottom.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_output_footer_bottom() {
+
+	$options = get_option( 'alcatraz_options' );
+
+	if ( isset( $options['footer_bottom'] ) && ! empty( $options['footer_bottom'] ) ) {
+		printf(
+			'<div class="footer-bottom">%s</div>',
+			wp_kses_post( do_shortcode( $options['footer_bottom'] ) )
+		);
+	}
+}

@@ -1448,6 +1448,10 @@ a:hover, a:active {
   width: 100%;
 }
 
+.site-footer .footer-bottom {
+  text-align: center;
+}
+
 @media (min-width: 48em) {
   .footer-widget-areas-2 .footer-widget-areas .widget-area {
     float: left;

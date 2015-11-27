@@ -158,6 +158,25 @@ function alcatraz_customize_register( $wp_customize ) {
 			),
 		)
 	);
+
+	// Footer bottom.
+	$wp_customize->add_setting(
+		'alcatraz_options[footer_bottom]',
+		array(
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_footer_bottom_control',
+		array(
+			'type'     => 'textarea',
+			'label'    => __( 'Footer Bottom Content', 'alcatraz' ),
+			'section'  => 'alcatraz_footer_section',
+			'settings' => 'alcatraz_options[footer_bottom]',
+		)
+	);
 }
 
 add_action( 'customize_preview_init', 'alcatraz_customize_preview_js' );
