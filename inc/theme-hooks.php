@@ -59,7 +59,7 @@ function alcatraz_output_footer_bottom() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( isset( $options['footer_bottom'] ) && ! empty( $options['footer_bottom'] ) ) {
+	if ( ! empty( $options['footer_bottom'] ) ) {
 		printf(
 			'<div class="footer-bottom">%s</div>',
 			wp_kses_post( do_shortcode( $options['footer_bottom'] ) )
