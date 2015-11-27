@@ -107,7 +107,7 @@ function alcatraz_output_page_banner_widget_area() {
 	}
 }
 
-add_action( 'alcatraz_before_footer_inside', 'alcatraz_output_footer_widget_areas', 30 );
+add_action( 'alcatraz_footer', 'alcatraz_output_footer_widget_areas', 8 );
 /**
  * Maybe output the Footer widget areas.
  *
