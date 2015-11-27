@@ -17,7 +17,7 @@
 
 	<?php do_action( 'alcatraz_before_footer' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
+	<footer id="site-footer" class="site-footer" role="contentinfo">
 
 		<?php do_action( 'alcatraz_footer' ); ?>
 
