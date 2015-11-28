@@ -41,15 +41,30 @@ function alcatraz_register_widget_areas() {
 
 	// Footer.
 	if ( isset( $options['footer_widget_areas'] ) && 0 < (int)$options['footer_widget_areas'] ) {
-		register_sidebars( (int)$options['footer_widget_areas'], array(
-			'name'          => esc_html__( 'Footer %d', 'alcatraz' ),
-			'id'            => 'footer-widget-area',
-			'description'   => __( 'Shows in the footer', 'alcatraz' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		) );
+
+		// Calling register_sidebars to register only one widget area causes problems, so we'll
+		// handle that case separately.
+		if ( 1 == (int)$options['footer_widget_areas'] ) {
+			register_sidebar( array(
+				'name'          => esc_html__( 'Footer', 'alcatraz' ),
+				'id'            => 'footer-widget-area-1',
+				'description'   => __( 'Shows in the footer', 'alcatraz' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			) );
+		} else {
+			register_sidebars( (int)$options['footer_widget_areas'], array(
+				'name'          => esc_html__( 'Footer %d', 'alcatraz' ),
+				'id'            => 'footer-widget-area',
+				'description'   => __( 'Shows in the footer', 'alcatraz' ),
+				'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+				'after_widget'  => '</aside>',
+				'before_title'  => '<h2 class="widget-title">',
+				'after_title'   => '</h2>',
+			) );
+		}
 	}
 }
 
@@ -123,21 +138,14 @@ function alcatraz_output_footer_widget_areas() {
 
 		for ( $i = 1; $i <= (int)$options['footer_widget_areas']; $i++ ) {
 
-			// Handle inconsistent -x behavior of register_sidebars.
-			if ( 1 == $i ) {
-				$widget_area_id    = 'footer-widget-area';
-				$widget_area_class = 'footer-widget-area-1';
-			} else {
-				$widget_area_id    = 'footer-widget-area-' . $i;
-				$widget_area_class = $widget_area_id;
-			}
+			$widget_area_id = 'footer-widget-area-' . $i;
 
 			if ( is_active_sidebar( $widget_area_id ) ) {
 
 				printf(
 					'<div id="%s" class="%s" role="complementary">',
-					$widget_area_class,
-					$widget_area_class . ' footer-widget-area widget-area'
+					$widget_area_id,
+					$widget_area_id . ' footer-widget-area widget-area'
 				);
 
 				dynamic_sidebar( $widget_area_id );
