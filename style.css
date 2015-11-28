@@ -1198,7 +1198,7 @@ a:hover, a:active {
     color: #fff;
   }
   .header-style-short .main-navigation {
-    padding: 20px;
+    padding: 2.3125em 1.25em;
     text-align: right;
   }
   .header-style-short .main-navigation > div {
@@ -1228,6 +1228,25 @@ a:hover, a:active {
   z-index: 99999;
 }
 
+@media (min-width: 48em) {
+  .header-style-default .main-navigation ul ul {
+    top: 45px;
+    border-top: 3px solid #fff;
+  }
+  .header-style-short .main-navigation ul ul {
+    top: 45px;
+    border-top: 3px solid #3897ef;
+    text-align: left;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .main-navigation ul ul {
+    border-left: 3px solid #3897ef;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
+  }
+}
+
 .main-navigation ul ul ul {
   left: -999em;
   top: 0;
@@ -1247,15 +1266,35 @@ a:hover, a:active {
   left: auto;
 }
 
+@media (min-width: 60em) {
+  .header-style-side .main-navigation ul li:hover > ul, .header-style-side
+  .main-navigation ul li.focus > ul {
+    top: 0;
+    left: 200px;
+  }
+}
+
+@media (min-width: 48em) {
+  .header-style-short .main-navigation ul li:hover:last-child > ul {
+    left: -100px;
+  }
+}
+
 .main-navigation li {
   float: left;
   position: relative;
-  padding: 10px 20px;
 }
 
 .main-navigation a {
   display: block;
+  padding: 10px 20px;
   text-decoration: none;
+}
+
+@media (min-width: 60em) {
+  .header-style-side .main-navigation a {
+    width: 200px;
+  }
 }
 
 /* Small menu. */
