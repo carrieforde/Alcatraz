@@ -49,6 +49,27 @@ function alcatraz_output_site_description() {
 	}
 }
 
+add_action( 'alcatraz_header', 'alcatraz_output_logo', 2 );
+/**
+ * Output the site logo.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_output_logo() {
+
+if ( get_theme_mod( 'alcatraz_logo' ) ) {
+
+	printf(
+		'<div class="alcatraz-logo"><a href="%s" title="%s" rel="home"><img src="%s" alt="%s"></a></div>',
+		esc_url( home_url( '/' ) ),
+		esc_attr( get_bloginfo( 'name', 'display' ) ),
+		esc_url( get_theme_mod( 'alcatraz_logo' ) ),
+		esc_attr( get_bloginfo( 'name', 'display' ) )
+		);
+
+	}
+}
+
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
 /**
  * Output the footer bottom.
