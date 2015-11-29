@@ -35,6 +35,70 @@ a {
  */
 
 /* Small menu. */
+.menu-toggle {
+	cursor: pointer;
+
+	.mobile-nav-toggle-style-button & {
+		padding: 15px 20px;
+		margin: 20px 20px 0;
+		border-radius: 5px;
+		background-color: $accent-blue;
+		color: #fff;
+		font-weight: 400;
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+
+		&:hover {
+			background-color: darken($accent-blue, 20%);
+		}
+	}
+
+	.mobile-nav-toggle-style-hamburger & {
+		float: right;
+		margin: 45px;
+		color: $accent-blue;
+
+		&::before {
+			font: {
+				family: FontAwesome;
+				size: em(30);
+			}
+			content: "\f0c9";
+		}
+
+		span {
+			display: none;
+		}
+	}
+
+	.mobile-nav-toggle-style-hamburger .main-navigation.toggled &::before {
+		font: {
+			family: FontAwesome;
+			size: em(36);
+		}
+		content: "\f00d";
+	}
+}
+
+.toggled {
+	li {
+		display: block;
+		width: 100%;
+
+		&.menu-item-has-children > a::after {
+			float: right;
+			content: "\002B";
+			font: {
+				size: em(24);
+				weight: 400;
+			}
+			line-height: 1;
+		}
+	}
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -45,7 +109,7 @@ a {
 	.header-style-default,
 	.header-style-short {
 
-		.menu-toggle {
+		.main-navigation .menu-toggle {
 			display: none;
 		}
 

@@ -110,7 +110,7 @@ function alcatraz_scripts() {
 	wp_enqueue_script(
 		'alcatraz-navigation',
 		ALCATRAZ_URL . 'js/navigation.js',
-		array(),
+		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true
 	);

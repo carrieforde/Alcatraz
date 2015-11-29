@@ -156,44 +156,88 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Site Logo.
-	$wp_customize->add_setting( 
+	// Mobile navigation toggle style.
+	$wp_customize->add_setting(
+		'alcatraz_options[mobile_nav_toggle_style]',
+		array(
+			'default'    => 'button',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_mobile_nav_toggle_control',
+		array(
+			'type'     => 'radio',
+			'label'    => __( 'Mobile Navigation Toggle Style', 'alcatraz' ),
+			'section'  => 'alcatraz_header_section',
+			'settings' => 'alcatraz_options[mobile_nav_toggle_style]',
+			'choices'  => alcatraz_get_mobile_nav_toggle_options( 'header' ),
+		)
+	);
+
+	// Mobile navigation style.
+	$wp_customize->add_setting(
+		'alcatraz_options[mobile_nav_style]',
+		array(
+			'default'    => 'default',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_mobile_nav_style_control',
+		array(
+			'type'     => 'select',
+			'label'    => __( 'Mobile Navigation Style', 'alcatraz' ),
+			'section'  => 'alcatraz_header_section',
+			'settings' => 'alcatraz_options[mobile_nav_style]',
+			'choices'  => array(
+				'default' => __( 'Default', 'alcatraz' ),
+				'from-left' => __( 'Slide from Left', 'alcatraz' ),
+				'from-right' => __( 'Slide from Right', 'alcatraz' ),
+				'full-screen' => __( 'Full Screen', 'alcatraz' ),
+				'fade-in'     => __( 'Fade In', 'alcatraz' ),
+			),
+		)
+	);
+
+	// Site logo.
+	$wp_customize->add_setting(
 		'alcatraz_options[logo_id]',
-		array( 
+		array(
 			'default'    =>  '',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options'
-			) 
-		);
-
-	$wp_customize->add_control( 
-		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_logo', 
+			)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_logo',
 			array(
-    			'label'    => __( 'Logo', 'alcatraz' ),
-    			'section'  => 'alcatraz_header_section',
-    			'settings' => 'alcatraz_options[logo_id]',
-			) 
-		) 
+				'label'    => __( 'Logo', 'alcatraz' ),
+				'section'  => 'alcatraz_header_section',
+				'settings' => 'alcatraz_options[logo_id]',
+			)
+		)
 	);
 
-	// Site Mobile Logo.
-	$wp_customize->add_setting( 
+	// Site mobile logo.
+	$wp_customize->add_setting(
 		'alcatraz_options[mobile_logo_id]',
-		array( 
+		array(
 			'default'    => '',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options'
-			) 
-		);
-
-	$wp_customize->add_control( 
-		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_mobile_logo', 
+			)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_mobile_logo',
 			array(
-    			'label'    => __( 'Mobile Logo', 'alcatraz' ),
-    			'section'  => 'alcatraz_header_section',
-    			'settings' => 'alcatraz_options[mobile_logo_id]',
-			) 
-		) 
+				'label'    => __( 'Mobile Logo', 'alcatraz' ),
+				'section'  => 'alcatraz_header_section',
+				'settings' => 'alcatraz_options[mobile_logo_id]',
+			)
+		)
 	);
 
 	// Number of footer widget areas.

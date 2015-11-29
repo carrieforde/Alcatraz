@@ -1131,6 +1131,12 @@ td :last-child {
   position: relative;
 }
 
+@media (max-width: 47.9375em) {
+  .mobile-nav-toggle-style-hamburger .site-header .header-inner {
+    float: left;
+  }
+}
+
 .site-header .site-title {
   margin: 0 0 10px;
   font-size: 36px;
@@ -1233,14 +1239,68 @@ a:hover, a:active {
  * 4.2.2 Menus
  */
 /* Small menu. */
+.menu-toggle {
+  cursor: pointer;
+}
+
+.mobile-nav-toggle-style-button .menu-toggle {
+  padding: 15px 20px;
+  margin: 20px 20px 0;
+  border-radius: 5px;
+  background-color: #3897ef;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile-nav-toggle-style-button .menu-toggle:hover {
+  background-color: #0e64b3;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle {
+  float: right;
+  margin: 45px;
+  color: #3897ef;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle::before {
+  font-family: FontAwesome;
+  font-size: 1.875em;
+  content: "\f0c9";
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle span {
+  display: none;
+}
+
+.mobile-nav-toggle-style-hamburger .main-navigation.toggled .menu-toggle::before {
+  font-family: FontAwesome;
+  font-size: 2.25em;
+  content: "\f00d";
+}
+
+.toggled li {
+  display: block;
+  width: 100%;
+}
+
+.toggled li.menu-item-has-children > a::after {
+  float: right;
+  content: "\002B";
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
 }
 
 @media (min-width: 48em) {
-  .header-style-default .menu-toggle,
-  .header-style-short .menu-toggle {
+  .header-style-default .main-navigation .menu-toggle,
+  .header-style-short .main-navigation .menu-toggle {
     display: none;
   }
   .header-style-default .main-navigation ul,

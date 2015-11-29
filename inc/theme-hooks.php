@@ -58,7 +58,7 @@ add_action( 'alcatraz_header', 'alcatraz_output_logo', 2 );
 function alcatraz_output_logo() {
 
 	$options = get_option( 'alcatraz_options' );
-	
+
 	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
 
     	echo '<div class="logo-wrap">';

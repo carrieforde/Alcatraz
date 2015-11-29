@@ -42,6 +42,16 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'header-style-' . esc_attr( $options['header_style'] );
 	}
 
+	// Mobile navigation toggle style class.
+	if ( isset( $options['mobile_nav_toggle_style'] ) && $options['mobile_nav_toggle_style'] ) {
+		$classes[] = 'mobile-nav-toggle-style-' . esc_attr( $options['mobile_nav_toggle_style'] );
+	}
+
+	// Mobile navigation style class.
+	if ( isset( $options['mobile_nav_style'] ) && $options['mobile_nav_style'] ) {
+		$classes[] = 'mobile-nav-style-' . esc_attr( $options['mobile_nav_style'] );
+	}
+
 	// Transparent header class.
 	$transparent_header = get_post_meta( $post->ID, '_alcatraz_transparent_header', true );
 	if ( $transparent_header && 'on' == $transparent_header ) {
