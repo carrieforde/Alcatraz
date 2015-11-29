@@ -53,6 +53,7 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'has-header-image';
 	}
 
+	// Logo class
 	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
 		$classes[] = 'has-logo';
 	}
