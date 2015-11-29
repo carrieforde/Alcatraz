@@ -157,14 +157,41 @@ function alcatraz_customize_register( $wp_customize ) {
 	);
 
 	// Site Logo.
-	$wp_customize->add_setting( 'alcatraz_logo' );
+	$wp_customize->add_setting( 
+		'alcatraz_options[logo_id]',
+		array( 
+			'default'    =>  '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options'
+			) 
+		);
 
 	$wp_customize->add_control( 
-		new WP_Customize_Image_Control( $wp_customize, 'alcatraz_logo', 
+		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_logo', 
 			array(
     			'label'    => __( 'Logo', 'alcatraz' ),
     			'section'  => 'alcatraz_header_section',
-    			'settings' => 'alcatraz_options[header_style]',
+    			'settings' => 'alcatraz_options[logo_id]',
+			) 
+		) 
+	);
+
+	// Site Mobile Logo.
+	$wp_customize->add_setting( 
+		'alcatraz_options[mobile_logo_id]',
+		array( 
+			'default'    => '',
+			'type'       => 'option',
+			'capability' => 'edit_theme_options'
+			) 
+		);
+
+	$wp_customize->add_control( 
+		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_mobile_logo', 
+			array(
+    			'label'    => __( 'Mobile Logo', 'alcatraz' ),
+    			'section'  => 'alcatraz_header_section',
+    			'settings' => 'alcatraz_options[mobile_logo_id]',
 			) 
 		) 
 	);
