@@ -1131,6 +1131,10 @@ td :last-child {
   position: relative;
 }
 
+.mobile-nav-hamburger .site-header .header-inner {
+  float: left;
+}
+
 .site-header .site-title {
   margin: 0 0 10px;
   font-size: 36px;
@@ -1233,6 +1237,47 @@ a:hover, a:active {
  * 4.2.2 Menus
  */
 /* Small menu. */
+.menu-toggle {
+  cursor: pointer;
+}
+
+.mobile-nav-button .menu-toggle {
+  padding: 15px 20px;
+  margin: 20px 20px 0;
+  border-radius: 5px;
+  background-color: #3897ef;
+  color: #fff;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.mobile-nav-button .menu-toggle:hover {
+  background-color: #0e64b3;
+}
+
+.mobile-nav-hamburger .menu-toggle {
+  float: right;
+  margin: 45px;
+  color: #3897ef;
+}
+
+.mobile-nav-hamburger .menu-toggle::before {
+  font-family: FontAwesome;
+  font-size: 1.875em;
+  content: "\f0c9";
+}
+
+.mobile-nav-hamburger .menu-toggle span {
+  display: none;
+}
+
+.mobile-nav-hamburger .menu-toggle[aria-expanded="true"]::before {
+  font-family: FontAwesome;
+  font-size: 1.875em;
+  content: "\f00d";
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;

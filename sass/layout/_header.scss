@@ -21,6 +21,11 @@
 	.header-inner {
 		padding: $size__default-padding $size__default-padding 0;
 		position: relative;
+
+		.mobile-nav-hamburger & {
+			float: left;
+		}
+
 	}
 
 	.site-title {

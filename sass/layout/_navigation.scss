@@ -35,6 +35,53 @@ a {
  */
 
 /* Small menu. */
+.menu-toggle {
+	cursor: pointer;
+
+	.mobile-nav-button & {
+		padding: 15px 20px;
+		margin: 20px 20px 0;
+		border-radius: 5px;
+		background-color: $accent-blue;
+		color: #fff;
+		font-weight: 400;
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+
+		&:hover {
+			background-color: darken($accent-blue, 20%);
+		}
+	}
+
+	.mobile-nav-hamburger & {
+		float: right;
+		margin: 45px;
+		color: $accent-blue;
+
+		&::before {
+			font: {
+				family: FontAwesome;
+				size: em(30);
+			}
+			content: "\f0c9";
+		}
+
+		span {
+			display: none;
+		}
+
+		&[aria-expanded="true"]::before {
+			font: {
+				family: FontAwesome;
+				size: em(30);
+			}
+			content: "\f00d";
+		}
+	}
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
