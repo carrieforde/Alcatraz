@@ -1122,11 +1122,6 @@ td :last-child {
 }
 
 @media (min-width: 60em) {
-  .header-style-side {
-    /*.main-navigation li {
-			float: none;
-		}*/
-  }
   .header-style-side .site-header {
     float: left;
     display: block;
@@ -1179,9 +1174,34 @@ a:hover, a:active {
 /**
  * 4.2.2 Menus
  */
+/* Small menu. */
+.menu-toggle,
+.main-navigation.toggled ul {
+  display: block;
+}
+
+@media (min-width: 48em) {
+  .header-style-default .menu-toggle,
+  .header-style-short .menu-toggle {
+    display: none;
+  }
+  .header-style-default .main-navigation ul,
+  .header-style-short .main-navigation ul {
+    display: block;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .menu-toggle {
+    display: none;
+  }
+  .header-style-side .main-navigation ul {
+    display: block;
+  }
+}
+
 .main-navigation {
   display: block;
-  float: left;
   width: 100%;
 }
 
@@ -1302,21 +1322,6 @@ a:hover, a:active {
 @media (min-width: 60em) {
   .header-style-side .main-navigation a {
     width: 200px;
-  }
-}
-
-/* Small menu. */
-.menu-toggle,
-.main-navigation.toggled ul {
-  display: block;
-}
-
-@media (min-width: 48em) {
-  .menu-toggle {
-    display: none;
-  }
-  .main-navigation ul {
-    display: block;
   }
 }
 

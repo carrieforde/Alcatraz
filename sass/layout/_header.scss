@@ -4,6 +4,7 @@
 
 .site-header {
 	position: relative;
+
 	.header-image-wrap {
 		position: absolute;
 		display: block;
@@ -11,14 +12,17 @@
 		width: 100%;
 		overflow: hidden;
 	}
+
 	.header-image {
 		width: 100%;
 		display: block;
 	}
+
 	.header-inner {
 		padding: $size__default-padding $size__default-padding 0;
 		position: relative;
 	}
+
 	.site-title {
 		margin: 0 0 10px;
 		@include font-size(30);
@@ -27,6 +31,7 @@
 			weight: 600;
 		}
 	}
+
 	.site-description {
 		margin: 10px 0;
 	}
@@ -35,6 +40,7 @@
 .transparent-header .site-header {
 	position: absolute;
 	z-index: 99;
+
 	.header-image-wrap {
 		display: none;
 	}
@@ -83,9 +89,5 @@
 				}
 			}
 		}
-
-		/*.main-navigation li {
-			float: none;
-		}*/
 	}
 }
