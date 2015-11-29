@@ -179,8 +179,6 @@ function alcatraz_customize_register( $wp_customize ) {
 	);
 
 	// Mobile navigation style.
-	$mobile_nav_options = alcatraz_get_mobile_nav_options();
-
 	$wp_customize->add_setting(
 		'alcatraz_options[mobile_nav_style]',
 		array(
@@ -196,7 +194,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Mobile Navigation Style', 'alcatraz' ),
 			'section'  => 'alcatraz_header_section',
 			'settings' => 'alcatraz_options[mobile_nav_style]',
-			'choices'  => $mobile_nav_options
+			'choices'  => alcatraz_get_mobile_nav_options(),
 		)
 	);
 
