@@ -86,9 +86,19 @@ a {
 	li {
 		display: block;
 		width: 100%;
-	}
 
+		&.menu-item-has-children > a::after {
+			float: right;
+			content: "\002B";
+			font: {
+				size: em(24);
+				weight: 400;
+			}
+			line-height: 1;
+		}
+	}
 }
+
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;

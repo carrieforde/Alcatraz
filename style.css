@@ -1283,6 +1283,14 @@ a:hover, a:active {
   width: 100%;
 }
 
+.toggled li.menu-item-has-children > a::after {
+  float: right;
+  content: "\002B";
+  font-size: 1.5em;
+  font-weight: 400;
+  line-height: 1;
+}
+
 .menu-toggle,
 .main-navigation.toggled ul {
   display: block;
