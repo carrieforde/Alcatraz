@@ -12,7 +12,7 @@ textarea {
 		family: $font__main;
 		weight: 300;
 	}
-	@include font-size(18);
+	font-size: 18px;
 	line-height: $font__line-height-body;
 }
 
