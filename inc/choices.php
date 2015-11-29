@@ -24,3 +24,20 @@ function alcatraz_get_text_colors( $context = '' ) {
 
 	return apply_filters( 'alcatraz_text_colors', $default_colors, $context );
 }
+
+/**
+ * Return an array of mobile menu navigation style options.
+ *
+ * @since 1.0.0
+ *
+ * @return  array
+ */
+function alcatraz_get_mobile_nav_options() {
+
+	$mobile_nav_options = array(
+		'button'    => __( 'Button', 'alcatraz' ),
+		'hamburger' => __( 'Hamburger', 'alcatraz' ),
+	);
+
+	return apply_filters( 'alcatraz_mobile_nav_options', $mobile_nav_options );
+}
