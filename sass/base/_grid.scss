@@ -67,7 +67,7 @@
 
 	.no-gutter {
 		@include fill-parent();
-		@include row(table);
+		@include display-context(table);
 
 		.alcatraz-col-1 {
 			@include span-columns( 1 of 12 );

@@ -11,25 +11,31 @@
 
 	/* Left Sidebar */
 	.left-sidebar {
-		@include row(block, rtl);
+		@include display-context() {
+			@include direction-context(right-to-left) {
 
-		.content-area {
-			@include span-columns( 8 of 12 );
-		}
-		.primary-sidebar {
-			@include span-columns( 4 of 12 );
+				.content-area {
+					@include span-columns( 8 of 12 );
+				}
+				.primary-sidebar {
+					@include span-columns( 4 of 12 );
+				}
+			}
 		}
 	}
 
 	/* Right Sidebar */
 	.right-sidebar {
-		@include row(block, ltr);
+		@include display-context() {
+			@include direction-context() {
 
-		.content-area {
-			@include span-columns( 8 of 12 );
-		}
-		.primary-sidebar {
-			@include span-columns( 4 of 12 );
+				.content-area {
+					@include span-columns( 8 of 12 );
+				}
+				.primary-sidebar {
+					@include span-columns( 4 of 12 );
+				}
+			}
 		}
 	}
 }

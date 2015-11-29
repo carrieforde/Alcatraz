@@ -71,8 +71,8 @@ a {
 
 .main-navigation {
 	display: block;
-//	float: left;
 	width: 100%;
+	line-height: 1;
 
 	@media (min-width: em(768)) {
 		.header-style-default & {
@@ -208,6 +208,7 @@ a {
 	a {
 		display: block;
 		padding: 10px 20px;
+		line-height: 1.5;
 		text-decoration: none;
 
 		@media (min-width: em(960)) {
