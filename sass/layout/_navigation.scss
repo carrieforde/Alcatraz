@@ -80,11 +80,20 @@ a {
 			top: 1.5em;
 			left: -999em;
 			z-index: 99999;
+			background-color: #fff;
 
 			@media (min-width: em(768)) {
 				.header-style-default & {
 					top: 45px;
-					border-top: 3px solid #fff;
+					border-top: 3px solid #999;
+					text-align: left;
+
+					a {
+						color: $color__link;
+						&:hover {
+							color: $color__link-hover;
+						}
+					}
 				}
 
 				.header-style-short & {

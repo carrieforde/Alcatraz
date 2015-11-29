@@ -1226,12 +1226,20 @@ a:hover, a:active {
   top: 1.5em;
   left: -999em;
   z-index: 99999;
+  background-color: #fff;
 }
 
 @media (min-width: 48em) {
   .header-style-default .main-navigation ul ul {
     top: 45px;
-    border-top: 3px solid #fff;
+    border-top: 3px solid #999;
+    text-align: left;
+  }
+  .header-style-default .main-navigation ul ul a {
+    color: #3897ef;
+  }
+  .header-style-default .main-navigation ul ul a:hover {
+    color: #0e64b3;
   }
   .header-style-short .main-navigation ul ul {
     top: 45px;
