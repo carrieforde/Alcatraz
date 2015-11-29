@@ -1131,7 +1131,7 @@ td :last-child {
   position: relative;
 }
 
-.mobile-nav-hamburger .site-header .header-inner {
+.mobile-nav-toggle-style-hamburger .site-header .header-inner {
   float: left;
 }
 
@@ -1241,7 +1241,7 @@ a:hover, a:active {
   cursor: pointer;
 }
 
-.mobile-nav-button .menu-toggle {
+.mobile-nav-toggle-style-button .menu-toggle {
   padding: 15px 20px;
   margin: 20px 20px 0;
   border-radius: 5px;
@@ -1252,27 +1252,27 @@ a:hover, a:active {
   text-transform: uppercase;
 }
 
-.mobile-nav-button .menu-toggle:hover {
+.mobile-nav-toggle-style-button .menu-toggle:hover {
   background-color: #0e64b3;
 }
 
-.mobile-nav-hamburger .menu-toggle {
+.mobile-nav-toggle-style-hamburger .menu-toggle {
   float: right;
   margin: 45px;
   color: #3897ef;
 }
 
-.mobile-nav-hamburger .menu-toggle::before {
+.mobile-nav-toggle-style-hamburger .menu-toggle::before {
   font-family: FontAwesome;
   font-size: 1.875em;
   content: "\f0c9";
 }
 
-.mobile-nav-hamburger .menu-toggle span {
+.mobile-nav-toggle-style-hamburger .menu-toggle span {
   display: none;
 }
 
-.mobile-nav-hamburger .main-navigation.toggled .menu-toggle::before {
+.mobile-nav-toggle-style-hamburger .main-navigation.toggled .menu-toggle::before {
   font-family: FontAwesome;
   font-size: 2.25em;
   content: "\f00d";

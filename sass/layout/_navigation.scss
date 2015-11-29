@@ -38,7 +38,7 @@ a {
 .menu-toggle {
 	cursor: pointer;
 
-	.mobile-nav-button & {
+	.mobile-nav-toggle-style-button & {
 		padding: 15px 20px;
 		margin: 20px 20px 0;
 		border-radius: 5px;
@@ -55,7 +55,7 @@ a {
 		}
 	}
 
-	.mobile-nav-hamburger & {
+	.mobile-nav-toggle-style-hamburger & {
 		float: right;
 		margin: 45px;
 		color: $accent-blue;
@@ -73,7 +73,7 @@ a {
 		}
 	}
 
-	.mobile-nav-hamburger .main-navigation.toggled &::before {
+	.mobile-nav-toggle-style-hamburger .main-navigation.toggled &::before {
 		font: {
 			family: FontAwesome;
 			size: em(36);
