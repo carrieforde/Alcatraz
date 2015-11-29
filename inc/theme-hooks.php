@@ -67,8 +67,12 @@ if ( get_theme_mod( 'alcatraz_logo' ) ) {
 		esc_attr( get_bloginfo( 'name', 'display' ) )
 		);
 
+	remove_action( 'alcatraz_header', 'alcatraz_output_site_description', 15 );
+	remove_action( 'alcatraz_header', 'alcatraz_output_site_title', 5 );
+
 	}
 }
+
 
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
 /**
