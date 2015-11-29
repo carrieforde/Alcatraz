@@ -1131,8 +1131,10 @@ td :last-child {
   position: relative;
 }
 
-.mobile-nav-toggle-style-hamburger .site-header .header-inner {
-  float: left;
+@media (max-width: 47.9375em) {
+  .mobile-nav-toggle-style-hamburger .site-header .header-inner {
+    float: left;
+  }
 }
 
 .site-header .site-title {
