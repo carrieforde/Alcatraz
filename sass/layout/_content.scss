@@ -12,6 +12,11 @@
 	@include center-block;
 }
 
+.boxed-content .site-content {
+	max-width: 1200px;
+	@include center-block;
+}
+
 .site-content {
 	overflow: hidden;
 }

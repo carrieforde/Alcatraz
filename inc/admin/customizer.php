@@ -83,8 +83,9 @@ function alcatraz_customize_register( $wp_customize ) {
 			'section'  => 'alcatraz_layout_section',
 			'settings' => 'alcatraz_options[site_layout]',
 			'choices'  => array(
-				'full-width' => __( 'Full Width', 'alcatraz' ),
-				'boxed'      => __( 'Boxed', 'alcatraz' ),
+				'full-width'    => __( 'Full Width', 'alcatraz' ),
+				'boxed'         => __( 'Boxed', 'alcatraz' ),
+				'boxed-content' => __( 'Boxed Content', 'alcatraz' ),
 			),
 		)
 	);

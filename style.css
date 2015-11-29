@@ -1482,6 +1482,13 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+.boxed-content .site-content {
+  max-width: 1200px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .site-content {
   overflow: hidden;
 }
