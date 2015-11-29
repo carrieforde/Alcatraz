@@ -39,7 +39,7 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'alcatraz' ); ?></button>
+			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span></div>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 		</nav>
 
