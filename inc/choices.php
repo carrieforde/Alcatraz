@@ -28,7 +28,7 @@ function alcatraz_get_text_colors( $context = '' ) {
 /**
  * Return an array of mobile menu navigation style options.
  *
- * @since 1.0.0
+ * @since   1.0.0
  *
  * @return  array
  */
