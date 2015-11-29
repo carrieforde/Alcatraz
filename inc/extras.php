@@ -43,12 +43,12 @@ function alcatraz_body_classes( $classes ) {
 	}
 
 	// Mobile navigation toggle style class.
-	if ( isset ( $options['mobile_nav_toggle_style'] ) && $options['mobile_nav_toggle_style'] ) {
+	if ( isset( $options['mobile_nav_toggle_style'] ) && $options['mobile_nav_toggle_style'] ) {
 		$classes[] = 'mobile-nav-toggle-style-' . esc_attr( $options['mobile_nav_toggle_style'] );
 	}
 
 	// Mobile navigation style class.
-	if ( isset ( $options['mobile_nav_style'] ) && $options['mobile_nav_style'] ) {
+	if ( isset( $options['mobile_nav_style'] ) && $options['mobile_nav_style'] ) {
 		$classes[] = 'mobile-nav-style-' . esc_attr( $options['mobile_nav_style'] );
 	}
 
