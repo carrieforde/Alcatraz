@@ -1272,10 +1272,15 @@ a:hover, a:active {
   display: none;
 }
 
-.mobile-nav-hamburger .menu-toggle[aria-expanded="true"]::before {
+.mobile-nav-hamburger .main-navigation.toggled .menu-toggle::before {
   font-family: FontAwesome;
-  font-size: 1.875em;
+  font-size: 2.25em;
   content: "\f00d";
+}
+
+.toggled li {
+  display: block;
+  width: 100%;
 }
 
 .menu-toggle,
@@ -1284,8 +1289,8 @@ a:hover, a:active {
 }
 
 @media (min-width: 48em) {
-  .header-style-default .menu-toggle,
-  .header-style-short .menu-toggle {
+  .header-style-default .main-navigation .menu-toggle,
+  .header-style-short .main-navigation .menu-toggle {
     display: none;
   }
   .header-style-default .main-navigation ul,

@@ -71,17 +71,24 @@ a {
 		span {
 			display: none;
 		}
+	}
 
-		&[aria-expanded="true"]::before {
-			font: {
-				family: FontAwesome;
-				size: em(30);
-			}
-			content: "\f00d";
+	.mobile-nav-hamburger .main-navigation.toggled &::before {
+		font: {
+			family: FontAwesome;
+			size: em(36);
 		}
+		content: "\f00d";
 	}
 }
 
+.toggled {
+	li {
+		display: block;
+		width: 100%;
+	}
+
+}
 .menu-toggle,
 .main-navigation.toggled ul {
 	display: block;
@@ -92,7 +99,7 @@ a {
 	.header-style-default,
 	.header-style-short {
 
-		.menu-toggle {
+		.main-navigation .menu-toggle {
 			display: none;
 		}
 
