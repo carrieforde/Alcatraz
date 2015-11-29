@@ -52,6 +52,28 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Site Logo.
+	$wp_customize->add_section( 
+		'alcatraz_logo_section', 
+		array(
+			'title'       => __( 'Logo', 'alcatraz' ),
+			'priority'    => 30,
+			'description' => 'Upload a logo to replace the default site name and description in the header',
+		) 
+	);
+	
+	$wp_customize->add_setting( 'alcatraz_logo' );
+
+	$wp_customize->add_control( 
+		new WP_Customize_Image_Control( $wp_customize, 'alcatraz_logo', 
+			array(
+    			'label'    => __( 'Logo', 'alcatraz' ),
+    			'section'  => 'alcatraz_logo_section',
+    			'settings' => 'alcatraz_logo',
+			) 
+		) 
+	);
+
 	// Footer section.
 	$wp_customize->add_section(
 		'alcatraz_footer_section',
