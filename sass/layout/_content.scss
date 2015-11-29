@@ -7,6 +7,10 @@
 /**
  * 4.3.1 Structure
  */
+.boxed .site {
+	max-width: 1200px;
+	@include center-block;
+}
 
 .site-content {
 	overflow: hidden;
