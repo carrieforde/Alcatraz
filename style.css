@@ -432,16 +432,6 @@ hr {
 /**
  * 2.5.1 Column Classes
  */
-.site-content {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  width: 100%;
-  max-width: 68em;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .alcatraz-col-1,
 .alcatraz-col-2,
 .alcatraz-col-3,
@@ -1273,27 +1263,31 @@ td :last-child {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 31.7615656014%;
+    width: 23.2317613015%;
     height: 100%;
-    /*
-			// display: block;
-			float: left;*/
     position: fixed;
     padding: 20px;
   }
   .header-style-side .site-header:last-child {
     margin-right: 0;
   }
+  .header-style-side.boxed .site-header {
+    width: 325px;
+  }
   .header-style-side .site-content {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 65.8807828007%;
+    width: 74.4105871005%;
     margin-right: 0;
     float: right;
+    padding: 20px;
   }
   .header-style-side .site-content:last-child {
     margin-right: 0;
+  }
+  .header-style-side.boxed .site-content {
+    width: calc(100% - 300px);
   }
 }
 
@@ -1564,15 +1558,10 @@ a:hover, a:active {
 /**
  * 4.3.1 Structure
  */
-.boxed .site {
-  max-width: 1200px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
+.boxed .site,
 .boxed-content .site-content {
-  max-width: 1200px;
+  max-width: 1040px;
+  padding: 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
