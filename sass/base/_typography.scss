@@ -23,11 +23,12 @@ h3,
 h4,
 h5,
 h6 {
-	margin: em(20) 0 em(10) 0;
+	margin: $font__margin-headings;
 	font:{
 		family: $font__headings;
 		weight: 600;
 	}
+	line-height: $font__line-height-headings;
 	clear: both;
 }
 

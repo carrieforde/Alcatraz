@@ -22,7 +22,7 @@
 
 	@media (min-width: em(960)) {
 	.header-style-side & {
-		@include span-columns(8 of 12);
+		@include span-columns(9 of 12);
 		float: right;
 	}
 }

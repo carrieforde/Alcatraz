@@ -704,9 +704,10 @@ h3,
 h4,
 h5,
 h6 {
-  margin: 1.25em 0 0.625em 0;
+  margin: 0 0 0.625em 0;
   font-family: "Source Serif Pro", serif;
   font-weight: 600;
+  line-height: 1.2;
   clear: both;
 }
 
@@ -1707,7 +1708,7 @@ a:hover, a:active {
     float: left;
     display: block;
     margin-right: 2.3576515979%;
-    width: 65.8807828007%;
+    width: 74.4105871005%;
     float: right;
   }
   .header-style-side .site-footer:last-child {
