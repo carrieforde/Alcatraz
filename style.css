@@ -1120,6 +1120,12 @@ td :last-child {
 .site-header .header-inner {
   padding: 20px 20px 0;
   position: relative;
+  /*@media (max-width: em(960)) {
+			.header-style-side &,
+			.header-style-side.mobile-nav-toggle-style-hamburger & {
+				float: left;
+			}
+		}*/
 }
 
 @media (max-width: 28.75em) {
@@ -1134,10 +1140,8 @@ td :last-child {
   }
 }
 
-@media (max-width: 60em) {
-  .header-style-side.mobile-nav-toggle-style-hamburger .site-header .header-inner {
-    float: left;
-  }
+.header-style-side .site-header .header-inner {
+  float: left;
 }
 
 .site-header .logo-wrap {

@@ -32,11 +32,16 @@
 			}
 		}
 
-		@media (max-width: em(960)) {
+		.header-style-side & {
+			float: left;
+		}
+
+		/*@media (max-width: em(960)) {
+			.header-style-side &,
 			.header-style-side.mobile-nav-toggle-style-hamburger & {
 				float: left;
 			}
-		}
+		}*/
 	}
 
 	.logo-wrap {
