@@ -290,6 +290,7 @@ th {
 /* Center block */
 /* Clearfix */
 /* Clear after (not all clearfix need this also) */
+/* Image Replacement */
 /**
  * 2.4 Defaults
  *
@@ -1130,9 +1131,70 @@ td :last-child {
   position: relative;
 }
 
+@media (max-width: 28.75em) {
+  .site-header .header-inner {
+    width: 275px;
+  }
+}
+
 @media (max-width: 47.9375em) {
   .mobile-nav-toggle-style-hamburger .site-header .header-inner {
     float: left;
+  }
+}
+
+@media (max-width: 60em) {
+  .header-style-side.mobile-nav-toggle-style-hamburger .site-header .header-inner {
+    float: left;
+  }
+}
+
+.site-header .logo-wrap {
+  max-width: 300px;
+  margin-bottom: 1.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 48em) {
+  .header-style-default .site-header .logo-wrap,
+  .site-header .logo-wrap .header-style-short {
+    max-width: 600px;
+  }
+}
+
+.site-header .logo-mobile {
+  display: block;
+}
+
+@media (min-width: 48em) {
+  .header-style-default .site-header .logo-mobile,
+  .header-style-short .site-header .logo-mobile {
+    display: none;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .site-header .logo-mobile {
+    display: none;
+  }
+}
+
+.site-header .logo-regular {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .header-style-default .site-header .logo-regular,
+  .header-style-short .site-header .logo-regular {
+    display: block;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .site-header .logo-regular {
+    display: block;
   }
 }
 
@@ -1144,8 +1206,30 @@ td :last-child {
   font-weight: 600;
 }
 
+.has-logo .site-header .site-title {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
 .site-header .site-description {
   margin: 10px 0;
+}
+
+.has-logo .site-header .site-description {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .transparent-header .site-header {

@@ -22,9 +22,66 @@
 		padding: $size__default-padding $size__default-padding 0;
 		position: relative;
 
+		@media (max-width: em(460)) {
+			width: 275px;
+		}
+
 		@media (max-width: em(767)) {
 			.mobile-nav-toggle-style-hamburger & {
 				float: left;
+			}
+		}
+
+		@media (max-width: em(960)) {
+			.header-style-side.mobile-nav-toggle-style-hamburger & {
+				float: left;
+			}
+		}
+	}
+
+	.logo-wrap {
+		max-width: 300px;
+		margin-bottom: em(20);
+		@include center-block;
+
+		@media (min-width: em(768)) {
+			.header-style-default &,
+			.header-style-short {
+				max-width: 600px;
+			}
+		}
+	}
+
+	.logo-mobile {
+		display: block;
+
+		@media (min-width: em(768)) {
+			.header-style-default &,
+			.header-style-short & {
+				display: none;
+			}
+		}
+
+		@media (min-width: em(960)) {
+			.header-style-side & {
+				display: none;
+			}
+		}
+	}
+
+	.logo-regular {
+		display: none;
+
+		@media (min-width: em(768)) {
+			.header-style-default &,
+			.header-style-short & {
+				display: block;
+			}
+		}
+
+		@media (min-width: em(960)) {
+			.header-style-side & {
+				display: block;
 			}
 		}
 	}
@@ -36,10 +93,18 @@
 			family: $font__headings;
 			weight: 600;
 		}
+
+		.has-logo & {
+			@include hide-text;
+		}
 	}
 
 	.site-description {
 		margin: 10px 0;
+
+		.has-logo & {
+			@include hide-text;
+		}
 	}
 }
 
