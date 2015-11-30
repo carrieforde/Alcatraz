@@ -147,19 +147,20 @@
 
 @media (min-width: em(960)) {
 	.header-style-side {
-		@include display-context() {
-			@include direction-context() {
 
-				.site-header {
-					@include span-columns(4 of 12);
-					padding: $size__default-padding;
-				}
+		.site-header {
+			@include span-columns(4 of 12);
+			height: 100%;/*
+			// display: block;
+			float: left;*/
+			position: fixed;
+			padding: $size__default-padding;
+		}
 
-				.site-content {
-					@include span-columns(8 of 12);
-					@include omega();
-				}
-			}
+		.site-content {
+			@include span-columns(8 of 12);
+			@include omega();
+			float: right;
 		}
 	}
 }
