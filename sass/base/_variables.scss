@@ -8,27 +8,32 @@
 // 2.2.1 Colors
 
 // Color Palette
-$text-color: #040a0f;
-$accent-blue: #3897ef;
+$bright-light: #e7ecf1;
+$sf-fog: #95a0a3;
+$prision-cell-gray: #535d65;
+$mist: #eaf1f2;
+$alcatraz-blue: #6e9aa2;
+$black-as-night: #040a04;
+$hope: #fff9c0;
 
 // Background Colors
 $color__background-body: #fff;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
-$color__background-pre: #DEECF9;
-$color__background-ins: #fff9c0;
-$color__background-blockquote: #DEECF9;
-$color__background-table-row: #DEECF9;
+$color__background-pre: $bright-light;
+$color__background-ins: $hope;
+$color__background-blockquote: $mist;
+$color__background-table-row: $mist;
 
 // Text Colors
 $color__text-screen: #21759b;
-$color__text-input: #666;
-$color__text-input-focus: #111;
-$color__link: $accent-blue;
+$color__text-input: $prision-cell-gray;
+$color__text-input-focus: #6e9aa2;
+$color__link: $alcatraz-blue;
 $color__link-visited: darken($color__link, 40%);
 $color__link-hover: darken($color__link, 20%);
-$color__text-main: $text-color;
+$color__text-main: $black-as-night;
 
 // Border Colors
 $color__border-button: #ccc #ccc #bbb;

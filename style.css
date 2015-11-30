@@ -690,7 +690,7 @@ button,
 input,
 select,
 textarea {
-  color: #040a0f;
+  color: #040a04;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 300;
   font-size: 18px;
@@ -754,9 +754,9 @@ i {
 
 blockquote {
   padding: 0.9375em 1.25em 0.9375em 0.9375em;
-  border-left: 0.3125em solid #0a2035;
+  border-left: 0.3125em solid #1a282a;
   margin: 0 1.5em;
-  background-color: #DEECF9;
+  background-color: #eaf1f2;
   font-style: italic;
 }
 
@@ -794,7 +794,7 @@ address {
 }
 
 pre {
-  background: #DEECF9;
+  background: #e7ecf1;
   font-family: "Source Code Pro", Courier, monospace;
   font-size: 14px;
   font-size: 0.875em;
@@ -988,7 +988,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  color: #666;
+  color: #535d65;
   border: 1px solid #ccc;
   border-radius: 3px;
 }
@@ -999,7 +999,7 @@ input[type="url"]:focus,
 input[type="password"]:focus,
 input[type="search"]:focus,
 textarea:focus {
-  color: #111;
+  color: #6e9aa2;
 }
 
 input[type="text"],
@@ -1063,12 +1063,12 @@ table {
 
 thead {
   border-bottom: 0.0625em solid #eee;
-  background-color: #5da1e1;
+  background-color: #8cb2b8;
   color: #fff;
 }
 
 tr:nth-child(even) {
-  background-color: #DEECF9;
+  background-color: #eaf1f2;
 }
 
 th,
@@ -1299,16 +1299,16 @@ td :last-child {
  * 4.2.1 Links
  */
 a {
-  color: #3897ef;
+  color: #6e9aa2;
   text-decoration: none;
 }
 
 a:visited {
-  color: #072f54;
+  color: #1b2729;
 }
 
 a:hover, a:focus, a:active {
-  color: #0e64b3;
+  color: #426268;
 }
 
 a:focus {
@@ -1331,7 +1331,7 @@ a:hover, a:active {
   padding: 15px 20px;
   margin: 20px 20px 0;
   border-radius: 5px;
-  background-color: #3897ef;
+  background-color: #6e9aa2;
   color: #fff;
   font-weight: 400;
   text-align: center;
@@ -1339,13 +1339,13 @@ a:hover, a:active {
 }
 
 .mobile-nav-toggle-style-button .menu-toggle:hover {
-  background-color: #0e64b3;
+  background-color: #426268;
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle {
   float: right;
   margin: 45px;
-  color: #3897ef;
+  color: #6e9aa2;
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle::before {
@@ -1411,7 +1411,7 @@ a:hover, a:active {
 @media (min-width: 48em) {
   .header-style-default .main-navigation {
     float: none;
-    background-color: #3897ef;
+    background-color: #6e9aa2;
     text-align: center;
   }
   .header-style-default .main-navigation > div {
@@ -1455,25 +1455,25 @@ a:hover, a:active {
 @media (min-width: 48em) {
   .header-style-default .main-navigation ul ul {
     top: 45px;
-    border-top: 3px solid #999;
+    border-top: 3px solid #535d65;
     text-align: left;
   }
   .header-style-default .main-navigation ul ul a {
-    color: #3897ef;
+    color: #6e9aa2;
   }
   .header-style-default .main-navigation ul ul a:hover {
-    color: #0e64b3;
+    color: #426268;
   }
   .header-style-short .main-navigation ul ul {
     top: 45px;
-    border-top: 3px solid #3897ef;
+    border-top: 3px solid #6e9aa2;
     text-align: left;
   }
 }
 
 @media (min-width: 60em) {
   .header-style-side .main-navigation ul ul {
-    border-left: 3px solid #3897ef;
+    border-left: 3px solid #6e9aa2;
     box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
   }
 }

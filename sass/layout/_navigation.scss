@@ -42,7 +42,7 @@ a {
 		padding: 15px 20px;
 		margin: 20px 20px 0;
 		border-radius: 5px;
-		background-color: $accent-blue;
+		background-color: $alcatraz-blue;
 		color: #fff;
 		font-weight: 400;
 		text: {
@@ -51,14 +51,14 @@ a {
 		}
 
 		&:hover {
-			background-color: darken($accent-blue, 20%);
+			background-color: darken($alcatraz-blue, 20%);
 		}
 	}
 
 	.mobile-nav-toggle-style-hamburger & {
 		float: right;
 		margin: 45px;
-		color: $accent-blue;
+		color: $alcatraz-blue;
 
 		&::before {
 			font: {
@@ -141,7 +141,7 @@ a {
 	@media (min-width: em(768)) {
 		.header-style-default & {
 			float: none;
-			background-color: $accent-blue;
+			background-color: $alcatraz-blue;
 			text-align: center;
 
 			> div {
@@ -187,7 +187,7 @@ a {
 			@media (min-width: em(768)) {
 				.header-style-default & {
 					top: 45px;
-					border-top: 3px solid #999;
+					border-top: 3px solid $prision-cell-gray;
 					text-align: left;
 
 					a {
@@ -200,14 +200,14 @@ a {
 
 				.header-style-short & {
 					top: 45px;
-					border-top: 3px solid $accent-blue;
+					border-top: 3px solid $alcatraz-blue;
 					text-align: left;
 				}
 			}
 
 			@media (min-width: em(960)) {
 				.header-style-side & {
-					border-left: 3px solid $accent-blue;
+					border-left: 3px solid $alcatraz-blue;
 					box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
 				}
 			}
