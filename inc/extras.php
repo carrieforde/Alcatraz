@@ -68,7 +68,7 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'has-logo';
 	}
 
-	// Logo class
+	// Mobile logo class
 	if ( ! empty( $options['mobile_logo_id'] ) ) {
 		$classes[] = 'has-mobile-logo';
 	}
