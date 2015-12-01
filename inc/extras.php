@@ -64,8 +64,13 @@ function alcatraz_body_classes( $classes ) {
 	}
 
 	// Logo class
-	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
+	if ( ! empty( $options['logo_id'] ) ) {
 		$classes[] = 'has-logo';
+	}
+
+	// Logo class
+	if ( ! empty( $options['mobile_logo_id'] ) ) {
+		$classes[] = 'has-mobile-logo';
 	}
 
 	// Header text color class.
