@@ -1326,7 +1326,7 @@ a:hover, a:active {
 /**
  * 4.2.2 Menus
  */
-/* Small menu. */
+/* Mobile Menu */
 .menu-toggle {
   cursor: pointer;
 }
@@ -1406,37 +1406,11 @@ a:hover, a:active {
   }
 }
 
+/* Shared Mobile & Desktop Menu Styles */
 .main-navigation {
   display: block;
   width: 100%;
   line-height: 1;
-}
-
-@media (min-width: 48em) {
-  .header-style-default .main-navigation {
-    float: none;
-    background-color: #6e9aa2;
-    text-align: center;
-  }
-  .header-style-default .main-navigation > div {
-    display: inline-block;
-  }
-  .header-style-default .main-navigation > div a {
-    color: #fff;
-  }
-  .header-style-short .main-navigation {
-    padding: 2.3125em 1.25em;
-    text-align: right;
-  }
-  .header-style-short .main-navigation > div {
-    display: inline-block;
-  }
-}
-
-@media (min-width: 60em) {
-  .header-style-side .main-navigation li {
-    float: none;
-  }
 }
 
 .main-navigation ul {
@@ -1450,36 +1424,10 @@ a:hover, a:active {
   box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
   float: left;
   position: absolute;
-  top: 1.5em;
+  top: 2.75em;
   left: -999em;
   z-index: 99999;
   background-color: #fff;
-}
-
-@media (min-width: 48em) {
-  .header-style-default .main-navigation ul ul {
-    top: 45px;
-    border-top: 3px solid #535d65;
-    text-align: left;
-  }
-  .header-style-default .main-navigation ul ul a {
-    color: #6e9aa2;
-  }
-  .header-style-default .main-navigation ul ul a:hover {
-    color: #426268;
-  }
-  .header-style-short .main-navigation ul ul {
-    top: 45px;
-    border-top: 3px solid #6e9aa2;
-    text-align: left;
-  }
-}
-
-@media (min-width: 60em) {
-  .header-style-side .main-navigation ul ul {
-    border-left: 3px solid #6e9aa2;
-    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
-  }
 }
 
 .main-navigation ul ul ul {
@@ -1501,20 +1449,6 @@ a:hover, a:active {
   left: auto;
 }
 
-@media (min-width: 60em) {
-  .header-style-side .main-navigation ul li:hover > ul, .header-style-side
-  .main-navigation ul li.focus > ul {
-    top: 0;
-    left: 200px;
-  }
-}
-
-@media (min-width: 48em) {
-  .header-style-short .main-navigation ul li:hover:last-child > ul {
-    left: -100px;
-  }
-}
-
 .main-navigation li {
   float: left;
   position: relative;
@@ -1527,10 +1461,11 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-@media (min-width: 60em) {
-  .header-style-side .main-navigation a {
-    width: 200px;
-  }
+.main-navigation .current_page_item > a,
+.main-navigation .current-menu-item > a,
+.main-navigation .current_page_ancestor > a,
+.main-navigation .current-menu-ancestor > a {
+  color: #426268;
 }
 
 .site-main .comment-navigation, .site-main
@@ -1553,6 +1488,65 @@ a:hover, a:active {
   float: right;
   text-align: right;
   width: 50%;
+}
+
+/* Desktop Styles */
+@media (min-width: 48em) {
+  .header-style-default .main-navigation {
+    float: none;
+    background-color: #6e9aa2;
+    text-align: center;
+  }
+  .header-style-default .main-navigation > div {
+    display: inline-block;
+  }
+  .header-style-default .main-navigation > div a {
+    color: #fff;
+  }
+  .header-style-default .main-navigation ul ul {
+    top: 45px;
+    border-top: 3px solid #535d65;
+    text-align: left;
+  }
+  .header-style-default .main-navigation a {
+    color: #6e9aa2;
+  }
+  .header-style-default .main-navigation a:hover {
+    color: #426268;
+  }
+  .header-style-short .main-navigation {
+    padding: 2.3125em 1.25em;
+    text-align: right;
+  }
+  .header-style-short .main-navigation > div {
+    display: inline-block;
+  }
+  .header-style-short .main-navigation ul ul {
+    top: 45px;
+    border-top: 3px solid #6e9aa2;
+    text-align: left;
+  }
+  .header-style-short .main-navigation ul li:hover:last-child > ul {
+    left: -100px;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .main-navigation ul ul {
+    border-left: 3 solid #6e9aa2;
+    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
+  }
+  .header-style-side .main-navigation ul li {
+    float: none;
+  }
+  .header-style-side .main-navigation ul li:hover > ul,
+  .header-style-side .main-navigation ul li.focus > ul {
+    top: 0;
+    left: 200px;
+  }
+  .header-style-side .main-navigation a {
+    width: 200px;
+  }
 }
 
 /**
