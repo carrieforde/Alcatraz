@@ -82,6 +82,12 @@ a {
 	}
 }
 
+.mobile-nav-toggle-style-hamburger .site-header .header-inner {
+	@media (max-width: em(768)) {
+		float: left;
+	}
+}
+
 .toggled {
 	li {
 		display: block;

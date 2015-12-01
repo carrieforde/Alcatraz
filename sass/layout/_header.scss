@@ -25,23 +25,6 @@
 		@media (max-width: em(460)) {
 			width: 275px;
 		}
-
-		@media (max-width: em(767)) {
-			.mobile-nav-toggle-style-hamburger & {
-				float: left;
-			}
-		}
-
-		.header-style-side & {
-			float: left;
-		}
-
-		/*@media (max-width: em(960)) {
-			.header-style-side &,
-			.header-style-side.mobile-nav-toggle-style-hamburger & {
-				float: left;
-			}
-		}*/
 	}
 
 	.logo-wrap {
@@ -51,7 +34,7 @@
 
 		@media (min-width: em(768)) {
 			.header-style-default &,
-			.header-style-short {
+			.header-style-short & {
 				max-width: 600px;
 			}
 		}
@@ -158,6 +141,10 @@
 			height: 100%;
 			position: fixed;
 			padding: $size__default-padding;
+
+			.header-inner {
+				float: left;
+			}
 		}
 
 		&.boxed .site-header {
