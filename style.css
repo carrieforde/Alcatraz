@@ -287,6 +287,7 @@ th {
  * 2.3 Mixins
  */
 /* Em output with px fallback (pixel fall backs will make adjusting font sizing easier later) */
+/* Center - makes the assumption the element is already block */
 /* Center block */
 /* Clearfix */
 /* Clear after (not all clearfix need this also) */
@@ -1120,77 +1121,11 @@ td :last-child {
 .site-header .header-inner {
   padding: 20px 20px 0;
   position: relative;
-  /*@media (max-width: em(960)) {
-			.header-style-side &,
-			.header-style-side.mobile-nav-toggle-style-hamburger & {
-				float: left;
-			}
-		}*/
 }
 
-@media (max-width: 28.75em) {
-  .site-header .header-inner {
-    width: 275px;
-  }
-}
-
-@media (max-width: 47.9375em) {
-  .mobile-nav-toggle-style-hamburger .site-header .header-inner {
-    float: left;
-  }
-}
-
-.header-style-side .site-header .header-inner {
+.mobile-nav-toggle-style-hamburger .site-header .header-inner {
   float: left;
-}
-
-.site-header .logo-wrap {
-  max-width: 300px;
-  margin-bottom: 1.25em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-@media (min-width: 48em) {
-  .header-style-default .site-header .logo-wrap,
-  .site-header .logo-wrap .header-style-short {
-    max-width: 600px;
-  }
-}
-
-.site-header .logo-mobile {
-  display: block;
-}
-
-@media (min-width: 48em) {
-  .header-style-default .site-header .logo-mobile,
-  .header-style-short .site-header .logo-mobile {
-    display: none;
-  }
-}
-
-@media (min-width: 60em) {
-  .header-style-side .site-header .logo-mobile {
-    display: none;
-  }
-}
-
-.site-header .logo-regular {
-  display: none;
-}
-
-@media (min-width: 48em) {
-  .header-style-default .site-header .logo-regular,
-  .header-style-short .site-header .logo-regular {
-    display: block;
-  }
-}
-
-@media (min-width: 60em) {
-  .header-style-side .site-header .logo-regular {
-    display: block;
-  }
+  max-width: calc(100% - 120px);
 }
 
 .site-header .site-title {
@@ -1201,7 +1136,8 @@ td :last-child {
   font-weight: 600;
 }
 
-.has-logo .site-header .site-title {
+.has-logo .site-header .site-title,
+.has-mobile-logo .site-header .site-title {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1216,7 +1152,8 @@ td :last-child {
   margin: 10px 0;
 }
 
-.has-logo .site-header .site-description {
+.has-logo .site-header .site-description,
+.has-mobile-logo .site-header .site-description {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1240,6 +1177,10 @@ td :last-child {
   .header-style-default .header-inner {
     text-align: center;
     padding: 20px;
+  }
+  .header-style-default.mobile-nav-toggle-style-hamburger .header-inner {
+    float: none;
+    max-width: 100%;
   }
   .header-style-short .header-inner {
     float: left;
@@ -1276,6 +1217,9 @@ td :last-child {
   .header-style-side .site-header:last-child {
     margin-right: 0;
   }
+  .header-style-side .site-header .header-inner {
+    max-width: 100%;
+  }
   .header-style-side.boxed .site-header {
     width: 325px;
   }
@@ -1293,6 +1237,75 @@ td :last-child {
   }
   .header-style-side.boxed .site-content {
     width: calc(100% - 300px);
+  }
+}
+
+/* Logo Styling */
+.has-logo {
+  display: block;
+}
+
+@media (min-width: 48em) {
+  .logo-mobile .has-logo.header-style-default.has-mobile-logo,
+  .logo-mobile .has-logo.header-style-short.has-mobile-logo {
+    display: none;
+  }
+  .logo-regular .has-logo.header-style-default.has-mobile-logo,
+  .logo-regular .has-logo.header-style-short.has-mobile-logo {
+    display: block;
+  }
+}
+
+@media (min-width: 60em) {
+  .logo-mobile .has-logo.header-style-side.has-mobile-logo {
+    display: none;
+  }
+  .logo-regular .has-logo.header-style-side.has-mobile-logo {
+    display: block;
+  }
+}
+
+.has-mobile-logo .logo-mobile {
+  display: block;
+}
+
+.has-mobile-logo .logo-regular {
+  display: none;
+}
+
+@media (min-width: 48em) {
+  .has-mobile-logo.has-logo.header-style-default .logo-mobile, .has-mobile-logo.has-logo.header-style-short .logo-mobile {
+    display: none;
+  }
+  .has-mobile-logo.has-logo.header-style-default .logo-regular, .has-mobile-logo.has-logo.header-style-short .logo-regular {
+    display: block;
+  }
+}
+
+@media (min-width: 60em) {
+  .has-mobile-logo.has-logo.header-style-side .logo-mobile {
+    display: none;
+  }
+  .has-mobile-logo.has-logo.header-style-side .logo-regular {
+    display: block;
+  }
+}
+
+.mobile-nav-toggle-style-button .logo {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 48em) {
+  .logo {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (min-width: 60em) {
+  .header-style-side .logo {
+    margin-bottom: 20px;
   }
 }
 
@@ -1366,6 +1379,12 @@ a:hover, a:active {
   font-family: FontAwesome;
   font-size: 2.25em;
   content: "\f00d";
+}
+
+@media (max-width: 48em) {
+  .mobile-nav-toggle-style-hamburger .site-header .header-inner {
+    float: left;
+  }
 }
 
 .toggled li {

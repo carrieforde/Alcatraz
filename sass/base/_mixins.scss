@@ -8,6 +8,12 @@
 	font-size: em($sizeValue);
 }
 
+/* Center - makes the assumption the element is already block */
+@mixin center {
+	margin-left: auto;
+	margin-right: auto;
+}
+
 /* Center block */
 @mixin center-block {
 	display: block;
