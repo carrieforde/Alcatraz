@@ -197,13 +197,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Mobile Navigation Style', 'alcatraz' ),
 			'section'  => 'alcatraz_header_section',
 			'settings' => 'alcatraz_options[mobile_nav_style]',
-			'choices'  => array(
-				'default'     => __( 'Default', 'alcatraz' ),
-				'slide-left'  => __( 'Slide from Left', 'alcatraz' ),
-				'slide-right' => __( 'Slide from Right', 'alcatraz' ),
-				'full-screen' => __( 'Full Screen', 'alcatraz' ),
-				'fade-in'     => __( 'Fade In', 'alcatraz' ),
-			),
+			'choices'  => alcatraz_get_mobile_nav_style_options( 'mobile-nav-style' ),
 		)
 	);
 
