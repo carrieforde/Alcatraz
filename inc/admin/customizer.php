@@ -73,6 +73,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'default'    => 'full-width',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -140,6 +141,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'default'    => 'default',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -164,6 +166,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'default'    => 'button',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -173,7 +176,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Mobile Navigation Toggle Style', 'alcatraz' ),
 			'section'  => 'alcatraz_header_section',
 			'settings' => 'alcatraz_options[mobile_nav_toggle_style]',
-			'choices'  => alcatraz_get_mobile_nav_toggle_options( 'header' ),
+			'choices'  => alcatraz_get_mobile_nav_toggle_options( 'mobile-nav-toggle-style' ),
 		)
 	);
 
@@ -184,6 +187,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'default'    => 'default',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -193,13 +197,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Mobile Navigation Style', 'alcatraz' ),
 			'section'  => 'alcatraz_header_section',
 			'settings' => 'alcatraz_options[mobile_nav_style]',
-			'choices'  => array(
-				'default' => __( 'Default', 'alcatraz' ),
-				'from-left' => __( 'Slide from Left', 'alcatraz' ),
-				'from-right' => __( 'Slide from Right', 'alcatraz' ),
-				'full-screen' => __( 'Full Screen', 'alcatraz' ),
-				'fade-in'     => __( 'Fade In', 'alcatraz' ),
-			),
+			'choices'  => alcatraz_get_mobile_nav_style_options( 'mobile-nav-style' ),
 		)
 	);
 
@@ -210,7 +208,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'default'    =>  '',
 			'type'       => 'option',
 			'capability' => 'edit_theme_options'
-			)
+		)
 	);
 	$wp_customize->add_control(
 		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_logo',
