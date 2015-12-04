@@ -1,0 +1,31 @@
+{
+  "name": "Alcatraz",
+  "version": "1.0.0",
+	"keywords": [
+		"css",
+		"js",
+		"sass",
+		"mobile-first",
+		"responsive",
+		"framework",
+		"wordpress"
+	],
+	"homepage": "http://alcatraztheme.com",
+	"main": [
+		"sass/style.scss",
+		"style.css"
+	],
+	"ignore": [
+		".jshintrc",
+		"**/*.txt",
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+  "dependencies": {
+	"bourbon": "~4.2.6",
+	"neat": "~1.7.2"
+  }
+}
