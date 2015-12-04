@@ -18,24 +18,36 @@ module.exports = function( grunt ) {
 				}
 			}
 		},
-		watch: {
-			css: {
-				files: '**/*.scss',
-				tasks: ['sass'],
-				options: {
-					livereload: true,
-				},
-			},
-		},
 		postcss: {
 			options: {
+				map: true,
 				processors: [
 					require( 'autoprefixer' )({ browsers: 'last 2 versions' }), // Add vendor prefixes.
-					require( 'pixrem' )(), // Add fall backs for rem units.
+					require( 'css-mqpacker' )({ sort: true }),
 				]
 			},
 			dist: {
 				src: '*.css'
+			},
+		},
+		cssnano: {
+			options: {
+				autoprefixer: false,
+				safe: true,
+			},
+			dist: {
+				files: {
+					'style.min.css' : 'style.css'
+				}
+			}
+		},
+		watch: {
+			css: {
+				files: ['styles'],
+				options: {
+					spawn: false,
+					livereload: true,
+				}
 			},
 		},
 		wp_readme_to_markdown: {
@@ -57,11 +69,13 @@ module.exports = function( grunt ) {
 	// Load plugins.
 	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
+	grunt.loadNpmTasks( 'grunt-cssnano' );
 	grunt.loadNpmTasks( 'grunt-postcss' );
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
 	// Configure tasks.
+	grunt.registerTask( 'styles', ['sass', 'postcss', 'cssnano'] );
 	grunt.registerTask( 'build', ['sass', 'postcss', 'wp_readme_to_markdown', 'makepot' ] );
 
 };
