@@ -1,6 +1,6 @@
 {
-  "name": "Alcatraz",
-  "version": "1.0.0",
+	"name": "Alcatraz",
+	"version": "1.0.0",
 	"keywords": [
 		"css",
 		"js",
@@ -27,5 +27,5 @@
   "dependencies": {
 	"bourbon": "~4.2.6",
 	"neat": "~1.7.2"
-  }
+	}
 }
