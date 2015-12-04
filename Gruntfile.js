@@ -58,11 +58,14 @@ module.exports = function( grunt ) {
 			},
 		},
 		makepot: {
-			target: {
+			theme: {
 				options: {
+					cwd: '',
+					domainPath: 'languages/',
+					potFilename: 'alcatraz.pot',
 					type: 'wp-theme'
-				},
-			},
+				}
+			}
 		},
 	});
 

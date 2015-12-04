@@ -1,221 +1,838 @@
-# Copyright (C) 2015 Automattic
+# Copyright (C) 2015 Carrie Forde, Braad Martin, Jordan Gonzales
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: _s 1.0.0\n"
-"Report-Msgid-Bugs-To: http://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2015-09-16 19:02:07+00:00\n"
+"Project-Id-Version: alcatraz 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
+"POT-Creation-Date: 2015-12-04 23:10:11+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 0.5.3\n"
 
-#: 404.php:17
-#@ _s
+#: inc/admin/customizer.php:260
+msgid "1"
+msgstr ""
+
+#: inc/admin/customizer.php:261
+msgid "2"
+msgstr ""
+
+#: inc/admin/customizer.php:262
+msgid "3"
+msgstr ""
+
+#: inc/admin/customizer.php:263
+msgid "4"
+msgstr ""
+
+#: 404.php:20
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:21
-#@ _s
-msgid "It looks like nothing was found at this location. Maybe try one of the links below or a search?"
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
 msgstr ""
 
-#: 404.php:29
-#@ _s
+#: 404.php:32
 msgid "Most Used Categories"
 msgstr ""
 
-#. translators: %1$s: smiley
-#: 404.php:46
-#, php-format
-#@ _s
+#: 404.php:48
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:31
-#, php-format
-#@ _s
+#: comments.php:38 comments.php:59
+msgid "Comment navigation"
+msgstr ""
+
+#: comments.php:41 comments.php:62
+msgid "Older Comments"
+msgstr ""
+
+#: comments.php:42 comments.php:63
+msgid "Newer Comments"
+msgstr ""
+
+#: comments.php:75
+msgid "Comments are closed."
+msgstr ""
+
+#: functions.php:34
+msgid "Primary Menu"
+msgstr ""
+
+#: header.php:27
+msgid "Skip to content"
+msgstr ""
+
+#: header.php:42
+msgid "Menu"
+msgstr ""
+
+#: inc/admin/admin.php:26
+msgid "Page Options"
+msgstr ""
+
+#: inc/admin/admin.php:35 inc/admin/customizer.php:39
+msgid "Layout"
+msgstr ""
+
+#: inc/admin/admin.php:36
+msgid "Select the layout for this page"
+msgstr ""
+
+#: inc/admin/admin.php:40 inc/admin/customizer.php:155 inc/choices.php:20
+#: inc/choices.php:59 lib/cmb2/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: inc/admin/admin.php:41 inc/admin/customizer.php:111
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:42 inc/admin/customizer.php:112
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:43 inc/admin/customizer.php:113
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:49
+msgid "Transparent Header"
+msgstr ""
+
+#: inc/admin/admin.php:50
+msgid ""
+"Position the page content at the top of the screen and make the header "
+"transparent"
+msgstr ""
+
+#: inc/admin/admin.php:57
+msgid "Header Text Color"
+msgstr ""
+
+#: inc/admin/admin.php:58
+msgid "Select a Header Text Color for this page"
+msgstr ""
+
+#: inc/admin/admin.php:66
+msgid "Body Class"
+msgstr ""
+
+#: inc/admin/admin.php:67
+msgid "Add a custom class to the &lt;body&gt; tag for this page"
+msgstr ""
+
+#: inc/admin/customizer.php:49
+msgid "Header"
+msgstr ""
+
+#: inc/admin/customizer.php:59 inc/widget-areas.php:49
+msgid "Footer"
+msgstr ""
+
+#: inc/admin/customizer.php:83
+msgid "Site Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:87
+msgid "Full Width"
+msgstr ""
+
+#: inc/admin/customizer.php:88
+msgid "Boxed"
+msgstr ""
+
+#: inc/admin/customizer.php:89
+msgid "Boxed Content"
+msgstr ""
+
+#: inc/admin/customizer.php:107
+msgid "Page Layout"
+msgstr ""
+
+#: inc/admin/customizer.php:131
+msgid "Include Page Banner Widget Area?"
+msgstr ""
+
+#: inc/admin/customizer.php:151
+msgid "Header Style"
+msgstr ""
+
+#: inc/admin/customizer.php:156
+msgid "Short"
+msgstr ""
+
+#: inc/admin/customizer.php:157
+msgid "Side"
+msgstr ""
+
+#: inc/admin/customizer.php:176
+msgid "Mobile Navigation Toggle Style"
+msgstr ""
+
+#: inc/admin/customizer.php:197
+msgid "Mobile Navigation Style"
+msgstr ""
+
+#: inc/admin/customizer.php:216
+msgid "Logo"
+msgstr ""
+
+#: inc/admin/customizer.php:235
+msgid "Mobile Logo"
+msgstr ""
+
+#: inc/admin/customizer.php:255
+msgid "Number of Footer Widget Areas"
+msgstr ""
+
+#: inc/admin/customizer.php:259 lib/cmb2/includes/CMB2_Field.php:978
+#: lib/cmb2/includes/CMB2_Field.php:982 lib/cmb2/tests/test-cmb-field.php:216
+msgid "None"
+msgstr ""
+
+#: inc/admin/customizer.php:281
+msgid "Footer Bottom Content"
+msgstr ""
+
+#: inc/choices.php:21
+msgid "Dark Text"
+msgstr ""
+
+#: inc/choices.php:22
+msgid "Light Text"
+msgstr ""
+
+#: inc/choices.php:40
+msgid "Button"
+msgstr ""
+
+#: inc/choices.php:41
+msgid "Hamburger"
+msgstr ""
+
+#: inc/choices.php:60
+msgid "Slide from Left"
+msgstr ""
+
+#: inc/choices.php:61
+msgid "Slide from Right"
+msgstr ""
+
+#: inc/choices.php:62
+msgid "Full Screen"
+msgstr ""
+
+#: inc/choices.php:63
+msgid "Fade In"
+msgstr ""
+
+#: inc/template-tags.php:45 inc/template-tags.php:50
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:47
+msgid "Posted in %1$s"
+msgstr ""
+
+#: inc/template-tags.php:52
+msgid "Tagged %1$s"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "Leave a comment"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "1 Comment"
+msgstr ""
+
+#: inc/template-tags.php:58
+msgid "% Comments"
+msgstr ""
+
+#: inc/template-tags.php:65 template-parts/content-page.php:30
+#. translators: %s: Name of current post
+msgid "Edit %s"
+msgstr ""
+
+#: inc/widget-areas.php:20
+msgid "Primary Sidebar"
+msgstr ""
+
+#: inc/widget-areas.php:22
+msgid ""
+"Shows on the left or right side of the page or is hidden based on the "
+"\"Page Layout\" option"
+msgstr ""
+
+#: inc/widget-areas.php:32
+msgid "Page Banner"
+msgstr ""
+
+#: inc/widget-areas.php:34
+msgid "Shows on the top of the page in between the menu and the main content area"
+msgstr ""
+
+#: inc/widget-areas.php:51 inc/widget-areas.php:61
+msgid "Shows in the footer"
+msgstr ""
+
+#: inc/widget-areas.php:59
+msgid "Footer %d"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:493
+msgid "The jsDelivr API servers appear to be temporarily unavailable."
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1042
+msgid "Insert Icon"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1062
+msgid "Better Font Awesome"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1068
+msgid "API Error"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1070
+msgid ""
+"The attempt to reach the jsDelivr API server failed with the following "
+"error: %s"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1080
+msgid "Remote CSS Error"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1082
+msgid ""
+"The attempt to fetch the remote Font Awesome stylesheet failed with the "
+"following error: %s %s The embedded fallback Font Awesome will be used "
+"instead (version: %s)."
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1092
+msgid ""
+"<b>Don't worry! Better Font Awesome will still render using the included "
+"fallback version:</b> "
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1096
+msgid "Solution"
+msgstr ""
+
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1098
+msgid ""
+"This may be the result of a temporary server or connectivity issue which "
+"will resolve shortly. However if the problem persists please file a support "
+"ticket on the %splugin forum%s, citing the errors listed above. "
+msgstr ""
+
+#: lib/cmb2/example-functions.php:82 lib/cmb2/tests/test-cmb-field.php:244
+msgid "Test Metabox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:93 lib/cmb2/example-functions.php:380
+msgid "Test Text"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:94 lib/cmb2/example-functions.php:106
+#: lib/cmb2/example-functions.php:114 lib/cmb2/example-functions.php:122
+#: lib/cmb2/example-functions.php:131 lib/cmb2/example-functions.php:139
+#: lib/cmb2/example-functions.php:153 lib/cmb2/example-functions.php:160
+#: lib/cmb2/example-functions.php:168 lib/cmb2/example-functions.php:185
+#: lib/cmb2/example-functions.php:194 lib/cmb2/example-functions.php:202
+#: lib/cmb2/example-functions.php:209 lib/cmb2/example-functions.php:216
+#: lib/cmb2/example-functions.php:230 lib/cmb2/example-functions.php:243
+#: lib/cmb2/example-functions.php:256 lib/cmb2/example-functions.php:268
+#: lib/cmb2/example-functions.php:277 lib/cmb2/example-functions.php:285
+#: lib/cmb2/example-functions.php:294 lib/cmb2/example-functions.php:301
+#: lib/cmb2/example-functions.php:315 lib/cmb2/example-functions.php:381
+#: lib/cmb2/example-functions.php:476 lib/cmb2/example-functions.php:484
+#: lib/cmb2/example-functions.php:491 lib/cmb2/example-functions.php:498
+#: lib/cmb2/example-functions.php:505 lib/cmb2/example-functions.php:512
+#: lib/cmb2/example-functions.php:519 lib/cmb2/example-functions.php:557
+#: lib/cmb2/tests/test-cmb-field.php:256
+msgid "field description (optional)"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:105
+msgid "Test Text Small"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:113
+msgid "Test Text Medium"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:121
+msgid "Website URL"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:130
+msgid "Test Text Email"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:138
+msgid "Test Time"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:145 lib/cmb2/example-functions.php:146
+msgid "Time zone"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:152
+msgid "Test Date Picker"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:159
+msgid "Test Date Picker (UNIX timestamp)"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:167
+msgid "Test Date/Time Picker Combo (UNIX timestamp)"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:184
+msgid "Test Money"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:193
+msgid "Test Color Picker"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:201
+msgid "Test Text Area"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:208
+msgid "Test Text Area Small"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:215
+msgid "Test Text Area for Code"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:222
+msgid "Test Title Weeeee"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:223
+msgid "This is a title description"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:229
+msgid "Test Select"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:235 lib/cmb2/example-functions.php:248
+#: lib/cmb2/example-functions.php:260
+msgid "Option One"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:236 lib/cmb2/example-functions.php:249
+#: lib/cmb2/example-functions.php:261
+msgid "Option Two"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:237 lib/cmb2/example-functions.php:250
+#: lib/cmb2/example-functions.php:262
+msgid "Option Three"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:242
+msgid "Test Radio inline"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:255
+msgid "Test Radio"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:267
+msgid "Test Taxonomy Radio"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:276
+msgid "Test Taxonomy Select"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:284
+msgid "Test Taxonomy Multi Checkbox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:293
+msgid "Test Checkbox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:300 lib/cmb2/tests/test-cmb-field.php:255
+msgid "Test Multi Checkbox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:306 lib/cmb2/tests/test-cmb-field.php:261
+msgid "Check One"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:307 lib/cmb2/tests/test-cmb-field.php:262
+msgid "Check Two"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:308 lib/cmb2/tests/test-cmb-field.php:263
+msgid "Check Three"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:314
+msgid "Test wysiwyg"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:322
+msgid "Test Image"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:323
+msgid "Upload an image or enter a URL."
+msgstr ""
+
+#: lib/cmb2/example-functions.php:329
+msgid "Multiple Files"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:330
+msgid "Upload or add multiple images/attachments."
+msgstr ""
+
+#: lib/cmb2/example-functions.php:337
+msgid "oEmbed"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:338
+msgid ""
+"Enter a youtube, twitter, or instagram URL. Supports services listed at <a "
+"href=\"http://codex.wordpress.org/Embeds\">http://codex.wordpress.org/"
+"Embeds</a>."
+msgstr ""
+
+#: lib/cmb2/example-functions.php:371
+msgid "About Page Metabox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:402
+msgid "Repeating Field Group"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:410
+msgid "Generates reusable form entries"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:412
+msgid "Entry {#}"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:413
+msgid "Add Another Entry"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:414
+msgid "Remove Entry"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:427
+msgid "Entry Title"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:434
+msgid "Description"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:435
+msgid "Write a short description for this entry"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:441
+msgid "Entry Image"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:447
+msgid "Image Caption"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:468
+msgid "User Profile Metabox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:475
+msgid "Extra Info"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:483
+msgid "Avatar"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:490
+msgid "Facebook URL"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:497
+msgid "Twitter URL"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:504
+msgid "Google+ URL"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:511
+msgid "Linkedin URL"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:518
+msgid "User Field"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:541
+msgid "Theme Options Metabox"
+msgstr ""
+
+#: lib/cmb2/example-functions.php:556
+msgid "Site Background Color"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2.php:120
+msgid "Metabox configuration is required to have an ID parameter"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2.php:332
+msgid "Click to toggle"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Ajax.php:40
+msgid "Please Try Again"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Ajax.php:135 lib/cmb2/tests/test-cmb-types.php:811
+msgid "Remove Embed"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Ajax.php:139 lib/cmb2/tests/test-cmb-types.php:812
+msgid "No oEmbed Results Found for %s. View more info at"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Field.php:955
+msgid "Add Group"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Field.php:956
+msgid "Remove Group"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:86 lib/cmb2/includes/CMB2_JS.php:119
+msgid "Clear"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:88
+msgid "Select Color"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:89
+msgid "Current Color"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:110
+msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:111
+msgid "Su, Mo, Tu, We, Th, Fr, Sa"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:112
+msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:113
+msgid ""
+"January, February, March, April, May, June, July, August, September, "
+"October, November, December"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:114
+msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:115
+msgid "Next"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:116
+msgid "Prev"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:117
+msgid "Today"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:118 lib/cmb2/includes/CMB2_JS.php:128
+msgid "Done"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:122
+msgid "Choose Time"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:123
+msgid "Time"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:124
+msgid "Hour"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:125
+msgid "Minute"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:126
+msgid "Second"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:127
+msgid "Now"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:135
+msgid "Use this file"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:136
+msgid "Use these files"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:137 lib/cmb2/includes/CMB2_Types.php:1004
+msgid "Remove Image"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:138 lib/cmb2/includes/CMB2_Types.php:357
+#: lib/cmb2/includes/CMB2_Types.php:1023 lib/cmb2/tests/test-cmb-types.php:155
+#: lib/cmb2/tests/test-cmb-types.php:163 lib/cmb2/tests/test-cmb-types.php:760
+#: lib/cmb2/tests/test-cmb-types.php:785
+msgid "Remove"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:139 lib/cmb2/includes/CMB2_Types.php:1018
+#: lib/cmb2/tests/test-cmb-types.php:761 lib/cmb2/tests/test-cmb-types.php:786
+msgid "File:"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:140 lib/cmb2/includes/CMB2_Types.php:1021
+#: lib/cmb2/tests/test-cmb-types.php:759 lib/cmb2/tests/test-cmb-types.php:784
+msgid "Download"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_JS.php:141
+msgid "Select / Deselect All"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Types.php:298
+msgid "Add Row"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Types.php:749 lib/cmb2/includes/CMB2_Types.php:797
+msgid "No terms"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Types.php:864 lib/cmb2/tests/test-cmb-types.php:736
+#: lib/cmb2/tests/test-cmb-types.php:762
+msgid "Add or Upload Files"
+msgstr ""
+
+#: lib/cmb2/includes/CMB2_Types.php:926 lib/cmb2/tests/test-cmb-types.php:772
+#: lib/cmb2/tests/test-cmb-types.php:787
+msgid "Add or Upload File"
+msgstr ""
+
+#: lib/cmb2/includes/helper-functions.php:250
+msgid "Save"
+msgstr ""
+
+#: search.php:21
+msgid "Search Results for: %s"
+msgstr ""
+
+#: template-parts/content-none.php:11
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:17
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:21
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:26
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:20 template-parts/content-single.php:24
+#: template-parts/content.php:32
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content.php:25
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "alcatraz"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid "A pretty good theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Carrie Forde, Braad Martin, Jordan Gonzales"
+msgstr ""
+
+#: comments.php:29
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:40
-#: comments.php:61
-#@ _s
-msgid "Comment navigation"
-msgstr ""
-
-#: comments.php:43
-#: comments.php:64
-#@ _s
-msgid "Older Comments"
-msgstr ""
-
-#: comments.php:44
-#: comments.php:65
-#@ _s
-msgid "Newer Comments"
-msgstr ""
-
-#: comments.php:77
-#@ _s
-msgid "Comments are closed."
-msgstr ""
-
-#: footer.php:18
-#@ _s
-msgid "https://wordpress.org/"
-msgstr ""
-
-#: footer.php:18
-#, php-format
-#@ _s
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: footer.php:20
-#, php-format
-#@ _s
-msgid "Theme: %1$s by %2$s."
-msgstr ""
-
-#: functions.php:47
-#: header.php:38
-#@ _s
-msgid "Primary Menu"
-msgstr ""
-
-#: functions.php:102
-#@ _s
-msgid "Sidebar"
-msgstr ""
-
-#: header.php:25
-#@ _s
-msgid "Skip to content"
-msgstr ""
-
-#: inc/template-tags.php:28
-#, php-format
-#@ _s
+#: inc/template-tags.php:25
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:33
-#, php-format
-#@ _s
+#: inc/template-tags.php:30
 msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:50
-#: inc/template-tags.php:56
-#@ _s
-msgid ", "
+#: lib/cmb2/includes/CMB2_JS.php:109
+msgctxt "Valid formatDate string for jquery-ui datepicker"
+msgid "mm/dd/yy"
 msgstr ""
 
-#: inc/template-tags.php:52
-#, php-format
-#@ _s
-msgid "Posted in %1$s"
-msgstr ""
-
-#: inc/template-tags.php:58
-#, php-format
-#@ _s
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/template-tags.php:64
-#@ _s
-msgid "Leave a comment"
-msgstr ""
-
-#: inc/template-tags.php:64
-#@ _s
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:64
-#, php-format
-#@ _s
-msgid "% Comments"
-msgstr ""
-
-#. translators: %s: Name of current post
-#: inc/template-tags.php:71
-#: template-parts/content-page.php:32
-#, php-format
-#@ _s
-msgid "Edit %s"
-msgstr ""
-
-#: search.php:18
-#, php-format
-#@ _s
-msgid "Search Results for: %s"
-msgstr ""
-
-#: template-parts/content-none.php:14
-#@ _s
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:20
-#, php-format
-#@ _s
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-none.php:24
-#@ _s
-msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
-msgstr ""
-
-#: template-parts/content-none.php:29
-#@ _s
-msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
-msgstr ""
-
-#: template-parts/content-page.php:21
-#: template-parts/content-single.php:25
-#: template-parts/content.php:34
-#@ _s
-msgid "Pages:"
-msgstr ""
-
-#. translators: %s: Name of current post.
-#: template-parts/content.php:27
-#, php-format
-#@ _s
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-#. Theme Name of the plugin/theme
-msgid "_s"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-#@ _s
-msgid "http://underscores.me/"
-msgstr ""
-
-#. Description of the plugin/theme
-#@ _s
-msgid "Hi. I'm a starter theme called <code>_s</code>, or <em>underscores</em>, if you like. I'm a theme meant for hacking so don't use me as a <em>Parent Theme</em>. Instead try turning me into the next, most awesome, WordPress theme out there. That's what I'm here for."
-msgstr ""
-
-#. Author of the plugin/theme
-#@ _s
-msgid "Automattic"
-msgstr ""
-
-#. Author URI of the plugin/theme
-#@ _s
-msgid "http://automattic.com/"
+#: lib/cmb2/includes/CMB2_JS.php:129
+msgctxt ""
+"Valid formatting string, as per "
+"http://trentrichardson.com/examples/timepicker/"
+msgid "hh:mm TT"
 msgstr ""
