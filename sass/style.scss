@@ -47,15 +47,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
  *
  */
 
-/**
- * 1.0 Sass Libraries
- */
+// 1.0 Sass Libraries
 @import "bourbon";
 @import "neat";
 
-/**
- * 2.0 Base
- */
+// 2.0 Base
 @import "base/normalize";
 @import "base/variables";
 @import "base/mixins";
@@ -63,33 +59,21 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "base/grid";
 @import "base/typography";
 
-/**
- * 3.0 Components
- */
+// 3.0 Components
 @import "components/media";
 @import "components/forms";
 @import "components/tables";
 @import "components/widgets";
 
-/**
- * 4.0 Layout
- */
+// 4.0 Layout
 @import "layout/header";
 @import "layout/navigation";
 @import "layout/content";
 @import "layout/sidebars";
 @import "layout/footer";
 
-/**
- * 5.0 Plugins
- *
- * Add your own plugin style import statements here.
-*/
+// 5.0 Plugins
 // @import "plugins";
 
-/**
- * 6.0 Page-Specific Styles
- *
- * Add your own page-specific style import statements here.
- */
+// 6.0 Page-Specific Styles
 //@import "page-specific"
