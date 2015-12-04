@@ -296,7 +296,7 @@ function alcatraz_customize_preview_js() {
 		'alcatraz_customizer',
 		ALCATRAZ_URL . 'js/customizer.js',
 		array( 'customize-preview' ),
-		'1.1.0',
+		ALCATRAZ_VERSION,
 		true
 	);
 }
