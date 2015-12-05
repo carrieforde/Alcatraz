@@ -57,7 +57,7 @@ class Alcatraz_Options_Page {
 	 *
 	 * @since  1.0.0
 	 */
-	public function  options_page() {
+	public function options_page() {
 		?>
 		<div class="wrap alcatraz-options-page">
 			<h1><?php _e( 'Alcatraz Theme Options', 'alcatraz' ) ?></h1>
