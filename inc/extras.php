@@ -98,6 +98,23 @@ function alcatraz_body_classes( $classes ) {
 	return $classes;
 }
 
+/**
+ * Return either an empty string or the integer value of the passed in value.
+ *
+ * @since   1.0.0
+ *
+ * @param   string|int  $value  The value to test.
+ *
+ * @return  string|int
+ */
+function alcatraz_empty_or_int( $value ) {
+    if ( '' === $value ) {
+        return '';
+    } else {
+        return intval( $value );
+    }
+}
+
 add_action( 'alcatraz_before_header_inside', 'alcatraz_output_header_image', 0 );
 /**
  * Maybe output a Header image.
