@@ -1,5 +1,5 @@
 /**
- * navigation.js
+ * Navigation JS.
  *
  * Handles toggling the navigation menu for small screens and enables tab
  * support for dropdown menus.
@@ -12,16 +12,14 @@
 		return;
 	}
 
-	$button = $container.find( '.menu-toggle' );
-	if ( 'undefined' === typeof $button ) {
+	$toggle = $container.find( '.menu-toggle' );
+	if ( 'undefined' === typeof $toggle ) {
 		return;
 	}
 
-	$menu = $container.find( 'ul' ).first();
-
-	// Hide menu toggle button if menu is empty and return early.
+	$menu = $container.find( '#primary-menu' );
 	if ( 'undefined' === typeof $menu ) {
-		$button.style.display = 'none';
+		$toggle.css( 'display', 'none' );
 		return;
 	}
 
@@ -30,14 +28,14 @@
 		$menu.addClass( 'nav-menu' );
 	}
 
-	$button.on( 'click', function() {
+	$toggle.on( 'click', function() {
 		if ( $container.hasClass( 'toggled' ) ) {
 			$container.removeClass( 'toggled' );
-			$button.attr( 'aria-expanded', 'false' );
+			$toggle.attr( 'aria-expanded', 'false' );
 			$menu.attr( 'aria-expanded', 'false' );
 		} else {
 			$container.addClass( 'toggled' );
-			$button.attr( 'aria-expanded', 'true' );
+			$toggle.attr( 'aria-expanded', 'true' );
 			$menu.attr( 'aria-expanded', 'true' );
 		}
 	});
@@ -77,4 +75,31 @@
 			self = self.parentElement;
 		}
 	}
+
+	/**
+	 * Set up the mobile nav sub menu toggles.
+	 */
+	var closedIcon = '+';
+	var openIcon = '-';
+
+	// Insert the toggles into the nav where appropriate.
+	$menu.find( '.menu-item-has-children.current-menu-parent > a' ).after( '<a class="sub-menu-toggle" href="#">' + closedIcon + '</a>' );
+	$menu.find( '.menu-item-has-children:not( .current-menu-parent ) > a' ).after( '<a class="sub-menu-toggle" href="#">' + openIcon + '</a>' );
+
+	// Toggle the expanded state of sub-menus when the toggles are clicked.
+	$( '.sub-menu-toggle' ).on( 'click', function( e ) {
+
+		e.preventDefault();
+
+		var $this = $( this );
+
+		$this.blur().next( '.sub-menu' ).slideToggle().toggleClass( 'toggled' );
+
+		// Change the icon to indicate open/closed.
+		if ( $this.text().indexOf( closedIcon ) !== -1 ) {
+			$this.text( openIcon );
+		} else if ( $this.text().indexOf( openIcon ) !== -1 ) {
+			$this.text( closedIcon );
+		}
+	});
 } )( jQuery );
