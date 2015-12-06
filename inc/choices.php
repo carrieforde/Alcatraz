@@ -60,7 +60,6 @@ function alcatraz_get_mobile_nav_style_options( $context = '' ) {
 		'slide-left'  => __( 'Slide from Left', 'alcatraz' ),
 		'slide-right' => __( 'Slide from Right', 'alcatraz' ),
 		'full-screen' => __( 'Full Screen', 'alcatraz' ),
-		'fade-in'     => __( 'Fade In', 'alcatraz' ),
 	);
 
 	return apply_filters( 'alcatraz_mobile_nav_style_options', $mobile_nav_styles, $context );

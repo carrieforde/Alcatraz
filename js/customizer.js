@@ -47,7 +47,7 @@
 	// Handle live previewing for the mobile nav style.
 	wp.customize( 'alcatraz_options[mobile_nav_style]', function( value ) {
 		value.bind( function( to ) {
-			$body.removeClass( 'mobile-nav-style-default mobile-nav-style-slide-left mobile-nav-style-slide-right mobile-nav-style-full-screen mobile-nav-style-fade-in' );
+			$body.removeClass( 'mobile-nav-style-default mobile-nav-style-slide-left mobile-nav-style-slide-right mobile-nav-style-full-screen' );
 			$body.addClass( 'mobile-nav-style-' + to );
 		});
 	});

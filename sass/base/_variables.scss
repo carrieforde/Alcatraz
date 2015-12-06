@@ -4,7 +4,6 @@
  * Include all site variables in this file.
  */
 
-
 // 2.2.1 Colors
 
 // Color Palette
@@ -19,7 +18,7 @@ $true-white: #fff;
 $true-black: #000;
 
 // Background Colors
-$color__background-body: #fff;
+$color__background-body: $true-white;
 $color__background-screen: #f1f1f1;
 $color__background-hr: #ccc;
 $color__background-button: #e6e6e6;
@@ -44,6 +43,10 @@ $color__border-button-focus: #aaa #bbb #bbb;
 $color__border-input: #ccc;
 $color__border-abbr: #666;
 $color__border-table: #eee;
+
+// Utility Colors
+$color__transparent-overlay: rgba(0,0,0,0.4);
+
 
 // 2.2.2 Typography
 $font__main: 'Source Sans Pro', sans-serif;
