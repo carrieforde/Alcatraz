@@ -36,9 +36,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'alcatraz_layout_section',
 		array(
-			'title'             => __( 'Layout', 'alcatraz' ),
-			'priority'          => 22,
-			'capability'        => 'edit_theme_options',
+			'title'       => __( 'Layout', 'alcatraz' ),
+			'priority'    => 22,
+			'capability'  => 'edit_theme_options',
 		)
 	);
 
@@ -74,9 +74,6 @@ function alcatraz_customize_register( $wp_customize ) {
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field', 
-			'default'           => 'full-width',
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -148,9 +145,6 @@ function alcatraz_customize_register( $wp_customize ) {
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
-			'default'           => 'default',
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -177,10 +171,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
-			'default'    => 'button',
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
+			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -202,9 +193,6 @@ function alcatraz_customize_register( $wp_customize ) {
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
-			'default'           => 'default',
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -227,9 +215,6 @@ function alcatraz_customize_register( $wp_customize ) {
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_empty_or_int',
-			'default'           =>  '',
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options'
 		)
 	);
 	$wp_customize->add_control(
