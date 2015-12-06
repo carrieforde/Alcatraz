@@ -36,9 +36,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'alcatraz_layout_section',
 		array(
-			'title'       => __( 'Layout', 'alcatraz' ),
-			'priority'    => 22,
-			'capability'  => 'edit_theme_options',
+			'title'      => __( 'Layout', 'alcatraz' ),
+			'priority'   => 22,
+			'capability' => 'edit_theme_options',
 		)
 	);
 
