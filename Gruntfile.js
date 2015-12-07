@@ -15,8 +15,8 @@ module.exports = function( grunt ) {
 			dist: {
 				files: {
 					'style.css': 'sass/style.scss'
-				}
-			}
+				},
+			},
 		},
 		postcss: {
 			options: {
@@ -38,16 +38,16 @@ module.exports = function( grunt ) {
 			dist: {
 				files: {
 					'style.min.css' : 'style.css'
-				}
-			}
+				},
+			},
 		},
 		watch: {
 			css: {
-				files: ['styles'],
+				files: ['sass/**/*.scss'],
+				tasks: ['styles'],
 				options: {
-					spawn: false,
-					livereload: true,
-				}
+					livereload: true
+				},
 			},
 		},
 		wp_readme_to_markdown: {
@@ -64,16 +64,16 @@ module.exports = function( grunt ) {
 					domainPath: 'languages/',
 					potFilename: 'alcatraz.pot',
 					type: 'wp-theme'
-				}
-			}
+				},
+			},
 		},
 	});
 
 	// Load plugins.
 	grunt.loadNpmTasks( 'grunt-sass' );
-	grunt.loadNpmTasks( 'grunt-contrib-watch' );
-	grunt.loadNpmTasks( 'grunt-cssnano' );
 	grunt.loadNpmTasks( 'grunt-postcss' );
+	grunt.loadNpmTasks( 'grunt-cssnano' );
+	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
