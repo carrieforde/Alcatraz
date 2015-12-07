@@ -39,8 +39,15 @@
 		</div>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span></div>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
+			</div>
+			<div class="menu-overlay"></div>
+			<?php wp_nav_menu( array(
+				'theme_location' => 'primary',
+				'menu_id'        => 'primary-menu',
+				'container_id'   => 'primary-menu-wrap',
+			) ); ?>
 		</nav>
 
 		<?php do_action( 'alcatraz_after_header_inside' ); ?>

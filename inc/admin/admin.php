@@ -5,8 +5,19 @@
  * @package alcatraz
  */
 
+// Include our theme options page.
+require_once ALCATRAZ_PATH . 'inc/admin/options-page.php';
+
 // Include CMB2.
 require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';
+
+/**
+ * Initialize our options page class.
+ *
+ * @since  1.0.0
+ */
+$options_page = new Alcatraz_Options_Page();
+$options_page->init();
 
 add_action( 'cmb2_admin_init', 'alcatraz_page_options_metabox' );
 /**
