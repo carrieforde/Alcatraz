@@ -58,6 +58,14 @@ a {
 			background-color: darken($alcatraz-blue, 20%);
 		}
 	}
+
+	.main-navigation.toggled .inner-menu-toggle::before {
+		font: {
+			family: FontAwesome;
+			size: em(36);
+		}
+		content: "\f00d";
+	}
 }
 
 .mobile-nav-toggle-style-hamburger {
