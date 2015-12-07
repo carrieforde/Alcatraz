@@ -212,6 +212,12 @@ a {
 	}
 }
 
+.mobile-nav-style-default {
+	.inner-menu-toggle {
+		display: none;
+	}
+}
+
 /* Mobile Nav Slide From Left & Slide From Right Shared Styles */
 .mobile-nav-style-slide-left,
 .mobile-nav-style-slide-right {
