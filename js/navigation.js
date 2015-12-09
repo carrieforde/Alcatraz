@@ -55,7 +55,7 @@
 		}
 	});
 
-	// Set up the top level menu open/close click hanlder.
+	// Set up the top level menu open/close click handler.
 	$toggle.add( '.inner-menu-toggle, .menu-overlay' ).on( 'click', function() {
 		if ( $container.hasClass( 'toggled' ) ) {
 			$container.removeClass( 'toggled' );
