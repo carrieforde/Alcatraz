@@ -36,7 +36,7 @@ a {
 
 /* Reusables */
 
-// Larger Screen Nav Display
+// Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 	.main-navigation #primary-menu-wrap,
 	.mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
