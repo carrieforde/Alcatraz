@@ -46,6 +46,7 @@ cd /your-project/wp-content/themes/alcatraz
 2. Install Node and Bower dependencies:
 ```shell
 npm install && bower install
+```
 
 3. Move onto activating your theme!
 
@@ -72,3 +73,4 @@ Alcatraz supports all of the plugins.
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * Bourbon and Neat http://bourbon.io/, (C) 2011-2015 thoughtbot, inc., [MIT](http://opensource.org/licenses/MIT)
 * Better Font Awesome https://github.com/MickeyKay/better-font-awesome-library, Mickey Kay
+* cmb2 https://github.com/WebDevStudios/cmb2, WebDevStudios
