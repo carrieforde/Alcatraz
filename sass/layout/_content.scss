@@ -14,6 +14,11 @@
 	@include center-block;
 }
 
+.post-thumbnail img {
+		margin-bottom: em(20);
+		@include center-block;
+}
+
 .site-content {
 	overflow: hidden;
 }
