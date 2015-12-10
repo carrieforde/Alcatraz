@@ -128,6 +128,11 @@ function alcatraz_scripts() {
 	}
 }
 
+/**
+ * Add some image sizes.
+ */
+add_image_size( 'alcatraz_post_thumbnail', 1200, 740, true );
+
 add_action( 'init', 'alcatraz_init_bfa' );
 /**
  * Include and initialize the Better Font Awesome Library.
