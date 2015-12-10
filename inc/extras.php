@@ -108,11 +108,11 @@ function alcatraz_body_classes( $classes ) {
  * @return  string|int
  */
 function alcatraz_empty_or_int( $value ) {
-    if ( '' === $value ) {
-        return '';
-    } else {
-        return intval( $value );
-    }
+	if ( '' === $value ) {
+		return '';
+	} else {
+		return intval( $value );
+	}
 }
 
 add_action( 'alcatraz_before_header_inside', 'alcatraz_output_header_image', 0 );
@@ -128,4 +128,35 @@ function alcatraz_output_header_image() {
 			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 		</a>
 	<?php endif;
+}
+
+/**
+ * Maybe display a post thumbnail.
+ *
+ * Wraps the post thumbnail in an anchor element on archives, a div on single pages.
+ *
+ * @since 1.0.0
+ */
+function alcatraz_post_thumbnail() {
+
+	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
+		return;
+	}
+
+	if ( is_singular() ) :
+	?>
+
+	<div class="post-thumbnail">
+		<?php the_post_thumbnail() ; ?>
+	</div>
+
+	<?php else : ?>
+
+	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
+		<?php
+			the_post_thumbnail( 'post-thumbnail', array( 'alt' => get_the_title() ) );
+		?>
+	</a>
+
+	<?php endif; // End is_singular()
 }
