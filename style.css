@@ -1117,15 +1117,22 @@ a:hover, a:active {
 /**
  * 4.2.2 Menus
  */
+/* Reusables */
 /* Mobile Nav Toggle Styles */
-/* line 38, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 139, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .menu-toggle,
 .inner-menu-toggle {
   cursor: pointer;
   display: block;
 }
 
-/* line 45, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* Mobile Nav Button Toggle Style */
+/* line 149, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+.mobile-nav-toggle-style-button.mobile-nav-style-slide-left .main-navigation.toggled .menu-toggle, .mobile-nav-toggle-style-button.mobile-nav-style-slide-right .main-navigation.toggled .menu-toggle {
+  display: block;
+}
+
+/* line 154, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-button .menu-toggle {
   padding: 15px 20px;
   margin: 20px 20px 0;
@@ -1137,19 +1144,20 @@ a:hover, a:active {
   text-transform: uppercase;
 }
 
-/* line 57, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 166, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-button .menu-toggle:hover {
   background-color: #426268;
 }
 
-/* line 62, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 172, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-button .main-navigation.toggled .inner-menu-toggle::before {
   font-family: FontAwesome;
   font-size: 2.25em;
   content: "\f00d";
 }
 
-/* line 72, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* Mobile Nav Hamburger Toggle Style */
+/* line 184, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-hamburger .menu-toggle {
   position: absolute;
   top: 0;
@@ -1158,24 +1166,24 @@ a:hover, a:active {
   color: #6E9AA2;
 }
 
-/* line 79, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 191, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-hamburger .menu-toggle::before {
   font-family: FontAwesome;
   font-size: 1.875em;
   content: "\f0c9";
 }
 
-/* line 87, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 199, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-hamburger .menu-toggle .menu-text {
   display: none;
 }
 
-/* line 92, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 204, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-hamburger .inner-menu-toggle {
   display: none;
 }
 
-/* line 96, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 208, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-toggle-style-hamburger .main-navigation.toggled .menu-toggle::before,
 .mobile-nav-toggle-style-hamburger .main-navigation.toggled .inner-menu-toggle::before {
   font-family: FontAwesome;
@@ -1184,7 +1192,7 @@ a:hover, a:active {
 }
 
 /* Mobile Nav Default Styles */
-/* line 126, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 238, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation {
   display: block;
   width: 100%;
@@ -1192,34 +1200,35 @@ a:hover, a:active {
   clear: both;
 }
 
-/* line 132, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 244, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation.toggled #primary-menu-wrap {
   opacity: 1;
 }
 
-/* line 136, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 248, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation.toggled #primary-menu {
   display: block;
 }
 
-/* line 140, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 252, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation .menu-overlay {
   transition: background-color 0.3s;
+  cursor: pointer;
 }
 
-/* line 144, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 257, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu-wrap {
   position: relative;
-  z-index: 999;
+  z-index: 99;
   opacity: 0;
   transition: opacity 0.4s;
 }
 
-/* line 151, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 264, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu {
   display: none;
   position: absolute;
-  z-index: 999;
+  z-index: 99;
   clear: both;
   list-style: none;
   margin: 0;
@@ -1227,7 +1236,7 @@ a:hover, a:active {
   background-color: #fff;
 }
 
-/* line 161, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 274, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu::after {
   content: "";
   display: table;
@@ -1235,18 +1244,18 @@ a:hover, a:active {
   width: 100%;
 }
 
-/* line 165, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 278, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu .menu-item {
   width: 100%;
   position: relative;
 }
 
-/* line 169, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 282, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu .menu-item.menu-item-has-children a {
   padding-right: 50px;
 }
 
-/* line 173, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 286, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu .menu-item a {
   display: block;
   padding: 10px 20px;
@@ -1254,7 +1263,7 @@ a:hover, a:active {
   text-decoration: none;
 }
 
-/* line 180, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 293, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu .menu-item a.sub-menu-toggle {
   position: absolute;
   top: 0;
@@ -1265,54 +1274,57 @@ a:hover, a:active {
   text-align: center;
 }
 
-/* line 191, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 304, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu .sub-menu {
   display: none;
   position: relative;
   width: 100%;
+  min-width: 165px;
   margin: 0;
   padding-left: 20px;
-  z-index: 999;
+  z-index: 99;
   background-color: #fff;
   list-style-type: none;
 }
 
-/* line 201, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 315, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .main-navigation #primary-menu .sub-menu.toggled {
   display: block;
 }
 
-/* line 206, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-.main-navigation #primary-menu .current_page_item > a,
-.main-navigation #primary-menu .current-menu-item > a,
-.main-navigation #primary-menu .current_page_ancestor > a,
-.main-navigation #primary-menu .current-menu-ancestor > a {
-  color: #426268;
+/* line 320, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+.main-navigation #primary-menu .current-menu-item > a {
+  font-weight: bold;
 }
 
-/* line 216, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 327, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-default .inner-menu-toggle {
   display: none;
 }
 
+/* line 331, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+.mobile-nav-style-default #primary-menu {
+  box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+
 /* Mobile Nav Slide From Left & Slide From Right Shared Styles */
-/* line 225, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 357, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
 .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
   top: 46px;
 }
 
-/* line 230, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 366, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left #primary-menu-wrap,
 .mobile-nav-style-slide-right #primary-menu-wrap {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   top: 0;
   width: 240px;
   height: 100vh;
 }
 
-/* line 238, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 374, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left #primary-menu,
 .mobile-nav-style-slide-right #primary-menu {
   min-height: 100vh;
@@ -1320,13 +1332,13 @@ a:hover, a:active {
   padding-top: 60px;
 }
 
-/* line 245, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 381, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left .main-navigation.toggled .menu-toggle,
 .mobile-nav-style-slide-right .main-navigation.toggled .menu-toggle {
   display: none;
 }
 
-/* line 249, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 385, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left .main-navigation.toggled .menu-overlay,
 .mobile-nav-style-slide-right .main-navigation.toggled .menu-overlay {
   display: block;
@@ -1338,7 +1350,7 @@ a:hover, a:active {
   background-color: rgba(0, 0, 0, 0.4);
 }
 
-/* line 260, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 396, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left .inner-menu-toggle,
 .mobile-nav-style-slide-right .inner-menu-toggle {
   display: block;
@@ -1348,49 +1360,49 @@ a:hover, a:active {
 }
 
 /* Mobile Nav Slide From Left Styles */
-/* line 270, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 406, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left #primary-menu-wrap {
   left: -240px;
   transition: left 0.2s;
 }
 
-/* line 275, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 411, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left .main-navigation.toggled #primary-menu-wrap {
   left: 0;
 }
 
-/* line 279, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 415, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-left .inner-menu-toggle {
   left: 20px;
 }
 
 /* Mobile Nav Slide From Right Styles */
-/* line 286, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 422, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-right #primary-menu-wrap {
   right: -240px;
   transition: right 0.2s;
 }
 
-/* line 291, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 427, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-right .main-navigation.toggled #primary-menu-wrap {
   right: 0;
 }
 
-/* line 295, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 431, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-slide-right .inner-menu-toggle {
   right: 20px;
 }
 
 /* Mobile Nav Full Screen Styles */
-/* line 302, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 438, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-full-screen.admin-bar .main-navigation.toggled #primary-menu-wrap {
   top: 46px;
 }
 
-/* line 306, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 442, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-full-screen .main-navigation.toggled #primary-menu-wrap {
   position: fixed;
-  z-index: 999;
+  z-index: 99;
   top: 0;
   width: 100%;
   min-height: 100vh;
@@ -1400,20 +1412,20 @@ a:hover, a:active {
   transition: opacity 0.4s;
 }
 
-/* line 318, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 454, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-full-screen #primary-menu {
   min-height: 100vh;
   padding-top: 60px;
   padding-bottom: 80px;
 }
 
-/* line 324, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 460, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-full-screen .main-navigation.toggled #primary-menu-wrap {
   display: block;
   opacity: 1;
 }
 
-/* line 329, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 465, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .mobile-nav-style-full-screen .inner-menu-toggle {
   display: block;
   position: absolute;
@@ -1422,10 +1434,14 @@ a:hover, a:active {
   z-index: 1000;
 }
 
-/* Tablet & Desktop Nav Styles */
+/* Tablet and Desktop Nav Header Default Styles */
+
+/* Tablet and Desktop Nav Header Short Styles */
+
+/* Tablet and Desktop Nav Header Side Styles */
 
 /* Pagination Styles */
-/* line 426, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 533, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .site-main .comment-navigation, .site-main
 .posts-navigation, .site-main
 .post-navigation {
@@ -1433,7 +1449,7 @@ a:hover, a:active {
   overflow: hidden;
 }
 
-/* line 431, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 538, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
@@ -1441,7 +1457,7 @@ a:hover, a:active {
   width: 50%;
 }
 
-/* line 436, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+/* line 543, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
@@ -1588,467 +1604,608 @@ a:hover, a:active {
 
 @media (min-width: 48em) {/* line 26, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-1 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 6.1721527019%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 6.1721527019%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-1:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 29, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-2 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 14.7019570017%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 14.7019570017%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-2:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 32, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-3 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 23.2317613015%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-3:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 35, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-4 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 31.7615656014%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-4:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 38, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-5 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 40.2913699012%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 40.2913699012%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-5:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 41, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-6 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 48.821174201%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-6:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 44, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-7 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 57.3509785009%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 57.3509785009%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-7:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 47, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-8 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 65.8807828007%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-8:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 50, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-9 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 74.4105871005%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 74.4105871005%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-9:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 53, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-10 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 82.9403914003%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 82.9403914003%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-10:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 56, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-11 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 91.4701957002%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 91.4701957002%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-11:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 59, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .alcatraz-col-12 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 100%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 100%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .alcatraz-col-12:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 63, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter {
-    width: 100%;
+	width: 100%;
   }/* line 67, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-1 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 6.1721527019%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 6.1721527019%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-1:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 71, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-2 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 14.7019570017%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 14.7019570017%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-2:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 75, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-3 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 23.2317613015%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-3:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 79, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-4 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 31.7615656014%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-4:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 83, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-5 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 40.2913699012%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 40.2913699012%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-5:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 87, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-6 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 48.821174201%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-6:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 91, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-7 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 57.3509785009%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 57.3509785009%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-7:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 95, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-8 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 65.8807828007%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-8:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 99, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-9 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 74.4105871005%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 74.4105871005%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-9:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 103, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-10 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 82.9403914003%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 82.9403914003%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-10:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 107, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-11 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 91.4701957002%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 91.4701957002%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-11:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 111, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/base/_grid.scss */
   .no-gutter .alcatraz-col-12 {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 100%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 100%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .no-gutter .alcatraz-col-12:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 68, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-default .header-inner {
-    text-align: center;
-    padding: 20px;
+	text-align: center;
+	padding: 20px;
   }/* line 75, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-default.mobile-nav-toggle-style-hamburger .header-inner {
-    float: none;
-    max-width: 100%;
+	float: none;
+	max-width: 100%;
   }/* line 86, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-short .header-inner {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
-    padding: 20px;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 31.7615656014%;
+	padding: 20px;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .header-style-short .header-inner:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 91, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-short .main-navigation {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%;
-    margin-right: 0;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 65.8807828007%;
+	margin-right: 0;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .header-style-short .main-navigation:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 136, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .logo-mobile .has-logo.header-style-default.has-mobile-logo,
   .logo-mobile .has-logo.header-style-short.has-mobile-logo {
-    display: none;
+	display: none;
   }/* line 141, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .logo-regular .has-logo.header-style-default.has-mobile-logo,
   .logo-regular .has-logo.header-style-short.has-mobile-logo {
-    display: block;
+	display: block;
   }/* line 169, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .has-mobile-logo.has-logo.header-style-default .logo-mobile, .has-mobile-logo.has-logo.header-style-short .logo-mobile {
-    display: none;
+	display: none;
   }/* line 173, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .has-mobile-logo.has-logo.header-style-default .logo-regular, .has-mobile-logo.has-logo.header-style-short .logo-regular {
-    display: block;
+	display: block;
   }/* line 192, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .logo {
-    margin-left: auto;
-    margin-right: auto;
-  }/* line 110, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+	margin-left: auto;
+	margin-right: auto;
+  }
+	/* line 222, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
   .header-style-default .main-navigation .menu-toggle,
   .header-style-short .main-navigation .menu-toggle {
-    display: none;
-  }/* line 340, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .main-navigation #primary-menu {
-    display: block;
-  }/* line 344, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-default .main-navigation {
-    float: none;
-    background-color: #6E9AA2;
-    text-align: center;
-  }/* line 349, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-default .main-navigation > div {
-    display: inline-block;
-  }/* line 352, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-default .main-navigation > div a {
-    color: #fff;
-  }/* line 357, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+	display: none;
+  }/* line 339, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default.mobile-nav-style-default #primary-menu,
+  .header-style-short.mobile-nav-style-default #primary-menu {
+	box-shadow: none;
+  }/* line 357, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
+  .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
+	top: 32px;
+  }/* line 41, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu-wrap,
+  .header-style-default .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
+  .header-style-default .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
+	top: auto;
+	position: static;
+	top: auto;
+	left: auto;
+	right: auto;
+	height: auto;
+	width: auto;
+	opacity: 1;
+	text-align: center;
+  }/* line 55, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu,
+  .header-style-default .mobile-nav-style-slide-left #primary-menu,
+  .header-style-default .mobile-nav-style-slide-right #primary-menu {
+	min-height: auto;
+	padding-top: 0;
+	display: inline-block;
+	position: static;
+	text-align: center;
+  }/* line 65, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .menu-item {
+	display: inline-block;
+	width: auto;
+	text-align: left;
+  }/* line 76, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .menu-item.menu-item-has-children a {
+	padding-right: 20px;
+  }/* line 80, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .menu-item:hover > .sub-menu,
+  .header-style-default .main-navigation #primary-menu .menu-item.hovered > .sub-menu {
+	display: block;
+  }/* line 85, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .menu-item a.sub-menu-toggle {
+	display: none;
+  }/* line 89, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .menu-item > .sub-menu {
+	position: absolute;
+  }/* line 92, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .menu-item > .sub-menu .sub-menu {
+	left: 100%;
+	top: 0;
+  }/* line 101, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu > .menu-item.reverse-expand .sub-menu {
+	right: 0;
+  }/* line 106, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu > .menu-item .sub-menu .menu-item.reverse-expand .sub-menu {
+	left: -100%;
+  }/* line 114, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
   .header-style-default .main-navigation #primary-menu .sub-menu {
-    top: 45px;
-    border-top: 3px solid #535d65;
-    text-align: left;
-  }/* line 363, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-default .main-navigation a {
-    color: #6E9AA2;
-  }/* line 366, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-default .main-navigation a:hover {
-    color: #426268;
-  }/* line 372, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-short .main-navigation {
-    padding: 2.3125em 1.25em;
-    text-align: right;
-  }/* line 376, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-short .main-navigation > div {
-    display: inline-block;
-  }/* line 381, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+	position: relative;
+	padding: 0;
+	text-align: left;
+	background-color: #fff;
+	border-bottom: 3px solid #535d65;
+	box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.5);
+  }/* line 122, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .sub-menu .menu-item {
+	display: block;
+	width: 100%;
+  }/* line 126, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .sub-menu .menu-item a {
+	color: #535d65;
+  }/* line 129, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default .main-navigation #primary-menu .sub-menu .menu-item a:hover {
+	color: #426268;
+  }/* line 481, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default #primary-menu {
+	background-color: #6E9AA2;
+  }/* line 484, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-default #primary-menu a {
+	color: #fff;
+  }/* line 41, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu-wrap,
+  .header-style-short .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
+  .header-style-short .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
+	top: auto;
+	position: static;
+	top: auto;
+	left: auto;
+	right: auto;
+	height: auto;
+	width: auto;
+	opacity: 1;
+	text-align: center;
+  }/* line 55, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu,
+  .header-style-short .mobile-nav-style-slide-left #primary-menu,
+  .header-style-short .mobile-nav-style-slide-right #primary-menu {
+	min-height: auto;
+	padding-top: 0;
+	display: inline-block;
+	position: static;
+	text-align: center;
+  }/* line 65, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .menu-item {
+	display: inline-block;
+	width: auto;
+	text-align: left;
+  }/* line 76, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .menu-item.menu-item-has-children a {
+	padding-right: 20px;
+  }/* line 80, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .menu-item:hover > .sub-menu,
+  .header-style-short .main-navigation #primary-menu .menu-item.hovered > .sub-menu {
+	display: block;
+  }/* line 85, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .menu-item a.sub-menu-toggle {
+	display: none;
+  }/* line 89, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .menu-item > .sub-menu {
+	position: absolute;
+  }/* line 92, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .menu-item > .sub-menu .sub-menu {
+	left: 100%;
+	top: 0;
+  }/* line 101, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu > .menu-item.reverse-expand .sub-menu {
+	right: 0;
+  }/* line 106, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu > .menu-item .sub-menu .menu-item.reverse-expand .sub-menu {
+	left: -100%;
+  }/* line 114, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
   .header-style-short .main-navigation #primary-menu .sub-menu {
-    top: 45px;
-    border-top: 3px solid #6E9AA2;
-    text-align: left;
-  }/* line 388, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-short .main-navigation #primary-menu .menu-item:hover:last-child > .sub-menu {
-    left: -100px;
-  }/* Left Sidebar *//* line 17, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_sidebars.scss */
+	position: relative;
+	padding: 0;
+	text-align: left;
+	background-color: #fff;
+	border-bottom: 3px solid #535d65;
+	box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.5);
+  }/* line 122, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .sub-menu .menu-item {
+	display: block;
+	width: 100%;
+  }/* line 126, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .sub-menu .menu-item a {
+	color: #535d65;
+  }/* line 129, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu .sub-menu .menu-item a:hover {
+	color: #426268;
+  }/* line 498, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation {
+	text-align: right;
+	float: right;
+	clear: none;
+	padding: 20px;
+  }/* line 504, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-short .main-navigation #primary-menu {
+	text-align: right;
+  }
+	/* Left Sidebar */
+	/* line 17, /srv/wp/wp-content/themes/alcatraz/sass/layout/_sidebars.scss */
   .left-sidebar .content-area {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 65.8807828007%;
+	float: right;
+	display: block;
+	margin-left: 2.3576515979%;
+	width: 65.8807828007%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .left-sidebar .content-area:last-child {
-    margin-left: 0;
+	margin-left: 0;
   }/* line 20, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_sidebars.scss */
   .left-sidebar .primary-sidebar {
-    float: right;
-    display: block;
-    margin-left: 2.3576515979%;
-    width: 31.7615656014%;
+	float: right;
+	display: block;
+	margin-left: 2.3576515979%;
+	width: 31.7615656014%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .left-sidebar .primary-sidebar:last-child {
-    margin-left: 0;
+	margin-left: 0;
   }/* Right Sidebar *//* line 32, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_sidebars.scss */
   .right-sidebar .content-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 65.8807828007%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 65.8807828007%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .right-sidebar .content-area:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 35, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_sidebars.scss */
   .right-sidebar .primary-sidebar {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 31.7615656014%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .right-sidebar .primary-sidebar:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 35, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_footer.scss */
   .footer-widget-areas-2 .footer-widget-areas .widget-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 48.821174201%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 48.821174201%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .footer-widget-areas-2 .footer-widget-areas .widget-area:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 42, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_footer.scss */
   .footer-widget-areas-3 .footer-widget-areas .widget-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 31.7615656014%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 31.7615656014%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .footer-widget-areas-3 .footer-widget-areas .widget-area:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 49, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_footer.scss */
   .footer-widget-areas-4 .footer-widget-areas .widget-area {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 23.2317613015%;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .footer-widget-areas-4 .footer-widget-areas .widget-area:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }
 }
 
 @media (min-width: 60em) {/* line 103, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-side .site-header {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 23.2317613015%;
-    height: 100%;
-    position: fixed;
-    padding: 20px;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 23.2317613015%;
+	height: 100%;
+	position: fixed;
+	padding: 20px;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .header-style-side .site-header:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 109, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-side .site-header .header-inner {
-    max-width: 100%;
+	max-width: 100%;
   }/* line 114, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-side.boxed .site-header {
-    width: 325px;
+	width: 325px;
   }/* line 118, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-side .site-content {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 74.4105871005%;
-    margin-right: 0;
-    float: right;
-    padding: 20px;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 74.4105871005%;
+	margin-right: 0;
+	float: right;
+	padding: 20px;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .header-style-side .site-content:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }/* line 125, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-side.boxed .site-content {
-    width: calc(100% - 300px);
+	width: calc(100% - 300px);
   }/* line 148, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .logo-mobile .has-logo.header-style-side.has-mobile-logo {
-    display: none;
+	display: none;
   }/* line 152, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .logo-regular .has-logo.header-style-side.has-mobile-logo {
-    display: block;
+	display: block;
   }/* line 181, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .has-mobile-logo.has-logo.header-style-side .logo-mobile {
-    display: none;
+	display: none;
   }/* line 185, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .has-mobile-logo.has-logo.header-style-side .logo-regular {
-    display: block;
+	display: block;
   }/* line 203, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_header.scss */
   .header-style-side .logo {
-    margin-bottom: 20px;
-  }/* line 119, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+	margin-bottom: 20px;
+  }/* line 231, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
   .header-style-side .menu-toggle {
-    display: none;
-  }/* line 399, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-side .main-navigation #primary-menu .sub-menu {
-    border-left: 3 solid #6E9AA2;
-    box-shadow: 3px 3px 10px 3px rgba(0, 0, 0, 0.2);
-  }/* line 404, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
+	display: none;
+  }/* line 347, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-side.mobile-nav-style-default #primary-menu {
+	box-shadow: none;
+  }/* line 41, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-side .main-navigation #primary-menu-wrap,
+  .header-style-side .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
+  .header-style-side .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
+	top: auto;
+	position: static;
+	top: auto;
+	left: auto;
+	right: auto;
+	height: auto;
+	width: auto;
+	opacity: 1;
+	text-align: center;
+  }/* line 55, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-side .main-navigation #primary-menu,
+  .header-style-side .mobile-nav-style-slide-left #primary-menu,
+  .header-style-side .mobile-nav-style-slide-right #primary-menu {
+	min-height: auto;
+	padding-top: 0;
+	display: block;
+	position: static;
+	text-align: center;
+  }/* line 65, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
   .header-style-side .main-navigation #primary-menu .menu-item {
-    float: none;
-  }/* line 407, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-side .main-navigation #primary-menu .menu-item:hover > ul,
-  .header-style-side .main-navigation #primary-menu .menu-item.focus > ul {
-    top: 0;
-    left: 200px;
-  }/* line 415, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_navigation.scss */
-  .header-style-side .main-navigation a {
-    width: 200px;
-  }/* line 24, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/sass/layout/_footer.scss */
+	display: block;
+	width: auto;
+	text-align: left;
+  }/* line 520, /srv/wp/wp-content/themes/alcatraz/sass/layout/_navigation.scss */
+  .header-style-side .main-navigation #primary-menu, .header-style-side.mobile-nav-style-slide-left #primary-menu, .header-style-side.mobile-nav-style-slide-right #primary-menu {
+	text-align: left;
+	display: block;
+  }/* line 24, /srv/wp/wp-content/themes/alcatraz/sass/layout/_footer.scss */
   .header-style-side .site-footer {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 74.4105871005%;
-    float: right;
+	float: left;
+	display: block;
+	margin-right: 2.3576515979%;
+	width: 74.4105871005%;
+	float: right;
   }/* line 89, /Users/cabreneman/Desktop/WordPress/vagrant-local/www/alcatraz/htdocs/wp-content/themes/Alcatraz/bower_components/neat/app/assets/stylesheets/grid/_span-columns.scss */
   .header-style-side .site-footer:last-child {
-    margin-right: 0;
+	margin-right: 0;
   }
 }
 /*# sourceMappingURL=style.css.map */
