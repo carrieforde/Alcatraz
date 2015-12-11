@@ -5,7 +5,7 @@ module.exports = function( grunt ) {
 		sass: {
 			options: {
 				outputStyle: 'expanded',
-				sourceComments: true,
+				// sourceComments: true,
 				sourceMap: true,
 				includePaths: [
 					'bower_components/bourbon/app/assets/stylesheets',
