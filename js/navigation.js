@@ -55,7 +55,8 @@
 		}
 	});
 
-	$toggle.add( '.inner-menu-toggle' ).on( 'click', function() {
+	// Set up the top level menu open/close click handler.
+	$toggle.add( '.inner-menu-toggle, .menu-overlay' ).on( 'click', function() {
 		if ( $container.hasClass( 'toggled' ) ) {
 			$container.removeClass( 'toggled' );
 			$toggle.attr( 'aria-expanded', 'false' );
@@ -65,6 +66,25 @@
 			$toggle.attr( 'aria-expanded', 'true' );
 			$menu.attr( 'aria-expanded', 'true' );
 		}
+	});
+
+	// Set up the top level menu item hover action.
+	$menu.find( '.menu-item' ).hover( function() {
+		$( this ).addClass( 'hovered' );
+
+		// If the menu item has children, detect whether they may be overflowing
+		// off the screen and add a class if they are.
+		if ( $( this ).hasClass( 'menu-item-has-children' ) ) {
+			var $sub        = $( this ).find( '.sub-menu' ).first();
+			var rightEdge   = $sub.width() + $sub.offset().left;
+			var screenWidth = $( window ).width();
+
+			if ( rightEdge > screenWidth ) {
+				$( this ).addClass( 'reverse-expand' );
+			}
+		}
+	}, function() {
+		$( this ).removeClass( 'hovered reverse-expand' );
 	});
 
 	// Get all the link elements within the menu.
