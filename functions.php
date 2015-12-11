@@ -130,8 +130,22 @@ function alcatraz_scripts() {
 
 /**
  * Add some image sizes.
+ *
+ * @since  1.0.0
  */
 add_image_size( 'alcatraz_post_thumbnail', 1200, 740, true );
+
+add_action( 'admin_init', 'alcatraz_add_editor_styles' );
+/**
+ * Apply theme styles to the visual editor.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_add_editor_styles() {
+
+	$alcatraz_fonts = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700' );
+	add_editor_style( array( 'admin-editor-styles.css', $alcatraz_fonts ) );
+}
 
 add_action( 'init', 'alcatraz_init_bfa' );
 /**

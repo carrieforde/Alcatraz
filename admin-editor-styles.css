@@ -1,0 +1,9 @@
+body#tinymce.wp-editor {
+	font-family: 'Source Sans Pro', sans-serif;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+body#tinymce.wp-editor a {
+	color: #6E9AA2;
+}
