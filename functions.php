@@ -9,9 +9,44 @@ define( 'ALCATRAZ_VERSION', '1.0.0' );
 define( 'ALCATRAZ_PATH', trailingslashit( get_template_directory() ) );
 define( 'ALCATRAZ_URL', trailingslashit( get_template_directory_uri() ) );
 
+add_action( 'after_switch_theme', 'alcatraz_first_setup' );
+/**
+ * Check for our theme options and set defaults for any options that don't already exist.
+ *
+ * This only runs one time right after the user activates the theme.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_first_setup() {
+
+	// Look for existing options.
+	$options = get_option( 'alcatraz_options' );
+
+	if ( ! $options ) {
+		$options = array();
+	}
+
+	$defaults = alcatraz_get_option_defaults();
+
+	// Bail early if the existing options match the defaults.
+	if ( $options === $defaults ) {
+		return;
+	}
+
+	// Populate any defaults that are missing.
+	foreach ( $defaults as $key => $value ) {
+		if ( ! array_key_exists( $key, $options ) ) {
+			$options[ $key ] = $value;
+		}
+	}
+
+	// Update options with defaults.
+	update_option( 'alcatraz_options', $options, 'yes' );
+}
+
 add_action( 'after_setup_theme', 'alcatraz_setup' );
 /**
- * Set up theme defaults and register support for various WordPress features.
+ * Load translations and register support for various WordPress features.
  *
  * @since  1.0.0
  */
