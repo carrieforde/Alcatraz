@@ -52,6 +52,11 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'mobile-nav-style-' . esc_attr( $options['mobile_nav_style'] );
 	}
 
+	// Sub-menu toggle style class.
+	if ( isset( $options['sub_menu_toggle_style'] ) && $options['sub_menu_toggle_style'] ) {
+		$classes[] = 'sub-menu-toggle-style-' . esc_attr($options['sub_menu_toggle_style'] );
+	}
+
 	// Transparent header class.
 	$transparent_header = get_post_meta( $post->ID, '_alcatraz_transparent_header', true );
 	if ( $transparent_header && 'on' == $transparent_header ) {
