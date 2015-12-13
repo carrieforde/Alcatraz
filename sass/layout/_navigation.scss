@@ -156,32 +156,32 @@ a {
 		&::after {
 			content: '';
 			position: absolute;
-			top: 40%;
-			width: 13px;
+			top: 0;
+			width: 13.5px;
 			height: 2px;
 			background-color: $alcatraz-blue;
 			transition: all 0.2s ease;
 		}
 
 		&::before {
-			left: -1px;
-			transform: rotate(45deg);
+			left: 0;
+			transform: rotate(45deg) translate(2px);
 		}
 
 		&::after {
-			right: -0.5px;
-			transform: rotate(-45deg);
+			right: 0;
+			transform: rotate(-45deg) translate(-2px);
 		}
 	}
 
-	.sub-menu-toggle.active {
+	.sub-menu-toggle.toggled {
 
 		&::before {
-			transform: rotate(135deg);
+			transform: rotate(135deg) translate(-2px);
 		}
 
 		&::after {
-			transform: rotate(-135deg);
+			transform: rotate(-135deg) translate(2px);
 		}
 	}
 }
@@ -201,7 +201,6 @@ a {
 			height: 2px;
 			background-color: $alcatraz-blue;
 			transition: all 0.2s ease-out;
-			transform: translate(13px);
 		}
 
 		&::after {
@@ -209,9 +208,9 @@ a {
 		}
 	}
 
-	.sub-menu-toggle.active {
+	.sub-menu-toggle.toggled {
 		&::after {
-			transform: rotate(180deg) translate(0, -13px);
+			transform: rotate(180deg);
 		}
 	}
 }
@@ -274,12 +273,13 @@ a {
 
 			a.sub-menu-toggle {
 				position: absolute;
-				top: 0;
-				right: 0;
+				top: 20px;
+				right: 15px;
 				padding-left: 0;
 				padding-right: 0;
-				width: 50px;
+				width: 25px;
 				text-align: center;
+				color: transparent;
 			}
 		}
 
