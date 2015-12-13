@@ -147,6 +147,75 @@ a {
 	}
 }
 
+/* Chevron Sub Menu Toggle Style */
+.sub-menu-toggle-style-chevron {
+
+	.sub-menu-toggle {
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 40%;
+			width: 13px;
+			height: 2px;
+			background-color: $alcatraz-blue;
+			transition: all 0.2s ease;
+		}
+
+		&::before {
+			left: -1px;
+			transform: rotate(45deg);
+		}
+
+		&::after {
+			right: -0.5px;
+			transform: rotate(-45deg);
+		}
+	}
+
+	.sub-menu-toggle.active {
+
+		&::before {
+			transform: rotate(135deg);
+		}
+
+		&::after {
+			transform: rotate(-135deg);
+		}
+	}
+}
+
+/* Plus-Minus Sub-Menu Toggle Style */
+.sub-menu-toggle-style-plus-minus {
+
+	.sub-menu-toggle {
+
+		&::before,
+		&::after {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 4px;
+			width: 14px;
+			height: 2px;
+			background-color: $alcatraz-blue;
+			transition: all 0.2s ease-out;
+			transform: translate(13px);
+		}
+
+		&::after {
+			transform: rotate(90deg);
+		}
+	}
+
+	.sub-menu-toggle.active {
+		&::after {
+			transform: rotate(180deg) translate(0, -13px);
+		}
+	}
+}
+
 /* Mobile Nav Default Styles */
 .main-navigation {
 	display: block;

@@ -1107,6 +1107,63 @@ a:hover, a:active {
           transform: rotate(-45deg);
 }
 
+/* Chevron Sub Menu Toggle Style */
+.sub-menu-toggle-style-chevron .sub-menu-toggle::before, .sub-menu-toggle-style-chevron .sub-menu-toggle::after {
+  content: '';
+  position: absolute;
+  top: 40%;
+  width: 13px;
+  height: 2px;
+  background-color: #6E9AA2;
+  transition: all 0.2s ease;
+}
+
+.sub-menu-toggle-style-chevron .sub-menu-toggle::before {
+  left: -1px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.sub-menu-toggle-style-chevron .sub-menu-toggle::after {
+  right: -0.5px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+.sub-menu-toggle-style-chevron .sub-menu-toggle.active::before {
+  -webkit-transform: rotate(135deg);
+          transform: rotate(135deg);
+}
+
+.sub-menu-toggle-style-chevron .sub-menu-toggle.active::after {
+  -webkit-transform: rotate(-135deg);
+          transform: rotate(-135deg);
+}
+
+/* Plus-Minus Sub-Menu Toggle Style */
+.sub-menu-toggle-style-plus-minus .sub-menu-toggle::before, .sub-menu-toggle-style-plus-minus .sub-menu-toggle::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 4px;
+  width: 14px;
+  height: 2px;
+  background-color: #6E9AA2;
+  transition: all 0.2s ease-out;
+  -webkit-transform: translate(13px);
+          transform: translate(13px);
+}
+
+.sub-menu-toggle-style-plus-minus .sub-menu-toggle::after {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.sub-menu-toggle-style-plus-minus .sub-menu-toggle.active::after {
+  -webkit-transform: rotate(180deg) translate(0, -13px);
+          transform: rotate(180deg) translate(0, -13px);
+}
+
 /* Mobile Nav Default Styles */
 .main-navigation {
   display: block;
