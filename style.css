@@ -976,7 +976,6 @@ a:hover, a:active {
 /**
  * 4.2.2 Menus
  */
-/* Reusables */
 /* Mobile Nav Toggle Styles */
 .menu-toggle,
 .inner-menu-toggle {
@@ -1004,40 +1003,108 @@ a:hover, a:active {
   background-color: #426268;
 }
 
+.mobile-nav-toggle-style-button .main-navigation.toggled .inner-menu-toggle {
+  width: 25px;
+  height: 25px;
+}
+
+.mobile-nav-toggle-style-button .main-navigation.toggled .inner-menu-toggle::before, .mobile-nav-toggle-style-button .main-navigation.toggled .inner-menu-toggle::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #6E9AA2;
+  transition: all 0.2s ease;
+}
+
 .mobile-nav-toggle-style-button .main-navigation.toggled .inner-menu-toggle::before {
-  font-family: FontAwesome;
-  font-size: 2.25em;
-  content: "\f00d";
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.mobile-nav-toggle-style-button .main-navigation.toggled .inner-menu-toggle::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 /* Mobile Nav Hamburger Toggle Style */
 .mobile-nav-toggle-style-hamburger .menu-toggle {
   position: absolute;
-  top: 0;
-  right: 0;
-  margin: 20px 20px 0 0;
-  color: #6E9AA2;
+  top: 30px;
+  right: 25px;
+  width: 25px;
+  height: 3px;
+  background-color: #6E9AA2;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle::before, .mobile-nav-toggle-style-hamburger .menu-toggle::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #6E9AA2;
+  transition: all 0.2 ease;
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle::before {
-  font-family: FontAwesome;
-  font-size: 1.875em;
-  content: "\f0c9";
+  top: -8px;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle::after {
+  top: 8px;
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle .menu-text {
-  display: none;
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
 }
 
 .mobile-nav-toggle-style-hamburger .inner-menu-toggle {
   display: none;
 }
 
-.mobile-nav-toggle-style-hamburger .main-navigation.toggled .menu-toggle::before,
-.mobile-nav-toggle-style-hamburger .main-navigation.toggled .inner-menu-toggle::before {
-  font-family: FontAwesome;
-  font-size: 2.25em;
-  content: "\f00d";
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle {
+  background-color: transparent;
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle::before {
+  -webkit-transform: rotate(45deg) translate(5px, 6px);
+          transform: rotate(45deg) translate(5px, 6px);
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle::after {
+  -webkit-transform: rotate(-45deg) translate(5px, -6px);
+          transform: rotate(-45deg) translate(5px, -6px);
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .inner-menu-toggle {
+  width: 25px;
+  height: 25px;
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .inner-menu-toggle::before, .mobile-nav-toggle-style-hamburger .toggled .inner-menu-toggle::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 3px;
+  background-color: #6E9AA2;
+  transition: all 0.2s ease;
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .inner-menu-toggle::before {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .inner-menu-toggle::after {
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
 /* Mobile Nav Default Styles */
@@ -1182,7 +1249,7 @@ a:hover, a:active {
 .mobile-nav-style-slide-right .inner-menu-toggle {
   display: block;
   position: absolute;
-  top: 20px;
+  top: 30px;
   z-index: 1000;
 }
 
