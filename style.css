@@ -1043,7 +1043,7 @@ a:hover, a:active {
   width: 25px;
   height: 3px;
   background-color: #6E9AA2;
-  transition: all 0.2 ease;
+  transition: all 0.2s ease;
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle::before {
