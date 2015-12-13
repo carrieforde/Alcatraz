@@ -1144,8 +1144,8 @@ a:hover, a:active {
 .sub-menu-toggle-style-plus-minus .sub-menu-toggle::before, .sub-menu-toggle-style-plus-minus .sub-menu-toggle::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: 4px;
+  top: 22.5px;
+  left: 17.5px;
   width: 14px;
   height: 2px;
   background-color: #6E9AA2;
@@ -1853,6 +1853,7 @@ a:hover, a:active {
     left: auto;
     right: auto;
     height: auto;
+    min-height: auto;
     width: auto;
     opacity: 1;
     text-align: center;
@@ -1861,10 +1862,13 @@ a:hover, a:active {
   .header-style-default .mobile-nav-style-slide-left #primary-menu,
   .header-style-default .mobile-nav-style-slide-right #primary-menu {
     min-height: auto;
+    height: auto;
     padding-top: 0;
+    padding-bottom: 0;
     display: inline-block;
     position: static;
     text-align: center;
+    overflow: visible;
   }
   .header-style-default .main-navigation #primary-menu .menu-item {
     display: inline-block;
@@ -1927,6 +1931,7 @@ a:hover, a:active {
     left: auto;
     right: auto;
     height: auto;
+    min-height: auto;
     width: auto;
     opacity: 1;
     text-align: center;
@@ -1935,10 +1940,13 @@ a:hover, a:active {
   .header-style-short .mobile-nav-style-slide-left #primary-menu,
   .header-style-short .mobile-nav-style-slide-right #primary-menu {
     min-height: auto;
+    height: auto;
     padding-top: 0;
+    padding-bottom: 0;
     display: inline-block;
     position: static;
     text-align: center;
+    overflow: visible;
   }
   .header-style-short .main-navigation #primary-menu .menu-item {
     display: inline-block;
@@ -2124,6 +2132,7 @@ a:hover, a:active {
     left: auto;
     right: auto;
     height: auto;
+    min-height: auto;
     width: auto;
     opacity: 1;
     text-align: center;
@@ -2132,10 +2141,13 @@ a:hover, a:active {
   .header-style-side .mobile-nav-style-slide-left #primary-menu,
   .header-style-side .mobile-nav-style-slide-right #primary-menu {
     min-height: auto;
+    height: auto;
     padding-top: 0;
+    padding-bottom: 0;
     display: block;
     position: static;
     text-align: center;
+    overflow: visible;
   }
   .header-style-side .main-navigation #primary-menu .menu-item {
     display: block;

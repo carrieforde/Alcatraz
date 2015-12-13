@@ -57,6 +57,7 @@
 		left: auto;
 		right: auto;
 		height: auto;
+		min-height: auto;
 		width: auto;
 		opacity: 1;
 		text-align: center;
@@ -66,10 +67,13 @@
 	.mobile-nav-style-slide-left #primary-menu,
 	.mobile-nav-style-slide-right #primary-menu {
 		min-height: auto;
+		height: auto;
 		padding-top: 0;
+		padding-bottom: 0;
 		display: $display;
 		position: static;
 		text-align: center;
+		overflow: visible;
 	}
 
 	.main-navigation #primary-menu .menu-item {
