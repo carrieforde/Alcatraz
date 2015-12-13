@@ -94,6 +94,15 @@ add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
  * @since  1.0.0
  */
 function alcatraz_scripts() {
+
+	// Google fonts.
+	wp_enqueue_style(
+		'alcatraz-fonts',
+		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700',
+		false
+	);
+
+	// Main theme stylesheet.
 	wp_enqueue_style(
 		'alcatraz-style',
 		get_stylesheet_uri(),
@@ -101,20 +110,16 @@ function alcatraz_scripts() {
 		ALCATRAZ_VERSION
 	);
 
-	wp_enqueue_style(
-		'alcatraz-fonts',
-		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700',
-		false
-	);
-
+	// Navigation JS.
 	wp_enqueue_script(
 		'alcatraz-navigation',
 		ALCATRAZ_URL . 'js/navigation.js',
-		array( 'jquery' ),
+		array( 'jquery', 'alcatraz-jquery-mobile' ),
 		ALCATRAZ_VERSION,
 		true
 	);
 
+	// Skip link focus fix JS.
 	wp_enqueue_script(
 		'alcatraz-skip-link-focus-fix',
 		ALCATRAZ_URL . 'js/skip-link-focus-fix.js',
@@ -123,6 +128,25 @@ function alcatraz_scripts() {
 		true
 	);
 
+	// Custom jQuery mobile build (mostly for touch events).
+	wp_enqueue_script(
+		'alcatraz-jquery-mobile',
+		ALCATRAZ_URL . 'lib/jquery-mobile/jquery.mobile.custom.min.js',
+		array( 'jquery' ),
+		ALCATRAZ_VERSION,
+		true
+	);
+
+	// Main theme JS.
+	wp_enqueue_script(
+		'alcatraz-scripts',
+		ALCATRAZ_URL . 'js/theme.js',
+		array( 'jquery', 'alcatraz-jquery-mobile' ),
+		ALCATRAZ_VERSION,
+		true
+	);
+
+	// Comment reply JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

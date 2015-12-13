@@ -48,6 +48,8 @@
 				'menu_id'        => 'primary-menu',
 				'container_id'   => 'primary-menu-wrap',
 			) ); ?>
+			<div id="mobile-nav-left-swipe-zone"></div>
+			<div id="mobile-nav-right-swipe-zone"></div>
 		</nav>
 
 		<?php do_action( 'alcatraz_after_header_inside' ); ?>
