@@ -45,3 +45,126 @@
 	position: absolute;
 	width: 1px;
 }
+
+// Larger Screen Nav Display Styles
+@mixin large-screen-nav-display( $display: 'inline-block' ) {
+	.main-navigation #primary-menu-wrap,
+	.mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
+	.mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
+		top: auto;
+		position: static;
+		top: auto;
+		left: auto;
+		right: auto;
+		height: auto;
+		width: auto;
+		opacity: 1;
+		text-align: center;
+	}
+
+	.main-navigation #primary-menu,
+	.mobile-nav-style-slide-left #primary-menu,
+	.mobile-nav-style-slide-right #primary-menu {
+		min-height: auto;
+		padding-top: 0;
+		display: $display;
+		position: static;
+		text-align: center;
+	}
+
+	.main-navigation #primary-menu .menu-item {
+		display: $display;
+		width: auto;
+		text-align: left;
+	}
+}
+
+// Larger Screen Nav Dropdown Styles
+@mixin large-screen-nav-dropdown {
+	.main-navigation #primary-menu {
+		.menu-item {
+			&.menu-item-has-children a {
+				padding-right: $size__default-padding;
+			}
+
+			&:hover > .sub-menu,
+			&.hovered > .sub-menu {
+				display: block;
+			}
+
+			a.sub-menu-toggle {
+				display: none;
+			}
+
+			> .sub-menu {
+				position: absolute;
+
+				.sub-menu {
+					left: 100%;
+					top: 0;
+				}
+			}
+		}
+
+		> .menu-item {
+			&.reverse-expand {
+				.sub-menu {
+					right: 0;
+				}
+			}
+
+			.sub-menu .menu-item.reverse-expand .sub-menu {
+				left: -100%;
+			}
+		}
+	}
+
+	.main-navigation #primary-menu {
+
+		.sub-menu {
+			position: relative;
+			padding: 0;
+			text-align: left;
+			background-color: $true-white;
+			border-bottom: 3px solid $prision-cell-gray;
+			box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.5);
+
+			.menu-item {
+				display: block;
+				width: 100%;
+
+				a {
+					color: $prision-cell-gray;
+
+					&:hover {
+						color: $color__link-hover;
+					}
+				}
+			}
+		}
+	}
+}
+
+// Inner-menu close trigger.
+@mixin inner-menu-close {
+	width: 25px;
+	height: 25px;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		width: 25px;
+		height: 3px;
+		background-color: $alcatraz-blue;
+		transition: all 0.2s ease;
+	}
+
+	&::before {
+		transform: rotate(45deg);
+	}
+
+	&::after {
+		transform: rotate(-45deg);
+	}
+}

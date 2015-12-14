@@ -73,7 +73,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'default'           => 'full-width',
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field', 
+			'sanitize_callback' => 'sanitize_text_field',
 			'transport'         => 'postMessage',
 		)
 	);
@@ -100,7 +100,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
-		) 
+		)
 	);
 	$wp_customize->add_control(
 		'alcatraz_page_layout_control',
@@ -204,6 +204,28 @@ function alcatraz_customize_register( $wp_customize ) {
 			'section'  => 'alcatraz_header_section',
 			'settings' => 'alcatraz_options[mobile_nav_style]',
 			'choices'  => alcatraz_get_mobile_nav_style_options( 'mobile-nav-style' ),
+		)
+	);
+
+	// Sub-menu toggle-style.
+	$wp_customize->add_setting(
+		'alcatraz_options[sub_menu_toggle_style]',
+		array(
+			'default'           => '',
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
+			'transport'         => 'postMessage',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_sub_menu_toggle_style',
+		array(
+			'type'     => 'radio',
+			'label'    => __( 'Sub Menu Toggle Style', 'alcatraz' ),
+			'section'  => 'alcatraz_header_section',
+			'settings' => 'alcatraz_options[sub_menu_toggle_style]',
+			'choices'  => alcatraz_get_sub_menu_toggle_styles( 'sub-menu-toggle-style' ),
 		)
 	);
 
