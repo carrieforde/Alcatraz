@@ -105,6 +105,7 @@
 			height: 100%;
 			position: fixed;
 			padding: $size__default-padding;
+			overflow-y: auto;
 
 			.header-inner {
 				max-width: 100%;
