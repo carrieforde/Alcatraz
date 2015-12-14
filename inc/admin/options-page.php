@@ -32,7 +32,7 @@ class Alcatraz_Options_Page {
 	 */
 	public function init() {
 		add_action( 'admin_menu', array( $this, 'register_options_page' ) );
-		add_action( 'admin_init', array( $this, 'alcatraz_admin_init' ) );
+		add_action( 'admin_init', array( $this, 'register_settings_and_fields' ) );
 	}
 
 	/**
@@ -46,10 +46,7 @@ class Alcatraz_Options_Page {
 			__( 'Theme Options', 'alcatraz' ),
 			'manage_options',
 			'alcatraz_options_page',
-			array(
-				$this,
-				'options_page'
-			)
+			array( $this, 'options_page' )
 		);
 	}
 
@@ -62,197 +59,199 @@ class Alcatraz_Options_Page {
 		?>
 		<div class="wrap alcatraz-options-page">
 			<h1><?php _e( 'Alcatraz Theme Options', 'alcatraz' ) ?></h1>
-				<form method="post" action="options.php">
-					<?php settings_fields('alcatraz_options'); ?>
-					<?php do_settings_sections('alcatraz_settings_section'); ?>
-					<?php submit_button(); ?>
-				</form>
+			<form method="post" action="options.php">
+				<?php settings_fields( 'alcatraz_options' ); ?>
+				<?php do_settings_sections( 'alcatraz_settings_section' ); ?>
+				<?php submit_button(); ?>
+			</form>
 		</div>
 		<?php
 	}
 
-	// add the admin settings and such
-	public function alcatraz_admin_init() {
+	/**
+	 * Register our settings and fields.
+	 *
+	 * @since  1.0.0
+	 */
+	public function register_settings_and_fields() {
+
 		register_setting(
 			'alcatraz_options',
 			'alcatraz_options',
-			array( $this, 'alcatraz_options_validate' )
+			array( $this, 'alcatraz_validate_options' )
 		);
 
 		add_settings_section(
 			'social_media_links',
-			__('Social Media Links', 'alcatraz_settings_section'),
+			__( 'Social Media Links', 'alcatraz' ),
 			array( $this, 'settings_section' ),
 			'alcatraz_settings_section'
 		);
 
 		add_settings_field(
-			'facebook',
-			__('Facebook', 'alcatraz_settings_section'),
-			array( $this, 'facebook_callback' ),
+			'facebook_url',
+			__( 'Facebook', 'alcatraz' ),
+			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links'
+			'social_media_links',
+			array(
+				'id'          => 'facebook_url',
+				'description' => __( 'Enter your Facebook profile URL', 'alcatraz' ),
+			)
 		);
 
 		add_settings_field(
-			'twitter',
-			__('Twitter', 'alcatraz_settings_section'),
-			array( $this, 'twitter_callback' ),
+			'twitter_url',
+			__( 'Twitter', 'alcatraz' ),
+			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links'
+			'social_media_links',
+			array(
+				'id'          => 'twitter_url',
+				'description' => __( 'Enter your Twitter profile URL', 'alcatraz' ),
+			)
 		);
 
 		add_settings_field(
-			'instagram',
-			__('Instagram', 'alcatraz_settings_section'),
-			array( $this, 'instagram_callback' ),
+			'instagram_url',
+			__( 'Instagram', 'alcatraz' ),
+			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links'
+			'social_media_links',
+			array(
+				'id'          => 'instagram_url',
+				'description' => __( 'Enter your Instagram profile URL', 'alcatraz' ),
+			)
 		);
 
 		add_settings_field(
-			'pinterest',
-			__('Pinterest', 'alcatraz_settings_section'),
-			array( $this, 'pinterest_callback' ),
+			'pinterest_url',
+			__( 'Pinterest', 'alcatraz' ),
+			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links'
+			'social_media_links',
+			array(
+				'id'          => 'pinterest_url',
+				'description' => __( 'Enter your Pinterest profile URL', 'alcatraz' ),
+			)
 		);
 
 		add_settings_field(
-			'youtube',
-			__('Youtube', 'alcatraz_settings_section'),
-			array( $this, 'youtube_callback' ),
+			'youtube_url',
+			__( 'Youtube', 'alcatraz' ),
+			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links'
+			'social_media_links',
+			array(
+				'id'          => 'youtube_url',
+				'description' => __( 'Enter your Youtube channel URL', 'alcatraz' ),
+			)
 		);
-
-	}
-
-    /**
-     * Output the settings section.
-     *
-     * @since  1.0.0
-     */
-    public function settings_section() {
-        return;
-    }
-
-    /**
-     * Output our facebook field.
-     *
-     * @since  1.0.0
-     */
-    public function facebook_callback() {
-
-		$options = get_option( 'alcatraz_options' );
-
-		$facebook = $options['facebook'];
-
-		printf(
-			'<input id="%s-facebook-field" name="%s" type="text" value="%s" name="alcatraz-link" /><br />',
-			'alcatraz-settings',
-			'alcatraz_options' . '[facebook]',
-			esc_url( $facebook )
-		);
-
 	}
 
 	/**
-     * Output our twitter field.
-     *
-     * @since  1.0.0
-     */
-    public function twitter_callback() {
-
-		$options = get_option( 'alcatraz_options' );
-
-		$twitter = $options['twitter'];
-
-		printf(
-			'<input id="%s-twitter-field" name="%s" type="text" value="%s" name="alcatraz-link" /><br />',
-			'alcatraz-settings',
-			'alcatraz_options' . '[twitter]',
-			esc_url( $twitter )
-		);
-
+	 * Output the settings section.
+	 *
+	 * @since  1.0.0
+	 */
+	public function settings_section() {
+		return;
 	}
 
 	/**
-     * Output our instagram field.
-     *
-     * @since  1.0.0
-     */
-    public function instagram_callback() {
+	 * Output a text field.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param  array  $args  The array of field args.
+	 */
+	public function field_text( $args ) {
 
-		$options = get_option( 'alcatraz_options' );
+		// Bail if we don't have an ID.
+		if ( empty( $args['id'] ) ) {
+			return;
+		}
 
-		$instagram = $options['instagram'];
+		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
+		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
+		$option_value       = ( ! empty( $this->options[ $args['id'] ] ) ) ? $this->options[ $args['id'] ] : '';
+		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
 
 		printf(
-			'<input id="%s-instagram-field" name="%s" type="text" value="%s" name="alcatraz-link" /><br />',
-			'alcatraz-settings',
-			'alcatraz_options' . '[instagram]',
-			esc_url( $instagram )
+			'<input type="text" class="regular-text" id="%s" name="%s" value="%s" />%s',
+			esc_attr( $option_id ),
+			esc_attr( $option_key ),
+			esc_attr( $option_value ),
+			$option_description
 		);
-
 	}
 
 	/**
-     * Output our pinterest field.
-     *
-     * @since  1.0.0
-     */
-    public function pinterest_callback() {
+	 * Validate our options before saving.
+	 *
+	 * Because we're storing all of our options under a single key, we need
+	 * to also validate our Customizer options here, which allows us to avoid
+	 * having to specify sanitize_callback functions in our customizer.php file.
+	 *
+	 * @since  1.0.0
+	 */
+	public function alcatraz_validate_options( $input ) {
 
+		// Start with any existing options.
 		$options = get_option( 'alcatraz_options' );
 
-		$pinterest = $options['pinterest'];
+		// Update options on the options page.
+		if ( ! empty( $input['facebook_url'] ) ) {
+			$options['facebook_url']  = sanitize_text_field( $input['facebook_url'] );
+		}
+		if ( ! empty( $input['twitter_url'] ) ) {
+			$options['twitter_url']   = sanitize_text_field( $input['twitter_url'] );
+		}
+		if ( ! empty( $input['instagram_url'] ) ) {
+			$options['instagram_url'] = sanitize_text_field( $input['instagram_url'] );
+		}
+		if ( ! empty( $input['pinterest_url'] ) ) {
+			$options['pinterest_url'] = sanitize_text_field( $input['pinterest_url'] );
+		}
+		if ( ! empty( $input['youtube_url'] ) ) {
+			$options['youtube_url']   = sanitize_text_field( $input['youtube_url'] );
+		}
 
-		printf(
-			'<input id="%s-pinterest-field" name="%s" type="text" value="%s" name="alcatraz-link" /><br />',
-			'alcatraz-settings',
-			'alcatraz_options' . '[pinterest]',
-			esc_url( $pinterest )
-		);
+		// Update options in the Customizer.
+		if ( ! empty( $input['site_layout'] ) ) {
+			$options['site_layout'] = sanitize_text_field( $input['site_layout'] );
+		}
+		if ( ! empty( $input['page_layout'] ) ) {
+			$options['page_layout'] = sanitize_text_field( $input['page_layout'] );
+		}
+		if ( ! empty( $input['page_banner_widget_area'] ) ) {
+			$options['page_banner_widget_area'] = absint( $input['page_banner_widget_area'] );
+		}
+		if ( ! empty( $input['header_style'] ) ) {
+			$options['header_style'] = sanitize_text_field( $input['header_style'] );
+		}
+		if ( ! empty( $input['mobile_nav_toggle_style'] ) ) {
+			$options['mobile_nav_toggle_style'] = sanitize_text_field( $input['mobile_nav_toggle_style'] );
+		}
+		if ( ! empty( $input['mobile_nav_style'] ) ) {
+			$options['mobile_nav_style'] = sanitize_text_field( $input['mobile_nav_style'] );
+		}
+		if ( ! empty( $input['sub_menu_toggle_style'] ) ) {
+			$options['sub_menu_toggle_style'] = sanitize_text_field( $input['sub_menu_toggle_style'] );
+		}
+		if ( ! empty( $input['logo_id'] ) ) {
+			$options['logo_id'] = alcatraz_empty_or_int( $input['logo_id'] );
+		}
+		if ( ! empty( $input['mobile_logo_id'] ) ) {
+			$options['mobile_logo_id'] = alcatraz_empty_or_int( $input['mobile_logo_id'] );
+		}
+		if ( ! empty( $input['footer_widget_areas'] ) ) {
+			$options['footer_widget_areas'] = absint( $input['footer_widget_areas'] );
+		}
+		if ( ! empty( $input['footer_bottom'] ) ) {
+			$options['footer_bottom'] = sanitize_text_field( $input['footer_bottom'] );
+		}
 
+		return $options;
 	}
-
-	/**
-     * Output our youtube field.
-     *
-     * @since  1.0.0
-     */
-    public function youtube_callback() {
-
-		$options = get_option( 'alcatraz_options' );
-
-		$youtube = $options['youtube'];
-
-		printf(
-			'<input id="%s-youtube-field" name="%s" type="text" value="%s" name="alcatraz-link" /><br />',
-			'alcatraz-settings',
-			'alcatraz_options' . '[youtube]',
-			esc_url( $youtube )
-		);
-
-	}
-
-	/**
-    * Validate our settings before saving.
-    *
-    * @since  1.0.0
-    */
-    public function alcatraz_options_validate( $input ) {
-
-    	$new_input = array();
-
-		$new_input['facebook'] = ( isset( $input['facebook'] ) ) ? wp_kses_post( $input['facebook'] ) : '';
-		$new_input['twitter'] = ( isset( $input['twitter'] ) ) ? wp_kses_post( $input['twitter'] ) : '';
-		$new_input['instagram'] = ( isset( $input['instagram'] ) ) ? wp_kses_post( $input['instagram'] ) : '';
-		$new_input['pinterest'] = ( isset( $input['pinterest'] ) ) ? wp_kses_post( $input['pinterest'] ) : '';
-		$new_input['youtube'] = ( isset( $input['youtube'] ) ) ? wp_kses_post( $input['youtube'] ) : '';
-
-        return $new_input;
-    }
-
 }

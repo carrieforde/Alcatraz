@@ -26,6 +26,11 @@ function alcatraz_get_option_defaults() {
 		'mobile_logo_id'          => '',
 		'footer_widget_areas'     => 3,
 		'footer_bottom'           => '',
+		'facebook_url'            => '',
+		'twitter_url'             => '',
+		'instagram_url'           => '',
+		'pinterest_url'           => '',
+		'youtube_url'             => '',
 	);
 
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
