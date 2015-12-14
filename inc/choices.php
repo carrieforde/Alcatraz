@@ -6,6 +6,32 @@
  */
 
 /**
+ * Return an array of the default theme options.
+ *
+ * @since   1.0.0
+ *
+ * @return  array
+ */
+function alcatraz_get_option_defaults() {
+
+	$defaults = array(
+		'site_layout'             => 'full-width',
+		'page_layout'             => 'right-sidebar',
+		'page_banner_widget_area' => 0,
+		'header_style'            => 'default',
+		'mobile_nav_toggle_style' => 'hamburger',
+		'mobile_nav_style'        => 'default',
+		'sub_menu_toggle_style'   => 'chevron',
+		'logo_id'                 => '',
+		'mobile_logo_id'          => '',
+		'footer_widget_areas'     => 3,
+		'footer_bottom'           => '',
+	);
+
+	return apply_filters( 'alcatraz_option_defaults', $defaults );
+}
+
+/**
  * Return an array of text color classes and display names.
  *
  * @since   1.0.0

@@ -14,6 +14,11 @@ add_action( 'customize_register', 'alcatraz_customize_register' );
 function alcatraz_customize_register( $wp_customize ) {
 
 	/**
+	 * Get the default values for our options.
+	 */
+	$option_defaults = alcatraz_get_option_defaults();
+
+	/**
 	 * Modifications to core sections and controls.
 	 */
 
@@ -70,7 +75,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[site_layout]',
 		array(
-			'default'           => 'full-width',
+			'default'           => $option_defaults['site_layout'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -96,7 +101,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[page_layout]',
 		array(
-			'default'           => 'right-sidebar',
+			'default'           => $option_defaults['page_layout'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -121,10 +126,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[page_banner_widget_area]',
 		array(
-			'default'           => 0,
+			'default'           => $option_defaults['page_banner_widget_area'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
-			'sanitize_callback' => 'intval',
+			'sanitize_callback' => 'absint',
 		)
 	);
 	$wp_customize->add_control(
@@ -141,7 +146,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[header_style]',
 		array(
-			'default'           => 'default',
+			'default'           => $option_defaults['header_style'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -167,7 +172,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[mobile_nav_toggle_style]',
 		array(
-			'default'           => 'button',
+			'default'           => $option_defaults['mobile_nav_toggle_style'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -189,7 +194,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[mobile_nav_style]',
 		array(
-			'default'           => 'default',
+			'default'           => $option_defaults['mobile_nav_style'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -211,7 +216,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[sub_menu_toggle_style]',
 		array(
-			'default'           => '',
+			'default'           => $option_defaults['sub_menu_toggle_style'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -233,7 +238,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[logo_id]',
 		array(
-			'default'           => '',
+			'default'           => $option_defaults['logo_id'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_empty_or_int',
@@ -253,7 +258,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[mobile_logo_id]',
 		array(
-			'default'           => '',
+			'default'           => $option_defaults['mobile_logo_id'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_empty_or_int',
@@ -273,7 +278,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[footer_widget_areas]',
 		array(
-			'default'           => 3,
+			'default'           => $option_defaults['footer_widget_areas'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'intval',
@@ -300,7 +305,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[footer_bottom]',
 		array(
-			'default'           => '',
+			'default'           => $option_defaults['footer_bottom'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'wp_kses_post',
