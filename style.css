@@ -2077,6 +2077,7 @@ a:hover, a:active {
     height: 100%;
     position: fixed;
     padding: 20px;
+    overflow-y: auto;
   }
   .header-style-side .site-header:last-child {
     margin-right: 0;
