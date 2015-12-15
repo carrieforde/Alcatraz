@@ -38,6 +38,8 @@
 
 		</div>
 
+		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
@@ -51,6 +53,8 @@
 			<div id="mobile-nav-left-swipe-zone"></div>
 			<div id="mobile-nav-right-swipe-zone"></div>
 		</nav>
+
+		<?php endif; ?>
 
 		<?php do_action( 'alcatraz_after_header_inside' ); ?>
 
