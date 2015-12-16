@@ -2,6 +2,8 @@
 /**
  * Alcatraz admin-only functionality.
  *
+ * Everything in this file is only run if is_admin() is true.
+ *
  * @package alcatraz
  */
 

@@ -9,9 +9,44 @@ define( 'ALCATRAZ_VERSION', '1.0.0' );
 define( 'ALCATRAZ_PATH', trailingslashit( get_template_directory() ) );
 define( 'ALCATRAZ_URL', trailingslashit( get_template_directory_uri() ) );
 
+add_action( 'after_switch_theme', 'alcatraz_first_setup' );
+/**
+ * Check for our theme options and set defaults for any options that don't already exist.
+ *
+ * This only runs one time right after the user activates the theme.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_first_setup() {
+
+	// Look for existing options.
+	$options = get_option( 'alcatraz_options' );
+
+	if ( ! $options ) {
+		$options = array();
+	}
+
+	$defaults = alcatraz_get_option_defaults();
+
+	// Bail early if the existing options match the defaults.
+	if ( $options === $defaults ) {
+		return;
+	}
+
+	// Populate any defaults that are missing.
+	foreach ( $defaults as $key => $value ) {
+		if ( ! array_key_exists( $key, $options ) ) {
+			$options[ $key ] = $value;
+		}
+	}
+
+	// Update options with defaults.
+	update_option( 'alcatraz_options', $options, 'yes' );
+}
+
 add_action( 'after_setup_theme', 'alcatraz_setup' );
 /**
- * Set up theme defaults and register support for various WordPress features.
+ * Load translations and register support for various WordPress features.
  *
  * @since  1.0.0
  */
@@ -94,6 +129,15 @@ add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
  * @since  1.0.0
  */
 function alcatraz_scripts() {
+
+	// Google fonts.
+	wp_enqueue_style(
+		'alcatraz-fonts',
+		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700',
+		false
+	);
+
+	// Main theme stylesheet.
 	wp_enqueue_style(
 		'alcatraz-style',
 		get_stylesheet_uri(),
@@ -101,20 +145,16 @@ function alcatraz_scripts() {
 		ALCATRAZ_VERSION
 	);
 
-	wp_enqueue_style(
-		'alcatraz-fonts',
-		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700',
-		false
-	);
-
+	// Navigation JS.
 	wp_enqueue_script(
 		'alcatraz-navigation',
 		ALCATRAZ_URL . 'js/navigation.js',
-		array( 'jquery' ),
+		array( 'jquery', 'alcatraz-jquery-mobile' ),
 		ALCATRAZ_VERSION,
 		true
 	);
 
+	// Skip link focus fix JS.
 	wp_enqueue_script(
 		'alcatraz-skip-link-focus-fix',
 		ALCATRAZ_URL . 'js/skip-link-focus-fix.js',
@@ -123,6 +163,25 @@ function alcatraz_scripts() {
 		true
 	);
 
+	// Custom jQuery mobile build (mostly for touch events).
+	wp_enqueue_script(
+		'alcatraz-jquery-mobile',
+		ALCATRAZ_URL . 'lib/jquery-mobile/jquery.mobile.custom.min.js',
+		array( 'jquery' ),
+		ALCATRAZ_VERSION,
+		true
+	);
+
+	// Main theme JS.
+	wp_enqueue_script(
+		'alcatraz-scripts',
+		ALCATRAZ_URL . 'js/theme.js',
+		array( 'jquery', 'alcatraz-jquery-mobile' ),
+		ALCATRAZ_VERSION,
+		true
+	);
+
+	// Comment reply JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
