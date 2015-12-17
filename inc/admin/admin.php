@@ -21,6 +21,20 @@ require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';
 $options_page = new Alcatraz_Options_Page();
 $options_page->init();
 
+add_action( 'admin_init', 'alcatraz_add_editor_styles' );
+/**
+ * Include our theme CSS in the TinyMCE editor.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_add_editor_styles() {
+
+	global $alcatraz_google_fonts;
+
+	add_editor_style( $alcatraz_google_fonts );
+	add_editor_style( get_stylesheet_uri() );
+}
+
 add_action( 'cmb2_admin_init', 'alcatraz_page_options_metabox' );
 /**
  * Setup our Page Options metabox.

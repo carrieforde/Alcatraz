@@ -58,6 +58,7 @@ h6 {
 
 /* Copy */
 p {
+	margin-top: 0;
 	margin-bottom: 1.5em;
 }
 
@@ -70,7 +71,7 @@ i {
 blockquote {
 	padding: em(15) em(20) em(15) em(15);
 	border-left: em(5) solid darken($color__background-blockquote, 80%);
-	margin: 0 1.5em;
+	margin: 0 1.5em 1.5em;
 	background-color: $color__background-blockquote;
 	font-style: italic;
 
