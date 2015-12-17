@@ -1,6 +1,6 @@
 <?php
 /**
- * Content template for single posts.
+ * Default template for singlular pages for all post types except page.
  *
  * @package alcatraz
  */
