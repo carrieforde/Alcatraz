@@ -33,6 +33,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	// Disable the Header Text Color control.
 	$wp_customize->remove_control( 'header_textcolor' );
 
+	// Rename the "Static Front Page" section to "Front Page".
+	$wp_customize->get_section( 'static_front_page' )->title = __( 'Front Page', 'alcatraz' );
+
 	/**
 	 * Alcatraz theme sections.
 	 */
