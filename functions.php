@@ -124,6 +124,30 @@ function alcatraz_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'alcatraz_content_width', 640 );
 }
 
+add_action( 'after_setup_theme', 'alcatraz_register_image_sizes', 0 );
+/**
+ * Register our theme image sizes.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_register_image_sizes() {
+	set_post_thumbnail_size( 1200, 740, true );
+}
+
+add_action( 'after_setup_theme', 'alcatraz_google_fonts', 0 );
+/**
+ * Define our theme Google fonts
+ *
+ * @since  1.0.0
+ */
+function alcatraz_google_fonts() {
+
+	$google_fonts = '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700';
+	$google_fonts = apply_filters( 'alcatraz_google_fonts', $google_fonts );
+
+	$GLOBALS['alcatraz_google_fonts'] = str_replace( ',', '%2C', $google_fonts );
+}
+
 add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
 /**
  * Enqueue scripts and styles.
@@ -132,11 +156,14 @@ add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
  */
 function alcatraz_scripts() {
 
+	global $alcatraz_google_fonts;
+
 	// Google fonts.
 	wp_enqueue_style(
 		'alcatraz-fonts',
-		'https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700',
-		false
+		$alcatraz_google_fonts,
+		array(),
+		ALCATRAZ_VERSION
 	);
 
 	// Main theme CSS.
@@ -187,25 +214,6 @@ function alcatraz_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
-
-/**
- * Add some image sizes.
- *
- * @since  1.0.0
- */
-add_image_size( 'alcatraz_post_thumbnail', 1200, 740, true );
-
-add_action( 'admin_init', 'alcatraz_add_editor_styles' );
-/**
- * Apply theme styles to the visual editor.
- *
- * @since  1.0.0
- */
-function alcatraz_add_editor_styles() {
-
-	$alcatraz_fonts = str_replace( ',', '%2C', '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700' );
-	add_editor_style( array( 'admin-editor-styles.css', $alcatraz_fonts ) );
 }
 
 add_action( 'init', 'alcatraz_init_bfa' );

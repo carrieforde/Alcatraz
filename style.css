@@ -308,6 +308,10 @@ body {
   overflow-x: hidden;
 }
 
+body.mce-content-body {
+  padding: 15px !important;
+}
+
 hr {
   background-color: #ccc;
   border: 0;
@@ -317,9 +321,7 @@ hr {
 
 /**
  * 2.4.1 Accessibility
- *
-/
-
+ */
 /* Text meant only for screen readers. */
 .screen-reader-text {
   clip: rect(1px, 1px, 1px, 1px);
@@ -505,6 +507,7 @@ h6 {
 
 /* Copy */
 p {
+  margin-top: 0;
   margin-bottom: 1.5em;
 }
 
@@ -517,7 +520,7 @@ i {
 blockquote {
   padding: 0.9375em 1.25em 0.9375em 0.9375em;
   border-left: 0.3125em solid #1a282a;
-  margin: 0 1.5em;
+  margin: 0 1.5em 1.5em;
   background-color: #eaf1f2;
   font-style: italic;
 }
@@ -1451,6 +1454,10 @@ a:hover, a:active {
   display: block;
   margin-left: auto;
   margin-right: auto;
+}
+
+.post-thumbnail {
+  display: block;
 }
 
 .post-thumbnail img {
