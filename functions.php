@@ -137,7 +137,7 @@ function alcatraz_scripts() {
 		false
 	);
 
-	// Main theme stylesheet.
+	// Main theme CSS.
 	wp_enqueue_style(
 		'alcatraz-style',
 		get_stylesheet_uri(),
@@ -145,17 +145,8 @@ function alcatraz_scripts() {
 		ALCATRAZ_VERSION
 	);
 
-	// Navigation JS.
-	wp_enqueue_script(
-		'alcatraz-navigation',
-		ALCATRAZ_URL . 'js/navigation.js',
-		array( 'jquery', 'alcatraz-jquery-mobile' ),
-		ALCATRAZ_VERSION,
-		true
-	);
-
 	// Skip link focus fix JS.
-	wp_enqueue_script(
+	wp_register_script(
 		'alcatraz-skip-link-focus-fix',
 		ALCATRAZ_URL . 'js/skip-link-focus-fix.js',
 		array(),
@@ -164,7 +155,7 @@ function alcatraz_scripts() {
 	);
 
 	// Custom jQuery mobile build (mostly for touch events).
-	wp_enqueue_script(
+	wp_register_script(
 		'alcatraz-jquery-mobile',
 		ALCATRAZ_URL . 'lib/jquery-mobile/jquery.mobile.custom.min.js',
 		array( 'jquery' ),
@@ -172,11 +163,20 @@ function alcatraz_scripts() {
 		true
 	);
 
+	// Navigation JS.
+	wp_register_script(
+		'alcatraz-navigation',
+		ALCATRAZ_URL . 'js/navigation.js',
+		array( 'jquery', 'alcatraz-jquery-mobile' ),
+		ALCATRAZ_VERSION,
+		true
+	);
+
 	// Main theme JS.
 	wp_enqueue_script(
 		'alcatraz-scripts',
-		ALCATRAZ_URL . 'js/theme.js',
-		array( 'jquery', 'alcatraz-jquery-mobile' ),
+		ALCATRAZ_URL . 'js/alcatraz-theme.min.js',
+		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true
 	);
