@@ -102,13 +102,15 @@ function alcatraz_setup() {
 	) );
 
 	// Enable the custom background feature.
-	add_theme_support(
-		'custom-background',
-		apply_filters( 'alcatraz_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) )
-	);
+	if ( apply_filters( 'alcatraz_enable_custom_background', false ) ) {
+		add_theme_support(
+			'custom-background',
+			apply_filters( 'alcatraz_custom_background_args', array(
+				'default-color' => 'ffffff',
+				'default-image' => '',
+			) )
+		);
+	}
 }
 
 add_action( 'after_setup_theme', 'alcatraz_content_width', 0 );

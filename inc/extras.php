@@ -54,7 +54,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Sub-menu toggle style class.
 	if ( isset( $options['sub_menu_toggle_style'] ) && $options['sub_menu_toggle_style'] ) {
-		$classes[] = 'sub-menu-toggle-style-' . esc_attr($options['sub_menu_toggle_style'] );
+		$classes[] = 'sub-menu-toggle-style-' . esc_attr( $options['sub_menu_toggle_style'] );
 	}
 
 	// Transparent header class.
