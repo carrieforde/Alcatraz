@@ -41,6 +41,29 @@ module.exports = function( grunt ) {
 				},
 			},
 		},
+		jshint: {
+			files: ['Gruntfile.js', 'js/src/*.js']
+		},
+		concat: {
+			options: {
+				separator: '\n\n'
+			},
+			dist: {
+				src: ['lib/jquery-mobile/jquery.mobile.custom.min.js', 'js/src/*.js'],
+				dest: 'js/<%= pkg.name %>-theme.js'
+			}
+		},
+		uglify: {
+			options: {
+				banner: '/*! <%= pkg.name %> theme JS */\n',
+				sourceMap: true
+			},
+			dist: {
+				files: {
+					'js/<%= pkg.name %>-theme.min.js': ['<%= concat.dist.dest %>']
+				}
+			}
+		},
 		watch: {
 			css: {
 				files: ['sass/**/*.scss'],
@@ -49,6 +72,10 @@ module.exports = function( grunt ) {
 					livereload: true
 				},
 			},
+			js: {
+				files: ['<%= jshint.files %>'],
+				tasks: ['scripts']
+			}
 		},
 		wp_readme_to_markdown: {
 			your_target: {
@@ -73,12 +100,15 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-sass' );
 	grunt.loadNpmTasks( 'grunt-postcss' );
 	grunt.loadNpmTasks( 'grunt-cssnano' );
+	grunt.loadNpmTasks( 'grunt-contrib-jshint' );
+	grunt.loadNpmTasks( 'grunt-contrib-concat' );
+	grunt.loadNpmTasks( 'grunt-contrib-uglify' );
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
 
 	// Configure tasks.
 	grunt.registerTask( 'styles', ['sass', 'postcss', 'cssnano'] );
-	grunt.registerTask( 'build', ['sass', 'postcss', 'wp_readme_to_markdown', 'makepot' ] );
-
+	grunt.registerTask( 'scripts', ['jshint', 'concat', 'uglify'] );
+	grunt.registerTask( 'build', ['sass', 'postcss', 'jshint', 'concat', 'uglify', 'wp_readme_to_markdown', 'makepot'] );
 };
