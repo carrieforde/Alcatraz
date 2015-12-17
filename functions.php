@@ -129,7 +129,7 @@ add_action( 'after_setup_theme', 'alcatraz_register_image_sizes', 0 );
  * @since  1.0.0
  */
 function alcatraz_register_image_sizes() {
-	add_image_size( 'alcatraz_post_thumbnail', 1200, 740, true );
+	set_post_thumbnail_size( 1200, 740, true );
 }
 
 add_action( 'after_setup_theme', 'alcatraz_google_fonts', 0 );

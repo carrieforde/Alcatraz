@@ -1456,6 +1456,10 @@ a:hover, a:active {
   margin-right: auto;
 }
 
+.post-thumbnail {
+  display: block;
+}
+
 .post-thumbnail img {
   margin-bottom: 1.25em;
   display: block;
