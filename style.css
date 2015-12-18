@@ -1235,7 +1235,7 @@ a:hover, a:active {
   padding-right: 0;
   width: 50px;
   text-align: center;
-  color: transparent;
+  text-indent: 101%;
 }
 
 .main-navigation #primary-menu .sub-menu {
