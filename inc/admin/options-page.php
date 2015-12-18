@@ -89,6 +89,18 @@ class Alcatraz_Options_Page {
 		);
 
 		add_settings_field(
+			'email_url',
+			__( 'Email', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'email_url',
+				'description' => __( 'Enter your email address (mailto:me@example.com)', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
 			'facebook_url',
 			__( 'Facebook', 'alcatraz' ),
 			array( $this, 'field_text' ),
@@ -201,6 +213,9 @@ class Alcatraz_Options_Page {
 		$options = get_option( 'alcatraz_options' );
 
 		// Update options on the options page.
+		if ( ! empty( $input['email_url'] ) ) {
+			$options['email_url']     = sanitize_text_field( $input['email_url'] );
+		}
 		if ( ! empty( $input['facebook_url'] ) ) {
 			$options['facebook_url']  = sanitize_text_field( $input['facebook_url'] );
 		}
