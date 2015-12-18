@@ -219,13 +219,9 @@ class Alcatraz_Options_Page {
 	 */
 	public function field_checkbox( $args ) {
 
-		if ( empty( $args['id'] ) ) {
-			return;
-		}
-
 		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
 		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
-		$option_value       = ( ! empty( $this->options[ $args['id'] ] ) ) ? $this->options[ $args['id'] ] : '';
+		$option_value       = alcatraz_true_or_false( $this->options[ $args['id'] ] );
 		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
 
 		printf(
