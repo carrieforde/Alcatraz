@@ -1561,6 +1561,29 @@ a:hover, a:active {
   text-align: center;
 }
 
+/**
+ * 4.5.2 Social Network Icons
+ */
+.alcatraz-social-icons {
+  padding-left: 0;
+  margin-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.alcatraz-social-icons li {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.alcatraz-social-icons li:last-child {
+  margin-right: 0;
+}
+
+.alcatraz-social-icons .alcatraz-social-icon {
+  font-size: 24px;
+}
+
 @media (min-width: 48em) {
   .alcatraz-col-1 {
     float: left;

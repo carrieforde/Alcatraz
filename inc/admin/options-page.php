@@ -89,6 +89,18 @@ class Alcatraz_Options_Page {
 		);
 
 		add_settings_field(
+			'email_url',
+			__( 'Email', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'email_url',
+				'description' => __( 'Enter your email address (mailto:me@example.com)', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
 			'facebook_url',
 			__( 'Facebook', 'alcatraz' ),
 			array( $this, 'field_text' ),
@@ -144,7 +156,19 @@ class Alcatraz_Options_Page {
 			'social_media_links',
 			array(
 				'id'          => 'youtube_url',
-				'description' => __( 'Enter your Youtube channel URL', 'alcatraz' ),
+				'description' => __( 'Enter your YouTube channel URL', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
+			'show_social_urls',
+			__( 'Show Social URLs', 'alcatraz' ),
+			array( $this, 'field_checkbox' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'show_social_urls',
+				'description' => __( 'Show Social Icons in Footer?', 'alcatraz' ),
 			)
 		);
 	}
@@ -187,6 +211,29 @@ class Alcatraz_Options_Page {
 	}
 
 	/**
+	 * Output a checkbox.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  array  $args  The array of field args.
+	 */
+	public function field_checkbox( $args ) {
+
+		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
+		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
+		$option_value       = alcatraz_true_or_false( $this->options[ $args['id'] ] );
+		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
+
+		printf(
+			'<input type="checkbox" class="checkbox" id="%s" name="%s" value="1" %s />%s',
+			esc_attr( $option_id ),
+			esc_attr( $option_key ),
+			checked( $option_value, 1, false ),
+			$option_description
+		);
+	}
+
+	/**
 	 * Validate our options before saving.
 	 *
 	 * Because we're storing all of our options under a single key, we need
@@ -201,6 +248,9 @@ class Alcatraz_Options_Page {
 		$options = get_option( 'alcatraz_options' );
 
 		// Update options on the options page.
+		if ( ! empty( $input['email_url'] ) ) {
+			$options['email_url']     = sanitize_text_field( $input['email_url'] );
+		}
 		if ( ! empty( $input['facebook_url'] ) ) {
 			$options['facebook_url']  = sanitize_text_field( $input['facebook_url'] );
 		}
@@ -215,6 +265,9 @@ class Alcatraz_Options_Page {
 		}
 		if ( ! empty( $input['youtube_url'] ) ) {
 			$options['youtube_url']   = sanitize_text_field( $input['youtube_url'] );
+		}
+		if ( ! empty( $input['show_social_urls'] ) ) {
+			$options['show_social_urls'] = absint( $input['show_social_urls'] );
 		}
 
 		// Update options in the Customizer.

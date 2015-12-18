@@ -61,36 +61,36 @@ function alcatraz_output_logo() {
 
 	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
 
-    	echo '<div class="logo-wrap">';
+		echo '<div class="logo-wrap">';
 
-        printf(
-            '<a href="%s" title="%s" rel="home">',
-            esc_url( home_url( '/' ) ),
-            esc_attr( get_bloginfo( 'name', 'display' ) )
-        );
+		printf(
+			'<a href="%s" title="%s" rel="home">',
+			esc_url( home_url( '/' ) ),
+			esc_attr( get_bloginfo( 'name', 'display' ) )
+		);
 
-        if ( ! empty( $options['logo_id'] ) ) {
+		if ( ! empty( $options['logo_id'] ) ) {
 
-            printf(
-                '<img class="logo logo-regular" src="%s" alt="%s">',
-                esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
-                esc_attr( get_bloginfo( 'name', 'display' ) )
-            );
+			printf(
+				'<img class="logo logo-regular" src="%s" alt="%s">',
+				esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
+				esc_attr( get_bloginfo( 'name', 'display' ) )
+			);
 
-        }
+		}
 
-        if ( ! empty( $options['mobile_logo_id'] ) ) {
-            printf(
-                '<img class="logo logo-mobile" src="%s" alt="%s">',
-                esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
-                esc_attr( get_bloginfo( 'name', 'display' ) )
-            );
-        }
+		if ( ! empty( $options['mobile_logo_id'] ) ) {
+			printf(
+				'<img class="logo logo-mobile" src="%s" alt="%s">',
+				esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
+				esc_attr( get_bloginfo( 'name', 'display' ) )
+			);
+		}
 
-        echo '</a>';
+		echo '</a>';
 
-        echo '</div>';
-    }
+		echo '</div>';
+	}
 }
 
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
@@ -109,4 +109,64 @@ function alcatraz_output_footer_bottom() {
 			wp_kses_post( do_shortcode( $options['footer_bottom'] ) )
 		);
 	}
+}
+
+add_action( 'alcatraz_footer', 'alcatraz_output_social_network_icons', 80 );
+/**
+ * Output the social network icons.
+ *
+ * @since 1.0.0
+ */
+function alcatraz_output_social_network_icons() {
+
+	$options = get_option( 'alcatraz_options' );
+	?>
+
+	<div class="alcatraz-social-icon-wrap">
+		<ul class="alcatraz-social-icons">
+			<?php if ( isset( $options['email_url'] ) ) : ?>
+				<li class="email">
+					<a href="<?php echo esc_url( $options['email_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-email" target="_blank">
+						<i class="fa fa-envelope"></i>
+					</a>
+				</li>
+			<?php endif; ?>
+			<?php if ( isset( $options['facebook_url'] ) ) : ?>
+				<li class="facebook">
+					<a href="<?php echo esc_url( $options['facebook_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-facebook" target="_blank">
+						<i class="fa fa-facebook"></i>
+					</a>
+				</li>
+			<?php endif; ?>
+			<?php if ( isset( $options['twitter_url'] ) ) : ?>
+				<li class="twitter">
+					<a href="<?php echo esc_url( $options['twitter_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-twitter" target="_blank">
+						<i class="fa fa-twitter"></i>
+					</a>
+				</li>
+			<?php endif; ?>
+			<?php if ( isset( $options['instagram_url'] ) ) : ?>
+				<li class="instagram">
+					<a href="<?php echo esc_url( $options['instagram_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-instagram" target="_blank">
+						<i class="fa fa-instagram"></i>
+					</a>
+				</li>
+			<?php endif; ?>
+			<?php if ( isset( $options['pinterest_url'] ) ) : ?>
+				<li class="pinterest">
+					<a href="<?php echo esc_url( $options['pinterest_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-pinterest" target="_blank">
+						<i class="fa fa-pinterest"></i>
+					</a>
+				</li>
+			<?php endif; ?>
+			<?php if ( isset( $options['youtube_url'] ) ) : ?>
+				<li class="youtube">
+					<a href="<?php echo esc_url( $options['youtube_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-youtube" target="_blank">
+						<i class="fa fa-youtube"></i>
+					</a>
+				</li>
+			<?php endif; ?>
+		</ul>
+	</div>
+	<?php
 }
