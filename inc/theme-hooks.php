@@ -7,6 +7,21 @@
  * @package alcatraz
  */
 
+add_action( 'alcatraz_before_header_inside', 'alcatraz_output_header_image', 0 );
+/**
+ * Maybe output a Header image.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_output_header_image() {
+
+	if ( apply_filters( 'alcatraz_enable_custom_header', false ) && get_header_image() ) : ?>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image-wrap" rel="home">
+			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
+		</a>
+	<?php endif;
+}
+
 add_action( 'alcatraz_header', 'alcatraz_output_site_title', 5 );
 /**
  * Output the site title.
