@@ -8,7 +8,7 @@
  */
 
 // Include our theme options page.
-require_once ALCATRAZ_PATH . 'inc/admin/options-page.php';
+require_once ALCATRAZ_PATH . 'inc/admin/classes/class-options-page.php';
 
 // Include CMB2.
 require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';

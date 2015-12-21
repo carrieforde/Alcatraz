@@ -26,10 +26,6 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	// Move the Header Image control to the bottom of our header section.
-	$wp_customize->get_control( 'header_image' )->section  = 'alcatraz_header_section';
-	$wp_customize->get_control( 'header_image' )->priority = 120;
-
 	// Disable the Header Text Color control.
 	$wp_customize->remove_control( 'header_textcolor' );
 
@@ -84,6 +80,8 @@ function alcatraz_customize_register( $wp_customize ) {
 	/**
 	 * Alcatraz theme controls.
 	 */
+
+	/* Layout */
 
 	// Site layout.
 	$wp_customize->add_setting(
@@ -153,6 +151,8 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
+	/* Header */
+
 	// Header style.
 	$wp_customize->add_setting(
 		'alcatraz_options[header_style]',
@@ -177,6 +177,46 @@ function alcatraz_customize_register( $wp_customize ) {
 			),
 		)
 	);
+
+	// Site logo.
+	$wp_customize->add_setting(
+		'alcatraz_options[logo_id]',
+		array(
+			'default'    => $option_defaults['logo_id'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_logo',
+			array(
+				'label'    => __( 'Logo', 'alcatraz' ),
+				'section'  => 'alcatraz_header_section',
+				'settings' => 'alcatraz_options[logo_id]',
+			)
+		)
+	);
+
+	// Site mobile logo.
+	$wp_customize->add_setting(
+		'alcatraz_options[mobile_logo_id]',
+		array(
+			'default'    => $option_defaults['mobile_logo_id'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_mobile_logo',
+			array(
+				'label'    => __( 'Mobile Logo', 'alcatraz' ),
+				'section'  => 'alcatraz_header_section',
+				'settings' => 'alcatraz_options[mobile_logo_id]',
+			)
+		)
+	);
+
+	/* Menu Options */
 
 	// Mobile navigation style.
 	$wp_customize->add_setting(
@@ -241,43 +281,7 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Site logo.
-	$wp_customize->add_setting(
-		'alcatraz_options[logo_id]',
-		array(
-			'default'    => $option_defaults['logo_id'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_logo',
-			array(
-				'label'    => __( 'Logo', 'alcatraz' ),
-				'section'  => 'alcatraz_header_section',
-				'settings' => 'alcatraz_options[logo_id]',
-			)
-		)
-	);
-
-	// Site mobile logo.
-	$wp_customize->add_setting(
-		'alcatraz_options[mobile_logo_id]',
-		array(
-			'default'    => $option_defaults['mobile_logo_id'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		new WP_Customize_Media_Control( $wp_customize, 'alcatraz_mobile_logo',
-			array(
-				'label'    => __( 'Mobile Logo', 'alcatraz' ),
-				'section'  => 'alcatraz_header_section',
-				'settings' => 'alcatraz_options[mobile_logo_id]',
-			)
-		)
-	);
+	/* Footer */
 
 	// Number of footer widget areas.
 	$wp_customize->add_setting(
