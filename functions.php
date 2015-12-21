@@ -44,7 +44,7 @@ function alcatraz_first_setup() {
 	update_option( 'alcatraz_options', $options, 'yes' );
 }
 
-add_action( 'after_setup_theme', 'alcatraz_setup' );
+add_action( 'after_setup_theme', 'alcatraz_setup', 0 );
 /**
  * Load translations and register support for various WordPress features.
  *
@@ -177,7 +177,7 @@ function alcatraz_scripts() {
 	// Skip link focus fix JS.
 	wp_register_script(
 		'alcatraz-skip-link-focus-fix',
-		ALCATRAZ_URL . 'js/skip-link-focus-fix.js',
+		ALCATRAZ_URL . 'js/src/skip-link-focus-fix.js',
 		array(),
 		ALCATRAZ_VERSION,
 		true
@@ -195,7 +195,7 @@ function alcatraz_scripts() {
 	// Navigation JS.
 	wp_register_script(
 		'alcatraz-navigation',
-		ALCATRAZ_URL . 'js/navigation.js',
+		ALCATRAZ_URL . 'js/src/navigation.js',
 		array( 'jquery', 'alcatraz-jquery-mobile' ),
 		ALCATRAZ_VERSION,
 		true
@@ -243,14 +243,19 @@ function alcatraz_init_bfa() {
 require_once ALCATRAZ_PATH . 'inc/utilities.php';
 
 /**
- * Option choices.
+ * Ajax callbacks.
  */
-require_once ALCATRAZ_PATH . 'inc/choices.php';
+require_once ALCATRAZ_PATH . 'inc/ajax.php';
 
 /**
  * Custom template tags for this theme.
  */
 require_once ALCATRAZ_PATH . 'inc/template-tags.php';
+
+/**
+ * Theme options.
+ */
+require_once ALCATRAZ_PATH . 'inc/theme-options.php';
 
 /**
  * Theme hook output.
