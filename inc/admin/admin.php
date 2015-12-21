@@ -21,6 +21,66 @@ require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';
 $options_page = new Alcatraz_Options_Page();
 $options_page->init();
 
+add_action( 'admin_enqueue_scripts', 'alcatraz_admin_enqueue_scripts' );
+/**
+ * Enqueue our admin JS.
+ *
+ * @since  1.0.0
+ *
+ * @param  string  $hook  The page being displayed.
+ */
+function alcatraz_admin_enqueue_scripts( $hook ) {
+
+	wp_enqueue_script(
+		'alcatraz-admin-scripts',
+		ALCATRAZ_URL . 'js/alcatraz-admin.js',
+		array( 'jquery' ),
+		ALCATRAZ_VERSION,
+		true
+	);
+}
+
+add_action( 'admin_notices', 'alcatraz_activation_notice' );
+/**
+ * Show an activation notice.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_activation_notice() {
+
+	$options = get_option( 'alcatraz_options' );
+
+	if ( $options['show_activation_notice'] ) {
+
+		$customizer_link = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( admin_url( 'customize.php' ) ),
+			__( 'Customizer', 'alcatraz' )
+		);
+
+		$options_page_link = sprintf(
+			'<a href="%s">%s</a>',
+			esc_url( admin_url( 'admin.php?page=alcatraz_options_page' ) ),
+			__( 'Options Page', 'alcatraz' )
+		);
+
+		$documentation_link = sprintf(
+			'<a href="%s" target="_blank">%s</a>',
+			'https://github.com/carrieforde/Alcatraz/wiki',
+			__( 'Alcatraz documentation on Github', 'alcatraz' )
+		);
+
+		?>
+		<div id="alcatraz-activation-notice" class="updated notice is-dismissible" style="padding-bottom: 5px;">
+			<h2><?php _e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
+			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo $customizer_link; ?></p>
+			<p><?php _e( 'All non-visual options can be found on the', 'alcatraz' ); ?> <?php echo $options_page_link; ?></p>
+			<p><?php _e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo $documentation_link; ?></p>
+		</div>
+		<?php
+	}
+}
+
 add_action( 'admin_init', 'alcatraz_add_editor_styles' );
 /**
  * Include our theme CSS in the TinyMCE editor.
