@@ -42,7 +42,7 @@ function alcatraz_admin_enqueue_scripts( $hook ) {
 
 add_action( 'admin_notices', 'alcatraz_activation_notice' );
 /**
- * Show an admin notice on initial activation.
+ * Show an activation notice.
  *
  * @since  1.0.0
  */

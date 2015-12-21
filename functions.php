@@ -253,7 +253,7 @@ require_once ALCATRAZ_PATH . 'inc/ajax.php';
 require_once ALCATRAZ_PATH . 'inc/template-tags.php';
 
 /**
- * Option choices.
+ * Theme options.
  */
 require_once ALCATRAZ_PATH . 'inc/theme-options.php';
 
