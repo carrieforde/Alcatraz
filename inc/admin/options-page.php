@@ -78,7 +78,7 @@ class Alcatraz_Options_Page {
 		register_setting(
 			'alcatraz_options',
 			'alcatraz_options',
-			array( $this, 'alcatraz_validate_options' )
+			array( $this, 'validate_options' )
 		);
 
 		add_settings_section(
@@ -189,68 +189,15 @@ class Alcatraz_Options_Page {
 	/**
 	 * Validate our options before saving.
 	 *
-	 * Because we're storing all of our options under a single key, we need
-	 * to also validate our Customizer options here, which allows us to avoid
-	 * having to specify sanitize_callback functions in our customizer.php file.
+	 * @since   1.0.0
 	 *
-	 * @since  1.0.0
+	 * @param   array  $input  The options to update.
+	 *
+	 * @return  array          The updated options.
 	 */
-	public function alcatraz_validate_options( $input ) {
+	public function validate_options( $input ) {
 
-		// Start with any existing options.
-		$options = get_option( 'alcatraz_options' );
-
-		// Update options on the options page.
-		if ( ! empty( $input['facebook_url'] ) ) {
-			$options['facebook_url']  = sanitize_text_field( $input['facebook_url'] );
-		}
-		if ( ! empty( $input['twitter_url'] ) ) {
-			$options['twitter_url']   = sanitize_text_field( $input['twitter_url'] );
-		}
-		if ( ! empty( $input['instagram_url'] ) ) {
-			$options['instagram_url'] = sanitize_text_field( $input['instagram_url'] );
-		}
-		if ( ! empty( $input['pinterest_url'] ) ) {
-			$options['pinterest_url'] = sanitize_text_field( $input['pinterest_url'] );
-		}
-		if ( ! empty( $input['youtube_url'] ) ) {
-			$options['youtube_url']   = sanitize_text_field( $input['youtube_url'] );
-		}
-
-		// Update options in the Customizer.
-		if ( ! empty( $input['site_layout'] ) ) {
-			$options['site_layout'] = sanitize_text_field( $input['site_layout'] );
-		}
-		if ( ! empty( $input['page_layout'] ) ) {
-			$options['page_layout'] = sanitize_text_field( $input['page_layout'] );
-		}
-		if ( ! empty( $input['page_banner_widget_area'] ) ) {
-			$options['page_banner_widget_area'] = absint( $input['page_banner_widget_area'] );
-		}
-		if ( ! empty( $input['header_style'] ) ) {
-			$options['header_style'] = sanitize_text_field( $input['header_style'] );
-		}
-		if ( ! empty( $input['mobile_nav_toggle_style'] ) ) {
-			$options['mobile_nav_toggle_style'] = sanitize_text_field( $input['mobile_nav_toggle_style'] );
-		}
-		if ( ! empty( $input['mobile_nav_style'] ) ) {
-			$options['mobile_nav_style'] = sanitize_text_field( $input['mobile_nav_style'] );
-		}
-		if ( ! empty( $input['sub_menu_toggle_style'] ) ) {
-			$options['sub_menu_toggle_style'] = sanitize_text_field( $input['sub_menu_toggle_style'] );
-		}
-		if ( ! empty( $input['logo_id'] ) ) {
-			$options['logo_id'] = alcatraz_empty_or_int( $input['logo_id'] );
-		}
-		if ( ! empty( $input['mobile_logo_id'] ) ) {
-			$options['mobile_logo_id'] = alcatraz_empty_or_int( $input['mobile_logo_id'] );
-		}
-		if ( ! empty( $input['footer_widget_areas'] ) ) {
-			$options['footer_widget_areas'] = absint( $input['footer_widget_areas'] );
-		}
-		if ( ! empty( $input['footer_bottom'] ) ) {
-			$options['footer_bottom'] = sanitize_text_field( $input['footer_bottom'] );
-		}
+		$options = alcatraz_validate_options( $input );
 
 		return $options;
 	}
