@@ -108,7 +108,7 @@ function alcatraz_validate_options( $input ) {
 
 	// Update any options saved via Ajax.
 	if ( isset( $input['show_activation_notice'] ) ) {
-		$options['show_activation_notice'] = $input['show_activation_notice'];
+		$options['show_activation_notice'] = absint( $input['show_activation_notice'] );
 	}
 
 	return $options;
