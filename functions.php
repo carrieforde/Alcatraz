@@ -70,38 +70,46 @@ function alcatraz_setup() {
 	) );
 
 	// Use html5 markup for certain features.
-	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
-		'gallery',
-		'caption',
-	) );
+	add_theme_support(
+		'html5',
+		apply_filters( 'alcatraz_html5_supports', array(
+			'search-form',
+			'comment-form',
+			'comment-list',
+			'gallery',
+			'caption',
+		) )
+	);
 
 	// Maybe enable post formats.
 	if ( apply_filters( 'alcatraz_enable_post_formats', false ) ) {
-		add_theme_support( 'post-formats', array(
-			'aside',
-			'image',
-			'video',
-			'quote',
-			'link',
-		) );
+		add_theme_support(
+			'post-formats',
+			apply_filters( 'alcatraz_custom_header_args', array(
+				'aside',
+				'image',
+				'video',
+				'quote',
+				'link',
+			) )
+		);
 	}
 
-	// Enable the custom header feature.
-	add_theme_support(
-		'custom-header',
-		apply_filters( 'alcatraz_custom_header_args', array(
-			'default-image'          => '',
-			'default-text-color'     => '000000',
-			'width'                  => 1200,
-			'height'                 => 320,
-			'flex-height'            => true,
-		)
-	) );
+	// Maybe enable the custom header feature.
+	if ( apply_filters( 'alcatraz_enable_custom_header', false ) ) {
+		add_theme_support(
+			'custom-header',
+			apply_filters( 'alcatraz_custom_header_args', array(
+				'default-image'          => '',
+				'default-text-color'     => '000000',
+				'width'                  => 1200,
+				'height'                 => 320,
+				'flex-height'            => true,
+			) )
+		);
+	}
 
-	// Enable the custom background feature.
+	// Maybe enable the custom background feature.
 	if ( apply_filters( 'alcatraz_enable_custom_background', false ) ) {
 		add_theme_support(
 			'custom-background',
