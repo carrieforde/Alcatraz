@@ -6,7 +6,8 @@
  */
 ( function( $ ) {
 
-	var $body = $( 'body' );
+	var $body   = $( 'body' );
+	var $window = $( window );
 
 	/**
 	 * Toggle the .focus class on nav items.
@@ -39,12 +40,12 @@
 		$menu      = $container.find( '#primary-menu' );
 
 		if ( $container.hasClass( 'toggled' ) ) {
-			$( window ).trigger( 'aczCloseMobileNav' );
+			$window.trigger( 'aczCloseMobileNav' );
 			$container.removeClass( 'toggled' );
 			$toggle.attr( 'aria-expanded', 'false' );
 			$menu.attr( 'aria-expanded', 'false' );
 		} else {
-			$( window ).trigger( 'aczOpenMobileNav' );
+			$window.trigger( 'aczOpenMobileNav' );
 			$container.addClass( 'toggled' );
 			$toggle.attr( 'aria-expanded', 'true' );
 			$menu.attr( 'aria-expanded', 'true' );
@@ -86,7 +87,7 @@
 				 $body.hasClass( 'mobile-nav-style-slide-right' ) ) {
 				$.event.special.swipe.horizontalDistanceThreshold = 15;
 				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .menu-overlay' ).on( 'swipeleft swiperight', function() {
-					$( window ).trigger( 'aczToggleMobileNav' );
+					$window.trigger( 'aczToggleMobileNav' );
 				});
 			}
 		}
@@ -95,9 +96,9 @@
 		 * Set up the top level menu toggle.
 		 */
 		$toggle.add( '.inner-menu-toggle, .menu-overlay' ).on( 'click', function() {
-			$( window ).trigger( 'aczToggleMobileNav' );
+			$window.trigger( 'aczToggleMobileNav' );
 		});
-		$( window ).on( 'aczToggleMobileNav', aczToggleMobileNav );
+		$window.on( 'aczToggleMobileNav', aczToggleMobileNav );
 
 		/**
 		 * Set up the sub menu dropdown toggle.
@@ -110,7 +111,7 @@
 			if ( $( this ).hasClass( 'menu-item-has-children' ) ) {
 				var $sub        = $( this ).find( '.sub-menu' ).first();
 				var rightEdge   = $sub.width() + $sub.offset().left;
-				var screenWidth = $( window ).width();
+				var screenWidth = $window.width();
 
 				if ( rightEdge > screenWidth ) {
 					$( this ).addClass( 'reverse-expand' );
@@ -154,6 +155,15 @@
 	/**
 	 * Start the party.
 	 */
-	aczSetupPrimaryNavigation();
+	$( document ).ready( function() {
+		aczSetupPrimaryNavigation();
+	});
+
+	/**
+	 * Restart the party when a Customizer partial refresh happens.
+	 */
+	$( document ).on( 'customize-preview-menu-refreshed', function() {
+		aczSetupPrimaryNavigation();
+	});
 
 })( jQuery );
