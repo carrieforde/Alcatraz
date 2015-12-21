@@ -119,7 +119,7 @@ function alcatraz_validate_options( $input ) {
  *
  * @since   1.0.0
  *
- * @param   string  $context  The context the colors will be used in.
+ * @param   string  $context  The context to pass to our filter.
  *
  * @return  array
  */
@@ -135,22 +135,63 @@ function alcatraz_get_text_colors( $context = '' ) {
 }
 
 /**
- * Return an array of mobile nav toggle style options.
+ * Return an array of Site Layout options.
  *
  * @since   1.0.0
  *
  * @param   string  $context  The context to pass to our filter.
  *
- * @return  array             The array of options.
+ * @return  array
  */
-function alcatraz_get_mobile_nav_toggle_options( $context = '' ) {
+function alcatraz_get_site_layouts( $context = '' ) {
 
-	$mobile_nav_toggle_styles = array(
-		'button'    => __( 'Button', 'alcatraz' ),
-		'hamburger' => __( 'Hamburger', 'alcatraz' ),
+	$styles = array(
+		'full-width'    => __( 'Full Width', 'alcatraz' ),
+		'boxed'         => __( 'Boxed', 'alcatraz' ),
+		'boxed-content' => __( 'Boxed Content', 'alcatraz' ),
 	);
 
-	return apply_filters( 'alcatraz_mobile_nav_toggle_options', $mobile_nav_toggle_styles, $context );
+	return apply_filters( 'alcatraz_site_layouts', $styles, $context );
+}
+
+/**
+ * Return an array of Page Layout options.
+ *
+ * @since   1.0.0
+ *
+ * @param   string  $context  The context to pass to our filter.
+ *
+ * @return  array
+ */
+function alcatraz_get_page_layouts( $context = '' ) {
+
+	$styles = array(
+		'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
+		'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
+		'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
+	);
+
+	return apply_filters( 'alcatraz_page_layouts', $styles, $context );
+}
+
+/**
+ * Return an array of Header Style options.
+ *
+ * @since   1.0.0
+ *
+ * @param   string  $context  The context to pass to our filter.
+ *
+ * @return  array
+ */
+function alcatraz_get_header_styles( $context = '' ) {
+
+	$styles = array(
+		'default' => __( 'Default', 'alcatraz' ),
+		'short'   => __( 'Short', 'alcatraz' ),
+		'side'    => __( 'Side', 'alcatraz' ),
+	);
+
+	return apply_filters( 'alcatraz_header_styles', $styles, $context );
 }
 
 /**
@@ -162,16 +203,35 @@ function alcatraz_get_mobile_nav_toggle_options( $context = '' ) {
  *
  * @return  array             The array of options.
  */
-function alcatraz_get_mobile_nav_style_options( $context = '' ) {
+function alcatraz_get_mobile_nav_styles( $context = '' ) {
 
-	$mobile_nav_styles = array(
+	$styles = array(
 		'default'     => __( 'Default', 'alcatraz' ),
 		'slide-left'  => __( 'Slide from Left', 'alcatraz' ),
 		'slide-right' => __( 'Slide from Right', 'alcatraz' ),
 		'full-screen' => __( 'Full Screen', 'alcatraz' ),
 	);
 
-	return apply_filters( 'alcatraz_mobile_nav_style_options', $mobile_nav_styles, $context );
+	return apply_filters( 'alcatraz_mobile_nav_styles', $styles, $context );
+}
+
+/**
+ * Return an array of mobile nav toggle style options.
+ *
+ * @since   1.0.0
+ *
+ * @param   string  $context  The context to pass to our filter.
+ *
+ * @return  array             The array of options.
+ */
+function alcatraz_get_mobile_nav_toggles( $context = '' ) {
+
+	$toggles = array(
+		'button'    => __( 'Button', 'alcatraz' ),
+		'hamburger' => __( 'Hamburger', 'alcatraz' ),
+	);
+
+	return apply_filters( 'alcatraz_mobile_nav_toggles', $toggles, $context );
 }
 
 /**
@@ -183,12 +243,12 @@ function alcatraz_get_mobile_nav_style_options( $context = '' ) {
  *
  * @return  array             The array of options.
  */
-function alcatraz_get_sub_menu_toggle_styles( $context = '' ) {
+function alcatraz_get_sub_menu_toggles( $context = '' ) {
 
-	$sub_menu_toggle_styles = array(
+	$toggles = array(
 		'chevron'    => __( 'Chevron', 'alcatraz' ),
 		'plus-minus' => __( 'Plus-Minus', 'alcatraz' ),
 	);
 
-	return apply_filters( 'alcatraz_sub_menu_toggle_styles', $sub_menu_toggle_styles, $context );
+	return apply_filters( 'alcatraz_sub_menu_toggle_styles', $toggles, $context );
 }

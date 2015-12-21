@@ -100,11 +100,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Site Layout', 'alcatraz' ),
 			'section'  => 'alcatraz_layout_section',
 			'settings' => 'alcatraz_options[site_layout]',
-			'choices'  => array(
-				'full-width'    => __( 'Full Width', 'alcatraz' ),
-				'boxed'         => __( 'Boxed', 'alcatraz' ),
-				'boxed-content' => __( 'Boxed Content', 'alcatraz' ),
-			),
+			'choices'  => alcatraz_get_site_layouts(),
 		)
 	);
 
@@ -124,11 +120,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Page Layout', 'alcatraz' ),
 			'section'  => 'alcatraz_layout_section',
 			'settings' => 'alcatraz_options[page_layout]',
-			'choices'  => array(
-				'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
-				'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
-				'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
-			),
+			'choices'  => alcatraz_get_page_layouts(),
 		)
 	);
 
@@ -170,11 +162,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Header Style', 'alcatraz' ),
 			'section'  => 'alcatraz_header_section',
 			'settings' => 'alcatraz_options[header_style]',
-			'choices'  => array(
-				'default' => __( 'Default', 'alcatraz' ),
-				'short'   => __( 'Short', 'alcatraz' ),
-				'side'    => __( 'Side', 'alcatraz' ),
-			),
+			'choices'  => alcatraz_get_header_styles(),
 		)
 	);
 
@@ -235,7 +223,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Mobile Navigation Style', 'alcatraz' ),
 			'section'  => 'alcatraz_menu_options_section',
 			'settings' => 'alcatraz_options[mobile_nav_style]',
-			'choices'  => alcatraz_get_mobile_nav_style_options( 'mobile-nav-style' ),
+			'choices'  => alcatraz_get_mobile_nav_styles( 'mobile-nav-style' ),
 		)
 	);
 
@@ -256,7 +244,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Mobile Navigation Toggle Style', 'alcatraz' ),
 			'section'  => 'alcatraz_menu_options_section',
 			'settings' => 'alcatraz_options[mobile_nav_toggle_style]',
-			'choices'  => alcatraz_get_mobile_nav_toggle_options( 'mobile-nav-toggle-style' ),
+			'choices'  => alcatraz_get_mobile_nav_toggles( 'mobile-nav-toggle-style' ),
 		)
 	);
 
@@ -277,7 +265,7 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Sub Menu Toggle Style', 'alcatraz' ),
 			'section'  => 'alcatraz_menu_options_section',
 			'settings' => 'alcatraz_options[sub_menu_toggle_style]',
-			'choices'  => alcatraz_get_sub_menu_toggle_styles( 'sub-menu-toggle-style' ),
+			'choices'  => alcatraz_get_sub_menu_toggles( 'sub-menu-toggle-style' ),
 		)
 	);
 
