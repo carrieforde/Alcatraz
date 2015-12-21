@@ -65,7 +65,7 @@ function alcatraz_activation_notice() {
 		);
 
 		$documentation_link = sprintf(
-			'<a href="%s">%s</a>',
+			'<a href="%s" target="_blank">%s</a>',
 			'https://github.com/carrieforde/Alcatraz/wiki',
 			__( 'Alcatraz documentation on Github', 'alcatraz' )
 		);
