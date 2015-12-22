@@ -17,7 +17,13 @@ get_header(); ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>
 
-			<?php get_template_part( 'template-parts/content', 'single' ); ?>
+			<?php $post_type = get_post_type();
+
+			if ( 'post' == $post_type ) {
+				$post_type = '';
+			}
+
+			get_template_part( 'template-parts/content-single', $post_type ); ?>
 
 			<?php the_post_navigation(); ?>
 

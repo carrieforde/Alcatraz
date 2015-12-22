@@ -14,9 +14,13 @@
 	@include center-block;
 }
 
+.post-thumbnail {
+	display: block;
+}
+
 .post-thumbnail img {
-		margin-bottom: em(20);
-		@include center-block;
+	margin-bottom: em(20);
+	@include center-block;
 }
 
 .site-content {

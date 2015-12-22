@@ -1,0 +1,204 @@
+<?php
+/**
+ * Alcatraz options page class.
+ *
+ * @package alcatraz
+ *
+ * @since   1.0.0
+ */
+
+class Alcatraz_Options_Page {
+
+	/**
+	 * Our theme options.
+	 *
+	 * @since  1.0.0
+	 */
+	private $options;
+
+	/**
+	 * The constructor.
+	 *
+	 * @since  1.0.0
+	 */
+	public function __construct() {
+		$this->options = get_option( 'alcatraz_options' );
+	}
+
+	/**
+	 * Setup our hooks.
+	 *
+	 * @since  1.0.0
+	 */
+	public function init() {
+		add_action( 'admin_menu', array( $this, 'register_options_page' ) );
+		add_action( 'admin_init', array( $this, 'register_settings_and_fields' ) );
+	}
+
+	/**
+	 * Register our options page.
+	 *
+	 * @since  1.0.0
+	 */
+	public function register_options_page() {
+		add_menu_page(
+			__( 'Alcatraz Theme Options', 'alcatraz' ),
+			__( 'Theme Options', 'alcatraz' ),
+			'manage_options',
+			'alcatraz_options_page',
+			array( $this, 'options_page' )
+		);
+	}
+
+	/**
+	 * Output our theme options page.
+	 *
+	 * @since  1.0.0
+	 */
+	public function options_page() {
+		?>
+		<div class="wrap alcatraz-options-page">
+			<h1><?php _e( 'Alcatraz Theme Options', 'alcatraz' ) ?></h1>
+			<form method="post" action="options.php">
+				<?php settings_fields( 'alcatraz_options' ); ?>
+				<?php do_settings_sections( 'alcatraz_settings_section' ); ?>
+				<?php submit_button(); ?>
+			</form>
+		</div>
+		<?php
+	}
+
+	/**
+	 * Register our settings and fields.
+	 *
+	 * @since  1.0.0
+	 */
+	public function register_settings_and_fields() {
+
+		register_setting(
+			'alcatraz_options',
+			'alcatraz_options',
+			array( $this, 'validate_options' )
+		);
+
+		add_settings_section(
+			'social_media_links',
+			__( 'Social Media Links', 'alcatraz' ),
+			array( $this, 'settings_section' ),
+			'alcatraz_settings_section'
+		);
+
+		add_settings_field(
+			'facebook_url',
+			__( 'Facebook', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'facebook_url',
+				'description' => __( 'Enter your Facebook profile URL', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
+			'twitter_url',
+			__( 'Twitter', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'twitter_url',
+				'description' => __( 'Enter your Twitter profile URL', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
+			'instagram_url',
+			__( 'Instagram', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'instagram_url',
+				'description' => __( 'Enter your Instagram profile URL', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
+			'pinterest_url',
+			__( 'Pinterest', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'pinterest_url',
+				'description' => __( 'Enter your Pinterest profile URL', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
+			'youtube_url',
+			__( 'Youtube', 'alcatraz' ),
+			array( $this, 'field_text' ),
+			'alcatraz_settings_section',
+			'social_media_links',
+			array(
+				'id'          => 'youtube_url',
+				'description' => __( 'Enter your Youtube channel URL', 'alcatraz' ),
+			)
+		);
+	}
+
+	/**
+	 * Output the settings section.
+	 *
+	 * @since  1.0.0
+	 */
+	public function settings_section() {
+		return;
+	}
+
+	/**
+	 * Output a text field.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param  array  $args  The array of field args.
+	 */
+	public function field_text( $args ) {
+
+		// Bail if we don't have an ID.
+		if ( empty( $args['id'] ) ) {
+			return;
+		}
+
+		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
+		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
+		$option_value       = ( ! empty( $this->options[ $args['id'] ] ) ) ? $this->options[ $args['id'] ] : '';
+		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
+
+		printf(
+			'<input type="text" class="regular-text" id="%s" name="%s" value="%s" />%s',
+			esc_attr( $option_id ),
+			esc_attr( $option_key ),
+			esc_attr( $option_value ),
+			$option_description
+		);
+	}
+
+	/**
+	 * Validate our options before saving.
+	 *
+	 * @since   1.0.0
+	 *
+	 * @param   array  $input  The options to update.
+	 *
+	 * @return  array          The updated options.
+	 */
+	public function validate_options( $input ) {
+
+		$options = alcatraz_validate_options( $input );
+
+		return $options;
+	}
+}
