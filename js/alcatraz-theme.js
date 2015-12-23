@@ -163,10 +163,21 @@
 		var $children = $( '.sidebar-nav .children' );
 		var iconClass = '<i class="sidebar-icon"></i>';
 
-		$children.hide();
 		$parent.prepend( iconClass );
 
 		var $icon = $( '.sidebar-icon' );
+		var $pageChild = $( '.page_item_has_children' );
+
+		$children.hide();
+
+		$( '.current_page_item').parent().show();
+		$( '.current_page_ancestor').parent().show();
+
+		if ( $( '.current_page_item' ).is(':visible') ) {
+			$( '.current_page_ancestor' ).find( $icon ).addClass( 'fa-chevron-down' );
+			$( '.current_page_ancestor' ).find( $icon ).last().removeClass( 'fa-chevron-down' );
+			$( '.current_page_item' ).find( $icon ).removeClass( 'fa-chevron-down' );
+		}
 
 		$( '.page_item_has_children > .sidebar-icon' ).addClass('fa fa-chevron-right');
 
@@ -174,6 +185,7 @@
 			$( this ).parent().children( '.children' ).slideToggle();
 			$( this ).toggleClass( 'fa-chevron-down' );
 		});
+
 	}
 
 	/**

@@ -142,8 +142,7 @@ function alcatraz_sidebar_nav_menu() {
 
 	//defaults
 	$defaults = array(
-		'icon'             => "<i class='fa fa-chevron-right sidebar-icon'></i>",
-		'show_all'         => false,
+		'show_all'         => true,
 		'show_on_home'     => false,
 		'show_empty'       => false,
 		'sort_by'          => 'menu_order',
@@ -154,7 +153,6 @@ function alcatraz_sidebar_nav_menu() {
 	$args = wp_parse_args( (array)$args, $defaults );
 
 	// Get clean param values.
-	$icon             = $args['icon'];
 	$show_all         = $args['show_all'];
 	$show_on_home     = $args['show_on_home'];
 	$show_empty       = $args['show_empty'];
@@ -169,6 +167,14 @@ function alcatraz_sidebar_nav_menu() {
 	if ( is_front_page() ) {
 		return false;	//if we're on the front page and we haven't chosen to show this anyways, leave
 	}
+
+	if(!$post->post_parent) {
+		$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
+		}else{
+		if($post->ancestors){
+			$ancestors = end($post->ancestors);
+	 	}
+	 }
 
 	if ( is_page() ) {
 
@@ -207,8 +213,14 @@ function alcatraz_sidebar_nav_menu() {
 
 		$thedepth = 0; //initialize default variables
 
+		$excluded = explode(',', $exclude_list); //convert list of excluded pages to array
 
-		$thedepth = count($post_ancestors)+1; //prevents improper grandchildren from showing
+		if ( in_array( $post->ID,$excluded ) ) {
+			return false; //if on excluded page, and setup to hide on excluded pages
+		}
+
+		$post_ancestors = ( isset($post->ancestors) ) ? $post->ancestors : get_post_ancestors($post); //get the current page's ancestors either from existing value or by executing function
+		$top_page = $post_ancestors ? end($post_ancestors) : $post->ID; //get the top page id
 
 		$children = wp_list_pages(array(
 		'title_li'    => '',
@@ -219,7 +231,7 @@ function alcatraz_sidebar_nav_menu() {
 		 ));	//get the list of pages, including only those in our page list
 
 		if( ! $children && ! $show_empty) {
-			return false; 	//if there are no pages in this section, and use hasnt chosen to display widget anyways, leave the function
+			return false; 	//if there are no pages in this section, and user hasnt chosen to display widget anyways, leave the function
 		}
 
 		echo "<div id='secondary' class='primary-sidebar sidebar' role='complementary'>";

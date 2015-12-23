@@ -11,8 +11,8 @@
 	margin-right: 0;
 }
 
-.sidebar-nav .current_page_item a {
-	color: #6E9AA2;
+.sidebar-nav .current_page_item > a {
+	color: $color__link;
 	font-weight: 400;
 }
 
