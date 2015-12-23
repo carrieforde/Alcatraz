@@ -127,7 +127,7 @@ function alcatraz_output_footer_bottom() {
 }
 
 
-add_action( 'alcatraz_primary_sidebar', 'alcatraz_sidebar_nav_menu', 10);
+add_filter( 'alcatraz_primary_sidebar', 'alcatraz_sidebar_nav_menu', 5);
 /**
  * Output the sidebar nav.
  *
@@ -142,30 +142,24 @@ function alcatraz_sidebar_nav_menu() {
 
 	//defaults
 	$defaults = array(
+		'icon'             => "<i class='fa fa-chevron-right sidebar-icon'></i>",
 		'show_all'         => false,
 		'show_on_home'     => false,
 		'show_empty'       => false,
 		'sort_by'          => 'menu_order',
 		'a_heading'        => false,
-		'before_widget'    => '<div>',
-		'after_widget'     => '</div>',
-		'before_title'     => '<h2 class="side-nav-title">',
-		'after_title'      => '</h2>',
 		'title'            => ''
 	);
 
 	$args = wp_parse_args( (array)$args, $defaults );
 
 	// Get clean param values.
+	$icon             = $args['icon'];
 	$show_all         = $args['show_all'];
 	$show_on_home     = $args['show_on_home'];
 	$show_empty       = $args['show_empty'];
 	$sort_by          = $args['sort_by'];
 	$a_heading        = $args['a_heading'];
-	$before_widget    = $args['before_widget'];
-	$after_widget     = $args['after_widget'];
-	$before_title     = $args['before_title'];
-	$after_title      = $args['after_title'];
 	$title            = $args['title'];
 
 	if ( is_search() || is_404() ) {
@@ -178,7 +172,7 @@ function alcatraz_sidebar_nav_menu() {
 
 	if ( is_page() ) {
 
-		if ( isset( $post) && is_object($post ) ) {
+		if ( isset( $post) && is_object( $post ) ) {
 		get_post_ancestors($post);
    		//workaround for occassional problems
 		} else {
@@ -228,20 +222,13 @@ function alcatraz_sidebar_nav_menu() {
 			return false; 	//if there are no pages in this section, and use hasnt chosen to display widget anyways, leave the function
 		}
 
-		$sect_title = ( $title ) ? $title : $top_page;
-		$sect_title = $sect_title;
-
-		if ( $a_heading ) {
-			$headclass = ( $post->ID == $top_page ) ? "current_page_item" : "current_page_ancestor";
-			if ( $post->post_parent == $top_page ) {
-				$headclass .= " current_page_parent";
-			}
-			$sect_title = '<a href="' . get_page_link($top_page) . '" id="toppage-' . $top_page . '" class="' . $headclass . '">' . $sect_title . '</a>';
-		}
-
+		echo "<div id='secondary' class='primary-sidebar sidebar' role='complementary'>";
+		echo "<aside id='sidebar_nav' class='sidebar-nav'>";
 		echo "<ul>";
 		echo $children;
 		echo "</ul>";
+		echo "</aside>";
+		echo "</div>";
 	}
 
 }

@@ -156,11 +156,32 @@
 		});
 	}
 
+	function aczSidebarNav() {
+
+		//Sidebar nav child page toggle.
+		var $parent = $( '.sidebar-nav .page_item' );
+		var $children = $( '.sidebar-nav .children' );
+		var iconClass = '<i class="sidebar-icon"></i>';
+
+		$children.hide();
+		$parent.prepend( iconClass );
+
+		var $icon = $( '.sidebar-icon' );
+
+		$( '.page_item_has_children > .sidebar-icon' ).addClass('fa fa-chevron-right');
+
+		$icon.on( 'click', function() {
+			$( this ).parent().children( '.children' ).slideToggle();
+			$( this ).toggleClass( 'fa-chevron-down' );
+		});
+	}
+
 	/**
 	 * Start the party.
 	 */
 	$( document ).ready( function() {
 		aczSetupPrimaryNavigation();
+		aczSidebarNav();
 	});
 
 	/**

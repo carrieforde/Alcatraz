@@ -7,6 +7,25 @@
 	padding: $size__default-padding;
 }
 
+.sidebar-nav {
+	margin-right: 0;
+}
+
+.sidebar-nav .current_page_item a {
+	color: #6E9AA2;
+	font-weight: 400;
+}
+
+.sidebar-nav li {
+	list-style: none;
+	text-indent: -0.8em;
+}
+
+.sidebar-icon {
+	cursor: pointer;
+	padding-right: 0.5em;
+}
+
 @media (min-width: em(768)) {
 
 	/* Left Sidebar */
