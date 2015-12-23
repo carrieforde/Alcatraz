@@ -103,7 +103,7 @@ function alcatraz_validate_options( $input ) {
 		$options['footer_widget_areas'] = absint( $input['footer_widget_areas'] );
 	}
 	if ( isset( $input['footer_bottom'] ) ) {
-		$options['footer_bottom'] = sanitize_text_field( $input['footer_bottom'] );
+		$options['footer_bottom'] = wp_kses_post( $input['footer_bottom'] );
 	}
 
 	// Update any options saved via Ajax.
