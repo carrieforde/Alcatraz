@@ -119,18 +119,3 @@ function alcatraz_empty_or_int( $value ) {
 		return intval( $value );
 	}
 }
-
-add_action( 'alcatraz_before_header_inside', 'alcatraz_output_header_image', 0 );
-/**
- * Maybe output a Header image.
- *
- * @since  1.0.0
- */
-function alcatraz_output_header_image() {
-
-	if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image-wrap" rel="home">
-			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
-		</a>
-	<?php endif;
-}
