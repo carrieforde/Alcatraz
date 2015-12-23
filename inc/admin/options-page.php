@@ -96,7 +96,7 @@ class Alcatraz_Options_Page {
 			'social_media_links',
 			array(
 				'id'          => 'email_url',
-				'description' => __( 'Enter your email address (mailto:me@example.com)', 'alcatraz' ),
+				'description' => __( 'Enter your email address', 'alcatraz' ),
 			)
 		);
 
@@ -159,18 +159,6 @@ class Alcatraz_Options_Page {
 				'description' => __( 'Enter your YouTube channel URL', 'alcatraz' ),
 			)
 		);
-
-		add_settings_field(
-			'show_social_urls',
-			__( 'Show Social URLs', 'alcatraz' ),
-			array( $this, 'field_checkbox' ),
-			'alcatraz_settings_section',
-			'social_media_links',
-			array(
-				'id'          => 'show_social_urls',
-				'description' => __( 'Show Social Icons in Footer?', 'alcatraz' ),
-			)
-		);
 	}
 
 	/**
@@ -221,7 +209,7 @@ class Alcatraz_Options_Page {
 
 		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
 		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
-		$option_value       = alcatraz_true_or_false( $this->options[ $args['id'] ] );
+		$option_value       = ( ! empty( $this->options[ $args['id'] ] ) ) ? aclcatraz_true_or_false( $this->options[ $args['id'] ] ) : '';
 		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
 
 		printf(
@@ -266,9 +254,6 @@ class Alcatraz_Options_Page {
 		if ( ! empty( $input['youtube_url'] ) ) {
 			$options['youtube_url']   = sanitize_text_field( $input['youtube_url'] );
 		}
-		if ( ! empty( $input['show_social_urls'] ) ) {
-			$options['show_social_urls'] = absint( $input['show_social_urls'] );
-		}
 
 		// Update options in the Customizer.
 		if ( ! empty( $input['site_layout'] ) ) {
@@ -303,6 +288,9 @@ class Alcatraz_Options_Page {
 		}
 		if ( ! empty( $input['footer_bottom'] ) ) {
 			$options['footer_bottom'] = sanitize_text_field( $input['footer_bottom'] );
+		}
+		if ( ! empty( $input['social_icons_in_footer'] ) ) {
+			$options['social_icons_in_footer'] = absint( $input['social_icons_in_footer'] );
 		}
 
 		return $options;

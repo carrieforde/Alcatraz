@@ -312,6 +312,25 @@ function alcatraz_customize_register( $wp_customize ) {
 			'settings' => 'alcatraz_options[footer_bottom]',
 		)
 	);
+
+	// Social network icons.
+	$wp_customize->add_setting(
+		'alcatraz_options[social_icons_in_footer]',
+		array(
+			'default'           => $option_defaults['social_icons_in_footer'],
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_social_icons_in_footer_control',
+		array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Show Social Icons in Footer?', 'alcatraz' ),
+			'section'  => 'alcatraz_footer_section',
+			'settings' => 'alcatraz_options[social_icons_in_footer]',
+		)
+	);
 }
 
 add_action( 'customize_preview_init', 'alcatraz_customize_preview_js' );
