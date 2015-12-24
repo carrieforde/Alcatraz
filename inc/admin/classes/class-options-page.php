@@ -89,6 +89,18 @@ class Alcatraz_Options_Page {
 		);
 
 		add_settings_field(
+			'email_url',
+			__( 'Email', 'alcatraz' ),
+			array( $this, 'field_text' ),
+				'alcatraz_settings_section',
+				'social_media_links',
+			array(
+				'id'          => 'email_url',
+				'description' => __( 'Enter your email address', 'alcatraz' ),
+			)
+		);
+
+		add_settings_field(
 			'facebook_url',
 			__( 'Facebook', 'alcatraz' ),
 			array( $this, 'field_text' ),
@@ -144,7 +156,7 @@ class Alcatraz_Options_Page {
 			'social_media_links',
 			array(
 				'id'          => 'youtube_url',
-				'description' => __( 'Enter your Youtube channel URL', 'alcatraz' ),
+				'description' => __( 'Enter your You Tube channel URL', 'alcatraz' ),
 			)
 		);
 	}
@@ -182,6 +194,29 @@ class Alcatraz_Options_Page {
 			esc_attr( $option_id ),
 			esc_attr( $option_key ),
 			esc_attr( $option_value ),
+			$option_description
+		);
+	}
+
+	/**
+	 * Output a checkbox.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  array  $args  The array of field args.
+	 */
+	public function field_checkbox( $args ) {
+
+		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
+		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
+		$option_value       = ( ! empty( $this->options[ $args['id'] ] ) ) ? alcatraz_true_or_false( $this->options[ $args['id'] ] ) : '';
+		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
+
+		printf(
+			'<input type="checkbox" class="checkbox" id="%s" name="%s" value="1" %s />%s',
+			esc_attr( $option_id ),
+			esc_attr( $option_key ),
+			checked( $option_value, 1, false ),
 			$option_description
 		);
 	}

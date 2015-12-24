@@ -76,36 +76,36 @@ function alcatraz_output_logo() {
 
 	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
 
-    	echo '<div class="logo-wrap">';
+		echo '<div class="logo-wrap">';
 
-        printf(
-            '<a href="%s" title="%s" rel="home">',
-            esc_url( home_url( '/' ) ),
-            esc_attr( get_bloginfo( 'name', 'display' ) )
-        );
+		printf(
+			'<a href="%s" title="%s" rel="home">',
+			esc_url( home_url( '/' ) ),
+			esc_attr( get_bloginfo( 'name', 'display' ) )
+		);
 
-        if ( ! empty( $options['logo_id'] ) ) {
+		if ( ! empty( $options['logo_id'] ) ) {
 
-            printf(
-                '<img class="logo logo-regular" src="%s" alt="%s">',
-                esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
-                esc_attr( get_bloginfo( 'name', 'display' ) )
-            );
+			printf(
+				'<img class="logo logo-regular" src="%s" alt="%s">',
+				esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
+				esc_attr( get_bloginfo( 'name', 'display' ) )
+			);
 
-        }
+		}
 
-        if ( ! empty( $options['mobile_logo_id'] ) ) {
-            printf(
-                '<img class="logo logo-mobile" src="%s" alt="%s">',
-                esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
-                esc_attr( get_bloginfo( 'name', 'display' ) )
-            );
-        }
+		if ( ! empty( $options['mobile_logo_id'] ) ) {
+			printf(
+				'<img class="logo logo-mobile" src="%s" alt="%s">',
+				esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
+				esc_attr( get_bloginfo( 'name', 'display' ) )
+			);
+		}
 
-        echo '</a>';
+		echo '</a>';
 
-        echo '</div>';
-    }
+		echo '</div>';
+	}
 }
 
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
@@ -123,5 +123,21 @@ function alcatraz_output_footer_bottom() {
 			'<div class="footer-bottom">%s</div>',
 			wp_kses_post( do_shortcode( $options['footer_bottom'] ) )
 		);
+	}
+}
+
+add_action( 'alcatraz_footer', 'alcatraz_output_social_network_icons', 80 );
+/**
+ * Output the social network icons.
+ *
+ * @since 1.0.0
+ */
+function alcatraz_output_social_network_icons() {
+
+	$options = get_option( 'alcatraz_options' );
+
+	if ( ! empty( $options['social_icons_in_footer'] ) ) {
+
+		alcatraz_the_social_network_icons();
 	}
 }

@@ -52,3 +52,26 @@
 		}
 	}
 }
+
+/**
+ * 4.5.2 Social Network Icons
+ */
+.alcatraz-social-icons {
+	padding-left: 0;
+	margin-left: 0;
+	list-style: none;
+	text-align: center;
+
+	li {
+		display: inline-block;
+		margin-right: 10px;
+
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+
+	.alcatraz-social-icon {
+		font-size: 24px;
+	}
+}
