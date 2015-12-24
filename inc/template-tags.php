@@ -126,42 +126,42 @@ function alcatraz_get_the_social_network_icons() {
 
 	<div class="alcatraz-social-icon-wrap">
 		<ul class="alcatraz-social-icons">
-			<?php if ( isset( $options['email_url'] ) ) : ?>
+			<?php if ( ! empty( $options['email_url'] ) ) : ?>
 				<li class="email">
 					<a href="mailto:<?php echo esc_attr( $options['email_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-email" target="_blank">
 						<i class="fa fa-envelope"></i>
 					</a>
 				</li>
 			<?php endif; ?>
-			<?php if ( isset( $options['facebook_url'] ) ) : ?>
+			<?php if ( ! empty( $options['facebook_url'] ) ) : ?>
 				<li class="facebook">
 					<a href="<?php echo esc_url( $options['facebook_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-facebook" target="_blank">
 						<i class="fa fa-facebook"></i>
 					</a>
 				</li>
 			<?php endif; ?>
-			<?php if ( isset( $options['twitter_url'] ) ) : ?>
+			<?php if ( ! empty( $options['twitter_url'] ) ) : ?>
 				<li class="twitter">
 					<a href="<?php echo esc_url( $options['twitter_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-twitter" target="_blank">
 						<i class="fa fa-twitter"></i>
 					</a>
 				</li>
 			<?php endif; ?>
-			<?php if ( isset( $options['instagram_url'] ) ) : ?>
+			<?php if ( ! empty( $options['instagram_url'] ) ) : ?>
 				<li class="instagram">
 					<a href="<?php echo esc_url( $options['instagram_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-instagram" target="_blank">
 						<i class="fa fa-instagram"></i>
 					</a>
 				</li>
 			<?php endif; ?>
-			<?php if ( isset( $options['pinterest_url'] ) ) : ?>
+			<?php if ( ! empty( $options['pinterest_url'] ) ) : ?>
 				<li class="pinterest">
 					<a href="<?php echo esc_url( $options['pinterest_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-pinterest" target="_blank">
 						<i class="fa fa-pinterest"></i>
 					</a>
 				</li>
 			<?php endif; ?>
-			<?php if ( isset( $options['youtube_url'] ) ) : ?>
+			<?php if ( ! empty( $options['youtube_url'] ) ) : ?>
 				<li class="youtube">
 					<a href="<?php echo esc_url( $options['youtube_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-youtube" target="_blank">
 						<i class="fa fa-youtube"></i>

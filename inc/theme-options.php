@@ -57,7 +57,7 @@ function alcatraz_validate_options( $input ) {
 	$options = get_option( 'alcatraz_options' );
 
 	// Update options on the options page.
-	if ( ! empty( $input['email_url'] ) ) {
+	if ( isset( $input['email_url'] ) ) {
 		$options['email_url']     = sanitize_text_field( $input['email_url'] );
 	}
 	if ( isset( $input['facebook_url'] ) ) {
@@ -110,7 +110,7 @@ function alcatraz_validate_options( $input ) {
 	if ( isset( $input['footer_bottom'] ) ) {
 		$options['footer_bottom'] = wp_kses_post( $input['footer_bottom'] );
 	}
-	if ( ! empty( $input['social_icons_in_footer'] ) ) {
+	if ( isset( $input['social_icons_in_footer'] ) ) {
 		$options['social_icons_in_footer'] = absint( $input['social_icons_in_footer'] );
 	}
 
