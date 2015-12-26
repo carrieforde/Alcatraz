@@ -157,12 +157,11 @@
 		//Sidebar nav child page toggle.
 		var $parent = $( '.sidebar-nav .page_item' );
 		var $children = $( '.sidebar-nav .children' );
-		var iconClass = '<i class="sidebar-icon"></i>';
 
-		$parent.prepend( iconClass );
-
-		var $icon = $( '.sidebar-icon' );
+		var $icon = $( '.sub-menu-toggle' );
 		var $pageChild = $( '.page_item_has_children' );
+
+		$pageChild.append( '<a class="sub-menu-toggle" href="#"></a>' );
 
 		$children.hide();
 
@@ -170,16 +169,15 @@
 		$( '.current_page_ancestor').parent().show();
 
 		if ( $( '.current_page_item' ).is(':visible') ) {
-			$( '.current_page_ancestor' ).find( $icon ).addClass( 'fa-chevron-down' );
-			$( '.current_page_ancestor' ).find( $icon ).last().removeClass( 'fa-chevron-down' );
-			$( '.current_page_item' ).find( $icon ).removeClass( 'fa-chevron-down' );
+			$( '.current_page_ancestor' ).find( $icon ).addClass( 'toggled' );
+			$( '.current_page_ancestor' ).find( $icon ).last().removeClass( 'toggled' );
+			$( '.current_page_item' ).find( '.sub-menu-toggle' ).removeClass( 'toggled' );
 		}
 
-		$( '.page_item_has_children > .sidebar-icon' ).addClass('fa fa-chevron-right');
-
-		$icon.on( 'click', function() {
+		$( '.sidebar-nav .sub-menu-toggle' ).on( 'click', function(e) {
+			e.preventDefault();
 			$( this ).parent().children( '.children' ).slideToggle();
-			$( this ).toggleClass( 'fa-chevron-down' );
+			$( this ).toggleClass( 'toggled' );
 		});
 
 	}

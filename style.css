@@ -1545,14 +1545,16 @@ a:hover, a:active {
   font-weight: 400;
 }
 
-.sidebar-nav li {
-  list-style: none;
-  text-indent: -0.8em;
+.sidebar-nav .sidebar-nav-top-level,
+.sidebar-nav .children {
+  position: relative;
 }
 
-.sidebar-icon {
-  cursor: pointer;
-  padding-right: 0.5em;
+.sidebar-nav .sub-menu-toggle-style-plus-minus .sub-menu-toggle::before,
+.sidebar-nav .sub-menu-toggle-style-plus-minus .sub-menu-toggle::after {
+  right: 0;
+  left: auto;
+  top: 12.5px;
 }
 
 /**

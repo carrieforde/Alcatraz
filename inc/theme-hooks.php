@@ -127,7 +127,7 @@ function alcatraz_output_footer_bottom() {
 }
 
 
-add_filter( 'alcatraz_primary_sidebar', 'alcatraz_sidebar_nav_menu', 5);
+add_filter( 'alcatraz_primary_sidebar', 'alcatraz_sidebar_nav_menu', 10);
 /**
  * Output the sidebar nav.
  *
@@ -142,23 +142,23 @@ function alcatraz_sidebar_nav_menu() {
 
 	//defaults
 	$defaults = array(
-		'show_all'         => true,
-		'show_on_home'     => false,
-		'show_empty'       => false,
-		'sort_by'          => 'menu_order',
-		'a_heading'        => false,
-		'title'            => ''
+		'show_all'      => true,
+		'show_on_home'  => false,
+		'show_empty'    => false,
+		'exclude_list'  => '',
+		'sort_by'       => 'menu_order',
+		'title'         => ''
 	);
 
-	$args = wp_parse_args( (array)$args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	// Get clean param values.
-	$show_all         = $args['show_all'];
-	$show_on_home     = $args['show_on_home'];
-	$show_empty       = $args['show_empty'];
-	$sort_by          = $args['sort_by'];
-	$a_heading        = $args['a_heading'];
-	$title            = $args['title'];
+	$show_all     = $args['show_all'];
+	$show_on_home = $args['show_on_home'];
+	$show_empty   = $args['show_empty'];
+	$exclude_list = $args['exclude_list'];
+	$sort_by      = $args['sort_by'];
+	$title        = $args['title'];
 
 	if ( is_search() || is_404() ) {
 		return false; //doesn't apply to search or 404 page
@@ -168,13 +168,15 @@ function alcatraz_sidebar_nav_menu() {
 		return false;	//if we're on the front page and we haven't chosen to show this anyways, leave
 	}
 
-	if(!$post->post_parent) {
-		$children = wp_list_pages("title_li=&child_of=".$post->ID."&echo=0");
-		}else{
-		if($post->ancestors){
-			$ancestors = end($post->ancestors);
-	 	}
-	 }
+	if( !$post->post_parent ) {
+		$children = wp_list_pages( array(
+			'title_li'    => '',
+			'depth'       => 1,
+			'sort_column' => $sort_by,
+			'child_of'    => $post->ID,
+			'echo'        => false,
+			));
+		}
 
 	if ( is_page() ) {
 
@@ -183,7 +185,7 @@ function alcatraz_sidebar_nav_menu() {
    		//workaround for occassional problems
 		} else {
 
-			if ($post_page = get_option("page_for_posts")) {
+			if ( $post_page = get_option("page_for_posts") ) {
 
 		 		$post = get_page($post_page);
 			}
@@ -223,24 +225,25 @@ function alcatraz_sidebar_nav_menu() {
 		$top_page = $post_ancestors ? end($post_ancestors) : $post->ID; //get the top page id
 
 		$children = wp_list_pages(array(
-		'title_li'    => '',
-		'echo'        => 0,
-		'depth'       => $thedepth,
-		'child_of'    => $top_page,
-		'sort_column' => $sort_by
-		 ));	//get the list of pages, including only those in our page list
+			'title_li'    => '',
+			'echo'        => 0,
+			'depth'       => $thedepth,
+			'child_of'    => $top_page,
+			'sort_column' => $sort_by
+		 	));	//get the list of pages, including only those in our page list
 
 		if( ! $children && ! $show_empty) {
 			return false; 	//if there are no pages in this section, and user hasnt chosen to display widget anyways, leave the function
 		}
 
-		echo "<div id='secondary' class='primary-sidebar sidebar' role='complementary'>";
-		echo "<aside id='sidebar_nav' class='sidebar-nav'>";
-		echo "<ul>";
-		echo $children;
-		echo "</ul>";
-		echo "</aside>";
-		echo "</div>";
+		printf( '<aside id="%s" class="%s"><div id="%s" class="%s" role="complementary"><ul class="%s">%s</ul></aside>',
+			'alcatraz_sidebar_nav',
+			'sidebar-nav',
+			'secondary',
+			'primary-sidebar sidebar',
+			'sidebar-nav-top-level',
+			$children
+		);
 	}
 
 }
