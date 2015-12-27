@@ -126,19 +126,19 @@ function alcatraz_output_footer_bottom() {
 	}
 }
 
-add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_section_nav', 5 );
+add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_subpage_nav', 5 );
 /**
  * Output the section nav.
  *
  * @since  1.0.0
  */
- function alcatraz_output_section_nav() {
+ function alcatraz_output_subpage_nav() {
 
  	$options = get_option( 'alcatraz_options' );
 
- 	if ( ! empty( $options['section_nav'] ) ) {
+ 	if ( ! empty( $options['subpage_nav'] ) ) {
 
- 		alcatraz_the_section_nav();
+ 		alcatraz_the_subpage_nav();
  	}
  }
 

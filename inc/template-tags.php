@@ -190,7 +190,7 @@ function alcatraz_the_social_network_icons() {
  *
  * @since 1.0.0
  */
-function alcatraz_get_section_nav() {
+function alcatraz_get_subpage_nav() {
 
 	$options = get_option( 'alcatraz_options' );
 
@@ -199,7 +199,7 @@ function alcatraz_get_section_nav() {
 	$args = array();
 
 	//defaults
-	$defaults = alcatraz_get_section_nav_options();
+	$defaults = alcatraz_get_subpage_nav_options();
 
 	$args = wp_parse_args( $args, $defaults );
 
@@ -304,7 +304,7 @@ function alcatraz_get_section_nav() {
  *
  * @since 1.0.0
  */
-function alcatraz_the_section_nav() {
+function alcatraz_the_subpage_nav() {
 
-	echo alcatraz_get_section_nav();
+	echo alcatraz_get_subpage_nav();
 }

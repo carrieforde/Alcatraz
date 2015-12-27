@@ -131,20 +131,20 @@ function alcatraz_customize_register( $wp_customize ) {
 
 	// Section nav.
 	$wp_customize->add_setting(
-		'alcatraz_options[section_nav]',
+		'alcatraz_options[subpage_nav]',
 		array(
-			'default'           => $option_defaults['section_nav'],
+			'default'           => $option_defaults['subpage_nav'],
 			'type'              => 'option',
 			'capability'        => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
-		'alcatraz_section_nav_control',
+		'alcatraz_subpage_nav_control',
 		array(
 			'type'     => 'checkbox',
-			'label'    => __( 'Show section nav in primary sidebar?', 'alcatraz' ),
+			'label'    => __( 'Show subpage nav in primary sidebar?', 'alcatraz' ),
 			'section'  => 'alcatraz_layout_section',
-			'settings' => 'alcatraz_options[section_nav]',
+			'settings' => 'alcatraz_options[subpage_nav]',
 		)
 	);
 

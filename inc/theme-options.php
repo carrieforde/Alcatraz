@@ -33,7 +33,7 @@ function alcatraz_get_option_defaults() {
 		'instagram_url'           => '',
 		'pinterest_url'           => '',
 		'youtube_url'             => '',
-		'section_nav'             => '',
+		'subpage_nav'             => '',
 		'social_icons_in_footer'  => '',
 	);
 
@@ -53,8 +53,6 @@ function alcatraz_get_option_defaults() {
  * @return  array          The updated options.
  */
 function alcatraz_validate_options( $input ) {
-
-	alcatraz_log( $input );
 
 	// Start with any existing options.
 	$options = get_option( 'alcatraz_options' );
@@ -113,8 +111,8 @@ function alcatraz_validate_options( $input ) {
 	if ( isset( $input['footer_bottom'] ) ) {
 		$options['footer_bottom'] = wp_kses_post( $input['footer_bottom'] );
 	}
-	if ( isset( $input['section_nav'] ) ) {
-		$options['section_nav']   = absint( $input['section_nav'] );
+	if ( isset( $input['subpage_nav'] ) ) {
+		$options['subpage_nav']   = absint( $input['subpage_nav'] );
 	}
 	if ( isset( $input['social_icons_in_footer'] ) ) {
 		$options['social_icons_in_footer'] = absint( $input['social_icons_in_footer'] );
@@ -126,8 +124,6 @@ function alcatraz_validate_options( $input ) {
 	}
 
 	return $options;
-
-	alcatraz_log( $options );
 }
 
 /**
@@ -278,7 +274,7 @@ function alcatraz_get_sub_menu_toggles( $context = '' ) {
  *
  * @return  array             The array of options.
  */
-function alcatraz_get_section_nav_options( $context = '' ) {
+function alcatraz_get_subpage_nav_options( $context = '' ) {
 
 	$defaults = array(
 		'show_all'      => true,
@@ -289,6 +285,6 @@ function alcatraz_get_section_nav_options( $context = '' ) {
 		'title'         => ''
 	);
 
-	return apply_filters( 'alcatraz_section_nav_options', $defaults, $context );
+	return apply_filters( 'alcatraz_subpage_nav_options', $defaults, $context );
 }
 
