@@ -43,6 +43,9 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
+				<span class="menu-toggle-span span-1"></span>
+				<span class="menu-toggle-span span-2"></span>
+				<span class="menu-toggle-span span-3"></span>
 			</div>
 			<div class="menu-overlay"></div>
 			<?php wp_nav_menu( array(

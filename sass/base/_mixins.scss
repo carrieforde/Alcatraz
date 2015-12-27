@@ -151,24 +151,37 @@
 
 // Inner-menu close trigger.
 @mixin inner-menu-close {
-	width: 25px;
-	height: 25px;
+	width: 45px;
+	height: 45px;
+	text-indent: -101%;
+	cursor: pointer;
+	box-sizing: border-box;
+	position: relative;
+	display: none;
 
-	&::before,
-	&::after {
-		content: '';
+	&:hover .inner-menu-toggle-span {
+		background-color: darken($alcatraz-blue, 10%);
+	}
+
+	.inner-menu-toggle-span {
 		position: absolute;
+		top: 22px;
+		left: 9px;
 		width: 25px;
 		height: 3px;
 		background-color: $alcatraz-blue;
 		transition: all 0.2s ease;
-	}
 
-	&::before {
-		transform: rotate(45deg);
-	}
+		&.span-1 {
+			transform: rotate(45deg);
+		}
 
-	&::after {
-		transform: rotate(-45deg);
+		&.span-2 {
+			display: none;
+		}
+
+		&.span-3 {
+			transform: rotate(-45deg);
+		}
 	}
 }

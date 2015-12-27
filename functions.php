@@ -218,6 +218,14 @@ function alcatraz_scripts() {
 		true
 	);
 
+	// Translatable strings and other data for our JS.
+	$vars = array(
+		'menu_toggle' => __( 'Toggle', 'alcatraz' ),
+		'menu_close'  => __( 'Close', 'alcatraz' ),
+	);
+
+	wp_localize_script( 'alcatraz-scripts', 'alcatraz_vars', $vars );
+
 	// Comment reply JS.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

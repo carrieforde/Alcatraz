@@ -64,4 +64,6 @@ $size__site-width: 100%;
 $size__sidebar-width: 25%;
 $size__sidebar-content-width: $size__site-width - $size__sidebar-width;
 $size__default-padding: 20px;
+$size__default-padding-half: $size__default-padding * 0.5;
+$size__default-padding-double: $size__default-padding * 2;
 $size__site-branding: 300px;

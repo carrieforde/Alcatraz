@@ -52,4 +52,12 @@
 		});
 	});
 
+	// Handle live previewing for the mobile nav sub menu toggle style.
+	wp.customize( 'alcatraz_options[sub_menu_toggle_style]', function( value ) {
+		value.bind( function( to ) {
+			$body.removeClass( 'sub-menu-toggle-style-chevron sub-menu-toggle-style-plus-minus' );
+			$body.addClass( 'sub-menu-toggle-style-' + to );
+		});
+	});
+
 })( jQuery );

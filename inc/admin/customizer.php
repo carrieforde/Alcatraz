@@ -236,10 +236,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[mobile_nav_toggle_style]',
 		array(
-			'default'           => $option_defaults['mobile_nav_toggle_style'],
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
+			'default'    => $option_defaults['mobile_nav_toggle_style'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -253,7 +253,7 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Sub-menu toggle-style.
+	// Sub menu toggle style.
 	$wp_customize->add_setting(
 		'alcatraz_options[sub_menu_toggle_style]',
 		array(

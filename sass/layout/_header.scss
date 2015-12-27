@@ -35,6 +35,7 @@
 			family: $font__headings;
 			weight: 600;
 		}
+		line-height: 1.2;
 
 		.has-logo &,
 		.has-mobile-logo & {
@@ -98,13 +99,13 @@
 }
 
 @media (min-width: em(960)) {
-	.header-style-side {
 
+	.header-style-side {
 		.site-header {
-			@include span-columns(3 of 12);
+			width: 28%;
 			height: 100%;
 			position: fixed;
-			padding: $size__default-padding;
+			padding: $size__default-padding-half 0;
 			overflow-y: auto;
 
 			.header-inner {
@@ -112,19 +113,39 @@
 			}
 		}
 
-		&.boxed .site-header {
-			width: 325px;
+		.site-content {
+			width: 72%;
+			float: right;
+		}
+
+		.content-area {
+			padding: ($size__default-padding * 1.5) $size__default-padding;
+		}
+
+		.primary-sidebar {
+			padding: ($size__default-padding * 1.5) $size__default-padding;
+		}
+	}
+}
+
+@media (min-width: em(1150)) {
+
+	.header-style-side {
+		.site-header {
+			width: calc( 320px );
+			padding: $size__default-padding $size__default-padding-half;
 		}
 
 		.site-content {
-			@include span-columns(9 of 12);
-			@include omega();
-			float: right;
-			padding: $size__default-padding;
+			width: calc( 100% - 320px );
 		}
 
-		&.boxed .site-content {
-			width: calc(100% - 300px);
+		.content-area {
+			padding: $size__default-padding-double ($size__default-padding * 1.5);
+		}
+
+		.primary-sidebar {
+			padding: $size__default-padding-double ($size_-default-padding * 1.5) $size__default-padding-double $size__default-padding;
 		}
 	}
 }

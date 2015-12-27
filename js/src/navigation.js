@@ -6,8 +6,10 @@
  */
 ( function( $ ) {
 
-	var $body   = $( 'body' );
-	var $window = $( window );
+	var $body      = $( 'body' );
+	var $window    = $( window );
+	var toggleText = alcatraz_vars.menu_toggle || '';
+	var closeText  = alcatraz_vars.menu_close  || '';
 
 	/**
 	 * Toggle the .focus class on nav items.
@@ -56,7 +58,7 @@
 	 * Set up the Primary Navigation expand/contract functionality.
 	 */
 	function aczSetupPrimaryNavigation() {
-		var $container, $button, $menu, $links, $subMenus;
+		var $container, $toggle, $menu, menuToggle, innerMenuToggle, $links, $subMenus;
 
 		$container = $( '#site-navigation' );
 		if ( ! $container ) {
@@ -95,7 +97,7 @@
 		/**
 		 * Set up the top level menu toggle.
 		 */
-		$toggle.add( '.inner-menu-toggle, .menu-overlay' ).on( 'click', function() {
+		$toggle.add( '.menu-overlay' ).on( 'click', function() {
 			$window.trigger( 'aczToggleMobileNav' );
 		});
 		$window.on( 'aczToggleMobileNav', aczToggleMobileNav );
@@ -124,8 +126,24 @@
 		/**
 		 * Set up the mobile nav sub menu toggles.
 		 */
-		$menu.before( '<div class="inner-menu-toggle"></div>' );
-		$menu.find( 'li.menu-item-has-children > a' ).after( '<a class="sub-menu-toggle" href="#">Toggle</a>' );
+		menuToggle = '<a class="sub-menu-toggle">' + toggleText +
+		                 '<span class="sub-menu-toggle-span span-1"></span>' +
+		                 '<span class="sub-menu-toggle-span span-2"></span>' +
+		                 '<span class="sub-menu-toggle-span span-3"></span>' +
+		             '</a>';
+
+		innerMenuToggle = '<div class="inner-menu-toggle">' + closeText +
+		                      '<span class="inner-menu-toggle-span span-1"></span>' +
+		                      '<span class="inner-menu-toggle-span span-2"></span>' +
+		                      '<span class="inner-menu-toggle-span span-3"></span>' +
+		                  '</div>';
+
+		$menu.before( innerMenuToggle );
+		$menu.find( 'li.menu-item-has-children > a' ).after( menuToggle );
+
+		$( '.inner-menu-toggle' ).on( 'click', function() {
+			$window.trigger( 'aczToggleMobileNav' );
+		});
 
 		// Toggle the expanded state of sub-menus when the toggles are clicked.
 		$( '.sub-menu-toggle' ).on( 'click', function( e ) {
