@@ -177,13 +177,13 @@ a {
 		.sub-menu-toggle-span {
 			position: absolute;
 			top: 22.5px;
-			width: 13.5px;
+			width: 11.5px;
 			height: 2px;
 			transition: all 0.2s ease;
 
 			&.span-1 {
 				display: block;
-				left: 12.5px;
+				left: 16.5px;
 				transform: rotate(45deg) translate(2px);
 			}
 

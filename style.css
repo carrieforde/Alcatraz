@@ -1131,14 +1131,14 @@ a:hover, a:active {
 .sub-menu-toggle-style-chevron .sub-menu-toggle .sub-menu-toggle-span {
   position: absolute;
   top: 22.5px;
-  width: 13.5px;
+  width: 11.5px;
   height: 2px;
   transition: all 0.2s ease;
 }
 
 .sub-menu-toggle-style-chevron .sub-menu-toggle .sub-menu-toggle-span.span-1 {
   display: block;
-  left: 12.5px;
+  left: 16.5px;
   -webkit-transform: rotate(45deg) translate(2px);
           transform: rotate(45deg) translate(2px);
 }
@@ -1483,10 +1483,16 @@ a:hover, a:active {
 /**
  * 4.3.1 Structure
  */
+.site::after {
+  content: "";
+  display: table;
+  table-layout: fixed;
+  width: 100%;
+}
+
 .boxed .site,
 .boxed-content .site-content {
   max-width: 1040px;
-  padding: 0 20px;
   display: block;
   margin-left: auto;
   margin-right: auto;
@@ -2123,6 +2129,7 @@ a:hover, a:active {
 @media (min-width: 60em) {
   .header-style-side .site-header {
     width: 28%;
+    width: calc(280px);
     height: 100%;
     position: fixed;
     padding: 10px 0;
@@ -2131,13 +2138,21 @@ a:hover, a:active {
   .header-style-side .site-header .header-inner {
     max-width: 100%;
   }
+  .header-style-side.boxed .site-content, .header-style-side.boxed-content .site-content {
+    max-width: none;
+  }
+  .header-style-side.boxed .site, .header-style-side.boxed-content .site {
+    max-width: 1040px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .header-style-side .site-content {
     width: 72%;
+    width: calc(100% - 280px);
     float: right;
   }
-  .header-style-side .content-area {
-    padding: 30px 20px;
-  }
+  .header-style-side .content-area,
   .header-style-side .primary-sidebar {
     padding: 30px 20px;
   }
@@ -2201,24 +2216,27 @@ a:hover, a:active {
     display: none;
   }
   .header-style-side .site-footer {
-    float: left;
-    display: block;
-    margin-right: 2.3576515979%;
-    width: 74.4105871005%;
+    width: 72%;
     float: right;
   }
-  .header-style-side .site-footer:last-child {
-    margin-right: 0;
+}
+
+@media (min-width: 65em) {
+  .header-style-side .site-header {
+    width: calc(300px);
+  }
+  .header-style-side .site-content {
+    width: calc(100% - 300px);
   }
 }
 
 @media (min-width: 71.875em) {
   .header-style-side .site-header {
-    width: calc( 320px);
+    width: calc(320px);
     padding: 20px 10px;
   }
   .header-style-side .site-content {
-    width: calc( 100% - 320px);
+    width: calc(100% - 320px);
   }
   .header-style-side .content-area {
     padding: 40px 30px;

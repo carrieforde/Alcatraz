@@ -21,11 +21,11 @@
 	}
 
 	@media (min-width: em(960)) {
-	.header-style-side & {
-		@include span-columns(9 of 12);
-		float: right;
+		.header-style-side & {
+			width: 72%;
+			float: right;
+		}
 	}
-}
 }
 
 @media (min-width: em(768)) {

@@ -103,7 +103,7 @@ function alcatraz_output_primary_sidebar() {
 	 <?php
 }
 
-add_action( 'alcatraz_after_header', 'alcatraz_output_page_banner_widget_area' );
+add_action( 'alcatraz_before_content_inside', 'alcatraz_output_page_banner_widget_area' );
 /**
  * Maybe output the Page Banner widget area.
  *
