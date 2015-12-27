@@ -76,36 +76,36 @@ function alcatraz_output_logo() {
 
 	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
 
-    	echo '<div class="logo-wrap">';
+		echo '<div class="logo-wrap">';
 
-        printf(
-            '<a href="%s" title="%s" rel="home">',
-            esc_url( home_url( '/' ) ),
-            esc_attr( get_bloginfo( 'name', 'display' ) )
-        );
+		printf(
+			'<a href="%s" title="%s" rel="home">',
+			esc_url( home_url( '/' ) ),
+			esc_attr( get_bloginfo( 'name', 'display' ) )
+		);
 
-        if ( ! empty( $options['logo_id'] ) ) {
+		if ( ! empty( $options['logo_id'] ) ) {
 
-            printf(
-                '<img class="logo logo-regular" src="%s" alt="%s">',
-                esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
-                esc_attr( get_bloginfo( 'name', 'display' ) )
-            );
+			printf(
+				'<img class="logo logo-regular" src="%s" alt="%s">',
+				esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
+				esc_attr( get_bloginfo( 'name', 'display' ) )
+			);
 
-        }
+		}
 
-        if ( ! empty( $options['mobile_logo_id'] ) ) {
-            printf(
-                '<img class="logo logo-mobile" src="%s" alt="%s">',
-                esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
-                esc_attr( get_bloginfo( 'name', 'display' ) )
-            );
-        }
+		if ( ! empty( $options['mobile_logo_id'] ) ) {
+			printf(
+				'<img class="logo logo-mobile" src="%s" alt="%s">',
+				esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
+				esc_attr( get_bloginfo( 'name', 'display' ) )
+			);
+		}
 
-        echo '</a>';
+		echo '</a>';
 
-        echo '</div>';
-    }
+		echo '</div>';
+	}
 }
 
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
@@ -126,125 +126,34 @@ function alcatraz_output_footer_bottom() {
 	}
 }
 
-
-add_filter( 'alcatraz_primary_sidebar', 'alcatraz_sidebar_nav_menu', 10);
+add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_section_nav', 5 );
 /**
- * Output the sidebar nav.
+ * Output the section nav.
  *
  * @since  1.0.0
  */
+ function alcatraz_output_section_nav() {
 
-function alcatraz_sidebar_nav_menu() {
+ 	$options = get_option( 'alcatraz_options' );
 
-	global $post;
+ 	if ( ! empty( $options['section_nav'] ) ) {
 
-	$args = array();
+ 		alcatraz_the_section_nav();
+ 	}
+ }
 
-	//defaults
-	$defaults = array(
-		'show_all'      => true,
-		'show_on_home'  => false,
-		'show_empty'    => false,
-		'exclude_list'  => '',
-		'sort_by'       => 'menu_order',
-		'title'         => ''
-	);
+add_action( 'alcatraz_footer', 'alcatraz_output_social_network_icons', 80 );
+/**
+ * Output the social network icons.
+ *
+ * @since 1.0.0
+ */
+function alcatraz_output_social_network_icons() {
 
-	$args = wp_parse_args( $args, $defaults );
+	$options = get_option( 'alcatraz_options' );
 
-	// Get clean param values.
-	$show_all     = $args['show_all'];
-	$show_on_home = $args['show_on_home'];
-	$show_empty   = $args['show_empty'];
-	$exclude_list = $args['exclude_list'];
-	$sort_by      = $args['sort_by'];
-	$title        = $args['title'];
+	if ( ! empty( $options['social_icons_in_footer'] ) ) {
 
-	if ( is_search() || is_404() ) {
-		return false; //doesn't apply to search or 404 page
+		alcatraz_the_social_network_icons();
 	}
-
-	if ( is_front_page() ) {
-		return false;	//if we're on the front page and we haven't chosen to show this anyways, leave
-	}
-
-	if( !$post->post_parent ) {
-		$children = wp_list_pages( array(
-			'title_li'    => '',
-			'depth'       => 1,
-			'sort_column' => $sort_by,
-			'child_of'    => $post->ID,
-			'echo'        => false,
-			));
-		}
-
-	if ( is_page() ) {
-
-		if ( isset( $post) && is_object( $post ) ) {
-		get_post_ancestors($post);
-   		//workaround for occassional problems
-		} else {
-
-			if ( $post_page = get_option("page_for_posts") ) {
-
-		 		$post = get_page($post_page);
-			}
-		 //treat the posts page as the current page if applicable
-		else return false;
-
-		}
-
-		if ( is_front_page() || isset( $sub_front_page ) ) {
-
-			echo "<ul>";
-
-			$children = wp_list_pages(array(
-				'title_li'    => '',
-				'depth'       => 1,
-				'sort_column' => $sort_by,
-				'echo'        => false
-				));
-
-			echo $children;
-			echo "</ul>";
-			return true;
-	  	}
-
-		$post_ancestors = ( isset($post->ancestors) ) ? $post->ancestors : get_post_ancestors($post); //get the current page's ancestors either from existing value or by executing function
-		$top_page = $post_ancestors ? end($post_ancestors) : $post->ID; //get the top page id
-
-		$thedepth = 0; //initialize default variables
-
-		$excluded = explode(',', $exclude_list); //convert list of excluded pages to array
-
-		if ( in_array( $post->ID,$excluded ) ) {
-			return false; //if on excluded page, and setup to hide on excluded pages
-		}
-
-		$post_ancestors = ( isset($post->ancestors) ) ? $post->ancestors : get_post_ancestors($post); //get the current page's ancestors either from existing value or by executing function
-		$top_page = $post_ancestors ? end($post_ancestors) : $post->ID; //get the top page id
-
-		$children = wp_list_pages(array(
-			'title_li'    => '',
-			'echo'        => 0,
-			'depth'       => $thedepth,
-			'child_of'    => $top_page,
-			'sort_column' => $sort_by
-		 	));	//get the list of pages, including only those in our page list
-
-		if( ! $children && ! $show_empty) {
-			return false; 	//if there are no pages in this section, and user hasnt chosen to display widget anyways, leave the function
-		}
-
-		printf( '<aside id="%s" class="%s"><div id="%s" class="%s" role="complementary"><ul class="%s">%s</ul></aside>',
-			'alcatraz_sidebar_nav',
-			'sidebar-nav',
-			'secondary',
-			'primary-sidebar sidebar',
-			'sidebar-nav-top-level',
-			$children
-		);
-	}
-
 }
-

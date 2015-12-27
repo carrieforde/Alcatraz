@@ -7,27 +7,6 @@
 	padding: $size__default-padding;
 }
 
-.sidebar-nav {
-	margin-right: 0;
-}
-
-.sidebar-nav .current_page_item > a {
-	color: $color__link;
-	font-weight: 400;
-}
-
-.sidebar-nav .sidebar-nav-top-level,
-.sidebar-nav .children {
-	position: relative;
-}
-
-.sidebar-nav .sub-menu-toggle-style-plus-minus .sub-menu-toggle::before,
-.sidebar-nav .sub-menu-toggle-style-plus-minus .sub-menu-toggle::after {
-	right: 0;
-	left: auto;
-	top: 12.5px;
-}
-
 @media (min-width: em(768)) {
 
 	/* Left Sidebar */

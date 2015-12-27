@@ -161,8 +161,6 @@
 		//Sidebar nav child page toggle.
 		var $parent = $( '.sidebar-nav .page_item' );
 		var $children = $( '.sidebar-nav .children' );
-
-		var $icon = $( '.sub-menu-toggle' );
 		var $pageChild = $( '.page_item_has_children' );
 
 		$pageChild.append( '<a class="sub-menu-toggle" href="#"></a>' );
@@ -173,9 +171,9 @@
 		$( '.current_page_ancestor').parent().show();
 
 		if ( $( '.current_page_item' ).is(':visible') ) {
+			var $icon = $( '.sub-menu-toggle' );
 			$( '.current_page_ancestor' ).find( $icon ).addClass( 'toggled' );
-			$( '.current_page_ancestor' ).find( $icon ).last().removeClass( 'toggled' );
-			$( '.current_page_item' ).find( '.sub-menu-toggle' ).removeClass( 'toggled' );
+			$( '.current_page_item' ).find( $icon ).removeClass( 'toggled' );
 		}
 
 		$( '.sidebar-nav .sub-menu-toggle' ).on( 'click', function(e) {

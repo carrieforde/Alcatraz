@@ -82,10 +82,22 @@ class Alcatraz_Options_Page {
 		);
 
 		add_settings_section(
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			__( 'Social Media Links', 'alcatraz' ),
 			array( $this, 'settings_section' ),
 			'alcatraz_settings_section'
+		);
+
+		add_settings_field(
+			'email_url',
+			__( 'Email', 'alcatraz' ),
+			array( $this, 'field_text' ),
+				'alcatraz_settings_section',
+				'alcatraz_options_page_settings',
+			array(
+				'id'          => 'email_url',
+				'description' => __( 'Enter your email address', 'alcatraz' ),
+			)
 		);
 
 		add_settings_field(
@@ -93,7 +105,7 @@ class Alcatraz_Options_Page {
 			__( 'Facebook', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'facebook_url',
 				'description' => __( 'Enter your Facebook profile URL', 'alcatraz' ),
@@ -105,7 +117,7 @@ class Alcatraz_Options_Page {
 			__( 'Twitter', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'twitter_url',
 				'description' => __( 'Enter your Twitter profile URL', 'alcatraz' ),
@@ -117,7 +129,7 @@ class Alcatraz_Options_Page {
 			__( 'Instagram', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'instagram_url',
 				'description' => __( 'Enter your Instagram profile URL', 'alcatraz' ),
@@ -129,7 +141,7 @@ class Alcatraz_Options_Page {
 			__( 'Pinterest', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'pinterest_url',
 				'description' => __( 'Enter your Pinterest profile URL', 'alcatraz' ),
@@ -141,10 +153,10 @@ class Alcatraz_Options_Page {
 			__( 'Youtube', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'youtube_url',
-				'description' => __( 'Enter your Youtube channel URL', 'alcatraz' ),
+				'description' => __( 'Enter your You Tube channel URL', 'alcatraz' ),
 			)
 		);
 	}
@@ -182,6 +194,29 @@ class Alcatraz_Options_Page {
 			esc_attr( $option_id ),
 			esc_attr( $option_key ),
 			esc_attr( $option_value ),
+			$option_description
+		);
+	}
+
+	/**
+	 * Output a checkbox.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param  array  $args  The array of field args.
+	 */
+	public function field_checkbox( $args ) {
+
+		$option_id          = 'alcatraz-options-' . str_replace( '_', '-', $args['id'] );
+		$option_key         = 'alcatraz_options[' . $args['id'] . ']';
+		$option_value       = ( ! empty( $this->options[ $args['id'] ] ) ) ? alcatraz_true_or_false( $this->options[ $args['id'] ] ) : '';
+		$option_description = ( ! empty( $args['description'] ) ) ? '<br /><span class="description">' . wp_kses_post( $args['description'] ) . '</span>' : '';
+
+		printf(
+			'<input type="checkbox" class="checkbox" id="%s" name="%s" value="1" %s />%s',
+			esc_attr( $option_id ),
+			esc_attr( $option_key ),
+			checked( $option_value, 1, false ),
 			$option_description
 		);
 	}

@@ -27,11 +27,14 @@ function alcatraz_get_option_defaults() {
 		'mobile_logo_id'          => '',
 		'footer_widget_areas'     => 3,
 		'footer_bottom'           => '',
+		'email_url'               => '',
 		'facebook_url'            => '',
 		'twitter_url'             => '',
 		'instagram_url'           => '',
 		'pinterest_url'           => '',
 		'youtube_url'             => '',
+		'section_nav'             => '',
+		'social_icons_in_footer'  => '',
 	);
 
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
@@ -51,10 +54,15 @@ function alcatraz_get_option_defaults() {
  */
 function alcatraz_validate_options( $input ) {
 
+	alcatraz_log( $input );
+
 	// Start with any existing options.
 	$options = get_option( 'alcatraz_options' );
 
 	// Update options on the options page.
+	if ( isset( $input['email_url'] ) ) {
+		$options['email_url']     = sanitize_text_field( $input['email_url'] );
+	}
 	if ( isset( $input['facebook_url'] ) ) {
 		$options['facebook_url']  = sanitize_text_field( $input['facebook_url'] );
 	}
@@ -105,6 +113,12 @@ function alcatraz_validate_options( $input ) {
 	if ( isset( $input['footer_bottom'] ) ) {
 		$options['footer_bottom'] = wp_kses_post( $input['footer_bottom'] );
 	}
+	if ( isset( $input['section_nav'] ) ) {
+		$options['section_nav']   = absint( $input['section_nav'] );
+	}
+	if ( isset( $input['social_icons_in_footer'] ) ) {
+		$options['social_icons_in_footer'] = absint( $input['social_icons_in_footer'] );
+	}
 
 	// Update any options saved via Ajax.
 	if ( isset( $input['show_activation_notice'] ) ) {
@@ -112,6 +126,8 @@ function alcatraz_validate_options( $input ) {
 	}
 
 	return $options;
+
+	alcatraz_log( $options );
 }
 
 /**
@@ -252,3 +268,27 @@ function alcatraz_get_sub_menu_toggles( $context = '' ) {
 
 	return apply_filters( 'alcatraz_sub_menu_toggle_styles', $toggles, $context );
 }
+
+/**
+ * Return an array of section nav options.
+ *
+ * @since   1.0.0
+ *
+ * @param   string  $context  The context to pass to our filter.
+ *
+ * @return  array             The array of options.
+ */
+function alcatraz_get_section_nav_options( $context = '' ) {
+
+	$defaults = array(
+		'show_all'      => true,
+		'show_on_home'  => false,
+		'show_empty'    => false,
+		'exclude_list'  => '',
+		'sort_by'       => 'menu_order',
+		'title'         => ''
+	);
+
+	return apply_filters( 'alcatraz_section_nav_options', $defaults, $context );
+}
+

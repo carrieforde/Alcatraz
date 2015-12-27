@@ -14,6 +14,11 @@ add_action( 'customize_register', 'alcatraz_customize_register' );
 function alcatraz_customize_register( $wp_customize ) {
 
 	/**
+	 * Include our custom Customizer control types.
+	 */
+	require_once ALCATRAZ_PATH . 'lib/alpha-color-picker/alpha-color-picker.php';
+
+	/**
 	 * Get the default values for our options.
 	 */
 	$option_defaults = alcatraz_get_option_defaults();
@@ -121,6 +126,25 @@ function alcatraz_customize_register( $wp_customize ) {
 			'section'  => 'alcatraz_layout_section',
 			'settings' => 'alcatraz_options[page_layout]',
 			'choices'  => alcatraz_get_page_layouts(),
+		)
+	);
+
+	// Section nav.
+	$wp_customize->add_setting(
+		'alcatraz_options[section_nav]',
+		array(
+			'default'           => $option_defaults['section_nav'],
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_section_nav_control',
+		array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Show section nav in primary sidebar?', 'alcatraz' ),
+			'section'  => 'alcatraz_layout_section',
+			'settings' => 'alcatraz_options[section_nav]',
 		)
 	);
 
@@ -313,6 +337,25 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Footer Bottom Content', 'alcatraz' ),
 			'section'  => 'alcatraz_footer_section',
 			'settings' => 'alcatraz_options[footer_bottom]',
+		)
+	);
+
+	// Social network icons.
+	$wp_customize->add_setting(
+		'alcatraz_options[social_icons_in_footer]',
+		array(
+			'default'           => $option_defaults['social_icons_in_footer'],
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_social_icons_in_footer_control',
+		array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Show Social Icons in Footer?', 'alcatraz' ),
+			'section'  => 'alcatraz_footer_section',
+			'settings' => 'alcatraz_options[social_icons_in_footer]',
 		)
 	);
 }

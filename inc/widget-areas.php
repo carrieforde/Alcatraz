@@ -100,7 +100,7 @@ function alcatraz_output_primary_sidebar() {
 		<?php dynamic_sidebar( 'primary-sidebar' ); ?>
 		<?php do_action( 'alcatraz_after_primary_sidebar' ); ?>
 	</div>
- 	<?php
+	 <?php
 }
 
 add_action( 'alcatraz_after_header', 'alcatraz_output_page_banner_widget_area' );
@@ -138,14 +138,20 @@ function alcatraz_output_footer_widget_areas() {
 
 		for ( $i = 1; $i <= (int)$options['footer_widget_areas']; $i++ ) {
 
-			$widget_area_id = 'footer-widget-area-' . $i;
+			$widget_area_id    = 'footer-widget-area-' . $i;
+			$widget_area_class = $widget_area_id;
+
+			// Handle inconsistent -x behavior of register_sidebars.
+			if ( 1 < (int)$options['footer_widget_areas'] && 1 === $i ) {
+				$widget_area_id = 'footer-widget-area';
+			}
 
 			if ( is_active_sidebar( $widget_area_id ) ) {
 
 				printf(
 					'<div id="%s" class="%s" role="complementary">',
-					$widget_area_id,
-					$widget_area_id . ' footer-widget-area widget-area'
+					$widget_area_class,
+					$widget_area_class . ' footer-widget-area widget-area'
 				);
 
 				dynamic_sidebar( $widget_area_id );
