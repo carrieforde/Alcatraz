@@ -227,8 +227,18 @@ function alcatraz_get_the_sub_page_nav( $args = array() ) {
 	$page_list = wp_list_pages( $args );
 
 	if ( $page_list ) {
-		$output = sprintf( '<nav class="%s"><ul class="%s">%s</ul></nav>',
+
+		// Get our top page title.
+		$page_title = sprintf(
+			'<h2 class="%s"><a href="%s">%s</a></h2>',
+			'alcatraz-sub-page-nav-title',
+			get_permalink( $top_page_id ),
+			get_the_title( $top_page_id )
+		);
+
+		$output = sprintf( '<nav class="%s">%s<ul class="%s">%s</ul></nav>',
 			'alcatraz-sub-page-nav sub-page-nav',
+			$page_title,
 			'sub-page-nav-top-level',
 			$page_list
 		);
@@ -242,7 +252,7 @@ function alcatraz_get_the_sub_page_nav( $args = array() ) {
  *
  * @since 1.0.0
  */
-function alcatraz_the_sub_page_nav() {
+function alcatraz_the_sub_page_nav( $args = array() ) {
 
-	echo alcatraz_get_the_sub_page_nav();
+	echo alcatraz_get_the_sub_page_nav( $args );
 }

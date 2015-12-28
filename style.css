@@ -1204,11 +1204,6 @@ a:hover, a:active {
   padding: 0;
 }
 
-.alcatraz-sub-page-nav a {
-  padding: 10px 15px;
-  display: block;
-}
-
 .alcatraz-sub-page-nav ul {
   list-style: none;
 }
@@ -1218,6 +1213,11 @@ a:hover, a:active {
   padding: 0;
   margin: 0;
   position: relative;
+}
+
+.alcatraz-sub-page-nav li a {
+  padding: 10px 15px;
+  display: block;
 }
 
 .alcatraz-sub-page-nav .page_item_has_children > a {
