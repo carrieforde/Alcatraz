@@ -223,6 +223,7 @@ function alcatraz_scripts() {
 		'menu_toggle' => __( 'Toggle', 'alcatraz' ),
 		'menu_close'  => __( 'Close', 'alcatraz' ),
 	);
+	$vars = apply_filters( 'alcatraz_js_vars', $vars );
 
 	wp_localize_script( 'alcatraz-scripts', 'alcatraz_vars', $vars );
 
