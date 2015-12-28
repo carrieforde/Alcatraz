@@ -159,6 +159,7 @@ a {
 	width: 50px;
 	text-align: center;
 	text-indent: 9999%;
+	overflow: hidden;
 
 	&:hover .sub-level-toggle-span {
 		background-color: darken($alcatraz-blue, 10%);
