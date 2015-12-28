@@ -89,15 +89,14 @@ function alcatraz_output_primary_sidebar() {
 		return;
 	}
 
-	// Bail if we don't have widgets.
-	if ( ! is_active_sidebar( 'primary-sidebar' ) ) {
-		return;
-	}
-
 	?>
-	<div id="secondary" class="primary-sidebar sidebar widget-area" role="complementary">
+	<div id="secondary" class="primary-sidebar sidebar" role="complementary">
 		<?php do_action( 'alcatraz_before_primary_sidebar' ); ?>
-		<?php dynamic_sidebar( 'primary-sidebar' ); ?>
+		<?php if ( is_active_sidebar( 'primary-sidebar' ) ) : ?>
+			<div class="primary-sidebar-widget-area widget-area">
+				<?php dynamic_sidebar( 'primary-sidebar' ); ?>
+			</div>
+		<?php endif; ?>
 		<?php do_action( 'alcatraz_after_primary_sidebar' ); ?>
 	</div>
 	 <?php
@@ -113,7 +112,7 @@ function alcatraz_output_page_banner_widget_area() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( isset( $options['page_banner_widget_area'] ) && (int)$options['page_banner_widget_area'] && is_active_sidebar( 'page-banner' ) ) {
+	if ( ! empty( $options['page_banner_widget_area'] ) && is_active_sidebar( 'page-banner' ) ) {
 		?>
 		<section id="page-banner" class="page-banner page-banner-widget-area widget-area" role="complementary">
 			<?php dynamic_sidebar( 'page-banner' ); ?>
