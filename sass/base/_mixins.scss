@@ -88,16 +88,12 @@
 	.main-navigation #primary-menu {
 		.menu-item {
 			&.menu-item-has-children a {
-				padding-right: $size__default-padding;
+				padding-right: 40px;
 			}
 
-			&:hover > .sub-menu,
+			/*&:hover > .sub-menu,*/
 			&.hovered > .sub-menu {
 				display: block;
-			}
-
-			a.sub-menu-toggle {
-				display: none;
 			}
 
 			> .sub-menu {
@@ -143,6 +139,14 @@
 					&:hover {
 						color: $color__link-hover;
 					}
+				}
+
+				.sub-level-toggle .sub-level-toggle-span {
+					background-color: $prision-cell-gray;
+				}
+
+				.sub-level-toggle:hover .sub-level-toggle-span {
+					background-color: lighten($prision-cell-gray, 15%);
 				}
 			}
 		}

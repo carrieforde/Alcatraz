@@ -148,8 +148,8 @@ a {
 	}
 }
 
-/* Sub Menu Toggles Shared Styles */
-.sub-menu-toggle {
+/* Sub Level Toggles Shared Styles */
+.sub-level-toggle {
 	cursor: pointer;
 	position: absolute;
 	top: 0;
@@ -158,13 +158,13 @@ a {
 	padding-right: 0;
 	width: 50px;
 	text-align: center;
-	text-indent: 101%;
+	text-indent: 9999%;
 
-	&:hover .sub-menu-toggle-span {
+	&:hover .sub-level-toggle-span {
 		background-color: darken($alcatraz-blue, 10%);
 	}
 
-	.sub-menu-toggle-span {
+	.sub-level-toggle-span {
 		display: none;
 		background-color: $alcatraz-blue;
 	}
@@ -173,8 +173,8 @@ a {
 /* Chevron Sub Menu Toggle Style */
 .sub-menu-toggle-style-chevron {
 
-	.sub-menu-toggle {
-		.sub-menu-toggle-span {
+	.sub-level-toggle {
+		.sub-level-toggle-span {
 			position: absolute;
 			top: 22.5px;
 			width: 11.5px;
@@ -199,8 +199,8 @@ a {
 		}
 	}
 
-	.sub-menu-toggle.toggled {
-		.sub-menu-toggle-span {
+	.sub-level-toggle.toggled {
+		.sub-level-toggle-span {
 			&.span-1 {
 				transform: rotate(135deg) translate(-2px);
 			}
@@ -215,8 +215,8 @@ a {
 /* Plus-Minus Sub-Menu Toggle Style */
 .sub-menu-toggle-style-plus-minus {
 
-	.sub-menu-toggle {
-		.sub-menu-toggle-span {
+	.sub-level-toggle {
+		.sub-level-toggle-span {
 			position: absolute;
 			top: 22.5px;
 			left: 17.5px;
@@ -235,8 +235,8 @@ a {
 		}
 	}
 
-	.sub-menu-toggle.toggled {
-		.sub-menu-toggle-span {
+	.sub-level-toggle.toggled {
+		.sub-level-toggle-span {
 			&.span-2 {
 				transform: rotate(180deg);
 			}
@@ -292,12 +292,12 @@ a {
 
 			a {
 				display: block;
-				padding: 10px 20px;
+				padding: 10px 15px;
 				line-height: 1.5;
 				text-decoration: none;
 			}
 
-			a.sub-menu-toggle {
+			a.sub-level-toggle {
 				padding-left: 0;
 				padding-right: 0;
 			}
@@ -329,7 +329,7 @@ a {
 	#primary-menu {
 		box-shadow: 0 4px 8px -2px rgba(0,0,0,0.2);
 
-		a.sub-menu-toggle {
+		a.sub-level-toggle {
 			right: 8px;
 		}
 	}
@@ -437,7 +437,7 @@ a {
 		float: right;
 	}
 
-	.sub-menu-toggle {
+	.sub-level-toggle {
 		right: 7px;
 	}
 }
@@ -474,11 +474,11 @@ a {
 		text-indent: 101%;
 	}
 
-	.sub-menu-toggle {
+	.sub-level-toggle {
 		right: 3px;
 	}
 
-	&.sub-menu-toggle-style-plus-minus .sub-menu-toggle {
+	&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
 		right: 2px;
 	}
 }
@@ -523,7 +523,7 @@ a {
 		right: 10px;
 	}
 
-	.sub-menu-toggle {
+	.sub-level-toggle {
 		right: 8px;
 	}
 }
@@ -540,6 +540,53 @@ a {
 
 			a {
 				color: $true-white;
+			}
+
+			.sub-level-toggle .sub-level-toggle-span {
+				background-color: $true-white;
+			}
+
+			a:hover {
+				color: darken($true-white, 15%);
+			}
+
+			.sub-level-toggle:hover .sub-level-toggle-span {
+				background-color: darken($true-white, 15%);
+			}
+		}
+
+		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.sub-level-toggle {
+			right: 0;
+			width: 40px;
+		}
+
+		&.sub-menu-toggle-style-chevron .sub-level-toggle {
+			&.toggled .sub-level-toggle-span {
+				top: 25.5px;
+			}
+
+			.sub-level-toggle-span {
+				width: 8px;
+				left: 11.5px;
+				height: 1px;
+			}
+
+			.sub-level-toggle-span.span-2 {
+				right: 12.5px;
+				left: auto;
+			}
+		}
+
+		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
+			.sub-level-toggle-span {
+				width: 10px;
+				height: 1px;
+				left: 14px;
 			}
 		}
 
@@ -564,6 +611,41 @@ a {
 
 			#primary-menu {
 				text-align: right;
+			}
+		}
+
+		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.sub-level-toggle {
+			right: 0;
+			width: 40px;
+		}
+
+		&.sub-menu-toggle-style-chevron .sub-level-toggle {
+			&.toggled .sub-level-toggle-span {
+				top: 25.5px;
+			}
+
+			.sub-level-toggle-span {
+				width: 8px;
+				left: 11.5px;
+				height: 1px;
+			}
+
+			.sub-level-toggle-span.span-2 {
+				right: 12.5px;
+				left: auto;
+			}
+		}
+
+		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
+			.sub-level-toggle-span {
+				width: 10px;
+				height: 1px;
+				left: 14px;
 			}
 		}
 

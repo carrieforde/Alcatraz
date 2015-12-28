@@ -12,7 +12,82 @@
 	var closeText  = alcatraz_vars.menu_close  || '';
 
 	/**
+	 * Initialize sub-level toggle functionality on a ul element.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param  {object}  options  The toggle options.
+	 */
+	$.fn.aczSetupListToggle = function( options ) {
+		var $list     = $( this );
+		var $subList  = $list.find( 'li' ).has( 'ul' );
+		var args      = options || {};
+		var hoverOpen = args.hoverOpen || false;
+
+		var toggle = '<a class="sub-level-toggle">' + toggleText +
+		                 '<span class="sub-level-toggle-span span-1"></span>' +
+		                 '<span class="sub-level-toggle-span span-2"></span>' +
+		                 '<span class="sub-level-toggle-span span-3"></span>' +
+		             '</a>';
+
+		// Loop over each item that has a sub level and inject the toggle.
+		$subList.each( function() {
+			$( this ).find( 'a' ).first().after( toggle );
+		});
+
+		// Toggle the expanded state of sub levels when the toggles are clicked.
+		$list.find( '.sub-level-toggle' ).on( 'click', function( e ) {
+			e.preventDefault();
+
+			$( this ).parent( 'li' ).aczListSubLevelToggle( $list, args );
+		});
+	};
+
+	/**
+	 * Do the sub level toggling.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param  {jQuery obj}  $list    The ul element.
+	 * @param  {object}      options  The toggle options.
+	 */
+	$.fn.aczListSubLevelToggle = function( $list, options ) {
+		var $item     = $( this );
+		var $toggle   = $item.find( '.sub-level-toggle' ).first();
+		var $parent   = $toggle.parents( 'li' ).last();
+		var $sub      = $item.find( 'ul' ).first();
+		var autoClose = options.autoClose || false;
+
+		if ( autoClose ) {
+			$list.find( 'ul' ).not( $parent.find( 'ul' ) ).slideUp();
+			$list.find( '.toggled' ).not( $parent.find( '.toggled' ) ).removeClass( 'toggled' );
+		}
+
+		$item.toggleClass( 'toggled' );
+		$toggle.toggleClass( 'toggled' ).blur().next( 'ul' ).slideToggle().toggleClass( 'toggled' );
+
+		// If we're setting up the primary nav and the menu item has children,
+		// detect whether they may be overflowing off the screen and add a class if they are.
+		if ( $list.is( '#primary-menu' ) && $item.hasClass( 'menu-item-has-children' ) && $item.hasClass( 'toggled' ) ) {
+			var rightEdge   = $sub.width() + $sub.offset().left;
+			var screenWidth = $window.width();
+
+			if ( rightEdge > screenWidth ) {
+				$item.addClass( 'reverse-expand' );
+			}
+		} else {
+
+			// Delay removing the class just a bit so the slideup animation can finish.
+			setTimeout( function() {
+				$item.removeClass( 'reverse-expand' );
+			}, 500 );
+		}
+	};
+
+	/**
 	 * Toggle the .focus class on nav items.
+	 *
+	 * @since  1.0.0
 	 */
 	function aczToggleNavFocus() {
 		var self = this;
@@ -35,6 +110,8 @@
 
 	/**
 	 * Do the primary nav top level mobile nav toggle.
+	 *
+	 * @since  1.0.0
 	 */
 	function aczToggleMobileNav() {
 		$container = $( '#site-navigation' );
@@ -56,21 +133,22 @@
 
 	/**
 	 * Set up the Primary Navigation expand/contract functionality.
+	 *
+	 * @since  1.0.0
 	 */
 	function aczSetupPrimaryNavigation() {
-		var $container, $toggle, $menu, menuToggle, innerMenuToggle, $links, $subMenus;
 
-		$container = $( '#site-navigation' );
+		var $container = $( '#site-navigation' );
 		if ( ! $container ) {
 			return;
 		}
 
-		$toggle = $container.find( '.menu-toggle' );
+		var $toggle = $container.find( '.menu-toggle' );
 		if ( 'undefined' === typeof $toggle ) {
 			return;
 		}
 
-		$menu = $container.find( '#primary-menu' );
+		var $menu = $container.find( '#primary-menu' );
 		if ( 'undefined' === typeof $menu ) {
 			$toggle.css( 'display', 'none' );
 			return;
@@ -103,61 +181,29 @@
 		$window.on( 'aczToggleMobileNav', aczToggleMobileNav );
 
 		/**
-		 * Set up the sub menu dropdown toggle.
+		 * Set up the sub menu dropdown toggles.
 		 */
-		$menu.find( '.menu-item' ).hover( function() {
-			$( this ).addClass( 'hovered' );
+		var toggleOptions = {
+			autoClose: true,
+			hoverOpen: true,
+		};
+		$menu.aczSetupListToggle( toggleOptions );
 
-			// If the menu item has children, detect whether they may be overflowing
-			// off the screen and add a class if they are.
-			if ( $( this ).hasClass( 'menu-item-has-children' ) ) {
-				var $sub        = $( this ).find( '.sub-menu' ).first();
-				var rightEdge   = $sub.width() + $sub.offset().left;
-				var screenWidth = $window.width();
-
-				if ( rightEdge > screenWidth ) {
-					$( this ).addClass( 'reverse-expand' );
-				}
-			}
-		}, function() {
-			$( this ).removeClass( 'hovered reverse-expand' );
-		});
-
-		/**
-		 * Set up the mobile nav sub menu toggles.
-		 */
-		menuToggle = '<a class="sub-menu-toggle">' + toggleText +
-		                 '<span class="sub-menu-toggle-span span-1"></span>' +
-		                 '<span class="sub-menu-toggle-span span-2"></span>' +
-		                 '<span class="sub-menu-toggle-span span-3"></span>' +
-		             '</a>';
-
-		innerMenuToggle = '<div class="inner-menu-toggle">' + closeText +
-		                      '<span class="inner-menu-toggle-span span-1"></span>' +
-		                      '<span class="inner-menu-toggle-span span-2"></span>' +
-		                      '<span class="inner-menu-toggle-span span-3"></span>' +
-		                  '</div>';
+		var innerMenuToggle = '<div class="inner-menu-toggle">' + closeText +
+		                          '<span class="inner-menu-toggle-span span-1"></span>' +
+		                          '<span class="inner-menu-toggle-span span-2"></span>' +
+		                          '<span class="inner-menu-toggle-span span-3"></span>' +
+		                      '</div>';
 
 		$menu.before( innerMenuToggle );
-		$menu.find( 'li.menu-item-has-children > a' ).after( menuToggle );
 
 		$( '.inner-menu-toggle' ).on( 'click', function() {
 			$window.trigger( 'aczToggleMobileNav' );
 		});
 
-		// Toggle the expanded state of sub-menus when the toggles are clicked.
-		$( '.sub-menu-toggle' ).on( 'click', function( e ) {
-			e.preventDefault();
-
-			var $this = $( this );
-
-			$this.toggleClass( 'toggled' );
-			$this.blur().next( '.sub-menu' ).slideToggle().toggleClass( 'toggled' );
-		});
-
 		// Get all the link elements within the menu.
-		$links    = $menu.find( 'a' );
-		$subMenus = $menu.find( 'ul' );
+		var $links    = $menu.find( 'a' );
+		var $subMenus = $menu.find( 'ul' );
 
 		// Set menu items with submenus to aria-haspopup="true".
 		$subMenus.each( function() {

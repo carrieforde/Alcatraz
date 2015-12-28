@@ -1105,8 +1105,8 @@ a:hover, a:active {
           transform: rotate(-45deg) translate(5px, -6px);
 }
 
-/* Sub Menu Toggles Shared Styles */
-.sub-menu-toggle {
+/* Sub Level Toggles Shared Styles */
+.sub-level-toggle {
   cursor: pointer;
   position: absolute;
   top: 0;
@@ -1115,20 +1115,20 @@ a:hover, a:active {
   padding-right: 0;
   width: 50px;
   text-align: center;
-  text-indent: 101%;
+  text-indent: 9999%;
 }
 
-.sub-menu-toggle:hover .sub-menu-toggle-span {
+.sub-level-toggle:hover .sub-level-toggle-span {
   background-color: #567f87;
 }
 
-.sub-menu-toggle .sub-menu-toggle-span {
+.sub-level-toggle .sub-level-toggle-span {
   display: none;
   background-color: #6E9AA2;
 }
 
 /* Chevron Sub Menu Toggle Style */
-.sub-menu-toggle-style-chevron .sub-menu-toggle .sub-menu-toggle-span {
+.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span {
   position: absolute;
   top: 22.5px;
   width: 11.5px;
@@ -1136,36 +1136,36 @@ a:hover, a:active {
   transition: all 0.2s ease;
 }
 
-.sub-menu-toggle-style-chevron .sub-menu-toggle .sub-menu-toggle-span.span-1 {
+.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span.span-1 {
   display: block;
   left: 16.5px;
   -webkit-transform: rotate(45deg) translate(2px);
           transform: rotate(45deg) translate(2px);
 }
 
-.sub-menu-toggle-style-chevron .sub-menu-toggle .sub-menu-toggle-span.span-2 {
+.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span.span-2 {
   display: block;
   right: 12.5px;
   -webkit-transform: rotate(-45deg) translate(-2px);
           transform: rotate(-45deg) translate(-2px);
 }
 
-.sub-menu-toggle-style-chevron .sub-menu-toggle .sub-menu-toggle-span.span-3 {
+.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span.span-3 {
   display: none;
 }
 
-.sub-menu-toggle-style-chevron .sub-menu-toggle.toggled .sub-menu-toggle-span.span-1 {
+.sub-menu-toggle-style-chevron .sub-level-toggle.toggled .sub-level-toggle-span.span-1 {
   -webkit-transform: rotate(135deg) translate(-2px);
           transform: rotate(135deg) translate(-2px);
 }
 
-.sub-menu-toggle-style-chevron .sub-menu-toggle.toggled .sub-menu-toggle-span.span-2 {
+.sub-menu-toggle-style-chevron .sub-level-toggle.toggled .sub-level-toggle-span.span-2 {
   -webkit-transform: rotate(-135deg) translate(2px);
           transform: rotate(-135deg) translate(2px);
 }
 
 /* Plus-Minus Sub-Menu Toggle Style */
-.sub-menu-toggle-style-plus-minus .sub-menu-toggle .sub-menu-toggle-span {
+.sub-menu-toggle-style-plus-minus .sub-level-toggle .sub-level-toggle-span {
   position: absolute;
   top: 22.5px;
   left: 17.5px;
@@ -1174,17 +1174,17 @@ a:hover, a:active {
   transition: all 0.2s ease-out;
 }
 
-.sub-menu-toggle-style-plus-minus .sub-menu-toggle .sub-menu-toggle-span.span-1 {
+.sub-menu-toggle-style-plus-minus .sub-level-toggle .sub-level-toggle-span.span-1 {
   display: block;
 }
 
-.sub-menu-toggle-style-plus-minus .sub-menu-toggle .sub-menu-toggle-span.span-2 {
+.sub-menu-toggle-style-plus-minus .sub-level-toggle .sub-level-toggle-span.span-2 {
   display: block;
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
 }
 
-.sub-menu-toggle-style-plus-minus .sub-menu-toggle.toggled .sub-menu-toggle-span.span-2 {
+.sub-menu-toggle-style-plus-minus .sub-level-toggle.toggled .sub-level-toggle-span.span-2 {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
 }
@@ -1243,12 +1243,12 @@ a:hover, a:active {
 
 .main-navigation #primary-menu .menu-item a {
   display: block;
-  padding: 10px 20px;
+  padding: 10px 15px;
   line-height: 1.5;
   text-decoration: none;
 }
 
-.main-navigation #primary-menu .menu-item a.sub-menu-toggle {
+.main-navigation #primary-menu .menu-item a.sub-level-toggle {
   padding-left: 0;
   padding-right: 0;
 }
@@ -1277,7 +1277,7 @@ a:hover, a:active {
   box-shadow: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
 }
 
-.mobile-nav-style-default #primary-menu a.sub-menu-toggle {
+.mobile-nav-style-default #primary-menu a.sub-level-toggle {
   right: 8px;
 }
 
@@ -1360,7 +1360,7 @@ a:hover, a:active {
   float: right;
 }
 
-.mobile-nav-style-slide-left .sub-menu-toggle {
+.mobile-nav-style-slide-left .sub-level-toggle {
   right: 7px;
 }
 
@@ -1395,11 +1395,11 @@ a:hover, a:active {
   text-indent: 101%;
 }
 
-.mobile-nav-style-slide-right .sub-menu-toggle {
+.mobile-nav-style-slide-right .sub-level-toggle {
   right: 3px;
 }
 
-.mobile-nav-style-slide-right.sub-menu-toggle-style-plus-minus .sub-menu-toggle {
+.mobile-nav-style-slide-right.sub-menu-toggle-style-plus-minus .sub-level-toggle {
   right: 2px;
 }
 
@@ -1442,7 +1442,7 @@ a:hover, a:active {
   right: 10px;
 }
 
-.mobile-nav-style-full-screen .sub-menu-toggle {
+.mobile-nav-style-full-screen .sub-level-toggle {
   right: 8px;
 }
 
@@ -1947,15 +1947,13 @@ a:hover, a:active {
     width: auto;
     text-align: left;
   }
-  .header-style-default .main-navigation #primary-menu .menu-item.menu-item-has-children a {
-    padding-right: 20px;
+  .header-style-default .main-navigation #primary-menu .menu-item {/*&:hover > .sub-menu,*/
   }
-  .header-style-default .main-navigation #primary-menu .menu-item:hover > .sub-menu,
+  .header-style-default .main-navigation #primary-menu .menu-item.menu-item-has-children a {
+    padding-right: 40px;
+  }
   .header-style-default .main-navigation #primary-menu .menu-item.hovered > .sub-menu {
     display: block;
-  }
-  .header-style-default .main-navigation #primary-menu .menu-item a.sub-menu-toggle {
-    display: none;
   }
   .header-style-default .main-navigation #primary-menu .menu-item > .sub-menu {
     position: absolute;
@@ -1988,11 +1986,51 @@ a:hover, a:active {
   .header-style-default .main-navigation #primary-menu .sub-menu .menu-item a:hover {
     color: #426268;
   }
+  .header-style-default .main-navigation #primary-menu .sub-menu .menu-item .sub-level-toggle .sub-level-toggle-span {
+    background-color: #535d65;
+  }
+  .header-style-default .main-navigation #primary-menu .sub-menu .menu-item .sub-level-toggle:hover .sub-level-toggle-span {
+    background-color: #76848e;
+  }
   .header-style-default #primary-menu {
     background-color: #6E9AA2;
   }
   .header-style-default #primary-menu a {
     color: #fff;
+  }
+  .header-style-default #primary-menu .sub-level-toggle .sub-level-toggle-span {
+    background-color: #fff;
+  }
+  .header-style-default #primary-menu a:hover {
+    color: #d9d9d9;
+  }
+  .header-style-default #primary-menu .sub-level-toggle:hover .sub-level-toggle-span {
+    background-color: #d9d9d9;
+  }
+  .header-style-default .main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-style-default .sub-level-toggle {
+    right: 0;
+    width: 40px;
+  }
+  .header-style-default.sub-menu-toggle-style-chevron .sub-level-toggle.toggled .sub-level-toggle-span {
+    top: 25.5px;
+  }
+  .header-style-default.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span {
+    width: 8px;
+    left: 11.5px;
+    height: 1px;
+  }
+  .header-style-default.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span.span-2 {
+    right: 12.5px;
+    left: auto;
+  }
+  .header-style-default.sub-menu-toggle-style-plus-minus .sub-level-toggle .sub-level-toggle-span {
+    width: 10px;
+    height: 1px;
+    left: 14px;
   }
   .header-style-default .inner-menu-toggle {
     display: none;
@@ -2028,15 +2066,13 @@ a:hover, a:active {
     width: auto;
     text-align: left;
   }
-  .header-style-short .main-navigation #primary-menu .menu-item.menu-item-has-children a {
-    padding-right: 20px;
+  .header-style-short .main-navigation #primary-menu .menu-item {/*&:hover > .sub-menu,*/
   }
-  .header-style-short .main-navigation #primary-menu .menu-item:hover > .sub-menu,
+  .header-style-short .main-navigation #primary-menu .menu-item.menu-item-has-children a {
+    padding-right: 40px;
+  }
   .header-style-short .main-navigation #primary-menu .menu-item.hovered > .sub-menu {
     display: block;
-  }
-  .header-style-short .main-navigation #primary-menu .menu-item a.sub-menu-toggle {
-    display: none;
   }
   .header-style-short .main-navigation #primary-menu .menu-item > .sub-menu {
     position: absolute;
@@ -2069,6 +2105,12 @@ a:hover, a:active {
   .header-style-short .main-navigation #primary-menu .sub-menu .menu-item a:hover {
     color: #426268;
   }
+  .header-style-short .main-navigation #primary-menu .sub-menu .menu-item .sub-level-toggle .sub-level-toggle-span {
+    background-color: #535d65;
+  }
+  .header-style-short .main-navigation #primary-menu .sub-menu .menu-item .sub-level-toggle:hover .sub-level-toggle-span {
+    background-color: #76848e;
+  }
   .header-style-short .main-navigation {
     text-align: right;
     float: right;
@@ -2077,6 +2119,31 @@ a:hover, a:active {
   }
   .header-style-short .main-navigation #primary-menu {
     text-align: right;
+  }
+  .header-style-short .main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  .header-style-short .sub-level-toggle {
+    right: 0;
+    width: 40px;
+  }
+  .header-style-short.sub-menu-toggle-style-chevron .sub-level-toggle.toggled .sub-level-toggle-span {
+    top: 25.5px;
+  }
+  .header-style-short.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span {
+    width: 8px;
+    left: 11.5px;
+    height: 1px;
+  }
+  .header-style-short.sub-menu-toggle-style-chevron .sub-level-toggle .sub-level-toggle-span.span-2 {
+    right: 12.5px;
+    left: auto;
+  }
+  .header-style-short.sub-menu-toggle-style-plus-minus .sub-level-toggle .sub-level-toggle-span {
+    width: 10px;
+    height: 1px;
+    left: 14px;
   }
   .header-style-short .inner-menu-toggle {
     display: none;
