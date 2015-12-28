@@ -27,7 +27,7 @@ function alcatraz_register_widget_areas() {
 	) );
 
 	// Page Banner.
-	if ( isset( $options['page_banner_widget_area'] ) && (int)$options['page_banner_widget_area'] ) {
+	if ( ! empty( $options['page_banner_widget_area'] ) ) {
 		register_sidebar( array(
 			'name'          => esc_html__( 'Page Banner', 'alcatraz' ),
 			'id'            => 'page-banner',
@@ -40,7 +40,7 @@ function alcatraz_register_widget_areas() {
 	}
 
 	// Footer.
-	if ( isset( $options['footer_widget_areas'] ) && 0 < (int)$options['footer_widget_areas'] ) {
+	if ( ! empty( $options['footer_widget_areas'] ) ) {
 
 		// Calling register_sidebars to register only one widget area causes problems, so we'll
 		// handle that case separately.

@@ -188,115 +188,53 @@ function alcatraz_the_social_network_icons() {
 /**
  * Display the section nav output.
  *
- * @since 1.0.0
+ * @since   1.0.0
+ *
+ * @param   array  $args  The args for wp_list_pages().
+ *
+ * @return  string        The sub page nav HTML.
  */
-function alcatraz_get_subpage_nav() {
-
-	$options = get_option( 'alcatraz_options' );
+function alcatraz_get_sub_page_nav( $args = array() ) {
 
 	global $post;
 
-	$args = array();
-
-	//defaults
-	$defaults = alcatraz_get_subpage_nav_options();
-
-	$args = wp_parse_args( $args, $defaults );
-
-	// Get clean param values.
-	$show_all     = $args['show_all'];
-	$show_on_home = $args['show_on_home'];
-	$show_empty   = $args['show_empty'];
-	$exclude_list = $args['exclude_list'];
-	$sort_by      = $args['sort_by'];
-	$title        = $args['title'];
-
-	if ( is_search() || is_404() ) {
-		return false; //doesn't apply to search or 404 page
+	// Only proceed if we have a post object and we're displaying a page.
+	if ( ! $post || ! is_page() ) {
+		return false;
 	}
 
-	if ( is_front_page() ) {
-		return false;	//if we're on the front page and we haven't chosen to show this anyways, leave
-	}
+	$output   = '';
 
+	// Find the top level page id.
 	if ( ! $post->post_parent ) {
-		$children = wp_list_pages( array(
-			'title_li'    => '',
-			'depth'       => 1,
-			'sort_column' => $sort_by,
-			'child_of'    => $post->ID,
-			'echo'        => false,
-			));
-		}
+		$top_page_id = $post->ID;
+	} else {
+		$ancestors    = get_post_ancestors( $post );
+		$top_page_id = $ancestors ? end( $ancestors ) : $post->ID;
+	}
 
-	if ( is_page() ) {
+	$default_args = array(
+		'depth'       => 5,
+		'echo'        => 0,
+		'title_li'    => '',
+	);
+	$args = wp_parse_args( $args, $default_args );
 
-		if ( isset( $post) && is_object( $post ) ) {
-		get_post_ancestors($post);
-   		//workaround for occassional problems
-		} else {
+	// Use the top level page id.
+	$args['child_of'] = $top_page_id;
 
-			if ( $post_page = get_option("page_for_posts") ) {
+	// Generate the page list.
+	$page_list = wp_list_pages( $args );
 
-		 		$post = get_page($post_page);
-			}
-		 //treat the posts page as the current page if applicable
-		else return false;
-
-		}
-
-		if ( is_front_page() || isset( $sub_front_page ) ) {
-
-			echo "<ul>";
-
-			$children = wp_list_pages(array(
-				'title_li'    => '',
-				'depth'       => 1,
-				'sort_column' => $sort_by,
-				'echo'        => false
-				));
-
-			echo $children;
-			echo "</ul>";
-			return true;
-	  	}
-
-		$post_ancestors = ( isset($post->ancestors) ) ? $post->ancestors : get_post_ancestors($post); //get the current page's ancestors either from existing value or by executing function
-		$top_page = $post_ancestors ? end($post_ancestors) : $post->ID; //get the top page id
-
-		$thedepth = 0; //initialize default variables
-
-		$excluded = explode(',', $exclude_list); //convert list of excluded pages to array
-
-		if ( in_array( $post->ID,$excluded ) ) {
-			return false; //if on excluded page, and setup to hide on excluded pages
-		}
-
-		$post_ancestors = ( isset($post->ancestors) ) ? $post->ancestors : get_post_ancestors($post); //get the current page's ancestors either from existing value or by executing function
-		$top_page = $post_ancestors ? end($post_ancestors) : $post->ID; //get the top page id
-
-		$children = wp_list_pages(array(
-			'title_li'    => '',
-			'echo'        => 0,
-			'depth'       => $thedepth,
-			'child_of'    => $top_page,
-			'sort_column' => $sort_by
-		 	));	//get the list of pages, including only those in our page list
-
-		if( ! $children && ! $show_empty) {
-			return false; 	//if there are no pages in this section, and user hasnt chosen to display widget anyways, leave the function
-		}
-
-		printf( '<aside id="%s" class="%s"><div id="%s" class="%s" role="complementary"><ul class="%s">%s</ul></aside>',
-			'alcatraz_sidebar_nav',
-			'sidebar-nav',
-			'secondary',
-			'primary-sidebar sidebar',
-			'sidebar-nav-top-level',
-			$children
+	if ( $page_list ) {
+		$output = sprintf( '<nav class="%s"><ul class="%s">%s</ul></nav>',
+			'alcatraz-sub-page-nav sub-page-nav',
+			'sub-page-nav-top-level',
+			$page_list
 		);
 	}
 
+	return $output;
 }
 
 /**
@@ -304,7 +242,7 @@ function alcatraz_get_subpage_nav() {
  *
  * @since 1.0.0
  */
-function alcatraz_the_subpage_nav() {
+function alcatraz_the_sub_page_nav() {
 
-	echo alcatraz_get_subpage_nav();
+	echo alcatraz_get_sub_page_nav();
 }
