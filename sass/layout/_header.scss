@@ -19,7 +19,7 @@
 	}
 
 	.header-inner {
-		padding: $size__default-padding $size__default-padding 0;
+		padding: $size__padding-default $size__padding-default 0;
 		position: relative;
 
 		.mobile-nav-toggle-style-hamburger & {
@@ -86,7 +86,7 @@
 
 				.header-inner {
 					@include span-columns(4 of 12);
-					padding: $size__default-padding;
+					padding: $size__padding-default;
 				}
 
 				.main-navigation {
@@ -106,7 +106,7 @@
 			width: calc(280px);
 			height: 100%;
 			position: fixed;
-			padding: $size__default-padding-half 0;
+			padding: $size__padding-default-half 0;
 			overflow-y: auto;
 
 			.header-inner {
@@ -121,7 +121,7 @@
 			}
 
 			.site {
-				max-width: $size__boxed-content-width;
+				max-width: $size__width-boxed-content;
 				@include center-block;
 			}
 		}
@@ -134,7 +134,7 @@
 
 		.content-area,
 		.primary-sidebar {
-			padding: ($size__default-padding * 1.5) $size__default-padding;
+			padding: ($size__padding-default * 1.5) $size__padding-default;
 		}
 	}
 }
@@ -156,7 +156,7 @@
 	.header-style-side {
 		.site-header {
 			width: calc(320px);
-			padding: $size__default-padding $size__default-padding-half;
+			padding: $size__padding-default $size__padding-default-half;
 		}
 
 		.site-content {
@@ -164,11 +164,11 @@
 		}
 
 		.content-area {
-			padding: $size__default-padding-double ($size__default-padding * 1.5);
+			padding: $size__padding-default-double ($size__padding-default * 1.5);
 		}
 
 		.primary-sidebar {
-			padding: $size__default-padding-double ($size_-default-padding * 1.5) $size__default-padding-double $size__default-padding;
+			padding: $size__padding-default-double ($size__padding-default * 1.5) $size__padding-default-double $size__padding-default;
 		}
 	}
 }

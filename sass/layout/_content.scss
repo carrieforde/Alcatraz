@@ -13,7 +13,7 @@
 
 .boxed .site,
 .boxed-content .site-content {
-	max-width: $size__boxed-content-width;
+	max-width: $size__width-boxed-content;
 	@include center-block;
 }
 
@@ -31,9 +31,9 @@
 }
 
 .content-area {
-	width: $size__site-width;
+	width: $size__width-site;
 	margin: 0 auto;
-	padding: $size__default-padding;
+	padding: $size__padding-default;
 }
 
 /**

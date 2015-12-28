@@ -356,7 +356,7 @@ a {
 			width: 100%;
 			min-width: 165px;
 			margin: 0;
-			padding-left: $size__default-padding;
+			padding-left: $size__padding-default;
 			z-index: 99;
 			background-color: #fff;
 			list-style-type: none;
@@ -655,7 +655,7 @@ a {
 			text-align: right;
 			float: right;
 			clear: none;
-			padding: $size__default-padding;
+			padding: $size__padding-default;
 
 			#primary-menu {
 				text-align: right;

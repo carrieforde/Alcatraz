@@ -4,8 +4,8 @@
 
 .site-footer {
 	clear: both;
-	width: $size__site-width;
-	padding: $size__default-padding;
+	width: $size__width-site;
+	padding: $size__padding-default;
 
 	.footer-widget-areas {
 		&::after {

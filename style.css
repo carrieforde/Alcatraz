@@ -313,7 +313,7 @@ body.mce-content-body {
 }
 
 hr {
-  background-color: #ccc;
+  background-color: #3897ef;
   border: 0;
   height: 1px;
   margin-bottom: 1.5em;
@@ -574,7 +574,7 @@ code,
 kbd,
 tt,
 var {
-  font-family: "Source Code Pro", monospace;
+  font-family: "Source Code Pro", Courier, monospace;
   font-size: 14px;
   font-size: 0.875em;
 }
@@ -785,7 +785,7 @@ input[type="submit"] {
   border: 1px solid;
   border-color: #ccc #ccc #bbb;
   border-radius: 3px;
-  background: #e6e6e6;
+  background: #3897ef;
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.5), inset 0 15px 17px rgba(255, 255, 255, 0.5), inset 0 -5px 12px rgba(0, 0, 0, 0.05);
   color: rgba(0, 0, 0, 0.8);
   font-size: 14px;
@@ -879,7 +879,7 @@ td :last-child {
 }
 
 .site-header .header-inner {
-  padding: 20px 20px 0;
+  padding: 1.25em 1.25em 0;
   position: relative;
 }
 
@@ -959,16 +959,16 @@ td :last-child {
  * 4.2.1 Links
  */
 a {
-  color: #6E9AA2;
+  color: #3897ef;
   text-decoration: none;
 }
 
 a:visited {
-  color: #1b2729;
+  color: #0b4983;
 }
 
 a:hover, a:focus, a:active {
-  color: #426268;
+  color: #0e64b3;
 }
 
 a:focus {
@@ -1000,7 +1000,7 @@ a:hover, a:active {
 }
 
 .inner-menu-toggle:hover .inner-menu-toggle-span {
-  background-color: #567f87;
+  background-color: #127ee2;
 }
 
 .inner-menu-toggle .inner-menu-toggle-span {
@@ -1009,7 +1009,7 @@ a:hover, a:active {
   left: 9px;
   width: 25px;
   height: 3px;
-  background-color: #6E9AA2;
+  background-color: #3897ef;
   transition: all 0.2s ease;
 }
 
@@ -1036,7 +1036,7 @@ a:hover, a:active {
   padding: 15px 20px;
   margin: 20px 20px 0;
   border-radius: 5px;
-  background-color: #6E9AA2;
+  background-color: #3897ef;
   color: #fff;
   font-weight: 400;
   text-align: center;
@@ -1044,7 +1044,7 @@ a:hover, a:active {
 }
 
 .mobile-nav-toggle-style-button .menu-toggle:hover {
-  background-color: #426268;
+  background-color: #0e64b3;
 }
 
 /* Mobile Nav Hamburger Toggle Style */
@@ -1058,14 +1058,14 @@ a:hover, a:active {
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle:hover .menu-toggle-span {
-  background-color: #567f87;
+  background-color: #127ee2;
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle .menu-toggle-span {
   position: absolute;
   width: 25px;
   height: 3px;
-  background-color: #6E9AA2;
+  background-color: #3897ef;
   transition: all 0.2s ease;
 }
 
@@ -1123,12 +1123,12 @@ a:hover, a:active {
 }
 
 .sub-level-toggle:hover .sub-level-toggle-span {
-  background-color: #567f87;
+  background-color: #127ee2;
 }
 
 .sub-level-toggle .sub-level-toggle-span {
   display: none;
-  background-color: #6E9AA2;
+  background-color: #3897ef;
 }
 
 /* Chevron Sub Menu Toggle Style */
@@ -1309,7 +1309,7 @@ a:hover, a:active {
   width: 100%;
   min-width: 165px;
   margin: 0;
-  padding-left: 20px;
+  padding-left: 1.25em;
   z-index: 99;
   background-color: #fff;
   list-style-type: none;
@@ -1567,7 +1567,7 @@ a:hover, a:active {
 .content-area {
   width: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: 1.25em;
 }
 
 /**
@@ -1626,7 +1626,7 @@ a:hover, a:active {
  */
 .primary-sidebar {
   margin: 0;
-  padding: 20px;
+  padding: 1.25em;
 }
 
 /**
@@ -1635,7 +1635,7 @@ a:hover, a:active {
 .site-footer {
   clear: both;
   width: 100%;
-  padding: 20px;
+  padding: 1.25em;
 }
 
 .site-footer .footer-widget-areas::after {
@@ -1922,7 +1922,7 @@ a:hover, a:active {
     display: block;
     margin-right: 2.3576515979%;
     width: 31.7615656014%;
-    padding: 20px;
+    padding: 1.25em;
   }
   .header-style-short .header-inner:last-child {
     margin-right: 0;
@@ -2033,7 +2033,7 @@ a:hover, a:active {
     color: #535d65;
   }
   .header-style-default .main-navigation #primary-menu .sub-menu .menu-item a:hover {
-    color: #426268;
+    color: #0e64b3;
   }
   .header-style-default .main-navigation #primary-menu .sub-menu .menu-item .sub-level-toggle .sub-level-toggle-span {
     background-color: #535d65;
@@ -2042,7 +2042,7 @@ a:hover, a:active {
     background-color: #76848e;
   }
   .header-style-default #primary-menu {
-    background-color: #6E9AA2;
+    background-color: #3897ef;
   }
   .header-style-default #primary-menu a {
     color: #fff;
@@ -2150,7 +2150,7 @@ a:hover, a:active {
     color: #535d65;
   }
   .header-style-short .main-navigation #primary-menu .sub-menu .menu-item a:hover {
-    color: #426268;
+    color: #0e64b3;
   }
   .header-style-short .main-navigation #primary-menu .sub-menu .menu-item .sub-level-toggle .sub-level-toggle-span {
     background-color: #535d65;
@@ -2162,7 +2162,7 @@ a:hover, a:active {
     text-align: right;
     float: right;
     clear: none;
-    padding: 20px;
+    padding: 1.25em;
   }
   .header-style-short .main-navigation #primary-menu {
     text-align: right;
@@ -2246,7 +2246,7 @@ a:hover, a:active {
     width: calc(280px);
     height: 100%;
     position: fixed;
-    padding: 10px 0;
+    padding: 0.625em 0;
     overflow-y: auto;
   }
   .header-style-side .site-header .header-inner {
@@ -2268,7 +2268,7 @@ a:hover, a:active {
   }
   .header-style-side .content-area,
   .header-style-side .primary-sidebar {
-    padding: 30px 20px;
+    padding: 1.875em 1.25em;
   }
   .logo-mobile .has-logo.header-style-side.has-mobile-logo {
     display: none;
@@ -2347,16 +2347,16 @@ a:hover, a:active {
 @media (min-width: 71.875em) {
   .header-style-side .site-header {
     width: calc(320px);
-    padding: 20px 10px;
+    padding: 1.25em 0.625em;
   }
   .header-style-side .site-content {
     width: calc(100% - 320px);
   }
   .header-style-side .content-area {
-    padding: 40px 30px;
+    padding: 2.5em 1.875em;
   }
   .header-style-side .primary-sidebar {
-    padding: 40px 30px 40px 20px;
+    padding: 2.5em 1.875em 2.5em 1.25em;
   }
 }
 /*# sourceMappingURL=style.css.map */
