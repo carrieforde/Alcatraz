@@ -33,6 +33,7 @@ function alcatraz_get_option_defaults() {
 		'instagram_url'           => '',
 		'pinterest_url'           => '',
 		'youtube_url'             => '',
+		'subpage_nav'             => '',
 		'social_icons_in_footer'  => '',
 	);
 
@@ -109,6 +110,9 @@ function alcatraz_validate_options( $input ) {
 	}
 	if ( isset( $input['footer_bottom'] ) ) {
 		$options['footer_bottom'] = wp_kses_post( $input['footer_bottom'] );
+	}
+	if ( isset( $input['subpage_nav'] ) ) {
+		$options['subpage_nav']   = absint( $input['subpage_nav'] );
 	}
 	if ( isset( $input['social_icons_in_footer'] ) ) {
 		$options['social_icons_in_footer'] = absint( $input['social_icons_in_footer'] );
@@ -260,3 +264,27 @@ function alcatraz_get_sub_menu_toggles( $context = '' ) {
 
 	return apply_filters( 'alcatraz_sub_menu_toggle_styles', $toggles, $context );
 }
+
+/**
+ * Return an array of section nav options.
+ *
+ * @since   1.0.0
+ *
+ * @param   string  $context  The context to pass to our filter.
+ *
+ * @return  array             The array of options.
+ */
+function alcatraz_get_subpage_nav_options( $context = '' ) {
+
+	$defaults = array(
+		'show_all'      => true,
+		'show_on_home'  => false,
+		'show_empty'    => false,
+		'exclude_list'  => '',
+		'sort_by'       => 'menu_order',
+		'title'         => ''
+	);
+
+	return apply_filters( 'alcatraz_subpage_nav_options', $defaults, $context );
+}
+

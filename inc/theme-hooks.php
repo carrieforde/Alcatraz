@@ -126,6 +126,22 @@ function alcatraz_output_footer_bottom() {
 	}
 }
 
+add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_subpage_nav', 5 );
+/**
+ * Output the section nav.
+ *
+ * @since  1.0.0
+ */
+ function alcatraz_output_subpage_nav() {
+
+ 	$options = get_option( 'alcatraz_options' );
+
+ 	if ( ! empty( $options['subpage_nav'] ) ) {
+
+ 		alcatraz_the_subpage_nav();
+ 	}
+ }
+
 add_action( 'alcatraz_footer', 'alcatraz_output_social_network_icons', 80 );
 /**
  * Output the social network icons.

@@ -129,6 +129,25 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
+	// Section nav.
+	$wp_customize->add_setting(
+		'alcatraz_options[subpage_nav]',
+		array(
+			'default'           => $option_defaults['subpage_nav'],
+			'type'              => 'option',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control(
+		'alcatraz_subpage_nav_control',
+		array(
+			'type'     => 'checkbox',
+			'label'    => __( 'Show subpage nav in primary sidebar?', 'alcatraz' ),
+			'section'  => 'alcatraz_layout_section',
+			'settings' => 'alcatraz_options[subpage_nav]',
+		)
+	);
+
 	// Page Banner widget area.
 	$wp_customize->add_setting(
 		'alcatraz_options[page_banner_widget_area]',

@@ -212,6 +212,18 @@ a {
 	}
 }
 
+.sidebar-nav a.sub-menu-toggle:before,
+.sidebar-nav a.sub-menu-toggle:after {
+	left: auto;
+	right: 0;
+	top: 13.5px;
+}
+
+.sub-menu-toggle-style-chevron .sidebar-nav a.sub-menu-toggle:before {
+	right: -6px;
+}
+
+
 /* Plus-Minus Sub-Menu Toggle Style */
 .sub-menu-toggle-style-plus-minus {
 
@@ -242,6 +254,25 @@ a {
 			}
 		}
 	}
+}
+
+/* Section Nav Styles */
+.sidebar-nav {
+	margin-right: 0;
+}
+
+.sidebar-nav .current_page_item > a {
+	color: $color__link;
+	font-weight: 400;
+}
+
+.sidebar-nav .current_page_item a {
+	padding-right: 12px;
+}
+
+.sidebar-nav .sidebar-nav-top-level,
+.sidebar-nav .children {
+	position: relative;
 }
 
 /* Mobile Nav Shared Styles */

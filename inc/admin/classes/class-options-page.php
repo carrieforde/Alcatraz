@@ -82,7 +82,7 @@ class Alcatraz_Options_Page {
 		);
 
 		add_settings_section(
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			__( 'Social Media Links', 'alcatraz' ),
 			array( $this, 'settings_section' ),
 			'alcatraz_settings_section'
@@ -93,7 +93,7 @@ class Alcatraz_Options_Page {
 			__( 'Email', 'alcatraz' ),
 			array( $this, 'field_text' ),
 				'alcatraz_settings_section',
-				'social_media_links',
+				'alcatraz_options_page_settings',
 			array(
 				'id'          => 'email_url',
 				'description' => __( 'Enter your email address', 'alcatraz' ),
@@ -105,7 +105,7 @@ class Alcatraz_Options_Page {
 			__( 'Facebook', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'facebook_url',
 				'description' => __( 'Enter your Facebook profile URL', 'alcatraz' ),
@@ -117,7 +117,7 @@ class Alcatraz_Options_Page {
 			__( 'Twitter', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'twitter_url',
 				'description' => __( 'Enter your Twitter profile URL', 'alcatraz' ),
@@ -129,7 +129,7 @@ class Alcatraz_Options_Page {
 			__( 'Instagram', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'instagram_url',
 				'description' => __( 'Enter your Instagram profile URL', 'alcatraz' ),
@@ -141,7 +141,7 @@ class Alcatraz_Options_Page {
 			__( 'Pinterest', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'pinterest_url',
 				'description' => __( 'Enter your Pinterest profile URL', 'alcatraz' ),
@@ -153,7 +153,7 @@ class Alcatraz_Options_Page {
 			__( 'Youtube', 'alcatraz' ),
 			array( $this, 'field_text' ),
 			'alcatraz_settings_section',
-			'social_media_links',
+			'alcatraz_options_page_settings',
 			array(
 				'id'          => 'youtube_url',
 				'description' => __( 'Enter your You Tube channel URL', 'alcatraz' ),

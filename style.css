@@ -1164,6 +1164,17 @@ a:hover, a:active {
           transform: rotate(-135deg) translate(2px);
 }
 
+.sidebar-nav a.sub-menu-toggle:before,
+.sidebar-nav a.sub-menu-toggle:after {
+  left: auto;
+  right: 0;
+  top: 13.5px;
+}
+
+.sub-menu-toggle-style-chevron .sidebar-nav a.sub-menu-toggle:before {
+  right: -6px;
+}
+
 /* Plus-Minus Sub-Menu Toggle Style */
 .sub-menu-toggle-style-plus-minus .sub-level-toggle .sub-level-toggle-span {
   position: absolute;
@@ -1187,6 +1198,25 @@ a:hover, a:active {
 .sub-menu-toggle-style-plus-minus .sub-level-toggle.toggled .sub-level-toggle-span.span-2 {
   -webkit-transform: rotate(180deg);
           transform: rotate(180deg);
+}
+
+/* Section Nav Styles */
+.sidebar-nav {
+  margin-right: 0;
+}
+
+.sidebar-nav .current_page_item > a {
+  color: #6E9AA2;
+  font-weight: 400;
+}
+
+.sidebar-nav .current_page_item a {
+  padding-right: 12px;
+}
+
+.sidebar-nav .sidebar-nav-top-level,
+.sidebar-nav .children {
+  position: relative;
 }
 
 /* Mobile Nav Shared Styles */
