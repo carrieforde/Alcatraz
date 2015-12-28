@@ -194,7 +194,7 @@ function alcatraz_the_social_network_icons() {
  *
  * @return  string        The sub page nav HTML.
  */
-function alcatraz_get_sub_page_nav( $args = array() ) {
+function alcatraz_get_the_sub_page_nav( $args = array() ) {
 
 	global $post;
 
@@ -244,5 +244,5 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
  */
 function alcatraz_the_sub_page_nav() {
 
-	echo alcatraz_get_sub_page_nav();
+	echo alcatraz_get_the_sub_page_nav();
 }
