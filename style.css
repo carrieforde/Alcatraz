@@ -989,7 +989,8 @@ a:hover, a:active {
 .inner-menu-toggle {
   width: 45px;
   height: 45px;
-  text-indent: -101%;
+  text-indent: 9999%;
+  overflow: hidden;
   cursor: pointer;
   box-sizing: border-box;
   position: relative;
@@ -1419,7 +1420,8 @@ a:hover, a:active {
 .mobile-nav-style-slide-right .inner-menu-toggle {
   float: right;
   margin-right: 5px;
-  text-indent: 101%;
+  text-indent: 9999%;
+  overflow: hidden;
 }
 
 .mobile-nav-style-slide-right .sub-level-toggle {

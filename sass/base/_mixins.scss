@@ -156,7 +156,8 @@
 @mixin inner-menu-close {
 	width: 45px;
 	height: 45px;
-	text-indent: -101%;
+	text-indent: 9999%;
+	overflow: hidden;
 	cursor: pointer;
 	box-sizing: border-box;
 	position: relative;

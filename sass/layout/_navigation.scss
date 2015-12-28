@@ -499,7 +499,8 @@ a {
 	.inner-menu-toggle {
 		float: right;
 		margin-right: 5px;
-		text-indent: 101%;
+		text-indent: 9999%;
+		overflow: hidden;
 	}
 
 	.sub-level-toggle {
