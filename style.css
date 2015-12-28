@@ -1977,8 +1977,6 @@ a:hover, a:active {
     width: auto;
     text-align: left;
   }
-  .header-style-default .main-navigation #primary-menu .menu-item {/*&:hover > .sub-menu,*/
-  }
   .header-style-default .main-navigation #primary-menu .menu-item.menu-item-has-children a {
     padding-right: 40px;
   }
@@ -2095,8 +2093,6 @@ a:hover, a:active {
     display: inline-block;
     width: auto;
     text-align: left;
-  }
-  .header-style-short .main-navigation #primary-menu .menu-item {/*&:hover > .sub-menu,*/
   }
   .header-style-short .main-navigation #primary-menu .menu-item.menu-item-has-children a {
     padding-right: 40px;
