@@ -186,7 +186,7 @@ function alcatraz_the_social_network_icons() {
 }
 
 /**
- * Display the section nav output.
+ * Build and return the Sub Page Navigation output.
  *
  * @since   1.0.0
  *
@@ -238,7 +238,7 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
 }
 
 /**
- * Display the section nav output.
+ * Display the Sub Page Navigation output.
  *
  * @since 1.0.0
  */
