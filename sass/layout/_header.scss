@@ -114,8 +114,18 @@
 			}
 		}
 
-		&.boxed,
-		&.boxed-content {
+		.site-content {
+			width: 72%;
+			width: calc(100% - 280px);
+			float: right;
+		}
+
+		.content-area,
+		.primary-sidebar {
+			padding: ($size__padding-default * 1.5) $size__padding-default;
+		}
+
+		&.boxed {
 			.site-content {
 				max-width: none;
 			}
@@ -126,15 +136,14 @@
 			}
 		}
 
-		.site-content {
-			width: 72%;
-			width: calc(100% - 280px);
-			float: right;
-		}
-
-		.content-area,
-		.primary-sidebar {
-			padding: ($size__padding-default * 1.5) $size__padding-default;
+		&.boxed-content {
+			.site-content {
+				float: none;
+				max-width: calc(960px - 280px);
+				position: absolute;
+				left: 280px;
+				right: 0;
+			}
 		}
 	}
 }
@@ -147,6 +156,16 @@
 		}
 		.site-content {
 			width: calc(100% - 300px);
+		}
+	}
+
+	.header-style-side {
+		&.boxed-content {
+
+			.site-content {
+				max-width: calc(1040px - 300px);
+				left: 300px;
+			}
 		}
 	}
 }
@@ -169,6 +188,13 @@
 
 		.primary-sidebar {
 			padding: $size__padding-default-double ($size__padding-default * 1.5) $size__padding-default-double $size__padding-default;
+		}
+
+		&.boxed-content {
+			.site-content {
+				max-width: $size__width-boxed-content;
+				left: 320px;
+			}
 		}
 	}
 }

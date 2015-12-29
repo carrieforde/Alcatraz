@@ -37,3 +37,38 @@
 		}
 	}
 }
+
+.header-style-side.boxed-content,
+.header-style-side.boxed {
+	.content-area,
+	.primary-sidebar {
+		width: 100%;
+	}
+}
+
+@media (min-width: em(1340)) {
+	.header-style-side.boxed-content {
+		&.left-sidebar {
+			.content-area {
+				width: 72%;
+				float: right;
+			}
+			.primary-sidebar {
+				width: 28%;
+				float: left;
+			}
+		}
+
+		/* Right Sidebar */
+		&.right-sidebar {
+			.content-area {
+				width: 72%;
+				float: left;
+			}
+			.primary-sidebar {
+				width: 28%;
+				float: right;
+			}
+		}
+	}
+}

@@ -1680,6 +1680,13 @@ a:hover, a:active {
   padding: 1.25em;
 }
 
+.header-style-side.boxed-content .content-area,
+.header-style-side.boxed-content .primary-sidebar,
+.header-style-side.boxed .content-area,
+.header-style-side.boxed .primary-sidebar {
+  width: 100%;
+}
+
 /**
  * 4.5 Footer
  */
@@ -2459,15 +2466,6 @@ a:hover, a:active {
   .header-style-side .site-header .header-inner {
     max-width: 100%;
   }
-  .header-style-side.boxed .site-content, .header-style-side.boxed-content .site-content {
-    max-width: none;
-  }
-  .header-style-side.boxed .site, .header-style-side.boxed-content .site {
-    max-width: 1200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
   .header-style-side .site-content {
     width: 72%;
     width: calc(100% - 280px);
@@ -2476,6 +2474,22 @@ a:hover, a:active {
   .header-style-side .content-area,
   .header-style-side .primary-sidebar {
     padding: 1.875em 1.25em;
+  }
+  .header-style-side.boxed .site-content {
+    max-width: none;
+  }
+  .header-style-side.boxed .site {
+    max-width: 1200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .header-style-side.boxed-content .site-content {
+    float: none;
+    max-width: calc(960px - 280px);
+    position: absolute;
+    left: 280px;
+    right: 0;
   }
   .logo-mobile .has-logo.header-style-side.has-mobile-logo {
     display: none;
@@ -2549,6 +2563,10 @@ a:hover, a:active {
   .header-style-side .site-content {
     width: calc(100% - 300px);
   }
+  .header-style-side.boxed-content .site-content {
+    max-width: calc(1040px - 300px);
+    left: 300px;
+  }
 }
 
 @media (min-width: 71.875em) {
@@ -2564,6 +2582,31 @@ a:hover, a:active {
   }
   .header-style-side .primary-sidebar {
     padding: 2.5em 1.875em 2.5em 1.25em;
+  }
+  .header-style-side.boxed-content .site-content {
+    max-width: 1200px;
+    left: 320px;
+  }
+}
+
+@media (min-width: 83.75em) {
+  .header-style-side.boxed-content {/* Right Sidebar */
+  }
+  .header-style-side.boxed-content.left-sidebar .content-area {
+    width: 72%;
+    float: right;
+  }
+  .header-style-side.boxed-content.left-sidebar .primary-sidebar {
+    width: 28%;
+    float: left;
+  }
+  .header-style-side.boxed-content.right-sidebar .content-area {
+    width: 72%;
+    float: left;
+  }
+  .header-style-side.boxed-content.right-sidebar .primary-sidebar {
+    width: 28%;
+    float: right;
   }
 }
 /*# sourceMappingURL=style.css.map */
