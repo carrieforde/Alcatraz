@@ -16,6 +16,7 @@ $black-as-night: #040a04;
 $hope: #fff9c0;
 $true-white: #fff;
 $true-black: #000;
+$the-coast-is-clear: transparent;
 
 // Background Colors
 $color__background-body: $true-white;
@@ -23,6 +24,7 @@ $color__background-body-boxed: $mist;
 $color__background-screen: #f1f1f1;
 $color__background-hr: $mist;
 $color__background-button: $alcatraz-blue;
+$color__background-button-hover: $the-coast-is-clear;
 $color__background-pre: $bright-light;
 $color__background-ins: $hope;
 $color__background-blockquote: $mist;
@@ -30,21 +32,25 @@ $color__background-table-row: $mist;
 $color__background-featured-image: $mist;
 
 // Text Colors
+$color__text-main: $black-as-night;
 $color__text-screen: #21759b;
 $color__text-input: $prision-cell-gray;
-$color__text-input-focus: #6e9aa2;
+$color__text-input-focus: $prision-cell-gray;
 $color__link: $alcatraz-blue;
 $color__link-visited: darken($color__link, 30%);
 $color__link-hover: darken($color__link, 20%);
-$color__text-main: $black-as-night;
+$color__button: $true-white;
+$color__button-hover: $alcatraz-blue;
 
 // Border Colors
-$color__border-button: #ccc #ccc #bbb;
-$color__border-button-hover: #ccc #bbb #aaa;
-$color__border-button-focus: #aaa #bbb #bbb;
-$color__border-input: #ccc;
 $color__border-abbr: #666;
 $color__border-table: #eee;
+
+// Borders
+$border__button: 2px solid $alcatraz-blue;
+$border__button-hover: 2px solid $alcatraz-blue;
+$border__input: 1px solid $sf-fog;
+$border__input-focus: 1px solid $prision-cell-gray;
 
 // Utility Colors
 $color__transparent-overlay: rgba(0,0,0,0.4);
