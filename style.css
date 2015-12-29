@@ -807,6 +807,7 @@ input[type="submit"] {
   letter-spacing: 0.5px;
   padding: 0.625em 0.9375em;
   text-transform: uppercase;
+  transition: all 0.2s ease-in;
 }
 
 button:hover, button:active, button:focus,
@@ -1252,7 +1253,7 @@ a:hover, a:active {
 
 /* Sub Page Nav Styles */
 .alcatraz-sub-page-nav {
-  margin-right: 0;
+  margin: 0 0 1.5em;
   position: relative;
 }
 
@@ -1268,13 +1269,27 @@ a:hover, a:active {
 .alcatraz-sub-page-nav li {
   width: 100%;
   padding: 0;
+  border-bottom: 1px dotted #E7ECF1;
   margin: 0;
   position: relative;
+}
+
+.alcatraz-sub-page-nav li:last-child {
+  border-bottom: none;
 }
 
 .alcatraz-sub-page-nav li a {
   padding: 10px 15px;
   display: block;
+  color: #5D85A2;
+}
+
+.alcatraz-sub-page-nav li a:hover {
+  color: #385061;
+}
+
+.alcatraz-sub-page-nav li a:visited {
+  color: #5D85A2;
 }
 
 .alcatraz-sub-page-nav .page_item_has_children > a {
@@ -1294,6 +1309,19 @@ a:hover, a:active {
 
 .alcatraz-sub-page-nav .current_page_ancestor > ul {
   display: block;
+}
+
+.alcatraz-sub-page-nav .children.toggled li {
+  border-top: 1px dotted #E7ECF1;
+}
+
+.alcatraz-sub-page-nav .current_page_item {
+  font-weight: 500;
+}
+
+.alcatraz-sub-page-nav-title {
+  font-size: 20px;
+  font-size: 1.25em;
 }
 
 /* Mobile Nav Shared Styles */
@@ -1353,6 +1381,15 @@ a:hover, a:active {
   padding: 10px 15px;
   line-height: 1.5;
   text-decoration: none;
+  color: #5D85A2;
+}
+
+.main-navigation #primary-menu .menu-item a:hover {
+  color: #385061;
+}
+
+.main-navigation #primary-menu .menu-item a:visited {
+  color: #5D85A2;
 }
 
 .main-navigation #primary-menu .menu-item a.sub-level-toggle {

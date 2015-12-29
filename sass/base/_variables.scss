@@ -41,6 +41,9 @@ $color__link-visited: darken($color__link, 30%);
 $color__link-hover: darken($color__link, 20%);
 $color__button: $true-white;
 $color__button-hover: $alcatraz-blue;
+$color__link-navigation: $alcatraz-blue;
+$color__link-navigation-hover: darken($color__link-navigation, 20%);
+$color__link-navgiation-visited: $alcatraz-blue;
 
 // Border Colors
 $color__border-abbr: #666;
@@ -51,6 +54,7 @@ $border__button-hover: 2px solid $alcatraz-blue;
 $border__input: 1px solid $sf-fog;
 $border__input-focus: 1px solid $prision-cell-gray;
 $border__table: 1px solid $bright-light;
+$border__sub-page-nav-item: 1px dotted $mist;
 
 // Utility Colors
 $color__transparent-overlay: rgba(0,0,0,0.4);

@@ -247,7 +247,7 @@ a {
 
 /* Sub Page Nav Styles */
 .alcatraz-sub-page-nav {
-	margin-right: 0;
+	margin: 0 0 1.5em;
 	position: relative;
 
 	.sub-page-nav-top-level {
@@ -262,13 +262,27 @@ a {
 	li {
 		width: 100%;
 		padding: 0;
+		border-bottom: $border__sub-page-nav-item;
 		margin: 0;
 		position: relative;
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 
 	li a {
 		padding: 10px 15px;
 		display: block;
+		color: $color__link-navigation;
+
+		&:hover {
+			color: $color__link-navigation-hover;
+		}
+
+		&:visited {
+			color: $color__link-navgiation-visited;
+		}
 	}
 
 	.page_item_has_children > a {
@@ -289,6 +303,18 @@ a {
 	.current_page_ancestor > ul {
 		display: block;
 	}
+
+	.children.toggled li {
+		border-top: $border__sub-page-nav-item;
+	}
+
+	.current_page_item {
+		font-weight: 500;
+	}
+}
+
+.alcatraz-sub-page-nav-title {
+	@include font-size(20);
 }
 
 /* Mobile Nav Shared Styles */
@@ -342,6 +368,15 @@ a {
 				padding: 10px 15px;
 				line-height: 1.5;
 				text-decoration: none;
+				color: $color__link-navigation;
+
+				&:hover {
+					color: $color__link-navigation-hover;
+				}
+
+				&:visited {
+					color: $color__link-navgiation-visited;
+				}
 			}
 
 			a.sub-level-toggle {
