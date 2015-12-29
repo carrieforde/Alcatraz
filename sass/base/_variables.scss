@@ -27,9 +27,9 @@ $color__background-button: $alcatraz-blue;
 $color__background-button-hover: $the-coast-is-clear;
 $color__background-pre: $bright-light;
 $color__background-ins: $hope;
-$color__background-blockquote: $mist;
-$color__background-table-row: $mist;
-$color__background-featured-image: $mist;
+$color__background-blockquote: $bright-light;
+$color__background-table-row: $bright-light;
+$color__background-featured-image: $bright-light;
 
 // Text Colors
 $color__text-main: $black-as-night;
@@ -44,13 +44,13 @@ $color__button-hover: $alcatraz-blue;
 
 // Border Colors
 $color__border-abbr: #666;
-$color__border-table: #eee;
 
 // Borders
 $border__button: 2px solid $alcatraz-blue;
 $border__button-hover: 2px solid $alcatraz-blue;
 $border__input: 1px solid $sf-fog;
 $border__input-focus: 1px solid $prision-cell-gray;
+$border__table: 1px solid $bright-light;
 
 // Utility Colors
 $color__transparent-overlay: rgba(0,0,0,0.4);

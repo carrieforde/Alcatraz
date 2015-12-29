@@ -2,12 +2,59 @@
  * 3.4 Widgets
  */
 
-.widget,
-.alcatraz-sub-page-nav {
+.widget {
 	margin: 0 0 1.5em;
 
 	/* Make sure select elements fit in widgets. */
 	select {
 		max-width: 100%;
 	}
+}
+
+.widget-title {
+	@include font-size(20);
+}
+
+/* Sub Page Navigation */
+.alcatraz-sub-page-nav {
+	margin: 0 0 1.5em;
+}
+
+/* WordPress Calendar */
+.calendar_wrap {
+	overflow: scroll;
+}
+
+#wp-calendar {
+	max-width: 100%;
+
+	caption {
+		font-weight: 500;
+		text-transform: uppercase;
+	}
+
+	tr {
+		border-bottom: $border__table;
+	}
+
+	td {
+		text-align: center;
+	}
+}
+
+/* Search Form */
+.search-form {
+	overflow: hidden;
+}
+
+.search-field {
+	float: left;
+	margin-right: calc(10px);
+	width: 180px;
+	width: calc(100% - 115px);
+}
+
+input[type="submit"].search-submit {
+	float: right;
+	padding: 4.5px 10px;
 }

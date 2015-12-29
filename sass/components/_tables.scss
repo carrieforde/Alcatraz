@@ -4,12 +4,12 @@
 
 table {
 	margin: 0 0 1.5em;
-	border: em(1) solid $color__border-table;
+	border: $border__table;
 	width: 100%;
 }
 
 thead {
-	border-bottom: em(1) solid $color__border-table;
+	border-bottom: $border__table;
 	background-color: darken($color__background-table-row, 30%);
 	color: #fff;
 }
@@ -21,7 +21,7 @@ tr:nth-child(even) {
 th,
 td {
 	padding: em(8);
-	border-right: em(1) solid $color__border-table;
+	border-right: $border__table;
 
 	:last-child {
 		border: none;
