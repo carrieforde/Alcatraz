@@ -867,7 +867,8 @@ td :last-child {
   max-width: 100%;
 }
 
-.widget-title {
+.primary-sidebar .widget-title,
+.primary-sidebar .alcatraz-sub-page-nav-title {
   font-size: 20px;
   font-size: 1.25em;
 }
@@ -1317,11 +1318,6 @@ a:hover, a:active {
 
 .alcatraz-sub-page-nav .current_page_item {
   font-weight: 500;
-}
-
-.alcatraz-sub-page-nav-title {
-  font-size: 20px;
-  font-size: 1.25em;
 }
 
 /* Mobile Nav Shared Styles */

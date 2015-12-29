@@ -11,7 +11,8 @@
 	}
 }
 
-.widget-title {
+.primary-sidebar .widget-title,
+.primary-sidebar .alcatraz-sub-page-nav-title {
 	@include font-size(20);
 }
 
