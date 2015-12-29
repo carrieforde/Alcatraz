@@ -19,6 +19,7 @@ $true-black: #000;
 
 // Background Colors
 $color__background-body: $true-white;
+$color__background-body-boxed: $mist;
 $color__background-screen: #f1f1f1;
 $color__background-hr: $mist;
 $color__background-button: $alcatraz-blue;
@@ -69,7 +70,7 @@ $font__margin-headings: 0 0 em(10) 0;
 
 // 2.2.3 Structure
 $size__width-site: 100%;
-$size__width-boxed-content: 1040px;
+$size__width-boxed-content: 1200px;
 $size__width-sidebar: 25%;
 $size__width-sidebar-content: $size__width-site - $size__width-sidebar;
 $size__padding-default: em(20);

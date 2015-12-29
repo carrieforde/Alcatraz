@@ -737,11 +737,21 @@ a {
 	.nav-previous {
 		float: left;
 		width: 50%;
+
+		a::before {
+			content: '\00ab';
+			margin-right: em(5);
+		}
 	}
 
 	.nav-next {
 		float: right;
 		text-align: right;
 		width: 50%;
+
+		a::after {
+			content: '\00bb';
+			margin-left: em(5);
+		}
 	}
 }

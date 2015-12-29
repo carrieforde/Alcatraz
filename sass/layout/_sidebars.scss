@@ -5,6 +5,10 @@
 .primary-sidebar {
 	margin: 0;
 	padding: $size__padding-default;
+
+	@media (min-width: em(768)) {
+		padding: $size__padding-default-double $size__padding-default;
+	}
 }
 
 @media (min-width: em(768)) {

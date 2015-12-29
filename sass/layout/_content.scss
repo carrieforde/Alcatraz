@@ -11,6 +11,10 @@
 	@include clearfix;
 }
 
+.boxed .site {
+	background-color: $color__background-body;
+}
+
 .boxed .site,
 .boxed-content .site-content {
 	max-width: $size__width-boxed-content;
@@ -37,7 +41,7 @@
 	padding: $size__padding-default;
 
 	@media (min-width: em(900)) {
-		padding: $size__padding-default-double;
+		padding: $size__padding-default-double $size__padding-default;
 	}
 }
 

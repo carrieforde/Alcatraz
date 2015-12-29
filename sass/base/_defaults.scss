@@ -19,6 +19,10 @@ body {
 	overflow-x: hidden;
 }
 
+.boxed {
+	background-color: $color__background-body-boxed;
+}
+
 body.mce-content-body {
 	padding: em(15) !important;
 }
