@@ -98,7 +98,7 @@ blockquote p {
 q {
 	&::before {
 		@extend blockquote::before;
-		font-size: 18px;
+		@include font-size(18);
 		padding-right: 10px;
 	}
 }
@@ -117,9 +117,9 @@ address {
 }
 
 pre {
+	@include font-size(14);
 	background: $color__background-pre;
 	font-family: $font__pre;
-	@include font-size(14);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
 	max-width: 100%;

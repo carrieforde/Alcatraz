@@ -19,6 +19,7 @@
 
 .post-thumbnail {
 	display: block;
+	background-color: $color__background-featured-image;
 }
 
 .post-thumbnail img {
@@ -34,6 +35,10 @@
 	width: $size__width-site;
 	margin: 0 auto;
 	padding: $size__padding-default;
+
+	@media (min-width: em(900)) {
+		padding: $size__padding-default-double;
+	}
 }
 
 /**
@@ -45,7 +50,12 @@
 }
 
 .hentry {
-	margin: 0 0 1.5em;
+	margin-bottom: em(40);
+	word-wrap: break-word;
+
+	@media (min-width: em(900)) {
+		margin-bottom: em(50);
+	}
 }
 
 .byline,
@@ -56,6 +66,29 @@
 .single .byline,
 .group-blog .byline {
 	display: inline;
+}
+
+.edit-link {
+	display: block;
+}
+
+.post-edit-link {
+	display: inline-block;
+	margin: em(5) 0;
+
+	&::before {
+		content: '\f040';
+		font: {
+			family: $font-awesome;
+			size: em(14);
+		}
+		padding-right: em(5);
+	}
+}
+
+.cat-links,
+.tags-links {
+	display: block;
 }
 
 .page-content,

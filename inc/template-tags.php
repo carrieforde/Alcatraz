@@ -32,32 +32,6 @@ function alcatraz_posted_on() {
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
-}
-
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function alcatraz_entry_footer() {
-
-	// Hide category and tag text for pages.
-	if ( 'post' === get_post_type() ) {
-
-		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ) );
-		if ( $categories_list && alcatraz_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'alcatraz' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
-
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'alcatraz' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
-
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'alcatraz' ), esc_html__( '1 Comment', 'alcatraz' ), esc_html__( '% Comments', 'alcatraz' ) );
-		echo '</span>';
-	}
 
 	edit_post_link(
 		sprintf(
@@ -68,6 +42,34 @@ function alcatraz_entry_footer() {
 		'<span class="edit-link">',
 		'</span>'
 	);
+}
+
+/**
+ * Prints HTML with meta information for the categories, tags and comments.
+ */
+function alcatraz_entry_footer() {
+
+	// Hide category and tag text for pages.
+	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
+		echo '<span class="comments-link">';
+		comments_popup_link( esc_html__( 'Leave a comment', 'alcatraz' ), esc_html__( '1 Comment', 'alcatraz' ), esc_html__( '% Comments', 'alcatraz' ) );
+		echo '</span>';
+	}
+
+	if ( 'post' === get_post_type() ) {
+
+		echo '<hr>';
+
+		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ) );
+		if ( $categories_list && alcatraz_categorized_blog() ) {
+			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'alcatraz' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+		}
+
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ) );
+		if ( $tags_list ) {
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'alcatraz' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+		}
+	}
 }
 
 /**

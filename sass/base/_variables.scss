@@ -10,8 +10,8 @@
 $bright-light: #e7ecf1;
 $sf-fog: #95a0a3;
 $prision-cell-gray: #535d65;
-$mist: #eaf1f2;
-$alcatraz-blue: #3897ef;
+$mist: #E7ECF1;
+$alcatraz-blue: #5D85A2;
 $black-as-night: #040a04;
 $hope: #fff9c0;
 $true-white: #fff;
@@ -20,12 +20,13 @@ $true-black: #000;
 // Background Colors
 $color__background-body: $true-white;
 $color__background-screen: #f1f1f1;
-$color__background-hr: $alcatraz-blue;
+$color__background-hr: $mist;
 $color__background-button: $alcatraz-blue;
 $color__background-pre: $bright-light;
 $color__background-ins: $hope;
 $color__background-blockquote: $mist;
 $color__background-table-row: $mist;
+$color__background-featured-image: $mist;
 
 // Text Colors
 $color__text-screen: #21759b;
@@ -54,6 +55,7 @@ $color__transparent-overlay: rgba(0,0,0,0.4);
 $source-sans-pro: 'Source Sans Pro', sans-serif;
 $source-serif-pro: 'Source Serif Pro', serif;
 $source-code-pro: 'Source Code Pro', Courier, monospace;
+$font-awesome: FontAwesome;
 
 $font__main: $source-sans-pro;
 $font__headings: $source-serif-pro;
