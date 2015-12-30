@@ -879,10 +879,6 @@ td :last-child {
 }
 
 /* WordPress Calendar */
-.calendar_wrap {
-  overflow: scroll;
-}
-
 #wp-calendar {
   max-width: 100%;
 }
@@ -2191,6 +2187,9 @@ a:hover, a:active {
   .gallery-columns-10 .gallery-item:nth-child(10n+1) {
     clear: both;
   }
+  #wp-calendar td {
+    padding: 0;
+  }
   .header-style-default .header-inner {
     text-align: center;
     padding: 20px;
@@ -2646,6 +2645,12 @@ a:hover, a:active {
   .header-style-side.boxed-content .site-content {
     max-width: calc(1040px - 300px);
     left: 300px;
+  }
+}
+
+@media (min-width: 65.625em) {
+  #wp-calendar td {
+    padding: 0.5em;
   }
 }
 

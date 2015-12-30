@@ -22,9 +22,6 @@
 }
 
 /* WordPress Calendar */
-.calendar_wrap {
-	overflow: scroll;
-}
 
 #wp-calendar {
 	max-width: 100%;
@@ -40,6 +37,14 @@
 
 	td {
 		text-align: center;
+
+		@media (min-width: em(768)) {
+			padding: 0;
+		}
+
+		@media (min-width: em(1050)) {
+			padding: 0.5em;
+		}
 	}
 }
 
