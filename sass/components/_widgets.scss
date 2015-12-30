@@ -35,7 +35,8 @@
 		border-bottom: $border__table;
 	}
 
-	td {
+	td,
+	th {
 		text-align: center;
 
 		@media (min-width: em(768)) {

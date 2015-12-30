@@ -892,7 +892,8 @@ td :last-child {
   border-bottom: 1px solid #e7ecf1;
 }
 
-#wp-calendar td {
+#wp-calendar td,
+#wp-calendar th {
   text-align: center;
 }
 
@@ -2187,7 +2188,8 @@ a:hover, a:active {
   .gallery-columns-10 .gallery-item:nth-child(10n+1) {
     clear: both;
   }
-  #wp-calendar td {
+  #wp-calendar td,
+  #wp-calendar th {
     padding: 0;
   }
   .header-style-default .header-inner {
@@ -2649,7 +2651,8 @@ a:hover, a:active {
 }
 
 @media (min-width: 65.625em) {
-  #wp-calendar td {
+  #wp-calendar td,
+  #wp-calendar th {
     padding: 0.5em;
   }
 }
