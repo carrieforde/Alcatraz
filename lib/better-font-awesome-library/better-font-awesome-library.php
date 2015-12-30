@@ -303,7 +303,7 @@ class Better_Font_Awesome_Library {
 			add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 			// Add shortcode insertion button.
-        	add_action( 'media_buttons', array( $this, 'add_insert_shortcode_button' ), 99 );
+			add_action( 'media_buttons', array( $this, 'add_insert_shortcode_button' ), 99 );
 
 		}
 
@@ -368,7 +368,8 @@ class Better_Font_Awesome_Library {
 
 		// Get BFA directory and theme root directory paths.
 		$bfa_directory = dirname(__FILE__);
-		$theme_directory = get_stylesheet_directory();
+		$theme_directory = get_template_directory();
+		$child_theme_directory = get_stylesheet_directory();
 		$plugin_dir = plugin_dir_url( __FILE__ );
 
 		/**
@@ -386,9 +387,19 @@ class Better_Font_Awesome_Library {
 		// First check if we're inside a theme.
 		if ( $is_theme ) {
 
-			// Get relative BFA directory by removing theme root directory path.
-			$bfa_rel_path = str_replace( $theme_directory, '', $bfa_directory );
-			$this->root_url = trailingslashit( get_stylesheet_directory_uri() . $bfa_rel_path );
+			// Use appropriate file paths for parent themes and child themes.
+			if ( strpos( $bfa_directory, $theme_directory ) !== false ) {
+
+				// Get relative BFA directory by removing theme root directory path.
+				$bfa_rel_path = str_replace( $theme_directory, '', $bfa_directory );
+				$this->root_url = trailingslashit( get_template_directory_uri() . $bfa_rel_path );
+
+			} else {
+
+				$bfa_rel_path = str_replace( $child_theme_directory, '', $bfa_directory );
+				$this->root_url = trailingslashit( get_stylesheet_directory_uri() . $bfa_rel_path );
+
+			}
 
 		} else { // Otherwise we're inside a plugin.
 
@@ -1021,7 +1032,7 @@ class Better_Font_Awesome_Library {
 		// Output PHP variables to JS.
 		$bfa_vars = array(
 			'fa_prefix'   => $this->prefix,
-		    'fa_icons'    => $this->get_icons(),
+			'fa_icons'    => $this->get_icons(),
 		);
 		wp_localize_script( self::SLUG . '-admin', 'bfa_vars', $bfa_vars );
 
@@ -1057,53 +1068,53 @@ class Better_Font_Awesome_Library {
 
 		if ( ! empty( $this->errors ) && apply_filters( 'bfa_show_errors', true ) ) :
 			?>
-		    <div class="error">
-		    	<p>
-		    		<b><?php _e( 'Better Font Awesome', 'better-font-awesome' ); ?></b>
-		    	</p>
+			<div class="error">
+				<p>
+					<b><?php _e( 'Better Font Awesome', 'better-font-awesome' ); ?></b>
+				</p>
 
-	        	<!-- API Error -->
-	        	<?php if ( is_wp_error ( $this->get_error('api') ) ) : ?>
-		        	<p>
-		        		<b><?php _e( 'API Error', 'better-font-awesome' ); ?></b><br />
-		        		<?php
-		        		printf( __( 'The attempt to reach the jsDelivr API server failed with the following error: %s', 'better-font-awesome' ),
-		        			'<code>' . $this->get_error('api')->get_error_code() . ': ' . $this->get_error('api')->get_error_message() . '</code>'
-		        		);
-		        		?>
-		        	</p>
-		        <?php endif; ?>
+				<!-- API Error -->
+				<?php if ( is_wp_error ( $this->get_error('api') ) ) : ?>
+					<p>
+						<b><?php _e( 'API Error', 'better-font-awesome' ); ?></b><br />
+						<?php
+						printf( __( 'The attempt to reach the jsDelivr API server failed with the following error: %s', 'better-font-awesome' ),
+							'<code>' . $this->get_error('api')->get_error_code() . ': ' . $this->get_error('api')->get_error_message() . '</code>'
+						);
+						?>
+					</p>
+				<?php endif; ?>
 
 				<!-- CSS Error -->
-	        	<?php if ( is_wp_error ( $this->get_error('css') ) ) : ?>
-		        	<p>
-		        		<b><?php _e( 'Remote CSS Error', 'better-font-awesome' ); ?></b><br />
-		        		<?php
-		        		printf( __( 'The attempt to fetch the remote Font Awesome stylesheet failed with the following error: %s %s The embedded fallback Font Awesome will be used instead (version: %s).', 'better-font-awesome' ),
-		        			'<code>' . $this->get_error('css')->get_error_code() . ': ' . $this->get_error('css')->get_error_message() . '</code>',
-		        			'<br />',
-		        			'<code>' . $this->font_awesome_version . '</code>'
-		        		);
-			        	?>
-			        </p>
-		        <?php endif; ?>
+				<?php if ( is_wp_error ( $this->get_error('css') ) ) : ?>
+					<p>
+						<b><?php _e( 'Remote CSS Error', 'better-font-awesome' ); ?></b><br />
+						<?php
+						printf( __( 'The attempt to fetch the remote Font Awesome stylesheet failed with the following error: %s %s The embedded fallback Font Awesome will be used instead (version: %s).', 'better-font-awesome' ),
+							'<code>' . $this->get_error('css')->get_error_code() . ': ' . $this->get_error('css')->get_error_message() . '</code>',
+							'<br />',
+							'<code>' . $this->font_awesome_version . '</code>'
+						);
+						?>
+					</p>
+				<?php endif; ?>
 
-		        <!-- Fallback Text -->
-		        <p><?php echo __( '<b>Don\'t worry! Better Font Awesome will still render using the included fallback version:</b> ', 'better-font-awesome' ) . '<code>' . $this->fallback_data['version'] . '</code>' ; ?></p>
+				<!-- Fallback Text -->
+				<p><?php echo __( '<b>Don\'t worry! Better Font Awesome will still render using the included fallback version:</b> ', 'better-font-awesome' ) . '<code>' . $this->fallback_data['version'] . '</code>' ; ?></p>
 
-		        <!-- Solution Text -->
-		        <p>
-		        	<b><?php _e( 'Solution', 'better-font-awesome' ); ?></b><br />
-			        <?php
-			        printf( __( 'This may be the result of a temporary server or connectivity issue which will resolve shortly. However if the problem persists please file a support ticket on the %splugin forum%s, citing the errors listed above. ', 'better-font-awesome' ),
-	                    '<a href="http://wordpress.org/support/plugin/better-font-awesome" target="_blank" title="Better Font Awesome support forum">',
-	                    '</a>'
-	                );
-	                ?>
-	            </p>
-		    </div>
-		    <?php
-	    endif;
+				<!-- Solution Text -->
+				<p>
+					<b><?php _e( 'Solution', 'better-font-awesome' ); ?></b><br />
+					<?php
+					printf( __( 'This may be the result of a temporary server or connectivity issue which will resolve shortly. However if the problem persists please file a support ticket on the %splugin forum%s, citing the errors listed above. ', 'better-font-awesome' ),
+						'<a href="http://wordpress.org/support/plugin/better-font-awesome" target="_blank" title="Better Font Awesome support forum">',
+						'</a>'
+					);
+					?>
+				</p>
+			</div>
+			<?php
+		endif;
 	}
 
 	/*----------------------------------------------------------------------------*
@@ -1123,9 +1134,9 @@ class Better_Font_Awesome_Library {
 
 		ob_start();
 		include $file_path;
-	    $contents = ob_get_clean();
+		$contents = ob_get_clean();
 
-	    return $contents;
+		return $contents;
 
 	}
 
