@@ -332,7 +332,7 @@ a {
 		color: $color__link-navigation;
 
 		&:hover {
-			color: darken($color__link-navigation, 20%);
+			color: $color__link-navigation-hover;
 		}
 	}
 
