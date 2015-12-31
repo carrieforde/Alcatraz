@@ -1333,6 +1333,14 @@ a:hover, a:active {
   display: block;
 }
 
+.main-navigation a {
+  color: #5D85A2;
+}
+
+.main-navigation a:hover {
+  color: #385061;
+}
+
 .main-navigation .menu-overlay {
   transition: background-color 0.3s;
   cursor: pointer;
@@ -1374,15 +1382,6 @@ a:hover, a:active {
   padding: 10px 15px;
   line-height: 1.5;
   text-decoration: none;
-  color: #5D85A2;
-}
-
-.main-navigation #primary-menu .menu-item a:hover {
-  color: #385061;
-}
-
-.main-navigation #primary-menu .menu-item a:visited {
-  color: #5D85A2;
 }
 
 .main-navigation #primary-menu .menu-item a.sub-level-toggle {
@@ -1431,7 +1430,6 @@ a:hover, a:active {
   top: 0;
   width: 260px;
   min-height: 100vh;
-  background-color: #fff;
 }
 
 .mobile-nav-style-slide-left #primary-menu,
@@ -2246,6 +2244,12 @@ a:hover, a:active {
   .header-style-short.mobile-nav-style-default #primary-menu {
     box-shadow: none;
   }
+  .header-style-default .main-navigation a a {
+    color: #fff;
+  }
+  .header-style-default .main-navigation a a:hover {
+    color: #cccccc;
+  }
   .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
   .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
     top: 32px;
@@ -2695,6 +2699,32 @@ a:hover, a:active {
   .header-style-side.boxed-content.right-sidebar .primary-sidebar {
     width: 28%;
     float: right;
+  }
+}
+
+@media (max-width: 47.9375em) {
+  .mobile-nav-style-slide-left.header-style-default #primary-menu-wrap,
+  .mobile-nav-style-slide-left.header-style-short #primary-menu-wrap,
+  .mobile-nav-style-slide-right.header-style-default #primary-menu-wrap,
+  .mobile-nav-style-slide-right.header-style-short #primary-menu-wrap {
+    background-color: #fff;
+  }
+  .mobile-nav-style-slide-left.header-style-default #primary-menu-wrap a,
+  .mobile-nav-style-slide-left.header-style-short #primary-menu-wrap a,
+  .mobile-nav-style-slide-right.header-style-default #primary-menu-wrap a,
+  .mobile-nav-style-slide-right.header-style-short #primary-menu-wrap a {
+    color: #5D85A2;
+  }
+}
+
+@media (max-width: 59.9375em) {
+  .mobile-nav-style-slide-left.header-style-side #primary-menu-wrap,
+  .mobile-nav-style-slide-right.header-style-side #primary-menu-wrap {
+    background-color: #fff;
+  }
+  .mobile-nav-style-slide-left.header-style-side #primary-menu-wrap a,
+  .mobile-nav-style-slide-right.header-style-side #primary-menu-wrap a {
+    color: #5D85A2;
   }
 }
 /*# sourceMappingURL=style.css.map */

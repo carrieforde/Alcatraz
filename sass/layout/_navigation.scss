@@ -328,6 +328,14 @@ a {
 		display: block;
 	}
 
+	a {
+		color: $color__link-navigation;
+
+		&:hover {
+			color: darken($color__link-navigation, 20%);
+		}
+	}
+
 	.menu-overlay {
 		transition: background-color 0.3s;
 		cursor: pointer;
@@ -364,15 +372,6 @@ a {
 				padding: 10px 15px;
 				line-height: 1.5;
 				text-decoration: none;
-				color: $color__link-navigation;
-
-				&:hover {
-					color: $color__link-navigation-hover;
-				}
-
-				&:visited {
-					color: $color__link-navgiation-visited;
-				}
 			}
 
 			a.sub-level-toggle {
@@ -420,6 +419,16 @@ a {
 			box-shadow: none;
 		}
 	}
+
+	.header-style-default .main-navigation a {
+		a {
+			color: $true-white;
+
+			&:hover {
+				color: darken($true-white, 20%);
+			}
+		}
+	}
 }
 
 @media (min-width: em(960)) {
@@ -443,13 +452,37 @@ a {
 		}
 	}
 
+	&.header-style-default #primary-menu-wrap,
+	&.header-style-short #primary-menu-wrap {
+		@media (max-width: em(767)) {
+			background-color: $color__background-mobile-nav;
+		}
+
+		a {
+			@media (max-width: em(767)) {
+				color: $color__text-mobile-nav;
+			}
+		}
+	}
+
+	&.header-style-side #primary-menu-wrap {
+		@media (max-width: em(959)) {
+			background-color: $color__background-mobile-nav;
+		}
+
+		a {
+			@media (max-width: em(959)) {
+				color: $color__text-mobile-nav;
+			}
+		}
+	}
+
 	#primary-menu-wrap {
 		position: fixed;
 		z-index: 100;
 		top: 0;
 		width: 260px;
 		min-height: 100vh;
-		background-color: $true-white;
 	}
 
 	#primary-menu {
