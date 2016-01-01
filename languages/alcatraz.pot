@@ -1,31 +1,31 @@
-# Copyright (C) 2015 Carrie Forde, Braad Martin, Jordan Gonzales
+# Copyright (C) 2016 Carrie Forde, Braad Martin, Jordan Gonzales
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: alcatraz 1.0.0\n"
+"Project-Id-Version: Alcatraz 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2015-12-18 01:27:34+00:00\n"
+"POT-Creation-Date: 2016-01-01 19:04:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2015-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: 2016-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "X-Generator: grunt-wp-i18n 0.5.3\n"
 
-#: inc/admin/customizer.php:289
+#: inc/admin/customizer.php:316
 msgid "1"
 msgstr ""
 
-#: inc/admin/customizer.php:290
+#: inc/admin/customizer.php:317
 msgid "2"
 msgstr ""
 
-#: inc/admin/customizer.php:291
+#: inc/admin/customizer.php:318
 msgid "3"
 msgstr ""
 
-#: inc/admin/customizer.php:292
+#: inc/admin/customizer.php:319
 msgid "4"
 msgstr ""
 
@@ -67,6 +67,14 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: functions.php:223
+msgid "Toggle"
+msgstr ""
+
+#: functions.php:224
+msgid "Close"
+msgstr ""
+
 #: header.php:27
 msgid "Skip to content"
 msgstr ""
@@ -75,257 +83,306 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/admin/admin.php:53
-msgid "Page Options"
+#: inc/admin/admin.php:58
+msgid "Customizer"
 msgstr ""
 
-#: inc/admin/admin.php:62 inc/admin/customizer.php:47
-msgid "Layout"
+#: inc/admin/admin.php:64
+msgid "Options Page"
 msgstr ""
 
-#: inc/admin/admin.php:63
-msgid "Select the layout for this page"
+#: inc/admin/admin.php:70
+msgid "Alcatraz documentation on Github"
 msgstr ""
 
-#: inc/admin/admin.php:67 inc/admin/customizer.php:163 inc/choices.php:51
-#: inc/choices.php:90 lib/cmb2/includes/CMB2_JS.php:87
-msgid "Default"
-msgstr ""
-
-#: inc/admin/admin.php:68 inc/admin/customizer.php:119
-msgid "No Sidebar"
-msgstr ""
-
-#: inc/admin/admin.php:69 inc/admin/customizer.php:120
-msgid "Left Sidebar"
-msgstr ""
-
-#: inc/admin/admin.php:70 inc/admin/customizer.php:121
-msgid "Right Sidebar"
+#: inc/admin/admin.php:75
+msgid "Welcome to Alcatraz"
 msgstr ""
 
 #: inc/admin/admin.php:76
-msgid "Transparent Header"
+msgid "Get started by configuring visual options in the"
 msgstr ""
 
 #: inc/admin/admin.php:77
+msgid "All non-visual options can be found on the"
+msgstr ""
+
+#: inc/admin/admin.php:78
+msgid "For development resources visit the"
+msgstr ""
+
+#: inc/admin/admin.php:113
+msgid "Page Options"
+msgstr ""
+
+#: inc/admin/admin.php:122 inc/admin/customizer.php:48
+msgid "Layout"
+msgstr ""
+
+#: inc/admin/admin.php:123
+msgid "Select the layout for this page"
+msgstr ""
+
+#: inc/admin/admin.php:127 inc/theme-options.php:141 inc/theme-options.php:201
+#: inc/theme-options.php:221 lib/cmb2/includes/CMB2_JS.php:87
+msgid "Default"
+msgstr ""
+
+#: inc/admin/admin.php:128 inc/theme-options.php:181
+msgid "No Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:129 inc/theme-options.php:182
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:130 inc/theme-options.php:183
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:136
+msgid "Transparent Header"
+msgstr ""
+
+#: inc/admin/admin.php:137
 msgid ""
 "Position the page content at the top of the screen and make the header "
 "transparent"
 msgstr ""
 
-#: inc/admin/admin.php:84
+#: inc/admin/admin.php:144
 msgid "Header Text Color"
 msgstr ""
 
-#: inc/admin/admin.php:85
+#: inc/admin/admin.php:145
 msgid "Select a Header Text Color for this page"
 msgstr ""
 
-#: inc/admin/admin.php:93
+#: inc/admin/admin.php:153
 msgid "Body Class"
 msgstr ""
 
-#: inc/admin/admin.php:94
+#: inc/admin/admin.php:154
 msgid "Add a custom class to the &lt;body&gt; tag for this page"
 msgstr ""
 
-#: inc/admin/customizer.php:37
+#: inc/admin/classes/class-options-page.php:45
+#: inc/admin/classes/class-options-page.php:61
+msgid "Alcatraz Theme Options"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:46
+msgid "Theme Options"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:86
+msgid "Social Media Links"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:93
+msgid "Email"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:99
+msgid "Enter your email address"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:105
+msgid "Facebook"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:111
+msgid "Enter your Facebook profile URL"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:117
+msgid "Twitter"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:123
+msgid "Enter your Twitter profile URL"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:129
+msgid "Instagram"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:135
+msgid "Enter your Instagram profile URL"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:141
+msgid "Pinterest"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:147
+msgid "Enter your Pinterest profile URL"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:153
+msgid "Youtube"
+msgstr ""
+
+#: inc/admin/classes/class-options-page.php:159
+msgid "Enter your You Tube channel URL"
+msgstr ""
+
+#: inc/admin/customizer.php:38
 msgid "Front Page"
 msgstr ""
 
-#: inc/admin/customizer.php:57
+#: inc/admin/customizer.php:58
 msgid "Header"
 msgstr ""
 
-#: inc/admin/customizer.php:67 inc/widget-areas.php:49
+#: inc/admin/customizer.php:68
+msgid "Menu Options"
+msgstr ""
+
+#: inc/admin/customizer.php:79 inc/widget-areas.php:49
 msgid "Footer"
 msgstr ""
 
-#: inc/admin/customizer.php:91
+#: inc/admin/customizer.php:105
 msgid "Site Layout"
 msgstr ""
 
-#: inc/admin/customizer.php:95
-msgid "Full Width"
-msgstr ""
-
-#: inc/admin/customizer.php:96
-msgid "Boxed"
-msgstr ""
-
-#: inc/admin/customizer.php:97
-msgid "Boxed Content"
-msgstr ""
-
-#: inc/admin/customizer.php:115
+#: inc/admin/customizer.php:125
 msgid "Page Layout"
 msgstr ""
 
-#: inc/admin/customizer.php:139
+#: inc/admin/customizer.php:145
 msgid "Include Page Banner Widget Area?"
 msgstr ""
 
-#: inc/admin/customizer.php:159
+#: inc/admin/customizer.php:167
 msgid "Header Style"
 msgstr ""
 
-#: inc/admin/customizer.php:164
-msgid "Short"
-msgstr ""
-
-#: inc/admin/customizer.php:165
-msgid "Side"
-msgstr ""
-
-#: inc/admin/customizer.php:184
-msgid "Mobile Navigation Toggle Style"
-msgstr ""
-
-#: inc/admin/customizer.php:205
-msgid "Mobile Navigation Style"
-msgstr ""
-
-#: inc/admin/customizer.php:226
-msgid "Sub Menu Toggle Style"
-msgstr ""
-
-#: inc/admin/customizer.php:245
+#: inc/admin/customizer.php:186
 msgid "Logo"
 msgstr ""
 
-#: inc/admin/customizer.php:264
+#: inc/admin/customizer.php:205
 msgid "Mobile Logo"
 msgstr ""
 
-#: inc/admin/customizer.php:284
+#: inc/admin/customizer.php:228
+msgid "Mobile Navigation Style"
+msgstr ""
+
+#: inc/admin/customizer.php:249
+msgid "Mobile Navigation Toggle Style"
+msgstr ""
+
+#: inc/admin/customizer.php:270
+msgid "Sub Menu Toggle Style"
+msgstr ""
+
+#: inc/admin/customizer.php:290
+msgid "Show Page Navigation in the Sidebar on Pages?"
+msgstr ""
+
+#: inc/admin/customizer.php:311
 msgid "Number of Footer Widget Areas"
 msgstr ""
 
-#: inc/admin/customizer.php:288 lib/cmb2/includes/CMB2_Field.php:978
+#: inc/admin/customizer.php:315 lib/cmb2/includes/CMB2_Field.php:978
 #: lib/cmb2/includes/CMB2_Field.php:982 lib/cmb2/tests/test-cmb-field.php:216
 msgid "None"
 msgstr ""
 
-#: inc/admin/customizer.php:310
+#: inc/admin/customizer.php:337
 msgid "Footer Bottom Content"
 msgstr ""
 
-#: inc/admin/options-page.php:45 inc/admin/options-page.php:61
-msgid "Alcatraz Theme Options"
+#: inc/admin/customizer.php:356
+msgid "Show Social Icons in Footer?"
 msgstr ""
 
-#: inc/admin/options-page.php:46
-msgid "Theme Options"
+#: inc/template-tags.php:39 template-parts/content-page.php:36
+#. translators: %s: Name of current post
+msgid "Edit %s"
 msgstr ""
 
-#: inc/admin/options-page.php:86
-msgid "Social Media Links"
-msgstr ""
-
-#: inc/admin/options-page.php:93
-msgid "Facebook"
-msgstr ""
-
-#: inc/admin/options-page.php:99
-msgid "Enter your Facebook profile URL"
-msgstr ""
-
-#: inc/admin/options-page.php:105
-msgid "Twitter"
-msgstr ""
-
-#: inc/admin/options-page.php:111
-msgid "Enter your Twitter profile URL"
-msgstr ""
-
-#: inc/admin/options-page.php:117
-msgid "Instagram"
-msgstr ""
-
-#: inc/admin/options-page.php:123
-msgid "Enter your Instagram profile URL"
-msgstr ""
-
-#: inc/admin/options-page.php:129
-msgid "Pinterest"
-msgstr ""
-
-#: inc/admin/options-page.php:135
-msgid "Enter your Pinterest profile URL"
-msgstr ""
-
-#: inc/admin/options-page.php:141
-msgid "Youtube"
-msgstr ""
-
-#: inc/admin/options-page.php:147
-msgid "Enter your Youtube channel URL"
-msgstr ""
-
-#: inc/choices.php:52
-msgid "Dark Text"
-msgstr ""
-
-#: inc/choices.php:53
-msgid "Light Text"
-msgstr ""
-
-#: inc/choices.php:71
-msgid "Button"
-msgstr ""
-
-#: inc/choices.php:72
-msgid "Hamburger"
-msgstr ""
-
-#: inc/choices.php:91
-msgid "Slide from Left"
-msgstr ""
-
-#: inc/choices.php:92
-msgid "Slide from Right"
-msgstr ""
-
-#: inc/choices.php:93
-msgid "Full Screen"
-msgstr ""
-
-#: inc/choices.php:111
-msgid "Chevron"
-msgstr ""
-
-#: inc/choices.php:112
-msgid "Plus-Minus"
-msgstr ""
-
-#: inc/template-tags.php:45 inc/template-tags.php:50
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:47
-msgid "Posted in %1$s"
-msgstr ""
-
-#: inc/template-tags.php:52
-msgid "Tagged %1$s"
-msgstr ""
-
-#: inc/template-tags.php:58
+#: inc/template-tags.php:55
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:55
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:55
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:65 template-parts/content-page.php:36
-#. translators: %s: Name of current post
-msgid "Edit %s"
+#: inc/template-tags.php:63 inc/template-tags.php:68
+msgid ", "
+msgstr ""
+
+#: inc/template-tags.php:65
+msgid "Posted in: %1$s"
+msgstr ""
+
+#: inc/template-tags.php:70
+msgid "Tagged: %1$s"
+msgstr ""
+
+#: inc/theme-options.php:142
+msgid "Dark Text"
+msgstr ""
+
+#: inc/theme-options.php:143
+msgid "Light Text"
+msgstr ""
+
+#: inc/theme-options.php:161
+msgid "Full Width"
+msgstr ""
+
+#: inc/theme-options.php:162
+msgid "Boxed"
+msgstr ""
+
+#: inc/theme-options.php:163
+msgid "Boxed Content"
+msgstr ""
+
+#: inc/theme-options.php:202
+msgid "Short"
+msgstr ""
+
+#: inc/theme-options.php:203
+msgid "Side"
+msgstr ""
+
+#: inc/theme-options.php:222
+msgid "Slide from Left"
+msgstr ""
+
+#: inc/theme-options.php:223
+msgid "Slide from Right"
+msgstr ""
+
+#: inc/theme-options.php:224
+msgid "Full Screen"
+msgstr ""
+
+#: inc/theme-options.php:242
+msgid "Button"
+msgstr ""
+
+#: inc/theme-options.php:243
+msgid "Hamburger"
+msgstr ""
+
+#: inc/theme-options.php:261
+msgid "Chevron"
+msgstr ""
+
+#: inc/theme-options.php:262
+msgid "Plus-Minus"
 msgstr ""
 
 #: inc/widget-areas.php:20
@@ -354,50 +411,50 @@ msgstr ""
 msgid "Footer %d"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:493
+#: lib/better-font-awesome-library/better-font-awesome-library.php:504
 msgid "The jsDelivr API servers appear to be temporarily unavailable."
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1042
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1053
 msgid "Insert Icon"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1062
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1073
 msgid "Better Font Awesome"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1068
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1079
 msgid "API Error"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1070
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1081
 msgid ""
 "The attempt to reach the jsDelivr API server failed with the following "
 "error: %s"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1080
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1091
 msgid "Remote CSS Error"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1082
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1093
 msgid ""
 "The attempt to fetch the remote Font Awesome stylesheet failed with the "
 "following error: %s %s The embedded fallback Font Awesome will be used "
 "instead (version: %s)."
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1092
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1103
 msgid ""
 "<b>Don't worry! Better Font Awesome will still render using the included "
 "fallback version:</b> "
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1096
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1107
 msgid "Solution"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1098
+#: lib/better-font-awesome-library/better-font-awesome-library.php:1109
 msgid ""
 "This may be the result of a temporary server or connectivity issue which "
 "will resolve shortly. However if the problem persists please file a support "
@@ -857,11 +914,11 @@ msgid "Pages:"
 msgstr ""
 
 #: template-parts/content.php:29
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgid "Continue reading %s <span class=\"meta-nav\">&raquo;</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme
-msgid "alcatraz"
+msgid "Alcatraz"
 msgstr ""
 
 #. Description of the plugin/theme

@@ -49,7 +49,14 @@ module.exports = function( grunt ) {
 				separator: '\n\n'
 			},
 			dist: {
-				src: ['lib/jquery-mobile/jquery.mobile.custom.min.js', 'js/src/*.js'],
+				src: [
+					'lib/jquery-mobile/jquery.mobile.custom.min.js',
+					'js/src/utilities.js',
+					'js/src/skip-link-focus-fix.js',
+					'js/src/navigation.js',
+					'js/src/alcatraz.js', // This must be included after all other objects.
+					'js/src/init.js' // This should be last.
+				],
 				dest: 'js/<%= pkg.name %>-theme.js'
 			}
 		},
