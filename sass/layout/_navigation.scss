@@ -647,26 +647,6 @@ a {
 		@include large-screen-nav-display( inline-block );
 		@include large-screen-nav-dropdown;
 
-		#primary-menu {
-			background-color: $alcatraz-blue;
-
-			a {
-				color: $true-white;
-			}
-
-			.sub-level-toggle .sub-level-toggle-span {
-				background-color: $true-white;
-			}
-
-			a:hover {
-				color: darken($true-white, 15%);
-			}
-
-			.sub-level-toggle:hover .sub-level-toggle-span {
-				background-color: darken($true-white, 15%);
-			}
-		}
-
 		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
 			padding-left: 0;
 			padding-right: 0;
