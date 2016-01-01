@@ -19,73 +19,71 @@ $true-black: #000;
 $the-coast-is-clear: transparent;
 
 // Background Colors
+$color__background-blockquote: $bright-light;
 $color__background-body: $true-white;
 $color__background-body-boxed: $mist;
-$color__background-screen: #f1f1f1;
-$color__background-hr: $mist;
 $color__background-button: $alcatraz-blue;
 $color__background-button-hover: $the-coast-is-clear;
-$color__background-pre: $bright-light;
-$color__background-ins: $hope;
-$color__background-blockquote: $bright-light;
-$color__background-table-row: $bright-light;
 $color__background-featured-image: $bright-light;
+$color__background-hr: $mist;
+$color__background-ins: $hope;
 $color__background-mobile-nav: $true-white;
+$color__background-pre: $bright-light;
+$color__background-screen: #f1f1f1;
+$color__background-table-row: $bright-light;
+
+// Overlay Colors
+$color__overlay-transparent: rgba(0,0,0,0.4);
 
 // Text Colors
-$color__text-main: $black-as-night;
-$color__text-mobile-nav: $alcatraz-blue;
-$color__text-screen: #21759b;
+$color__text-body: $black-as-night;
+$color__text-button: $true-white;
+$color__text-button-hover: $alcatraz-blue;
 $color__text-input: $prision-cell-gray;
 $color__text-input-focus: $prision-cell-gray;
+$color__text-screen: #21759b;
 $color__link: $alcatraz-blue;
-$color__link-visited: darken($color__link, 30%);
 $color__link-hover: darken($color__link, 20%);
-$color__button: $true-white;
-$color__button-hover: $alcatraz-blue;
-$color__link-navigation: $alcatraz-blue;
-$color__link-navigation-hover: darken($color__link-navigation, 20%);
-$color__link-navgiation-visited: $alcatraz-blue;
+$color__link-visited: darken($color__link, 30%);
+$color__link-mobile-nav: $alcatraz-blue;
+$color__link-nav: $alcatraz-blue;
+$color__link-nav-hover: darken($color__link-nav, 20%);
+$color__link-nav-visited: $alcatraz-blue;
 
 // Border Colors
 $color__border-abbr: #666;
 
-// Borders
-$border__button: 2px solid $alcatraz-blue;
-$border__button-hover: 2px solid $alcatraz-blue;
-$border__input: 1px solid $sf-fog;
-$border__input-focus: 1px solid $prision-cell-gray;
-$border__table: 1px solid $bright-light;
-$border__sub-page-nav-item: 1px dotted $mist;
-
-// Utility Colors
-$color__transparent-overlay: rgba(0,0,0,0.4);
-
 
 // 2.2.2 Typography
 
-// Fonts
+// Font Palette
 $source-sans-pro: 'Source Sans Pro', sans-serif;
 $source-serif-pro: 'Source Serif Pro', serif;
 $source-code-pro: 'Source Code Pro', Courier, monospace;
 $font-awesome: FontAwesome;
 
-$font__main: $source-sans-pro;
-$font__headings: $source-serif-pro;
+$font__body: $source-sans-pro;
 $font__code: $source-code-pro;
-$font__pre: $source-code-pro;
+$font__headings: $source-serif-pro;
 $font__line-height-body: 1.5;
 $font__line-height-headings: 1.2;
 $font__line-height-pre: 1.6;
 $font__margin-headings: 0 0 em(10) 0;
+$font__pre: $source-code-pro;
 
 
-// 2.2.3 Structure
-$size__width-site: 100%;
-$size__width-boxed-content: 1200px;
-$size__width-sidebar: 25%;
-$size__width-sidebar-content: $size__width-site - $size__width-sidebar;
-$size__padding-default: em(20);
+// 2.2.3 Borders
+$border__button: 2px solid $alcatraz-blue;
+$border__button-hover: 2px solid $alcatraz-blue;
+$border__input: 1px solid $sf-fog;
+$border__input-focus: 1px solid $prision-cell-gray;
+$border__sub-page-nav-item: 1px dotted $mist;
+$border__table: 1px solid $bright-light;
+
+
+// 2.2.4 Structure
+$size__padding-default: 20px;
 $size__padding-default-half: $size__padding-default / 2;
 $size__padding-default-double: $size__padding-default * 2;
-$size__header-branding: 300px;
+$size__width-site: 100%;
+$size__width-boxed-content: 1200px;

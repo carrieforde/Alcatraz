@@ -274,14 +274,14 @@ a {
 	li a {
 		padding: 10px 15px;
 		display: block;
-		color: $color__link-navigation;
+		color: $color__link-nav;
 
 		&:hover {
-			color: $color__link-navigation-hover;
+			color: $color__link-nav-hover;
 		}
 
 		&:visited {
-			color: $color__link-navgiation-visited;
+			color: $color__link-nav-visited;
 		}
 	}
 
@@ -329,10 +329,10 @@ a {
 	}
 
 	a {
-		color: $color__link-navigation;
+		color: $color__link-nav;
 
 		&:hover {
-			color: $color__link-navigation-hover;
+			color: $color__link-nav-hover;
 		}
 	}
 
@@ -460,7 +460,7 @@ a {
 
 		a {
 			@media (max-width: em(767)) {
-				color: $color__text-mobile-nav;
+				color: $color__link-mobile-nav;
 			}
 		}
 	}
@@ -472,7 +472,7 @@ a {
 
 		a {
 			@media (max-width: em(959)) {
-				color: $color__text-mobile-nav;
+				color: $color__link-mobile-nav;
 			}
 		}
 	}
@@ -507,7 +507,7 @@ a {
 			height: 150vh;
 			overflow: hidden;
 			top: 0;
-			background-color: $color__transparent-overlay;
+			background-color: $color__overlay-transparent;
 		}
 	}
 
