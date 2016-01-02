@@ -321,9 +321,9 @@ var AlcatrazNavigation = ( function( $ ) {
 	 * @since  1.0.0
 	 */
 	var toggleMobileNav = function() {
-		$container = $( '#site-navigation' );
-		$toggle    = $container.find( '.menu-toggle' );
-		$menu      = $container.find( '#primary-menu' );
+		var $container = $( '#site-navigation' );
+		var $toggle    = $container.find( '.menu-toggle' );
+		var $menu      = $container.find( '#primary-menu' );
 
 		if ( $container.hasClass( 'toggled' ) ) {
 			$window.trigger( 'aczCloseMobileNav' );
