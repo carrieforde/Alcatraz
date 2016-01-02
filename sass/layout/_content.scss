@@ -11,6 +11,10 @@
 	@include clearfix;
 }
 
+.boxed {
+	background-color: $color__background-body-boxed;
+}
+
 .boxed .site {
 	background-color: $color__background-body;
 }
