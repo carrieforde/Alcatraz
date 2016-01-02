@@ -86,6 +86,11 @@ var AlcatrazUtilities = ( function( $ ) {
  * This object contains several public methods related to the functionality of the menus.
  * The methods can be accessed anywhere on the front end using `Alcatraz.Nav.methodName()`.
  *
+ * Alcatraz.Nav.toggleMobileNav() is a direct method for opening and closing the mobile nav.
+ *
+ * Alcatraz.Nav.toggleListItem() is a direct method for opening or closing an <li> element in
+ * a list toggle.
+ *
  * Alcatraz.Nav.initListToggle() is a utility function that can transform any nested <ul>
  * structure into a sliding accordion with toggle icons.
  *
@@ -95,7 +100,8 @@ var AlcatrazUtilities = ( function( $ ) {
  *
  * Alcatraz.Nav.initSubPageNavigation() is a method for directly initializing the Sub Page nav.
  *
- * Alcatraz.Nav.toggleMobileNav() is a direct method for opening and closing the mobile nav.
+ * Alcatraz.Nav.resetNavEventListeners() is a method for setting and resetting the navigation
+ * event listeners.
  *
  * @since  1.0.0
  */
@@ -113,35 +119,76 @@ var AlcatrazNavigation = ( function( $ ) {
 	 *
 	 * @since  1.0.0
 	 */
-	var _togglePrimaryNavFocus = function() {
-		var self = this;
+	var _toggleListFocus = function() {
+		var $self = $( this );
 
 		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( -1 === self.className.indexOf( 'nav-menu' ) ) {
+		while ( ! $self.hasClass( 'nav-menu' ) ) {
 
 			// On li elements toggle the class .focus.
-			if ( 'li' === self.tagName.toLowerCase() ) {
-				if ( -1 !== self.className.indexOf( 'focus' ) ) {
-					self.className = self.className.replace( ' focus', '' );
-				} else {
-					self.className += ' focus';
-				}
+			if ( $self.is( 'li' ) ) {
+				$self.toggleClass( 'focus' );
 			}
 
-			self = self.parentElement;
+			$self = $self.parent();
 		}
 	};
 
 	/**
-	 * Do the sub level toggling on a list.
+	 * Trigger the toggleListItem function when the toggleListItem event fires.
 	 *
 	 * @since  1.0.0
 	 *
-	 * @param  {object}  $item    The parent <li> jQuery object.
-	 * @param  {object}  $list    The top level <ul> jQuery object.
-	 * @param  {object}  options  The toggle options.
+	 * @param  {object}  event  The toggleListItem event.
+	 * @param  {object}  data   The event data.
 	 */
-	var _listToggleSubLevel = function( $item, $list, options ) {
+	var _toggleListItem = function( event, data ) {
+		var $item = data.item || {};
+		var args  = data.args || {};
+
+		toggleListItem( $item, args );
+	};
+
+
+	/**
+	 * Toggle the mobile Primary Navigation.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @returns  {object}  The original this.
+	 */
+	var toggleMobileNav = function() {
+		var $container = $( '#site-navigation' );
+		var $toggle    = $container.find( '.menu-toggle' );
+		var $menu      = $container.find( '#primary-menu' );
+
+		if ( $container.hasClass( 'toggled' ) ) {
+			$window.trigger( 'closeMobileNav.alcatraz' );
+			$container.removeClass( 'toggled' );
+			$toggle.attr( 'aria-expanded', 'false' );
+			$menu.attr( 'aria-expanded', 'false' );
+		} else {
+			$window.trigger( 'openMobileNav.alcatraz' );
+			$container.addClass( 'toggled' );
+			$toggle.attr( 'aria-expanded', 'true' );
+			$menu.attr( 'aria-expanded', 'true' );
+		}
+
+		return this;
+	};
+
+	/**
+	 * Toggle a list item.
+	 *
+	 * @since    1.0.0
+	 *
+	 * @param    {object}  $item    The list item jQuery object.
+	 * @param    {object}  options  The toggle options.
+	 *
+	 * @returns  {object}           The original this.
+	 */
+	var toggleListItem = function( $item, options ) {
+		var $list     = $item.parents( 'ul' ).last();
 		var $toggle   = $item.find( '.sub-level-toggle' ).first();
 		var $parent   = $toggle.parents( 'li' ).last();
 		var $sub      = $item.find( 'ul' ).first();
@@ -156,7 +203,7 @@ var AlcatrazNavigation = ( function( $ ) {
 		$item.toggleClass( 'toggled' );
 		$toggle.toggleClass( 'toggled' ).blur().next( 'ul' ).slideToggle( duration ).toggleClass( 'toggled' );
 
-		// If we're setting up the primary nav and the menu item has children,
+		// If we're toggling a menu item on the primary nav and the menu item has children,
 		// detect whether they may be overflowing off the screen and add a class if they are.
 		if ( $list.is( '#primary-menu' ) && $item.hasClass( 'menu-item-has-children' ) && $item.hasClass( 'toggled' ) ) {
 			var rightEdge   = $sub.width() + $sub.offset().left;
@@ -167,28 +214,31 @@ var AlcatrazNavigation = ( function( $ ) {
 			}
 		} else {
 
-			// Delay removing the class just a bit so the slideup animation can finish.
+			// Delay removing the class so the slideup animation can finish.
 			setTimeout( function() {
 				$item.removeClass( 'reverse-expand' );
 			}, duration );
 		}
+
+		return this;
 	};
 
 	/**
-	 * Initialize sub-level toggle functionality on a ul element.
+	 * Set up list toggle functionality on a <ul> element with child <ul> elements.
 	 *
 	 * @since    1.0.0
 	 *
-	 * @param    {element|object}  el       The elements or jQuery object to operate on.
-	 * @param    {object}          options  The toggle options.
+	 * @param    {object}  el       A jQuery object containing the ul elements.
+	 * @param    {object}  options  The toggle options.
 	 *
-	 * @returns  {object}                   A jQuery object of the elements we operated on.
+	 * @returns  {object}           A jQuery object containing the ul elements.
 	 */
 	var initListToggle = function( el, options ) {
+		var args = options || {};
+
 		return $( el ).each( function() {
 			var $list          = $( this );
 			var $subList       = $list.find( 'li' ).has( 'ul' );
-			var args           = options || {};
 			var safeToggleText = Alcatraz.Utils.escapeHtml( toggleText );
 
 			var toggle = '<a class="sub-level-toggle">' + safeToggleText +
@@ -207,8 +257,12 @@ var AlcatrazNavigation = ( function( $ ) {
 				e.preventDefault();
 
 				var $item = $( this ).parent( 'li' );
+				var data  = {
+					item: $item,
+					args: args,
+				};
 
-				_listToggleSubLevel( $item, $list, args );
+				$window.trigger( 'toggleListItem.alcatraz', data );
 			});
 		});
 	};
@@ -223,6 +277,7 @@ var AlcatrazNavigation = ( function( $ ) {
 	var initSiteNavigation = function() {
 		initPrimaryNavigation();
 		initSubPageNavigation();
+		resetNavEventListeners();
 
 		return this;
 	};
@@ -238,20 +293,20 @@ var AlcatrazNavigation = ( function( $ ) {
 		var $container = $( '#site-navigation' );
 
 		if ( ! $container ) {
-			return this;
+			return false;
 		}
 
 		var $toggle = $container.find( '.menu-toggle' );
 
 		if ( 'undefined' === typeof $toggle ) {
-			return this;
+			return false;
 		}
 
 		var $menu = $container.find( '#primary-menu' );
 
 		if ( 'undefined' === typeof $menu ) {
 			$toggle.css( 'display', 'none' );
-			return this;
+			return false;
 		}
 
 		var $links    = $menu.find( 'a' );
@@ -268,24 +323,22 @@ var AlcatrazNavigation = ( function( $ ) {
 			if ( $body.hasClass( 'mobile-nav-style-slide-left' ) ||
 				 $body.hasClass( 'mobile-nav-style-slide-right' ) ) {
 				$.event.special.swipe.horizontalDistanceThreshold = 15;
-				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .menu-overlay' ).on( 'swipeleft swiperight', function() {
-					$window.trigger( 'aczToggleMobileNav' );
+				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation .menu-overlay' ).on( 'swipeleft swiperight', function() {
+					$window.trigger( 'toggleMobileNav.alcatraz' );
 				});
 			}
 		}
 
-		// Set up the top level menu toggle.
-		$toggle.add( '.menu-overlay' ).on( 'click', function() {
-			$window.trigger( 'aczToggleMobileNav' );
+		// Set up the mobile nav toggle.
+		$toggle.add( '.main-navigation .menu-overlay' ).on( 'click', function() {
+			$window.trigger( 'toggleMobileNav.alcatraz' );
 		});
-		$window.on( 'aczToggleMobileNav', toggleMobileNav );
 
+		// Set up the sub menu dropdown toggles.
 		var toggleOptions = {
 			autoClose: true,
 			duration: 300,
 		};
-
-		// Set up the sub menu dropdown toggles.
 		initListToggle( $menu, toggleOptions );
 
 		// Build the inner menu toggle.
@@ -303,17 +356,17 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		// Close the main nav when the inner menu toggle is clicked.
 		$( '.inner-menu-toggle' ).on( 'click', function() {
-			$window.trigger( 'aczToggleMobileNav' );
+			$window.trigger( 'toggleMobileNav.alcatraz' );
 		});
 
-		// Set menu items with submenus to aria-haspopup="true".
+		// Set menu items with sub menus to aria-haspopup="true".
 		$subMenus.each( function() {
 			$( this ).parent().attr( 'aria-haspopup', 'true' );
 		});
 
 		// Each time a menu link is focused or blurred, toggle focus.
 		$links.each( function() {
-			$( this ).on( 'focus blur', _togglePrimaryNavFocus );
+			$( this ).on( 'focus blur', _toggleListFocus );
 		});
 
 		return this;
@@ -330,7 +383,7 @@ var AlcatrazNavigation = ( function( $ ) {
 		var $subNav = $( '.alcatraz-sub-page-nav > ul' );
 
 		if ( ! $subNav.length ) {
-			return this;
+			return false;
 		}
 
 		var toggleOptions = {
@@ -344,28 +397,21 @@ var AlcatrazNavigation = ( function( $ ) {
 	};
 
 	/**
-	 * Do the primary nav top level mobile nav toggle.
+	 * Set up the navigation event listeners.
 	 *
 	 * @since    1.0.0
 	 *
 	 * @returns  {object}  The original this.
 	 */
-	var toggleMobileNav = function() {
-		var $container = $( '#site-navigation' );
-		var $toggle    = $container.find( '.menu-toggle' );
-		var $menu      = $container.find( '#primary-menu' );
+	var resetNavEventListeners = function() {
 
-		if ( $container.hasClass( 'toggled' ) ) {
-			$window.trigger( 'aczCloseMobileNav' );
-			$container.removeClass( 'toggled' );
-			$toggle.attr( 'aria-expanded', 'false' );
-			$menu.attr( 'aria-expanded', 'false' );
-		} else {
-			$window.trigger( 'aczOpenMobileNav' );
-			$container.addClass( 'toggled' );
-			$toggle.attr( 'aria-expanded', 'true' );
-			$menu.attr( 'aria-expanded', 'true' );
-		}
+		// Mobile nav toggle.
+		$window.off( 'toggleMobileNav.alcatraz', toggleMobileNav );
+		$window.on( 'toggleMobileNav.alcatraz', toggleMobileNav );
+
+		// List item toggle.
+		$window.off( 'toggleListItem.alcatraz', _toggleListItem );
+		$window.on( 'toggleListItem.alcatraz', _toggleListItem );
 
 		return this;
 	};
@@ -374,11 +420,13 @@ var AlcatrazNavigation = ( function( $ ) {
 	 * Expose public methods.
 	 */
 	return {
-		initListToggle        : initListToggle,
-		initSiteNavigation    : initSiteNavigation,
-		initPrimaryNavigation : initPrimaryNavigation,
-		initSubPageNavigation : initSubPageNavigation,
-		toggleMobileNav       : toggleMobileNav,
+		toggleMobileNav        : toggleMobileNav,
+		toggleListItem         : toggleListItem,
+		initListToggle         : initListToggle,
+		initSiteNavigation     : initSiteNavigation,
+		initPrimaryNavigation  : initPrimaryNavigation,
+		initSubPageNavigation  : initSubPageNavigation,
+		resetNavEventListeners : resetNavEventListeners,
 	};
 
 })( jQuery );
