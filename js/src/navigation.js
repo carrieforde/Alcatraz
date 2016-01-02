@@ -102,11 +102,12 @@ var AlcatrazNavigation = ( function( $ ) {
 	 */
 	var initListToggle = function( el, options ) {
 		return $( el ).each( function() {
-			var $list     = $( this );
-			var $subList  = $list.find( 'li' ).has( 'ul' );
-			var args      = options || {};
+			var $list          = $( this );
+			var $subList       = $list.find( 'li' ).has( 'ul' );
+			var args           = options || {};
+			var safeToggleText = Alcatraz.Utils.escapeHtml( toggleText );
 
-			var toggle = '<a class="sub-level-toggle">' + toggleText +
+			var toggle = '<a class="sub-level-toggle">' + safeToggleText +
 			                 '<span class="sub-level-toggle-span span-1"></span>' +
 			                 '<span class="sub-level-toggle-span span-2"></span>' +
 			                 '<span class="sub-level-toggle-span span-3"></span>' +
