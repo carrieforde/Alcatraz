@@ -21,13 +21,13 @@ var AlcatrazUtilities = ( function( $ ) {
 	/**
 	 * Escape the HTML entities in a string by replacing them with their character codes.
 	 *
-	 * @param   {string}  string  The string to escape.
-	 * @return  {string}          The escaped string.
+	 * @since    1.0.0
 	 *
-	 * @since  1.0.0
+	 * @param    {string}  string  The string to escape.
+	 *
+	 * @returns  {string}          The escaped string.
 	 */
 	function escapeHtml( string ) {
-
 		return String( string ).replace( /[&<>"'\/]/g, function ( s ) {
 			return htmlEntityMap[s];
 		});

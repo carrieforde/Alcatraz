@@ -25,13 +25,13 @@ var AlcatrazUtilities = ( function( $ ) {
 	/**
 	 * Escape the HTML entities in a string by replacing them with their character codes.
 	 *
-	 * @param   {string}  string  The string to escape.
-	 * @return  {string}          The escaped string.
+	 * @since    1.0.0
 	 *
-	 * @since  1.0.0
+	 * @param    {string}  string  The string to escape.
+	 *
+	 * @returns  {string}          The escaped string.
 	 */
 	function escapeHtml( string ) {
-
 		return String( string ).replace( /[&<>"'\/]/g, function ( s ) {
 			return htmlEntityMap[s];
 		});
@@ -177,10 +177,12 @@ var AlcatrazNavigation = ( function( $ ) {
 	/**
 	 * Initialize sub-level toggle functionality on a ul element.
 	 *
-	 * @since  1.0.0
+	 * @since    1.0.0
 	 *
-	 * @param  {element|object}  el       The element or jQuery object to operate on.
-	 * @param  {object}          options  The toggle options.
+	 * @param    {element|object}  el       The elements or jQuery object to operate on.
+	 * @param    {object}          options  The toggle options.
+	 *
+	 * @returns  {object}                   A jQuery object of the elements we operated on.
 	 */
 	var initListToggle = function( el, options ) {
 		return $( el ).each( function() {
@@ -214,36 +216,42 @@ var AlcatrazNavigation = ( function( $ ) {
 	/**
 	 * Set up both the Primary and Sub Page navigation.
 	 *
-	 * @since  1.0.0
+	 * @since    1.0.0
+	 *
+	 * @returns  {object}  The original this.
 	 */
 	var initSiteNavigation = function() {
 		initPrimaryNavigation();
 		initSubPageNavigation();
+
+		return this;
 	};
 
 	/**
 	 * Set up the Primary Navigation expand/contract functionality.
 	 *
-	 * @since  1.0.0
+	 * @since    1.0.0
+	 *
+ 	 * @returns  {object}  The original this.
 	 */
 	var initPrimaryNavigation = function() {
 		var $container = $( '#site-navigation' );
 
 		if ( ! $container ) {
-			return;
+			return this;
 		}
 
 		var $toggle = $container.find( '.menu-toggle' );
 
 		if ( 'undefined' === typeof $toggle ) {
-			return;
+			return this;
 		}
 
 		var $menu = $container.find( '#primary-menu' );
 
 		if ( 'undefined' === typeof $menu ) {
 			$toggle.css( 'display', 'none' );
-			return;
+			return this;
 		}
 
 		var $links    = $menu.find( 'a' );
@@ -306,18 +314,22 @@ var AlcatrazNavigation = ( function( $ ) {
 		$links.each( function() {
 			$( this ).on( 'focus blur', _togglePrimaryNavFocus );
 		});
+
+		return this;
 	};
 
 	/**
 	 * Set up the Sub Page Navigation expand/contract functionality.
 	 *
-	 * @since  1.0.0
+	 * @since    1.0.0
+	 *
+	 * @returns  {object}  The original this.
 	 */
 	var initSubPageNavigation = function() {
 		var $subNav = $( '.alcatraz-sub-page-nav > ul' );
 
 		if ( ! $subNav.length ) {
-			return;
+			return this;
 		}
 
 		var toggleOptions = {
@@ -325,12 +337,16 @@ var AlcatrazNavigation = ( function( $ ) {
 		};
 
 		initListToggle( $subNav, toggleOptions );
+
+		return this;
 	};
 
 	/**
 	 * Do the primary nav top level mobile nav toggle.
 	 *
-	 * @since  1.0.0
+	 * @since    1.0.0
+	 *
+	 * @returns  {object}  The original this.
 	 */
 	var toggleMobileNav = function() {
 		var $container = $( '#site-navigation' );
@@ -348,6 +364,8 @@ var AlcatrazNavigation = ( function( $ ) {
 			$toggle.attr( 'aria-expanded', 'true' );
 			$menu.attr( 'aria-expanded', 'true' );
 		}
+
+		return this;
 	};
 
 	/**
