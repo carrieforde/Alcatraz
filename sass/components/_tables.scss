@@ -3,15 +3,15 @@
 */
 
 table {
-	margin: 0 0 1.5em;
+	margin: 0 0 em(25);
 	border: $border__table;
 	width: 100%;
 }
 
 thead {
 	border-bottom: $border__table;
-	background-color: darken($color__background-table-row, 30%);
-	color: #fff;
+	background-color: $color__background-table-thead;
+	color: $color__text-table-thead;
 }
 
 tr:nth-child(even) {

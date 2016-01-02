@@ -60,6 +60,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import "base/typography";
 
 // 3.0 Components
+@import "components/navigation";
 @import "components/media";
 @import "components/forms";
 @import "components/tables";
@@ -67,7 +68,6 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
 // 4.0 Layout
 @import "layout/header";
-@import "layout/navigation";
 @import "layout/content";
 @import "layout/sidebars";
 @import "layout/footer";

@@ -36,6 +36,7 @@ $color__background-sub-menu: $true-white;
 $color__background-sub-menu-toggle: $prision-cell-gray;
 $color__background-sub-menu-toggle-hover: lighten($color__background-sub-menu-toggle, 15%);
 $color__background-table-row: $bright-light;
+$color__background-table-thead: darken($color__background-table-row, 30%);
 
 // Overlay Colors
 $color__overlay-transparent: rgba(0,0,0,0.4);
@@ -46,18 +47,21 @@ $color__text-button: $true-white;
 $color__text-button-hover: $alcatraz-blue;
 $color__text-input: $prision-cell-gray;
 $color__text-input-focus: $prision-cell-gray;
+$color__text-menu-toggle: $true-white;
+$color__text-menu-toggle-hover: $true-white;
 $color__text-screen: #21759b;
+$color__text-table-thead: $true-white;
 $color__link: $alcatraz-blue;
-$color__link-hover: darken($color__link, 20%);
 $color__link-visited: darken($color__link, 30%);
+$color__link-hover: darken($color__link, 20%);
 $color__link-mobile-nav: $alcatraz-blue;
 $color__link-nav: $alcatraz-blue;
 $color__link-nav-hover: darken($color__link-nav, 20%);
-$color__link-nav-visited: $alcatraz-blue;
 $color__link-nav-sub-menu: $prision-cell-gray;
 $color__link-nav-sub-menu-hover: darken($color__link-nav-sub-menu, 10%);
 
 // Box Shadow
+$color__box-shadow-mobile-primary-menu: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
 $color__box-shadow-screen: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 $color__box-shadow-sub-menu: 0 3px 10px -3px rgba(0, 0, 0, 0.5);
 

@@ -10,10 +10,9 @@ img {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	border: none;
-	margin-bottom: 0;
-	margin-top: 0;
 	padding: 0;
+	border: none;
+	margin: 0;
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -28,8 +27,8 @@ object {
  */
 
 .wp-caption {
-	margin-top: 0.5em;
-	margin-bottom: 1em;
+	margin-top: em(10);
+	margin-bottom: em(18);
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -38,9 +37,9 @@ object {
 }
 
 .wp-caption-text {
+	margin: em(10) 0;
 	@include font-size(14);
 	font-weight: 500;
-	margin: 0.5em 0;
 	text-align: center;
 }
 
@@ -49,16 +48,16 @@ object {
  */
 
 .gallery {
-	margin-bottom: 1.5em;
 	overflow: hidden;
+	margin-bottom: em(25);
 }
 
 .gallery-item {
 	display: inline-block;
-	margin: 1em 0;
-	text-align: center;
-	vertical-align: top;
 	width: 100%;
+	vertical-align: top;
+	margin: em(20) 0;
+	text-align: center;
 
 	.gallery-columns-1 &,
 	.gallery-columns-2 &,

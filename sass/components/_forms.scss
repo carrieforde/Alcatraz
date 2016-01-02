@@ -15,9 +15,9 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	color: $color__text-input;
-	border: $border__input;
 	vertical-align: text-bottom;
+	border: $border__input;
+	color: $color__text-input;
 
 	&:focus {
 		border: $border__input-focus;
@@ -35,8 +35,8 @@ input[type="search"] {
 }
 
 textarea {
-	padding: em(5);
 	width: 100%;
+	padding: em(5);
 }
 
 /* Buttons */
@@ -44,20 +44,20 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	background-color: $color__background-button;
+	padding: em(10) em(15);
 	border: $border__button;
+	background-color: $color__background-button;
 	color: $color__text-button;
 	font-weight: 500;
 	letter-spacing: 0.5px;
-	padding: em(10) em(15);
 	text-transform: uppercase;
 	transition: all 0.2s ease-in;
 
 	&:hover,
 	&:active,
 	&:focus {
-		background-color: $color__background-button-hover;
 		border: $border__button-hover;
+		background-color: $color__background-button-hover;
 		color: $color__text-button-hover;
 	}
 }
