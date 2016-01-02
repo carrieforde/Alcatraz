@@ -282,6 +282,7 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		var toggleOptions = {
 			autoClose: true,
+			duration: 300,
 		};
 
 		// Set up the sub menu dropdown toggles.
@@ -334,6 +335,7 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		var toggleOptions = {
 			autoClose: false,
+			duration: 300,
 		};
 
 		initListToggle( $subNav, toggleOptions );
