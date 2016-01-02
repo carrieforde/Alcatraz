@@ -37,6 +37,13 @@ var AlcatrazUtilities = ( function( $ ) {
 		});
 	}
 
+	/**
+	 * Expose public methods.
+	 */
+	return {
+		escapeHtml : escapeHtml,
+	};
+
 })( jQuery );
 
 /**
@@ -271,14 +278,18 @@ var AlcatrazNavigation = ( function( $ ) {
 		// Set up the sub menu dropdown toggles.
 		initListToggle( $menu, toggleOptions );
 
-		var innerMenuToggle = '<div class="inner-menu-toggle">' + closeText +
-		                          '<span class="inner-menu-toggle-span span-1"></span>' +
-		                          '<span class="inner-menu-toggle-span span-2"></span>' +
-		                          '<span class="inner-menu-toggle-span span-3"></span>' +
-		                      '</div>';
+		// Build the inner menu toggle.
+		var $innerMenuToggle = $( '<div class="inner-menu-toggle"></div>' );
+
+		// Use jQuery's $.text() method to escape HTML entities.
+		$innerMenuToggle.text( closeText ).append(
+			'<span class="inner-menu-toggle-span span-1"></span>' +
+			'<span class="inner-menu-toggle-span span-2"></span>' +
+			'<span class="inner-menu-toggle-span span-3"></span>'
+		);
 
 		// Inject the inner menu toggles.
-		$menu.before( innerMenuToggle );
+		$menu.before( $innerMenuToggle );
 
 		// Close the main nav when the inner menu toggle is clicked.
 		$( '.inner-menu-toggle' ).on( 'click', function() {
@@ -357,7 +368,7 @@ var AlcatrazNavigation = ( function( $ ) {
  * This file contains the main Alcatraz JS object, which serves as a wrapper and namespace under
  * which all of our other component objects can be accessed.
  *
- * Alcatraz.Utilities is an object with utility methods that are useful.
+ * Alcatraz.Utils is an object with utility methods that are useful.
  *
  * Alcatraz.Nav is an object with all methods related to the site navigation.
  *
@@ -366,11 +377,17 @@ var AlcatrazNavigation = ( function( $ ) {
 
 var Alcatraz = ( function( $ ) {
 
-	var Utilities = AlcatrazUtilities || false;
+	/**
+	 * Save component objects as properties.
+	 */
+	var Utils = AlcatrazUtilities || false;
 	var Nav = AlcatrazNavigation || false;
 
+	/**
+	 * Expose public methods.
+	 */
 	return {
-		Utilities : Utilities,
+		Utils : Utils,
 		Nav : Nav,
 	};
 

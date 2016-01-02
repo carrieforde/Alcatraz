@@ -33,4 +33,11 @@ var AlcatrazUtilities = ( function( $ ) {
 		});
 	}
 
+	/**
+	 * Expose public methods.
+	 */
+	return {
+		escapeHtml : escapeHtml,
+	};
+
 })( jQuery );
