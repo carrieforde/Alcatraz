@@ -220,8 +220,9 @@ function alcatraz_scripts() {
 
 	// Translatable strings and other data for our JS.
 	$vars = array(
-		'menu_toggle' => __( 'Toggle', 'alcatraz' ),
-		'menu_close'  => __( 'Close', 'alcatraz' ),
+		'menu_toggle'    => __( 'Toggle', 'alcatraz' ),
+		'menu_close'     => __( 'Close', 'alcatraz' ),
+		'slide_duration' => 300,
 	);
 	$vars = apply_filters( 'alcatraz_js_vars', $vars );
 

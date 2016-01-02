@@ -109,13 +109,14 @@ var AlcatrazNavigation = ( function( $ ) {
 
 	'use strict';
 
-	var $body      = $( 'body' );
-	var $window    = $( window );
-	var toggleText = alcatraz_vars.menu_toggle || '';
-	var closeText  = alcatraz_vars.menu_close  || '';
+	var $body         = $( 'body' );
+	var $window       = $( window );
+	var toggleText    = alcatraz_vars.menu_toggle || '';
+	var closeText     = alcatraz_vars.menu_close  || '';
+	var slideDuration = alcatraz_vars.slide_duration || 300;
 
 	/**
-	 * Toggle list item focus when using keyboard navigation.
+	 * Toggle a 'focus' class on list items when using keyboard navigation.
 	 *
 	 * @since  1.0.0
 	 *
@@ -127,19 +128,6 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		if ( 'focus' === event.type ) {
 			$item.addClass( 'focus' );
-
-			if ( ! $item.hasClass( 'toggled' ) ) {
-				var args  = {
-					autoClose : false,
-					duration  : 300,
-				};
-				var data = {
-					item : $item,
-					args : args,
-				};
-
-				$( window ).trigger( 'toggleListItem.alcatraz', data );
-			}
 		}
 
 		if ( 'blur' === event.type ) {
@@ -160,6 +148,246 @@ var AlcatrazNavigation = ( function( $ ) {
 		var args = data.args || {};
 
 		toggleListItem( item, args );
+	};
+
+	/**
+	 * Handle keyboard navigation support via tab and arrow keys across all site navigation.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @param  {object}  event  The keyup event object.
+	 */
+	var _toggleNavItemWithKeyboard = function( event ) {
+		var code = ( event.keyCode ) ? event.keyCode : event.which;
+		var $el  = $( document.activeElement );
+
+		// Bail if a modified key has been pressed.
+		if ( event.altKey || event.ctrlKey ) {
+			return true;
+		}
+
+		// Bail if we don't have focus on a nav.
+		if ( ! $el.is( 'nav a:focus' ) ) {
+			return true;
+		}
+
+		// Get the '<li>' element.
+		var $item = $el.parent();
+		var $list = $item.parent();
+		var $target;
+
+		// Build args for the toggleListItem event.
+		var args  = {
+			autoClose : true,
+			duration  : slideDuration,
+		};
+		var closeArgs = {
+			autoClose : false,
+			duration  : slideDuration,
+		};
+		var data = {
+			item : $item,
+			args : args,
+		};
+
+		switch( code ) {
+			case ( 9 ) : // Tab key.
+
+				if ( 'keydown' === event.type ) {
+					return true;
+				}
+
+				if ( $item.children( 'ul' ).length && $list.hasClass( 'top-level' ) ) {
+
+					// The focused nav item has children and is on the top level, so toggle it.
+					$window.trigger( 'toggleListItem.alcatraz', data );
+
+				} else if ( $list.hasClass( 'top-level' ) ) {
+
+					// The focused nav item doesn't have children and is on the top level, so
+					// close any previously toggled top level list items.
+					$list.children( 'li.toggled' ).each( function() {
+						var closeData = {
+							item : $( this ),
+							args : closeArgs,
+						};
+						$window.trigger( 'toggleListItem.alcatraz', closeData );
+					});
+				}
+
+				break;
+
+			case ( 32 ) : // Spacebar.
+
+				if ( 'keydown' === event.type ) {
+					event.preventDefault();
+					return true;
+				}
+
+				if ( $item.children( 'ul' ).length ) {
+					$window.trigger( 'toggleListItem.alcatraz', data );
+				}
+
+				break;
+
+			case ( 37 ) : // Left arrow key.
+
+				// Prevent window scrolling.
+				if ( 'keydown' === event.type ) {
+					event.preventDefault();
+					return true;
+				}
+
+				if ( $list.hasClass( 'top-level' ) && $item.prev( 'li' ).length ) {
+
+					// The focused nav item is on the top level and has a sibling before it,
+					// so move focus to the left one item.
+					$target = $item.prev( 'li' );
+
+					$window.trigger( 'toggleListItem.alcatraz', {
+						item : $target,
+						args : args,
+					});
+
+					$target.find( 'a' ).first().focus();
+
+				} else if ( $list.parent( 'li' ).parent( 'ul' ).hasClass( 'top-level' ) ) {
+
+					// The focused nav item is on a second level sub level, so move focus up
+					// one level to the sibling to the left of the parent item.
+					$target = $list.parent( 'li' ).prev( 'li' );
+
+					$window.trigger( 'toggleListItem.alcatraz', {
+						item : $target,
+						args : args,
+					});
+
+					$target.find( 'a' ).first().focus();
+
+				} else if ( ! $list.hasClass( 'top-level' ) ) {
+
+					// The focused nav item is on a third level sub level or deeper, so move
+					// focus up one level and toggle the parent item.
+					$target = $list.parent( 'li' );
+
+					$window.trigger( 'toggleListItem.alcatraz', {
+						item : $target,
+						args : args,
+					});
+
+					$target.find( 'a' ).first().focus();
+				}
+
+				break;
+
+			case ( 38 ) : // Up arrow key.
+
+				// Prevent window scrolling.
+				if ( 'keydown' === event.type ) {
+					event.preventDefault();
+					return true;
+				}
+
+				if ( ! $list.hasClass( 'top-level' ) && ! $item.prev( 'li' ).length ) {
+
+					// The focused nav item is on a sub level but lacks a sibling before it,
+					// so move focus up one item.
+					$list.parent( 'li' ).find( 'a' ).first().focus();
+
+				} else if ( ! $list.hasClass( 'top-level' ) && $item.prev( 'li' ).length ) {
+
+					// The focused nav item is on a sub level and has a sibling before it,
+					// so move focus up one item.
+					$item.prev( 'li' ).find( 'a' ).first().focus();
+				}
+
+				break;
+
+			case ( 39 ) : // Right arrow key.
+
+				// Prevent window scrolling.
+				if ( 'keydown' === event.type ) {
+					event.preventDefault();
+					return true;
+				}
+
+				if ( $list.hasClass( 'top-level' ) && $item.next( 'li' ).length ) {
+
+					// The focused hav item is on the top level and has a sibling after it,
+					// so move focus to the right one item.
+					$target = $item.next( 'li' );
+
+					$window.trigger( 'toggleListItem.alcatraz', {
+						item : $target,
+						args : args,
+					});
+
+					$target.find( 'a' ).first().focus();
+
+				} else if ( ! $list.hasClass( 'top-level' ) && $item.children( 'ul' ).length ) {
+
+					// The focused nav item is on a sub level and has children, so toggle it if
+					// it isn't toggled already.
+					if ( ! $item.hasClass( 'toggled' ) ) {
+						$window.trigger( 'toggleListItem.alcatraz', data );
+					}
+
+					$item.children( 'ul' ).first().find( 'a' ).first().focus();
+
+				} else if ( $list.parent( 'li' ).parent( 'ul' ).hasClass( 'top-level' ) ) {
+
+					// The focused nav item is on a second level sub level, so move focus up
+					// one level to the sibling to the right of the parent item.
+					$target = $list.parent( 'li' ).next( 'li' );
+
+					$window.trigger( 'toggleListItem.alcatraz', {
+						item : $target,
+						args : args,
+					});
+
+					$target.find( 'a' ).first().focus();
+
+				} else if ( ! $list.hasClass( 'top-level' ) ) {
+
+					// The focused nav item is on a third level sub level or deeper, so move
+					// focus up one level and toggle the parent item's next sibling.
+					$target = $list.parent( 'li' );
+
+					$window.trigger( 'toggleListItem.alcatraz', {
+						item : $target,
+						args : args,
+					});
+
+					$target.next( 'li' ).find( 'a' ).first().focus();
+				}
+
+				break;
+
+			case ( 40 ) : // Down arrow key.
+
+				// Prevent window scrolling.
+				if ( 'keydown' === event.type ) {
+					event.preventDefault();
+					return true;
+				}
+
+				if ( $item.children( 'ul' ).length && $list.hasClass( 'top-level' ) ) {
+
+					// The focused nav item has children and is on the top level,
+					// so move focus down one level.
+					$item.find( 'ul li' ).first().find( 'a' ).first().focus();
+
+				} else if ( ! $list.hasClass( 'top-level' ) && $item.next( 'li' ).length ) {
+
+					// The focused nav item is on a sub level and has a sibling after it,
+					// so move focus down one item.
+					$item.next( 'li' ).find( 'a' ).first().focus();
+				}
+
+				break;
+		}
+
+		return true;
 	};
 
 
@@ -250,7 +478,8 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		return $( el ).each( function() {
 			var $list          = $( this );
-			var $subList       = $list.find( 'li' ).has( 'ul' );
+			var $items         = $list.find( 'li' );
+			var $subList       = $items.has( 'ul' );
 			var safeToggleText = Alcatraz.Utils.escapeHtml( toggleText );
 
 			var toggle = '<a class="sub-level-toggle">' + safeToggleText +
@@ -258,6 +487,11 @@ var AlcatrazNavigation = ( function( $ ) {
 			                 '<span class="sub-level-toggle-span span-2"></span>' +
 			                 '<span class="sub-level-toggle-span span-3"></span>' +
 			             '</a>';
+
+			// Add classes to indicate levels and items.
+			$list.addClass( 'top-level' );
+			$list.find( 'ul' ).addClass( 'sub-level' );
+			$items.addClass( 'list-item' );
 
 			// Loop over each item that has a sub level and inject the toggle.
 			$subList.each( function() {
@@ -323,6 +557,7 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		var $links    = $menu.find( 'a' );
 		var $subMenus = $menu.find( 'ul' );
+		var $subLinks = $subMenus.find( 'a' );
 
 		$menu.attr( 'aria-expanded', 'false' );
 
@@ -349,7 +584,7 @@ var AlcatrazNavigation = ( function( $ ) {
 		// Set up the sub menu dropdown toggles.
 		var toggleOptions = {
 			autoClose: true,
-			duration: 300,
+			duration: slideDuration,
 		};
 		initListToggle( $menu, toggleOptions );
 
@@ -376,6 +611,9 @@ var AlcatrazNavigation = ( function( $ ) {
 			$( this ).parent().attr( 'aria-haspopup', 'true' );
 		});
 
+		// Set menu item links inside sub menus to not be accessible via tabIndex.
+		$subLinks.attr( 'tabIndex', '-1' );
+
 		// Each time a menu link is focused or blurred, toggle focus.
 		$links.each( function() {
 			$( this ).on( 'focus blur', _toggleListFocus );
@@ -400,7 +638,7 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		var toggleOptions = {
 			autoClose: false,
-			duration: 300,
+			duration: slideDuration,
 		};
 
 		initListToggle( $subNav, toggleOptions );
@@ -429,6 +667,10 @@ var AlcatrazNavigation = ( function( $ ) {
 		// List item toggle.
 		$window.off( 'toggleListItem.alcatraz', _toggleListItem );
 		$window.on( 'toggleListItem.alcatraz', _toggleListItem );
+
+		// Nav item keyboard navigation.
+		$window.off( 'keydown keyup', _toggleNavItemWithKeyboard );
+		$window.on( 'keydown keyup', _toggleNavItemWithKeyboard );
 
 		return this;
 	};
