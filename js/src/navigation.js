@@ -33,22 +33,35 @@ var AlcatrazNavigation = ( function( $ ) {
 	var closeText  = alcatraz_vars.menu_close  || '';
 
 	/**
-	 * Toggle the .focus class on nav items.
+	 * Toggle list item focus when using keyboard navigation.
 	 *
 	 * @since  1.0.0
+	 *
+	 * @param  {object}  event  The focus or blur event.
 	 */
-	var _toggleListFocus = function() {
-		var $self = $( this );
+	var _toggleListFocus = function( event ) {
+		var $this = $( this );
+		var $item = $this.parent( 'li' );
 
-		// Move up through the ancestors of the current link until we hit .nav-menu.
-		while ( ! $self.hasClass( 'nav-menu' ) ) {
+		if ( 'focus' === event.type ) {
+			$item.addClass( 'focus' );
 
-			// On li elements toggle the class .focus.
-			if ( $self.is( 'li' ) ) {
-				$self.toggleClass( 'focus' );
+			if ( ! $item.hasClass( 'toggled' ) ) {
+				var args  = {
+					autoClose : false,
+					duration  : 300,
+				};
+				var data = {
+					item : $item,
+					args : args,
+				};
+
+				$( window ).trigger( 'toggleListItem.alcatraz', data );
 			}
+		}
 
-			$self = $self.parent();
+		if ( 'blur' === event.type ) {
+			$item.removeClass( 'focus' );
 		}
 	};
 
@@ -61,10 +74,10 @@ var AlcatrazNavigation = ( function( $ ) {
 	 * @param  {object}  data   The event data.
 	 */
 	var _toggleListItem = function( event, data ) {
-		var $item = data.item || {};
-		var args  = data.args || {};
+		var item = data.item || {};
+		var args = data.args || {};
 
-		toggleListItem( $item, args );
+		toggleListItem( item, args );
 	};
 
 
@@ -77,18 +90,15 @@ var AlcatrazNavigation = ( function( $ ) {
 	 */
 	var toggleMobileNav = function() {
 		var $container = $( '#site-navigation' );
-		var $toggle    = $container.find( '.menu-toggle' );
 		var $menu      = $container.find( '#primary-menu' );
 
 		if ( $container.hasClass( 'toggled' ) ) {
 			$window.trigger( 'closeMobileNav.alcatraz' );
 			$container.removeClass( 'toggled' );
-			$toggle.attr( 'aria-expanded', 'false' );
 			$menu.attr( 'aria-expanded', 'false' );
 		} else {
 			$window.trigger( 'openMobileNav.alcatraz' );
 			$container.addClass( 'toggled' );
-			$toggle.attr( 'aria-expanded', 'true' );
 			$menu.attr( 'aria-expanded', 'true' );
 		}
 
@@ -115,7 +125,6 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		if ( autoClose ) {
 			$list.find( 'ul' ).not( $parent.find( 'ul' ) ).slideUp( duration );
-			$list.find( '.toggled' ).not( $parent.find( '.toggled' ) ).removeClass( 'toggled' );
 		}
 
 		$item.toggleClass( 'toggled' );
@@ -137,6 +146,9 @@ var AlcatrazNavigation = ( function( $ ) {
 				$item.removeClass( 'reverse-expand' );
 			}, duration );
 		}
+
+		// Remove the 'toggled' class from lists and list items not in the current hierarchy.
+		$list.find( '.toggled' ).not( $parent ).not( $parent.find( '.toggled' ) ).removeClass( 'toggled' );
 
 		return this;
 	};
@@ -310,6 +322,11 @@ var AlcatrazNavigation = ( function( $ ) {
 		};
 
 		initListToggle( $subNav, toggleOptions );
+
+		// Each time a link is focused or blurred, toggle our 'focus' class.
+		$subNav.find( 'a' ).each( function() {
+			$( this ).on( 'focus blur', _toggleListFocus );
+		});
 
 		return this;
 	};
