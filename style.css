@@ -1636,7 +1636,6 @@ input[type="submit"].search-submit {
 
 .boxed .site {
   max-width: 1100px;
-  display: block;
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
@@ -1652,12 +1651,14 @@ input[type="submit"].search-submit {
 
 .boxed-content .site-content {
   max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .content-area {
   width: 100%;
-  margin: 0 auto;
   padding: 20px;
+  margin: 0 auto;
 }
 
 /**
@@ -1693,9 +1694,8 @@ input[type="submit"].search-submit {
 
 .post-edit-link::before {
   content: '\f040';
-  font-family: FontAwesome;
-  font-size: 0.875em;
   padding-right: 0.3125em;
+  font: 0.875em FontAwesome;
 }
 
 .cat-links,

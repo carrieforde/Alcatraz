@@ -17,7 +17,7 @@
 
 	.boxed & {
 		max-width: $size__width-boxed;
-		@include center-block;
+		@include center;
 		background-color: $color__background-boxed-site;
 	}
 }
@@ -31,6 +31,7 @@
 
 	.boxed-content & {
 		max-width: $size__width-boxed-content;
+		@include center;
 	}
 
 	@media (min-width: em(960)) {
@@ -80,8 +81,8 @@
 
 .content-area {
 	width: $size__width-site;
-	margin: 0 auto;
 	padding: $size__padding-default;
+	margin: 0 auto;
 
 	@media (min-width: em(900)) {
 		padding: $size__padding-default-double $size__padding-default;
@@ -136,11 +137,8 @@
 
 	&::before {
 		content: '\f040';
-		font: {
-			family: $font-awesome;
-			size: em(14);
-		}
 		padding-right: em(5);
+		font: em(14) $font-awesome;
 	}
 }
 

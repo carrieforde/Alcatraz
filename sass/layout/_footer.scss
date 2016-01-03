@@ -8,19 +8,23 @@
 	padding: $size__padding-default;
 
 	.footer-widget-areas {
+
 		&::after {
 			@include clearfix;
 		}
+
 		.widget-area {
 			float: left;
 			width: 100%;
 		}
 	}
+
 	.footer-bottom {
 		text-align: center;
 	}
 
 	@media (min-width: em(960)) {
+
 		.header-style-side & {
 			width: 72%;
 			width: calc(100% - 280px);
@@ -38,6 +42,7 @@
 	}
 
 	@media (min-width: em(1040)) {
+
 		.header-style-side & {
 			width: 70%;
 			width: calc(100% - 300px);
@@ -52,6 +57,7 @@
 	}
 
 	@media (min-width: em(1150)) {
+
 		.header-style-side & {
 			width: 70%;
 			width: calc(100% - 320px);
@@ -97,6 +103,7 @@
 /**
  * 4.5.2 Social Network Icons
  */
+
 .alcatraz-social-icons {
 	padding-left: 0;
 	margin-left: 0;
