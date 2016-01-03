@@ -381,8 +381,6 @@ hr {
 
 .alignnone {
   display: inline;
-  margin-right: 1.5em;
-  margin-left: 1.5em;
 }
 
 /**
@@ -1277,6 +1275,19 @@ object {
   max-width: 100%;
 }
 
+/* Post Thumbnail */
+.post-thumbnail {
+  display: block;
+  background-color: #e7ecf1;
+}
+
+.post-thumbnail img {
+  margin-bottom: 1.25em;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /**
  * 3.1.1 Captions
  */
@@ -1458,6 +1469,7 @@ td :last-child {
  */
 .widget {
   margin: 0 0 1.5625em;
+  word-wrap: break-word;
   /* Make sure select elements fit in widgets. */
 }
 
@@ -1466,6 +1478,7 @@ td :last-child {
 }
 
 .primary-sidebar .widget-title,
+.footer-widget-areas .widget-title,
 .primary-sidebar .alcatraz-sub-page-nav-title {
   font-size: 20px;
   font-size: 1.25em;
@@ -1535,6 +1548,7 @@ input[type="submit"].search-submit {
 
 .mobile-nav-toggle-style-hamburger .site-header .header-inner {
   float: left;
+  max-width: 65%;
   max-width: calc(100% - 120px);
 }
 
@@ -1542,9 +1556,7 @@ input[type="submit"].search-submit {
   margin: 0 0 10px;
   font-size: 36px;
   font-size: 2.25em;
-  font-family: "Source Serif Pro", serif;
-  font-weight: 600;
-  line-height: 1.2;
+  font: 600 2em / 1.2 "Source Serif Pro", serif;
 }
 
 .has-logo .site-header .site-title,
@@ -1610,43 +1622,36 @@ input[type="submit"].search-submit {
 /**
  * 4.3.1 Structure
  */
-.site::after {
+.site {
+  overflow: hidden;
   content: "";
   display: table;
   table-layout: fixed;
   width: 100%;
 }
 
+.site::after {
+  clear: both;
+}
+
+.boxed .site {
+  max-width: 1100px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #fff;
+}
+
 .boxed {
   background-color: #E7ECF1;
 }
 
-.boxed .site {
-  background-color: #fff;
-}
-
-.boxed .site,
-.boxed-content .site-content {
-  max-width: 1200px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.post-thumbnail {
-  display: block;
-  background-color: #e7ecf1;
-}
-
-.post-thumbnail img {
-  margin-bottom: 1.25em;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 .site-content {
   overflow: hidden;
+}
+
+.boxed-content .site-content {
+  max-width: 1100px;
 }
 
 .content-area {
@@ -2389,8 +2394,8 @@ input[type="submit"].search-submit {
     padding: 0;
   }
   .header-style-default .header-inner {
-    text-align: center;
     padding: 20px;
+    text-align: center;
   }
   .header-style-default.mobile-nav-toggle-style-hamburger .header-inner {
     float: none;
@@ -2536,7 +2541,7 @@ input[type="submit"].search-submit {
     display: none;
   }
   .header-style-side .site-header {
-    width: 28%;
+    width: 280px;
     width: calc(280px);
     height: 100%;
     position: fixed;
@@ -2545,31 +2550,6 @@ input[type="submit"].search-submit {
   }
   .header-style-side .site-header .header-inner {
     max-width: 100%;
-  }
-  .header-style-side .site-content {
-    width: 72%;
-    width: calc(100% - 280px);
-    float: right;
-  }
-  .header-style-side .content-area,
-  .header-style-side .primary-sidebar {
-    padding: 30px 20px;
-  }
-  .header-style-side.boxed .site-content {
-    max-width: none;
-  }
-  .header-style-side.boxed .site {
-    max-width: 1200px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .header-style-side.boxed-content .site-content {
-    float: none;
-    max-width: calc(960px - 280px);
-    position: absolute;
-    left: 280px;
-    right: 0;
   }
   .logo-mobile .has-logo.header-style-side.has-mobile-logo {
     display: none;
@@ -2586,39 +2566,85 @@ input[type="submit"].search-submit {
   .header-style-side .logo {
     margin-bottom: 20px;
   }
+  .header-style-side .site-content {
+    width: 72%;
+    width: calc(100% - 280px);
+    float: right;
+  }
+  .header-style-side.boxed-content .site-content {
+    position: relative;
+    left: 140px;
+    float: none;
+    max-width: 680px;
+    max-width: calc(680px);
+    margin: 0 auto;
+  }
+  .header-style-side .content-area {
+    padding: 30px 20px;
+  }
   .header-style-side .site-footer {
     width: 72%;
+    width: calc(100% - 280px);
     float: right;
+  }
+  .header-style-side.boxed-content .site-footer {
+    position: relative;
+    left: 140px;
+    float: none;
+    max-width: 680px;
+    max-width: calc(680px);
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 65em) {
   .header-style-side .site-header {
+    width: 300px;
     width: calc(300px);
   }
   .header-style-side .site-content {
+    width: 70%;
     width: calc(100% - 300px);
   }
   .header-style-side.boxed-content .site-content {
-    max-width: calc(1040px - 300px);
-    left: 300px;
+    left: 150px;
+    max-width: 740px;
+    max-width: calc(740px);
+    margin: 0 auto;
+  }
+  .header-style-side .site-footer {
+    width: 70%;
+    width: calc(100% - 300px);
+  }
+  .header-style-side.boxed-content .site-footer {
+    left: 150px;
+    max-width: 740px;
+    max-width: calc(740px);
+    margin: 0 auto;
   }
 }
 
 @media (min-width: 70em) {
   #wp-calendar td,
   #wp-calendar th {
-    padding: 0.625em;
+    padding: 0.3125em;
   }
 }
 
 @media (min-width: 71.875em) {
   .header-style-side .site-header {
+    width: 320px;
     width: calc(320px);
     padding: 20px 10px;
   }
   .header-style-side .site-content {
+    width: 70%;
     width: calc(100% - 320px);
+  }
+  .header-style-side.boxed-content .site-content {
+    left: 160px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
   .header-style-side .content-area {
     padding: 40px 30px;
@@ -2626,9 +2652,14 @@ input[type="submit"].search-submit {
   .header-style-side .primary-sidebar {
     padding: 40px 30px 40px 20px;
   }
-  .header-style-side.boxed-content .site-content {
-    max-width: 1200px;
-    left: 320px;
+  .header-style-side .site-footer {
+    width: 70%;
+    width: calc(100% - 320px);
+  }
+  .header-style-side.boxed-content .site-footer {
+    left: 160px;
+    max-width: 1100px;
+    margin: 0 auto;
   }
 }
 

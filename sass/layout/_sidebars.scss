@@ -9,6 +9,12 @@
 	@media (min-width: em(768)) {
 		padding: $size__padding-default-double $size__padding-default;
 	}
+
+	@media (min-width: em(1150)) {
+		.header-style-side & {
+			padding: $size__padding-default-double ($size__padding-default * 1.5) $size__padding-default-double $size__padding-default;
+		}
+	}
 }
 
 @media (min-width: em(768)) {

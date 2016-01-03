@@ -4,6 +4,7 @@
 
 .widget {
 	margin: 0 0 em(25);
+	word-wrap: break-word;
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -12,6 +13,7 @@
 }
 
 .primary-sidebar .widget-title,
+.footer-widget-areas .widget-title,
 .primary-sidebar .alcatraz-sub-page-nav-title {
 	@include font-size(20);
 }
@@ -39,7 +41,7 @@
 		}
 
 		@media (min-width: em(1120)) {
-			padding: em(10);
+			padding: em(5);
 		}
 	}
 }
