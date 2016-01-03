@@ -734,17 +734,10 @@ var Alcatraz = ( function( $ ) {
 
 ( function( $ ) {
 
-	/**
-	 * Initialize all the things.
-	 *
-	 * @since  1.0.0
-	 */
-	function alcatrazInit() {
-		Alcatraz.Nav.initSiteNavigation();
-	}
-
 	// When the DOM is ready, initialize all the things.
-	$( document ).ready( alcatrazInit );
+	$( document ).ready( function() {
+		Alcatraz.Nav.initSiteNavigation();
+	});
 
 	// Reset the primary nav when a Customizer partial refresh happens.
 	$( document ).on( 'customize-preview-menu-refreshed', function() {
