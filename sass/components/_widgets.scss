@@ -3,7 +3,8 @@
  */
 
 .widget {
-	margin: 0 0 1.5em;
+	margin: 0 0 em(25);
+	word-wrap: break-word;
 
 	/* Make sure select elements fit in widgets. */
 	select {
@@ -12,13 +13,9 @@
 }
 
 .primary-sidebar .widget-title,
+.footer-widget-areas .widget-title,
 .primary-sidebar .alcatraz-sub-page-nav-title {
 	@include font-size(20);
-}
-
-/* Sub Page Navigation */
-.alcatraz-sub-page-nav {
-	margin: 0 0 1.5em;
 }
 
 /* WordPress Calendar */
@@ -43,8 +40,8 @@
 			padding: 0;
 		}
 
-		@media (min-width: em(1050)) {
-			padding: 0.5em;
+		@media (min-width: em(1120)) {
+			padding: em(5);
 		}
 	}
 }
@@ -56,6 +53,7 @@
 
 .search-field {
 	float: left;
+	margin-right: 10px;
 	margin-right: calc(10px);
 	width: 180px;
 	width: calc(100% - 115px);

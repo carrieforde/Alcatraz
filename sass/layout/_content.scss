@@ -7,41 +7,96 @@
 /**
  * 4.3.1 Structure
  */
-.site::after {
+.site {
+	overflow: hidden;
 	@include clearfix;
+
+	&::after {
+		@include clearfix-after;
+	}
+
+	.boxed & {
+		max-width: $size__width-boxed;
+		@include center;
+		background-color: $color__background-boxed-site;
+	}
 }
 
-.boxed .site {
-	background-color: $color__background-body;
-}
-
-.boxed .site,
-.boxed-content .site-content {
-	max-width: $size__width-boxed-content;
-	@include center-block;
-}
-
-.post-thumbnail {
-	display: block;
-	background-color: $color__background-featured-image;
-}
-
-.post-thumbnail img {
-	margin-bottom: em(20);
-	@include center-block;
+.boxed {
+	background-color: $color__background-body-boxed;
 }
 
 .site-content {
 	overflow: hidden;
+
+	.boxed-content & {
+		max-width: $size__width-boxed-content;
+		@include center;
+	}
+
+	@media (min-width: em(960)) {
+		.header-style-side & {
+			width: 72%;
+			width: calc(100% - 280px);
+			float: right;
+		}
+
+		.header-style-side.boxed-content & {
+			position: relative;
+			left: 140px;
+			float: none;
+			max-width: 680px;
+			max-width: calc(680px);
+			margin: 0 auto;
+		}
+	}
+
+	@media (min-width: em(1040)) {
+		.header-style-side & {
+			width: 70%;
+			width: calc(100% - 300px);
+		}
+
+		.header-style-side.boxed-content & {
+			left: 150px;
+			max-width: 740px;
+			max-width: calc(740px);
+			margin: 0 auto;
+		}
+	}
+
+	@media (min-width: em(1150)) {
+		.header-style-side & {
+			width: 70%;
+			width: calc(100% - 320px);
+		}
+
+		.header-style-side.boxed-content & {
+			left: 160px;
+			max-width: $size__width-boxed-content;
+			margin: 0 auto;
+		}
+	}
 }
 
 .content-area {
 	width: $size__width-site;
-	margin: 0 auto;
 	padding: $size__padding-default;
+	margin: 0 auto;
 
 	@media (min-width: em(900)) {
 		padding: $size__padding-default-double $size__padding-default;
+	}
+
+	.header-style-side & {
+
+		@media (min-width: em(960)) {
+			padding: ($size__padding-default * 1.5) $size__padding-default;
+		}
+
+		@media (min-width: em(1150)) {
+			padding: $size__padding-default-double ($size__padding-default * 1.5);
+		}
 	}
 }
 
@@ -82,11 +137,8 @@
 
 	&::before {
 		content: '\f040';
-		font: {
-			family: $font-awesome;
-			size: em(14);
-		}
 		padding-right: em(5);
+		font: em(14) $font-awesome;
 	}
 }
 

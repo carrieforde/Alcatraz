@@ -3,7 +3,7 @@
  */
 
 /* Em output with px fallback (pixel fall backs will make adjusting font sizing easier later) */
-@mixin font-size( $sizeValue: 16 ) {
+@mixin font-size( $sizeValue: 18 ) {
 	font-size: $sizeValue * 1px;
 	font-size: em($sizeValue);
 }
@@ -51,29 +51,28 @@
 	.main-navigation #primary-menu-wrap,
 	.mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
 	.mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-		top: auto;
 		position: static;
 		top: auto;
-		left: auto;
 		right: auto;
+		left: auto;
 		height: auto;
 		min-height: auto;
 		width: auto;
-		opacity: 1;
 		text-align: center;
+		opacity: 1;
 	}
 
 	.main-navigation #primary-menu,
 	.mobile-nav-style-slide-left #primary-menu,
 	.mobile-nav-style-slide-right #primary-menu {
+		display: $display;
+		overflow: visible;
+		position: static;
 		min-height: auto;
 		height: auto;
 		padding-top: 0;
 		padding-bottom: 0;
-		display: $display;
-		position: static;
 		text-align: center;
-		overflow: visible;
 	}
 
 	.main-navigation #primary-menu .menu-item {
@@ -99,8 +98,8 @@
 				position: absolute;
 
 				.sub-menu {
-					left: 100%;
 					top: 0;
+					left: 100%;
 				}
 			}
 		}
@@ -124,28 +123,28 @@
 			position: relative;
 			padding: 0;
 			text-align: left;
-			background-color: $true-white;
-			border-bottom: 3px solid $prision-cell-gray;
-			box-shadow: 0px 3px 10px -3px rgba(0, 0, 0, 0.5);
+			background-color: $color__background-sub-menu;
+			border-bottom: $border__nav-sub-menu;
+			box-shadow: $color__box-shadow-sub-menu;
 
 			.menu-item {
 				display: block;
 				width: 100%;
 
 				a {
-					color: $prision-cell-gray;
+					color: $color__link-nav-sub-menu;
 
 					&:hover {
-						color: $color__link-hover;
+						color: $color__link-nav-sub-menu-hover;
 					}
 				}
 
 				.sub-level-toggle .sub-level-toggle-span {
-					background-color: $prision-cell-gray;
+					background-color: $color__background-sub-menu-toggle;
 				}
 
 				.sub-level-toggle:hover .sub-level-toggle-span {
-					background-color: lighten($prision-cell-gray, 15%);
+					background-color: $color__background-sub-menu-toggle-hover;
 				}
 			}
 		}
@@ -154,17 +153,17 @@
 
 // Inner-menu close trigger.
 @mixin inner-menu-close {
+	position: relative;
+	box-sizing: border-box;
+	display: none;
 	width: 45px;
 	height: 45px;
-	text-indent: 9999%;
 	overflow: hidden;
 	cursor: pointer;
-	box-sizing: border-box;
-	position: relative;
-	display: none;
+	text-indent: 9999%;
 
 	&:hover .inner-menu-toggle-span {
-		background-color: darken($alcatraz-blue, 10%);
+		background-color: $color__background-menu-toggle-hover;
 	}
 
 	.inner-menu-toggle-span {
@@ -173,7 +172,7 @@
 		left: 9px;
 		width: 25px;
 		height: 3px;
-		background-color: $alcatraz-blue;
+		background-color: $color__background-menu-toggle;
 		transition: all 0.2s ease;
 
 		&.span-1 {

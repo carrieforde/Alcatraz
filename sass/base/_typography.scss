@@ -7,13 +7,8 @@ button,
 input,
 select,
 textarea {
-	color: $color__text-main;
-	font: {
-		family: $font__main;
-		weight: 300;
-	}
-	font-size: 18px;
-	line-height: $font__line-height-body;
+	color: $color__text-body;
+	font: 300 18px/#{$font__line-height-body} $font__body;
 }
 
 /* Headings */
@@ -59,7 +54,7 @@ h6 {
 /* Copy */
 p {
 	margin-top: 0;
-	margin-bottom: 1.5em;
+	margin-bottom: em(20);
 }
 
 dfn,
@@ -70,18 +65,14 @@ i {
 
 blockquote {
 	padding: em(15) em(20) em(15) em(15);
-	border-left: em(5) solid darken($color__background-blockquote, 80%);
-	margin: 0 1.5em 1.5em;
+	border-left: $border__blockquote;
+	margin: 0 em(25) em(25);
 	background-color: $color__background-blockquote;
 	font-style: italic;
 
 	&::before {
 		float: left;
-		font: {
-			family: FontAwesome;
-			size: em(20);
-			style: normal;
-		}
+		font: normal em(20) $font-awesome;
 		content: "\f10d";
 	}
 
@@ -98,8 +89,8 @@ blockquote p {
 q {
 	&::before {
 		@extend blockquote::before;
-		@include font-size(18);
 		padding-right: 10px;
+		@include font-size(18);
 	}
 }
 
@@ -113,31 +104,29 @@ cite {
 }
 
 address {
-	margin: 0 0 1.5em;
+	margin: 0 0 em(25);
 }
 
 pre {
-	@include font-size(14);
-	background: $color__background-pre;
-	font-family: $font__pre;
-	line-height: $font__line-height-pre;
-	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
+	margin-bottom: em(25);
+	background: $color__background-pre;
+	font: em(14)/#{$font__line-height-pre} $font__pre;
+	word-wrap: break-word;
 }
 
 code,
 kbd,
 tt,
 var {
-	font-family: $font__code;
-	@include font-size(14);
+	font: em(14) $font__code;
 }
 
 abbr,
 acronym {
-	border-bottom: 1px dotted $color__border-abbr;
+	border-bottom: $border__abbr;
 	cursor: help;
 }
 
@@ -155,8 +144,7 @@ big {
 ul,
 ol {
 	padding-left: em(20);
-	margin-bottom: 1.25em;
-	margin-left: em(20);
+	margin: 0 0 em(22) em(20);
 }
 
 ul {
@@ -169,9 +157,7 @@ ol {
 
 li > ul,
 li > ol {
-	margin-bottom: 0;
-	margin-left: 1.5em;
-	margin-left: em(5);
+	margin: 0 0 0 em(5);
 }
 
 li > ul {
@@ -191,9 +177,9 @@ li > ol {
 }
 
 dt {
-	font-weight: bold;
+	font-weight: 700;
 }
 
 dd {
-	margin: 0 1.5em 1.5em;
+	margin: 0 em(25) em(25);
 }

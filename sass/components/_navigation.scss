@@ -55,10 +55,10 @@ a {
 
 	.menu-toggle {
 		padding: 15px 20px;
-		margin: 20px 20px 0;
 		border-radius: 5px;
-		background-color: $alcatraz-blue;
-		color: #fff;
+		margin: 20px 20px 0;
+		background-color: $color__background-menu-toggle;
+		color: $color__text-menu-toggle;
 		font-weight: 400;
 		text: {
 			align: center;
@@ -66,7 +66,8 @@ a {
 		}
 
 		&:hover {
-			background-color: darken($alcatraz-blue, 20%);
+			background-color: $color__background-menu-toggle-hover;
+			color: $color__text-menu-toggle-hover;
 		}
 	}
 }
@@ -81,16 +82,12 @@ a {
 		height: 45px;
 		padding: 10px;
 
-		&:hover .menu-toggle-span {
-			background-color: darken($alcatraz-blue, 10%);
-		}
-
 		.menu-toggle-span {
 			position: absolute;
 			width: 25px;
 			height: 3px;
-			background-color: $alcatraz-blue;
-			transition: all 0.2s ease;
+			background-color: $color__background-menu-toggle;
+			transition: all 0.2s ease-in;
 
 			&.span-1 {
 				top: 12px;
@@ -103,6 +100,10 @@ a {
 			&.span-3 {
 				top: 30px;
 			}
+		}
+
+		&:hover .menu-toggle-span {
+			background-color: $color__background-menu-toggle-hover;
 		}
 
 		.menu-text {
@@ -150,24 +151,24 @@ a {
 
 /* Sub Level Toggles Shared Styles */
 .sub-level-toggle {
-	cursor: pointer;
 	position: absolute;
 	top: 0;
 	right: 0;
+	overflow: hidden;
 	padding-left: 0;
 	padding-right: 0;
 	width: 50px;
 	text-align: center;
 	text-indent: 9999%;
-	overflow: hidden;
-
-	&:hover .sub-level-toggle-span {
-		background-color: darken($alcatraz-blue, 10%);
-	}
+	cursor: pointer;
 
 	.sub-level-toggle-span {
 		display: none;
-		background-color: $alcatraz-blue;
+		background-color: $color__background-sub-menu-toggle;
+	}
+
+	&:hover .sub-level-toggle-span {
+		background-color: $color__background-sub-menu-toggle-hover;
 	}
 }
 
@@ -180,7 +181,7 @@ a {
 			top: 22.5px;
 			width: 11.5px;
 			height: 2px;
-			transition: all 0.2s ease;
+			transition: all 0.2s ease-in;
 
 			&.span-1 {
 				display: block;
@@ -247,7 +248,7 @@ a {
 
 /* Sub Page Nav Styles */
 .alcatraz-sub-page-nav {
-	margin: 0 0 1.5em;
+	margin: 0 0 em(25);
 	position: relative;
 
 	.sub-page-nav-top-level {
@@ -274,14 +275,10 @@ a {
 	li a {
 		padding: 10px 15px;
 		display: block;
-		color: $color__link-navigation;
+		color: $color__link-nav;
 
 		&:hover {
-			color: $color__link-navigation-hover;
-		}
-
-		&:visited {
-			color: $color__link-navgiation-visited;
+			color: $color__link-nav-hover;
 		}
 	}
 
@@ -329,10 +326,10 @@ a {
 	}
 
 	a {
-		color: $color__link-navigation;
+		color: $color__link-nav;
 
 		&:hover {
-			color: $color__link-navigation-hover;
+			color: $color__link-nav-hover;
 		}
 	}
 
@@ -351,17 +348,17 @@ a {
 	#primary-menu {
 		display: none;
 		clear: both;
-		list-style: none;
 		margin: 0;
 		padding-left: 0;
+		list-style: none;
 
 		&::after {
 			@include clearfix();
 		}
 
 		.menu-item {
-			width: 100%;
 			position: relative;
+			width: 100%;
 
 			&.menu-item-has-children a {
 				padding-right: 60px;
@@ -381,14 +378,14 @@ a {
 		}
 
 		.sub-menu {
-			display: none;
 			position: relative;
+			display: none;
 			width: 100%;
 			min-width: 165px;
 			margin: 0;
 			padding-left: $size__padding-default;
 			z-index: 99;
-			background-color: #fff;
+			background-color: $color__background-sub-menu;
 			list-style-type: none;
 
 			&.toggled {
@@ -397,45 +394,37 @@ a {
 		}
 
 		.current-menu-item > a {
-			font-weight: bold;
+			font-weight: 700;
 		}
 	}
 }
 
 .mobile-nav-style-default {
 	#primary-menu {
-		box-shadow: 0 4px 8px -2px rgba(0,0,0,0.2);
+		padding: 0 $size__padding-default-half;
+		box-shadow: $color__box-shadow-mobile-primary-menu;
+	}
+
+
+	@media (min-width: em(768)) {
+		&.header-style-default,
+		&.header-style-short {
+			#primary-menu {
+				box-shadow: none;
+			}
+		}
+	}
+
+	@media (min-width: em(960)) {
+		&.header-style-side {
+			#primary-menu {
+				box-shadow: none;
+			}
+		}
 	}
 
 	.sub-level-toggle {
 		right: 8px;
-	}
-}
-
-@media (min-width: em(768)) {
-	.header-style-default.mobile-nav-style-default,
-	.header-style-short.mobile-nav-style-default {
-		#primary-menu {
-			box-shadow: none;
-		}
-	}
-
-	.header-style-default .main-navigation a {
-		a {
-			color: $true-white;
-
-			&:hover {
-				color: darken($true-white, 20%);
-			}
-		}
-	}
-}
-
-@media (min-width: em(960)) {
-	.header-style-side.mobile-nav-style-default {
-		#primary-menu {
-			box-shadow: none;
-		}
 	}
 }
 
@@ -460,7 +449,7 @@ a {
 
 		a {
 			@media (max-width: em(767)) {
-				color: $color__text-mobile-nav;
+				color: $color__link-mobile-nav;
 			}
 		}
 	}
@@ -472,24 +461,24 @@ a {
 
 		a {
 			@media (max-width: em(959)) {
-				color: $color__text-mobile-nav;
+				color: $color__link-mobile-nav;
 			}
 		}
 	}
 
 	#primary-menu-wrap {
 		position: fixed;
-		z-index: 100;
 		top: 0;
+		z-index: 100;
 		width: 260px;
 		min-height: 100vh;
 	}
 
 	#primary-menu {
 		height: 100vh;
+		display: block;
 		overflow-y: auto;
 		overflow-x: hidden;
-		display: block;
 		padding-top: 0;
 		padding-bottom: 40px;
 	}
@@ -507,7 +496,7 @@ a {
 			height: 150vh;
 			overflow: hidden;
 			top: 0;
-			background-color: $color__transparent-overlay;
+			background-color: $color__overlay-transparent;
 		}
 	}
 
@@ -521,11 +510,11 @@ a {
 .mobile-nav-style-slide-left {
 	#mobile-nav-left-swipe-zone {
 		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: 100;
 		height: 100vh;
 		width: 20px;
-		left: 0;
-		top: 0;
-		z-index: 100;
 	}
 
 	.main-navigation.toggled #mobile-nav-left-swipe-zone {
@@ -557,11 +546,11 @@ a {
 .mobile-nav-style-slide-right {
 	#mobile-nav-right-swipe-zone {
 		position: fixed;
+		top: 0;
+		right: 0;
+		z-index: 100;
 		height: 100vh;
 		width: 20px;
-		right: 0;
-		top: 0;
-		z-index: 100;
 	}
 
 	.main-navigation.toggled #mobile-nav-right-swipe-zone {
@@ -581,9 +570,9 @@ a {
 
 	.inner-menu-toggle {
 		float: right;
+		overflow: hidden;
 		margin-right: 5px;
 		text-indent: 9999%;
-		overflow: hidden;
 	}
 
 	.sub-level-toggle {
@@ -603,8 +592,8 @@ a {
 
 	.main-navigation.toggled #primary-menu-wrap {
 		position: fixed;
-		z-index: 99;
 		top: 0;
+		z-index: 99;
 		width: 100%;
 		min-height: 100vh;
 		overflow-y: auto;
@@ -629,10 +618,10 @@ a {
 	}
 
 	.inner-menu-toggle {
-		display: none;
-		float: right;
 		top: 10px;
 		right: 10px;
+		display: none;
+		float: right;
 	}
 
 	.sub-level-toggle {
@@ -644,12 +633,12 @@ a {
 @media (min-width: em(768)) {
 
 	.header-style-default {
-		@include large-screen-nav-display( inline-block );
+		@include large-screen-nav-display(inline-block);
 		@include large-screen-nav-dropdown;
 
 		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
-			padding-left: 0;
 			padding-right: 0;
+			padding-left: 0;
 		}
 
 		.sub-level-toggle {
@@ -663,8 +652,8 @@ a {
 			}
 
 			.sub-level-toggle-span {
-				width: 8px;
 				left: 11.5px;
+				width: 8px;
 				height: 1px;
 			}
 
@@ -676,9 +665,9 @@ a {
 
 		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
 			.sub-level-toggle-span {
+				left: 14px;
 				width: 10px;
 				height: 1px;
-				left: 14px;
 			}
 		}
 
@@ -692,14 +681,14 @@ a {
 @media (min-width: em(768)) {
 
 	.header-style-short {
-		@include large-screen-nav-display( inline-block );
+		@include large-screen-nav-display(inline-block);
 		@include large-screen-nav-dropdown;
 
 		.main-navigation {
-			text-align: right;
 			float: right;
 			clear: none;
 			padding: $size__padding-default;
+			text-align: right;
 
 			#primary-menu {
 				text-align: right;
@@ -707,8 +696,8 @@ a {
 		}
 
 		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
-			padding-left: 0;
 			padding-right: 0;
+			padding-left: 0;
 		}
 
 		.sub-level-toggle {
@@ -722,8 +711,8 @@ a {
 			}
 
 			.sub-level-toggle-span {
-				width: 8px;
 				left: 11.5px;
+				width: 8px;
 				height: 1px;
 			}
 
@@ -735,9 +724,9 @@ a {
 
 		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
 			.sub-level-toggle-span {
+				left: 14px;
 				width: 10px;
 				height: 1px;
-				left: 14px;
 			}
 		}
 
@@ -757,8 +746,8 @@ a {
 		&.mobile-nav-style-slide-left,
 		&.mobile-nav-style-slide-right {
 			#primary-menu {
-				text-align: left;
 				display: block;
+				text-align: left;
 			}
 		}
 
@@ -774,8 +763,8 @@ a {
 .post-navigation {
 
 	.site-main & {
-		margin: 0 0 1.5em;
 		overflow: hidden;
+		margin: 0 0 1.5em;
 	}
 
 	.nav-previous {
@@ -790,8 +779,8 @@ a {
 
 	.nav-next {
 		float: right;
-		text-align: right;
 		width: 50%;
+		text-align: right;
 
 		a::after {
 			content: '\00bb';

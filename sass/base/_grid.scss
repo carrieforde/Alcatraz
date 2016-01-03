@@ -62,56 +62,55 @@
 
 	.no-gutter {
 		@include fill-parent();
-		@include display-context(table);
+		@include span-columns(12);
+		@include omega;
 
 		.alcatraz-col-1 {
-			@include span-columns( 1 of 12 );
+			@include span-columns( 1, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-2 {
-			@include span-columns( 2 of 12 );
+			@include span-columns( 2, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-3 {
-			@include span-columns( 3 of 12 );
+			@include span-columns( 3, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-4 {
-			@include span-columns( 4 of 12 );
+			@include span-columns( 4, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-5 {
-			@include span-columns( 5 of 12 );
+			@include span-columns( 5, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-6 {
-			@include span-columns( 6 of 12 );
+			@include span-columns( 6, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-7 {
-			@include span-columns( 7 of 12 );
+			@include span-columns( 7, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-8 {
-			@include span-columns( 8 of 12 );
+			@include span-columns( 8, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-9 {
-			@include span-columns( 9 of 12 );
+			@include span-columns( 9, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-10 {
-			@include span-columns( 10 of 12 );
+			@include span-columns( 10, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-11 {
-			@include span-columns( 11 of 12 );
+			@include span-columns( 11, block-collapse );
 			@include omega;
 		}
 		.alcatraz-col-12 {
-			@include span-columns( 12 of 12 );
-			@include omega;
+			@include span-columns( 12, block-collapse );
 		}
-
 	}
 }

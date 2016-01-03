@@ -9,16 +9,24 @@
 	@media (min-width: em(768)) {
 		padding: $size__padding-default-double $size__padding-default;
 	}
+
+	@media (min-width: em(1150)) {
+		.header-style-side & {
+			padding: $size__padding-default-double ($size__padding-default * 1.5) $size__padding-default-double $size__padding-default;
+		}
+	}
 }
 
 @media (min-width: em(768)) {
 
 	/* Left Sidebar */
 	.left-sidebar {
+
 		.content-area {
 			width: 72%;
 			float: right;
 		}
+
 		.primary-sidebar {
 			width: 28%;
 			float: left;
@@ -27,10 +35,12 @@
 
 	/* Right Sidebar */
 	.right-sidebar {
+
 		.content-area {
 			width: 72%;
 			float: left;
 		}
+
 		.primary-sidebar {
 			width: 28%;
 			float: right;
@@ -40,6 +50,7 @@
 
 .header-style-side.boxed-content,
 .header-style-side.boxed {
+
 	.content-area,
 	.primary-sidebar {
 		width: 100%;
@@ -47,12 +58,16 @@
 }
 
 @media (min-width: em(1340)) {
+
 	.header-style-side.boxed-content {
+
 		&.left-sidebar {
+
 			.content-area {
 				width: 72%;
 				float: right;
 			}
+
 			.primary-sidebar {
 				width: 28%;
 				float: left;
@@ -61,10 +76,12 @@
 
 		/* Right Sidebar */
 		&.right-sidebar {
+
 			.content-area {
 				width: 72%;
 				float: left;
 			}
+
 			.primary-sidebar {
 				width: 28%;
 				float: right;
