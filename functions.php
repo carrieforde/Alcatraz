@@ -182,33 +182,6 @@ function alcatraz_scripts() {
 		ALCATRAZ_VERSION
 	);
 
-	// Skip link focus fix JS.
-	wp_register_script(
-		'alcatraz-skip-link-focus-fix',
-		ALCATRAZ_URL . 'js/src/skip-link-focus-fix.js',
-		array(),
-		ALCATRAZ_VERSION,
-		true
-	);
-
-	// Custom jQuery mobile build (mostly for touch events).
-	wp_register_script(
-		'alcatraz-jquery-mobile',
-		ALCATRAZ_URL . 'lib/jquery-mobile/jquery.mobile.custom.min.js',
-		array( 'jquery' ),
-		ALCATRAZ_VERSION,
-		true
-	);
-
-	// Navigation JS.
-	wp_register_script(
-		'alcatraz-navigation',
-		ALCATRAZ_URL . 'js/src/navigation.js',
-		array( 'jquery', 'alcatraz-jquery-mobile' ),
-		ALCATRAZ_VERSION,
-		true
-	);
-
 	// Main theme JS.
 	wp_enqueue_script(
 		'alcatraz-scripts',
