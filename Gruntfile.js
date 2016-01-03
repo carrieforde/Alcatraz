@@ -46,6 +46,7 @@ module.exports = function( grunt ) {
 		},
 		concat: {
 			options: {
+				banner: '/*! <%= pkg.name %> theme JS - This file is built with Grunt and should not be edited directly */\n\n',
 				separator: '\n\n'
 			},
 			dist: {
@@ -62,7 +63,7 @@ module.exports = function( grunt ) {
 		},
 		uglify: {
 			options: {
-				banner: '/*! <%= pkg.name %> theme JS */\n',
+				banner: '/*! <%= pkg.name %> theme JS - This file is built with Grunt and should not be edited directly */\n',
 				sourceMap: true
 			},
 			dist: {
