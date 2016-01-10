@@ -131,6 +131,14 @@ function alcatraz_page_options_metabox() {
 		),
 	) );
 
+	// Hide Title.
+	$page_options->add_field( array(
+		'name' => __( 'Hide Page Title?', 'alcatraz' ),
+		'desc' => __( '', 'alcatraz' ),
+		'id'   => $prefix . 'hide_title',
+		'type' => 'checkbox',
+	) );
+
 	// Transparent header.
 	$page_options->add_field( array(
 		'name' => __( 'Transparent Header', 'alcatraz' ),

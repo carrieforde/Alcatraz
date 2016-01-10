@@ -45,6 +45,23 @@ function alcatraz_posted_on() {
 }
 
 /**
+  * Prints the page title unless hide tile is checked.
+  */
+function alcatraz_entry_title() {
+
+	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
+
+	if ( $hide_title ) {
+		return;
+	}
+
+	printf( '<header class="%s">%s</header>',
+		'entry-header',
+		the_title( '<h1 class="entry-title">', '</h1>' )
+	);
+}
+
+/**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function alcatraz_entry_footer() {
