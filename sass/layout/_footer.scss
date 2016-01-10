@@ -7,16 +7,12 @@
 	width: $size__width-site;
 	padding: $size__padding-default;
 
-	.footer-widget-areas {
+	.footer-widget-areas::after {
+		@include clearfix;
+	}
 
-		&::after {
-			@include clearfix;
-		}
-
-		.widget-area {
-			float: left;
-			width: 100%;
-		}
+	.footer-widget-area {
+		width: 100%;
 	}
 
 	.footer-bottom {
@@ -76,26 +72,20 @@
 @media (min-width: em(768)) {
 
 	.footer-widget-areas-2 {
-		.footer-widget-areas {
-			.widget-area {
-				@include span-columns( 6 of 12 );
-			}
+		.footer-widget-area {
+			@include span-columns( 6 of 12 );
 		}
 	}
 
 	.footer-widget-areas-3 {
-		.footer-widget-areas {
-			.widget-area {
-				@include span-columns( 4 of 12 );
-			}
+		.footer-widget-area {
+			@include span-columns( 4 of 12 );
 		}
 	}
 
 	.footer-widget-areas-4 {
-		.footer-widget-areas {
-			.widget-area {
-				@include span-columns( 3 of 12 );
-			}
+		.footer-widget-area {
+			@include span-columns( 3 of 12 );
 		}
 	}
 }
