@@ -55,10 +55,11 @@ function alcatraz_entry_title() {
 		return;
 	}
 
-	printf( '<header class="%s">%s</header>',
-		'entry-header',
-		the_title( '<h1 class="entry-title">', '</h1>' )
-	);
+	echo '<header class="entry-header">';
+
+	echo the_title( '<h1 class="entry-title">', '</h1>' );
+
+	echo '</header>';
 }
 
 /**
