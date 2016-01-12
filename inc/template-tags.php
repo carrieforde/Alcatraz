@@ -55,11 +55,18 @@ function alcatraz_entry_title() {
 		return;
 	}
 
-	echo '<header class="entry-header">';
+	// Custom title filter.
+	$custom_title = apply_filters( 'alcatraz_entry_title', '' );
+
+	if ( ! empty( $custom_title ) ) {
+
+	    echo $custom_title;
+
+	    return;
+	}
 
 	echo the_title( '<h1 class="entry-title">', '</h1>' );
 
-	echo '</header>';
 }
 
 /**
