@@ -45,28 +45,50 @@ function alcatraz_posted_on() {
 }
 
 /**
-  * Prints the page title unless hide tile is checked.
-  */
+ * Prints the page header unless hide tile is checked.
+ */
+function alcatraz_entry_header() {
+
+	echo apply_filters( 'alcatraz_entry_header', $header );
+}
+
+/**
+ * Prints the page title unless hide tile is checked.
+ */
 function alcatraz_entry_title() {
 
 	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
 
-	if ( $hide_title ) {
+	if ( $hide_title && is_singular() ) {
 		return;
 	}
 
-	// Custom title filter.
-	$custom_title = apply_filters( 'alcatraz_entry_title', '' );
+	if ( is_search() ) {
 
-	if ( ! empty( $custom_title ) ) {
-
-	    echo $custom_title;
-
-	    return;
+	$title = the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">',
+						esc_url( get_permalink() ) ),
+						'</a></h2>',
+						false
+						);
+	} else {
+		$title = the_title( '<h1 class="entry-title">', '</h1>', false );
 	}
 
-	echo the_title( '<h1 class="entry-title">', '</h1>' );
+	echo apply_filters( 'alcatraz_entry_title', $title );
+}
 
+/**
+ * Prints the page title meta unless hide tile is checked.
+ */
+function alcatraz_entry_meta() {
+
+	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
+
+	$meta = sprintf( '<div class="entry-meta">%s</div>',
+		alcatraz_posted_on()
+		);
+
+	echo apply_filters( 'alcatraz_entry_meta', $meta );
 }
 
 /**

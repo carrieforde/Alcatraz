@@ -9,14 +9,17 @@
 <?php do_action( 'alcatraz_before_entry' ); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
+
+	<header class="entry-header">	
+
+		alcatraz_entry_header();
+
+		alcatraz_entry_title();
 
 		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php alcatraz_posted_on(); ?>
-		</div>
+		alcatraz_entry_meta();
 		<?php endif; ?>
+
 	</header>
 
 	<div class="entry-summary">

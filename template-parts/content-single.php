@@ -14,13 +14,12 @@
 			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
-
 	<header class="entry-header">
+		<?php alcatraz_entry_header() ?>
+
 		<?php alcatraz_entry_title(); ?>
 
-		<div class="entry-meta">
-			<?php alcatraz_posted_on(); ?>
-		</div>
+		<?php alcatraz_entry_meta(); ?>
 	</header>
 
 	<div class="entry-content">
