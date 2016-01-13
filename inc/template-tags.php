@@ -49,6 +49,12 @@ function alcatraz_posted_on() {
  */
 function alcatraz_entry_header() {
 
+	$header = sprintf(
+		'<header class="entry-header">%s%s</header',
+		alcatraz_entry_title(),
+		alcatraz_entry_meta()
+		);
+
 	echo apply_filters( 'alcatraz_entry_header', $header );
 }
 
@@ -82,11 +88,15 @@ function alcatraz_entry_title() {
  */
 function alcatraz_entry_meta() {
 
-	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
+	if ( is_page() ) {
+		return;
+	}
 
-	$meta = sprintf( '<div class="entry-meta">%s</div>',
+	if ( 'post' === get_post_type() ) {
+		$meta = sprintf( '<div class="entry-meta">%s</div>',
 		alcatraz_posted_on()
 		);
+	}
 
 	echo apply_filters( 'alcatraz_entry_meta', $meta );
 }

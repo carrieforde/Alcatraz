@@ -14,13 +14,8 @@
 			<?php the_post_thumbnail(); ?>
 		</div>
 	<?php endif; ?>
-	<header class="entry-header">
-		<?php alcatraz_entry_header() ?>
 
-		<?php alcatraz_entry_title(); ?>
-
-		<?php alcatraz_entry_meta(); ?>
-	</header>
+	<?php alcatraz_entry_header(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
