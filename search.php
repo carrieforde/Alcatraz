@@ -23,10 +23,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					// Get the template from a child theme if it's there, otherwise use ours.
-					get_template_part( 'template-parts/content', 'search' );
-				?>
+				<?php get_template_part( 'template-parts/content', 'search' ); ?>
 
 			<?php endwhile; ?>
 
