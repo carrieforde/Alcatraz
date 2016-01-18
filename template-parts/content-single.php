@@ -15,13 +15,7 @@
 		</div>
 	<?php endif; ?>
 
-	<header class="entry-header">
-		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
-
-		<div class="entry-meta">
-			<?php alcatraz_posted_on(); ?>
-		</div>
-	</header>
+	<?php alcatraz_entry_header(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

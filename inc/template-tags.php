@@ -45,6 +45,59 @@ function alcatraz_posted_on() {
 }
 
 /**
+ * Prints the page header unless hide tile is checked.
+ */
+function alcatraz_entry_header() {
+
+	$header = sprintf(
+				'<header class="entry-header">%s%s</header',
+				alcatraz_entry_title(),
+				alcatraz_entry_meta()
+	);
+
+	echo apply_filters( 'alcatraz_entry_header', $header );
+}
+
+/**
+ * Prints the page title unless hide tile is checked.
+ */
+function alcatraz_entry_title() {
+
+	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
+
+	if ( is_search() ) {
+
+		$title = the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">',
+									esc_url( get_permalink() ) ),
+									'</a></h2>',
+									false
+		);
+	}
+
+	$title = ( $hide_title && is_singular() ) ? '' : the_title( '<h1 class="entry-title">', '</h1>', false );
+
+	echo apply_filters( 'alcatraz_entry_title', $title );
+}
+
+/**
+ * Prints the page title meta unless hide tile is checked.
+ */
+function alcatraz_entry_meta() {
+
+	if ( is_page() ) {
+		return;
+	}
+
+	if ( 'post' === get_post_type() ) {
+		$meta = sprintf( '<div class="entry-meta">%s</div>',
+						alcatraz_posted_on()
+				);
+	}
+
+	echo apply_filters( 'alcatraz_entry_meta', $meta );
+}
+
+/**
  * Prints HTML with meta information for the categories, tags and comments.
  */
 function alcatraz_entry_footer() {

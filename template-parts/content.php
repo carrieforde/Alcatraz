@@ -13,15 +13,7 @@
 		<a href="<?php the_permalink(); ?>" class="post-thumbnail"><?php the_post_thumbnail(); ?></a>
 	<?php endif; ?>
 
-	<header class="entry-header">
-		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
-
-		<?php if ( 'post' === get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php alcatraz_posted_on(); ?>
-		</div>
-		<?php endif; ?>
-	</header>
+	<?php alcatraz_entry_header(); ?>
 
 	<div class="entry-content">
 		<?php

@@ -6,10 +6,14 @@
  */
 ?>
 
+<header class="page-header">
+
+	<?php alcatraz_entry_title(); ?>
+
+</header>
+
 <section class="no-results not-found">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'alcatraz' ); ?></h1>
-	</header>
+	<?php alcatraz_entry_title(); ?>
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
