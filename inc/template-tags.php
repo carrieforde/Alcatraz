@@ -50,7 +50,7 @@ function alcatraz_posted_on() {
 function alcatraz_entry_header() {
 
 	$header = sprintf(
-				'<header class="entry-header">%s%s</header',
+				'<header class="entry-header">%s%s</header>',
 				alcatraz_entry_title(),
 				alcatraz_entry_meta()
 	);
