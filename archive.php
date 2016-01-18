@@ -26,11 +26,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php
-					// Get the template based on the post type from a child theme if it's there,
-					// otherwise use ours.
-					get_template_part( 'template-parts/content', get_post_type() );
-				?>
+				<?php get_template_part( 'template-parts/content', get_post_type() ); ?>
 
 			<?php endwhile; ?>
 
