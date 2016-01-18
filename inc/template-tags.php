@@ -252,7 +252,7 @@ function alcatraz_get_the_social_network_icons() {
 	</div>
 	<?php
 
-	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean() );
+	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean(), $options );
 }
 
 /**
@@ -324,7 +324,7 @@ function alcatraz_get_the_sub_page_nav( $args = array() ) {
 		);
 	}
 
-	return apply_filters( 'alcatraz_sub_page_nav', $output );
+	return apply_filters( 'alcatraz_sub_page_nav', $output, $args );
 }
 
 /**
