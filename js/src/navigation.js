@@ -348,8 +348,9 @@ var AlcatrazNavigation = ( function( $ ) {
 		var $toggle   = $item.find( '.sub-level-toggle' ).first();
 		var $parent   = $toggle.parents( 'li' ).last();
 		var $sub      = $item.find( 'ul' ).first();
-		var autoClose = options.autoClose || false;
-		var duration  = options.duration || 500;
+		var args      = options || {};
+		var autoClose = args.autoClose || false;
+		var duration  = args.duration || 500;
 
 		if ( autoClose ) {
 			$list.find( 'ul' ).not( $parent.find( 'ul' ) ).slideUp( duration );
