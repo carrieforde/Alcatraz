@@ -6,7 +6,9 @@
  */
 
 /**
- * Prints HTML with meta information for the current post-date/time and author.
+ * Build and echo the "Posted on ..." HTML.
+ *
+ * @since  1.0.0
  */
 function alcatraz_posted_on() {
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
@@ -45,60 +47,77 @@ function alcatraz_posted_on() {
 }
 
 /**
- * Prints the page header unless hide tile is checked.
+ * Build and echo the entry header HTML.
+ *
+ * @since  1.0.0
  */
 function alcatraz_entry_header() {
 
 	$header = sprintf(
-				'<header class="entry-header">%s%s</header>',
-				alcatraz_entry_title(),
-				alcatraz_entry_meta()
+		'<header class="entry-header">%s%s</header>',
+		alcatraz_entry_title(),
+		alcatraz_entry_meta()
 	);
 
 	echo apply_filters( 'alcatraz_entry_header', $header );
 }
 
 /**
- * Prints the page title unless hide tile is checked.
+ * Build and echo the entry title HTML.
+ *
+ * @since  1.0.0
  */
 function alcatraz_entry_title() {
 
 	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
 
-	if ( is_search() ) {
+	if ( is_search() || ! is_singular() ) {
 
-		$title = the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">',
-									esc_url( get_permalink() ) ),
-									'</a></h2>',
-									false
+		$title = the_title(
+			sprintf(
+				'<h2 class="entry-title"><a href="%s" rel="bookmark">',
+				esc_url( get_permalink() )
+			),
+			'</a></h2>',
+			false
+		);
+
+	} elseif ( $hide_title ) {
+
+		// If the hide_title meta value has been set on the post and we're on a singular page,
+		// don't output the title.
+		$title = ( $hide_title && is_singular() ) ? '' : the_title(
+			'<h1 class="entry-title">',
+			'</h1>',
+			false
 		);
 	}
-
-	$title = ( $hide_title && is_singular() ) ? '' : the_title( '<h1 class="entry-title">', '</h1>', false );
 
 	echo apply_filters( 'alcatraz_entry_title', $title );
 }
 
 /**
- * Prints the page title meta unless hide tile is checked.
+ * Build and echo the entry meta HTML.
+ *
+ * @since  1.0.0
  */
 function alcatraz_entry_meta() {
 
-	if ( is_page() ) {
-		return;
-	}
+	$meta = '';
 
 	if ( 'post' === get_post_type() ) {
 		$meta = sprintf( '<div class="entry-meta">%s</div>',
-						alcatraz_posted_on()
-				);
+			alcatraz_posted_on()
+		);
 	}
 
 	echo apply_filters( 'alcatraz_entry_meta', $meta );
 }
 
 /**
- * Prints HTML with meta information for the categories, tags and comments.
+ * Build and echo the entry footer HTML.
+ *
+ * @since  1.0.0
  */
 function alcatraz_entry_footer() {
 
@@ -126,9 +145,11 @@ function alcatraz_entry_footer() {
 }
 
 /**
- * Returns true if a blog has more than 1 category.
+ * Return true if a blog has more than 1 category.
  *
- * @return bool
+ * @since   1.0.0
+ *
+ * @return  bool
  */
 function alcatraz_categorized_blog() {
 	if ( false === ( $all_the_cool_cats = get_transient( 'alcatraz_categories' ) ) ) {
@@ -159,6 +180,8 @@ add_action( 'edit_category', 'alcatraz_category_transient_flusher' );
 add_action( 'save_post',     'alcatraz_category_transient_flusher' );
 /**
  * Flush out the transients used in alcatraz_categorized_blog.
+ *
+ * @since  1.0.0
  */
 function alcatraz_category_transient_flusher() {
 	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
@@ -169,9 +192,11 @@ function alcatraz_category_transient_flusher() {
 }
 
 /**
- * Build the social network icon output.
+ * Build and return the social network icon HTML.
  *
- * @since 1.0.0
+ * @since   1.0.0
+ *
+ * @return  string  The social icon HTML.
  */
 function alcatraz_get_the_social_network_icons() {
 
@@ -227,13 +252,13 @@ function alcatraz_get_the_social_network_icons() {
 	</div>
 	<?php
 
-	return ob_get_clean();
+	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean(), $options );
 }
 
 /**
- * Display the social icon output.
+ * Display the social icon HTML.
  *
- * @since 1.0.0
+ * @since  1.0.0
  */
 function alcatraz_the_social_network_icons() {
 
@@ -241,7 +266,7 @@ function alcatraz_the_social_network_icons() {
 }
 
 /**
- * Build and return the Sub Page Navigation output.
+ * Build and return the Sub Page Navigation HTML.
  *
  * @since   1.0.0
  *
@@ -299,13 +324,15 @@ function alcatraz_get_the_sub_page_nav( $args = array() ) {
 		);
 	}
 
-	return $output;
+	return apply_filters( 'alcatraz_sub_page_nav', $output, $args );
 }
 
 /**
  * Display the Sub Page Navigation output.
  *
- * @since 1.0.0
+ * @since  1.0.0
+ *
+ * @param  array  $args  The args for wp_list_pages().
  */
 function alcatraz_the_sub_page_nav( $args = array() ) {
 
