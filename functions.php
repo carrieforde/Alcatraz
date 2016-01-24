@@ -166,8 +166,10 @@ function alcatraz_scripts() {
 
 	global $alcatraz_google_fonts;
 
+	$current_theme = wp_get_theme();
+
 	// Google fonts.
-	wp_enqueue_style(
+	wp_register_style(
 		'alcatraz-fonts',
 		$alcatraz_google_fonts,
 		array(),
@@ -175,21 +177,30 @@ function alcatraz_scripts() {
 	);
 
 	// Main theme CSS.
-	wp_enqueue_style(
+	wp_register_style(
 		'alcatraz-style',
-		get_stylesheet_uri(),
+		ALCATRAZ_URL . 'style.min.css',
 		array(),
 		ALCATRAZ_VERSION
 	);
 
 	// Main theme JS.
-	wp_enqueue_script(
+	wp_register_script(
 		'alcatraz-scripts',
 		ALCATRAZ_URL . 'js/alcatraz-theme.min.js',
 		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true
 	);
+
+	// Enqueue the JS always.
+	wp_enqueue_script( 'alcatraz-scripts' );
+
+	// Enqueue the CSS and fonts only if a child theme is not being used.
+	if ( 'Alcatraz' === $current_theme ) {
+		wp_enqueue_style( 'alcatraz-fonts' );
+		wp_enqueue_style( 'alcatraz-style' );
+	}
 
 	// Translatable strings and other data for our JS.
 	$vars = array(
