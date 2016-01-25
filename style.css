@@ -1505,7 +1505,10 @@ td :last-child {
 
 /* Search Form */
 .search-form {
-  overflow: hidden;
+  content: "";
+  display: table;
+  table-layout: fixed;
+  width: 100%;
 }
 
 .search-field {

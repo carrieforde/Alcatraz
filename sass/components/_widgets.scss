@@ -48,7 +48,7 @@
 
 /* Search Form */
 .search-form {
-	overflow: hidden;
+	@include clearfix;
 }
 
 .search-field {
