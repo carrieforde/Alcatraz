@@ -40,6 +40,34 @@ function alcatraz_get_option_defaults() {
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
 }
 
+
+/**
+ * Return an array of the social network data.
+ *
+ * @since   1.0.0
+ *
+ * @return  array
+ */
+function alcatraz_get_social_networks() {
+
+	$networks = array(
+		'Facebook' => array(
+			'label'       => __( 'Facebook', 'alcatraz' ),
+			'id'          => 'facebook_url',
+			'description' => __( 'sdfsdfg', 'alcatraz' ),
+			'icon'        => '',
+		),
+		'Github' => array(
+			'label'       => __( 'Github', 'alcatraz' ),
+			'id'          => 'github_url',
+			'description' => __( 'sdfsdfg', 'alcatraz' ),
+			'icon'        => '',
+		),
+	);
+
+	return apply_filters( 'alcatraz_social_networks', $networks );
+}
+
 /**
  * Validate our theme options.
  *

@@ -100,17 +100,21 @@ class Alcatraz_Options_Page {
 			)
 		);
 
-		add_settings_field(
-			'facebook_url',
-			__( 'Facebook', 'alcatraz' ),
-			array( $this, 'field_text' ),
-			'alcatraz_settings_section',
-			'alcatraz_options_page_settings',
-			array(
-				'id'          => 'facebook_url',
-				'description' => __( 'Enter your Facebook profile URL', 'alcatraz' ),
-			)
-		);
+
+	$networks = alcatraz_get_social_networks();
+		foreach( $networks as $network => $network_data ) {
+			add_settings_field(
+				$network_data->id,
+				$network_data->label,
+				array( $this, 'field_text' ),
+					'alcatraz_settings_section',
+					'alcatraz_options_page_settings',
+				array(
+					'id'          => $network_data->id,
+					'description' => $network_data->description,
+				)
+			);
+		}
 
 		add_settings_field(
 			'twitter_url',
