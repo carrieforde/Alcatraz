@@ -34,6 +34,14 @@ function alcatraz_posted_on() {
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+}
+
+/**
+ * Build the edit post link HTML.
+ *
+ * @since 1.0.0
+ */
+function alcatraz_edit_post() {
 
 	edit_post_link(
 		sprintf(
