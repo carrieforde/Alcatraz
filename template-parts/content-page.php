@@ -16,7 +16,6 @@
 	<?php endif; ?>
 
 	<?php alcatraz_entry_header(); ?>
-	<?php alcatraz_edit_post(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -29,16 +28,7 @@
 	</div>
 
 	<footer class="entry-footer">
-		<?php
-			edit_post_link(
-				sprintf(
-					esc_html__( 'Edit %s', 'alcatraz' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				),
-				'<span class="edit-link">',
-				'</span>'
-			);
-		?>
+		<?php alcatraz_edit_post(); ?>
 	</footer>
 </article>
 
