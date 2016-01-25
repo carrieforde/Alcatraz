@@ -79,7 +79,7 @@ function alcatraz_entry_title() {
 
 	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
 
-	if ( is_search() || ! is_singular() ) {
+	if ( is_search() || is_singular() ) {
 
 		$title = the_title(
 			sprintf(
@@ -90,7 +90,9 @@ function alcatraz_entry_title() {
 			false
 		);
 
-	} elseif ( $hide_title ) {
+	}
+
+	if ( $hide_title ) {
 
 		// If the hide_title meta value has been set on the post and we're on a singular page,
 		// don't output the title.
