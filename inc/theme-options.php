@@ -28,44 +28,17 @@ function alcatraz_get_option_defaults() {
 		'mobile_logo_id'          => '',
 		'footer_widget_areas'     => 3,
 		'footer_bottom'           => '',
-		'email_url'               => '',
-		'facebook_url'            => '',
-		'twitter_url'             => '',
-		'instagram_url'           => '',
-		'pinterest_url'           => '',
-		'youtube_url'             => '',
 		'social_icons_in_footer'  => '',
 	);
 
+	$networks = alcatraz_get_social_networks();
+
+	 // Loop over any social networks and default the network URLs to empty string.
+	 foreach ( $networks as $network => $network_data ) {
+	     $defaults[ $network . '_url' ] = '';
+	 }
+
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
-}
-
-
-/**
- * Return an array of the social network data.
- *
- * @since   1.0.0
- *
- * @return  array
- */
-function alcatraz_get_social_networks() {
-
-	$networks = array(
-		'Facebook' => array(
-			'label'       => __( 'Facebook', 'alcatraz' ),
-			'id'          => 'facebook_url',
-			'description' => __( 'sdfsdfg', 'alcatraz' ),
-			'icon'        => '',
-		),
-		'Github' => array(
-			'label'       => __( 'Github', 'alcatraz' ),
-			'id'          => 'github_url',
-			'description' => __( 'sdfsdfg', 'alcatraz' ),
-			'icon'        => '',
-		),
-	);
-
-	return apply_filters( 'alcatraz_social_networks', $networks );
 }
 
 /**
@@ -85,24 +58,13 @@ function alcatraz_validate_options( $input ) {
 	// Start with any existing options.
 	$options = get_option( 'alcatraz_options' );
 
+	$networks = alcatraz_get_social_networks();
+
 	// Update options on the options page.
-	if ( isset( $input['email_url'] ) ) {
-		$options['email_url'] = sanitize_text_field( $input['email_url'] );
-	}
-	if ( isset( $input['facebook_url'] ) ) {
-		$options['facebook_url'] = sanitize_text_field( $input['facebook_url'] );
-	}
-	if ( isset( $input['twitter_url'] ) ) {
-		$options['twitter_url'] = sanitize_text_field( $input['twitter_url'] );
-	}
-	if ( isset( $input['instagram_url'] ) ) {
-		$options['instagram_url'] = sanitize_text_field( $input['instagram_url'] );
-	}
-	if ( isset( $input['pinterest_url'] ) ) {
-		$options['pinterest_url'] = sanitize_text_field( $input['pinterest_url'] );
-	}
-	if ( isset( $input['youtube_url'] ) ) {
-		$options['youtube_url'] = sanitize_text_field( $input['youtube_url'] );
+	foreach ( $networks as $network => $network_data ) {
+		if ( isset( $input[ $network . '_url' ] ) ) {
+	    	$options[ $network . '_url' ] = sanitize_text_field( $input[ $network . '_url' ] );
+	    }
 	}
 
 	// Update options in the Customizer.
