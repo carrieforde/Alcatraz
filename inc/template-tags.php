@@ -79,7 +79,7 @@ function alcatraz_entry_title() {
 
 	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
 
-	if ( is_search() || is_singular() ) {
+	if ( is_search() || ! is_singular() ) {
 
 		$title = the_title(
 			sprintf(
@@ -99,6 +99,16 @@ function alcatraz_entry_title() {
 		$title = ( $hide_title && is_singular() ) ? '' : the_title(
 			'<h1 class="entry-title">',
 			'</h1>',
+			false
+		);
+	} else {
+
+		$title = the_title(
+			sprintf(
+				'<h2 class="entry-title"><a href="%s" rel="bookmark">',
+				esc_url( get_permalink() )
+			),
+			'</a></h2>',
 			false
 		);
 	}
