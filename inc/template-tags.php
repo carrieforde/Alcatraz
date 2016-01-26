@@ -79,7 +79,20 @@ function alcatraz_entry_title() {
 
 	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
 
-	if ( is_search() || is_singular() ) {
+	if ( is_singular() ) {
+
+		if ( isset( $hide_title ) ) {
+
+			// If the hide_title meta value has been set on the post and we're on a singular page,
+			// don't output the title.
+			$title = ( $hide_title && is_singular() ) ? '' : the_title(
+				'<h1 class="entry-title">',
+				'</h1>',
+				false
+			);
+		}
+
+	} else {
 
 		$title = the_title(
 			sprintf(
@@ -90,17 +103,6 @@ function alcatraz_entry_title() {
 			false
 		);
 
-	}
-
-	if ( $hide_title ) {
-
-		// If the hide_title meta value has been set on the post and we're on a singular page,
-		// don't output the title.
-		$title = ( $hide_title && is_singular() ) ? '' : the_title(
-			'<h1 class="entry-title">',
-			'</h1>',
-			false
-		);
 	}
 
 	echo apply_filters( 'alcatraz_entry_title', $title );
