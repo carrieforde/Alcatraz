@@ -360,7 +360,7 @@ a {
 			position: relative;
 			width: 100%;
 
-			&.menu-item-has-children a {
+			&.menu-item-has-children > a {
 				padding-right: 60px;
 			}
 

@@ -86,7 +86,7 @@
 @mixin large-screen-nav-dropdown {
 	.main-navigation #primary-menu {
 		.menu-item {
-			&.menu-item-has-children a {
+			&.menu-item-has-children > a {
 				padding-right: 40px;
 			}
 
