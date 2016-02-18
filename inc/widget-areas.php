@@ -83,10 +83,16 @@ function alcatraz_output_primary_sidebar() {
 	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
 
 	// Bail if the page layout is set to full-width.
-	if ( $page_layout && 'no-sidebar' === $page_layout ) {
-		return;
-	} elseif ( isset( $options['page_layout'] ) && 'no-sidebar' === $options['page_layout'] ) {
-		return;
+	if ( $page_layout ) {
+		if ( 'no-sidebar' === $page_layout ) {
+			return;
+		} elseif ( 'default' === $page_layout && isset( $options['page_layout'] ) && 'no-sidebar' === $options['page_layout'] ) {
+			return;
+		}
+	} else {
+		if ( isset( $options['page_layout'] ) && 'no-sidebar' === $options['page_layout'] ) {
+			return;
+		}
 	}
 
 	?>
