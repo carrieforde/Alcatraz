@@ -1,7 +1,7 @@
 Please fill out this template when creating PRs. This will help us review your PR in a complete and timely  
 manner so your hard work can be merged sooner. Thanks!
 
-#### What's this PR do?
+#### What does this PR do?
 #### Where should the reviewer start?
 #### How should this be manually tested?
 #### Any background context you want to provide?
