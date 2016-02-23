@@ -100,7 +100,15 @@ function alcatraz_entry_title() {
 		);
 	}
 
-	echo apply_filters( 'alcatraz_entry_title', $title );
+	return apply_filters( 'alcatraz_entry_title', $title );
+}
+
+/**
+ * Display the Alcatraz entry title.
+ */
+function alcatraz_the_entry_title() {
+
+	echo alcatraz_entry_title();
 }
 
 /**
@@ -118,7 +126,15 @@ function alcatraz_entry_meta() {
 		);
 	}
 
-	echo apply_filters( 'alcatraz_entry_meta', $meta );
+	return apply_filters( 'alcatraz_entry_meta', $meta );
+}
+
+/**
+ * Display the Alcatraz entry meta.
+ */
+function alcatraz_the_entry_meta() {
+
+	echo alcatraz_entry_meta();
 }
 
 /**
