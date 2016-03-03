@@ -4,49 +4,49 @@
 
 .site-header {
 	position: relative;
+}
 
-	.header-image-wrap {
-		position: absolute;
-		display: block;
-		height: 100%;
-		width: 100%;
-		overflow: hidden;
+.header-image-wrap {
+	position: absolute;
+	display: block;
+	height: 100%;
+	width: 100%;
+	overflow: hidden;
+}
+
+.header-image {
+	width: 100%;
+	display: block;
+}
+
+.header-inner {
+	padding: $size__padding-default $size__padding-default 0;
+	position: relative;
+
+	.mobile-nav-toggle-style-hamburger & {
+		float: left;
+		max-width: 65%;
+		max-width: calc(100% - 120px);
 	}
+}
 
-	.header-image {
-		width: 100%;
-		display: block;
+.site-title {
+	margin: 0 0 10px;
+	@include font-size(36);
+	font: 600 2em/#{$font__line-height-headings} $font__headings;
+
+	.has-logo &,
+	.has-mobile-logo & {
+		@include hide-text;
 	}
+}
 
-	.header-inner {
-		padding: $size__padding-default $size__padding-default 0;
-		position: relative;
+.site-description {
+	margin: 10px 0;
 
-		.mobile-nav-toggle-style-hamburger & {
-			float: left;
-			max-width: 65%;
-			max-width: calc(100% - 120px);
-		}
-	}
-
-	.site-title {
-		margin: 0 0 10px;
-		@include font-size(36);
-		font: 600 2em/#{$font__line-height-headings} $font__headings;
-
-		.has-logo &,
-		.has-mobile-logo & {
-			@include hide-text;
-		}
-	}
-
-	.site-description {
-		margin: 10px 0;
-
-		.has-logo &,
-		.has-mobile-logo & {
-			@include hide-text;
-		}
+	.has-logo &,
+	.has-mobile-logo & {
+		@include hide-text;
 	}
 }
 

@@ -1531,7 +1531,7 @@ input[type="submit"].search-submit {
   position: relative;
 }
 
-.site-header .header-image-wrap {
+.header-image-wrap {
   position: absolute;
   display: block;
   height: 100%;
@@ -1539,31 +1539,31 @@ input[type="submit"].search-submit {
   overflow: hidden;
 }
 
-.site-header .header-image {
+.header-image {
   width: 100%;
   display: block;
 }
 
-.site-header .header-inner {
+.header-inner {
   padding: 20px 20px 0;
   position: relative;
 }
 
-.mobile-nav-toggle-style-hamburger .site-header .header-inner {
+.mobile-nav-toggle-style-hamburger .header-inner {
   float: left;
   max-width: 65%;
   max-width: calc(100% - 120px);
 }
 
-.site-header .site-title {
+.site-title {
   margin: 0 0 10px;
   font-size: 36px;
   font-size: 2.25em;
   font: 600 2em / 1.2 "Source Serif Pro", serif;
 }
 
-.has-logo .site-header .site-title,
-.has-mobile-logo .site-header .site-title {
+.has-logo .site-title,
+.has-mobile-logo .site-title {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
@@ -1574,12 +1574,12 @@ input[type="submit"].search-submit {
   width: 1px;
 }
 
-.site-header .site-description {
+.site-description {
   margin: 10px 0;
 }
 
-.has-logo .site-header .site-description,
-.has-mobile-logo .site-header .site-description {
+.has-logo .site-description,
+.has-mobile-logo .site-description {
   border: 0;
   clip: rect(0 0 0 0);
   height: 1px;
