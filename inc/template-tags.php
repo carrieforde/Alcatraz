@@ -215,6 +215,51 @@ function alcatraz_category_transient_flusher() {
 }
 
 /**
+ * Return an array of the social network data.
+ *
+ * @since   1.0.0
+ *
+ * @return  array
+ */
+function alcatraz_get_social_networks( $context = '' ) {
+
+	$networks = array(
+		'email' => array(
+			'display_name' => __( 'Email', 'alcatraz' ),
+			'description'  => __( 'Enter your email address', 'alcatraz' ),
+			'icon'         => 'envelope',
+		),
+		'facebook' => array(
+			'display_name' => __( 'Facebook', 'alcatraz' ),
+			'description'  => __( 'Enter your Facebook url', 'alcatraz' ),
+			'icon'         => 'facebook',
+		),
+		'twitter' => array(
+			'display_name' => __( 'Twitter', 'alcatraz' ),
+			'description'  => __( 'Enter your Twitter url', 'alcatraz' ),
+			'icon'         => 'twitter',
+		),
+		'instagram' => array(
+			'display_name' => __( 'Instagram', 'alcatraz' ),
+			'description'  => __( 'Enter your Instagram url', 'alcatraz' ),
+			'icon'         => 'instagram',
+		),
+		'pinterest' => array(
+			'display_name' => __( 'Pinterest', 'alcatraz' ),
+			'description'  => __( 'Enter your Pinterest url', 'alcatraz' ),
+			'icon'         => 'twitter',
+		),
+		'youtube' => array(
+			'display_name' => __( 'Youtube', 'alcatraz' ),
+			'description'  => __( 'Enter your Youtube url', 'alcatraz' ),
+			'icon'         => 'youtube',
+		),
+	);
+
+	return apply_filters( 'alcatraz_social_networks', $networks, $context );
+}
+
+/**
  * Build and return the social network icon HTML.
  *
  * @since   1.0.0
@@ -223,59 +268,66 @@ function alcatraz_category_transient_flusher() {
  */
 function alcatraz_get_the_social_network_icons() {
 
-	$options = get_option( 'alcatraz_options' );
+	$options  = get_option( 'alcatraz_options' );
+	$networks = alcatraz_get_social_networks();
 
 	ob_start(); ?>
 
 	<div class="alcatraz-social-icon-wrap">
-		<ul class="alcatraz-social-icons">
-			<?php if ( ! empty( $options['email_url'] ) ) : ?>
-				<li class="email">
-					<a href="mailto:<?php echo esc_attr( $options['email_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-email" target="_blank">
-						<i class="fa fa-envelope"></i>
-					</a>
-				</li>
-			<?php endif; ?>
-			<?php if ( ! empty( $options['facebook_url'] ) ) : ?>
-				<li class="facebook">
-					<a href="<?php echo esc_url( $options['facebook_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-facebook" target="_blank">
-						<i class="fa fa-facebook"></i>
-					</a>
-				</li>
-			<?php endif; ?>
-			<?php if ( ! empty( $options['twitter_url'] ) ) : ?>
-				<li class="twitter">
-					<a href="<?php echo esc_url( $options['twitter_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-twitter" target="_blank">
-						<i class="fa fa-twitter"></i>
-					</a>
-				</li>
-			<?php endif; ?>
-			<?php if ( ! empty( $options['instagram_url'] ) ) : ?>
-				<li class="instagram">
-					<a href="<?php echo esc_url( $options['instagram_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-instagram" target="_blank">
-						<i class="fa fa-instagram"></i>
-					</a>
-				</li>
-			<?php endif; ?>
-			<?php if ( ! empty( $options['pinterest_url'] ) ) : ?>
-				<li class="pinterest">
-					<a href="<?php echo esc_url( $options['pinterest_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-pinterest" target="_blank">
-						<i class="fa fa-pinterest"></i>
-					</a>
-				</li>
-			<?php endif; ?>
-			<?php if ( ! empty( $options['youtube_url'] ) ) : ?>
-				<li class="youtube">
-					<a href="<?php echo esc_url( $options['youtube_url'] ) ; ?>" class="alcatraz-social-icon alcatraz-icon-youtube" target="_blank">
-						<i class="fa fa-youtube"></i>
-					</a>
-				</li>
-			<?php endif; ?>
-		</ul>
+	    <ul class="alcatraz-social-icons">
+	        <?php foreach ( $networks as $network => $network_data ) {
+	            if ( ! empty( $options[ $network . '_url' ] ) ) {
+	                 echo alcatraz_get_social_network_icon_html( $network, $options[ $network . '_url' ], $network_data );
+	            }
+	        } ?>
+	    </ul>
 	</div>
+
 	<?php
 
-	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean(), $options );
+	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean(), $options, $networks );
+}
+
+/**
+ * Build and return the HTML for a single social icon.
+ *
+ * @since   1.0.0
+ *
+ * @param   string  $network       The network name.
+ * @param   string  $url           The network URL.
+ * @param   array   $network_data  The array of network data.
+ *
+ * @return  string                 The HTML for the social icon.
+ */
+function alcatraz_get_social_network_icon_html( $network, $url, $network_data = array() ) {
+
+    // Bail if we don't have a network.
+    if ( empty( $network ) ) {
+        return;
+    }
+
+    // Use mailto: links for any network URLs that are email addresses.
+    if ( is_email( $url ) ) {
+        $url = 'mailto:' . $url;
+    }
+
+    // Use an icon if it is there, otherwise output the network name.
+    if ( isset( $network_data['icon'] ) ) {
+        $icon_classes = apply_filters( 'alcatraz_social_icon_classes', 'fa fa-' . $network_data['icon'], $network, $url, $network_data );
+        $icon = '<i class="' . esc_attr( $icon_classes ) . '" /></i>';
+    } else {
+        $icon = esc_html( $network );
+    }
+
+    $icon_html = sprintf(
+        '<li class="%s"><a href="%s" class="%s" target="_blank">%s</a></li>',
+        esc_attr( $network ),
+        esc_url( $url ),
+        'alcatraz-social-icon alcatraz-icon-' . esc_attr( $network ),
+        $icon
+    );
+
+    return apply_filters( 'alcatraz_social_icon_html', $icon_html, $network, $url, $network_data );
 }
 
 /**

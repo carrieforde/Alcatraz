@@ -88,77 +88,21 @@ class Alcatraz_Options_Page {
 			'alcatraz_settings_section'
 		);
 
-		add_settings_field(
-			'email_url',
-			__( 'Email', 'alcatraz' ),
-			array( $this, 'field_text' ),
-				'alcatraz_settings_section',
-				'alcatraz_options_page_settings',
-			array(
-				'id'          => 'email_url',
-				'description' => __( 'Enter your email address', 'alcatraz' ),
-			)
-		);
+	$networks = alcatraz_get_social_networks();
 
-		add_settings_field(
-			'facebook_url',
-			__( 'Facebook', 'alcatraz' ),
-			array( $this, 'field_text' ),
-			'alcatraz_settings_section',
-			'alcatraz_options_page_settings',
-			array(
-				'id'          => 'facebook_url',
-				'description' => __( 'Enter your Facebook profile URL', 'alcatraz' ),
-			)
-		);
-
-		add_settings_field(
-			'twitter_url',
-			__( 'Twitter', 'alcatraz' ),
-			array( $this, 'field_text' ),
-			'alcatraz_settings_section',
-			'alcatraz_options_page_settings',
-			array(
-				'id'          => 'twitter_url',
-				'description' => __( 'Enter your Twitter profile URL', 'alcatraz' ),
-			)
-		);
-
-		add_settings_field(
-			'instagram_url',
-			__( 'Instagram', 'alcatraz' ),
-			array( $this, 'field_text' ),
-			'alcatraz_settings_section',
-			'alcatraz_options_page_settings',
-			array(
-				'id'          => 'instagram_url',
-				'description' => __( 'Enter your Instagram profile URL', 'alcatraz' ),
-			)
-		);
-
-		add_settings_field(
-			'pinterest_url',
-			__( 'Pinterest', 'alcatraz' ),
-			array( $this, 'field_text' ),
-			'alcatraz_settings_section',
-			'alcatraz_options_page_settings',
-			array(
-				'id'          => 'pinterest_url',
-				'description' => __( 'Enter your Pinterest profile URL', 'alcatraz' ),
-			)
-		);
-
-		add_settings_field(
-			'youtube_url',
-			__( 'Youtube', 'alcatraz' ),
-			array( $this, 'field_text' ),
-			'alcatraz_settings_section',
-			'alcatraz_options_page_settings',
-			array(
-				'id'          => 'youtube_url',
-				'description' => __( 'Enter your You Tube channel URL', 'alcatraz' ),
-			)
-		);
+	foreach ( $networks as $network => $network_data ) {
+			add_settings_field(
+		        $network . '_url',
+		        $network_data['display_name'],
+		        array( $this, 'field_text' ),
+		        'alcatraz_settings_section',
+		        'alcatraz_options_page_settings',
+		        array(
+		            'id'          => $network . '_url',
+		            'description' => $network_data['description'],
+		        )
+		    );
+		}
 	}
 
 	/**
