@@ -1255,9 +1255,8 @@ a:hover, a:active {
  */
 img {
   height: auto;
-  /* Make sure images are scaled correctly. */
   max-width: 100%;
-  /* Adhere to container width. */
+  margin-bottom: 0.9375em;
 }
 
 .page-content .wp-smiley,
