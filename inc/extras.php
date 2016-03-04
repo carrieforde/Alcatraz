@@ -119,3 +119,15 @@ function alcatraz_empty_or_int( $value ) {
 		return intval( $value );
 	}
 }
+
+/**
+ * Filter post types passed to our Custom Meta box.
+ */
+function alcatraz_allowed_post_types( $context = '' ) {
+
+	$post_type = array(
+		'page',
+	);
+
+	return apply_filters( 'alcatraz_post_types', $post_type, $context );
+}

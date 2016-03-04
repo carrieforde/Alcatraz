@@ -104,6 +104,7 @@ add_action( 'cmb2_admin_init', 'alcatraz_page_options_metabox' );
 function alcatraz_page_options_metabox() {
 
 	$prefix = '_alcatraz_';
+	$post_type = alcatraz_allowed_post_types();
 
 	/**
 	 * Initialize the metabox.
@@ -111,7 +112,7 @@ function alcatraz_page_options_metabox() {
 	$page_options = new_cmb2_box( array(
 		'id'            => 'page_options_metabox',
 		'title'         => __( 'Page Options', 'alcatraz' ),
-		'object_types'  => array( 'page' ),
+		'object_types'  => $post_type,
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true,
