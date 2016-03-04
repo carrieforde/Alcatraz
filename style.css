@@ -1524,6 +1524,31 @@ input[type="submit"].search-submit {
   padding: 4.5px 10px;
 }
 
+/* All WP Widgets with UL structures */
+.widget_archive ul,
+.widget_categories ul,
+.widget_pages ul,
+.widget_meta ul,
+.widget_recent_comments ul,
+.widget_recent_entries ul,
+.widget_rss ul,
+.widget_nav_menu ul {
+  padding-left: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.widget_archive li,
+.widget_categories li,
+.widget_pages li,
+.widget_meta li,
+.widget_recent_comments li,
+.widget_recent_entries li,
+.widget_rss li,
+.widget_nav_menu li {
+  padding: 0.125em;
+}
+
 /**
  * 4.1 Header
  */
@@ -1780,7 +1805,7 @@ input[type="submit"].search-submit {
  */
 .alcatraz-social-icons {
   padding-left: 0;
-  margin-left: 0;
+  margin: 0;
   list-style: none;
   text-align: center;
 }
