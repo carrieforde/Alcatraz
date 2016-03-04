@@ -15,7 +15,7 @@
 		</div>
 	<?php endif; ?>
 
-	<?php alcatraz_entry_header(); ?>
+	<?php alcatraz_the_entry_header(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>

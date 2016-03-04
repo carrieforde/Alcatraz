@@ -33,7 +33,7 @@ function alcatraz_posted_on() {
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	return '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
 }
 
 /**
@@ -67,7 +67,17 @@ function alcatraz_entry_header() {
 		alcatraz_entry_meta()
 	);
 
-	echo apply_filters( 'alcatraz_entry_header', $header );
+	return apply_filters( 'alcatraz_entry_header', $header );
+}
+
+/**
+ * Echo the entry header HTML.
+ *
+ * @since 1.0.0
+ */
+function alcatraz_the_entry_header() {
+
+	echo alcatraz_entry_header();
 }
 
 /**
@@ -274,13 +284,13 @@ function alcatraz_get_the_social_network_icons() {
 	ob_start(); ?>
 
 	<div class="alcatraz-social-icon-wrap">
-	    <ul class="alcatraz-social-icons">
-	        <?php foreach ( $networks as $network => $network_data ) {
-	            if ( ! empty( $options[ $network . '_url' ] ) ) {
-	                 echo alcatraz_get_social_network_icon_html( $network, $options[ $network . '_url' ], $network_data );
-	            }
-	        } ?>
-	    </ul>
+		<ul class="alcatraz-social-icons">
+			<?php foreach ( $networks as $network => $network_data ) {
+				if ( ! empty( $options[ $network . '_url' ] ) ) {
+					 echo alcatraz_get_social_network_icon_html( $network, $options[ $network . '_url' ], $network_data );
+				}
+			} ?>
+		</ul>
 	</div>
 
 	<?php
@@ -301,33 +311,33 @@ function alcatraz_get_the_social_network_icons() {
  */
 function alcatraz_get_social_network_icon_html( $network, $url, $network_data = array() ) {
 
-    // Bail if we don't have a network.
-    if ( empty( $network ) ) {
-        return;
-    }
+	// Bail if we don't have a network.
+	if ( empty( $network ) ) {
+		return;
+	}
 
-    // Use mailto: links for any network URLs that are email addresses.
-    if ( is_email( $url ) ) {
-        $url = 'mailto:' . $url;
-    }
+	// Use mailto: links for any network URLs that are email addresses.
+	if ( is_email( $url ) ) {
+		$url = 'mailto:' . $url;
+	}
 
-    // Use an icon if it is there, otherwise output the network name.
-    if ( isset( $network_data['icon'] ) ) {
-        $icon_classes = apply_filters( 'alcatraz_social_icon_classes', 'fa fa-' . $network_data['icon'], $network, $url, $network_data );
-        $icon = '<i class="' . esc_attr( $icon_classes ) . '" /></i>';
-    } else {
-        $icon = esc_html( $network );
-    }
+	// Use an icon if it is there, otherwise output the network name.
+	if ( isset( $network_data['icon'] ) ) {
+		$icon_classes = apply_filters( 'alcatraz_social_icon_classes', 'fa fa-' . $network_data['icon'], $network, $url, $network_data );
+		$icon = '<i class="' . esc_attr( $icon_classes ) . '" /></i>';
+	} else {
+		$icon = esc_html( $network );
+	}
 
-    $icon_html = sprintf(
-        '<li class="%s"><a href="%s" class="%s" target="_blank">%s</a></li>',
-        esc_attr( $network ),
-        esc_url( $url ),
-        'alcatraz-social-icon alcatraz-icon-' . esc_attr( $network ),
-        $icon
-    );
+	$icon_html = sprintf(
+		'<li class="%s"><a href="%s" class="%s" target="_blank">%s</a></li>',
+		esc_attr( $network ),
+		esc_url( $url ),
+		'alcatraz-social-icon alcatraz-icon-' . esc_attr( $network ),
+		$icon
+	);
 
-    return apply_filters( 'alcatraz_social_icon_html', $icon_html, $network, $url, $network_data );
+	return apply_filters( 'alcatraz_social_icon_html', $icon_html, $network, $url, $network_data );
 }
 
 /**
