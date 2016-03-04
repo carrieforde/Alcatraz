@@ -6,84 +6,85 @@
 	clear: both;
 	width: $size__width-site;
 	padding: $size__padding-default;
+}
 
-	.footer-widget-areas::after {
-		@include clearfix;
+.footer-widget-areas::after {
+	@include clearfix;
+}
+
+.footer-widget-area {
+	width: 100%;
+}
+
+.footer-bottom {
+	text-align: center;
+}
+
+@media (min-width: em(960)) {
+
+	.header-style-side & {
+		width: 72%;
+		width: calc(100% - 280px);
+		float: right;
 	}
 
-	.footer-widget-area {
-		width: 100%;
+	.header-style-side.boxed-content & {
+		position: relative;
+		left: 140px;
+		float: none;
+		max-width: 680px;
+		max-width: calc(680px);
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: em(1040)) {
+
+	.header-style-side & {
+		width: 70%;
+		width: calc(100% - 300px);
 	}
 
-	.footer-bottom {
-		text-align: center;
+	.header-style-side.boxed-content & {
+		left: 150px;
+		max-width: 740px;
+		max-width: calc(740px);
+		margin: 0 auto;
+	}
+}
+
+@media (min-width: em(1150)) {
+
+	.header-style-side & {
+		width: 70%;
+		width: calc(100% - 320px);
 	}
 
-	@media (min-width: em(960)) {
-
-		.header-style-side & {
-			width: 72%;
-			width: calc(100% - 280px);
-			float: right;
-		}
-
-		.header-style-side.boxed-content & {
-			position: relative;
-			left: 140px;
-			float: none;
-			max-width: 680px;
-			max-width: calc(680px);
-			margin: 0 auto;
-		}
+	.header-style-side.boxed-content & {
+		left: 160px;
+		max-width: $size__width-boxed-content;
+		margin: 0 auto;
 	}
-
-	@media (min-width: em(1040)) {
-
-		.header-style-side & {
-			width: 70%;
-			width: calc(100% - 300px);
-		}
-
-		.header-style-side.boxed-content & {
-			left: 150px;
-			max-width: 740px;
-			max-width: calc(740px);
-			margin: 0 auto;
-		}
-	}
-
-	@media (min-width: em(1150)) {
-
-		.header-style-side & {
-			width: 70%;
-			width: calc(100% - 320px);
-		}
-
-		.header-style-side.boxed-content & {
-			left: 160px;
-			max-width: $size__width-boxed-content;
-			margin: 0 auto;
-		}
-	}
-
-
 }
 
 @media (min-width: em(768)) {
 
 	.footer-widget-areas-2 {
+
 		.footer-widget-area {
 			@include span-columns( 6 of 12 );
 		}
 	}
 
 	.footer-widget-areas-3 {
+
 		.footer-widget-area {
 			@include span-columns( 4 of 12 );
 		}
 	}
 
 	.footer-widget-areas-4 {
+
 		.footer-widget-area {
 			@include span-columns( 3 of 12 );
 		}

@@ -78,19 +78,15 @@
 	}
 
 	.header-style-short {
-		@include display-context() {
-			@include direction-context() {
 
-				.header-inner {
-					@include span-columns(4 of 12);
-					padding: $size__padding-default;
-				}
+		.header-inner {
+			@include span-columns(4 of 12);
+			padding: $size__padding-default;
+		}
 
-				.main-navigation {
-					@include span-columns(8 of 12);
-					@include omega();
-				}
-			}
+		.main-navigation {
+			@include span-columns(8 of 12);
+			@include omega();
 		}
 	}
 }

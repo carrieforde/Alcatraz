@@ -1760,18 +1760,18 @@ input[type="submit"].search-submit {
   padding: 20px;
 }
 
-.site-footer .footer-widget-areas::after {
+.footer-widget-areas::after {
   content: "";
   display: table;
   table-layout: fixed;
   width: 100%;
 }
 
-.site-footer .footer-widget-area {
+.footer-widget-area {
   width: 100%;
 }
 
-.site-footer .footer-bottom {
+.footer-bottom {
   text-align: center;
 }
 
@@ -2584,12 +2584,12 @@ input[type="submit"].search-submit {
   .header-style-side .content-area {
     padding: 30px 20px;
   }
-  .header-style-side .site-footer {
+  .header-style-side & {
     width: 72%;
     width: calc(100% - 280px);
     float: right;
   }
-  .header-style-side.boxed-content .site-footer {
+  .header-style-side.boxed-content & {
     position: relative;
     left: 140px;
     float: none;
@@ -2614,11 +2614,11 @@ input[type="submit"].search-submit {
     max-width: calc(740px);
     margin: 0 auto;
   }
-  .header-style-side .site-footer {
+  .header-style-side & {
     width: 70%;
     width: calc(100% - 300px);
   }
-  .header-style-side.boxed-content .site-footer {
+  .header-style-side.boxed-content & {
     left: 150px;
     max-width: 740px;
     max-width: calc(740px);
@@ -2654,11 +2654,11 @@ input[type="submit"].search-submit {
   .header-style-side .primary-sidebar {
     padding: 40px 30px 40px 20px;
   }
-  .header-style-side .site-footer {
+  .header-style-side & {
     width: 70%;
     width: calc(100% - 320px);
   }
-  .header-style-side.boxed-content .site-footer {
+  .header-style-side.boxed-content & {
     left: 160px;
     max-width: 1100px;
     margin: 0 auto;
