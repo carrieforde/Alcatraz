@@ -70,6 +70,10 @@ function alcatraz_the_posted_on( $post_id = 0 ) {
  */
 function alcatraz_edit_post_link( $post_id = 0 ) {
 
+	if ( ! is_user_logged_in() || ! current_user_can( 'edit_post', $post_id ) ) {
+		return '';
+	}
+
 	if ( ! $post_id ) {
 		$post_id = get_the_ID();
 	}
@@ -252,7 +256,7 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 		// TODO: This block doesn't yet support being used outside of the loop because
 		// comments_popup_link doesn't accept a post_id. Ideally we can find a better
 		// method for generating the output we want here.
-		if ( ! is_single() && ! post_password_required( $post_id ) && ( comments_open( $post_id ) || get_comments_number( $post_id ) ) ) {
+		if ( is_single() && ! post_password_required( $post_id ) && ( comments_open( $post_id ) || get_comments_number( $post_id ) ) ) {
 			ob_start();
 
 			echo '<span class="comments-link">';
@@ -266,6 +270,10 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 
 		$entry_footer .= '<hr>';
 
+		// TODO: Ideally we would get the taxonomies that the current post has and loop over
+		// them, so that we could support more than categories and tags. We could introduce
+		// an alcatraz_entry_footer_taxonomies filter to control which taxonomies show, and
+		// default this to array( 'category', 'post_tag' ) to preserve the current behavior.
 		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ), '', $post_id );
 		if ( $categories_list && alcatraz_categorized_blog() ) {
 			$entry_footer .= sprintf(
@@ -283,6 +291,8 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 		}
 
 		$entry_footer .= '</footer>';
+	} else {
+		$entry_footer .= alcatraz_edit_post_link( $post_id );
 	}
 
 	return apply_filters( 'alcatraz_entry_footer', $entry_footer, $post_id );

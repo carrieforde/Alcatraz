@@ -27,7 +27,7 @@
 		?>
 	</div>
 
-	<?php alcatraz_edit_post(); ?>
+	<?php alcatraz_the_entry_footer(); ?>
 </article>
 
 <?php do_action( 'alcatraz_after_entry' ); ?>
