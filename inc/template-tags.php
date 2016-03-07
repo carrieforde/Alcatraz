@@ -50,7 +50,7 @@ function alcatraz_posted_on( $post_id = 0 ) {
 }
 
 /**
- * Build and echo the "Posted on ..." HTML.
+ * Echo the "Posted on ..." HTML.
  *
  * @param  int  $post_id  The post ID to use (optional).
  */
@@ -80,68 +80,83 @@ function alcatraz_edit_post() {
 /**
  * Build and return the entry header HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry header HTML.
  */
-function alcatraz_entry_header() {
+function alcatraz_entry_header( $post_id = 0 ) {
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
 
 	$header = sprintf(
 		'<header class="entry-header">%s%s</header>',
-		alcatraz_entry_title(),
-		alcatraz_entry_meta()
+		alcatraz_entry_title( $post_id ),
+		alcatraz_entry_meta( $post_id )
 	);
 
-	return apply_filters( 'alcatraz_entry_header', $header );
+	return apply_filters( 'alcatraz_entry_header', $header, $post_id );
 }
 
 /**
  * Echo the entry header HTML.
  *
- * @since 1.0.0
+ * @since  1.0.0
+ *
+ * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_the_entry_header() {
+function alcatraz_the_entry_header( $post_id = 0 ) {
 
-	echo alcatraz_entry_header();
+	echo alcatraz_entry_header( $post_id );
 }
 
 /**
  * Build and return the entry title HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry title HTML.
  */
-function alcatraz_entry_title() {
+function alcatraz_entry_title( $post_id = 0 ) {
 
-	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
 
-	if ( is_singular() ) {
+	$hide_title = get_post_meta( $post_id, '_alcatraz_hide_title', true );
+	$title      = '';
 
-		// Don't output anything if the hide_title meta value is set to true.
-		$title = ( 'on' === $hide_title ) ? '' : the_title(
-			'<h1 class="entry-title">',
-			'</h1>',
-			false
-		);
+	if ( is_singular() && 'on' !== $hide_title ) {
+
+		$title = '<h1 class="entry-title">' . get_the_title( $post_id ) . '</h1>';
 
 	} else {
 
-		$title = the_title(
-			sprintf(
-				'<h2 class="entry-title"><a href="%s" rel="bookmark">',
-				esc_url( get_permalink() )
-			),
-			'</a></h2>',
-			false
+		$title = sprintf(
+			'<h2 class="entry-title"><a href="%s" rel="bookmark">%s</a></h2>',
+			esc_url( get_permalink( $post_id ) ),
+			get_the_title( $post_id )
 		);
 	}
 
-	return apply_filters( 'alcatraz_entry_title', $title );
+	return apply_filters( 'alcatraz_entry_title', $title, $post_id );
 }
 
 /**
- * Display the Alcatraz entry title.
+ * Echo the entry title HTML.
+ *
+ * @since  1.0.0
+ *
+ * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_the_entry_title() {
+function alcatraz_the_entry_title( $post_id = 0 ) {
 
-	echo alcatraz_entry_title();
+	echo alcatraz_entry_title( $post_id );
 }
 
 /**
@@ -172,15 +187,15 @@ function alcatraz_entry_meta( $post_id = 0 ) {
 		}
 	}
 
-	return apply_filters( 'alcatraz_entry_meta', $meta );
+	return apply_filters( 'alcatraz_entry_meta', $meta, $post_id );
 }
 
 /**
- * Build and echo the entry meta HTML.
+ * Echo the entry meta HTML.
  *
- * @since   1.0.0
+ * @since  1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param  int  $post_id  The post ID to use (optional).
  */
 function alcatraz_the_entry_meta( $post_id = 0 ) {
 
