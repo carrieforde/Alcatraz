@@ -16,7 +16,6 @@
 	<?php endif; ?>
 
 	<?php alcatraz_the_entry_header(); ?>
-	<?php alcatraz_edit_post(); ?>
 
 	<div class="entry-content">
 		<?php the_content(); ?>
@@ -28,9 +27,7 @@
 		?>
 	</div>
 
-	<footer class="entry-footer">
-		<?php alcatraz_entry_footer(); ?>
-	</footer>
+	<?php alcatraz_the_entry_footer(); ?>
 </article>
 
 <?php do_action( 'alcatraz_after_entry' ); ?>

@@ -27,9 +27,7 @@
 		?>
 	</div>
 
-	<footer class="entry-footer">
-		<?php alcatraz_edit_post(); ?>
-	</footer>
+	<?php alcatraz_edit_post(); ?>
 </article>
 
 <?php do_action( 'alcatraz_after_entry' ); ?>

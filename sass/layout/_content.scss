@@ -127,12 +127,8 @@
 	display: inline;
 }
 
-.edit-link {
-	display: block;
-}
-
 .post-edit-link {
-	display: inline-block;
+	display: block;
 	margin: em(5) 0;
 
 	&::before {

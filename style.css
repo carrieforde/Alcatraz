@@ -1710,12 +1710,8 @@ input[type="submit"].search-submit {
   display: inline;
 }
 
-.edit-link {
-  display: block;
-}
-
 .post-edit-link {
-  display: inline-block;
+  display: block;
   margin: 0.3125em 0;
 }
 

@@ -60,21 +60,44 @@ function alcatraz_the_posted_on( $post_id = 0 ) {
 }
 
 /**
- * Build the edit post link HTML.
+ * Build the return edit post link HTML.
  *
- * @since 1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The edit post link HTML.
  */
-function alcatraz_edit_post() {
+function alcatraz_edit_post_link( $post_id = 0 ) {
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'alcatraz' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	$link_text = sprintf(
+		'%s %s',
+		esc_html__( 'Edit', 'alcatraz' ),
+		get_post_type( $post_id )
 	);
+
+	$edit_post_link = sprintf(
+		'<span class="post-edit-link"><a href="%s">%s</a></span>',
+		esc_url( get_edit_post_link( $post_id ) ),
+		$link_text
+	);
+
+	return apply_filters( 'alcatraz_edit_post_link', $edit_post_link, $post_id );
+}
+
+/**
+ * Echo the return edit post link HTML.
+ *
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ */
+function alcatraz_the_edit_post_link( $post_id = 0 ) {
+	echo alcatraz_edit_post_link( $post_id );
 }
 
 /**
@@ -203,33 +226,77 @@ function alcatraz_the_entry_meta( $post_id = 0 ) {
 }
 
 /**
- * Build and echo the entry footer HTML.
+ * Build and return the entry footer HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry footer HTML.
  */
-function alcatraz_entry_footer() {
+function alcatraz_entry_footer( $post_id = 0 ) {
 
-	// Hide category and tag text for pages.
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'alcatraz' ), esc_html__( '1 Comment', 'alcatraz' ), esc_html__( '% Comments', 'alcatraz' ) );
-		echo '</span>';
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
 	}
 
-	if ( 'post' === get_post_type() ) {
+	$this_type    = get_post_type( $post_id );
+	$post_types   = apply_filters( 'alcatraz_entry_footer_post_types', array( 'post' ), $post_id );
+	$entry_footer = '';
 
-		echo '<hr>';
+	// Only if the entry footer is enabled for the post type.
+	if ( in_array( $this_type, $post_types ) ) {
 
-		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ) );
+		$entry_footer = '<footer class="entry-footer">';
+
+		// TODO: This block doesn't yet support being used outside of the loop because
+		// comments_popup_link doesn't accept a post_id. Ideally we can find a better
+		// method for generating the output we want here.
+		if ( ! is_single() && ! post_password_required( $post_id ) && ( comments_open( $post_id ) || get_comments_number( $post_id ) ) ) {
+			ob_start();
+
+			echo '<span class="comments-link">';
+			comments_popup_link( esc_html__( 'Leave a comment', 'alcatraz' ), esc_html__( '1 Comment', 'alcatraz' ), esc_html__( '% Comments', 'alcatraz' ) );
+			echo '</span>';
+
+			$entry_footer .= ob_get_clean();
+		}
+
+		$entry_footer .= alcatraz_edit_post_link( $post_id );
+
+		$entry_footer .= '<hr>';
+
+		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ), '', $post_id );
 		if ( $categories_list && alcatraz_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'alcatraz' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			$entry_footer .= sprintf(
+				'<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'alcatraz' ) . '</span>',
+				$categories_list
+			); // WPCS: XSS OK.
 		}
 
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ) );
+		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ), '', $post_id );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'alcatraz' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			$entry_footer .= sprintf(
+				'<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'alcatraz' ) . '</span>',
+				$tags_list
+			); // WPCS: XSS OK.
 		}
+
+		$entry_footer .= '</footer>';
 	}
+
+	return apply_filters( 'alcatraz_entry_footer', $entry_footer, $post_id );
+}
+
+/**
+ * Echo the entry footer HTML.
+ *
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ */
+function alcatraz_the_entry_footer( $post_id = 0 ) {
+	echo alcatraz_entry_footer( $post_id );
 }
 
 /**

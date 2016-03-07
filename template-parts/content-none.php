@@ -8,12 +8,12 @@
 
 <header class="page-header">
 
-	<?php alcatraz_entry_title(); ?>
+	<?php alcatraz_the_entry_title(); ?>
 
 </header>
 
 <section class="no-results not-found">
-	<?php alcatraz_entry_title(); ?>
+	<?php alcatraz_the_entry_title(); ?>
 
 	<div class="page-content">
 		<?php if ( is_home() && current_user_can( 'publish_posts' ) ) : ?>
