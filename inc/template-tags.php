@@ -14,7 +14,7 @@
  *
  * @return  string         The "Posted on ..." HTML.
  */
-function alcatraz_get_posted_on( $post_id = 0 ) {
+function alcatraz_posted_on( $post_id = 0 ) {
 
 	if ( ! $post_id ) {
 		$post_id = get_the_ID();
@@ -54,8 +54,9 @@ function alcatraz_get_posted_on( $post_id = 0 ) {
  *
  * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_posted_on( $post_id = 0 ) {
-	echo alcatraz_get_posted_on( $post_id );
+function alcatraz_the_posted_on( $post_id = 0 ) {
+
+	echo alcatraz_posted_on( $post_id );
 }
 
 /**
@@ -77,7 +78,7 @@ function alcatraz_edit_post() {
 }
 
 /**
- * Build and echo the entry header HTML.
+ * Build and return the entry header HTML.
  *
  * @since  1.0.0
  */
@@ -103,7 +104,7 @@ function alcatraz_the_entry_header() {
 }
 
 /**
- * Build and echo the entry title HTML.
+ * Build and return the entry title HTML.
  *
  * @since  1.0.0
  */
@@ -144,29 +145,46 @@ function alcatraz_the_entry_title() {
 }
 
 /**
- * Build and echo the entry meta HTML.
+ * Build and return the entry meta HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry meta HTML.
  */
-function alcatraz_entry_meta() {
+function alcatraz_entry_meta( $post_id = 0 ) {
 
-	$meta = '';
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
 
-	if ( 'post' === get_post_type() ) {
-		$meta = sprintf( '<div class="entry-meta">%s</div>',
-			alcatraz_get_posted_on()
-		);
+	$meta       = '';
+	$this_type  = get_post_type( $post_id );
+	$post_types = apply_filters( 'alcatraz_entry_meta_post_types', array( 'post' ), $post_id );
+
+	foreach ( $post_types as $post_type ) {
+		if ( $this_type === $post_type ) {
+			$meta = sprintf( '<div class="entry-meta">%s</div>',
+				alcatraz_posted_on( $post_id )
+			);
+			break;
+		}
 	}
 
 	return apply_filters( 'alcatraz_entry_meta', $meta );
 }
 
 /**
- * Display the Alcatraz entry meta.
+ * Build and echo the entry meta HTML.
+ *
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
  */
-function alcatraz_the_entry_meta() {
+function alcatraz_the_entry_meta( $post_id = 0 ) {
 
-	echo alcatraz_entry_meta();
+	echo alcatraz_entry_meta( $post_id );
 }
 
 /**
