@@ -6,21 +6,30 @@
  */
 
 /**
- * Build and echo the "Posted on ..." HTML.
+ * Build and return the "Posted on ..." HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The "Posted on ..." HTML.
  */
-function alcatraz_posted_on() {
+function alcatraz_get_posted_on( $post_id = 0 ) {
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+	if ( get_the_time( 'U', $post_id ) !== get_post_modified_time( 'U', false, $post_id ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_attr( get_the_date( 'c', $post_id ) ),
+		esc_html( get_the_date( '', $post_id ) ),
+		esc_attr( get_post_modified_time( 'c', false, $post_id ) ),
+		esc_html( get_post_modified_time( '', false, $post_id ) )
 	);
 
 	$posted_on = sprintf(
@@ -28,12 +37,25 @@ function alcatraz_posted_on() {
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
+	$author_id = get_post_field( 'post_author', $post_id );
+
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'alcatraz' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'nicename', $author_id ) ) . '</a></span>'
 	);
 
-	return '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	$output = '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
+	return apply_filters( 'alcatraz_posted_on', $output, $post_id, $author_id );
+}
+
+/**
+ * Build and echo the "Posted on ..." HTML.
+ *
+ * @param  int  $post_id  The post ID to use (optional).
+ */
+function alcatraz_posted_on( $post_id = 0 ) {
+	echo alcatraz_get_posted_on( $post_id );
 }
 
 /**
@@ -132,7 +154,7 @@ function alcatraz_entry_meta() {
 
 	if ( 'post' === get_post_type() ) {
 		$meta = sprintf( '<div class="entry-meta">%s</div>',
-			alcatraz_posted_on()
+			alcatraz_get_posted_on()
 		);
 	}
 
