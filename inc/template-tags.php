@@ -119,13 +119,15 @@ function alcatraz_entry_header( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 
-	$header = sprintf(
-		'<header class="entry-header">%s%s</header>',
-		alcatraz_entry_title( $post_id ),
-		alcatraz_entry_meta( $post_id )
-	);
+	ob_start();
 
-	return apply_filters( 'alcatraz_entry_header', $header, $post_id );
+	echo '<header class="entry-header">';
+
+	do_action( 'alcatraz_entry_header_inside', $post_id );
+
+	echo '</header>';
+
+	return apply_filters( 'alcatraz_entry_header', ob_get_clean(), $post_id );
 }
 
 /**

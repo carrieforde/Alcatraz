@@ -123,6 +123,24 @@ function alcatraz_output_sub_page_nav() {
 	}
 }
 
+add_action( 'alcatraz_entry_header_inside', 'alcatraz_output_default_entry_header' );
+/**
+ * Output the default entry header inner content.
+ *
+ * @since  1.0.0
+ *
+ * @param  int  $post_id  The current post ID.
+ */
+function alcatraz_output_default_entry_header( $post_id ) {
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	alcatraz_the_entry_title( $post_id );
+	alcatraz_the_entry_meta( $post_id );
+}
+
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
 /**
  * Output the footer bottom.
