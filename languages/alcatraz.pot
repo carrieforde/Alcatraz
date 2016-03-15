@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alcatraz 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-03-07 06:28:57+00:00\n"
+"POT-Creation-Date: 2016-03-15 05:15:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -250,76 +250,12 @@ msgstr ""
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:263
-msgid "Leave a comment"
+#: inc/theme-hooks.php:163
+msgid "Posted in: "
 msgstr ""
 
-#: inc/template-tags.php:263
-msgid "1 Comment"
-msgstr ""
-
-#: inc/template-tags.php:263
-msgid "% Comments"
-msgstr ""
-
-#: inc/template-tags.php:277 inc/template-tags.php:285
-msgid ", "
-msgstr ""
-
-#: inc/template-tags.php:280
-msgid "Posted in: %1$s"
-msgstr ""
-
-#: inc/template-tags.php:288
-msgid "Tagged: %1$s"
-msgstr ""
-
-#: inc/template-tags.php:370
-msgid "Email"
-msgstr ""
-
-#: inc/template-tags.php:371
-msgid "Enter your email address"
-msgstr ""
-
-#: inc/template-tags.php:375
-msgid "Facebook"
-msgstr ""
-
-#: inc/template-tags.php:376
-msgid "Enter your Facebook url"
-msgstr ""
-
-#: inc/template-tags.php:380
-msgid "Twitter"
-msgstr ""
-
-#: inc/template-tags.php:381
-msgid "Enter your Twitter url"
-msgstr ""
-
-#: inc/template-tags.php:385
-msgid "Instagram"
-msgstr ""
-
-#: inc/template-tags.php:386
-msgid "Enter your Instagram url"
-msgstr ""
-
-#: inc/template-tags.php:390
-msgid "Pinterest"
-msgstr ""
-
-#: inc/template-tags.php:391
-msgid "Enter your Pinterest url"
-msgstr ""
-
-#: inc/template-tags.php:395
-msgid "Youtube"
-msgstr ""
-
-#: inc/template-tags.php:396
-msgid "Enter your Youtube url"
+#: inc/theme-hooks.php:164
+msgid "Tagged: "
 msgstr ""
 
 #: inc/theme-options.php:132
@@ -376,6 +312,54 @@ msgstr ""
 
 #: inc/theme-options.php:252
 msgid "Plus-Minus"
+msgstr ""
+
+#: inc/theme-options.php:271
+msgid "Email"
+msgstr ""
+
+#: inc/theme-options.php:272
+msgid "Enter your email address"
+msgstr ""
+
+#: inc/theme-options.php:276
+msgid "Facebook"
+msgstr ""
+
+#: inc/theme-options.php:277
+msgid "Enter your Facebook url"
+msgstr ""
+
+#: inc/theme-options.php:281
+msgid "Twitter"
+msgstr ""
+
+#: inc/theme-options.php:282
+msgid "Enter your Twitter url"
+msgstr ""
+
+#: inc/theme-options.php:286
+msgid "Instagram"
+msgstr ""
+
+#: inc/theme-options.php:287
+msgid "Enter your Instagram url"
+msgstr ""
+
+#: inc/theme-options.php:291
+msgid "Pinterest"
+msgstr ""
+
+#: inc/theme-options.php:292
+msgid "Enter your Pinterest url"
+msgstr ""
+
+#: inc/theme-options.php:296
+msgid "Youtube"
+msgstr ""
+
+#: inc/theme-options.php:297
+msgid "Enter your Youtube url"
 msgstr ""
 
 #: inc/widget-areas.php:20
