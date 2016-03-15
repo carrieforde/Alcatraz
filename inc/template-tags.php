@@ -248,58 +248,15 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 
-	$this_type    = get_post_type( $post_id );
-	$post_types   = apply_filters( 'alcatraz_entry_footer_post_types', array( 'post' ), $post_id );
-	$entry_footer = '';
+	ob_start();
 
-	// Only if the entry footer is enabled for the post type.
-	if ( in_array( $this_type, $post_types ) ) {
+	echo '<footer class="entry-footer">';
 
-		$entry_footer = '<footer class="entry-footer">';
+	do_action( 'alcatraz_entry_footer_inside', $post_id );
 
-		// TODO: This block doesn't yet support being used outside of the loop because
-		// comments_popup_link doesn't accept a post_id. Ideally we can find a better
-		// method for generating the output we want here.
-		if ( is_single() && ! post_password_required( $post_id ) && ( comments_open( $post_id ) || get_comments_number( $post_id ) ) ) {
-			ob_start();
+	echo '</footer>';
 
-			echo '<span class="comments-link">';
-			comments_popup_link( esc_html__( 'Leave a comment', 'alcatraz' ), esc_html__( '1 Comment', 'alcatraz' ), esc_html__( '% Comments', 'alcatraz' ) );
-			echo '</span>';
-
-			$entry_footer .= ob_get_clean();
-		}
-
-		$entry_footer .= alcatraz_edit_post_link( $post_id );
-
-		$entry_footer .= '<hr>';
-
-		// TODO: Ideally we would get the taxonomies that the current post has and loop over
-		// them, so that we could support more than categories and tags. We could introduce
-		// an alcatraz_entry_footer_taxonomies filter to control which taxonomies show, and
-		// default this to array( 'category', 'post_tag' ) to preserve the current behavior.
-		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ), '', $post_id );
-		if ( $categories_list && alcatraz_categorized_blog() ) {
-			$entry_footer .= sprintf(
-				'<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'alcatraz' ) . '</span>',
-				$categories_list
-			); // WPCS: XSS OK.
-		}
-
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ), '', $post_id );
-		if ( $tags_list ) {
-			$entry_footer .= sprintf(
-				'<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'alcatraz' ) . '</span>',
-				$tags_list
-			); // WPCS: XSS OK.
-		}
-
-		$entry_footer .= '</footer>';
-	} else {
-		$entry_footer .= alcatraz_edit_post_link( $post_id );
-	}
-
-	return apply_filters( 'alcatraz_entry_footer', $entry_footer, $post_id );
+	return apply_filters( 'alcatraz_entry_footer', ob_get_clean(), $post_id );
 }
 
 /**
@@ -314,105 +271,13 @@ function alcatraz_the_entry_footer( $post_id = 0 ) {
 }
 
 /**
- * Return true if a blog has more than 1 category.
- *
- * @since   1.0.0
- *
- * @return  bool
- */
-function alcatraz_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'alcatraz_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'alcatraz_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so alcatraz_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so alcatraz_categorized_blog should return false.
-		return false;
-	}
-}
-
-add_action( 'edit_category', 'alcatraz_category_transient_flusher' );
-add_action( 'save_post',     'alcatraz_category_transient_flusher' );
-/**
- * Flush out the transients used in alcatraz_categorized_blog.
- *
- * @since  1.0.0
- */
-function alcatraz_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'alcatraz_categories' );
-}
-
-/**
- * Return an array of the social network data.
- *
- * @since   1.0.0
- *
- * @return  array
- */
-function alcatraz_get_social_networks( $context = '' ) {
-
-	$networks = array(
-		'email' => array(
-			'display_name' => __( 'Email', 'alcatraz' ),
-			'description'  => __( 'Enter your email address', 'alcatraz' ),
-			'icon'         => 'envelope',
-		),
-		'facebook' => array(
-			'display_name' => __( 'Facebook', 'alcatraz' ),
-			'description'  => __( 'Enter your Facebook url', 'alcatraz' ),
-			'icon'         => 'facebook',
-		),
-		'twitter' => array(
-			'display_name' => __( 'Twitter', 'alcatraz' ),
-			'description'  => __( 'Enter your Twitter url', 'alcatraz' ),
-			'icon'         => 'twitter',
-		),
-		'instagram' => array(
-			'display_name' => __( 'Instagram', 'alcatraz' ),
-			'description'  => __( 'Enter your Instagram url', 'alcatraz' ),
-			'icon'         => 'instagram',
-		),
-		'pinterest' => array(
-			'display_name' => __( 'Pinterest', 'alcatraz' ),
-			'description'  => __( 'Enter your Pinterest url', 'alcatraz' ),
-			'icon'         => 'twitter',
-		),
-		'youtube' => array(
-			'display_name' => __( 'Youtube', 'alcatraz' ),
-			'description'  => __( 'Enter your Youtube url', 'alcatraz' ),
-			'icon'         => 'youtube',
-		),
-	);
-
-	return apply_filters( 'alcatraz_social_networks', $networks, $context );
-}
-
-/**
  * Build and return the social network icon HTML.
  *
  * @since   1.0.0
  *
  * @return  string  The social icon HTML.
  */
-function alcatraz_get_the_social_network_icons() {
+function alcatraz_get_social_network_icons() {
 
 	$options  = get_option( 'alcatraz_options' );
 	$networks = alcatraz_get_social_networks();
@@ -432,6 +297,16 @@ function alcatraz_get_the_social_network_icons() {
 	<?php
 
 	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean(), $options, $networks );
+}
+
+/**
+ * Display the social icon HTML.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_the_social_network_icons() {
+
+	echo alcatraz_get_social_network_icons();
 }
 
 /**
@@ -477,16 +352,6 @@ function alcatraz_get_social_network_icon_html( $network, $url, $network_data = 
 }
 
 /**
- * Display the social icon HTML.
- *
- * @since  1.0.0
- */
-function alcatraz_the_social_network_icons() {
-
-	echo alcatraz_get_the_social_network_icons();
-}
-
-/**
  * Build and return the Sub Page Navigation HTML.
  *
  * @since   1.0.0
@@ -495,7 +360,7 @@ function alcatraz_the_social_network_icons() {
  *
  * @return  string        The sub page nav HTML.
  */
-function alcatraz_get_the_sub_page_nav( $args = array() ) {
+function alcatraz_get_sub_page_nav( $args = array() ) {
 
 	global $post;
 
@@ -557,5 +422,86 @@ function alcatraz_get_the_sub_page_nav( $args = array() ) {
  */
 function alcatraz_the_sub_page_nav( $args = array() ) {
 
-	echo alcatraz_get_the_sub_page_nav( $args );
+	echo alcatraz_get_sub_page_nav( $args );
+}
+
+/**
+ * Build and return the HTML for a taxonomy term list.
+ *
+ * @since   1.0.0
+ *
+ * @param   int     $post_id    The post ID to use.
+ * @param   string  $taxonomy   The taxonomy slug to output terms from.
+ * @param   string  $label      The label to use.
+ * @param   string  $separator  The separation string.
+ *
+ * @return  string              The term list HTML.
+ */
+function alcatraz_get_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
+
+	// Taxonomy is required.
+	if ( ! $taxonomy ) {
+		return '';
+	}
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	$terms_args = array(
+		'orderby' => 'name',
+		'order'   => 'ASC',
+		'fields'  => 'all',
+	);
+	$terms_args = apply_filters( 'alcatraz_get_taxonomy_term_list_args', $terms_args, $post_id, $taxonomy );
+
+	$terms = wp_get_post_terms( $post_id, $taxonomy, $terms_args );
+
+	if ( empty( $terms ) || is_wp_error( $terms ) ) {
+		return '';
+	}
+
+	$output = sprintf(
+		'<div class="%s %s">%s',
+		'entry-tax-term-list',
+		esc_attr( $taxonomy ) . '-tax-term-list',
+		$label
+	);
+
+	$i = 0;
+
+	foreach ( $terms as $term_slug => $term_obj ) {
+		$output .= sprintf(
+			'<a href="%s" rel="%s %s">%s</a>',
+			get_term_link( $term_obj->term_id ),
+			esc_attr( $term_obj->slug ),
+			esc_attr( $term_obj->taxonomy ),
+			esc_html( $term_obj->name )
+		);
+
+		$i++;
+
+		if ( count( $terms ) > $i ) {
+			$output .= $separator;
+		}
+	}
+
+	$output .= '</div>';
+
+	return apply_filters( 'alcatraz_taxonomy_term_list', $output, $post_id, $taxonomy, $label, $separator );
+}
+
+/**
+ * Echo the HTML for a taxonomy term list.
+ *
+ * @since   1.0.0
+ *
+ * @param   int     $post_id    The post ID to use.
+ * @param   string  $taxonomy   The taxonomy slug to output terms from.
+ * @param   string  $label      The label to use.
+ * @param   string  $separator  The separation string.
+ */
+function alcatraz_the_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
+
+	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator );
 }

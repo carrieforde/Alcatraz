@@ -131,7 +131,7 @@ add_action( 'alcatraz_entry_header_inside', 'alcatraz_output_default_entry_heade
  *
  * @param  int  $post_id  The current post ID.
  */
-function alcatraz_output_default_entry_header( $post_id ) {
+function alcatraz_output_default_entry_header( $post_id = 0 ) {
 
 	if ( ! $post_id ) {
 		$post_id = get_the_ID();
@@ -139,6 +139,35 @@ function alcatraz_output_default_entry_header( $post_id ) {
 
 	alcatraz_the_entry_title( $post_id );
 	alcatraz_the_entry_meta( $post_id );
+}
+
+add_action( 'alcatraz_entry_footer_inside', 'alcatraz_output_default_entry_footer' );
+/**
+ * Output the default entry footer inner content.
+ *
+ * @since  1.0.0
+ *
+ * @param  int  $post_id  The current post ID.
+ */
+function alcatraz_output_default_entry_footer( $post_id = 0 ) {
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	alcatraz_the_edit_post_link( $post_id );
+
+	echo '<hr>';
+
+	$footer_taxonomies = array(
+		'category' => __( 'Posted in: ', 'alcatraz' ),
+		'post_tag' => __( 'Tagged: ', 'alcatraz' ),
+	);
+	$footer_taxonomies = apply_filters( 'alcatraz_entry_footer_taxonomies', $footer_taxonomies, $post_id );
+
+	foreach ( $footer_taxonomies as $footer_taxonomy => $label ) {
+		alcatraz_the_taxonomy_term_list( $post_id, $footer_taxonomy, $label, ', ' );
+	}
 }
 
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
