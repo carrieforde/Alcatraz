@@ -1721,11 +1721,6 @@ input[type="submit"].search-submit {
   font: 0.875em FontAwesome;
 }
 
-.cat-links,
-.tags-links {
-  display: block;
-}
-
 .page-content,
 .entry-content,
 .entry-summary {
