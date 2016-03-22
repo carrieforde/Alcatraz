@@ -157,8 +157,6 @@ function alcatraz_output_default_entry_footer( $post_id = 0 ) {
 
 	alcatraz_the_edit_post_link( $post_id );
 
-	echo '<hr>';
-
 	$footer_taxonomies = array(
 		'category' => __( 'Posted in: ', 'alcatraz' ),
 		'post_tag' => __( 'Tagged: ', 'alcatraz' ),
