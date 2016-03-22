@@ -41,7 +41,7 @@ function alcatraz_posted_on( $post_id = 0 ) {
 
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'alcatraz' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'nicename', $author_id ) ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>'
 	);
 
 	$output = '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
