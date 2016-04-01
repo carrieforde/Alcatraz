@@ -6,21 +6,30 @@
  */
 
 /**
- * Build and echo the "Posted on ..." HTML.
+ * Build and return the "Posted on ..." HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The "Posted on ..." HTML.
  */
-function alcatraz_posted_on() {
+function alcatraz_posted_on( $post_id = 0 ) {
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+	if ( get_the_time( 'U', $post_id ) !== get_post_modified_time( 'U', false, $post_id ) ) {
 		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
+		esc_attr( get_the_date( 'c', $post_id ) ),
+		esc_html( get_the_date( '', $post_id ) ),
+		esc_attr( get_post_modified_time( 'c', false, $post_id ) ),
+		esc_html( get_post_modified_time( '', false, $post_id ) )
 	);
 
 	$posted_on = sprintf(
@@ -28,245 +37,237 @@ function alcatraz_posted_on() {
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
+	$author_id = get_post_field( 'post_author', $post_id );
+
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'alcatraz' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>'
 	);
 
-	return '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+	$output = '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
+
+	return apply_filters( 'alcatraz_posted_on', $output, $post_id, $author_id );
 }
 
 /**
- * Build the edit post link HTML.
+ * Echo the "Posted on ..." HTML.
  *
- * @since 1.0.0
+ * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_edit_post() {
+function alcatraz_the_posted_on( $post_id = 0 ) {
 
-	edit_post_link(
-		sprintf(
-			/* translators: %s: Name of current post */
-			esc_html__( 'Edit %s', 'alcatraz' ),
-			the_title( '<span class="screen-reader-text">"', '"</span>', false )
-		),
-		'<span class="edit-link">',
-		'</span>'
-	);
+	echo alcatraz_posted_on( $post_id );
 }
 
 /**
- * Build and echo the entry header HTML.
+ * Build the return edit post link HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The edit post link HTML.
  */
-function alcatraz_entry_header() {
+function alcatraz_edit_post_link( $post_id = 0 ) {
 
-	$header = sprintf(
-		'<header class="entry-header">%s%s</header>',
-		alcatraz_entry_title(),
-		alcatraz_entry_meta()
+	if ( ! is_user_logged_in() || ! current_user_can( 'edit_post', $post_id ) ) {
+		return '';
+	}
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	$link_text = sprintf(
+		'%s %s',
+		esc_html__( 'Edit', 'alcatraz' ),
+		get_post_type( $post_id )
 	);
 
-	return apply_filters( 'alcatraz_entry_header', $header );
+	$edit_post_link = sprintf(
+		'<span class="post-edit-link"><a href="%s">%s</a></span>',
+		esc_url( get_edit_post_link( $post_id ) ),
+		$link_text
+	);
+
+	return apply_filters( 'alcatraz_edit_post_link', $edit_post_link, $post_id );
+}
+
+/**
+ * Echo the return edit post link HTML.
+ *
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ */
+function alcatraz_the_edit_post_link( $post_id = 0 ) {
+	echo alcatraz_edit_post_link( $post_id );
+}
+
+/**
+ * Build and return the entry header HTML.
+ *
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry header HTML.
+ */
+function alcatraz_entry_header( $post_id = 0 ) {
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	ob_start();
+
+	echo '<header class="entry-header">';
+
+	do_action( 'alcatraz_entry_header_inside', $post_id );
+
+	echo '</header>';
+
+	return apply_filters( 'alcatraz_entry_header', ob_get_clean(), $post_id );
 }
 
 /**
  * Echo the entry header HTML.
  *
- * @since 1.0.0
+ * @since  1.0.0
+ *
+ * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_the_entry_header() {
+function alcatraz_the_entry_header( $post_id = 0 ) {
 
-	echo alcatraz_entry_header();
+	echo alcatraz_entry_header( $post_id );
 }
 
 /**
- * Build and echo the entry title HTML.
+ * Build and return the entry title HTML.
  *
- * @since  1.0.0
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry title HTML.
  */
-function alcatraz_entry_title() {
+function alcatraz_entry_title( $post_id = 0 ) {
 
-	$hide_title = get_post_meta( get_the_ID(), '_alcatraz_hide_title', true );
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	$hide_title = get_post_meta( $post_id, '_alcatraz_hide_title', true );
+	$title      = '';
 
 	if ( is_singular() ) {
 
-		// Don't output anything if the hide_title meta value is set to true.
-		$title = ( 'on' === $hide_title ) ? '' : the_title(
-			'<h1 class="entry-title">',
-			'</h1>',
-			false
-		);
+		if ( 'on' !== $hide_title ) {
+			$title = '<h1 class="entry-title">' . get_the_title( $post_id ) . '</h1>';
+		}
 
 	} else {
 
-		$title = the_title(
-			sprintf(
-				'<h2 class="entry-title"><a href="%s" rel="bookmark">',
-				esc_url( get_permalink() )
-			),
-			'</a></h2>',
-			false
+		$title = sprintf(
+			'<h2 class="entry-title"><a href="%s" rel="bookmark">%s</a></h2>',
+			esc_url( get_permalink( $post_id ) ),
+			get_the_title( $post_id )
 		);
 	}
 
-	return apply_filters( 'alcatraz_entry_title', $title );
+	return apply_filters( 'alcatraz_entry_title', $title, $post_id );
 }
 
 /**
- * Display the Alcatraz entry title.
- */
-function alcatraz_the_entry_title() {
-
-	echo alcatraz_entry_title();
-}
-
-/**
- * Build and echo the entry meta HTML.
+ * Echo the entry title HTML.
  *
  * @since  1.0.0
- */
-function alcatraz_entry_meta() {
-
-	$meta = '';
-
-	if ( 'post' === get_post_type() ) {
-		$meta = sprintf( '<div class="entry-meta">%s</div>',
-			alcatraz_posted_on()
-		);
-	}
-
-	return apply_filters( 'alcatraz_entry_meta', $meta );
-}
-
-/**
- * Display the Alcatraz entry meta.
- */
-function alcatraz_the_entry_meta() {
-
-	echo alcatraz_entry_meta();
-}
-
-/**
- * Build and echo the entry footer HTML.
  *
- * @since  1.0.0
+ * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_entry_footer() {
+function alcatraz_the_entry_title( $post_id = 0 ) {
 
-	// Hide category and tag text for pages.
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
-		comments_popup_link( esc_html__( 'Leave a comment', 'alcatraz' ), esc_html__( '1 Comment', 'alcatraz' ), esc_html__( '% Comments', 'alcatraz' ) );
-		echo '</span>';
-	}
-
-	if ( 'post' === get_post_type() ) {
-
-		echo '<hr>';
-
-		$categories_list = get_the_category_list( esc_html__( ', ', 'alcatraz' ) );
-		if ( $categories_list && alcatraz_categorized_blog() ) {
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in: %1$s', 'alcatraz' ) . '</span>', $categories_list ); // WPCS: XSS OK.
-		}
-
-		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'alcatraz' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged: %1$s', 'alcatraz' ) . '</span>', $tags_list ); // WPCS: XSS OK.
-		}
-	}
+	echo alcatraz_entry_title( $post_id );
 }
 
 /**
- * Return true if a blog has more than 1 category.
+ * Build and return the entry meta HTML.
  *
  * @since   1.0.0
  *
- * @return  bool
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry meta HTML.
  */
-function alcatraz_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'alcatraz_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
+function alcatraz_entry_meta( $post_id = 0 ) {
 
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'alcatraz_categories', $all_the_cool_cats );
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
 	}
 
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so alcatraz_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so alcatraz_categorized_blog should return false.
-		return false;
+	$meta       = '';
+	$this_type  = get_post_type( $post_id );
+	$post_types = apply_filters( 'alcatraz_entry_meta_post_types', array( 'post' ), $post_id );
+
+	foreach ( $post_types as $post_type ) {
+		if ( $this_type === $post_type ) {
+			$meta = sprintf( '<div class="entry-meta">%s</div>',
+				alcatraz_posted_on( $post_id )
+			);
+			break;
+		}
 	}
+
+	return apply_filters( 'alcatraz_entry_meta', $meta, $post_id );
 }
 
-add_action( 'edit_category', 'alcatraz_category_transient_flusher' );
-add_action( 'save_post',     'alcatraz_category_transient_flusher' );
 /**
- * Flush out the transients used in alcatraz_categorized_blog.
+ * Echo the entry meta HTML.
  *
  * @since  1.0.0
+ *
+ * @param  int  $post_id  The post ID to use (optional).
  */
-function alcatraz_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'alcatraz_categories' );
+function alcatraz_the_entry_meta( $post_id = 0 ) {
+
+	echo alcatraz_entry_meta( $post_id );
 }
 
 /**
- * Return an array of the social network data.
+ * Build and return the entry footer HTML.
  *
  * @since   1.0.0
  *
- * @return  array
+ * @param   int  $post_id  The post ID to use (optional).
+ *
+ * @return  string         The entry footer HTML.
  */
-function alcatraz_get_social_networks( $context = '' ) {
+function alcatraz_entry_footer( $post_id = 0 ) {
 
-	$networks = array(
-		'email' => array(
-			'display_name' => __( 'Email', 'alcatraz' ),
-			'description'  => __( 'Enter your email address', 'alcatraz' ),
-			'icon'         => 'envelope',
-		),
-		'facebook' => array(
-			'display_name' => __( 'Facebook', 'alcatraz' ),
-			'description'  => __( 'Enter your Facebook url', 'alcatraz' ),
-			'icon'         => 'facebook',
-		),
-		'twitter' => array(
-			'display_name' => __( 'Twitter', 'alcatraz' ),
-			'description'  => __( 'Enter your Twitter url', 'alcatraz' ),
-			'icon'         => 'twitter',
-		),
-		'instagram' => array(
-			'display_name' => __( 'Instagram', 'alcatraz' ),
-			'description'  => __( 'Enter your Instagram url', 'alcatraz' ),
-			'icon'         => 'instagram',
-		),
-		'pinterest' => array(
-			'display_name' => __( 'Pinterest', 'alcatraz' ),
-			'description'  => __( 'Enter your Pinterest url', 'alcatraz' ),
-			'icon'         => 'twitter',
-		),
-		'youtube' => array(
-			'display_name' => __( 'Youtube', 'alcatraz' ),
-			'description'  => __( 'Enter your Youtube url', 'alcatraz' ),
-			'icon'         => 'youtube',
-		),
-	);
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
 
-	return apply_filters( 'alcatraz_social_networks', $networks, $context );
+	ob_start();
+
+	echo '<footer class="entry-footer">';
+
+	do_action( 'alcatraz_entry_footer_inside', $post_id );
+
+	echo '</footer>';
+
+	return apply_filters( 'alcatraz_entry_footer', ob_get_clean(), $post_id );
+}
+
+/**
+ * Echo the entry footer HTML.
+ *
+ * @since   1.0.0
+ *
+ * @param   int  $post_id  The post ID to use (optional).
+ */
+function alcatraz_the_entry_footer( $post_id = 0 ) {
+	echo alcatraz_entry_footer( $post_id );
 }
 
 /**
@@ -276,7 +277,7 @@ function alcatraz_get_social_networks( $context = '' ) {
  *
  * @return  string  The social icon HTML.
  */
-function alcatraz_get_the_social_network_icons() {
+function alcatraz_get_social_network_icons() {
 
 	$options  = get_option( 'alcatraz_options' );
 	$networks = alcatraz_get_social_networks();
@@ -296,6 +297,16 @@ function alcatraz_get_the_social_network_icons() {
 	<?php
 
 	return apply_filters( 'alcatraz_social_network_icons', ob_get_clean(), $options, $networks );
+}
+
+/**
+ * Display the social icon HTML.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_the_social_network_icons() {
+
+	echo alcatraz_get_social_network_icons();
 }
 
 /**
@@ -341,16 +352,6 @@ function alcatraz_get_social_network_icon_html( $network, $url, $network_data = 
 }
 
 /**
- * Display the social icon HTML.
- *
- * @since  1.0.0
- */
-function alcatraz_the_social_network_icons() {
-
-	echo alcatraz_get_the_social_network_icons();
-}
-
-/**
  * Build and return the Sub Page Navigation HTML.
  *
  * @since   1.0.0
@@ -359,7 +360,7 @@ function alcatraz_the_social_network_icons() {
  *
  * @return  string        The sub page nav HTML.
  */
-function alcatraz_get_the_sub_page_nav( $args = array() ) {
+function alcatraz_get_sub_page_nav( $args = array() ) {
 
 	global $post;
 
@@ -421,5 +422,86 @@ function alcatraz_get_the_sub_page_nav( $args = array() ) {
  */
 function alcatraz_the_sub_page_nav( $args = array() ) {
 
-	echo alcatraz_get_the_sub_page_nav( $args );
+	echo alcatraz_get_sub_page_nav( $args );
+}
+
+/**
+ * Build and return the HTML for a taxonomy term list.
+ *
+ * @since   1.0.0
+ *
+ * @param   int     $post_id    The post ID to use.
+ * @param   string  $taxonomy   The taxonomy slug to output terms from.
+ * @param   string  $label      The label to use.
+ * @param   string  $separator  The separation string.
+ *
+ * @return  string              The term list HTML.
+ */
+function alcatraz_get_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
+
+	// Taxonomy is required.
+	if ( ! $taxonomy ) {
+		return '';
+	}
+
+	if ( ! $post_id ) {
+		$post_id = get_the_ID();
+	}
+
+	$terms_args = array(
+		'orderby' => 'name',
+		'order'   => 'ASC',
+		'fields'  => 'all',
+	);
+	$terms_args = apply_filters( 'alcatraz_get_taxonomy_term_list_args', $terms_args, $post_id, $taxonomy );
+
+	$terms = wp_get_post_terms( $post_id, $taxonomy, $terms_args );
+
+	if ( empty( $terms ) || is_wp_error( $terms ) ) {
+		return '';
+	}
+
+	$output = sprintf(
+		'<div class="%s %s">%s',
+		'entry-tax-term-list',
+		esc_attr( $taxonomy ) . '-tax-term-list',
+		$label
+	);
+
+	$i = 0;
+
+	foreach ( $terms as $term_slug => $term_obj ) {
+		$output .= sprintf(
+			'<a href="%s" rel="%s %s">%s</a>',
+			get_term_link( $term_obj->term_id ),
+			esc_attr( $term_obj->slug ),
+			esc_attr( $term_obj->taxonomy ),
+			esc_html( $term_obj->name )
+		);
+
+		$i++;
+
+		if ( count( $terms ) > $i ) {
+			$output .= $separator;
+		}
+	}
+
+	$output .= '</div>';
+
+	return apply_filters( 'alcatraz_taxonomy_term_list', $output, $post_id, $taxonomy, $label, $separator );
+}
+
+/**
+ * Echo the HTML for a taxonomy term list.
+ *
+ * @since   1.0.0
+ *
+ * @param   int     $post_id    The post ID to use.
+ * @param   string  $taxonomy   The taxonomy slug to output terms from.
+ * @param   string  $label      The label to use.
+ * @param   string  $separator  The separation string.
+ */
+function alcatraz_the_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
+
+	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator );
 }

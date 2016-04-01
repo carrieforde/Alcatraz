@@ -1710,12 +1710,8 @@ input[type="submit"].search-submit {
   display: inline;
 }
 
-.edit-link {
-  display: block;
-}
-
 .post-edit-link {
-  display: inline-block;
+  display: block;
   margin: 0.3125em 0;
 }
 
@@ -1723,11 +1719,6 @@ input[type="submit"].search-submit {
   content: '\f040';
   padding-right: 0.3125em;
   font: 0.875em FontAwesome;
-}
-
-.cat-links,
-.tags-links {
-  display: block;
 }
 
 .page-content,

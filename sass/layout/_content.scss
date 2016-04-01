@@ -127,12 +127,8 @@
 	display: inline;
 }
 
-.edit-link {
-	display: block;
-}
-
 .post-edit-link {
-	display: inline-block;
+	display: block;
 	margin: em(5) 0;
 
 	&::before {
@@ -140,11 +136,6 @@
 		padding-right: em(5);
 		font: em(14) $font-awesome;
 	}
-}
-
-.cat-links,
-.tags-links {
-	display: block;
 }
 
 .page-content,
