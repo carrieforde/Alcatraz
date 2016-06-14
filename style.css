@@ -459,7 +459,7 @@ input,
 select,
 textarea {
   color: #040a04;
-  font: 300 18px / 1.5 "Source Sans Pro", sans-serif;
+  font: 300 18px/1.5 "Source Sans Pro", sans-serif;
 }
 
 /* Headings */
@@ -564,7 +564,7 @@ pre {
   padding: 1.6em;
   margin-bottom: 1.5625em;
   background: #e7ecf1;
-  font: 0.875em / 1.6 "Source Code Pro", Courier, monospace;
+  font: 0.546875em "Source Code Pro", Courier, monospace;
   word-wrap: break-word;
 }
 
@@ -1583,7 +1583,7 @@ input[type="submit"].search-submit {
   margin: 0 0 10px;
   font-size: 36px;
   font-size: 2.25em;
-  font: 600 2em / 1.2 "Source Serif Pro", serif;
+  font: 600 2em/1.2 "Source Serif Pro", serif;
 }
 
 .has-logo .site-title,
@@ -2599,12 +2599,12 @@ input[type="submit"].search-submit {
   .header-style-side .content-area {
     padding: 30px 20px;
   }
-  .header-style-side & {
+  .header-style-side .site-footer {
     width: 72%;
     width: calc(100% - 280px);
     float: right;
   }
-  .header-style-side.boxed-content & {
+  .header-style-side.boxed-content .site-footer {
     position: relative;
     left: 140px;
     float: none;
@@ -2629,11 +2629,11 @@ input[type="submit"].search-submit {
     max-width: calc(740px);
     margin: 0 auto;
   }
-  .header-style-side & {
+  .header-style-side .site-footer {
     width: 70%;
     width: calc(100% - 300px);
   }
-  .header-style-side.boxed-content & {
+  .header-style-side.boxed-content .site-footer {
     left: 150px;
     max-width: 740px;
     max-width: calc(740px);
@@ -2669,11 +2669,11 @@ input[type="submit"].search-submit {
   .header-style-side .primary-sidebar {
     padding: 40px 30px 40px 20px;
   }
-  .header-style-side & {
+  .header-style-side .site-footer {
     width: 70%;
     width: calc(100% - 320px);
   }
-  .header-style-side.boxed-content & {
+  .header-style-side.boxed-content .site-footer {
     left: 160px;
     max-width: 1100px;
     margin: 0 auto;
