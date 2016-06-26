@@ -150,7 +150,7 @@ add_action( 'after_setup_theme', 'alcatraz_google_fonts', 0 );
  */
 function alcatraz_google_fonts() {
 
-	$google_fonts = '//fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,300italic,400italic,700|Source+Code+Pro|Source+Serif+Pro:400,600,700';
+	$google_fonts = '//fonts.googleapis.com/css?family=Source+Sans+Pro:300,300i,600,600i,900,900i|Source+Code+Pro|';
 	$google_fonts = apply_filters( 'alcatraz_google_fonts', $google_fonts );
 
 	$GLOBALS['alcatraz_google_fonts'] = str_replace( ',', '%2C', $google_fonts );

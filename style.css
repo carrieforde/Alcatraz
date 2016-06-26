@@ -470,8 +470,8 @@ h4,
 h5,
 h6 {
   margin: 0 0 0.625em 0;
-  font-family: "Source Serif Pro", serif;
-  font-weight: 600;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 700;
   line-height: 1.2;
   clear: both;
 }
@@ -1583,7 +1583,7 @@ input[type="submit"].search-submit {
   margin: 0 0 10px;
   font-size: 36px;
   font-size: 2.25em;
-  font: 600 2em/1.2 "Source Serif Pro", serif;
+  font: 600 2em/1.2 "Source Sans Pro", sans-serif;
 }
 
 .has-logo .site-title,

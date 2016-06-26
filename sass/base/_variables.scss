@@ -71,19 +71,17 @@ $color__box-shadow-sub-menu: 0 3px 10px -3px rgba(0, 0, 0, 0.5);
 
 // Font Palette
 $source-sans-pro: 'Source Sans Pro', sans-serif;
-$source-serif-pro: 'Source Serif Pro', serif;
 $source-code-pro: 'Source Code Pro', Courier, monospace;
 $font-awesome: FontAwesome;
 
 $font__body: $source-sans-pro;
 $font__code: $source-code-pro;
-$font__headings: $source-serif-pro;
+$font__headings: $source-sans-pro;
 $font__line-height-body: 1.5;
 $font__line-height-headings: 1.2;
 $font__line-height-pre: 1.6;
 $font__margin-headings: 0 0 em(10) 0;
 $font__pre: $source-code-pro;
-
 
 // 2.2.3 Borders
 $border__abbr: 1px dotted #666;
