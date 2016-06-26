@@ -1,0 +1,742 @@
+//--------------------------------------------------------------
+//   4.3 MENUS
+//--------------------------------------------------------------
+
+
+// Mobile Nav Toggle Shared Styles
+.menu-toggle {
+	cursor: pointer;
+	display: block;
+}
+
+
+// Inner menu toggle close
+.inner-menu-toggle {
+	box-sizing: border-box;
+	cursor: pointer;
+	display: none;
+	height: rem(45);
+	overflow: hidden;
+	position: relative;
+	text-indent: 9999%;
+	width: rem(45);
+
+	&:hover .inner-menu-toggle-span {
+		background-color: $color__background-menu-toggle-hover;
+	}
+
+	.inner-menu-toggle-span {
+		background-color: $color__background-menu-toggle;
+		height: rem(3);
+		left: rem(9);
+		position: absolute;
+		top: rem(22);
+		transition: all 0.2s ease;
+		width: rem(25);
+
+		&.span-1 {
+			transform: rotate(45deg);
+		}
+
+		&.span-2 {
+			display: none;
+		}
+
+		&.span-3 {
+			transform: rotate(-45deg);
+		}
+	}
+}
+
+
+// Mobile Nav Button Toggle Style
+.mobile-nav-toggle-style-button {
+
+	&.mobile-nav-style-slide-left,
+	&.mobile-nav-style-slide-right {
+
+		.main-navigation.toggled .menu-toggle {
+			display: block;
+		}
+	}
+
+	.menu-toggle {
+		background-color: $color__background-menu-toggle;
+		border-radius: rem(5);
+		color: $color__text-menu-toggle;
+		font-weight: 400;
+		margin: rem(20) rem(20) 0;
+		padding: rem(15) rem(20);
+		text: {
+			align: center;
+			transform: uppercase;
+		}
+
+		&:hover {
+			background-color: $color__background-menu-toggle-hover;
+			color: $color__text-menu-toggle-hover;
+		}
+	}
+}
+
+
+// Mobile Nav Hamburger Toggle Style
+.mobile-nav-toggle-style-hamburger {
+
+	.menu-toggle {
+		height: rem(45);
+		padding: rem(10);
+		position: absolute;
+		right: rem(10);
+		top: rem(12);
+		width: rem(45);
+
+		.menu-toggle-span {
+			background-color: $color__background-menu-toggle;
+			height: rem(3);
+			position: absolute;
+			transition: all 0.2s ease-in;
+			width: rem(25);
+
+			&.span-1 {
+				top: rem(12);
+			}
+
+			&.span-2 {
+				top: rem(21);
+			}
+
+			&.span-3 {
+				top: rem(30);
+			}
+		}
+
+		&:hover .menu-toggle-span {
+			background-color: $color__background-menu-toggle-hover;
+		}
+
+		.menu-text {
+			@include hide-text;
+		}
+	}
+
+	.toggled .menu-toggle {
+
+		.menu-toggle-span {
+
+			&.span-1 {
+				top: rem(13);
+				transform: rotate(45deg) translate(rem(5), rem(6));
+			}
+
+			&.span-2 {
+				background-color: transparent;
+			}
+
+			&.span-3 {
+				top: rem(29);
+				transform: rotate(-45deg) translate(rem(5), rem(-6));
+			}
+		}
+	}
+}
+
+@media (min-width: em(768)) {
+
+	.header-style-default,
+	.header-style-short {
+
+		.main-navigation .menu-toggle {
+			display: none;
+		}
+	}
+}
+
+@media (min-width: em(960)) {
+
+	.header-style-side {
+
+		.menu-toggle {
+			display: none;
+		}
+	}
+}
+
+
+// Sub Level Toggles Shared Styles
+.sub-level-toggle {
+	cursor: pointer;
+	overflow: hidden;
+	padding-left: 0; // need to revisit this
+	padding-right: 0; // need to revisit this
+	position: absolute;
+	right: 0;
+	text-align: center;
+	text-indent: 9999%;
+	top: 0;
+	width: rem(50);
+
+	.sub-level-toggle-span {
+		background-color: $color__background-sub-menu-toggle;
+		display: none;
+	}
+
+	&:hover .sub-level-toggle-span {
+		background-color: $color__background-sub-menu-toggle-hover;
+	}
+}
+
+
+// Chevron Sub Menu Toggle Style
+.sub-menu-toggle-style-chevron {
+
+	.sub-level-toggle {
+
+		.sub-level-toggle-span {
+			height: rem(2);
+			position: absolute;
+			top: rem(22.5);
+			transition: all 0.2s ease-in;
+			width: rem(11.5);
+
+			&.span-1 {
+				display: block;
+				left: rem(16.5);
+				transform: rotate(45deg) translate(rem(2));
+			}
+
+			&.span-2 {
+				display: block;
+				right: rem(12.5);
+				transform: rotate(-45deg) translate(rem(-2));
+			}
+
+			&.span-3 {
+				display: none;
+			}
+		}
+	}
+
+	.sub-level-toggle.toggled {
+
+		.sub-level-toggle-span {
+
+			&.span-1 {
+				transform: rotate(135deg) translate(rem(-2));
+			}
+
+			&.span-2 {
+				transform: rotate(-135deg) translate(rem(2));
+			}
+		}
+	}
+}
+
+
+// Plus-Minus Sub Menu Toggle Style
+.sub-menu-toggle-style-plus-minus {
+
+	.sub-level-toggle {
+
+		.sub-level-toggle-span {
+			height: rem(2);
+			left: rem(17.5);
+			position: absolute;
+			top: rem(22.5);
+			transition: all 0.2s ease-out;
+			width: rem(14);
+
+			&.span-1 {
+				display: block;
+			}
+
+			&.span-2 {
+				display: block;
+				transform: rotate(90deg);
+			}
+		}
+	}
+
+	.sub-level-toggle.toggled {
+
+		.sub-level-toggle-span {
+
+			&.span-2 {
+				transform: rotate(180deg);
+			}
+		}
+	}
+}
+
+
+// Mobile Nav Shared Styles
+.main-navigation {
+	clear: both;
+	display: block;
+	line-height: 1;
+	width: 100%;
+
+	&.toggled #primary-menu-wrap {
+		opacity: 1;
+	}
+
+	&.toggled #primary-menu {
+		display: block;
+	}
+
+	a {
+		color: $color__link-nav;
+
+		&:hover {
+			color: $color__link-nav-hover;
+		}
+	}
+
+	.menu-overlay {
+		cursor: pointer;
+		transition: background-color 0.3s;
+	}
+
+	#primary-menu-wrap {
+		opacity: 0;
+		position: relative;
+		transition: opacity 0.4s;
+		z-index: 99;
+	}
+
+	#primary-menu {
+		clear: both;
+		display: none;
+		list-style: none;
+		margin: 0;
+		padding-left: 0;
+
+		&::after {
+			@include clearfix();
+		}
+
+		.menu-item {
+			position: relative;
+			width: 100%;
+
+			&.menu-item-has-children > a {
+				padding-right: rem(60);
+			}
+
+			a {
+				display: block;
+				line-height: 1.5;
+				padding: rem(10) rem(15);
+				text-decoration: none;
+			}
+
+			a.sub-level-toggle {
+				padding-left: 0;
+				padding-right: 0;
+			}
+		}
+
+		.sub-menu {
+			background-color: $color__background-sub-menu;
+			display: none;
+			list-style-type: none;
+			margin: 0;
+			min-width: rem(165);
+			padding-left: $size__padding-default;
+			position: relative;
+			width: 100%;
+			z-index: 99;
+
+			&.toggled {
+				display: block;
+			}
+		}
+
+		.current-menu-item > a {
+			font-weight: 700;
+		}
+	}
+}
+
+.mobile-nav-style-default {
+
+	#primary-menu {
+		box-shadow: $color__box-shadow-mobile-primary-menu;
+		padding: 0 $size__padding-default-half;
+	}
+
+
+	@media (min-width: em(768)) {
+
+		&.header-style-default,
+		&.header-style-short {
+
+			#primary-menu {
+				box-shadow: none;
+			}
+		}
+	}
+
+	@media (min-width: em(960)) {
+
+		&.header-style-side {
+
+			#primary-menu {
+				box-shadow: none;
+			}
+		}
+	}
+
+	.sub-level-toggle {
+		right: 8px;
+	}
+}
+
+
+// Mobile Nav Slide From Left & Slide From Right Shared Styles
+.mobile-nav-style-slide-left,
+.mobile-nav-style-slide-right {
+
+	&.admin-bar {
+
+		#primary-menu-wrap {
+			top: 46px;
+
+			@media (min-width: em(768)) {
+				top: 32px;
+			}
+		}
+	}
+
+	&.header-style-default #primary-menu-wrap,
+	&.header-style-short #primary-menu-wrap {
+
+		@media (max-width: em(767)) {
+
+			background-color: $color__background-mobile-nav;
+		}
+
+		a {
+			@media (max-width: em(767)) {
+
+				color: $color__link-mobile-nav;
+			}
+		}
+	}
+
+	&.header-style-side #primary-menu-wrap {
+
+		@media (max-width: em(959)) {
+			background-color: $color__background-mobile-nav;
+		}
+
+		a {
+			@media (max-width: em(959)) {
+				color: $color__link-mobile-nav;
+			}
+		}
+	}
+
+	#primary-menu-wrap {
+		min-height: 100vh;
+		position: fixed;
+		top: 0;
+		width: rem(260);
+		z-index: 100;
+	}
+
+	#primary-menu {
+		display: block;
+		height: 100vh;
+		overflow-x: hidden;
+		overflow-y: auto;
+		padding-bottom: rem(40);
+		padding-top: 0;
+	}
+
+	.main-navigation.toggled {
+
+		.menu-toggle {
+			display: none;
+		}
+
+		.menu-overlay {
+			background-color: $color__overlay-transparent;
+			display: block;
+			height: 150vh;
+			overflow: hidden;
+			position: fixed;
+			top: 0;
+			width: 100%;
+			z-index: 99;
+		}
+	}
+
+	.inner-menu-toggle {
+		display: block;
+		margin-top: rem(10);
+	}
+}
+
+
+// Mobile Nav Slide From Left Styles
+.mobile-nav-style-slide-left {
+	#mobile-nav-left-swipe-zone {
+		height: 100vh;
+		left: 0;
+		position: fixed;
+		top: 0;
+		width: rem(20);
+		z-index: 100;
+	}
+
+	.main-navigation.toggled #mobile-nav-left-swipe-zone {
+		display: none;
+	}
+
+	#primary-menu-wrap {
+		left: rem(-260);
+		opacity: 1;
+		transition: left 0.2s;
+	}
+
+	.main-navigation.toggled #primary-menu-wrap {
+		left: 0;
+		transition: left 0.4s;
+	}
+
+	.inner-menu-toggle {
+		float: right;
+		margin-right: rem(9);
+	}
+
+	.sub-level-toggle {
+		right: rem(7);
+	}
+}
+
+
+// Mobile Nav Slide From Right Styles
+.mobile-nav-style-slide-right {
+
+	#mobile-nav-right-swipe-zone {
+		height: 100vh;
+		position: fixed;
+		right: 0;
+		top: 0;
+		width: rem(20);
+		z-index: 100;
+	}
+
+	.main-navigation.toggled #mobile-nav-right-swipe-zone {
+		display: none;
+	}
+
+	#primary-menu-wrap {
+		opacity: 1;
+		right: rem(-260);
+		transition: right 0.4s;
+	}
+
+	.main-navigation.toggled #primary-menu-wrap {
+		right: 0;
+		transition: right 0.2s;
+	}
+
+	.inner-menu-toggle {
+		float: right;
+		margin-right: rem(5);
+		overflow: hidden;
+		text-indent: 9999%;
+	}
+
+	.sub-level-toggle {
+		right: rem(3);
+	}
+
+	&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
+		right: rem(2);
+	}
+}
+
+// Mobile Nav Full Screen Styles
+.mobile-nav-style-full-screen {
+
+	&.admin-bar .main-navigation.toggled #primary-menu-wrap {
+		top: rem(46);
+	}
+
+	.main-navigation.toggled #primary-menu-wrap {
+		background-color: $color__background-mobile-nav;
+		min-height: 100vh;
+		opacity: 0;
+		overflow-y: auto;
+		position: fixed;
+		top: 0;
+		transition: opacity 0.4s;
+		width: 100%;
+		z-index: 99;
+	}
+
+	#primary-menu {
+		min-height: 100vh;
+		padding-bottom: rem(80);
+		padding-top: rem(10);
+	}
+
+	.main-navigation.toggled #primary-menu-wrap {
+		display: block;
+		opacity: 1;
+	}
+
+	.main-navigation.toggled .inner-menu-toggle {
+		display: block;
+	}
+
+	.inner-menu-toggle {
+		display: none;
+		float: right;
+		right: rem(10);
+		top: rem(10);
+	}
+
+	.sub-level-toggle {
+		right: rem(8);
+	}
+}
+
+
+// Tablet and Desktop Nav Header Default Styles
+@media (min-width: em(768)) {
+
+	.header-style-default {
+		@include large-screen-nav-display(inline-block);
+		@include large-screen-nav-dropdown;
+
+		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.sub-level-toggle {
+			right: 0;
+			width: rem(40);
+		}
+
+		&.sub-menu-toggle-style-chevron .sub-level-toggle {
+
+			&.toggled .sub-level-toggle-span {
+				top: rem(25.5);
+			}
+
+			.sub-level-toggle-span {
+				height: rem(1);
+				left: rem(11.5);
+				width: rem(8);
+			}
+
+			.sub-level-toggle-span.span-2 {
+				left: auto;
+				right: rem(12.5);
+			}
+		}
+
+		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
+
+			.sub-level-toggle-span {
+				height: rem(1);
+				left: rem(14);
+				width: rem(10);
+			}
+		}
+
+		.inner-menu-toggle {
+			display: none;
+		}
+	}
+}
+
+
+// Tablet and Desktop Nav Header Short Styles
+@media (min-width: em(768)) {
+
+	.header-style-short {
+		@include large-screen-nav-display(inline-block);
+		@include large-screen-nav-dropdown;
+
+		.main-navigation {
+			clear: none;
+			float: right;
+			padding: $size__padding-default;
+			text-align: right;
+
+			#primary-menu {
+				text-align: right;
+			}
+		}
+
+		.main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.sub-level-toggle {
+			right: 0;
+			width: rem(40);
+		}
+
+		&.sub-menu-toggle-style-chevron .sub-level-toggle {
+
+			&.toggled .sub-level-toggle-span {
+				top: rem(25.5);
+			}
+
+			.sub-level-toggle-span {
+				height: rem(1);
+				left: rem(11.5);
+				width: rem(8);
+			}
+
+			.sub-level-toggle-span.span-2 {
+				left: auto;
+				right: rem(12.5);
+			}
+		}
+
+		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
+
+			.sub-level-toggle-span {
+				height: rem(1);
+				left: rem(14);
+				width: rem(10);
+			}
+		}
+
+		.inner-menu-toggle {
+			display: none;
+		}
+	}
+}
+
+
+// Tablet and Desktop Nav Header Side Styles
+@media (min-width: em(960)) {
+
+	.header-style-side {
+		@include large-screen-nav-display( block );
+
+		.main-navigation,
+		&.mobile-nav-style-slide-left,
+		&.mobile-nav-style-slide-right {
+
+			#primary-menu {
+				display: block;
+				text-align: left;
+			}
+		}
+
+		.inner-menu-toggle {
+			display: none;
+		}
+	}
+}
