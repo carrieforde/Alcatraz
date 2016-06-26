@@ -258,11 +258,6 @@ th {
 /* Clearfix */
 /* Clear after (not all clearfix need this also) */
 /* Image Replacement */
-/**
- * 2.4 Defaults
- *
- * Sets basic defaults that are not set in normalize.scss.
- */
 html {
   box-sizing: border-box;
 }
@@ -270,68 +265,58 @@ html {
 *,
 *:before,
 *:after {
-  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
 }
 
 body {
-  overflow-x: hidden;
   background: #fff;
-  /* Fallback for when there is no custom background color defined. */
+  overflow-x: hidden;
 }
 
 body.mce-content-body {
-  padding: 0.9375em !important;
+  padding: 0.9375rem !important;
 }
 
 hr {
-  height: 2px;
+  height: 0.125rem;
   border: 0;
   margin: 1em 0;
   background-color: #E7ECF1;
 }
 
-/**
- * 2.4.1 Accessibility
- */
-/* Text meant only for screen readers. */
 .screen-reader-text {
-  position: absolute !important;
-  height: 1px;
-  width: 1px;
-  overflow: hidden;
   clip: rect(1px, 1px, 1px, 1px);
+  height: 0.0625rem;
+  overflow: hidden;
+  position: absolute !important;
+  width: 0.0625rem;
 }
 
 .screen-reader-text:focus {
-  top: 5px;
-  left: 5px;
-  z-index: 100000;
-  /* Above WP toolbar. */
-  display: block;
-  width: auto;
-  height: auto;
-  padding: 15px 23px 14px;
-  border-radius: 3px;
-  background-color: #f1f1f1;
-  color: #21759b;
   font-size: 10px;
   font-size: 0.625em;
-  font-weight: bold;
-  line-height: normal;
-  text-decoration: none;
+  background-color: #f1f1f1;
+  border-radius: 0.1875rem;
   box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  /* Above WP toolbar. */
   clip: auto !important;
+  color: #21759b;
+  display: block;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 0.9375rem 1.4375rem 0.875rem;
+  text-decoration: none;
+  top: 0.3125rem;
+  width: auto;
+  z-index: 100000;
 }
 
-/* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
   outline: 0;
 }
 
-/**
- * 2.4.2 Alignments
- */
 .alignleft {
   display: inline;
   float: left;
@@ -355,9 +340,6 @@ hr {
   display: inline;
 }
 
-/**
- * 2.4.3 Clearings
- */
 .clear:before,
 .clear:after,
 .entry-content:before,
@@ -385,27 +367,15 @@ hr {
   clear: both;
 }
 
-/**
- * 2.4.4 Infinite Scroll
- */
-/* Globally hidden elements when Infinite Scroll is supported and in use. */
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-  /* Theme Footer (when set to scrolling) */
   display: none;
 }
 
-/* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 .infinity-end.neverending .site-footer {
   display: block;
 }
 
-/**
- * 2.5 Grid
- */
-/**
- * 2.5.1 Column Classes
- */
 .alcatraz-col-1,
 .alcatraz-col-2,
 .alcatraz-col-3,
@@ -418,13 +388,10 @@ hr {
 .alcatraz-col-10,
 .alcatraz-col-11,
 .alcatraz-col-12 {
+  padding: 0.9375rem;
   width: 100%;
-  padding: 0.9375em;
 }
 
-/**
- * 2.6 Typography
- */
 body,
 button,
 input,
@@ -434,54 +401,45 @@ textarea {
   font: 300 18px/1.5 "Source Sans Pro", sans-serif;
 }
 
-/* Headings */
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-  margin: 0 0 0.625em 0;
+  clear: both;
   font-family: "Source Sans Pro", sans-serif;
   font-weight: 700;
   line-height: 1.2;
-  clear: both;
+  margin: 0 0 0.625em 0;
 }
 
 h1 {
-  font-size: 36px;
-  font-size: 2.25em;
+  font-size: 2.25rem;
 }
 
 h2 {
-  font-size: 30px;
-  font-size: 1.875em;
+  font-size: 1.875rem;
 }
 
 h3 {
-  font-size: 24px;
-  font-size: 1.5em;
+  font-size: 1.5rem;
 }
 
 h4 {
-  font-size: 20px;
-  font-size: 1.25em;
+  font-size: 1.25rem;
 }
 
 h5 {
-  font-size: 18px;
-  font-size: 1.125em;
+  font-size: 1.125rem;
 }
 
 h6 {
-  font-size: 16px;
-  font-size: 1em;
+  font-size: 1rem;
 }
 
-/* Copy */
 p {
-  margin-top: 0;
-  margin-bottom: 1.25em;
+  margin: 0 0 1.25rem;
 }
 
 dfn,
@@ -491,21 +449,21 @@ i {
 }
 
 blockquote {
-  padding: 0.9375em 1.25em 0.9375em 0.9375em;
-  border-left: 0.3125em solid #182028;
-  margin: 0 1.5625em 1.5625em;
   background-color: #e7ecf1;
+  border-left: 0.3125em solid #182028;
   font-style: italic;
+  margin: 0 1.5625rem 1.5625rem;
+  padding: 0.9375rem 1.25rem 0.9375rem 0.9375rem;
 }
 
 blockquote::before, q::before {
-  float: left;
-  font: normal 1.25em FontAwesome;
   content: "\f10d";
+  float: left;
+  font: normal 1.25rem FontAwesome;
 }
 
 blockquote p {
-  padding-left: 2.1875em;
+  padding-left: 2.1875rem;
   margin: 0;
 }
 
@@ -514,29 +472,28 @@ blockquote p {
 }
 
 q::before {
-  padding-right: 10px;
-  font-size: 18px;
-  font-size: 1.125em;
+  font-size: 1.125rem;
+  padding-right: 0.625rem;
 }
 
 cite {
   display: inline-block;
-  margin-top: 0.625em;
   font-style: normal;
   font-weight: 700;
+  margin-top: 0.625rem;
 }
 
 address {
-  margin: 0 0 1.5625em;
+  margin: 0 0 1.5625rem;
 }
 
 pre {
+  background: #e7ecf1;
+  font: 14px/1.6 "Source Code Pro", Courier, monospace;
+  margin-bottom: 1.5625em;
   max-width: 100%;
   overflow: auto;
   padding: 1.6em;
-  margin-bottom: 1.5625em;
-  background: #e7ecf1;
-  font: 0.546875em "Source Code Pro", Courier, monospace;
   word-wrap: break-word;
 }
 
@@ -544,7 +501,7 @@ code,
 kbd,
 tt,
 var {
-  font: 0.875em "Source Code Pro", Courier, monospace;
+  font: 0.875rem "Source Code Pro", Courier, monospace;
 }
 
 abbr,
@@ -563,11 +520,10 @@ big {
   font-size: 125%;
 }
 
-/* Lists */
 ul,
 ol {
-  padding-left: 1.25em;
-  margin: 0 0 1.375em 1.25em;
+  padding-left: 1.25rem;
+  margin: 0 0 1.375rem 1.25rem;
 }
 
 ul {
@@ -580,7 +536,7 @@ ol {
 
 li > ul,
 li > ol {
-  margin: 0 0 0 0.3125em;
+  margin: 0 0 0 0.3125rem;
 }
 
 li > ul {
@@ -604,7 +560,7 @@ dt {
 }
 
 dd {
-  margin: 0 1.5625em 1.5625em;
+  margin: 0 1.5625rem 1.5625rem;
 }
 
 a {

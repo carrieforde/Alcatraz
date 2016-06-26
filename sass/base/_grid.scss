@@ -1,10 +1,9 @@
-/**
- * 2.5 Grid
- */
+//--------------------------------------------------------------
+//   2.2 GRID
+//--------------------------------------------------------------
 
-/**
- * 2.5.1 Column Classes
- */
+
+// Column classes
 .alcatraz-col-1,
 .alcatraz-col-2,
 .alcatraz-col-3,
@@ -17,8 +16,8 @@
 .alcatraz-col-10,
 .alcatraz-col-11,
 .alcatraz-col-12 {
+	padding: rem(15);
 	width: 100%;
-	padding: em(15);
 }
 
 @media (min-width: em(768)) {

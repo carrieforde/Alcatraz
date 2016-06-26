@@ -1,6 +1,7 @@
-/**
- * 2.6 Typography
- */
+//--------------------------------------------------------------
+//   2.3 TYPOGRAPHY
+//--------------------------------------------------------------
+
 
 body,
 button,
@@ -11,50 +12,50 @@ textarea {
 	font: 300 18px/#{$font__line-height-body} $font__body;
 }
 
-/* Headings */
+// Headings
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
-	margin: $font__margin-headings;
+	clear: both;
 	font: {
 		family: $font__headings;
 		weight: 700;
 	}
 	line-height: $font__line-height-headings;
-	clear: both;
+	margin: $font__margin-headings;
 }
 
 h1 {
-	@include font-size(36);
+	font-size: rem(36);
 }
 
 h2 {
-	@include font-size(30);
+	font-size: rem(30);
 }
 
 h3 {
-	@include font-size(24);
+	font-size: rem(24);
 }
 
 h4 {
-	@include font-size(20);
+	font-size: rem(20);
 }
 
 h5 {
-	@include font-size(18);
+	font-size: rem(18);
 }
 
 h6 {
-	@include font-size(16);
+	font-size: rem(16);
 }
 
-/* Copy */
+
+// Copy
 p {
-	margin-top: 0;
-	margin-bottom: em(20);
+	margin: 0 0 rem(20);
 }
 
 dfn,
@@ -64,20 +65,20 @@ i {
 }
 
 blockquote {
-	padding: em(15) em(20) em(15) em(15);
-	border-left: $border__blockquote;
-	margin: 0 em(25) em(25);
 	background-color: $color__background-blockquote;
+	border-left: $border__blockquote;
 	font-style: italic;
+	margin: 0 rem(25) rem(25);
+	padding: rem(15) rem(20) rem(15) rem(15);
 
 	&::before {
-		float: left;
-		font: normal em(20) $font-awesome;
 		content: "\f10d";
+		float: left;
+		font: normal rem(20) $font-awesome;
 	}
 
 	p {
-		padding-left: em(35);
+		padding-left: rem(35);
 		margin: 0;
 	}
 }
@@ -89,31 +90,32 @@ blockquote p {
 q {
 	&::before {
 		@extend blockquote::before;
-		padding-right: 10px;
-		@include font-size(18);
+
+		font-size: rem(18);
+		padding-right: rem(10);
 	}
 }
 
 cite {
 	display: inline-block;
-	margin-top: em(10);
 	font: {
 		style: normal;
 		weight: 700;
 	}
+	margin-top: rem(10);
 }
 
 address {
-	margin: 0 0 em(25);
+	margin: 0 0 rem(25);
 }
 
 pre {
+	background: $color__background-pre;
+	font: 14px/#{$font__line-height-pre} $font__pre;
+	margin-bottom: em(25);
 	max-width: 100%;
 	overflow: auto;
 	padding: 1.6em;
-	margin-bottom: em(25);
-	background: $color__background-pre;
-	font: em(14)/#{$font__line-height-pre} $font__pre;
 	word-wrap: break-word;
 }
 
@@ -121,7 +123,7 @@ code,
 kbd,
 tt,
 var {
-	font: em(14) $font__code;
+	font: rem(14) $font__code;
 }
 
 abbr,
@@ -140,11 +142,12 @@ big {
 	font-size: 125%;
 }
 
-/* Lists */
+
+// Lists
 ul,
 ol {
-	padding-left: em(20);
-	margin: 0 0 em(22) em(20);
+	padding-left: rem(20);
+	margin: 0 0 rem(22) rem(20);
 }
 
 ul {
@@ -157,7 +160,7 @@ ol {
 
 li > ul,
 li > ol {
-	margin: 0 0 0 em(5);
+	margin: 0 0 0 rem(5);
 }
 
 li > ul {
@@ -181,5 +184,5 @@ dt {
 }
 
 dd {
-	margin: 0 em(25) em(25);
+	margin: 0 rem(25) rem(25);
 }
