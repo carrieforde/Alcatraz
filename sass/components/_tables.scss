@@ -1,16 +1,17 @@
-/**
- * 3.3 Tables
-*/
+//--------------------------------------------------------------
+//   3.5 TABLES
+//--------------------------------------------------------------
+
 
 table {
-	margin: 0 0 em(25);
 	border: $border__table;
+	margin: 0 0 rem(25);
 	width: 100%;
 }
 
 thead {
-	border-bottom: $border__table;
 	background-color: $color__background-table-thead;
+	border-bottom: $border__table;
 	color: $color__text-table-thead;
 }
 

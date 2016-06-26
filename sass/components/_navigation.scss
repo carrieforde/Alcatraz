@@ -35,8 +35,8 @@ a {
 .post-navigation {
 
 	.site-main & {
+		margin: 0 0 rem(1.5);
 		overflow: hidden;
-		margin: 0 0 1.5em;
 	}
 
 	.nav-previous {
@@ -45,18 +45,18 @@ a {
 
 		a::before {
 			content: '\00ab';
-			margin-right: em(5);
+			margin-right: rem(5);
 		}
 	}
 
 	.nav-next {
 		float: right;
-		width: 50%;
 		text-align: right;
+		width: 50%;
 
 		a::after {
 			content: '\00bb';
-			margin-left: em(5);
+			margin-left: rem(5);
 		}
 	}
 }

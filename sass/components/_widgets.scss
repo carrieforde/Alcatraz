@@ -1,12 +1,13 @@
-/**
- * 3.4 Widgets
- */
+//--------------------------------------------------------------
+//   3.6 WIDGETS
+//--------------------------------------------------------------
+
 
 .widget {
-	margin: 0 0 em(25);
+	margin: 0 0 rem(25);
 	word-wrap: break-word;
 
-	/* Make sure select elements fit in widgets. */
+	// Make sure select elements fit in widgets.
 	select {
 		max-width: 100%;
 	}
@@ -15,11 +16,11 @@
 .primary-sidebar .widget-title,
 .footer-widget-areas .widget-title,
 .primary-sidebar .alcatraz-sub-page-nav-title {
-	@include font-size(20);
+	font-size: rem(20);
 }
 
-/* WordPress Calendar */
 
+// WordPress Calendar widget
 #wp-calendar {
 	max-width: 100%;
 
@@ -53,15 +54,15 @@
 
 .search-field {
 	float: left;
-	margin-right: 10px;
+	margin-right: rem(10);
 	margin-right: calc(10px);
-	width: 180px;
+	width: rem(180);
 	width: calc(100% - 115px);
 }
 
 input[type="submit"].search-submit {
 	float: right;
-	padding: 4.5px 10px;
+	padding: rem(4.5) rem(10);
 }
 
 /* All WP Widgets with UL structures */
@@ -81,6 +82,6 @@ input[type="submit"].search-submit {
 	}
 
 	li {
-		padding: em(2);
+		padding: rem(2);
 	}
 }

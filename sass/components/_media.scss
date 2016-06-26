@@ -1,46 +1,45 @@
-/**
- * 3.1 Media
- */
+//--------------------------------------------------------------
+//   3.3 MEDIA
+//-------------------------------------------------------------
 
 img {
 	height: auto;
+	margin-bottom: rem(15);
 	max-width: 100%;
-	margin-bottom: em(15);
 }
 
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-	padding: 0;
 	border: none;
 	margin: 0;
+	padding: 0;
 }
 
-/* Make sure embeds and iframes fit their containers. */
+
+// Make sure embeds and iframes fit their containers.
 embed,
 iframe,
 object {
 	max-width: 100%;
 }
 
-/* Post Thumbnail */
+
+// Post Thumbnail
 .post-thumbnail {
-	display: block;
 	background-color: $color__background-featured-image;
+	display: block;
 
 	img {
-		margin-bottom: em(20);
 		@include center-block;
+		margin-bottom: rem(20);
 	}
 }
 
-/**
- * 3.1.1 Captions
- */
 
+// Captions
 .wp-caption {
-	margin-top: em(10);
-	margin-bottom: em(18);
+	margin: rem(10) 0 rem(18);
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
@@ -49,27 +48,26 @@ object {
 }
 
 .wp-caption-text {
-	margin: em(10) 0;
 	@include font-size(14);
+
 	font-weight: 500;
+	margin: rem(10) 0;
 	text-align: center;
 }
 
-/**
- * 3.1.2 Galleries
- */
 
+// Galleries
 .gallery {
+	margin-bottom: rem(25);
 	overflow: hidden;
-	margin-bottom: em(25);
 }
 
 .gallery-item {
 	display: inline-block;
-	width: 100%;
-	vertical-align: top;
-	margin: em(20) 0;
+	margin: rem(20) 0;
 	text-align: center;
+	vertical-align: top;
+	width: 100%;
 
 	.gallery-columns-1 &,
 	.gallery-columns-2 &,
@@ -80,8 +78,8 @@ object {
 	.gallery-columns-7 &,
 	.gallery-columns-8 &,
 	.gallery-columns-9 & {
+		padding: rem(15);
 		width: 100%;
-		padding: em(15);
 	}
 
 	@media (min-width: em(768)) {
@@ -211,9 +209,7 @@ object {
 	}
 }
 
-/**
- * 3.1.3 oEmbeds
- */
+// oEmbeds
 .twitter-tweet {
 	margin: 0 auto;
 }
