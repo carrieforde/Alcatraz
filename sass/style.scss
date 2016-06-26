@@ -18,62 +18,10 @@ Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
 
-/**
- * Table of Contents
- *
- * 1.0 Sass Libraries
- *     1.1 Bourbon
- *     1.2 Neat
- * 2.0 Base
- *     2.1 Normalize
- *     2.2 Variables
- *     2.3 Mixins
- *     2.4 Defaults
- *     2.5 Grid
- *     2.6 Typography
- * 3.0 Components
- *     3.1 Media
- *     3.2 Forms
- *     3.3 Tables
- *     3.4 Widgets
- * 4.0 Layout
- *     4.1 Header
- *     4.2 Navigation
- *     4.3 Content
- *     4.4 Sidebars
- *     4.5 Footer
- * 5.0 Plugins
- * 6.0 Page-Specific Styles
- *
- */
 
-// 1.0 Sass Libraries
 @import "bourbon";
 @import "neat";
-
-// 2.0 Base
-@import "base/normalize";
-@import "base/variables";
-@import "base/mixins";
-@import "base/defaults";
-@import "base/grid";
-@import "base/typography";
-
-// 3.0 Components
-@import "components/navigation";
-@import "components/media";
-@import "components/forms";
-@import "components/tables";
-@import "components/widgets";
-
-// 4.0 Layout
-@import "layout/header";
-@import "layout/content";
-@import "layout/sidebars";
-@import "layout/footer";
-
-// 5.0 Plugins
-// @import "plugins";
-
-// 6.0 Page-Specific Styles
-//@import "page-specific"
+@import "utilities/index";
+@import "base/index";
+@import 'components/index';
+@import "layout/index";
