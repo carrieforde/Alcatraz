@@ -1463,24 +1463,21 @@ input[type="submit"].search-submit {
   padding: 0.125rem;
 }
 
-/**
- * 4.1 Header
- */
 .site-header {
   position: relative;
 }
 
 .header-image-wrap {
-  position: absolute;
   display: block;
   height: 100%;
-  width: 100%;
   overflow: hidden;
+  position: absolute;
+  width: 100%;
 }
 
 .header-image {
-  width: 100%;
   display: block;
+  width: 100%;
 }
 
 .header-inner {
@@ -1495,10 +1492,8 @@ input[type="submit"].search-submit {
 }
 
 .site-title {
+  font: 900 1.875rem "Source Sans Pro", sans-serif;
   margin: 0 0 10px;
-  font-size: 36px;
-  font-size: 2.25em;
-  font: 600 2em/1.2 "Source Sans Pro", sans-serif;
 }
 
 .has-logo .site-title,
@@ -1514,7 +1509,8 @@ input[type="submit"].search-submit {
 }
 
 .site-description {
-  margin: 10px 0;
+  font-weight: 600;
+  margin: 0.625rem 0;
 }
 
 .has-logo .site-description,
@@ -1538,7 +1534,6 @@ input[type="submit"].search-submit {
   display: none;
 }
 
-/* Logo Styling */
 .has-logo {
   display: block;
 }
@@ -1556,20 +1551,12 @@ input[type="submit"].search-submit {
   margin-right: auto;
 }
 
-/**
- * 4.3 Content
- *
- * This sets basic styling for all pages including blog post pages.
- */
-/**
- * 4.3.1 Structure
- */
 .site {
-  overflow: hidden;
   content: "";
   display: table;
   table-layout: fixed;
   width: 100%;
+  overflow: hidden;
 }
 
 .site::after {
@@ -1577,10 +1564,10 @@ input[type="submit"].search-submit {
 }
 
 .boxed .site {
-  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
   background-color: #fff;
+  max-width: 1100px;
 }
 
 .boxed {
@@ -1592,20 +1579,17 @@ input[type="submit"].search-submit {
 }
 
 .boxed-content .site-content {
-  max-width: 1100px;
   margin-left: auto;
   margin-right: auto;
+  max-width: 1100px;
 }
 
 .content-area {
-  width: 100%;
-  padding: 20px;
   margin: 0 auto;
+  padding: 20px;
+  width: 100%;
 }
 
-/**
- * 4.3.2 Posts & Pages
- */
 .sticky {
   display: block;
 }
@@ -1627,13 +1611,13 @@ input[type="submit"].search-submit {
 
 .post-edit-link {
   display: block;
-  margin: 0.3125em 0;
+  margin: 0.3125rem 0;
 }
 
 .post-edit-link::before {
   content: '\f040';
-  padding-right: 0.3125em;
-  font: 0.875em FontAwesome;
+  padding-right: 0.3125rem;
+  font: 0.875rem FontAwesome;
 }
 
 .page-content,
@@ -1647,17 +1631,11 @@ input[type="submit"].search-submit {
   margin: 0 0 1.5em;
 }
 
-/**
- * 4.3.3 Asides
- */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none;
 }
 
-/**
- * 4.3.4 Comments
- */
 .comment-content a {
   word-wrap: break-word;
 }
@@ -1666,9 +1644,6 @@ input[type="submit"].search-submit {
   display: block;
 }
 
-/**
- * 4.4 Sidebars
- */
 .primary-sidebar {
   margin: 0;
   padding: 20px;
@@ -1681,13 +1656,10 @@ input[type="submit"].search-submit {
   width: 100%;
 }
 
-/**
- * 4.5 Footer
- */
 .site-footer {
   clear: both;
-  width: 100%;
   padding: 20px;
+  width: 100%;
 }
 
 .footer-widget-areas::after {
@@ -1705,19 +1677,16 @@ input[type="submit"].search-submit {
   text-align: center;
 }
 
-/**
- * 4.5.2 Social Network Icons
- */
 .alcatraz-social-icons {
-  padding-left: 0;
-  margin: 0;
   list-style: none;
+  margin: 0;
+  padding-left: 0;
   text-align: center;
 }
 
 .alcatraz-social-icons li {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 0.625rem;
 }
 
 .alcatraz-social-icons li:last-child {
@@ -1725,7 +1694,7 @@ input[type="submit"].search-submit {
 }
 
 .alcatraz-social-icons .alcatraz-social-icon {
-  font-size: 24px;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 48em) {
@@ -2326,7 +2295,7 @@ input[type="submit"].search-submit {
     padding: 0;
   }
   .header-style-default .header-inner {
-    padding: 20px;
+    padding: 1.25rem;
     text-align: center;
   }
   .header-style-default.mobile-nav-toggle-style-hamburger .header-inner {
@@ -2373,22 +2342,22 @@ input[type="submit"].search-submit {
   }
   .primary-sidebar {
     padding: 40px 20px;
-  }/* Left Sidebar */
+  }
   .left-sidebar .content-area {
-    width: 72%;
     float: right;
+    width: 72%;
   }
   .left-sidebar .primary-sidebar {
+    float: left;
     width: 28%;
-    float: left;
-  }/* Right Sidebar */
+  }
   .right-sidebar .content-area {
-    width: 72%;
     float: left;
+    width: 72%;
   }
   .right-sidebar .primary-sidebar {
-    width: 28%;
     float: right;
+    width: 28%;
   }
   .footer-widget-areas-2 .footer-widget-area {
     float: left;
@@ -2424,7 +2393,7 @@ input[type="submit"].search-submit {
     padding: 40px 20px;
   }
   .hentry {
-    margin-bottom: 3.125em;
+    margin-bottom: 3.125rem;
   }
 }
 
@@ -2473,12 +2442,12 @@ input[type="submit"].search-submit {
     display: none;
   }
   .header-style-side .site-header {
-    width: 280px;
-    width: calc(280px);
     height: 100%;
-    position: fixed;
     padding: 10px 0;
+    position: fixed;
     overflow-y: auto;
+    width: 17.5rem;
+    width: calc(280px);
   }
   .header-style-side .site-header .header-inner {
     max-width: 100%;
@@ -2496,42 +2465,42 @@ input[type="submit"].search-submit {
     display: block;
   }
   .header-style-side .logo {
-    margin-bottom: 20px;
+    margin-bottom: 1.25rem;
   }
   .header-style-side .site-content {
+    float: right;
     width: 72%;
     width: calc(100% - 280px);
-    float: right;
   }
   .header-style-side.boxed-content .site-content {
-    position: relative;
-    left: 140px;
     float: none;
-    max-width: 680px;
-    max-width: calc(680px);
+    left: 140px;
     margin: 0 auto;
+    max-width: 42.5rem;
+    max-width: calc(680px);
+    position: relative;
   }
   .header-style-side .content-area {
     padding: 30px 20px;
   }
   .header-style-side .site-footer {
+    float: right;
     width: 72%;
     width: calc(100% - 280px);
-    float: right;
   }
   .header-style-side.boxed-content .site-footer {
-    position: relative;
-    left: 140px;
     float: none;
-    max-width: 680px;
-    max-width: calc(680px);
+    left: 140px;
     margin: 0 auto;
+    max-width: 42.5rem;
+    max-width: calc(680px);
+    position: relative;
   }
 }
 
 @media (min-width: 65em) {
   .header-style-side .site-header {
-    width: 300px;
+    width: 18.75rem;
     width: calc(300px);
   }
   .header-style-side .site-content {
@@ -2540,19 +2509,19 @@ input[type="submit"].search-submit {
   }
   .header-style-side.boxed-content .site-content {
     left: 150px;
-    max-width: 740px;
-    max-width: calc(740px);
     margin: 0 auto;
+    max-width: 46.25rem;
+    max-width: calc(740px);
   }
   .header-style-side .site-footer {
     width: 70%;
     width: calc(100% - 300px);
   }
   .header-style-side.boxed-content .site-footer {
-    left: 150px;
-    max-width: 740px;
-    max-width: calc(740px);
+    left: 9.375rem;
     margin: 0 auto;
+    max-width: 46.25rem;
+    max-width: calc(740px);
   }
 }
 
@@ -2565,7 +2534,7 @@ input[type="submit"].search-submit {
 
 @media (min-width: 71.875em) {
   .header-style-side .site-header {
-    width: 320px;
+    width: 20rem;
     width: calc(320px);
     padding: 20px 10px;
   }
@@ -2574,7 +2543,7 @@ input[type="submit"].search-submit {
     width: calc(100% - 320px);
   }
   .header-style-side.boxed-content .site-content {
-    left: 160px;
+    left: 10rem;
     max-width: 1100px;
     margin: 0 auto;
   }
@@ -2589,15 +2558,13 @@ input[type="submit"].search-submit {
     width: calc(100% - 320px);
   }
   .header-style-side.boxed-content .site-footer {
-    left: 160px;
+    left: 10rem;
     max-width: 1100px;
     margin: 0 auto;
   }
 }
 
 @media (min-width: 83.75em) {
-  .header-style-side.boxed-content {/* Right Sidebar */
-  }
   .header-style-side.boxed-content.left-sidebar .content-area {
     width: 72%;
     float: right;

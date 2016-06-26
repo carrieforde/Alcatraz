@@ -1,22 +1,23 @@
-/**
- * 4.1 Header
- */
+//--------------------------------------------------------------
+//   4.1 HEADER
+//--------------------------------------------------------------
+
 
 .site-header {
 	position: relative;
 }
 
 .header-image-wrap {
-	position: absolute;
 	display: block;
 	height: 100%;
-	width: 100%;
 	overflow: hidden;
+	position: absolute;
+	width: 100%;
 }
 
 .header-image {
-	width: 100%;
 	display: block;
+	width: 100%;
 }
 
 .header-inner {
@@ -31,9 +32,8 @@
 }
 
 .site-title {
+	font: 900 rem(36)/#{$font__line-height-headings} $font__headings;
 	margin: 0 0 10px;
-	@include font-size(36);
-	font: 600 2em/#{$font__line-height-headings} $font__headings;
 
 	.has-logo &,
 	.has-mobile-logo & {
@@ -42,7 +42,8 @@
 }
 
 .site-description {
-	margin: 10px 0;
+	font-weight: 600;
+	margin: rem(10) 0;
 
 	.has-logo &,
 	.has-mobile-logo & {
@@ -64,7 +65,7 @@
 	.header-style-default {
 
 		.header-inner {
-			padding: 20px;
+			padding: rem(20);
 			text-align: center;
 		}
 
@@ -81,6 +82,7 @@
 
 		.header-inner {
 			@include span-columns(4 of 12);
+
 			padding: $size__padding-default;
 		}
 
@@ -96,12 +98,12 @@
 	.header-style-side {
 
 		.site-header {
-			width: 280px;
-			width: calc(280px);
 			height: 100%;
-			position: fixed;
 			padding: $size__padding-default-half 0;
+			position: fixed;
 			overflow-y: auto;
+			width: rem(280);
+			width: calc(280px);
 
 			.header-inner {
 				max-width: 100%;
@@ -115,7 +117,7 @@
 	.header-style-side {
 
 		.site-header {
-			width: 300px;
+			width: rem(300);
 			width: calc(300px);
 		}
 	}
@@ -126,18 +128,20 @@
 	.header-style-side {
 
 		.site-header {
-			width: 320px;
+			width: rem(320);
 			width: calc(320px);
 			padding: $size__padding-default $size__padding-default-half;
 		}
 	}
 }
 
-/* Logo Styling */
+
+// Logo styling
 .has-logo {
 	display: block;
 
 	@media (min-width: em(768)) {
+
 		.logo-mobile &.header-style-default.has-mobile-logo,
 		.logo-mobile &.header-style-short.has-mobile-logo {
 			display: none;
@@ -212,7 +216,7 @@
 	@media (min-width: em(960)) {
 
 		.header-style-side & {
-			margin-bottom: 20px;
+			margin-bottom: rem(20);
 		}
 	}
 }

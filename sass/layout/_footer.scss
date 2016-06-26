@@ -1,27 +1,28 @@
-/**
- * 4.5 Footer
- */
+//--------------------------------------------------------------
+//   4.4 FOOTER
+//--------------------------------------------------------------
+
 
 .site-footer {
 	clear: both;
-	width: $size__width-site;
 	padding: $size__padding-default;
+	width: $size__width-site;
 
 	@media (min-width: em(960)) {
 
 		.header-style-side & {
+			float: right;
 			width: 72%;
 			width: calc(100% - 280px);
-			float: right;
 		}
 
 		.header-style-side.boxed-content & {
-			position: relative;
-			left: 140px;
 			float: none;
-			max-width: 680px;
-			max-width: calc(680px);
+			left: 140px;
 			margin: 0 auto;
+			max-width: rem(680);
+			max-width: calc(680px);
+			position: relative;
 		}
 	}
 
@@ -33,10 +34,10 @@
 		}
 
 		.header-style-side.boxed-content & {
-			left: 150px;
-			max-width: 740px;
-			max-width: calc(740px);
+			left: rem(150);
 			margin: 0 auto;
+			max-width: rem(740);
+			max-width: calc(740px);
 		}
 	}
 
@@ -48,7 +49,7 @@
 		}
 
 		.header-style-side.boxed-content & {
-			left: 160px;
+			left: rem(160);
 			max-width: $size__width-boxed-content;
 			margin: 0 auto;
 		}
@@ -91,19 +92,17 @@
 	}
 }
 
-/**
- * 4.5.2 Social Network Icons
- */
 
+// Social network icons
 .alcatraz-social-icons {
-	padding-left: 0;
-	margin: 0;
 	list-style: none;
+	margin: 0;
+	padding-left: 0;
 	text-align: center;
 
 	li {
 		display: inline-block;
-		margin-right: 10px;
+		margin-right: rem(10);
 
 		&:last-child {
 			margin-right: 0;
@@ -111,6 +110,6 @@
 	}
 
 	.alcatraz-social-icon {
-		font-size: 24px;
+		font-size: rem(24);
 	}
 }

@@ -1,24 +1,26 @@
-/**
- * 4.3 Content
- *
- * This sets basic styling for all pages including blog post pages.
- */
+//--------------------------------------------------------------
+//   4.3 CONTENT
+//
+//   This sets basic styling for all pages including blog post
+//   pages.
+//--------------------------------------------------------------
 
-/**
- * 4.3.1 Structure
- */
+
+// Structure
 .site {
-	overflow: hidden;
 	@include clearfix;
+
+	overflow: hidden;
 
 	&::after {
 		@include clearfix-after;
 	}
 
 	.boxed & {
-		max-width: $size__width-boxed;
 		@include center;
+
 		background-color: $color__background-boxed-site;
+		max-width: $size__width-boxed;
 	}
 }
 
@@ -30,28 +32,31 @@
 	overflow: hidden;
 
 	.boxed-content & {
-		max-width: $size__width-boxed-content;
 		@include center;
+
+		max-width: $size__width-boxed-content;
 	}
 
 	@media (min-width: em(960)) {
+
 		.header-style-side & {
+			float: right;
 			width: 72%;
 			width: calc(100% - 280px);
-			float: right;
 		}
 
 		.header-style-side.boxed-content & {
-			position: relative;
-			left: 140px;
 			float: none;
-			max-width: 680px;
-			max-width: calc(680px);
+			left: 140px;
 			margin: 0 auto;
+			max-width: rem(680);
+			max-width: calc(680px);
+			position: relative;
 		}
 	}
 
 	@media (min-width: em(1040)) {
+
 		.header-style-side & {
 			width: 70%;
 			width: calc(100% - 300px);
@@ -59,20 +64,21 @@
 
 		.header-style-side.boxed-content & {
 			left: 150px;
-			max-width: 740px;
-			max-width: calc(740px);
 			margin: 0 auto;
+			max-width: rem(740);
+			max-width: calc(740px);
 		}
 	}
 
 	@media (min-width: em(1150)) {
+
 		.header-style-side & {
 			width: 70%;
 			width: calc(100% - 320px);
 		}
 
 		.header-style-side.boxed-content & {
-			left: 160px;
+			left: rem(160);
 			max-width: $size__width-boxed-content;
 			margin: 0 auto;
 		}
@@ -80,9 +86,9 @@
 }
 
 .content-area {
-	width: $size__width-site;
-	padding: $size__padding-default;
 	margin: 0 auto;
+	padding: $size__padding-default;
+	width: $size__width-site;
 
 	@media (min-width: em(900)) {
 		padding: $size__padding-default-double $size__padding-default;
@@ -100,10 +106,8 @@
 	}
 }
 
-/**
- * 4.3.2 Posts & Pages
- */
 
+// Posts & Pages
 .sticky {
 	display: block;
 }
@@ -113,12 +117,12 @@
 	word-wrap: break-word;
 
 	@media (min-width: em(900)) {
-		margin-bottom: em(50);
+		margin-bottom: rem(50);
 	}
 }
 
 .byline,
-.updated:not(.published){
+.updated:not(.published) {
 	display: none;
 }
 
@@ -129,12 +133,12 @@
 
 .post-edit-link {
 	display: block;
-	margin: em(5) 0;
+	margin: rem(5) 0;
 
 	&::before {
 		content: '\f040';
-		padding-right: em(5);
-		font: em(14) $font-awesome;
+		padding-right: rem(5);
+		font: rem(14) $font-awesome;
 	}
 }
 
@@ -149,19 +153,14 @@
 	margin: 0 0 1.5em;
 }
 
-/**
- * 4.3.3 Asides
- */
-
+// Asides
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
 	display: none;
 }
 
-/**
- * 4.3.4 Comments
- */
 
+// Comments
 .comment-content a {
 	word-wrap: break-word;
 }
