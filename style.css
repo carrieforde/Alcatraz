@@ -264,7 +264,7 @@ hr {
   height: 0.125rem;
   border: 0;
   margin: 1em 0;
-  background-color: #E7ECF1;
+  background-color: #e7ecf1;
 }
 
 .screen-reader-text {
@@ -470,12 +470,12 @@ address {
 }
 
 pre {
-  background: #e7ecf1;
+  border: 0.0625rem solid #95a0a3;
   font: 14px/1.6 "Source Code Pro", Courier, monospace;
-  margin-bottom: 1.5625em;
+  margin-bottom: 1.5625rem;
   max-width: 100%;
   overflow: auto;
-  padding: 1.6em;
+  padding: 1.5625rem;
   word-wrap: break-word;
 }
 
@@ -618,7 +618,7 @@ a:hover, a:active {
 }
 
 .alcatraz-sub-page-nav li {
-  border-bottom: 0.0625rem dotted #E7ECF1;
+  border-bottom: 0.0625rem dotted #e7ecf1;
   margin: 0;
   padding: 0;
   position: relative;
@@ -659,7 +659,7 @@ a:hover, a:active {
 }
 
 .alcatraz-sub-page-nav .children.toggled li {
-  border-top: 0.0625rem dotted #E7ECF1;
+  border-top: 0.0625rem dotted #e7ecf1;
 }
 
 .alcatraz-sub-page-nav .current_page_item {
@@ -1507,7 +1507,7 @@ input[type="submit"].search-submit {
 }
 
 .boxed {
-  background-color: #E7ECF1;
+  background-color: #e7ecf1;
 }
 
 .site-content {

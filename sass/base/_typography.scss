@@ -110,12 +110,12 @@ address {
 }
 
 pre {
-	background: $color__background-pre;
+	border: $border__pre;
 	font: 14px/#{$font__line-height-pre} $font__pre;
-	margin-bottom: em(25);
+	margin-bottom: rem(25);
 	max-width: 100%;
 	overflow: auto;
-	padding: 1.6em;
+	padding: rem(25);
 	word-wrap: break-word;
 }
 

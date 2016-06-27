@@ -9,12 +9,11 @@
 
 
 // Color Palette
-$bondi-blue: #0d8bb7;
+$alcatraz-blue: #0d8bb7;
 $black-as-night: #040a04;
-$bright-light: #e7ecf1;
+$mist: #e7ecf1;
 $dim-gray: #666;
 $hope: #fff9c0;
-$mist: #E7ECF1;
 $prision-cell-gray: #535d65;
 $silver: #c0c0c0;
 $sf-fog: #95a0a3;
@@ -25,23 +24,22 @@ $white-smoke: #f1f1f1;
 
 
 // Background Colors
-$color__background-blockquote: $bright-light;
+$color__background-blockquote: $mist;
 $color__background-body: $true-white;
 $color__background-body-boxed: $mist;
 $color__background-boxed-site: $true-white;
-$color__background-button: $bondi-blue;
+$color__background-button: $alcatraz-blue;
 $color__background-button-hover: $the-coast-is-clear;
 $color__background-hr: $mist;
 $color__background-ins: $hope;
-$color__background-menu-toggle: $bondi-blue;
+$color__background-menu-toggle: $alcatraz-blue;
 $color__background-menu-toggle-hover: darken($color__background-menu-toggle, 10%);
 $color__background-mobile-nav: $true-white;
-$color__background-pre: $bright-light;
 $color__background-screen: $white-smoke;
 $color__background-sub-menu: $true-white;
 $color__background-sub-menu-toggle: $prision-cell-gray;
 $color__background-sub-menu-toggle-hover: lighten($color__background-sub-menu-toggle, 15%);
-$color__background-table-row: $bright-light;
+$color__background-table-row: $mist;
 $color__background-table-thead: darken($color__background-table-row, 30%);
 
 
@@ -52,7 +50,7 @@ $color__overlay-transparent: rgba(0,0,0,0.4);
 // Text Colors
 $color__text-body: $black-as-night;
 $color__text-button: $true-white;
-$color__text-button-hover: $bondi-blue;
+$color__text-button-hover: $alcatraz-blue;
 $color__text-input: $prision-cell-gray;
 $color__text-input-focus: $prision-cell-gray;
 $color__text-menu-toggle: $true-white;
@@ -62,10 +60,10 @@ $color__text-table-thead: $true-white;
 
 
 // Link Colors
-$color__link: $bondi-blue;
+$color__link: $alcatraz-blue;
 $color__link-hover: darken($color__link, 20%);
-$color__link-mobile-nav: $bondi-blue;
-$color__link-nav: $bondi-blue;
+$color__link-mobile-nav: $alcatraz-blue;
+$color__link-nav: $alcatraz-blue;
 $color__link-nav-hover: darken($color__link-nav, 20%);
 $color__link-nav-sub-menu: $prision-cell-gray;
 $color__link-nav-sub-menu-hover: darken($color__link-nav-sub-menu, 10%);
@@ -99,14 +97,15 @@ $font__pre: $source-code-pro;
 // 2.2.3 Borders
 $border__abbr: rem(1) dotted $dim-gray;
 $border__blockquote: rem(5) solid darken($color__background-blockquote, 80%);
-$border__button: rem(2) solid $bondi-blue;
-$border__button-hover: rem(2) solid $bondi-blue;
+$border__button: rem(2) solid $alcatraz-blue;
+$border__button-hover: rem(2) solid $alcatraz-blue;
 $border__fieldset: rem(1) solid $silver;
 $border__input: rem(1) solid $sf-fog;
 $border__input-focus: rem(1) solid $prision-cell-gray;
 $border__nav-sub-menu: rem(3) solid $prision-cell-gray;
+$border__pre: rem(1) solid $sf-fog;
 $border__sub-page-nav-item: rem(1) dotted $mist;
-$border__table: rem(1) solid $bright-light;
+$border__table: rem(1) solid $mist;
 
 
 // 2.2.4 Structure
