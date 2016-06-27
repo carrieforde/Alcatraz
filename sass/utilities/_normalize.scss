@@ -1,6 +1,7 @@
-/**
- * 2.1 Normalize
- */
+//--------------------------------------------------------------
+//   NORMALIZE
+//--------------------------------------------------------------
+
 
 html {
 	font-family: sans-serif;
@@ -55,7 +56,7 @@ a:hover {
 }
 
 abbr[title] {
-	border-bottom: 1px dotted;
+	border-bottom: rem(1) dotted;
 }
 
 b,
@@ -73,8 +74,8 @@ h1 {
 }
 
 mark {
-	background: #ff0;
-	color: #000;
+	background-color: $color__background-ins;
+	color: $color__text-body;
 }
 
 small {
@@ -106,7 +107,7 @@ svg:not(:root) {
 }
 
 figure {
-	margin: 1em 40px;
+	margin: 1em rem(40);
 }
 
 hr {
@@ -122,8 +123,8 @@ code,
 kbd,
 pre,
 samp {
-	font-family: monospace, monospace;
-	font-size: 1em;
+	font-family: $font__code, monospace;
+	font-size: rem(14);
 }
 
 button,
@@ -190,9 +191,9 @@ input[type="search"]::-webkit-search-decoration {
 }
 
 fieldset {
-	border: 1px solid #c0c0c0;
-	margin: 0 2px;
-	padding: 0.35em 0.625em 0.75em;
+	border: $border__fieldset;
+	margin: 0 rem(2);
+	padding: rem(5) rem(10) rem(15);
 }
 
 legend {

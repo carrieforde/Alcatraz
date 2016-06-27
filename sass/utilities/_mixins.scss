@@ -1,27 +1,24 @@
-/**
- * 2.3 Mixins
- */
+//--------------------------------------------------------------
+//   MIXINS
+//--------------------------------------------------------------
 
-/* Em output with px fallback (pixel fall backs will make adjusting font sizing easier later) */
-@mixin font-size( $sizeValue: 18 ) {
-	font-size: $sizeValue * 1px;
-	font-size: em($sizeValue);
-}
 
-/* Center - makes the assumption the element is already block */
+// Center - makes the assumption the element is already block
 @mixin center {
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/* Center block */
+
+// Center block - displays block and centers
 @mixin center-block {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-/* Clearfix */
+
+// Clearfix
 @mixin clearfix {
 	content: "";
 	display: table;
@@ -29,65 +26,71 @@
 	width: 100%;
 }
 
-/* Clear after (not all clearfix need this also) */
+
+// Clear after (not all clearfix need this also)
 @mixin clearfix-after {
 	clear: both;
 }
 
-/* Image Replacement */
+
+// Image Replacement
 @mixin hide-text {
 	border: 0;
 	clip: rect(0 0 0 0);
-	height: 1px;
-	margin: -1px;
+	height: rem(1);
+	margin: rem(-1);
 	overflow: hidden;
 	padding: 0;
 	position: absolute;
-	width: 1px;
+	width: rem(1);
 }
+
 
 // Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
+
 	.main-navigation #primary-menu-wrap,
 	.mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
 	.mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-		position: static;
-		top: auto;
-		right: auto;
-		left: auto;
 		height: auto;
+		left: auto;
 		min-height: auto;
-		width: auto;
-		text-align: center;
 		opacity: 1;
+		position: static;
+		right: auto;
+		text-align: center;
+		top: auto;
+		width: auto;
 	}
 
 	.main-navigation #primary-menu,
 	.mobile-nav-style-slide-left #primary-menu,
 	.mobile-nav-style-slide-right #primary-menu {
 		display: $display;
-		overflow: visible;
-		position: static;
-		min-height: auto;
 		height: auto;
+		min-height: auto;
+		overflow: visible;
 		padding-top: 0;
 		padding-bottom: 0;
+		position: static;
 		text-align: center;
 	}
 
 	.main-navigation #primary-menu .menu-item {
 		display: $display;
-		width: auto;
 		text-align: left;
+		width: auto;
 	}
 }
 
-// Larger Screen Nav Dropdown Styles
+// Larger Screen Nav Drop-down Styles
 @mixin large-screen-nav-dropdown {
+
 	.main-navigation #primary-menu {
+
 		.menu-item {
 			&.menu-item-has-children > a {
-				padding-right: 40px;
+				padding-right: rem(40);
 			}
 
 			&.hovered > .sub-menu {
@@ -98,14 +101,16 @@
 				position: absolute;
 
 				.sub-menu {
-					top: 0;
 					left: 100%;
+					top: 0;
 				}
 			}
 		}
 
 		> .menu-item {
+
 			&.reverse-expand {
+
 				.sub-menu {
 					right: 0;
 				}
@@ -120,12 +125,12 @@
 	.main-navigation #primary-menu {
 
 		.sub-menu {
-			position: relative;
-			padding: 0;
-			text-align: left;
 			background-color: $color__background-sub-menu;
 			border-bottom: $border__nav-sub-menu;
 			box-shadow: $color__box-shadow-sub-menu;
+			padding: 0;
+			position: relative;
+			text-align: left;
 
 			.menu-item {
 				display: block;

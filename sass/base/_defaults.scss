@@ -41,15 +41,16 @@ hr {
 	width: rem(1);
 
 	&:focus {
-		@include font-size(10);
-
 		background-color: $color__background-screen;
 		border-radius: rem(3);
 		box-shadow: $color__box-shadow-screen; /* Above WP toolbar. */
 		clip: auto !important;
 		color: $color__text-screen;
 		display: block;
-		font-weight: bold;
+		font: {
+			size: 10;
+			weight: 700;
+		}
 		height: auto;
 		left: 5px;
 		line-height: normal;

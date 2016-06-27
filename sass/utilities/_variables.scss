@@ -1,78 +1,91 @@
-/**
- * 2.2 Variables
- *
- * Include all site variables in this file.
- */
+//--------------------------------------------------------------
+//   VARIABLES
+//
+//   Include all site variables in this file.
+//--------------------------------------------------------------
+
 
 // 2.2.1 Colors
 
+
 // Color Palette
-$bright-light: #e7ecf1;
-$sf-fog: #95a0a3;
-$prision-cell-gray: #535d65;
-$mist: #E7ECF1;
-$alcatraz-blue: #5D85A2;
+$bondi-blue: #0d8bb7;
 $black-as-night: #040a04;
+$bright-light: #e7ecf1;
+$dim-gray: #666;
 $hope: #fff9c0;
+$mist: #E7ECF1;
+$prision-cell-gray: #535d65;
+$silver: #c0c0c0;
+$sf-fog: #95a0a3;
+$the-coast-is-clear: transparent;
 $true-white: #fff;
 $true-black: #000;
-$the-coast-is-clear: transparent;
+$white-smoke: #f1f1f1;
+
 
 // Background Colors
 $color__background-blockquote: $bright-light;
 $color__background-body: $true-white;
 $color__background-body-boxed: $mist;
 $color__background-boxed-site: $true-white;
-$color__background-button: $alcatraz-blue;
+$color__background-button: $bondi-blue;
 $color__background-button-hover: $the-coast-is-clear;
 $color__background-featured-image: $bright-light;
 $color__background-hr: $mist;
 $color__background-ins: $hope;
-$color__background-menu-toggle: $alcatraz-blue;
+$color__background-menu-toggle: $bondi-blue;
 $color__background-menu-toggle-hover: darken($color__background-menu-toggle, 10%);
 $color__background-mobile-nav: $true-white;
 $color__background-pre: $bright-light;
-$color__background-screen: #f1f1f1;
+$color__background-screen: $white-smoke;
 $color__background-sub-menu: $true-white;
 $color__background-sub-menu-toggle: $prision-cell-gray;
 $color__background-sub-menu-toggle-hover: lighten($color__background-sub-menu-toggle, 15%);
 $color__background-table-row: $bright-light;
 $color__background-table-thead: darken($color__background-table-row, 30%);
 
+
 // Overlay Colors
 $color__overlay-transparent: rgba(0,0,0,0.4);
+
 
 // Text Colors
 $color__text-body: $black-as-night;
 $color__text-button: $true-white;
-$color__text-button-hover: $alcatraz-blue;
+$color__text-button-hover: $bondi-blue;
 $color__text-input: $prision-cell-gray;
 $color__text-input-focus: $prision-cell-gray;
 $color__text-menu-toggle: $true-white;
 $color__text-menu-toggle-hover: $true-white;
 $color__text-screen: #21759b;
 $color__text-table-thead: $true-white;
-$color__link: $alcatraz-blue;
-$color__link-visited: darken($color__link, 30%);
+
+
+// Link Colors
+$color__link: $bondi-blue;
 $color__link-hover: darken($color__link, 20%);
-$color__link-mobile-nav: $alcatraz-blue;
-$color__link-nav: $alcatraz-blue;
+$color__link-mobile-nav: $bondi-blue;
+$color__link-nav: $bondi-blue;
 $color__link-nav-hover: darken($color__link-nav, 20%);
 $color__link-nav-sub-menu: $prision-cell-gray;
 $color__link-nav-sub-menu-hover: darken($color__link-nav-sub-menu, 10%);
+$color__link-visited: darken($color__link, 30%);
+
 
 // Box Shadow
-$color__box-shadow-mobile-primary-menu: 0 4px 8px -2px rgba(0, 0, 0, 0.2);
-$color__box-shadow-screen: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-$color__box-shadow-sub-menu: 0 3px 10px -3px rgba(0, 0, 0, 0.5);
+$color__box-shadow-mobile-primary-menu: 0 rem(4) rem(8) rem(-2) rgba(0, 0, 0, 0.2);
+$color__box-shadow-screen: 0 0 rem(2) rem(2) rgba(0, 0, 0, 0.6);
+$color__box-shadow-sub-menu: 0 rem(3) rem(10) rem(-3) rgba(0, 0, 0, 0.5);
 
 
-// 2.2.2 Typography
+// TYPOGRAPHY
+
 
 // Font Palette
-$source-sans-pro: 'Source Sans Pro', sans-serif;
-$source-code-pro: 'Source Code Pro', Courier, monospace;
 $font-awesome: FontAwesome;
+$source-code-pro: 'Source Code Pro', Courier, monospace;
+$source-sans-pro: 'Source Sans Pro', sans-serif;
 
 $font__body: $source-sans-pro;
 $font__code: $source-code-pro;
@@ -80,25 +93,27 @@ $font__headings: $source-sans-pro;
 $font__line-height-body: 1.5;
 $font__line-height-headings: 1.2;
 $font__line-height-pre: 1.6;
-$font__margin-headings: 0 0 em(10) 0;
+$font__margin-headings: 0 0 rem(10) 0;
 $font__pre: $source-code-pro;
 
+
 // 2.2.3 Borders
-$border__abbr: 1px dotted #666;
-$border__blockquote: em(5) solid darken($color__background-blockquote, 80%);
-$border__button: 2px solid $alcatraz-blue;
-$border__button-hover: 2px solid $alcatraz-blue;
-$border__input: 1px solid $sf-fog;
-$border__input-focus: 1px solid $prision-cell-gray;
-$border__nav-sub-menu: 3px solid $prision-cell-gray;
-$border__sub-page-nav-item: 1px dotted $mist;
-$border__table: 1px solid $bright-light;
+$border__abbr: rem(1) dotted $dim-gray;
+$border__blockquote: rem(5) solid darken($color__background-blockquote, 80%);
+$border__button: rem(2) solid $bondi-blue;
+$border__button-hover: rem(2) solid $bondi-blue;
+$border__fieldset: rem(1) solid $silver;
+$border__input: rem(1) solid $sf-fog;
+$border__input-focus: rem(1) solid $prision-cell-gray;
+$border__nav-sub-menu: rem(3) solid $prision-cell-gray;
+$border__sub-page-nav-item: rem(1) dotted $mist;
+$border__table: rem(1) solid $bright-light;
 
 
 // 2.2.4 Structure
-$size__padding-default: 20px;
+$size__padding-default: rem(20);
 $size__padding-default-half: $size__padding-default / 2;
 $size__padding-default-double: $size__padding-default * 2;
 $size__width-site: 100%;
-$size__width-boxed: 1100px;
-$size__width-boxed-content: 1100px;
+$size__width-boxed: 1100px; // Site widths should be fixed pixels.
+$size__width-boxed-content: 1100px; // Site widths should be fixed pixels.
