@@ -1,7 +1,9 @@
 //--------------------------------------------------------------
-//   UTILITIES
+//   VARIABLES
 //--------------------------------------------------------------
 
-@import "variables/index";
-@import "mixins";
-@import "normalize";
+@import "sizes";
+@import "breakpoints";
+@import "colors";
+@import "typography";
+@import "borders";

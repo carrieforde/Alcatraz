@@ -1,11 +1,6 @@
 //--------------------------------------------------------------
-//   VARIABLES
-//
-//   Include all site variables in this file.
+//   COLORS
 //--------------------------------------------------------------
-
-
-// 2.2.1 Colors
 
 
 // Color Palette
@@ -75,44 +70,3 @@ $color__link-visited: darken($color__link, 30%);
 $color__box-shadow-mobile-primary-menu: 0 rem(4) rem(8) rem(-2) rgba(0, 0, 0, 0.2);
 $color__box-shadow-screen: 0 0 rem(2) rem(2) rgba(0, 0, 0, 0.6);
 $color__box-shadow-sub-menu: 0 rem(3) rem(10) rem(-3) rgba(0, 0, 0, 0.5);
-
-
-// TYPOGRAPHY
-
-
-// Font Palette
-$font-awesome: FontAwesome;
-$source-code-pro: 'Source Code Pro', Courier, monospace;
-$source-sans-pro: 'Source Sans Pro', sans-serif;
-
-$font__body: $source-sans-pro;
-$font__code: $source-code-pro;
-$font__headings: $source-sans-pro;
-$font__line-height-body: 1.5;
-$font__line-height-headings: 1.2;
-$font__line-height-pre: 1.6;
-$font__margin-headings: 0 0 rem(10) 0;
-$font__pre: $source-code-pro;
-
-
-// 2.2.3 Borders
-$border__abbr: rem(1) dotted $dim-gray;
-$border__blockquote: rem(5) solid darken($color__background-blockquote, 80%);
-$border__button: rem(2) solid $alcatraz-blue;
-$border__button-hover: rem(2) solid $alcatraz-blue;
-$border__fieldset: rem(1) solid $silver;
-$border__input: rem(1) solid $sf-fog;
-$border__input-focus: rem(1) solid $prision-cell-gray;
-$border__nav-sub-menu: rem(3) solid $prision-cell-gray;
-$border__pre: rem(1) solid $sf-fog;
-$border__sub-page-nav-item: rem(1) dotted $mist;
-$border__table: rem(1) solid $mist;
-
-
-// 2.2.4 Structure
-$size__padding-default: rem(20);
-$size__padding-default-half: $size__padding-default / 2;
-$size__padding-default-double: $size__padding-default * 2;
-$size__width-site: 100%;
-$size__width-boxed: 1100px; // Site widths should be fixed pixels.
-$size__width-boxed-content: 1100px; // Site widths should be fixed pixels.
