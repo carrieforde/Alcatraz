@@ -264,7 +264,7 @@ hr {
   height: 0.125rem;
   border: 0;
   margin: 1em 0;
-  background-color: #e7ecf1;
+  background-color: #ddd;
 }
 
 .screen-reader-text {
@@ -431,8 +431,8 @@ i {
 }
 
 blockquote {
-  background-color: #e7ecf1;
-  border-left: 0.3125rem solid #182028;
+  background-color: #ddd;
+  border-left: 0.3125rem solid #111111;
   font-style: italic;
   margin: 0 1.5625rem 1.5625rem;
   padding: 0.9375rem 1.25rem 0.9375rem 0.9375rem;
@@ -618,7 +618,7 @@ a:hover, a:active {
 }
 
 .alcatraz-sub-page-nav li {
-  border-bottom: 0.0625rem dotted #e7ecf1;
+  border-bottom: 0.0625rem dotted #ddd;
   margin: 0;
   padding: 0;
   position: relative;
@@ -659,7 +659,15 @@ a:hover, a:active {
 }
 
 .alcatraz-sub-page-nav .children.toggled li {
-  border-top: 0.0625rem dotted #e7ecf1;
+  border-bottom: 0.0625rem dotted #ddd;
+}
+
+.alcatraz-sub-page-nav .children.toggled li:first-child {
+  border-top: 0.0625rem dotted #ddd;
+}
+
+.alcatraz-sub-page-nav .children.toggled li:last-child {
+  border-bottom: none;
 }
 
 .alcatraz-sub-page-nav .current_page_item {
@@ -1294,25 +1302,25 @@ input[type="submit"]:focus {
 }
 
 table {
-  border: 0.0625rem solid #e7ecf1;
+  border: 0.0625rem solid #ddd;
   margin: 0 0 1.5625rem;
   width: 100%;
 }
 
 thead {
-  background-color: #86a0b9;
-  border-bottom: 0.0625rem solid #e7ecf1;
+  background-color: #919191;
+  border-bottom: 0.0625rem solid #ddd;
   color: #fff;
 }
 
 tr:nth-child(even) {
-  background-color: #e7ecf1;
+  background-color: #ddd;
 }
 
 th,
 td {
   padding: 0.5em;
-  border-right: 0.0625rem solid #e7ecf1;
+  border-right: 0.0625rem solid #ddd;
 }
 
 th :last-child,
@@ -1345,7 +1353,7 @@ td :last-child {
 }
 
 #wp-calendar tr {
-  border-bottom: 0.0625rem solid #e7ecf1;
+  border-bottom: 0.0625rem solid #ddd;
 }
 
 #wp-calendar td,
@@ -1507,7 +1515,7 @@ input[type="submit"].search-submit {
 }
 
 .boxed {
-  background-color: #e7ecf1;
+  background-color: #ddd;
 }
 
 .site-content {

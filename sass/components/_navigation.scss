@@ -118,7 +118,15 @@ a {
 	}
 
 	.children.toggled li {
-		border-top: $border__sub-page-nav-item;
+		border-bottom: $border__sub-page-nav-item;
+
+		&:first-child {
+			border-top: $border__sub-page-nav-item;
+		}
+
+		&:last-child {
+			border-bottom: none;
+		}
 	}
 
 	.current_page_item {
