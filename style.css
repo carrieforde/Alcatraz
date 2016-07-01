@@ -2024,6 +2024,7 @@ input[type="submit"].search-submit {
     text-align: right;
   }
   .header-style-short .main-navigation #primary-menu {
+    float: right;
     text-align: right;
   }
   .header-style-short .main-navigation #primary-menu .menu-item.menu-item-has-children a.sub-level-toggle {
