@@ -18,34 +18,6 @@
 }
 
 
-// Clearfix
-@mixin clearfix {
-	content: "";
-	display: table;
-	table-layout: fixed;
-	width: 100%;
-}
-
-
-// Clear after (not all clearfix need this also)
-@mixin clearfix-after {
-	clear: both;
-}
-
-
-// Image Replacement
-@mixin hide-text {
-	border: 0;
-	clip: rect(0 0 0 0);
-	height: rem(1);
-	margin: rem(-1);
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-	width: rem(1);
-}
-
-
 // Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 
