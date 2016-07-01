@@ -26,11 +26,10 @@
 	}
 
 	.inner-menu-toggle-span {
+		@include position(absolute, rem(22) null null rem(9));
+
 		background-color: $color__background-menu-toggle;
 		height: rem(3);
-		left: rem(9);
-		position: absolute;
-		top: rem(22);
 		transition: all 0.2s ease;
 		width: rem(25);
 
@@ -84,19 +83,17 @@
 .mobile-nav-toggle-style-hamburger {
 
 	.menu-toggle {
-		height: rem(45);
+		@include position(absolute, rem(12) rem(10) null null);
+		@include size(rem(45));
+
 		padding: rem(10);
-		position: absolute;
-		right: rem(10);
-		top: rem(12);
-		width: rem(45);
 
 		.menu-toggle-span {
+			@include size(rem(25) rem(3));
+
 			background-color: $color__background-menu-toggle;
-			height: rem(3);
 			position: absolute;
 			transition: all 0.2s ease-in;
-			width: rem(25);
 
 			&.span-1 {
 				top: rem(12);
@@ -165,15 +162,14 @@
 
 // Sub Level Toggles Shared Styles
 .sub-level-toggle {
+	@include position(absolute, 0 0 null null);
+
 	cursor: pointer;
 	overflow: hidden;
 	padding-left: 0; // need to revisit this
 	padding-right: 0; // need to revisit this
-	position: absolute;
-	right: 0;
 	text-align: center;
 	text-indent: 9999%;
-	top: 0;
 	width: rem(50);
 
 	.sub-level-toggle-span {
@@ -193,11 +189,10 @@
 	.sub-level-toggle {
 
 		.sub-level-toggle-span {
-			height: rem(2);
-			position: absolute;
-			top: rem(22.5);
+			@include position(absolute, rem(22.5) null null null);
+			@include size(rem(11.5) rem(2));
+
 			transition: all 0.2s ease-in;
-			width: rem(11.5);
 
 			&.span-1 {
 				display: block;
@@ -239,12 +234,10 @@
 	.sub-level-toggle {
 
 		.sub-level-toggle-span {
-			height: rem(2);
-			left: rem(17.5);
-			position: absolute;
-			top: rem(22.5);
+			@include position(absolute, rem(22.5) null null rem(17.5));
+			@include size(rem(14) rem(2));
+
 			transition: all 0.2s ease-out;
-			width: rem(14);
 
 			&.span-1 {
 				display: block;
@@ -438,9 +431,9 @@
 	}
 
 	#primary-menu-wrap {
+		@include position(fixed, 0 null null null);
+
 		min-height: 100vh;
-		position: fixed;
-		top: 0;
 		width: rem(260);
 		z-index: 100;
 	}
@@ -461,13 +454,12 @@
 		}
 
 		.menu-overlay {
+			@include position(fixed, 0 null null null);
+			@include size(100% 150vh);
+
 			background-color: $color__overlay-transparent;
 			display: block;
-			height: 150vh;
 			overflow: hidden;
-			position: fixed;
-			top: 0;
-			width: 100%;
 			z-index: 99;
 		}
 	}
@@ -482,11 +474,9 @@
 // Mobile Nav Slide From Left Styles
 .mobile-nav-style-slide-left {
 	#mobile-nav-left-swipe-zone {
-		height: 100vh;
-		left: 0;
-		position: fixed;
-		top: 0;
-		width: rem(20);
+		@include position(fixed, 0 null null 0);
+		@include size(rem(20) 100vh);
+
 		z-index: 100;
 	}
 
@@ -520,11 +510,9 @@
 .mobile-nav-style-slide-right {
 
 	#mobile-nav-right-swipe-zone {
-		height: 100vh;
-		position: fixed;
-		right: 0;
-		top: 0;
-		width: rem(20);
+		@include position(fixed, 0 0 null null);
+		@include size(rem(20) 100vh);
+
 		z-index: 100;
 	}
 
@@ -630,9 +618,9 @@
 			}
 
 			.sub-level-toggle-span {
-				height: rem(1);
+				@include size(rem(8) rem(1));
+
 				left: rem(11.5);
-				width: rem(8);
 			}
 
 			.sub-level-toggle-span.span-2 {
@@ -692,9 +680,9 @@
 			}
 
 			.sub-level-toggle-span {
-				height: rem(1);
+				@include size(rem(8) rem(1));
+
 				left: rem(11.5);
-				width: rem(8);
 			}
 
 			.sub-level-toggle-span.span-2 {
@@ -706,9 +694,9 @@
 		&.sub-menu-toggle-style-plus-minus .sub-level-toggle {
 
 			.sub-level-toggle-span {
-				height: rem(1);
+				@include size(rem(10) rem(1));
+
 				left: rem(14);
-				width: rem(10);
 			}
 		}
 
@@ -723,7 +711,7 @@
 @media (min-width: em(960)) {
 
 	.header-style-side {
-		@include large-screen-nav-display( block );
+		@include large-screen-nav-display(block);
 
 		.main-navigation,
 		&.mobile-nav-style-slide-left,
