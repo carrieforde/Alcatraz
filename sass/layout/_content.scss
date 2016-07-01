@@ -12,10 +12,6 @@
 
 	overflow: hidden;
 
-	&::after {
-		@include clearfix-after;
-	}
-
 	.boxed & {
 		@include center;
 
