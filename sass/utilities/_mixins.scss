@@ -24,15 +24,12 @@
 	.main-navigation #primary-menu-wrap,
 	.mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
 	.mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-		height: auto;
-		left: auto;
+		@include position(static, auto auto null auto);
+		@include size(auto);
+
 		min-height: auto;
 		opacity: 1;
-		position: static;
-		right: auto;
 		text-align: center;
-		top: auto;
-		width: auto;
 	}
 
 	.main-navigation #primary-menu,

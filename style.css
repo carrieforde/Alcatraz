@@ -1846,15 +1846,15 @@ input[type="submit"].search-submit {
   .header-style-default .main-navigation #primary-menu-wrap,
   .header-style-default .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
   .header-style-default .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-    height: auto;
+    position: static;
+    top: auto;
+    right: auto;
     left: auto;
+    height: auto;
+    width: auto;
     min-height: auto;
     opacity: 1;
-    position: static;
-    right: auto;
     text-align: center;
-    top: auto;
-    width: auto;
   }
   .header-style-default .main-navigation #primary-menu,
   .header-style-default .mobile-nav-style-slide-left #primary-menu,
@@ -1947,15 +1947,15 @@ input[type="submit"].search-submit {
   .header-style-short .main-navigation #primary-menu-wrap,
   .header-style-short .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
   .header-style-short .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-    height: auto;
+    position: static;
+    top: auto;
+    right: auto;
     left: auto;
+    height: auto;
+    width: auto;
     min-height: auto;
     opacity: 1;
-    position: static;
-    right: auto;
     text-align: center;
-    top: auto;
-    width: auto;
   }
   .header-style-short .main-navigation #primary-menu,
   .header-style-short .mobile-nav-style-slide-left #primary-menu,
@@ -2315,15 +2315,15 @@ input[type="submit"].search-submit {
   .header-style-side .main-navigation #primary-menu-wrap,
   .header-style-side .mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
   .header-style-side .mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-    height: auto;
+    position: static;
+    top: auto;
+    right: auto;
     left: auto;
+    height: auto;
+    width: auto;
     min-height: auto;
     opacity: 1;
-    position: static;
-    right: auto;
     text-align: center;
-    top: auto;
-    width: auto;
   }
   .header-style-side .main-navigation #primary-menu,
   .header-style-side .mobile-nav-style-slide-left #primary-menu,
