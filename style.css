@@ -268,14 +268,16 @@ hr {
 }
 
 .screen-reader-text {
-  clip: rect(1px, 1px, 1px, 1px);
   height: 0.0625rem;
+  width: 0.0625rem;
+  clip: rect(1px, 1px, 1px, 1px);
   overflow: hidden;
   position: absolute !important;
-  width: 0.0625rem;
 }
 
 .screen-reader-text:focus {
+  height: auto;
+  width: auto;
   background-color: #f1f1f1;
   border-radius: 0.1875rem;
   box-shadow: 0 0 0.125rem 0.125rem rgba(0, 0, 0, 0.6);
@@ -285,13 +287,11 @@ hr {
   display: block;
   font-size: 10;
   font-weight: 700;
-  height: auto;
   left: 5px;
   line-height: normal;
   padding: 0.9375rem 1.4375rem 0.875rem;
   text-decoration: none;
   top: 0.3125rem;
-  width: auto;
   z-index: 100000;
 }
 
