@@ -25,6 +25,19 @@
 }
 
 
+// Image replacement - hides text, but doesn't make it disappear.
+// Great for accessibility.
+@mixin hide-text {
+	@include size(rem(1));
+
+	border: 0;
+	clip: rect(0 0 0 0);
+	margin: rem(-1);
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}
+
 // Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 

@@ -756,9 +756,14 @@ a:hover, a:active {
 }
 
 .mobile-nav-toggle-style-hamburger .menu-toggle .menu-text {
+  height: 0.0625rem;
+  width: 0.0625rem;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -0.0625rem;
   overflow: hidden;
-  text-indent: 101%;
-  white-space: nowrap;
+  padding: 0;
+  position: absolute;
 }
 
 .mobile-nav-toggle-style-hamburger .toggled .menu-toggle .menu-toggle-span.span-1 {
@@ -1417,9 +1422,14 @@ input[type="submit"].search-submit {
 
 .has-logo .site-title,
 .has-mobile-logo .site-title {
+  height: 0.0625rem;
+  width: 0.0625rem;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -0.0625rem;
   overflow: hidden;
-  text-indent: 101%;
-  white-space: nowrap;
+  padding: 0;
+  position: absolute;
 }
 
 .site-description {
@@ -1429,9 +1439,14 @@ input[type="submit"].search-submit {
 
 .has-logo .site-description,
 .has-mobile-logo .site-description {
+  height: 0.0625rem;
+  width: 0.0625rem;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -0.0625rem;
   overflow: hidden;
-  text-indent: 101%;
-  white-space: nowrap;
+  padding: 0;
+  position: absolute;
 }
 
 .transparent-header .site-header {
