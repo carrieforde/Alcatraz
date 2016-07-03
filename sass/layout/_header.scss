@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-//   4.1 HEADER
+//   HEADER
 //--------------------------------------------------------------
 
 
@@ -8,11 +8,11 @@
 }
 
 .header-image-wrap {
+	@include size(100%);
+
 	display: block;
-	height: 100%;
 	overflow: hidden;
 	position: absolute;
-	width: 100%;
 }
 
 .header-image {
@@ -98,12 +98,11 @@
 	.header-style-side {
 
 		.site-header {
-			height: 100%;
+			@include size(rem(280) 100%);
+
 			padding: $size__padding-default-half 0;
 			position: fixed;
 			overflow-y: auto;
-			width: rem(280);
-			width: calc(280px);
 
 			.header-inner {
 				max-width: 100%;
@@ -118,7 +117,6 @@
 
 		.site-header {
 			width: rem(300);
-			width: calc(300px);
 		}
 	}
 }
@@ -128,9 +126,8 @@
 	.header-style-side {
 
 		.site-header {
-			width: rem(320);
-			width: calc(320px);
 			padding: $size__padding-default $size__padding-default-half;
+			width: rem(320);
 		}
 	}
 }

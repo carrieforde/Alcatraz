@@ -1387,11 +1387,11 @@ input[type="submit"].search-submit {
 }
 
 .header-image-wrap {
-  display: block;
   height: 100%;
+  width: 100%;
+  display: block;
   overflow: hidden;
   position: absolute;
-  width: 100%;
 }
 
 .header-image {
@@ -2350,11 +2350,10 @@ input[type="submit"].search-submit {
   }
   .header-style-side .site-header {
     height: 100%;
+    width: 17.5rem;
     padding: 0.625rem 0;
     position: fixed;
     overflow-y: auto;
-    width: 17.5rem;
-    width: calc(280px);
   }
   .header-style-side .site-header .header-inner {
     max-width: 100%;
@@ -2408,7 +2407,6 @@ input[type="submit"].search-submit {
 @media (min-width: 65em) {
   .header-style-side .site-header {
     width: 18.75rem;
-    width: calc(300px);
   }
   .header-style-side .site-content {
     width: 70%;
@@ -2441,9 +2439,8 @@ input[type="submit"].search-submit {
 
 @media (min-width: 71.875em) {
   .header-style-side .site-header {
-    width: 20rem;
-    width: calc(320px);
     padding: 1.25rem 0.625rem;
+    width: 20rem;
   }
   .header-style-side .site-content {
     width: 70%;
