@@ -18,6 +18,13 @@
 }
 
 
+// Margin-Padding reset - useful for styling <ul>s
+@mixin margin-padding-reset {
+	margin: 0;
+	padding: 0;
+}
+
+
 // Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 
