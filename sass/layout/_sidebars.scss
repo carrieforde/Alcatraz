@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-//   4.4 SIDEBARS
+//   SIDEBARS
 //--------------------------------------------------------------
 
 
@@ -25,13 +25,16 @@
 	.left-sidebar {
 
 		.content-area {
+			@include omega;
+			@include span-columns(8);
+
 			float: right;
-			width: 72%;
 		}
 
 		.primary-sidebar {
+			@include span-columns(4);
+
 			float: left;
-			width: 28%;
 		}
 	}
 
@@ -39,13 +42,12 @@
 	.right-sidebar {
 
 		.content-area {
-			float: left;
-			width: 72%;
+			@include span-columns(8);
 		}
 
 		.primary-sidebar {
-			float: right;
-			width: 28%;
+			@include omega();
+			@include span-columns(4);
 		}
 	}
 }
@@ -63,31 +65,33 @@
 
 	.header-style-side.boxed-content {
 
-		// Left sidebar
-		&.left-sidebar {
+		// Left Sidebar
+		.left-sidebar {
 
 			.content-area {
-				width: 72%;
+				@include omega;
+				@include span-columns(8);
+
 				float: right;
 			}
 
 			.primary-sidebar {
-				width: 28%;
+				@include span-columns(4);
+
 				float: left;
 			}
 		}
 
 		// Right Sidebar
-		&.right-sidebar {
+		.right-sidebar {
 
 			.content-area {
-				width: 72%;
-				float: left;
+				@include span-columns(8);
 			}
 
 			.primary-sidebar {
-				width: 28%;
-				float: right;
+				@include omega();
+				@include span-columns(4);
 			}
 		}
 	}
