@@ -1339,7 +1339,6 @@ td :last-child {
   text-align: center;
 }
 
-/* Search Form */
 .search-form::after {
   clear: both;
   content: "";
@@ -1359,7 +1358,6 @@ input[type="submit"].search-submit {
   padding: 0.28125rem 0.625rem;
 }
 
-/* All WP Widgets with UL structures */
 .widget_archive ul,
 .widget_categories ul,
 .widget_pages ul,
