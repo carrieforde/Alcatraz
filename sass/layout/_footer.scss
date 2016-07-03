@@ -65,6 +65,7 @@
 }
 
 .footer-bottom {
+	clear: both;
 	text-align: center;
 }
 
@@ -73,21 +74,21 @@
 	.footer-widget-areas-2 {
 
 		.footer-widget-area {
-			@include span-columns( 6 of 12 );
+			@include span-columns(6);
 		}
 	}
 
 	.footer-widget-areas-3 {
 
 		.footer-widget-area {
-			@include span-columns( 4 of 12 );
+			@include span-columns(4);
 		}
 	}
 
 	.footer-widget-areas-4 {
 
 		.footer-widget-area {
-			@include span-columns( 3 of 12 );
+			@include span-columns(3);
 		}
 	}
 }
@@ -95,9 +96,9 @@
 
 // Social network icons
 .alcatraz-social-icons {
+	@include margin-padding-reset;
+
 	list-style: none;
-	margin: 0;
-	padding-left: 0;
 	text-align: center;
 
 	li {
