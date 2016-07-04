@@ -38,6 +38,19 @@
 	position: absolute;
 }
 
+
+// Omega Reset - Use with Neat columns to easily reset omega.
+@mixin omega-reset($nth) {
+	&:nth-child(#{nth}) {
+		margin-right: flex-gutter();
+	}
+
+	&:nth-child(#{nth}+1) {
+		clear: none;
+	}
+}
+
+
 // Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 
