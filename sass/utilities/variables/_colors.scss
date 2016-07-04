@@ -37,6 +37,7 @@ $color__background-sub-menu-toggle: $prision-cell-gray;
 $color__background-sub-menu-toggle-hover: lighten($color__background-sub-menu-toggle, 15%);
 $color__background-table-row: $mist;
 $color__background-table-thead: darken($color__background-table-row, 30%);
+$color__background-visual-grid: tint($alcatraz-blue, 80%); // for use with Neat
 
 
 // Overlay Colors

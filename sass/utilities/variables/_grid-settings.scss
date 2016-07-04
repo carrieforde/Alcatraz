@@ -26,14 +26,14 @@ $fg-gutter: $gutter;
 
 // Visual Grid - Neat's optional settings for visualizing the
 // grid.
-$visual-grid: true;
-$visual-grid-color: #cfe8f1;
+$visual-grid: false;
+$visual-grid-color: $color__background-visual-grid;
 $visual-grid-index: back;
 $visual-grid-opacity: 0.4;
 
 
 // Visual Grid Media Query Settings
 $vg-phone-portrait: new-breakpoint(max-width em(640) 4);
-$vg-phone-landscape: new-breakpoint(min-width em(640) 6);
+$vg-phone-landscape: new-breakpoint(min-width em(640) 8);
 $vg-tablet-portrait: new-breakpoint(min-width em(768) 8);
 $vg-tablet-landscape: new-breakpoint(min-width em(1024) 12);
