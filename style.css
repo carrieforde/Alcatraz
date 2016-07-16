@@ -330,7 +330,7 @@ hr {
 .site-header::after {
   clear: both;
   content: "";
-  display: table;
+  display: block;
 }
 
 .infinite-scroll .posts-navigation,
@@ -910,7 +910,7 @@ a:hover, a:active {
 .main-navigation #primary-menu::after::after {
   clear: both;
   content: "";
-  display: table;
+  display: block;
 }
 
 .main-navigation #primary-menu .menu-item {
@@ -1346,7 +1346,7 @@ td :last-child {
 .search-form::after {
   clear: both;
   content: "";
-  display: table;
+  display: block;
 }
 
 .search-field {
@@ -1481,7 +1481,7 @@ input[type="submit"].search-submit {
 .site::after {
   clear: both;
   content: "";
-  display: table;
+  display: block;
 }
 
 .boxed .site {
@@ -1586,7 +1586,7 @@ input[type="submit"].search-submit {
 .footer-widget-areas::after::after {
   clear: both;
   content: "";
-  display: table;
+  display: block;
 }
 
 .footer-widget-area {
