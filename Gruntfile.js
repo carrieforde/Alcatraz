@@ -8,8 +8,8 @@ module.exports = function( grunt ) {
 				// sourceComments: true,
 				sourceMap: true,
 				includePaths: [
-					'lib/bourbon/app/assets/stylesheets',
-					'lib/neat/app/assets/stylesheets'
+					'node_modules/bourbon/app/assets/stylesheets',
+					'node_modules/bourbon-neat/app/assets/stylesheets'
 				]
 			},
 			dist: {
