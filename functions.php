@@ -167,6 +167,7 @@ function alcatraz_scripts() {
 	global $alcatraz_google_fonts;
 
 	$current_theme = wp_get_theme();
+	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	// Google fonts.
 	wp_register_style(
@@ -179,7 +180,7 @@ function alcatraz_scripts() {
 	// Main theme CSS.
 	wp_register_style(
 		'alcatraz-style',
-		ALCATRAZ_URL . 'style.min.css',
+		ALCATRAZ_URL . 'style' . $min . '.css',
 		array(),
 		ALCATRAZ_VERSION
 	);
@@ -187,7 +188,7 @@ function alcatraz_scripts() {
 	// Main theme JS.
 	wp_register_script(
 		'alcatraz-scripts',
-		ALCATRAZ_URL . 'js/alcatraz-theme.min.js',
+		ALCATRAZ_URL . 'js/alcatraz-theme' . $min . '.js',
 		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true
