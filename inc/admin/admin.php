@@ -121,28 +121,28 @@ function alcatraz_page_options_metabox() {
 	// Page layout.
 	$page_options->add_field( array(
 		'name'    => __( 'Layout', 'alcatraz' ),
-		'desc'    => __( 'Select the layout for this page', 'alcatraz' ),
+		'desc'    => __( 'Set the layout for this page', 'alcatraz' ),
 		'id'      => $prefix . 'page_layout',
-		'type'    => 'select',
-		'options' => array(
-			'default'       => __( 'Default', 'alcatraz' ),
-			'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
-			'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
-			'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
-		),
-	) );
-
-	// Page width.
-	$page_options->add_field( array(
-		'name'    => __( 'Page Width', 'alcatraz' ),
-		'desc'    => __( 'Set the width for this page', 'alcatraz' ),
-		'id'      => $prefix . 'page_width',
 		'type'    => 'select',
 		'options' => array(
 			'default'        => __( 'Default', 'alcatraz' ),
 			'full-width'     => __( 'Full Width', 'alcatraz' ),
 			'boxed'          => __( 'Boxed', 'alcatraz' ),
 			'boxed-content'  => __( 'Boxed Content', 'alcatraz' ),
+		),
+	) );
+
+	// Page sidebar.
+	$page_options->add_field( array(
+		'name'    => __( 'Sidebar', 'alcatraz' ),
+		'desc'    => __( 'Select the sidebar position for this page', 'alcatraz' ),
+		'id'      => $prefix . 'page_sidebar',
+		'type'    => 'select',
+		'options' => array(
+			'default'       => __( 'Default', 'alcatraz' ),
+			'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
+			'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
+			'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
 		),
 	) );
 
