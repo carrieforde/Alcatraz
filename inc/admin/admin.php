@@ -132,6 +132,20 @@ function alcatraz_page_options_metabox() {
 		),
 	) );
 
+	// Page width.
+	$page_options->add_field( array(
+		'name'    => __( 'Page Width', 'alcatraz' ),
+		'desc'    => __( 'Set the width for this page', 'alcatraz' ),
+		'id'      => $prefix . 'page_width',
+		'type'    => 'select',
+		'options' => array(
+			'default'        => __( 'Default', 'alcatraz' ),
+			'full-width'     => __( 'Full Width', 'alcatraz' ),
+			'boxed'          => __( 'Boxed', 'alcatraz' ),
+			'boxed-content'  => __( 'Boxed Content', 'alcatraz' ),
+		),
+	) );
+
 	// Hide Title.
 	$page_options->add_field( array(
 		'name' => __( 'Hide Page Title?', 'alcatraz' ),
