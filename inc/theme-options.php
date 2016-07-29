@@ -35,7 +35,7 @@ function alcatraz_get_option_defaults() {
 
 	 // Loop over any social networks and default the network URLs to empty string.
 	 foreach ( $networks as $network => $network_data ) {
-	     $defaults[ $network . '_url' ] = '';
+		 $defaults[ $network . '_url' ] = '';
 	 }
 
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
@@ -63,8 +63,8 @@ function alcatraz_validate_options( $input ) {
 	// Update options on the options page.
 	foreach ( $networks as $network => $network_data ) {
 		if ( isset( $input[ $network . '_url' ] ) ) {
-	    	$options[ $network . '_url' ] = sanitize_text_field( $input[ $network . '_url' ] );
-	    }
+			$options[ $network . '_url' ] = sanitize_text_field( $input[ $network . '_url' ] );
+		}
 	}
 
 	// Update options in the Customizer.
@@ -165,7 +165,7 @@ function alcatraz_get_site_layouts( $context = '' ) {
  *
  * @return  array
  */
-function alcatraz_get_page_layouts( $context = '' ) {
+function alcatraz_get_site_sidebar( $context = '' ) {
 
 	$styles = array(
 		'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
@@ -173,7 +173,7 @@ function alcatraz_get_page_layouts( $context = '' ) {
 		'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
 	);
 
-	return apply_filters( 'alcatraz_page_layouts', $styles, $context );
+	return apply_filters( 'alcatraz_site_sidebars', $styles, $context );
 }
 
 /**
