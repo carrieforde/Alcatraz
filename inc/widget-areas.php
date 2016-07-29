@@ -80,17 +80,17 @@ function alcatraz_output_primary_sidebar() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
+	$page_sidebar = get_post_meta( $post->ID, '_alcatraz_page_sidebar', true );
 
-	// Bail if the page layout is set to full-width.
-	if ( $page_layout ) {
-		if ( 'no-sidebar' === $page_layout ) {
+	// Bail if the page layout is set to no sidebar.
+	if ( $page_sidebar ) {
+		if ( 'no-sidebar' === $page_sidebar ) {
 			return;
-		} elseif ( 'default' === $page_layout && isset( $options['page_layout'] ) && 'no-sidebar' === $options['page_layout'] ) {
+		} elseif ( 'default' === $page_sidebar && isset( $options['site_sidebar'] ) && 'no-sidebar' === $options['site_sidebar'] ) {
 			return;
 		}
 	} else {
-		if ( isset( $options['page_layout'] ) && 'no-sidebar' === $options['page_layout'] ) {
+		if ( isset( $options['site_sidebar'] ) && 'no-sidebar' === $options['site_sidebar'] ) {
 			return;
 		}
 	}

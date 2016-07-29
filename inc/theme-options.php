@@ -17,7 +17,7 @@ function alcatraz_get_option_defaults() {
 	$defaults = array(
 		'show_activation_notice'  => 1,
 		'site_layout'             => 'full-width',
-		'page_layout'             => 'right-sidebar',
+		'site_sidebar'             => 'right-sidebar',
 		'page_banner_widget_area' => 0,
 		'sub_page_nav_in_sidebar' => 0,
 		'header_style'            => 'default',
@@ -71,8 +71,8 @@ function alcatraz_validate_options( $input ) {
 	if ( isset( $input['site_layout'] ) ) {
 		$options['site_layout'] = sanitize_text_field( $input['site_layout'] );
 	}
-	if ( isset( $input['page_layout'] ) ) {
-		$options['page_layout'] = sanitize_text_field( $input['page_layout'] );
+	if ( isset( $input['site_sidebar'] ) ) {
+		$options['site_sidebar'] = sanitize_text_field( $input['site_sidebar'] );
 	}
 	if ( isset( $input['page_banner_widget_area'] ) ) {
 		$options['page_banner_widget_area'] = absint( $input['page_banner_widget_area'] );
