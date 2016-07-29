@@ -23,7 +23,10 @@ function alcatraz_body_classes( $classes ) {
 	$options = get_option( 'alcatraz_options' );
 
 	// Site layout class.
-	if ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
+	$page_width = get_post_meta( $post->ID, '_alcatraz_page_width', true );
+	if ( $page_width && 'default' != $page_width ) {
+		$classes[] = esc_attr( $page_width );
+	} elseif ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
 		$classes[] = esc_attr( $options['site_layout'] );
 	}
 
