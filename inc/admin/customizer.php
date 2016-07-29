@@ -109,7 +109,7 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Page layout.
+	// Site sidebar.
 	$wp_customize->add_setting(
 		'alcatraz_options[site_sidebar]',
 		array(
