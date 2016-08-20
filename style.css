@@ -1591,13 +1591,14 @@ input[type="submit"].search-submit {
 .alcatraz-social-icons {
   margin: 0;
   padding: 0;
+  display: -ms-flexbox;
+  display: flex;
   list-style: none;
   text-align: center;
 }
 
 .alcatraz-social-icons li {
-  display: inline-block;
-  margin-right: 0.625rem;
+  margin: 0 0.3125rem;
 }
 
 .alcatraz-social-icons li:last-child {

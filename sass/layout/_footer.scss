@@ -98,12 +98,12 @@
 .alcatraz-social-icons {
 	@include margin-padding-reset;
 
+	display: flex;
 	list-style: none;
 	text-align: center;
 
 	li {
-		display: inline-block;
-		margin-right: rem(10);
+		margin: 0 rem(5);
 
 		&:last-child {
 			margin-right: 0;
