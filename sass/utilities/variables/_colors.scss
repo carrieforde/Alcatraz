@@ -19,6 +19,27 @@ $true-black: #000;
 $white-smoke: #f1f1f1;
 
 
+// Social Media Colors
+$facebook: #3b5998;
+$google-plus: #dd4b39;
+$instagram: #517fa4;
+$linkedin: #007bb6;
+$pinterest: #cb2027;
+$twitter: #00aced;
+$youtube: #bb0000;
+
+// $social-colors() map
+$social-colors: (
+	facebook: $facebook,
+	google-plus: $google-plus,
+	instagram: $instagram,
+	linkedin: $linkedin,
+	pinterest: $pinterest,
+	twitter: $twitter,
+	youtube: $youtube,
+);
+
+
 // Background Colors
 $color__background-blockquote: $mist;
 $color__background-body: $true-white;
