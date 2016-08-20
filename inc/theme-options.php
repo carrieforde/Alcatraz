@@ -274,27 +274,27 @@ function alcatraz_get_social_networks( $context = '' ) {
 		),
 		'facebook' => array(
 			'display_name' => __( 'Facebook', 'alcatraz' ),
-			'description'  => __( 'Enter your Facebook url', 'alcatraz' ),
+			'description'  => __( 'Enter your Facebook URL', 'alcatraz' ),
 			'icon'         => 'facebook',
 		),
 		'twitter' => array(
 			'display_name' => __( 'Twitter', 'alcatraz' ),
-			'description'  => __( 'Enter your Twitter url', 'alcatraz' ),
+			'description'  => __( 'Enter your Twitter URL', 'alcatraz' ),
 			'icon'         => 'twitter',
 		),
 		'instagram' => array(
 			'display_name' => __( 'Instagram', 'alcatraz' ),
-			'description'  => __( 'Enter your Instagram url', 'alcatraz' ),
+			'description'  => __( 'Enter your Instagram URL', 'alcatraz' ),
 			'icon'         => 'instagram',
 		),
 		'pinterest' => array(
 			'display_name' => __( 'Pinterest', 'alcatraz' ),
-			'description'  => __( 'Enter your Pinterest url', 'alcatraz' ),
+			'description'  => __( 'Enter your Pinterest URL', 'alcatraz' ),
 			'icon'         => 'twitter',
 		),
 		'youtube' => array(
 			'display_name' => __( 'Youtube', 'alcatraz' ),
-			'description'  => __( 'Enter your Youtube url', 'alcatraz' ),
+			'description'  => __( 'Enter your Youtube URL', 'alcatraz' ),
 			'icon'         => 'youtube',
 		),
 	);
