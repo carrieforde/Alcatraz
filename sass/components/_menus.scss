@@ -745,12 +745,17 @@
 		justify-content: center;
 
 		.menu-item > a {
+			@include size(rem(25));
+
+			display: block;
+			margin: 0 rem(5);
 
 			&:before {
-				display: block;
+				display: inline-block;
 				font-family: $font__social-icons;
 				font-size: rem(20);
 				font-style: normal;
+				line-height: 1;
 				text-align: center;
 			}
 
@@ -776,6 +781,10 @@
 
 			&[href*="dribbble.com"]:before {
 				content: '\f17d';
+			}
+
+			&[href^="mailto:"]:before {
+				content: '\f0e0';
 			}
 
 			&[href*="facebook.com"]:before {
