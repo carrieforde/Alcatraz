@@ -92,25 +92,3 @@
 		}
 	}
 }
-
-
-// Social network icons
-.alcatraz-social-icons {
-	@include margin-padding-reset;
-
-	display: flex;
-	list-style: none;
-	text-align: center;
-
-	li {
-		margin: 0 rem(5);
-
-		&:last-child {
-			margin-right: 0;
-		}
-	}
-
-	.alcatraz-social-icon {
-		font-size: rem(24);
-	}
-}

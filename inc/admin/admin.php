@@ -7,19 +7,8 @@
  * @package alcatraz
  */
 
-// Include our theme options page.
-require_once ALCATRAZ_PATH . 'inc/admin/classes/class-options-page.php';
-
 // Include CMB2.
 require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';
-
-/**
- * Initialize our options page class.
- *
- * @since  1.0.0
- */
-$options_page = new Alcatraz_Options_Page();
-$options_page->init();
 
 add_action( 'admin_enqueue_scripts', 'alcatraz_admin_enqueue_scripts' );
 /**
@@ -58,12 +47,6 @@ function alcatraz_activation_notice() {
 			__( 'Customizer', 'alcatraz' )
 		);
 
-		$options_page_link = sprintf(
-			'<a href="%s">%s</a>',
-			esc_url( admin_url( 'admin.php?page=alcatraz_options_page' ) ),
-			__( 'Options Page', 'alcatraz' )
-		);
-
 		$documentation_link = sprintf(
 			'<a href="%s" target="_blank">%s</a>',
 			'https://github.com/carrieforde/Alcatraz/wiki',
@@ -74,7 +57,6 @@ function alcatraz_activation_notice() {
 		<div id="alcatraz-activation-notice" class="updated notice is-dismissible" style="padding-bottom: 5px;">
 			<h2><?php _e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
 			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo $customizer_link; ?></p>
-			<p><?php _e( 'All non-visual options can be found on the', 'alcatraz' ); ?> <?php echo $options_page_link; ?></p>
 			<p><?php _e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo $documentation_link; ?></p>
 		</div>
 		<?php

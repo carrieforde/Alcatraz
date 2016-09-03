@@ -186,18 +186,28 @@ function alcatraz_output_footer_bottom() {
 	}
 }
 
-add_action( 'alcatraz_footer', 'alcatraz_output_social_network_icons', 80 );
+add_action( 'alcatraz_footer', 'alcatraz_social_menu_in_footer', 80 );
 /**
- * Output the social network icons.
+ * Output the social nav menu.
  *
- * @since 1.0.0
+ * @author Carrie Forde
+ * @since  1.0.0
  */
-function alcatraz_output_social_network_icons() {
+function alcatraz_social_menu_in_footer() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( ! empty( $options['social_icons_in_footer'] ) ) {
+	if ( ! empty( $options['social_icons_in_footer'] ) && has_nav_menu( 'social' ) ) { ?>
 
-		alcatraz_the_social_network_icons();
-	}
+		<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
+
+			<?php wp_nav_menu( array(
+				'theme_location' => 'social',
+				'menu_class' => 'social-links-menu',
+				'depth' => 1,
+				'link_before' => '<span class="screen-reader-text">',
+				'link_after'  => '</span>',
+			) ); ?>
+		</nav>
+	<?php }
 }

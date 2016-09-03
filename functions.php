@@ -67,6 +67,7 @@ function alcatraz_setup() {
 	// Register a primary menu.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'alcatraz' ),
+		'social'  => esc_html__( 'Social Menu', 'alcatraz' ),
 	) );
 
 	// Use html5 markup for certain features.

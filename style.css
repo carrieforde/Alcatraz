@@ -1114,6 +1114,158 @@ a:hover, a:active {
   right: 0.5rem;
 }
 
+.social-navigation {
+  margin: 0.9375rem 0 0;
+}
+
+.social-navigation .social-links-menu {
+  margin: 0;
+  padding: 0;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  list-style-type: none;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.social-navigation .social-links-menu .menu-item > a {
+  height: 1.5625rem;
+  width: 1.5625rem;
+  display: block;
+  margin: 0 0.3125rem;
+}
+
+.social-navigation .social-links-menu .menu-item > a:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="behance.net"]:before {
+  content: '\f1b4';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="bitbucket.org"]:before {
+  content: '\f171';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="codepen.io"]:before {
+  content: '\f1cb';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="deviantart.com"]:before {
+  content: '\f1bd';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="digg.com"]:before {
+  content: '\f1a6';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="dribbble.com"]:before {
+  content: '\f17d';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href^="mailto:"]:before {
+  content: '\f0e0';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="facebook.com"]:before {
+  content: '\f09a';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="github.com"]:before, .social-navigation .social-links-menu .menu-item > a[href*="github.io"]:before {
+  content: '\f09b';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="plus.google.com"]:before {
+  content: '\f0d5';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="instagram.com"]:before {
+  content: '\f16d';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="jsfiddle.net"]:before {
+  content: '\f1cc';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="linkedin.com"]:before {
+  content: '\f0e1';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="medium.com"]:before {
+  content: '\f23a';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="pinterest.com"]:before {
+  content: '\f0d2';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="reddit.com"]:before {
+  content: '\f1a1';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="skype.com"]:before {
+  content: '\f17e';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="slack.com"]:before {
+  content: '\f198';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="slideshare.net"]:before {
+  content: '\f1e7';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="snapchat.com"]:before {
+  content: '\f2ab';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="soundcloud.com"]:before {
+  content: '\f1be';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="spotify.com"]:before {
+  content: '\f1bc';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="tumblr.com"]:before {
+  content: '\f173';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="twitter.com"]:before {
+  content: '\f099';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="vimeo.com"]:before {
+  content: '\f27d';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="vine.co"]:before {
+  content: '\f1ca';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="whatsapp.com"]:before {
+  content: '\f232';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="wordpress.com"]:before, .social-navigation .social-links-menu .menu-item > a[href*="wordpress.org"]:before {
+  content: '\f19a';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="yelp.com"]:before {
+  content: '\f1e9';
+}
+
+.social-navigation .social-links-menu .menu-item > a[href*="youtube.com"]:before {
+  content: '\f167';
+}
+
 img {
   height: auto;
   margin-bottom: 0.9375rem;
@@ -1586,27 +1738,6 @@ input[type="submit"].search-submit {
 .footer-bottom {
   clear: both;
   text-align: center;
-}
-
-.alcatraz-social-icons {
-  margin: 0;
-  padding: 0;
-  display: -ms-flexbox;
-  display: flex;
-  list-style: none;
-  text-align: center;
-}
-
-.alcatraz-social-icons li {
-  margin: 0 0.3125rem;
-}
-
-.alcatraz-social-icons li:last-child {
-  margin-right: 0;
-}
-
-.alcatraz-social-icons .alcatraz-social-icon {
-  font-size: 1.5rem;
 }
 
 @media (min-width: 48em) {
