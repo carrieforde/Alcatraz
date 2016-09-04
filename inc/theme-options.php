@@ -31,13 +31,6 @@ function alcatraz_get_option_defaults() {
 		'social_icons_in_footer'  => '',
 	);
 
-	$networks = alcatraz_get_social_networks();
-
-	 // Loop over any social networks and default the network URLs to empty string.
-	 foreach ( $networks as $network => $network_data ) {
-		 $defaults[ $network . '_url' ] = '';
-	 }
-
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
 }
 
