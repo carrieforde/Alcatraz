@@ -252,6 +252,11 @@ require_once ALCATRAZ_PATH . 'inc/utilities.php';
 require_once ALCATRAZ_PATH . 'inc/ajax.php';
 
 /**
+ * Our pattern library template tags.
+ */
+require_once ALCATRAZ_PATH . 'inc/patterns/atoms.php';
+
+/**
  * Custom template tags for this theme.
  */
 require_once ALCATRAZ_PATH . 'inc/template-tags.php';
