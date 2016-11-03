@@ -25,10 +25,10 @@ get_header(); ?>
 				<?php get_template_part( 'template-parts/patterns/atoms/forms' ); ?>
 
 				<?php
-					// Maybe load comments.
-					if ( comments_open() || get_comments_number() ) :
-						comments_template();
-					endif;
+				// Maybe load comments.
+				if ( comments_open() || get_comments_number() ) :
+					comments_template();
+				endif;
 				?>
 
 			<?php endwhile; ?>
