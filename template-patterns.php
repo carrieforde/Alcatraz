@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/patterns/patterns-atoms', 'colors' ); ?>
+				<?php get_template_part( 'template-parts/patterns/atoms/colors' ); ?>
 
 				<?php
 					// Maybe load comments.
