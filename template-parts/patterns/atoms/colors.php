@@ -4,7 +4,6 @@
  */
 
 $colors = alcatraz_set_theme_colors();
-$neutrals = alcatraz_set_theme_colors();
 ?>
 
 <section class="section-patterns section-colors">
