@@ -53,6 +53,7 @@ function alcatraz_button( $args ) {
 	);
 	$args = wp_parse_args( (array) $args, $defaults );
 
+	// Check which type of button to output.
 	switch ( $args['type'] ) {
 
 		case 'button' : ?>
@@ -77,6 +78,7 @@ function alcatraz_button( $args ) {
 
 /**
  * Input attributes
+ *
  * @param   array   $args  The input attributes.
  * @return  string         The input attribute string.
  */
@@ -142,6 +144,7 @@ function alcatraz_form_elements( $args ) {
 	);
 	$args = wp_parse_args( (array) $args, $defaults );
 
+	// Determine the type of form element to output.
 	switch ( $args['tag'] ) {
 
 		case 'input' :
@@ -155,7 +158,7 @@ function alcatraz_form_elements( $args ) {
 				'class'         => $args['class'],
 			) ); ?>
 
-			<input <?php esc_attr_e( $attributes ); ?>/>
+			<input <?php esc_attr_e( $attributes ); ?> />
 
 			<?php break;
 
