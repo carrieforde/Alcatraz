@@ -7,6 +7,42 @@
 
 
 /**
+ * Build pattern documentation.
+ *
+ * @param  array  $args  The pattern documentation.
+ */
+function alcatraz_pattern_doc( $args ) {
+
+	$defaults = array(
+		'heading'     => '',
+		'description' => '',
+		'included_in' => '',
+		'function'    => '',
+		'output'      => '',
+	);
+	$args = wp_parse_args( (array) $args, $defaults ); ?>
+
+
+	<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
+	<div class="pattern-doc-details">
+		<p class="pattern-doc-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
+		<?php if ( $args['included_in'] ) : ?>
+		<p class="pattern-doc-included-in"><?php esc_html_e( $args['included_in'] ); ?></p>
+		<?php endif; ?>
+	</div>
+
+	<div class="pattern-doc-code">
+		<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'Function Call', 'alcatraz' ); ?></h4>
+		<pre class="pattern-doc-function"><?php esc_html_e( $args['function'] ); ?></pre>
+
+		<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
+		<pre class="pattern-doc-output"><?php esc_html_e( $args['output'] ); ?></pre>
+	</div>
+
+	<?php
+}
+
+/**
  * Set the theme colors.
  *
  * @return  array  The theme colors.
