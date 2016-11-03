@@ -51,7 +51,7 @@ function alcatraz_button( $args ) {
 		'class'       => '',
 		'target'      => 'self',
 	);
-	$args = wp_parse_args( (array)$args, $defaults);
+	$args = wp_parse_args( (array) $args, $defaults );
 
 	switch ( $args['type'] ) {
 
@@ -63,7 +63,7 @@ function alcatraz_button( $args ) {
 
 		case 'submit' : ?>
 
-			<input type="submit" value="<?php esc_attr_e( $args['button_text'] ); ?>" class="button button-submit <?php esc_attr_e( $args['class']); ?>" />
+			<input type="submit" value="<?php esc_attr_e( $args['button_text'] ); ?>" class="button button-submit <?php esc_attr_e( $args['class'] ); ?>" />
 
 			<?php break;
 
@@ -90,7 +90,7 @@ function alcatraz_inputs( $args ) {
 		'autocomplete'  => 'off',
 		'class'         => '',
 	);
-	$args = wp_parse_args( (array)$args, $defaults );
+	$args = wp_parse_args( (array) $args, $defaults );
 
 	// Build our attributes array ignoring empty attributes.
 	$attributes = array();
@@ -138,9 +138,9 @@ function alcatraz_form_elements( $args ) {
 			'Option 3',
 			'Option 4',
 		),
-		'class'        => ''
+		'class'        => '',
 	);
-	$args = wp_parse_args( (array)$args, $defaults );
+	$args = wp_parse_args( (array) $args, $defaults );
 
 	switch ( $args['tag'] ) {
 
