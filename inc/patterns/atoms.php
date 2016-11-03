@@ -153,11 +153,7 @@ function alcatraz_form_elements( $args ) {
 				'placeholder'   => $args['placeholder'],
 				'autocomplete'  => $args['autocomplete'],
 				'class'         => $args['class'],
-			) );
-
-			echo $attributes;
-
-			?>
+			) ); ?>
 
 			<input <?php esc_attr_e( $attributes ); ?>/>
 
