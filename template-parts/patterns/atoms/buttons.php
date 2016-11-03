@@ -12,7 +12,7 @@
 
 		<h3 class="section-sub-heading"><?php esc_html_e( 'Button', 'alcatraz' ); ?></h3>
 
-		<?php alcatraz_button(); ?>
+		<?php alcatraz_button( array('type' => 'button' ) ); ?>
 
 	</div>
 
