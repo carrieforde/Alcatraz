@@ -15,11 +15,11 @@ $fonts = alcatraz_set_theme_fonts();
 
 		<div class="font-stack">
 
-			<div class="font-<?php esc_attr_e( $key ); ?>"><?php esc_html_e( $key ); ?> : <?php esc_html_e( $value ); ?></div>
+			<div class="font-<?php esc_attr_e( $key ); ?>"><?php esc_html_e( $key ); ?>: <?php esc_html_e( $value ); ?></div>
 
-			<div class="font-<?php esc_attr_e( $key ); ?>"><em><?php esc_html_e( $key ); ?> : <?php esc_html_e( $value ); ?></em></div>
+			<div class="font-<?php esc_attr_e( $key ); ?>"><em><?php esc_html_e( $key ); ?>: <?php esc_html_e( $value ); ?></em></div>
 
-			<div class="font-<?php esc_attr_e( $key ); ?>"><strong><?php esc_html_e( $key ); ?> : <?php esc_html_e( $value ); ?></strong></div>
+			<div class="font-<?php esc_attr_e( $key ); ?>"><strong><?php esc_html_e( $key ); ?>: <?php esc_html_e( $value ); ?></strong></div>
 
 		</div>
 	<?php
