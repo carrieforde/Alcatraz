@@ -1,0 +1,35 @@
+//--------------------------------------------------------------
+// PATTERNS - ATOMS - COLORS
+//--------------------------------------------------------------
+.section-colors {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@include media ($tablet-portrait) {
+		justify-content: space-around;
+	}
+
+	@include media ($tablet-landscape) {
+		justify-content: space-between;
+	}
+
+	.section-heading {
+		flex-basis: 100%;
+	}
+
+	.color-chip {
+		color: #666;
+		font-size: rem(14);
+		margin-bottom: rem(30);
+		text-align: center;
+		width: rem(200);
+	}
+
+	.color {
+		@include size(rem(100));
+		@include center;
+
+		margin-bottom: rem(5);
+	}
+}

@@ -241,6 +241,36 @@ html {
   box-sizing: inherit;
 }
 
+.section-colors {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.section-colors .section-heading {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+.section-colors .color-chip {
+  color: #666;
+  font-size: 0.875rem;
+  margin-bottom: 1.875rem;
+  text-align: center;
+  width: 12.5rem;
+}
+
+.section-colors .color {
+  height: 6.25rem;
+  width: 6.25rem;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 0.3125rem;
+}
+
 html {
   box-sizing: border-box;
 }
@@ -1776,6 +1806,13 @@ input[type="submit"].search-submit {
   text-align: center;
 }
 
+@media screen and (min-width: 48em) {
+  .section-colors {
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+  }
+}
+
 @media (min-width: 48em) {
   .alcatraz-col-1 {
     float: left;
@@ -2598,6 +2635,13 @@ input[type="submit"].search-submit {
     max-width: 42.5rem;
     max-width: calc(680px);
     position: relative;
+  }
+}
+
+@media screen and (min-width: 64em) {
+  .section-colors {
+    -ms-flex-pack: justify;
+    justify-content: space-between;
   }
 }
 
