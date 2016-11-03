@@ -18,6 +18,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'template-parts/patterns/atoms/colors' ); ?>
 
+				<?php get_template_part( 'template-parts/patterns/atoms/fonts' ); ?>
+
 				<?php
 					// Maybe load comments.
 					if ( comments_open() || get_comments_number() ) :

@@ -271,6 +271,18 @@ html {
   margin-bottom: 0.3125rem;
 }
 
+.font-primary {
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+.font-code {
+  font-family: "Source Code Pro", Courier, monospace;
+}
+
+.font-stack [class^="font-"]:first-letter {
+  text-transform: capitalize;
+}
+
 html {
   box-sizing: border-box;
 }

@@ -1,0 +1,20 @@
+//--------------------------------------------------------------
+// PATTERNS - ATOMS - FONTS
+//--------------------------------------------------------------
+
+// Capitalize the first letter in the stack line
+.font-stack [class^="font-"]:first-letter {
+	text-transform: capitalize;
+}
+
+
+//-------------------------------
+// Font Utility Classes
+//-------------------------------
+.font-primary {
+	font-family: $source-sans-pro;
+}
+
+.font-code {
+	font-family: $source-code-pro;
+}

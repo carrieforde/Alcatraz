@@ -21,3 +21,18 @@ function alcatraz_set_theme_colors() {
 
 	return apply_filters( 'alcatraz_set_colors', $colors );
 }
+
+/**
+ * Set the theme fonts.
+ *
+ * @return  array  The theme fonts.
+ */
+function alcatraz_set_theme_fonts() {
+
+	$fonts = array(
+		'primary' => '\'Source Sans Pro\', sans-serif',
+		'code'    => '\'Source Code Pro\', Courier, monospace',
+	);
+
+	return apply_filters( 'alcatraz_set_fonts', $fonts );
+}
