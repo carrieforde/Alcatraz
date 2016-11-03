@@ -33,3 +33,19 @@
 		margin-bottom: rem(5);
 	}
 }
+
+
+//-------------------------------
+// Color Utility Classes
+//-------------------------------
+.alcatraz-blue {
+	@include color-class($alcatraz-blue);
+}
+
+.hope {
+	@include color-class($hope);
+}
+
+.jelly-bean {
+	@include color-class($jelly-bean);
+}

@@ -271,16 +271,40 @@ html {
   margin-bottom: 0.3125rem;
 }
 
+.alcatraz-blue {
+  color: #0d8bb7;
+}
+
+.alcatraz-blue-background {
+  background-color: #0d8bb7;
+}
+
+.hope {
+  color: #fff9c0;
+}
+
+.hope-background {
+  background-color: #fff9c0;
+}
+
+.jelly-bean {
+  color: #21759b;
+}
+
+.jelly-bean-background {
+  background-color: #21759b;
+}
+
+.font-stack [class^="font-"]:first-letter {
+  text-transform: capitalize;
+}
+
 .font-primary {
   font-family: "Source Sans Pro", sans-serif;
 }
 
 .font-code {
   font-family: "Source Code Pro", Courier, monospace;
-}
-
-.font-stack [class^="font-"]:first-letter {
-  text-transform: capitalize;
 }
 
 html {
