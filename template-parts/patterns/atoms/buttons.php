@@ -10,15 +10,25 @@
 
 	<div class="button-type-wrap">
 
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Button', 'alcatraz' ); ?></h3>
+		<?php alcatraz_pattern_doc( array(
+			'heading'      => 'Button',
+			'description'  => 'This is a <code>button</code>.',
+			'function'     => 'alcatraz_button( array( \'type\' => \'button\' ) );',
+			'output'       => '<button class="button">Submit</button>',
+		) ); ?>
 
-		<?php alcatraz_button( array('type' => 'button' ) ); ?>
+		<?php alcatraz_button( array( 'type' => 'button' ) ); ?>
 
 	</div>
 
 	<div class="button-type-wrap">
 
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Submit', 'alcatraz' ); ?></h3>
+		<?php alcatraz_pattern_doc( array(
+			'heading'      => 'Submit',
+			'description'  => 'This is an <code>input[type="submit"]</code>.',
+			'function'     => 'alcatraz_button( array( \'type\' => \'submit\' ) );',
+			'output'       => '<input type="submit" value="Submit" class="button button-submit" />',
+		) ); ?>
 
 		<?php alcatraz_button( array( 'type' => 'submit' ) ); ?>
 
@@ -26,7 +36,12 @@
 
 	<div class="button-type-wrap">
 
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Text', 'alcatraz' ); ?></h3>
+		<?php alcatraz_pattern_doc( array(
+			'heading'      => 'Text',
+			'description'  => 'This is a <code>Text Button</code>.',
+			'function'     => 'alcatraz_button( array( \'type\' => \'text\' ) );',
+			'output'       => '<a href="" class="button button-text" target="">Submit</a>',
+		) ); ?>
 
 		<?php alcatraz_button( array( 'type' => 'text' ) ); ?>
 
