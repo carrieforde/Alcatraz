@@ -6,7 +6,7 @@
  */
 
 
-function alcatraz_card( $args ) {
+function alcatraz_card( $args = array() ) {
 
 	$defaults = array(
 		'src'         => 'https://unsplash.it/300/200/?random',
@@ -16,7 +16,7 @@ function alcatraz_card( $args ) {
 		'link'        => '#',
 		'class'       => '',
 	);
-	$args = wp_parse_args( (array) $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	?>
 

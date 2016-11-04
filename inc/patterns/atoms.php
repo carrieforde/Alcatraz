@@ -11,7 +11,7 @@
  *
  * @param  array  $args  The pattern documentation.
  */
-function alcatraz_pattern_doc( $args ) {
+function alcatraz_pattern_doc( $args = array() ) {
 
 	$defaults = array(
 		'heading'     => '',
@@ -20,7 +20,7 @@ function alcatraz_pattern_doc( $args ) {
 		'function'    => '',
 		'output'      => '',
 	);
-	$args = wp_parse_args( (array) $args, $defaults ); ?>
+	$args = wp_parse_args( $args, $defaults ); ?>
 
 	<header class="pattern-doc-header">
 		<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
@@ -83,7 +83,7 @@ function alcatraz_set_theme_fonts() {
  *
  * @param  array  $args  The button args.
  */
-function alcatraz_button( $args ) {
+function alcatraz_button( $args = array() ) {
 
 	$defaults = array(
 		'type'        => 'button',
@@ -92,7 +92,7 @@ function alcatraz_button( $args ) {
 		'class'       => '',
 		'target'      => 'self',
 	);
-	$args = wp_parse_args( (array) $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	// Check which type of button to output.
 	switch ( $args['type'] ) {
@@ -123,7 +123,7 @@ function alcatraz_button( $args ) {
  * @param   array   $args  The input attributes.
  * @return  string         The input attribute string.
  */
-function alcatraz_inputs( $args ) {
+function alcatraz_inputs( $args = array() ) {
 
 	$defaults = array(
 		'type'          => 'text',
@@ -133,7 +133,7 @@ function alcatraz_inputs( $args ) {
 		'autocomplete'  => 'off',
 		'class'         => '',
 	);
-	$args = wp_parse_args( (array) $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	// Build our attributes array ignoring empty attributes.
 	$attributes = array();
@@ -166,7 +166,7 @@ function alcatraz_inputs( $args ) {
  *
  * @param  array  $args  The form element args.
  */
-function alcatraz_form_elements( $args ) {
+function alcatraz_form_elements( $args = array() ) {
 
 	$defaults = array(
 		'tag'          => 'input',
@@ -183,7 +183,7 @@ function alcatraz_form_elements( $args ) {
 		),
 		'class'        => '',
 	);
-	$args = wp_parse_args( (array) $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	// Determine the type of form element to output.
 	switch ( $args['tag'] ) {
@@ -238,13 +238,13 @@ function alcatraz_form_elements( $args ) {
  *
  * @param  array  $args  The image arguments.
  */
-function alcatraz_image( $args ) {
+function alcatraz_image( $args = array() ) {
 	$defaults = array(
 		'src'         => 'https://unsplash.it/300/200/?random',
 		'size'        => '',
 		'use_img_url' => true,
 	);
-	$args = wp_parse_args( (array) $args, $defaults );
+	$args = wp_parse_args( $args, $defaults );
 
 	// Let's figure out the type of image we're working with.
 	switch ( $args['use_img_url'] ) {
