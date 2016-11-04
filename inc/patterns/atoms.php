@@ -23,7 +23,11 @@ function alcatraz_pattern_doc( $args ) {
 	$args = wp_parse_args( (array) $args, $defaults ); ?>
 
 
-	<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
+	<header class="pattern-doc-header">
+		<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
+		<?php alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc-toggle' ) ); ?>
+	</header>
+
 	<div class="pattern-doc-details">
 		<p class="pattern-doc-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
 		<?php if ( $args['included_in'] ) : ?>
