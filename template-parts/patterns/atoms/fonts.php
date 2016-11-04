@@ -10,10 +10,8 @@ $fonts = alcatraz_set_theme_fonts();
 
 	<h2 class="section-heading"><?php esc_html_e( 'Fonts', 'alcatraz' ); ?></h2>
 
-	<?php
-	foreach ( $fonts as $key => $value ) { ?>
-
-		<div class="wrap">
+	<div class="wrap">
+	<?php foreach ( $fonts as $key => $value ) { ?>
 
 			<div class="font-<?php esc_attr_e( $key ); ?>"><?php esc_html_e( $key ); ?>: <?php esc_html_e( $value ); ?></div>
 
@@ -21,7 +19,7 @@ $fonts = alcatraz_set_theme_fonts();
 
 			<div class="font-<?php esc_attr_e( $key ); ?>"><strong><?php esc_html_e( $key ); ?>: <?php esc_html_e( $value ); ?></strong></div>
 
-		</div>
-	<?php
-	} ?>
+	<?php } ?>
+	</div>
 </section>
+<?php
