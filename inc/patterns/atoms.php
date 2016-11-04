@@ -28,19 +28,21 @@ function alcatraz_pattern_doc( $args ) {
 		<?php alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc-toggle' ) ); ?>
 	</header>
 
-	<div class="pattern-doc-details">
-		<p class="pattern-doc-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
-		<?php if ( $args['included_in'] ) : ?>
-		<p class="pattern-doc-included-in"><?php esc_html_e( $args['included_in'] ); ?></p>
-		<?php endif; ?>
-	</div>
+	<div class="pattern-doc-info">
+		<div class="pattern-doc-details">
+			<p class="pattern-doc-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
+			<?php if ( $args['included_in'] ) : ?>
+			<p class="pattern-doc-included-in"><?php esc_html_e( $args['included_in'] ); ?></p>
+			<?php endif; ?>
+		</div>
 
-	<div class="pattern-doc-code">
-		<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'Function Call', 'alcatraz' ); ?></h4>
-		<pre class="pattern-doc-function"><?php esc_html_e( $args['function'] ); ?></pre>
+		<div class="pattern-doc-code">
+			<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'Function Call', 'alcatraz' ); ?></h4>
+			<pre class="pattern-doc-function"><?php esc_html_e( $args['function'] ); ?></pre>
 
-		<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
-		<pre class="pattern-doc-output"><?php esc_html_e( $args['output'] ); ?></pre>
+			<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
+			<pre class="pattern-doc-output"><?php esc_html_e( $args['output'] ); ?></pre>
+		</div>
 	</div>
 
 	<?php
