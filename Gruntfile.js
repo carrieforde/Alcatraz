@@ -56,6 +56,7 @@ module.exports = function( grunt ) {
 					'js/src/skip-link-focus-fix.js',
 					'js/src/navigation.js',
 					'js/src/alcatraz.js', // This must be included after all other objects.
+					'js/src/patterns.js',
 					'js/src/init.js' // This should be last.
 				],
 				dest: 'js/<%= pkg.name %>-theme.js'
