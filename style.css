@@ -241,6 +241,35 @@ html {
   box-sizing: inherit;
 }
 
+.section-pattern {
+  margin: 0 0 3.75rem;
+  overflow: hidden;
+}
+
+.section-pattern .wrap {
+  margin: 0 0 2.5rem;
+}
+
+.pattern-doc-header {
+  -ms-flex-align: end;
+      align-items: flex-end;
+  border-bottom: 0.0625rem solid #c0c0c0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  margin: 0 0 1.5625rem;
+  padding: 0 0 0.3125rem;
+}
+
+.pattern-doc-heading {
+  margin: 0;
+}
+
+.pattern-doc-info {
+  display: none;
+}
+
 .section-colors {
   display: -ms-flexbox;
   display: flex;
@@ -1434,7 +1463,7 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-  border: 0.0625rem solid #95a0a3;
+  border: 0.0625rem solid #ddd;
   color: #535d65;
   vertical-align: text-bottom;
 }
