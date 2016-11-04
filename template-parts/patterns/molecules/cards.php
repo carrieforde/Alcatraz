@@ -20,17 +20,17 @@
 	<img src="https://unsplash.it/300/200/?random" />
 </div>
 
-<header class="card-header">
-	<h3 class="card-title"><a href="#">Lorem ipsum dolor</a></h3>
-</header>
+	<header class="card-header">
+		<h3 class="card-title"><a href="#">Lorem ipsum dolor</a></h3>
+	</header>
 
-<div class="card-content">
-	Vel ad enim nostrum, eam te odio ubique corpora. Ne eum tota tation ancillae, reque altera mea te. Integre commune indoctum his ea.
-</div>
+	<div class="card-content">
+		Vel ad enim nostrum, eam te odio ubique corpora. Ne eum tota tation ancillae, reque altera mea te. Integre commune indoctum his ea.
+	</div>
 
-<footer class="card-footer">
-	<a href="" class="button button-text" target="">Submit</a>
-</footer>
+	<footer class="card-footer">
+		<a href="" class="button button-text" target="">Submit</a>
+	</footer>
 
 </div>',
 		) ); ?>
