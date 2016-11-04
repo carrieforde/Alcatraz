@@ -26,6 +26,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'template-parts/patterns/atoms/images' ); ?>
 
+				<?php get_template_part( 'template-parts/patterns/atoms/typography' ); ?>
+
 				<?php
 				// Maybe load comments.
 				if ( comments_open() || get_comments_number() ) :
