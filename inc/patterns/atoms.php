@@ -233,3 +233,33 @@ function alcatraz_form_elements( $args ) {
 			<?php break;
 	}
 }
+
+/**
+ * Images
+ *
+ * @param  array  $args  The image arguments.
+ */
+function alcatraz_image( $args ) {
+	$defaults = array(
+		'src'         => 'https://unsplash.it/300/200/?random',
+		'size'        => '',
+		'use_img_url' => true,
+	);
+	$args = wp_parse_args( (array) $args, $defaults );
+
+	// Let's figure out the type of image we're working with.
+	switch ( $args['use_img_url'] ) {
+
+		case true : ?>
+
+			<img src="<?php echo esc_url( $args['src'] ); ?>" />
+
+			<?php break;
+
+		case false :
+
+			wp_get_attachment_image( $args['size'] );
+
+			break;
+	}
+}
