@@ -1,0 +1,38 @@
+//--------------------------------------------------------------
+// PATTERN DEFAULTS
+//
+// These are some basic defaults that give our pattern library
+// some basic styles.
+//--------------------------------------------------------------
+
+//-------------------------------
+// Sections Patterns
+//-------------------------------
+.section-pattern {
+	margin: 0 0 rem(60);
+	overflow: hidden;
+
+	.wrap {
+		margin: 0 0 rem(40);
+	}
+}
+
+//-------------------------------
+// Pattern Docs
+//-------------------------------
+.pattern-doc-header {
+	align-items: flex-end;
+	border-bottom: $border__patterns-header;
+	display: flex;
+	justify-content: space-between;
+	margin: 0 0 rem(25);
+	padding: 0 0 rem(5);
+}
+
+.pattern-doc-heading {
+	margin: 0;
+}
+
+.pattern-doc-info {
+	display: none;
+}
