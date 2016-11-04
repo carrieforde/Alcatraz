@@ -13,7 +13,7 @@ $fonts = alcatraz_set_theme_fonts();
 	<?php
 	foreach ( $fonts as $key => $value ) { ?>
 
-		<div class="font-stack">
+		<div class="wrap">
 
 			<div class="font-<?php esc_attr_e( $key ); ?>"><?php esc_html_e( $key ); ?>: <?php esc_html_e( $value ); ?></div>
 
