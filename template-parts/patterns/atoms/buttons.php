@@ -38,7 +38,7 @@
 
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Text',
-			'description'  => 'This is a <code>Text Button</code>.',
+			'description'  => 'This is an <code>a</code> button.',
 			'function'     => 'alcatraz_button( array( \'type\' => \'text\' ) );',
 			'output'       => '<a href="" class="button button-text" target="">Submit</a>',
 		) ); ?>
