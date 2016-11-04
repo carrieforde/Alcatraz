@@ -1,17 +1,17 @@
 <?php
 /**
- * Theme fontss.
+ * Theme fonts.
  */
 
 $fonts = alcatraz_set_theme_fonts();
 ?>
 
-<section class="section-patterns section-fonts">
+<section class="section-pattern section-fonts">
 
 	<h2 class="section-heading"><?php esc_html_e( 'Fonts', 'alcatraz' ); ?></h2>
 
 	<?php
-	foreach( $fonts as $key => $value ) { ?>
+	foreach ( $fonts as $key => $value ) { ?>
 
 		<div class="font-stack">
 

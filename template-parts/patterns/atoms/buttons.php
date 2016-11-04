@@ -8,7 +8,7 @@
 
 	<h2 class="section-heading"><?php esc_html_e( 'Buttons', 'alcatraz' ); ?></h2>
 
-	<div class="button-type-wrap">
+	<div class="wrap">
 
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Button',
@@ -21,7 +21,7 @@
 
 	</div>
 
-	<div class="button-type-wrap">
+	<div class="wrap">
 
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Submit',
@@ -34,7 +34,7 @@
 
 	</div>
 
-	<div class="button-type-wrap">
+	<div class="wrap">
 
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Text',

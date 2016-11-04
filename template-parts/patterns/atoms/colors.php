@@ -6,12 +6,12 @@
 $colors = alcatraz_set_theme_colors();
 ?>
 
-<section class="section-patterns section-colors">
+<section class="section-pattern section-colors">
 
 	<h2 class="section-heading"><?php esc_html_e( 'Colors', 'alcatraz' ); ?></h2>
 
 	<?php
-	foreach( $colors as $key => $value ) { ?>
+	foreach ( $colors as $key => $value ) { ?>
 
 		<div class="color-chip">
 
