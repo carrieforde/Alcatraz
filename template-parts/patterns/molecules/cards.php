@@ -16,9 +16,9 @@
 			'function'     => 'alcatraz_card( array( \'use_img_src\' => true ) );',
 			'output'       => '<div class="alcatraz-card alcatraz-col-4 ">
 
-<div class="card-image">
-	<img src="https://unsplash.it/300/200/?random" />
-</div>
+	<div class="card-image">
+		<img src="https://unsplash.it/300/200/?random" />
+	</div>
 
 	<header class="card-header">
 		<h3 class="card-title"><a href="#">Lorem ipsum dolor</a></h3>
