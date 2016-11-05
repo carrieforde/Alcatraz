@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/patterns/molecules/cards' ); ?>
+				<?php get_template_part( 'patterns/template-parts/molecules/cards' ); ?>
 
 				<?php
 				// Maybe load comments.

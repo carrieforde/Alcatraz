@@ -254,9 +254,8 @@ require_once ALCATRAZ_PATH . 'inc/ajax.php';
 /**
  * Our pattern library template tags.
  */
-require_once ALCATRAZ_PATH . 'inc/patterns/atoms.php';
-
-require_once ALCATRAZ_PATH . 'inc/patterns/molecules.php';
+require_once ALCATRAZ_PATH . 'patterns/template-tags/atoms.php';
+require_once ALCATRAZ_PATH . 'patterns/template-tags/molecules.php';
 
 /**
  * Custom template tags for this theme.

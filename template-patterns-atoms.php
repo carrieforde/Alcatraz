@@ -16,17 +16,17 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'template-parts/patterns/atoms/colors' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/colors' ); ?>
 
-				<?php get_template_part( 'template-parts/patterns/atoms/fonts' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/fonts' ); ?>
 
-				<?php get_template_part( 'template-parts/patterns/atoms/buttons' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/buttons' ); ?>
 
-				<?php get_template_part( 'template-parts/patterns/atoms/forms' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/forms' ); ?>
 
-				<?php get_template_part( 'template-parts/patterns/atoms/images' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/images' ); ?>
 
-				<?php get_template_part( 'template-parts/patterns/atoms/typography' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/typography' ); ?>
 
 				<?php
 				// Maybe load comments.
