@@ -7,18 +7,20 @@
 
 
 /**
- * Build pattern documentation.
+ * Build pattern library documentation.
  *
  * @param  array  $args  The pattern documentation.
  */
 function alcatraz_pattern_doc( $args = array() ) {
 
 	$defaults = array(
-		'heading'     => '',
-		'description' => '',
-		'included_in' => '',
-		'function'    => '',
-		'output'      => '',
+		'heading'           => '',
+		'description'       => '',
+		'patterns_included' => '',
+		'function'          => '',
+		'output'            => '',
+		'params'            => array(),
+		'args'              => array(),
 	);
 	$args = wp_parse_args( $args, $defaults ); ?>
 
@@ -29,18 +31,39 @@ function alcatraz_pattern_doc( $args = array() ) {
 
 	<div class="pattern-doc-info">
 		<div class="pattern-doc-details">
-			<p class="pattern-doc-description"><?php echo wp_kses_post( $args['description'] ); ?></p>
+			<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 			<?php if ( $args['included_in'] ) : ?>
-			<p class="pattern-doc-included-in"><?php esc_html_e( $args['included_in'] ); ?></p>
+			<p><?php esc_html_e( $args['patterns_included'] ); ?></p>
 			<?php endif; ?>
 		</div>
 
-		<div class="pattern-doc-code">
-			<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'Function Call', 'alcatraz' ); ?></h4>
-			<pre class="pattern-doc-function"><?php esc_html_e( $args['function'] ); ?></pre>
+		<div class="pattern-doc-details">
+			<h4><?php esc_html_e( 'Template Tag', 'alcatraz' ); ?></h4>
+			<pre>&lt;?php <?php esc_html_e( $args['function'] ); ?> ?&gt;</pre>
 
-			<h4 class="pattern-doc-code-heading"><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
-			<pre class="pattern-doc-output"><?php esc_html_e( $args['output'] ); ?></pre>
+			<h4><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
+			<pre><?php esc_html_e( $args['output'] ); ?></pre>
+		</div>
+
+		<div class="pattern-doc-details">
+			<h4><?php esc_html_e( 'Params', 'alcatraz' ); ?></h4>
+			<?php if ( $args['params'] ) : ?>
+				<?php foreach ( $args['params'] as $key => $value ) : ?>
+					<p><code><?php esc_html_e( $key ); ?></code> <?php esc_html_e( $value ); ?></p>
+				<?php endforeach; ?>
+			<?php endif; ?>
+
+			<h4><?php esc_html_e( 'Arguments', 'alcatraz' ); ?></h4>
+			<?php if ( $args['args'] ) : ?>
+				<?php foreach ( $args['args'] as $key => $value ) : ?>
+					<p><code><?php esc_html_e( $key ); ?></code> <?php esc_html_e( $value ); ?></p>
+				<?php endforeach; ?>
+			<?php endif; ?>
+		</div>
+
+		<?php // The actual pattern. ?>
+		<div class="pattern-doc-pattern">
+			<?php wp_kses( $args['output'] ); ?>
 		</div>
 	</div>
 
