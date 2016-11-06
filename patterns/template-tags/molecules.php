@@ -18,12 +18,12 @@ function alcatraz_card( $args = array() ) {
 	);
 	$args = wp_parse_args( $args, $defaults );
 
-	?>
+	ob_start(); ?>
 
 	<div class="alcatraz-card alcatraz-col-4 <?php esc_attr_e( $args['class'] ); ?>">
 
 		<div class="card-image">
-			<?php alcatraz_image( array( 'src' => $args['src'], 'use_img_src' => true ) ); ?>
+			<?php echo wp_kses_post( alcatraz_image( array( 'src' => $args['src'], 'use_img_src' => true ) ) ); ?>
 		</div>
 
 		<header class="card-header">
@@ -35,10 +35,10 @@ function alcatraz_card( $args = array() ) {
 		</div>
 
 		<footer class="card-footer">
-			<?php alcatraz_button( array( 'type' => 'text', 'link' => $args['link'], 'button_text' => 'Read More' ) ); ?>
+			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'text', 'link' => $args['link'], 'button_text' => 'Read More' ) ) ); ?>
 		</footer>
 
 	</div>
 
-	<?php
+	<?php return ob_get_clean();
 }
