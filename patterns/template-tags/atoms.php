@@ -26,23 +26,23 @@ function alcatraz_pattern_doc( $args = array() ) {
 
 	<header class="pattern-doc-header">
 		<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
-		<?php alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc-toggle' ) ); ?>
+		<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc-toggle' ) ) ); ?>
 	</header>
 
 	<div class="pattern-doc-info">
 		<div class="pattern-doc-details">
 			<p><?php echo wp_kses_post( $args['description'] ); ?></p>
-			<?php if ( $args['included_in'] ) : ?>
+			<?php if ( $args['patterns_included'] ) : ?>
 			<p><?php esc_html_e( $args['patterns_included'] ); ?></p>
 			<?php endif; ?>
 		</div>
 
 		<div class="pattern-doc-details">
 			<h4><?php esc_html_e( 'Template Tag', 'alcatraz' ); ?></h4>
-			<pre>&lt;?php <?php esc_html_e( $args['function'] ); ?> ?&gt;</pre>
+			<pre>&lt;?php <?php esc_html_e( $args['function'] ); ?>; ?&gt;</pre>
 
 			<h4><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
-			<pre><?php esc_html_e( $args['output'] ); ?></pre>
+			<pre><?php esc_html_e( trim( $args['output'] ) ); ?></pre>
 		</div>
 
 		<div class="pattern-doc-details">
@@ -60,11 +60,11 @@ function alcatraz_pattern_doc( $args = array() ) {
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
+	</div>
 
-		<?php // The actual pattern. ?>
-		<div class="pattern-doc-pattern">
-			<?php wp_kses( $args['output'] ); ?>
-		</div>
+	<?php // The actual pattern. ?>
+	<div class="pattern-doc-pattern">
+		<?php echo wp_kses_post( $args['output'] ); ?>
 	</div>
 
 	<?php
@@ -122,21 +122,33 @@ function alcatraz_button( $args = array() ) {
 
 		case 'button' : ?>
 
+			<?php ob_start(); ?>
+
 			<button class="button <?php esc_attr_e( $args['class'] ); ?>"><?php esc_html_e( $args['button_text'] ); ?></button>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'submit' : ?>
 
+			<?php ob_start(); ?>
+
 			<input type="submit" value="<?php esc_attr_e( $args['button_text'] ); ?>" class="button button-submit <?php esc_attr_e( $args['class'] ); ?>" />
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'text' : ?>
 
+			<?php ob_start(); ?>
+
 			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button button-text <?php esc_attr_e( $args['class'] ); ?>" target="<?php esc_attr_e( $args['target'] ); ?>"><?php esc_html_e( $args['button_text'] ); ?></a>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 	}
 }
 
@@ -222,37 +234,48 @@ function alcatraz_form_elements( $args = array() ) {
 				'class'         => $args['class'],
 			) ); ?>
 
+			<?php ob_start(); ?>
+
 			<input <?php esc_attr_e( $attributes ); ?> />
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'textarea' : ?>
 
+			<?php ob_start(); ?>
+
 			<textarea class="<?php esc_attr_e( $args['class'] ); ?>" placeholder="<?php esc_attr_e( $args['placeholder'] ); ?>"></textarea>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'select' :
 
 			$options = $args['options']; ?>
+
+			<?php ob_start(); ?>
 
 			<select class="<?php esc_attr_e( $args['class'] ); ?>">
 
 				<optgroup>
 
 				<?php
-				foreach ( $options as $option ) { ?>
+				foreach ( $options as $option ) : ?>
 
 					<option><?php esc_html_e( $option ); ?></option>
 
-					<?php
-				} ?>
+				<?php endforeach; ?>
 
 				</optgroup>
 
 			</select>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 	}
 }
 
@@ -275,15 +298,19 @@ function alcatraz_image( $args = array() ) {
 
 		case true : ?>
 
+			<?php ob_start(); ?>
+
 			<img src="<?php echo esc_url( $args['src'] ); ?>" />
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case false :
 
-			wp_get_attachment_image( $args['size'] );
+			return wp_get_attachment_image( $args['size'] );
 
-			break;
+		break;
 	}
 }
 
@@ -300,6 +327,8 @@ function alcatraz_typography( $args = array() ) {
 
 		case 'headings' : ?>
 
+			<?php ob_start(); ?>
+
 			<header>
 				<h1><?php esc_html_e( 'Heading 1', 'alcatraz' ); ?></h1>
 				<h2><?php esc_html_e( 'Heading 2', 'alcatraz' ); ?></h2>
@@ -309,15 +338,23 @@ function alcatraz_typography( $args = array() ) {
 				<h6><?php esc_html_e( 'Heading 6', 'alcatraz' ); ?></h6>
 			</header>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'hr' : ?>
 
+			<?php ob_start(); ?>
+
 			<hr />
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'inline' : ?>
+
+			<?php ob_start(); ?>
 
 			<div class="wrap">
 				<p><a href="#"><?php esc_html_e( 'This is a text link', 'alcatraz' ); ?></a></p>
@@ -361,15 +398,23 @@ function alcatraz_typography( $args = array() ) {
 				<p><?php esc_html_e( 'The ', 'alcatraz' ); ?><var><?php esc_html_e( 'variable element', 'alcatraz' ); ?></var><?php esc_html_e( ' such as ', 'alcatraz' ); ?><var><?php esc_html_e( 'x', 'alcatraz' ); ?></var><?php esc_html_e( ' = ', 'alcatraz' ); ?><var><?php esc_html_e( 'y', 'alcatraz' ); ?></var></p>
 			</div>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'paragraph' : ?>
 
+			<?php ob_start(); ?>
+
 			<p><?php esc_html_e( 'A paragraph (from the Greek paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences. Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.', 'alcatraz' ); ?></p>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 
 		case 'preformatted' : ?>
+
+			<?php ob_start(); ?>
 
 			<?php // Preformatted text take spaces and tabs into account, so this looks a bit goofy! ?>
 			<pre><?php esc_html_e( 'P R E F O R M A T T E D T E X T
@@ -380,6 +425,8 @@ P Q R S T U V W X Y Z [ \ ] ^ _
 ` a b c d e f g h i j k l m n o
 p q r s t u v w x y z { | } ~', 'alcatraz' ); ?></pre>
 
-			<?php break;
+			<?php return ob_get_clean(); ?>
+
+		<?php break;
 	}
 }
