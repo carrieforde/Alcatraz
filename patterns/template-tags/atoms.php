@@ -24,25 +24,8 @@ function alcatraz_pattern_doc( $args = array() ) {
 	);
 	$args = wp_parse_args( $args, $defaults );
 
-	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
-		'input' => array(
-			'type'         => true,
-			'value'        => true,
-			'placeholder'  => true,
-			'required'     => true,
-			'autocomplete' => true,
-			'class'        => true,
-		),
-		'select' => array(
-			'class' => true,
-		),
-		'optgroup' => array(
-			'class' => true,
-		),
-		'option' => array(
-			'class' => true,
-		),
-	) ); ?>
+	// Grab our allowed HTML tags.
+	$allowed_tags = alcatraz_pattern_allowed_html(); ?>
 
 	<header class="pattern-doc-header">
 		<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
@@ -99,6 +82,36 @@ function alcatraz_pattern_doc( $args = array() ) {
 	</div>
 
 	<?php
+}
+
+/**
+ * Set HTML tags allowed for patterns.
+ *
+ * @return  array  The HTML tags allowed.
+ */
+function alcatraz_pattern_allowed_html() {
+
+	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
+		'input' => array(
+			'type'         => true,
+			'value'        => true,
+			'placeholder'  => true,
+			'required'     => true,
+			'autocomplete' => true,
+			'class'        => true,
+		),
+		'select' => array(
+			'class' => true,
+		),
+		'optgroup' => array(
+			'class' => true,
+		),
+		'option' => array(
+			'class' => true,
+		),
+	) );
+
+	return apply_filters( 'alcatraz_set_allowed_html', $allowed_tags );
 }
 
 /**
