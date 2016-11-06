@@ -89,9 +89,21 @@ function alcatraz_pattern_doc( $args = array() ) {
 function alcatraz_set_theme_colors() {
 
 	$colors = array(
-		'alcatraz-blue' => '#0d8bb7',
-		'hope'          => '#fff9c0',
-		'jelly-bean'    => '#21759b',
+		'Brand Colors'   => array( 'alcatraz-blue' => '#0d8bb7' ),
+		'Neutral Colors' => array(
+			'true-white'         => '#fff',
+			'white-smoke'        => '#f1f1f1',
+			'mist'               => '#ddd',
+			'silver'             => '#c0c0c0',
+			'sf-fog'             => '#95a0a3',
+			'dim-gray'           => '#666',
+			'prision-cell-gray'  => '#535d65',
+			'true-black'         => '#000',
+		),
+		'Utility Colors' => array(
+			'hope'       => '#fff9c0',
+			'jelly-bean' => '#21759b',
+		),
 	);
 
 	return apply_filters( 'alcatraz_set_colors', $colors );

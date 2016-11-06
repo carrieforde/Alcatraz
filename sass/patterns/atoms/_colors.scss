@@ -1,7 +1,7 @@
 //--------------------------------------------------------------
 // PATTERNS - ATOMS - COLORS
 //--------------------------------------------------------------
-.section-colors {
+.pattern-doc-colors {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -12,10 +12,6 @@
 
 	@include media ($tablet-landscape) {
 		justify-content: space-between;
-	}
-
-	.section-heading {
-		flex-basis: 100%;
 	}
 
 	.color-chip {
@@ -32,20 +28,4 @@
 
 		margin-bottom: rem(5);
 	}
-}
-
-
-//-------------------------------
-// Color Utility Classes
-//-------------------------------
-.alcatraz-blue {
-	@include color-class($alcatraz-blue);
-}
-
-.hope {
-	@include color-class($hope);
-}
-
-.jelly-bean {
-	@include color-class($jelly-bean);
 }
