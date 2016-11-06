@@ -22,7 +22,27 @@ function alcatraz_pattern_doc( $args = array() ) {
 		'params'            => array(),
 		'args'              => array(),
 	);
-	$args = wp_parse_args( $args, $defaults ); ?>
+	$args = wp_parse_args( $args, $defaults );
+
+	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
+		'input' => array(
+			'type'         => true,
+			'value'        => true,
+			'placeholder'  => true,
+			'required'     => true,
+			'autocomplete' => true,
+			'class'        => true,
+		),
+		'select' => array(
+			'class' => true,
+		),
+		'optgroup' => array(
+			'class' => true,
+		),
+		'option' => array(
+			'class' => true,
+		),
+	) ); ?>
 
 	<header class="pattern-doc-header">
 		<h3 class="pattern-doc-heading"><?php esc_html_e( $args['heading'] ); ?></h3>
@@ -32,7 +52,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 	<div class="pattern-doc-info">
 		<?php if ( $args['description'] || $args['patterns_included'] ) : ?>
 		<div class="pattern-doc-details">
-			<p><?php esc_html_e( $args['description'] ); ?></p>
+			<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 
 			<?php if ( $args['patterns_included'] ) : ?>
 			<p><?php esc_html_e( $args['patterns_included'] ); ?></p>
@@ -75,7 +95,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 
 	<?php // The actual pattern. ?>
 	<div class="pattern-doc-pattern">
-		<?php echo wp_kses_post( $args['output'] ); ?>
+		<?php echo wp_kses( $args['output'], $allowed_tags ); ?>
 	</div>
 
 	<?php
@@ -284,14 +304,11 @@ function alcatraz_form_elements( $args = array() ) {
 			<select class="<?php esc_attr_e( $args['class'] ); ?>">
 
 				<optgroup>
-
-				<?php
-				foreach ( $options as $option ) : ?>
+				<?php foreach ( $options as $option ) : ?>
 
 					<option><?php esc_html_e( $option ); ?></option>
 
 				<?php endforeach; ?>
-
 				</optgroup>
 
 			</select>
