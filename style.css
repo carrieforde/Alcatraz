@@ -270,7 +270,7 @@ html {
   display: none;
 }
 
-.section-colors {
+.pattern-doc-colors {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
@@ -279,12 +279,7 @@ html {
       justify-content: center;
 }
 
-.section-colors .section-heading {
-  -ms-flex-preferred-size: 100%;
-      flex-basis: 100%;
-}
-
-.section-colors .color-chip {
+.pattern-doc-colors .color-chip {
   color: #666;
   font-size: 0.875rem;
   margin-bottom: 1.875rem;
@@ -292,48 +287,12 @@ html {
   width: 12.5rem;
 }
 
-.section-colors .color {
+.pattern-doc-colors .color {
   height: 6.25rem;
   width: 6.25rem;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 0.3125rem;
-}
-
-.alcatraz-blue {
-  color: #0d8bb7;
-}
-
-.alcatraz-blue-background {
-  background-color: #0d8bb7;
-}
-
-.hope {
-  color: #fff9c0;
-}
-
-.hope-background {
-  background-color: #fff9c0;
-}
-
-.jelly-bean {
-  color: #21759b;
-}
-
-.jelly-bean-background {
-  background-color: #21759b;
-}
-
-.font-stack [class^="font-"]:first-letter {
-  text-transform: capitalize;
-}
-
-.font-primary {
-  font-family: "Source Sans Pro", sans-serif;
-}
-
-.font-code {
-  font-family: "Source Code Pro", Courier, monospace;
 }
 
 html {
@@ -1872,7 +1831,7 @@ input[type="submit"].search-submit {
 }
 
 @media screen and (min-width: 48em) {
-  .section-colors {
+  .pattern-doc-colors {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
@@ -2704,7 +2663,7 @@ input[type="submit"].search-submit {
 }
 
 @media screen and (min-width: 64em) {
-  .section-colors {
+  .pattern-doc-colors {
     -ms-flex-pack: justify;
     justify-content: space-between;
   }
