@@ -32,8 +32,6 @@
 			'output'       => alcatraz_button( array( 'type' => 'submit' ) ),
 		) ); ?>
 
-		<?php echo alcatraz_button( array( 'type' => 'submit' ) ); ?>
-
 	</div>
 
 	<div class="wrap">

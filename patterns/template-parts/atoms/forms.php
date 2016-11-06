@@ -9,33 +9,61 @@
 	<h2 class="section-heading"><?php esc_html_e( 'Forms', 'alcatraz' ); ?></h2>
 
 	<div class="wrap">
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Text Input', 'alcatraz' ); ?></h3>
-		<?php
-		alcatraz_form_elements( array(
-			'type'          => 'text',
-			'placeholder'   => 'Text Input',
-		) );
-		?>
+		<?php alcatraz_pattern_doc( array(
+			'heading' => 'Text Input',
+			'description' => 'This is a <code>input[type="text"]</code>.',
+			'function' => 'alcatraz_form_elements( array( \'type\' => \'text\', \'placeholder\' => \'Text Input\' ) )',
+			'output' => alcatraz_form_elements( array(
+				'type'          => 'text',
+				'placeholder'   => 'Text Input',
+			) ),
+			'params' => array( 'args' => 'The function arguments' ),
+			'args' => array( 'type' => 'text', 'placeholder' => 'Text' ),
+		) ); ?>
 	</div>
 
 	<div class="wrap">
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Radio', 'alcatraz' ); ?></h3>
-		<?php alcatraz_form_elements( array( 'type' => 'radio' ) ); ?>
+		<?php alcatraz_pattern_doc( array(
+			'heading' => 'Radio',
+			'description' => 'This is a <code>input[type="radio"]</code>.',
+			'function' => 'alcatraz_form_elements( array( \'type\' => \'radio\' ) )',
+			'output' => alcatraz_form_elements( array( 'type' => 'radio' ) ),
+			'params' => array( 'args' => 'The function arguments' ),
+			'args' => array( 'type' => 'radio' ),
+		) ); ?>
 	</div>
 
 	<div class="wrap">
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Checkbox', 'alcatraz' ); ?></h3>
-		<?php alcatraz_form_elements( array( 'type' => 'checkbox' ) ); ?>
+		<?php alcatraz_pattern_doc( array(
+			'heading' => 'Checkbox',
+			'description' => 'This is a <code>input[type="checkbox"]</code>.',
+			'function' => 'alcatraz_form_elements( array( \'type\' => \'checkbox\' ) )',
+			'output' => alcatraz_form_elements( array( 'type' => 'checkbox' ) ),
+			'params' => array( 'args' => 'The function arguments' ),
+			'args' => array( 'type' => 'checkbox' ),
+		) ); ?>
 	</div>
 
 	<div class="wrap">
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Textarea', 'alcatraz' ); ?></h3>
-		<?php alcatraz_form_elements( array( 'tag' => 'textarea' ) ); ?>
+		<?php alcatraz_pattern_doc( array(
+			'heading' => 'Textarea',
+			'description' => 'This is a <code>textarea</code>.',
+			'function' => 'alcatraz_form_elements( array( \'tag\' => \'textarea\' ) )',
+			'output' => alcatraz_form_elements( array( 'tag' => 'textarea' ) ),
+			'params' => array( 'args' => 'The function arguments' ),
+			'args' => array( 'tag' => 'textarea' ),
+		) ); ?>
 	</div>
 
 	<div class="wrap">
-		<h3 class="section-sub-heading"><?php esc_html_e( 'Select', 'alcatraz' ); ?></h3>
-		<?php alcatraz_form_elements( array( 'tag' => 'select' ) ); ?>
+		<?php alcatraz_pattern_doc( array(
+			'heading' => 'Select',
+			'description' => 'This is a <code>select</code>.',
+			'function' => 'alcatraz_form_elements( array( \'tag\' => \'select\' ) )',
+			'output' => alcatraz_form_elements( array( 'tag' => 'select' ) ),
+			'params' => array( 'args' => 'The function arguments' ),
+			'args' => array( 'tag' => 'select' ),
+		) ); ?>
 	</div>
 
 </section>

@@ -10,12 +10,10 @@
 
 		<div class="wrap">
 			<?php alcatraz_pattern_doc( array(
-				'heading'      => 'Card Image',
-				'description'  => 'This is a 300 x 200px image.',
-				'function'     => 'alcatraz_image( array( \'use_img_url\' => true ) );',
-				'output'       => '<img src="https://unsplash.it/300/200/?random" />',
+				'heading' => 'Card Image',
+				'description' => 'This is a 300 x 200px image.',
+				'function' => 'alcatraz_image( array( \'use_img_url\' => true ) )',
+				'output' => alcatraz_image( array( 'use_img_url' => true ) ),
 			) ); ?>
-
-			<?php alcatraz_image( array( 'use_img_url' => true ) ); ?>
 		</div>
 </section>
