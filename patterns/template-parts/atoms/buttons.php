@@ -11,13 +11,13 @@
 	<div class="wrap">
 
 		<?php alcatraz_pattern_doc( array(
-			'heading'      => 'Button',
-			'description'  => 'This is a <code>button</code>.',
-			'function'     => 'alcatraz_button( array( \'type\' => \'button\' ) );',
-			'output'       => '<button class="button">Submit</button>',
+			'heading'     => 'Button',
+			'description' => 'This is a <code>button</code>.',
+			'function'    => 'alcatraz_button( array( \'type\' => \'button\' ) )',
+			'params'      => array( '$args' => 'The function arguments' ),
+			'args'        => array( 'type' => 'button' ),
+			'output'      => alcatraz_button( array( 'type' => 'button' ) ),
 		) ); ?>
-
-		<?php alcatraz_button( array( 'type' => 'button' ) ); ?>
 
 	</div>
 
@@ -27,10 +27,12 @@
 			'heading'      => 'Submit',
 			'description'  => 'This is an <code>input[type="submit"]</code>.',
 			'function'     => 'alcatraz_button( array( \'type\' => \'submit\' ) );',
-			'output'       => '<input type="submit" value="Submit" class="button button-submit" />',
+			'params'       => array( '$args' => 'The function arguments' ),
+			'args'         => array( 'type' => 'submit' ),
+			'output'       => alcatraz_button( array( 'type' => 'submit' ) ),
 		) ); ?>
 
-		<?php alcatraz_button( array( 'type' => 'submit' ) ); ?>
+		<?php echo alcatraz_button( array( 'type' => 'submit' ) ); ?>
 
 	</div>
 
@@ -40,10 +42,10 @@
 			'heading'      => 'Text',
 			'description'  => 'This is an <code>a</code> button.',
 			'function'     => 'alcatraz_button( array( \'type\' => \'text\' ) );',
-			'output'       => '<a href="" class="button button-text" target="">Submit</a>',
+			'params'       => array( '$args' => 'The function arguments' ),
+			'args'         => array( 'type' => 'text' ),
+			'output'       => alcatraz_button( array( 'type' => 'text' ) ),
 		) ); ?>
-
-		<?php alcatraz_button( array( 'type' => 'text' ) ); ?>
 
 	</div>
 
