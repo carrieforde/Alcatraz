@@ -30,36 +30,47 @@ function alcatraz_pattern_doc( $args = array() ) {
 	</header>
 
 	<div class="pattern-doc-info">
+		<?php if ( $args['description'] || $args['patterns_included'] ) : ?>
 		<div class="pattern-doc-details">
-			<p><?php echo wp_kses_post( $args['description'] ); ?></p>
+			<p><?php esc_html_e( $args['description'] ); ?></p>
+
 			<?php if ( $args['patterns_included'] ) : ?>
 			<p><?php esc_html_e( $args['patterns_included'] ); ?></p>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 
+		<?php if ( $args['function'] || $args['output'] ) : ?>
 		<div class="pattern-doc-details">
+			<?php if ( $args['function'] ) : ?>
 			<h4><?php esc_html_e( 'Template Tag', 'alcatraz' ); ?></h4>
 			<pre>&lt;?php <?php esc_html_e( $args['function'] ); ?>; ?&gt;</pre>
+			<?php endif; ?>
 
+			<?php if ( $args['output'] ) : ?>
 			<h4><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
 			<pre><?php esc_html_e( trim( $args['output'] ) ); ?></pre>
+			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 
+		<?php if ( $args['params'] || $args['args'] ) : ?>
 		<div class="pattern-doc-details">
-			<h4><?php esc_html_e( 'Params', 'alcatraz' ); ?></h4>
 			<?php if ( $args['params'] ) : ?>
+			<h4><?php esc_html_e( 'Params', 'alcatraz' ); ?></h4>
 				<?php foreach ( $args['params'] as $key => $value ) : ?>
 					<p><code><?php esc_html_e( $key ); ?></code> <?php esc_html_e( $value ); ?></p>
 				<?php endforeach; ?>
 			<?php endif; ?>
 
-			<h4><?php esc_html_e( 'Arguments', 'alcatraz' ); ?></h4>
 			<?php if ( $args['args'] ) : ?>
+			<h4><?php esc_html_e( 'Arguments', 'alcatraz' ); ?></h4>
 				<?php foreach ( $args['args'] as $key => $value ) : ?>
 					<p><code><?php esc_html_e( $key ); ?></code> <?php esc_html_e( $value ); ?></p>
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
+		<?php endif; ?>
 	</div>
 
 	<?php // The actual pattern. ?>
