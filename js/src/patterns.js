@@ -20,7 +20,6 @@ window.AlcatrazPattern = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			patternsTemplate: $( '.patterns-template' ),
 			patternDocToggle: $( '.pattern-doc-toggle' ),
 			patternDocInfo: $( '.pattern-doc-info' ),
 		};
@@ -35,7 +34,7 @@ window.AlcatrazPattern = {};
 
 	// Do we meet the requirements?
 	app.meetsRequirements = function() {
-		return app.$c.patternsTemplate.length;
+		return app.$c.patternDocToggle.length;
 	};
 
 	// Do foo function.
