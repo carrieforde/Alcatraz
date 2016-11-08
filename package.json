@@ -28,5 +28,8 @@
     "grunt-sass": "^1.2.0",
     "grunt-wp-i18n": "^0.5.3",
     "grunt-wp-readme-to-markdown": "^1.0.0"
+  },
+  "dependencies": {
+    "normalize-scss": "^6.0.0"
   }
 }
