@@ -18,6 +18,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/cards' ); ?>
 
+				<?php get_template_part( 'patterns/template-parts/molecules/forms' ); ?>
+
 				<?php
 				// Maybe load comments.
 				if ( comments_open() || get_comments_number() ) :
