@@ -6,6 +6,52 @@
  */
 
 
+/**
+ * The Alcatraz Grid
+ *
+ * @param   array   The arguments.
+ * @return  string  The grid HTML.
+ */
+function alcatraz_grid( $args = array() ) {
+
+	$defaults = array(
+		'gutter' => true,
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	// Build our classes string.
+	$classes = 'row';
+	if ( ! $args['gutter'] ) {
+		$classes .= ' no-gutter';
+	}
+
+	ob_start();
+
+	for ( $i = 1; $i < 12; $i++ ) :
+
+		$col_1 = $i;
+		$col_2 = 12 - $i; ?>
+
+	<div class="<?php esc_attr_e( $classes ); ?>">
+		<div class="alcatraz-col-<?php esc_attr_e( $col_1 ); ?>"><?php esc_html_e( $col_1 ); ?></div>
+		<div class="alcatraz-col-<?php esc_attr_e( $col_2 ); ?>"><?php esc_html_e( $col_2 ); ?></div>
+	</div>
+
+	<?php endfor; ?>
+
+	<div class="<?php esc_attr_e( $classes ); ?>">
+		<div class="alcatraz-col-12"><?php esc_html_e( '12', 'alcatraz' ); ?></div>
+	</div>
+
+	<?php return ob_get_clean();
+}
+
+/**
+ * Cards
+ *
+ * @param   array   The arguments.
+ * @return  string  The HTML.
+ */
 function alcatraz_card( $args = array() ) {
 
 	$defaults = array(
