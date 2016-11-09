@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Patterns - Atoms
- * Template Post Type: patterns
+ * Template Post Type: alcatraz_patterns, patterns
  */
 
 get_header(); ?>
