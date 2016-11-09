@@ -54,6 +54,20 @@ html {
   display: none;
 }
 
+.section-grids .row {
+  margin: 0 0 1.25rem;
+  overflow: hidden;
+}
+
+.section-grids [class^="alcatraz-col"] {
+  background-color: #ddd;
+}
+
+.section-grids .no-gutter [class^="alcatraz-col"]:last-child {
+  background-color: #535d65;
+  color: #f1f1f1;
+}
+
 .pattern-doc-colors {
   display: -ms-flexbox;
   display: flex;

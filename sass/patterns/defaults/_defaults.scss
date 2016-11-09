@@ -36,3 +36,27 @@
 .pattern-doc-info {
 	display: none;
 }
+
+
+//-------------------------------
+// Pattern Grids
+//-------------------------------
+.section-grids {
+
+	.row {
+		margin: 0 0 rem(20);
+		overflow: hidden;
+	}
+
+	[class^="alcatraz-col"] {
+		background-color: $mist;
+	}
+
+	.no-gutter {
+
+		[class^="alcatraz-col"]:last-child {
+			background-color: $prision-cell-gray;
+			color: $white-smoke;
+		}
+	}
+}
