@@ -150,8 +150,8 @@ function alcatraz_set_theme_colors() {
 function alcatraz_set_theme_fonts() {
 
 	$fonts = array(
-		'Primary' => '\'Source Sans Pro\', sans-serif',
-		'Code'    => '\'Source Code Pro\', Courier, monospace',
+		'primary' => '\'Source Sans Pro\', sans-serif',
+		'code'    => '\'Source Code Pro\', Courier, monospace',
 	);
 
 	return apply_filters( 'alcatraz_set_fonts', $fonts );
