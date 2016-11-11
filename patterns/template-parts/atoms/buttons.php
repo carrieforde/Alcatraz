@@ -26,7 +26,7 @@
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Submit',
 			'description'  => 'This is an <code>input[type="submit"]</code>.',
-			'function'     => 'alcatraz_button( array( \'type\' => \'submit\' ) );',
+			'function'     => 'alcatraz_button( array( \'type\' => \'submit\' ) )',
 			'params'       => array( '$args' => 'The function arguments' ),
 			'args'         => array( 'type' => 'submit' ),
 			'output'       => alcatraz_button( array( 'type' => 'submit' ) ),
@@ -39,7 +39,7 @@
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Text',
 			'description'  => 'This is an <code>a</code> button.',
-			'function'     => 'alcatraz_button( array( \'type\' => \'text\' ) );',
+			'function'     => 'alcatraz_button( array( \'type\' => \'text\' ) )',
 			'params'       => array( '$args' => 'The function arguments' ),
 			'args'         => array( 'type' => 'text' ),
 			'output'       => alcatraz_button( array( 'type' => 'text' ) ),
