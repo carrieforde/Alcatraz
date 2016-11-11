@@ -727,7 +727,7 @@ var Alcatraz = ( function( $ ) {
 /**
  * Patterns
  *
- * Handle Foo things for the foo theme.
+ * Handles interactions for the Alcatraz Pattern Library.
  */
 window.AlcatrazPattern = {};
 
