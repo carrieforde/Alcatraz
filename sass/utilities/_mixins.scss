@@ -1,16 +1,24 @@
 //--------------------------------------------------------------
-//   MIXINS
+// MIXINS
 //--------------------------------------------------------------
 
-
-// Center - makes the assumption the element is already block
+//-------------------------------
+// Center
+//
+// Makes the assumption the
+// element is already block.
+//-------------------------------
 @mixin center {
 	margin-left: auto;
 	margin-right: auto;
 }
 
 
-// Center block - displays block and centers
+//-------------------------------
+// Center Block
+//
+// Displays block and centers.
+//-------------------------------
 @mixin center-block {
 	display: block;
 	margin-left: auto;
@@ -18,15 +26,44 @@
 }
 
 
+//-------------------------------
+// Full Width
+//
+// Extend an element to the edge
+// of the browser window when the
+// parent has a fixed width. See
+// https://css-tricks.com/full-width-containers-limited-width-parents/
+// for more info.
+//-------------------------------
+@mixin full-width {
+	width: 100vw;
+	position: relative;
+	left: 50%;
+	right: 50%;
+	margin-left: calc(-50vw + 30px);
+	margin-right: -50vw;
+}
+
 // Margin-Padding reset - useful for styling <ul>s
+//-------------------------------
+// Margin & Padding reset
+//
+// Useful for styling <ul />
+//-------------------------------
 @mixin margin-padding-reset {
 	margin: 0;
 	padding: 0;
 }
 
 
-// Image replacement - hides text, but doesn't make it disappear.
-// Great for accessibility.
+//-------------------------------
+// Hide Text
+//
+// Also known as Image Replacment
+// this hides text, but doesn't
+// make it disappear. Great for
+// accessibility.
+//-------------------------------
 @mixin hide-text {
 	@include size(rem(1));
 
@@ -38,7 +75,14 @@
 	position: absolute;
 }
 
-// Set up color utility classes - use to set up a .color and .color-background class
+
+//-------------------------------
+// Color Classes
+//
+// Use this mixin to set up the
+// .$color and .$color-background
+// utilities classes.
+//-------------------------------
 @mixin color-class( $color ) {
 	color: $color;
 
@@ -48,7 +92,12 @@
 }
 
 
-// Omega Reset - Use with Neat columns to easily reset omega.
+//-------------------------------
+// Omega reset
+//
+// Use with Neat columns to
+// easily reset omega.
+//-------------------------------
 @mixin omega-reset($nth) {
 	&:nth-child(#{nth}) {
 		margin-right: flex-gutter();
@@ -60,7 +109,12 @@
 }
 
 
-// Larger Screen Nav Display Styles
+//-------------------------------
+// Larger screen nav display styles
+//
+// because we fucked up, and this
+// shouldn't be a mixin.
+//-------------------------------
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 
 	.main-navigation #primary-menu-wrap,

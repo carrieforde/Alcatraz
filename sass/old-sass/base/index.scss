@@ -1,6 +1,7 @@
 //--------------------------------------------------------------
-// PATTERNS
+//   BASE
 //--------------------------------------------------------------
 
-@import 'defaults/defaults';
-@import 'atoms/index';
+@import "defaults";
+@import "grid";
+@import "typography";

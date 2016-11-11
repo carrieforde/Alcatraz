@@ -1,8 +1,9 @@
 //--------------------------------------------------------------
-// PATTERN DEFAULTS
+// PATTERN LIBRARY
 //
-// These are some basic defaults that give our pattern library
-// some basic styles.
+// This file controls the basic styling for the pattern library
+// as a whole. Individual atom, molecule, organism, template
+// styles, etc. should live in their respective folders.
 //--------------------------------------------------------------
 
 //-------------------------------
@@ -27,10 +28,10 @@
 	justify-content: space-between;
 	margin: 0 0 rem(25);
 	padding: 0 0 rem(5);
-}
 
-.pattern-doc-heading {
-	margin: 0;
+	.pattern-doc-heading {
+		margin: 0;
+	}
 }
 
 .pattern-doc-info {
@@ -50,6 +51,14 @@
 
 	[class^="alcatraz-col"] {
 		background-color: $mist;
+
+		&:first-child {
+			margin: 0 0 rem(10);
+
+			@include media($tablet-portrait) {
+				margin: 0;
+			}
+		}
 	}
 
 	.no-gutter {
@@ -58,5 +67,37 @@
 			background-color: $prision-cell-gray;
 			color: $white-smoke;
 		}
+	}
+}
+
+//-------------------------------
+// Colors
+//-------------------------------
+.pattern-doc-colors {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+
+	@include media($tablet-portrait) {
+		justify-content: space-around;
+	}
+
+	@include media($tablet-landscape) {
+		justify-content: flex-start;
+	}
+
+	.color-chip {
+		color: $dim-gray;
+		font-size: rem(14);
+		margin-bottom: rem(30);
+		text-align: center;
+		width: rem(200);
+	}
+
+	.color {
+		@include size(rem(100));
+		@include center;
+
+		margin-bottom: rem(5);
 	}
 }

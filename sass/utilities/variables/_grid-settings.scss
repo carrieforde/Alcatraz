@@ -1,10 +1,10 @@
 //--------------------------------------------------------------
-//   GRID SETTINGS
+// GRID SETTINGS
 //
-//   Use this file to override Bourbon & Neat's default settings
+// Use this file to override Bourbon & Neat's default settings
 //
-//   Calculate your own grid using
-//   http://gridcalculator.dk/#/1100/12/16/0
+// Calculate your own grid using
+// http://gridcalculator.dk/#/1100/12/16/0
 //--------------------------------------------------------------
 
 
@@ -24,8 +24,12 @@ $fg-column: $column;
 $fg-gutter: $gutter;
 
 
-// Visual Grid - Neat's optional settings for visualizing the
-// grid.
+//-------------------------------
+// Visual Grid
+//
+// Neat's optional settings for
+// visualizing the grid.
+//-------------------------------
 $visual-grid: false;
 $visual-grid-color: $color__background-visual-grid;
 $visual-grid-index: back;
