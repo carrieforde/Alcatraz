@@ -31,12 +31,12 @@ $color__button-text: $true-white;
 // Forms
 //-------------------------------
 $color__forms-text: $prision-cell-gray;
-$color__forms-border: $sf-fog;
-$color__forms-border-focus: shade($sf-fog, 20%);
-$color__radio-background: $mist;
-$color__radio-background-checked: $alcatraz-blue;
-$color__select-background: $mist;
-
+$color__forms-border: $mist;
+$color__forms-border-focus: shade($mist, 20%);
+$color__checkbox-border: $mist;
+$color__checkbox-background-checked: $alcatraz-blue;
+$color__checkbox-text-checked: $true-white;
+$color__radio-background-checked: $true-white;
 
 // Background Colors
 $color__background-blockquote: $mist;

@@ -26,38 +26,54 @@ input[type='radio'] {
 	@include size(rem(20));
 
 	appearance: none;
-	background-color: $color__radio-background;
+	border: $border__checkbox;
 	border-radius: rem(3);
 	outline: none;
+	position: relative;
 
 	&:checked {
-		background-color: $color__radio-background-checked;
+		background-color: $color__checkbox-background-checked;
+		border: none;
+
+		&:before {
+			@include position(absolute, 0 0 0 0);
+
+			color: $color__checkbox-text-checked;
+			font-family: $text__checkbox;
+			margin: auto;
+		}
 	}
 }
 
 input[type='checkbox'] {
-	position: relative;
 
 	&:checked {
 
 		&:before {
 			@include position(absolute, 0 0 0 0);
 
-			color: $true-white;
 			content: $text__checkbox-checked;
-			font-family: $text__checkbox;
-			margin: auto;
-			width: rem(16); // keeps the check centered
+			width: rem(16);
 		}
 	}
 }
 
 input[type='radio'] {
 	border-radius: 50%;
+
+	&:checked {
+
+		&:before {
+			@include size(rem(8));
+
+			background-color: $color__radio-background-checked;
+			border-radius: 50%;
+			content: '';
+			display: block;
+		}
+	}
 }
 
 select {
-	background-color: $color__select-background;
-	border: none;
 	outline: none;
 }
