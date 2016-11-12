@@ -527,15 +527,15 @@ template {
   overflow: hidden;
 }
 
-.section-grids [class^="alcatraz-col"] {
+.section-grids [class^='alcatraz-col'] {
   background-color: #ddd;
 }
 
-.section-grids [class^="alcatraz-col"]:first-child {
+.section-grids [class^='alcatraz-col']:first-child {
   margin: 0 0 0.625rem;
 }
 
-.section-grids .no-gutter [class^="alcatraz-col"]:last-child {
+.section-grids .no-gutter [class^='alcatraz-col']:last-child {
   background-color: #535d65;
   color: #f1f1f1;
 }
@@ -565,8 +565,35 @@ template {
   margin-bottom: 0.3125rem;
 }
 
+.button,
+button,
+input[type='button'],
+input[type='submit'] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #0d8bb7;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  outline: none;
+  padding: 0.625rem;
+}
+
+.button:hover,
+button:hover,
+input[type='button']:hover,
+input[type='submit']:hover {
+  background-color: #319cc2;
+}
+
+.button-text {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 48em) {
-  .section-grids [class^="alcatraz-col"]:first-child {
+  .section-grids [class^='alcatraz-col']:first-child {
     margin: 0;
   }
   .pattern-doc-colors {
