@@ -1,0 +1,145 @@
+#--------------------------------------------------------------
+# Alcatraz Sass linting rules
+#
+# See https://github.com/sasstools/sass-lint for more info
+# about Sass linting.
+#
+# Guidelines
+#   0 - turns rule off
+#   1 - triggers a warning
+#   2 - error
+#--------------------------------------------------------------
+
+#-------------------------------
+# Linter Options
+#-------------------------------
+options:
+  max-warnings: 10
+  merge-default-rules: false
+
+#-------------------------------
+# File Options
+#-------------------------------
+files:
+  include: 'sass/**/*.s(a|c)ss'
+
+#-------------------------------
+# Rule Configuration
+#-------------------------------
+rules:
+  attribute-quotes:
+    - 1
+    -
+      include: true
+  border-zero:
+    - 1
+    -
+      convention: 'none'
+  brace-style:
+    - 1
+    -
+      style: '1tbs'
+      allow-single-line: false
+  clean-import-paths: 1
+#  declarations-before-nesting: 1
+  empty-line-between-blocks:
+    - 1
+    -
+      include: true
+      allow-single-line-rulesets: false
+  force-element-nesting: 1
+  force-pseudo-nesting: 1
+  hex-length:
+    - 1
+    -
+      style: 'short'
+  hex-notation:
+    - 1
+    -
+      style: 'lowercase'
+  indentation:
+    - 1
+    -
+      size: 'tab'
+  leading-zero:
+    - 1
+    -
+      include: true
+#  max-file-line-count:
+#    - 1
+#    -
+#      length: 500
+  mixin-name-format:
+    - 1
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedlowercase'
+  mixins-before-declarations:
+    - 2
+    -
+      exclude: ['media']
+  nesting-depth:
+    - 1
+    -
+      max-depth: 3
+  no-color-keywords: 1
+  no-duplicate-properties:
+    exclude: []
+  no-empty-rulesets: 2
+  no-extends: 1
+  no-ids: 1
+  no-important: 2
+  no-invalid-hex: 2
+  no-misspelled-properties: 2
+  no-trailing-zero: 1
+  no-vendor-prefixes:
+    - 1
+    -
+      ignore-non-standard: true
+  one-declaration-per-line: 1
+  property-sort-order:
+    - 1
+    -
+      order: 'alphabetical'
+  quotes:
+    - 1
+    -
+      style: 'single'
+  shorthand-values: 1
+  single-line-per-selector: 1
+  space-after-colon:
+   - 1
+   -
+     include: true
+  space-after-comma:
+    - 1
+    -
+      include: true
+  space-before-brace:
+    - 1
+    -
+      include: true
+  space-between-parens:
+   - 1
+   -
+      include: false
+  space-around-operator:
+    - 1
+    -
+      include: true
+  space-before-bang:
+    - 1
+    -
+      include: true
+  variable-for-property:
+    - 1
+    -
+      'properties':
+        - 'color'
+        - 'font-family'
+  variable-name-format:
+    - 1
+    -
+      allow-leading-underscore: false
+      convention: 'hyphenatedbem'
+  zero-unit: false
