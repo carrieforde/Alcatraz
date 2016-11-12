@@ -21,4 +21,10 @@ input[type='submit'] {
 
 .button-text {
 	text-decoration: none;
+
+	&:visited,
+	&:hover,
+	&:active {
+		color: $color__button-text;
+	}
 }

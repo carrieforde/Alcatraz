@@ -1,0 +1,69 @@
+//--------------------------------------------------------------
+// TYPOGRAPHY
+//--------------------------------------------------------------
+body,
+input,
+select {
+	color: $color__body-text;
+	font: 400 18px/#{$font__body-line-height} $font__body;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0 0 0.5em; // use em to keep space proportional with font size
+}
+
+p {
+	margin: 0 0 1.5em;
+}
+
+hr {
+	border: $border__hr;
+}
+
+a {
+	color: $color__link;
+	cursor: pointer;
+
+	&:visited {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:active {
+		color: $color__link-hover;
+	}
+}
+
+abbr[title] {
+	border-bottom: $border__abbr;
+	text-decoration: none;
+
+	&:hover {
+		cursor: help;
+	}
+}
+
+ins,
+mark {
+	background-color: $color__ins;
+	text-decoration: none;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+	font: 400 14px/#{$font__code-line-height} $font__code;
+}
+
+pre {
+	border: $border__pre;
+	padding: rem(25);
+}

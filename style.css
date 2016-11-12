@@ -593,6 +593,10 @@ input[type='submit']:hover {
   text-decoration: none;
 }
 
+.button-text:visited, .button-text:hover, .button-text:active {
+  color: #fff;
+}
+
 input[type='email'],
 input[type='password'],
 input[type='search'],
@@ -675,6 +679,72 @@ input[type='radio']:checked:before {
 
 select {
   outline: none;
+}
+
+body,
+input,
+select {
+  color: #040a04;
+  font: 400 18px/1.5 "Source Sans Pro", sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0 0 0.5em;
+}
+
+p {
+  margin: 0 0 1.5em;
+}
+
+hr {
+  border: 0.0625rem solid #95a0a3;
+}
+
+a {
+  color: #0d8bb7;
+  cursor: pointer;
+}
+
+a:visited {
+  color: #0b769c;
+}
+
+a:hover, a:active {
+  color: #319cc2;
+}
+
+abbr[title] {
+  border-bottom: 0.0625rem dotted;
+  text-decoration: none;
+}
+
+abbr[title]:hover {
+  cursor: help;
+}
+
+ins,
+mark {
+  background-color: #fff9c0;
+  text-decoration: none;
+}
+
+code,
+kbd,
+pre,
+samp,
+tt,
+var {
+  font: 400 14px/1.6 "Source Code Pro", Courier, monospace;
+}
+
+pre {
+  border: 0.0625rem solid #95a0a3;
+  padding: 1.5625rem;
 }
 
 @media screen and (min-width: 48em){
