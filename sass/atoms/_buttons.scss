@@ -1,0 +1,24 @@
+//--------------------------------------------------------------
+// BUTTONS
+//--------------------------------------------------------------
+.button,
+button,
+input[type='button'],
+input[type='submit'] {
+	appearance: none;
+	background-color: $color__button-background;
+	border: none;
+	color: $color__button-text;
+	cursor: pointer;
+	display: inline-block;
+	outline: none;
+	padding: rem(10);
+
+	&:hover {
+		background-color: $color__button-background-hover;
+	}
+}
+
+.button-text {
+	text-decoration: none;
+}

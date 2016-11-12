@@ -19,6 +19,14 @@ $true-black: #000;
 $white-smoke: #f1f1f1;
 
 
+//-------------------------------
+// Buttons
+//-------------------------------
+$color__button-background: $alcatraz-blue;
+$color__button-background-hover: tint($alcatraz-blue, 15%);
+$color__button-text: $true-white;
+
+
 // Background Colors
 $color__background-blockquote: $mist;
 $color__background-body: $true-white;
