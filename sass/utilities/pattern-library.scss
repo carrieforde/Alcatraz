@@ -49,7 +49,7 @@
 		overflow: hidden;
 	}
 
-	[class^="alcatraz-col"] {
+	[class^='alcatraz-col'] {
 		background-color: $mist;
 
 		&:first-child {
@@ -63,9 +63,12 @@
 
 	.no-gutter {
 
-		[class^="alcatraz-col"]:last-child {
-			background-color: $prision-cell-gray;
-			color: $white-smoke;
+		[class^='alcatraz-col'] {
+
+			&:last-child {
+				background-color: $prision-cell-gray;
+				color: $white-smoke;
+			}
 		}
 	}
 }
