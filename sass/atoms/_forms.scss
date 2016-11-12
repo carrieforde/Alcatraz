@@ -1,0 +1,63 @@
+//--------------------------------------------------------------
+// FORMS
+//--------------------------------------------------------------
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea {
+	border: $border__forms;
+	box-sizing: border-box;
+	color: $color__forms-text;
+	max-width: 100%;
+	padding: rem(5);
+	width: 100%;
+
+	&:focus {
+		border: $border__forms-focus;
+		outline: none;
+	}
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+	@include size(rem(20));
+
+	appearance: none;
+	background-color: $color__radio-background;
+	border-radius: rem(3);
+	outline: none;
+
+	&:checked {
+		background-color: $color__radio-background-checked;
+	}
+}
+
+input[type='checkbox'] {
+	position: relative;
+
+	&:checked {
+
+		&:before {
+			@include position(absolute, 0 0 0 0);
+
+			color: $true-white;
+			content: $text__checkbox-checked;
+			font-family: $text__checkbox;
+			margin: auto;
+			width: rem(16); // keeps the check centered
+		}
+	}
+}
+
+input[type='radio'] {
+	border-radius: 50%;
+}
+
+select {
+	background-color: $color__select-background;
+	border: none;
+	outline: none;
+}

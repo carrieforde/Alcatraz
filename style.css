@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*!
 Theme Name: Alcatraz
 Author: Carrie Forde, Braad Martin, Jordan Gonzales
@@ -592,18 +593,88 @@ input[type='submit']:hover {
   text-decoration: none;
 }
 
-@media screen and (min-width: 48em) {
-  .section-grids [class^='alcatraz-col']:first-child {
+input[type='email'],
+input[type='password'],
+input[type='search'],
+input[type='tel'],
+input[type='text'],
+input[type='url'],
+textarea {
+  border: 0.0625rem solid #95a0a3;
+  box-sizing: border-box;
+  color: #535d65;
+  max-width: 100%;
+  padding: 0.3125rem;
+  width: 100%;
+}
+
+input[type='email']:focus,
+input[type='password']:focus,
+input[type='search']:focus,
+input[type='tel']:focus,
+input[type='text']:focus,
+input[type='url']:focus,
+textarea:focus {
+  border: 0.0625rem solid #778082;
+  outline: none;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  height: 1.25rem;
+  width: 1.25rem;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background-color: #ddd;
+  border-radius: 0.1875rem;
+  outline: none;
+}
+
+input[type='checkbox']:checked,
+input[type='radio']:checked {
+  background-color: #0d8bb7;
+}
+
+input[type='checkbox'] {
+  position: relative;
+}
+
+input[type='checkbox']:checked:before {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  color: #fff;
+  content: "";
+  font-family: FontAwesome;
+  margin: auto;
+  width: 1rem;
+}
+
+input[type='radio'] {
+  border-radius: 50%;
+}
+
+select {
+  background-color: #ddd;
+  border: none;
+  outline: none;
+}
+
+@media screen and (min-width: 48em){
+  .section-grids [class^='alcatraz-col']:first-child{
     margin: 0;
   }
-  .pattern-doc-colors {
+  .pattern-doc-colors{
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
 }
 
-@media screen and (min-width: 64em) {
-  .pattern-doc-colors {
+@media screen and (min-width: 64em){
+  .pattern-doc-colors{
     -ms-flex-pack: start;
     justify-content: flex-start;
   }

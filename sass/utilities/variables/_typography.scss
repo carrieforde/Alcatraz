@@ -9,6 +9,14 @@ $source-code-pro: 'Source Code Pro', Courier, monospace;
 $source-sans-pro: 'Source Sans Pro', sans-serif;
 
 
+//-------------------------------
+// Forms
+//-------------------------------
+$text__checkbox: $font-awesome;
+$text__checkbox-checked: '\f00c';
+$text__select-chevron: '\f078';
+
+
 $font__body: $source-sans-pro;
 $font__code: $source-code-pro;
 $font__headings: $source-sans-pro;

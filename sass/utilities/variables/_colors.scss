@@ -27,6 +27,17 @@ $color__button-background-hover: tint($alcatraz-blue, 15%);
 $color__button-text: $true-white;
 
 
+//-------------------------------
+// Forms
+//-------------------------------
+$color__forms-text: $prision-cell-gray;
+$color__forms-border: $sf-fog;
+$color__forms-border-focus: shade($sf-fog, 20%);
+$color__radio-background: $mist;
+$color__radio-background-checked: $alcatraz-blue;
+$color__select-background: $mist;
+
+
 // Background Colors
 $color__background-blockquote: $mist;
 $color__background-body: $true-white;
