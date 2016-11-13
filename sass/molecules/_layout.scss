@@ -1,0 +1,56 @@
+//--------------------------------------------------------------
+// LAYOUT
+//--------------------------------------------------------------
+.content-area,
+.primary-sidebar {
+	padding: $size__padding * 2 $size__padding;
+}
+
+
+//-------------------------------
+// Boxed
+//-------------------------------
+.boxed {
+	@include center;
+
+	max-width: 100%;
+	width: $size__layout-boxed;
+}
+
+
+//-------------------------------
+// Boxed Content
+//-------------------------------
+.boxed-content {
+
+	.site-content {
+		@include center;
+
+		max-width: 100%;
+		width: $size__layout-boxed-content;
+	}
+}
+
+
+//-------------------------------
+// Sidebars
+//-------------------------------
+.left-sidebar,
+.right-sidebar {
+
+	.content-area {
+		@include span-columns(8);
+	}
+
+	.primary-sidebar {
+		@include span-columns(4);
+	}
+}
+
+.left-sidebar {
+
+	.content-area {
+		float: right;
+		margin-right: 0;
+	}
+}

@@ -16,7 +16,7 @@
 $column: em(77);      // the default width of the columns
 $gutter: em(16);      // the default width of the gutters
 $grid-columns: 12;    // the total number of columns
-$max-width: em(1100); // the max-width of the grid
+$max-width: 1100px; // the max-width of the grid
 
 
 // Flex-Grid
@@ -30,7 +30,7 @@ $fg-gutter: $gutter;
 // Neat's optional settings for
 // visualizing the grid.
 //-------------------------------
-$visual-grid: false;
+$visual-grid: true;
 $visual-grid-color: $color__background-visual-grid;
 $visual-grid-index: back;
 $visual-grid-opacity: 0.4;
