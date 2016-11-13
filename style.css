@@ -831,32 +831,6 @@ pre {
   width: 1100px;
 }
 
-.left-sidebar .content-area,
-.right-sidebar .content-area {
-  float: left;
-  display: block;
-  margin-right: 1.4545454545%;
-  width: 66.1818181818%;
-}
-
-.left-sidebar .content-area:last-child,
-.right-sidebar .content-area:last-child {
-  margin-right: 0;
-}
-
-.left-sidebar .primary-sidebar,
-.right-sidebar .primary-sidebar {
-  float: left;
-  display: block;
-  margin-right: 1.4545454545%;
-  width: 32.3636363636%;
-}
-
-.left-sidebar .primary-sidebar:last-child,
-.right-sidebar .primary-sidebar:last-child {
-  margin-right: 0;
-}
-
 .left-sidebar .content-area {
   float: right;
   margin-right: 0;
@@ -878,6 +852,28 @@ pre {
   }
   .section-grids [class^='alcatraz-col']:first-child{
     margin-bottom: 0;
+  }
+  .left-sidebar .content-area,
+  .right-sidebar .content-area{
+    float: left;
+    display: block;
+    margin-right: 1.4545454545%;
+    width: 66.1818181818%;
+  }
+  .left-sidebar .content-area:last-child,
+  .right-sidebar .content-area:last-child{
+    margin-right: 0;
+  }
+  .left-sidebar .primary-sidebar,
+  .right-sidebar .primary-sidebar{
+    float: left;
+    display: block;
+    margin-right: 1.4545454545%;
+    width: 32.3636363636%;
+  }
+  .left-sidebar .primary-sidebar:last-child,
+  .right-sidebar .primary-sidebar:last-child{
+    margin-right: 0;
   }
 }
 

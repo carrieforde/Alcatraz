@@ -39,11 +39,17 @@
 .right-sidebar {
 
 	.content-area {
-		@include span-columns(8);
+
+		@include media($tablet-portrait) {
+			@include span-columns(8);
+		}
 	}
 
 	.primary-sidebar {
-		@include span-columns(4);
+
+		@include media($tablet-portrait) {
+			@include span-columns(4);
+		}
 	}
 }
 
