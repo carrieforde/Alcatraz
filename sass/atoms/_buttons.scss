@@ -13,6 +13,7 @@ input[type='submit'] {
 	display: inline-block;
 	outline: none;
 	padding: rem(10);
+	transition: $transition__hover;
 
 	&:hover {
 		background-color: $color__button-background-hover;
@@ -20,11 +21,22 @@ input[type='submit'] {
 }
 
 .button-text {
+	display: inline-block;
 	text-decoration: none;
+	transition: $transition__hover;
 
-	&:visited,
-	&:hover,
-	&:active {
-		color: $color__button-text;
+	&:after {
+		content: $text__button-text-caret;
+		display: inline-block;
+		font-family: $text__button-text-font;
+		margin: 0 0 0 rem(5);
+		transition: $transition__hover;
+	}
+
+	&:hover {
+
+		&:after {
+			transform: translateX(rem(3));
+		}
 	}
 }

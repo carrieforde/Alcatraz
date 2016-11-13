@@ -596,6 +596,7 @@ input[type='submit'] {
   display: inline-block;
   outline: none;
   padding: 0.625rem;
+  transition: all 0.2s ease-in-out;
 }
 
 .button:hover,
@@ -606,11 +607,21 @@ input[type='submit']:hover {
 }
 
 .button-text {
+  display: inline-block;
   text-decoration: none;
+  transition: all 0.2s ease-in-out;
 }
 
-.button-text:visited, .button-text:hover, .button-text:active {
-  color: #fff;
+.button-text:after {
+  content: "";
+  display: inline-block;
+  font-family: FontAwesome;
+  margin: 0 0 0 0.3125rem;
+  transition: all 0.2s ease-in-out;
+}
+
+.button-text:hover:after {
+  transform: translateX(0.1875rem);
 }
 
 input[type='email'],
@@ -677,7 +688,8 @@ input[type='checkbox']:checked:before {
   bottom: 0;
   left: 0;
   content: "";
-  width: 1rem;
+  line-height: 1.25rem;
+  width: 1.125rem;
 }
 
 input[type='radio'] {
@@ -698,6 +710,7 @@ select {
 }
 
 body,
+button,
 input,
 select {
   color: #040a04;

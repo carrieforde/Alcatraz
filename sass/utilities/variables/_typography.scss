@@ -10,11 +10,17 @@ $source-sans-pro: 'Source Sans Pro', sans-serif;
 
 
 //-------------------------------
+// Buttons
+//-------------------------------
+$text__button-text-caret: '\f0da';
+$text__button-text-font: $font-awesome;
+
+
+//-------------------------------
 // Forms
 //-------------------------------
 $text__checkbox: $font-awesome;
 $text__checkbox-checked: '\f00c';
-$text__select-chevron: '\f078';
 
 
 //-------------------------------
