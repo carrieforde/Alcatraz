@@ -150,8 +150,8 @@ function alcatraz_set_theme_colors() {
 function alcatraz_set_theme_fonts() {
 
 	$fonts = array(
-		'primary' => '\'Source Sans Pro\', sans-serif',
-		'code'    => '\'Source Code Pro\', Courier, monospace',
+		'source-sans-pro' => '\'Source Sans Pro\', sans-serif',
+		'source-code-pro' => '\'Source Code Pro\', Courier, monospace',
 	);
 
 	return apply_filters( 'alcatraz_set_fonts', $fonts );
@@ -200,7 +200,7 @@ function alcatraz_button( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button button-text <?php esc_attr_e( $args['class'] ); ?>" target="<?php esc_attr_e( $args['target'] ); ?>"><?php esc_html_e( $args['button_text'] ); ?></a>
+			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button-text <?php esc_attr_e( $args['class'] ); ?>" target="<?php esc_attr_e( $args['target'] ); ?>"><?php esc_html_e( $args['button_text'] ); ?></a>
 
 			<?php return ob_get_clean(); ?>
 
