@@ -68,3 +68,11 @@ pre {
 	border: $border__pre;
 	padding: rem(25);
 }
+
+
+//-------------------------------
+// Utility
+//-------------------------------
+.screen-reader-text {
+	@include hide-text;
+}

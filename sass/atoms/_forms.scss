@@ -13,7 +13,6 @@ textarea {
 	color: $color__forms-text;
 	max-width: 100%;
 	padding: rem(5);
-	width: 100%;
 
 	&:focus {
 		border: $border__forms-focus;
@@ -77,4 +76,21 @@ input[type='radio'] {
 
 select {
 	outline: none;
+}
+
+
+//-------------------------------
+// Search Form
+//-------------------------------
+.search-form {
+
+	.search-field {
+		margin: 0 rem(10) 0 0;
+		width: calc(75% - 15px);
+	}
+
+	.search-submit {
+		padding: rem(5);
+		width: 25%;
+	}
 }

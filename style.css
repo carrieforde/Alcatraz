@@ -636,7 +636,6 @@ textarea {
   color: #535d65;
   max-width: 100%;
   padding: 0.3125rem;
-  width: 100%;
 }
 
 input[type='email']:focus,
@@ -709,6 +708,16 @@ select {
   outline: none;
 }
 
+.search-form .search-field {
+  margin: 0 0.625rem 0 0;
+  width: calc(75% - 15px);
+}
+
+.search-form .search-submit {
+  padding: 0.3125rem;
+  width: 25%;
+}
+
 body,
 button,
 input,
@@ -774,6 +783,17 @@ var {
 pre {
   border: 0.0625rem solid #95a0a3;
   padding: 1.5625rem;
+}
+
+.screen-reader-text {
+  height: 0.0625rem;
+  width: 0.0625rem;
+  border: 0;
+  clip: rect(0 0 0 0);
+  margin: -0.0625rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
 }
 
 .alcatraz-col-1,
