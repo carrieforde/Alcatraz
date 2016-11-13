@@ -38,41 +38,6 @@
 	display: none;
 }
 
-
-//-------------------------------
-// Pattern Grids
-//-------------------------------
-.section-grids {
-
-	.row {
-		margin: 0 0 rem(20);
-		overflow: hidden;
-	}
-
-	[class^='alcatraz-col'] {
-		background-color: $mist;
-
-		&:first-child {
-			margin: 0 0 rem(10);
-
-			@include media($tablet-portrait) {
-				margin: 0;
-			}
-		}
-	}
-
-	.no-gutter {
-
-		[class^='alcatraz-col'] {
-
-			&:last-child {
-				background-color: $prision-cell-gray;
-				color: $white-smoke;
-			}
-		}
-	}
-}
-
 //-------------------------------
 // Colors
 //-------------------------------
@@ -102,5 +67,39 @@
 		@include center;
 
 		margin-bottom: rem(5);
+	}
+}
+
+//-------------------------------
+// Pattern Grids
+//-------------------------------
+.section-grids {
+
+	.row {
+		margin: 0 0 rem(20);
+		overflow: hidden;
+	}
+
+	[class^='alcatraz-col'] {
+		background-color: $mist;
+
+		&:first-child {
+			margin-bottom: rem(20);
+
+			@include media($tablet-portrait) {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.no-gutter {
+
+		[class^='alcatraz-col'] {
+
+			&:last-child {
+				background-color: $prision-cell-gray;
+				color: $white-smoke;
+			}
+		}
 	}
 }
