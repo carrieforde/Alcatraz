@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Alcatraz 1.0.0\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/style\n"
-"POT-Creation-Date: 2016-06-14 21:50:42+00:00\n"
+"POT-Creation-Date: 2016-12-26 22:28:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,19 +37,19 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: comments.php:38 comments.php:59
+#: comments.php:38 comments.php:60
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:41 comments.php:62
+#: comments.php:41 comments.php:63
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:42 comments.php:63
+#: comments.php:42 comments.php:64
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:75
+#: comments.php:76
 msgid "Comments are closed."
 msgstr ""
 
@@ -57,11 +57,15 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:207
+#: functions.php:70
+msgid "Social Menu"
+msgstr ""
+
+#: functions.php:209
 msgid "Toggle"
 msgstr ""
 
-#: functions.php:208
+#: functions.php:210
 msgid "Close"
 msgstr ""
 
@@ -73,104 +77,104 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/admin/admin.php:58
+#: inc/admin/admin.php:47
 msgid "Customizer"
 msgstr ""
 
-#: inc/admin/admin.php:64
-msgid "Options Page"
-msgstr ""
-
-#: inc/admin/admin.php:70
+#: inc/admin/admin.php:53
 msgid "Alcatraz documentation on Github"
 msgstr ""
 
-#: inc/admin/admin.php:75
+#: inc/admin/admin.php:58
 msgid "Welcome to Alcatraz"
 msgstr ""
 
-#: inc/admin/admin.php:76
+#: inc/admin/admin.php:59
 msgid "Get started by configuring visual options in the"
 msgstr ""
 
-#: inc/admin/admin.php:77
-msgid "All non-visual options can be found on the"
-msgstr ""
-
-#: inc/admin/admin.php:78
+#: inc/admin/admin.php:60
 msgid "For development resources visit the"
 msgstr ""
 
-#: inc/admin/admin.php:114
+#: inc/admin/admin.php:96
 msgid "Page Options"
 msgstr ""
 
-#: inc/admin/admin.php:123 inc/admin/customizer.php:48
+#: inc/admin/admin.php:105 inc/admin/customizer.php:48
 msgid "Layout"
 msgstr ""
 
-#: inc/admin/admin.php:124
-msgid "Select the layout for this page"
+#: inc/admin/admin.php:106
+msgid "Set the layout for this page"
 msgstr ""
 
-#: inc/admin/admin.php:128 inc/theme-options.php:131 inc/theme-options.php:191
-#: inc/theme-options.php:211 lib/cmb2/includes/CMB2_JS.php:87
+#: inc/admin/admin.php:110 inc/admin/admin.php:124 inc/theme-options.php:124
+#: inc/theme-options.php:184 inc/theme-options.php:204
+#: lib/cmb2/includes/CMB2_JS.php:87
 msgid "Default"
 msgstr ""
 
-#: inc/admin/admin.php:129 inc/theme-options.php:171
+#: inc/admin/admin.php:111 inc/theme-options.php:144
+msgid "Full Width"
+msgstr ""
+
+#: inc/admin/admin.php:112 inc/theme-options.php:145
+msgid "Boxed"
+msgstr ""
+
+#: inc/admin/admin.php:113 inc/theme-options.php:146
+msgid "Boxed Content"
+msgstr ""
+
+#: inc/admin/admin.php:119
+msgid "Sidebar"
+msgstr ""
+
+#: inc/admin/admin.php:120
+msgid "Select the sidebar position for this page"
+msgstr ""
+
+#: inc/admin/admin.php:125 inc/theme-options.php:164
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/admin/admin.php:130 inc/theme-options.php:172
+#: inc/admin/admin.php:126 inc/theme-options.php:165
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/admin/admin.php:131 inc/theme-options.php:173
+#: inc/admin/admin.php:127 inc/theme-options.php:166
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/admin/admin.php:137
+#: inc/admin/admin.php:133
 msgid "Hide Page Title?"
 msgstr ""
 
-#: inc/admin/admin.php:144
+#: inc/admin/admin.php:140
 msgid "Transparent Header"
 msgstr ""
 
-#: inc/admin/admin.php:145
+#: inc/admin/admin.php:141
 msgid ""
 "Position the page content at the top of the screen and make the header "
 "transparent"
 msgstr ""
 
-#: inc/admin/admin.php:152
+#: inc/admin/admin.php:148
 msgid "Header Text Color"
 msgstr ""
 
-#: inc/admin/admin.php:153
+#: inc/admin/admin.php:149
 msgid "Select a Header Text Color for this page"
 msgstr ""
 
-#: inc/admin/admin.php:161
+#: inc/admin/admin.php:157
 msgid "Body Class"
 msgstr ""
 
-#: inc/admin/admin.php:162
+#: inc/admin/admin.php:158
 msgid "Add a custom class to the &lt;body&gt; tag for this page"
-msgstr ""
-
-#: inc/admin/classes/class-options-page.php:45
-#: inc/admin/classes/class-options-page.php:61
-msgid "Alcatraz Theme Options"
-msgstr ""
-
-#: inc/admin/classes/class-options-page.php:46
-msgid "Theme Options"
-msgstr ""
-
-#: inc/admin/classes/class-options-page.php:86
-msgid "Social Media Links"
 msgstr ""
 
 #: inc/admin/customizer.php:38
@@ -194,7 +198,7 @@ msgid "Site Layout"
 msgstr ""
 
 #: inc/admin/customizer.php:125
-msgid "Page Layout"
+msgid "Site Sidebar"
 msgstr ""
 
 #: inc/admin/customizer.php:145
@@ -258,108 +262,52 @@ msgstr ""
 msgid "Tagged: "
 msgstr ""
 
-#: inc/theme-options.php:132
+#: inc/theme-hooks.php:202
+msgid "Social Links Menu"
+msgstr ""
+
+#: inc/theme-options.php:125
 msgid "Dark Text"
 msgstr ""
 
-#: inc/theme-options.php:133
+#: inc/theme-options.php:126
 msgid "Light Text"
 msgstr ""
 
-#: inc/theme-options.php:151
-msgid "Full Width"
-msgstr ""
-
-#: inc/theme-options.php:152
-msgid "Boxed"
-msgstr ""
-
-#: inc/theme-options.php:153
-msgid "Boxed Content"
-msgstr ""
-
-#: inc/theme-options.php:192
+#: inc/theme-options.php:185
 msgid "Short"
 msgstr ""
 
-#: inc/theme-options.php:193
+#: inc/theme-options.php:186
 msgid "Side"
 msgstr ""
 
-#: inc/theme-options.php:212
+#: inc/theme-options.php:205
 msgid "Slide from Left"
 msgstr ""
 
-#: inc/theme-options.php:213
+#: inc/theme-options.php:206
 msgid "Slide from Right"
 msgstr ""
 
-#: inc/theme-options.php:214
+#: inc/theme-options.php:207
 msgid "Full Screen"
 msgstr ""
 
-#: inc/theme-options.php:232
+#: inc/theme-options.php:225
 msgid "Button"
 msgstr ""
 
-#: inc/theme-options.php:233
+#: inc/theme-options.php:226
 msgid "Hamburger"
 msgstr ""
 
-#: inc/theme-options.php:251
+#: inc/theme-options.php:244
 msgid "Chevron"
 msgstr ""
 
-#: inc/theme-options.php:252
+#: inc/theme-options.php:245
 msgid "Plus-Minus"
-msgstr ""
-
-#: inc/theme-options.php:271
-msgid "Email"
-msgstr ""
-
-#: inc/theme-options.php:272
-msgid "Enter your email address"
-msgstr ""
-
-#: inc/theme-options.php:276
-msgid "Facebook"
-msgstr ""
-
-#: inc/theme-options.php:277
-msgid "Enter your Facebook url"
-msgstr ""
-
-#: inc/theme-options.php:281
-msgid "Twitter"
-msgstr ""
-
-#: inc/theme-options.php:282
-msgid "Enter your Twitter url"
-msgstr ""
-
-#: inc/theme-options.php:286
-msgid "Instagram"
-msgstr ""
-
-#: inc/theme-options.php:287
-msgid "Enter your Instagram url"
-msgstr ""
-
-#: inc/theme-options.php:291
-msgid "Pinterest"
-msgstr ""
-
-#: inc/theme-options.php:292
-msgid "Enter your Pinterest url"
-msgstr ""
-
-#: inc/theme-options.php:296
-msgid "Youtube"
-msgstr ""
-
-#: inc/theme-options.php:297
-msgid "Enter your Youtube url"
 msgstr ""
 
 #: inc/widget-areas.php:20
