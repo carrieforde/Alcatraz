@@ -22,7 +22,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 @import 'utilities/index';
 @import 'neat';
 @import 'sanitize';
-@import 'utilities/pattern-library';
 
-@import 'atoms/index';
-@import 'molecules/index';
+@import 'base/index';
+@import 'layout/index';
+@import 'modules/index';
+@import 'state/index';
+@import 'theme/index';
