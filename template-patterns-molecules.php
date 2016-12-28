@@ -22,6 +22,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/grid' ); ?>
 
+				<?php get_template_part( 'patterns/template-parts/molecules/navigation' ); ?>
+
 				<?php
 				// Maybe load comments.
 				if ( comments_open() || get_comments_number() ) :

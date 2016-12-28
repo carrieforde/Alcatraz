@@ -197,17 +197,8 @@ function alcatraz_social_menu_in_footer() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( ! empty( $options['social_icons_in_footer'] ) && has_nav_menu( 'social' ) ) { ?>
+	if ( ! empty( $options['social_icons_in_footer'] ) && has_nav_menu( 'social' ) ) {
 
-		<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
-
-			<?php wp_nav_menu( array(
-				'theme_location' => 'social',
-				'menu_class' => 'social-links-menu',
-				'depth' => 1,
-				'link_before' => '<span class="screen-reader-text">',
-				'link_after'  => '</span>',
-			) ); ?>
-		</nav>
-	<?php }
+		echo alcatraz_social_nav();
+	}
 }

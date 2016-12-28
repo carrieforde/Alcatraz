@@ -655,6 +655,155 @@ pre {
   margin-right: 0;
 }
 
+.social-nav__menu {
+  margin: 0;
+  padding: 0;
+  -ms-flex-align: center;
+      align-items: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.social-nav__menu .menu-item > a {
+  height: 1.5625rem;
+  width: 1.5625rem;
+  display: block;
+  margin: 0 0.3125rem;
+  text-align: center;
+  text-decoration: none;
+}
+
+.social-nav__menu .menu-item > a:before {
+  display: inline-block;
+  font-family: FontAwesome;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 1;
+  text-align: center;
+}
+
+.social-nav__menu .menu-item > a[href*="behance.net"]:before {
+  content: '\f1b4';
+}
+
+.social-nav__menu .menu-item > a[href*="bitbucket.org"]:before {
+  content: '\f171';
+}
+
+.social-nav__menu .menu-item > a[href*="codepen.io"]:before {
+  content: '\f1cb';
+}
+
+.social-nav__menu .menu-item > a[href*="deviantart.com"]:before {
+  content: '\f1bd';
+}
+
+.social-nav__menu .menu-item > a[href*="digg.com"]:before {
+  content: '\f1a6';
+}
+
+.social-nav__menu .menu-item > a[href*="dribbble.com"]:before {
+  content: '\f17d';
+}
+
+.social-nav__menu .menu-item > a[href^="mailto:"]:before {
+  content: '\f0e0';
+}
+
+.social-nav__menu .menu-item > a[href*="facebook.com"]:before {
+  content: '\f09a';
+}
+
+.social-nav__menu .menu-item > a[href*="github.com"]:before, .social-nav__menu .menu-item > a[href*="github.io"]:before {
+  content: '\f09b';
+}
+
+.social-nav__menu .menu-item > a[href*="plus.google.com"]:before {
+  content: '\f0d5';
+}
+
+.social-nav__menu .menu-item > a[href*="instagram.com"]:before {
+  content: '\f16d';
+}
+
+.social-nav__menu .menu-item > a[href*="jsfiddle.net"]:before {
+  content: '\f1cc';
+}
+
+.social-nav__menu .menu-item > a[href*="linkedin.com"]:before {
+  content: '\f0e1';
+}
+
+.social-nav__menu .menu-item > a[href*="medium.com"]:before {
+  content: '\f23a';
+}
+
+.social-nav__menu .menu-item > a[href*="pinterest.com"]:before {
+  content: '\f0d2';
+}
+
+.social-nav__menu .menu-item > a[href*="reddit.com"]:before {
+  content: '\f1a1';
+}
+
+.social-nav__menu .menu-item > a[href*="skype.com"]:before {
+  content: '\f17e';
+}
+
+.social-nav__menu .menu-item > a[href*="slack.com"]:before {
+  content: '\f198';
+}
+
+.social-nav__menu .menu-item > a[href*="slideshare.net"]:before {
+  content: '\f1e7';
+}
+
+.social-nav__menu .menu-item > a[href*="snapchat.com"]:before {
+  content: '\f2ab';
+}
+
+.social-nav__menu .menu-item > a[href*="soundcloud.com"]:before {
+  content: '\f1be';
+}
+
+.social-nav__menu .menu-item > a[href*="spotify.com"]:before {
+  content: '\f1bc';
+}
+
+.social-nav__menu .menu-item > a[href*="tumblr.com"]:before {
+  content: '\f173';
+}
+
+.social-nav__menu .menu-item > a[href*="twitter.com"]:before {
+  content: '\f099';
+}
+
+.social-nav__menu .menu-item > a[href*="vimeo.com"]:before {
+  content: '\f27d';
+}
+
+.social-nav__menu .menu-item > a[href*="vine.co"]:before {
+  content: '\f1ca';
+}
+
+.social-nav__menu .menu-item > a[href*="whatsapp.com"]:before {
+  content: '\f232';
+}
+
+.social-nav__menu .menu-item > a[href*="wordpress.com"]:before, .social-nav__menu .menu-item > a[href*="wordpress.org"]:before {
+  content: '\f19a';
+}
+
+.social-nav__menu .menu-item > a[href*="yelp.com"]:before {
+  content: '\f1e9';
+}
+
+.social-nav__menu .menu-item > a[href*="youtube.com"]:before {
+  content: '\f167';
+}
+
 @media screen and (min-width: 40em){
   body:before{
     background-image: linear-gradient(to left, transparent 0, #cfe8f1 0, #cfe8f1 10.5769230769%, transparent 10.5769230769%, transparent 12.7747252747%, #cfe8f1 12.7747252747%, #cfe8f1 23.3516483516%, transparent 23.3516483516%, transparent 25.5494505495%, #cfe8f1 25.5494505495%, #cfe8f1 36.1263736264%, transparent 36.1263736264%, transparent 38.3241758242%, #cfe8f1 38.3241758242%, #cfe8f1 48.9010989011%, transparent 48.9010989011%, transparent 51.0989010989%, #cfe8f1 51.0989010989%, #cfe8f1 61.6758241758%, transparent 61.6758241758%, transparent 63.8736263736%, #cfe8f1 63.8736263736%, #cfe8f1 74.4505494505%, transparent 74.4505494505%, transparent 76.6483516484%, #cfe8f1 76.6483516484%, #cfe8f1 87.2252747253%, transparent 87.2252747253%, transparent 89.4230769231%, #cfe8f1 89.4230769231%, #cfe8f1 100%, transparent 100%);

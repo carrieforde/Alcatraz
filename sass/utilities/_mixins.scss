@@ -75,6 +75,35 @@
 	position: absolute;
 }
 
+
+//-------------------------------
+// BEM Element
+//
+// Appends __$element to the
+// block class.
+//-------------------------------
+@mixin element($element) {
+
+	&__#{$element} {
+		@content;
+	}
+}
+
+
+//-------------------------------
+// BEM Modifier
+//
+// Appends --$modifier to the
+// block class.
+//-------------------------------
+@mixin modifier($modifier) {
+
+	&--#{$modifier} {
+		@content;
+	}
+}
+
+
 //-------------------------------
 // Grid Classes
 //

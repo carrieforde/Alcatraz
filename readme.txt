@@ -20,7 +20,6 @@ Alcatraz is a developer's theme packed with all kinds of goodies including:
 * PostCSS
 * [Bourbon](http://bourbon.io)
 * [Neat](http://neat.bourbon.io)
-* Bower
 * Grunt
 * Live reload
 * CSS minification
@@ -32,7 +31,6 @@ Because Alcatraz is meant as a developer's theme, a basic grasp of the command l
 
 * [Node](http://node.js)
 * [Grunt CLI](http://gruntjs.com) - `npm install -g grunt-cli`
-* [Bower](http://bower.io) - `npm install -g bower`
 * [Sass](http://sass-lang.com) - Ruby not required!
 
 == Installation ==
@@ -43,12 +41,11 @@ Alcatraz uses Bower to manage the Bourbon and Neat libraries, and Node to run th
 ```shell
 cd /your-project/wp-content/themes/alcatraz
 ```
-2. Install Node and Bower dependencies:
+1. Install NPM dependencies:
 ```shell
 npm install && bower install
 ```
-
-3. Move onto activating your theme!
+1. Move onto activating your theme!
 
 == Activation ==
 

@@ -64,7 +64,7 @@ function alcatraz_setup() {
 	// Enable support for Post Thumbnails on posts and pages.
 	add_theme_support( 'post-thumbnails' );
 
-	// Register a primary menu.
+	// Register a primary menu & social menu.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary Menu', 'alcatraz' ),
 		'social'  => esc_html__( 'Social Menu', 'alcatraz' ),

@@ -88,3 +88,26 @@ function alcatraz_card( $args = array() ) {
 
 	<?php return ob_get_clean();
 }
+
+/**
+ * Alcatraz Social Navigation
+ *
+ * @return  string  The HTML.
+ */
+function alcatraz_social_nav() {
+
+	ob_start(); ?>
+
+	<nav id="social-nav" class="social-nav" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
+
+		<?php wp_nav_menu( array(
+			'theme_location' => 'social',
+			'menu_class' => 'social-nav__menu',
+			'depth' => 1,
+			'link_before' => '<span class="screen-reader-text">',
+			'link_after'  => '</span>',
+		) ); ?>
+	</nav>
+
+	<?php return ob_get_clean();
+}
