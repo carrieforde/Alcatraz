@@ -33,7 +33,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 	<div class="pattern-doc pattern-doc--<?php echo esc_attr( $class ); ?>">
 		<header class="pattern-doc__header">
 			<h3><?php esc_html_e( $args['heading'] ); ?></h3>
-			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc-toggle' ) ) ); ?>
+			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc__toggle' ) ) ); ?>
 		</header>
 
 		<div class="pattern-doc__info">
@@ -117,6 +117,100 @@ function alcatraz_pattern_allowed_html() {
 	) );
 
 	return apply_filters( 'alcatraz_set_allowed_html', $allowed_tags );
+}
+
+function alcatraz_global_pattern( $args = array() ) {
+
+	$defaults = array(
+		'global_type' => '',
+		'heading'     => '',
+		'description' => '',
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	// Create a unique wrapper class based on the doc heading.
+	$class = str_replace( ' ', '-', strtolower( $args['heading'] ) );
+
+	switch ( $args['global_type'] ) :
+
+		case 'colors' :
+
+			$colors = alcatraz_set_theme_colors(); ?>
+
+			<div class="pattern-doc pattern-doc--<?php echo esc_attr( $args['heading'] ); ?>">
+
+				<header class="pattern-doc__header">
+					<h3><?php echo esc_html( $args['heading'] ); ?></h3>
+					<?php if ( ! empty( $args['description'] ) ) : ?>
+						<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc__toggle' ) ) ); ?>
+					<?php endif; ?>
+				</header>
+
+				<div class="pattern-doc__info">
+					<?php if ( ! empty( $args['description'] ) ) : ?>
+					<div class="pattern-doc__details">
+						<p><?php echo wp_kses_post( $args['description'] ); ?></p>
+					</div>
+					<?php endif; ?>
+				</div>
+
+				<div class="pattern-doc__output">
+
+					<?php foreach ( $colors as $group => $colors ) : ?>
+
+						<div class="color-group">
+							<h4 class="color-group__heading"><?php echo esc_html( $group ); ?></h4>
+							<?php foreach( $colors as $key => $value ) : ?>
+							<div class="color">
+								<div class="color__chip" style="background: <?php echo esc_attr( $value ); ?>"></div>
+								<span class="color__name">$<?php echo esc_html( $key ); ?> : <?php echo esc_html( $value ); ?></span>
+							</div>
+							<?php endforeach; ?>
+						</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+
+			<?php break;
+
+		case 'fonts' :
+
+			$fonts = alcatraz_set_theme_fonts(); ?>
+
+			<div class="pattern-doc pattern-doc--<?php echo esc_attr( $args['heading'] ); ?>">
+
+				<header class="pattern-doc__header">
+					<h3><?php echo esc_html( $args['heading'] ); ?></h3>
+					<?php if ( ! empty( $args['description'] ) ) : ?>
+						<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc__toggle' ) ) ); ?>
+					<?php endif; ?>
+				</header>
+
+				<div class="pattern-doc__info">
+					<?php if ( ! empty( $args['description'] ) ) : ?>
+					<div class="pattern-doc__details">
+						<p><?php echo wp_kses_post( $args['description'] ); ?></p>
+					</div>
+					<?php endif; ?>
+				</div>
+
+				<div class="pattern-doc__output">
+					<?php foreach( $fonts as $key => $value ) : ?>
+					<div class="font-stack">
+
+						<div style="font-family: <?php echo esc_attr( $value ); ?>">$<?php echo esc_html( $key ); ?>: <?php echo esc_html( $value ); ?></div>
+
+						<div style="font-family: <?php echo esc_attr( $value ); ?>"><em>$<?php echo esc_html( $key ); ?>: <?php echo esc_html( $value ); ?></em></div>
+
+						<div style="font-family: <?php echo esc_attr( $value ); ?>"><strong>$<?php echo esc_html( $key ); ?>: <?php echo esc_html( $value ); ?></strong></div>
+					</div>
+					<?php endforeach; ?>
+				</div>
+			</div>
+
+			<?php break;
+
+	endswitch;
 }
 
 /**

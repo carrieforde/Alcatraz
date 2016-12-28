@@ -16,9 +16,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'patterns/template-parts/atoms/colors' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/atoms/fonts' ); ?>
+				<?php get_template_part( 'patterns/template-parts/atoms/globals' ); ?>
 
 				<?php get_template_part( 'patterns/template-parts/atoms/buttons' ); ?>
 
