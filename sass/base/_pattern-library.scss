@@ -43,7 +43,7 @@
 //-------------------------------
 // Colors
 //-------------------------------
-.pattern-doc-colors {
+.color-group {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
@@ -56,21 +56,26 @@
 		justify-content: flex-start;
 	}
 
-	.color-chip {
-		color: $dim-gray;
-		font-size: rem(14);
-		margin-bottom: rem(30);
-		text-align: center;
-		width: rem(200);
+	@include element(heading) {
+		width: 100%;
 	}
+}
 
-	.color {
+.color {
+	color: $dim-gray;
+	font-size: rem(14);
+	margin-bottom: rem(30);
+	text-align: center;
+	width: rem(200);
+
+	@include element(chip) {
 		@include size(rem(100));
 		@include center;
 
 		margin-bottom: rem(5);
 	}
 }
+
 
 //-------------------------------
 // Pattern Grids

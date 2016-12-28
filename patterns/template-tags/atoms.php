@@ -146,13 +146,13 @@ function alcatraz_global_pattern( $args = array() ) {
 					<?php endif; ?>
 				</header>
 
+				<?php if ( ! empty( $args['description'] ) ) : ?>
 				<div class="pattern-doc__info">
-					<?php if ( ! empty( $args['description'] ) ) : ?>
 					<div class="pattern-doc__details">
 						<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 					</div>
-					<?php endif; ?>
 				</div>
+				<?php endif; ?>
 
 				<div class="pattern-doc__output">
 
@@ -186,13 +186,13 @@ function alcatraz_global_pattern( $args = array() ) {
 					<?php endif; ?>
 				</header>
 
+				<?php if ( ! empty( $args['description'] ) ) : ?>
 				<div class="pattern-doc__info">
-					<?php if ( ! empty( $args['description'] ) ) : ?>
 					<div class="pattern-doc__details">
 						<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 					</div>
-					<?php endif; ?>
 				</div>
+				<?php endif; ?>
 
 				<div class="pattern-doc__output">
 					<?php foreach( $fonts as $key => $value ) : ?>
