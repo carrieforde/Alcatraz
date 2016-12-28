@@ -66,6 +66,7 @@ var {
 
 pre {
 	border: $border__pre;
+	overflow: scroll;
 	padding: rem(25);
 }
 

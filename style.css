@@ -610,6 +610,7 @@ var {
 
 pre {
   border: 0.0625rem solid #95a0a3;
+  overflow: scroll;
   padding: 1.5625rem;
 }
 
