@@ -21,6 +21,8 @@
 .pattern-doc {
 	@include vertical-rhythm;
 
+	overflow: hidden;
+
 	@include element(header) {
 		align-items: flex-end;
 		border-bottom: $border__patterns-header;
@@ -80,7 +82,7 @@
 //-------------------------------
 // Pattern Grids
 //-------------------------------
-.section-grids {
+[class*='pattern-doc--grid'] { // grab both .pattern-doc--grid & .pattern-doc--grid-without-gutter
 
 	.row {
 		margin: 0 0 rem(20);

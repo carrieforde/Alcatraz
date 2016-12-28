@@ -346,6 +346,10 @@ textarea,
   margin-top: 3.75rem;
 }
 
+.pattern-doc {
+  overflow: hidden;
+}
+
 .pattern-doc + .pattern-doc {
   margin-top: 2.5rem;
 }
@@ -399,20 +403,20 @@ textarea,
   margin-bottom: 0.3125rem;
 }
 
-.section-grids .row {
+[class*='pattern-doc--grid'] .row {
   margin: 0 0 1.25rem;
   overflow: hidden;
 }
 
-.section-grids [class^='alcatraz-col'] {
+[class*='pattern-doc--grid'] [class^='alcatraz-col'] {
   background-color: #ddd;
 }
 
-.section-grids [class^='alcatraz-col']:first-child {
+[class*='pattern-doc--grid'] [class^='alcatraz-col']:first-child {
   margin-bottom: 1.25rem;
 }
 
-.section-grids .no-gutter [class^='alcatraz-col']:last-child {
+[class*='pattern-doc--grid'] .no-gutter [class^='alcatraz-col']:last-child {
   background-color: #535d65;
   color: #f1f1f1;
 }
@@ -842,7 +846,7 @@ pre {
     -ms-flex-pack: distribute;
     justify-content: space-around;
   }
-  .section-grids [class^='alcatraz-col']:first-child{
+  [class*='pattern-doc--grid'] [class^='alcatraz-col']:first-child{
     margin-bottom: 0;
   }
   .left-sidebar .content-area,
