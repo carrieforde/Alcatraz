@@ -44,7 +44,7 @@
 	margin-right: -50vw;
 }
 
-// Margin-Padding reset - useful for styling <ul>s
+
 //-------------------------------
 // Margin & Padding reset
 //
@@ -75,6 +75,44 @@
 	position: absolute;
 }
 
+//-------------------------------
+// Grid Classes
+//
+// Use this mixin to set up
+// custom grid classes. It is
+// used to set up the Alcatraz
+// grid.
+//-------------------------------
+@mixin grid-classes {
+
+	@for $i from 1 through $grid-columns {
+
+		// Generate the column classes.
+		&-#{$i} {
+			@include span-columns($i);
+		}
+	}
+}
+
+
+//-------------------------------
+// Grid classes, no gutter
+//
+// Use this mixin to set up
+// custom grid classes that don't
+// require a gutter.
+//-------------------------------
+@mixin grid-classes-no-gutter {
+
+	@for $i from 1 through $grid-columns {
+
+		&-#{$i} {
+			@include omega;
+			@include span-columns($i, block-collapse);
+		}
+	}
+}
+
 
 //-------------------------------
 // Color Classes
@@ -83,7 +121,7 @@
 // .$color and .$color-background
 // utilities classes.
 //-------------------------------
-@mixin color-class( $color ) {
+@mixin color-class($color) {
 	color: $color;
 
 	&-background {
@@ -105,118 +143,5 @@
 
 	&:nth-child(#{nth}+1) {
 		clear: none;
-	}
-}
-
-
-//-------------------------------
-// Larger screen nav display styles
-//
-// because we fucked up, and this
-// shouldn't be a mixin.
-//-------------------------------
-@mixin large-screen-nav-display( $display: 'inline-block' ) {
-
-	.main-navigation #primary-menu-wrap,
-	.mobile-nav-style-slide-left.admin-bar #primary-menu-wrap,
-	.mobile-nav-style-slide-right.admin-bar #primary-menu-wrap {
-		@include position(static, auto auto null auto);
-		@include size(auto);
-
-		min-height: auto;
-		opacity: 1;
-		text-align: center;
-	}
-
-	.main-navigation #primary-menu,
-	.mobile-nav-style-slide-left #primary-menu,
-	.mobile-nav-style-slide-right #primary-menu {
-		display: $display;
-		height: auto;
-		min-height: auto;
-		overflow: visible;
-		padding-top: 0;
-		padding-bottom: 0;
-		position: static;
-		text-align: center;
-	}
-
-	.main-navigation #primary-menu .menu-item {
-		display: $display;
-		text-align: left;
-		width: auto;
-	}
-}
-
-// Larger Screen Nav Drop-down Styles
-@mixin large-screen-nav-dropdown {
-
-	.main-navigation #primary-menu {
-
-		.menu-item {
-			&.menu-item-has-children > a {
-				padding-right: rem(40);
-			}
-
-			&.hovered > .sub-menu {
-				display: block;
-			}
-
-			> .sub-menu {
-				position: absolute;
-
-				.sub-menu {
-					left: 100%;
-					top: 0;
-				}
-			}
-		}
-
-		> .menu-item {
-
-			&.reverse-expand {
-
-				.sub-menu {
-					right: 0;
-				}
-			}
-
-			.sub-menu .menu-item.reverse-expand .sub-menu {
-				left: -100%;
-			}
-		}
-	}
-
-	.main-navigation #primary-menu {
-
-		.sub-menu {
-			background-color: $color__background-sub-menu;
-			border-bottom: $border__nav-sub-menu;
-			box-shadow: $color__box-shadow-sub-menu;
-			padding: 0;
-			position: relative;
-			text-align: left;
-
-			.menu-item {
-				display: block;
-				width: 100%;
-
-				a {
-					color: $color__link-nav-sub-menu;
-
-					&:hover {
-						color: $color__link-nav-sub-menu-hover;
-					}
-				}
-
-				.sub-level-toggle .sub-level-toggle-span {
-					background-color: $color__background-sub-menu-toggle;
-				}
-
-				.sub-level-toggle:hover .sub-level-toggle-span {
-					background-color: $color__background-sub-menu-toggle-hover;
-				}
-			}
-		}
 	}
 }

@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-// LAYOUT
+// CONTENT
 //--------------------------------------------------------------
 .content-area,
 .primary-sidebar {
@@ -27,36 +27,7 @@
 		@include center;
 
 		max-width: 100%;
+		overflow: hidden;
 		width: $size__layout-boxed-content;
-	}
-}
-
-
-//-------------------------------
-// Sidebars
-//-------------------------------
-.left-sidebar,
-.right-sidebar {
-
-	.content-area {
-
-		@include media($tablet-portrait) {
-			@include span-columns(8);
-		}
-	}
-
-	.primary-sidebar {
-
-		@include media($tablet-portrait) {
-			@include span-columns(4);
-		}
-	}
-}
-
-.left-sidebar {
-
-	.content-area {
-		float: right;
-		margin-right: 0;
 	}
 }

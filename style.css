@@ -624,22 +624,6 @@ pre {
   position: absolute;
 }
 
-.alcatraz-col-1,
-.alcatraz-col-2,
-.alcatraz-col-3,
-.alcatraz-col-4,
-.alcatraz-col-5,
-.alcatraz-col-6,
-.alcatraz-col-7,
-.alcatraz-col-8,
-.alcatraz-col-9,
-.alcatraz-col-10,
-.alcatraz-col-11,
-.alcatraz-col-12 {
-  padding: 0.9375rem;
-  width: 100%;
-}
-
 .content-area,
 .primary-sidebar {
   padding: 2.5rem 1.25rem;
@@ -656,7 +640,13 @@ pre {
   margin-left: auto;
   margin-right: auto;
   max-width: 100%;
+  overflow: hidden;
   width: 1100px;
+}
+
+[class^='alcatraz-col-'] {
+  padding: 0.9375rem;
+  width: 100%;
 }
 
 .left-sidebar .content-area {
@@ -816,14 +806,6 @@ pre {
   }
   .no-gutter{
     width: 100%;
-    margin-right: 0;
-    float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 100%;
-  }
-  .no-gutter:last-child{
-    margin-right: 0;
   }
   .no-gutter .alcatraz-col-1{
     margin-right: 0;
@@ -925,6 +907,7 @@ pre {
     width: 91.5454545455%;
   }
   .no-gutter .alcatraz-col-12{
+    margin-right: 0;
     float: left;
     display: block;
     width: 101.454545455%;
