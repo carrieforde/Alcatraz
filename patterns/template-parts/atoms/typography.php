@@ -4,43 +4,32 @@
  */
 ?>
 
-<section class="section-pattern section-typography">
+<section class="alcatraz-pattern">
 
-	<h2 class="section-heading"><?php esc_html_e( 'Typography', 'alcatraz' ); ?></h2>
+	<h2 class="alcatraz-pattern__heading"><?php esc_html_e( 'Typography', 'alcatraz' ); ?></h2>
 
-	<div class="wrap">
-		<?php alcatraz_pattern_doc( array(
-			'heading' => 'Headings',
-			'output'  => alcatraz_typography( array( 'element' => 'headings' ) ),
-		) ); ?>
-	</div>
+	<?php alcatraz_pattern_doc( array(
+		'heading' => 'Headings',
+		'output'  => alcatraz_typography( array( 'element' => 'headings' ) ),
+	) ); ?>
 
-	<div class="wrap">
-		<?php alcatraz_pattern_doc( array(
-			'heading' => 'Horizontal Rule',
-			'output'  => alcatraz_typography( array( 'element' => 'hr' ) ),
-		) ); ?>
-	</div>
+	<?php alcatraz_pattern_doc( array(
+		'heading' => 'Horizontal Rule',
+		'output'  => alcatraz_typography( array( 'element' => 'hr' ) ),
+	) ); ?>
 
-	<div class="wrap">
-		<?php alcatraz_pattern_doc( array(
-			'heading' => 'Inline Elements',
-			'output'  => alcatraz_typography( array( 'element' => 'inline' ) ),
-		) ); ?>
-	</div>
+	<?php alcatraz_pattern_doc( array(
+		'heading' => 'Inline Elements',
+		'output'  => alcatraz_typography( array( 'element' => 'inline' ) ),
+	) ); ?>
 
-	<div class="wrap">
-		<?php alcatraz_pattern_doc( array(
-			'heading' => 'Paragraph',
-			'output'  => alcatraz_typography( array( 'element' => 'paragraph' ) ),
-		) ); ?>
-	</div>
+	<?php alcatraz_pattern_doc( array(
+		'heading' => 'Paragraph',
+		'output'  => alcatraz_typography( array( 'element' => 'paragraph' ) ),
+	) ); ?>
 
-	<div class="wrap">
-		<?php alcatraz_pattern_doc( array(
-			'heading' => 'Preformatted',
-			'output' => alcatraz_typography( array( 'element' => 'preformatted' ) ),
-		) ); ?>
-	</div>
-
+	<?php alcatraz_pattern_doc( array(
+		'heading' => 'Preformatted',
+		'output' => alcatraz_typography( array( 'element' => 'preformatted' ) ),
+	) ); ?>
 </section>

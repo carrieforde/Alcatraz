@@ -6,9 +6,9 @@
 $colors = alcatraz_set_theme_colors();
 ?>
 
-<section class="section-pattern section-colors">
+<section class="alcatraz-pattern">
 
-	<h2 class="section-heading"><?php esc_html_e( 'Colors', 'alcatraz' ); ?></h2>
+	<h2 class="alcatraz-pattern__heading"><?php esc_html_e( 'Colors', 'alcatraz' ); ?></h2>
 
 	<?php foreach ( $colors as $group => $colors ) : ?>
 

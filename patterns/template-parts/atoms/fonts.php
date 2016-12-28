@@ -6,9 +6,9 @@
 $fonts = alcatraz_set_theme_fonts();
 ?>
 
-<section class="section-pattern section-fonts">
+<section class="alcatraz-pattern">
 
-	<h2 class="section-heading"><?php esc_html_e( 'Fonts', 'alcatraz' ); ?></h2>
+	<h2 class="alcatraz-pattern__heading"><?php esc_html_e( 'Fonts', 'alcatraz' ); ?></h2>
 
 	<div class="wrap">
 	<?php foreach ( $fonts as $key => $value ) { ?>
