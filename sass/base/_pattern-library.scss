@@ -9,30 +9,36 @@
 //-------------------------------
 // Sections Patterns
 //-------------------------------
-.section-pattern {
-	margin: 0 0 rem(60);
-	overflow: hidden;
+.alcatraz-pattern {
+	@include vertical-rhythm(rem(60));
 
-	.wrap {
-		margin: 0 0 rem(40);
-	}
+	overflow: hidden;
 }
 
 //-------------------------------
 // Pattern Docs
 //-------------------------------
-.pattern-doc-header {
-	align-items: flex-end;
-	border-bottom: $border__patterns-header;
-	display: flex;
-	justify-content: space-between;
-	margin: 0 0 rem(25);
-	padding: 0 0 rem(5);
+.pattern-doc {
+	@include vertical-rhythm;
 
-	.pattern-doc-heading {
-		margin: 0;
+	@include element(header) {
+		align-items: flex-end;
+		border-bottom: $border__patterns-header;
+		display: flex;
+		justify-content: space-between;
+		margin: 0 0 rem(25);
+		padding: 0 0 rem(5);
+
+		h3 {
+			margin: 0;
+		}
+	}
+
+	@include element(info) {
+		display: none;
 	}
 }
+
 
 .pattern-doc-info {
 	display: none;

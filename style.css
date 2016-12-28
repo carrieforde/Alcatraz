@@ -338,16 +338,19 @@ textarea,
   clip: auto;
 }
 
-.section-pattern {
-  margin: 0 0 3.75rem;
+.alcatraz-pattern {
   overflow: hidden;
 }
 
-.section-pattern .wrap {
-  margin: 0 0 2.5rem;
+.alcatraz-pattern + .alcatraz-pattern {
+  margin-top: 3.75rem;
 }
 
-.pattern-doc-header {
+.pattern-doc + .pattern-doc {
+  margin-top: 2.5rem;
+}
+
+.pattern-doc__header {
   -ms-flex-align: end;
       align-items: flex-end;
   border-bottom: 0.0625rem solid #c0c0c0;
@@ -359,8 +362,12 @@ textarea,
   padding: 0 0 0.3125rem;
 }
 
-.pattern-doc-header .pattern-doc-heading {
+.pattern-doc__header h3 {
   margin: 0;
+}
+
+.pattern-doc__info {
+  display: none;
 }
 
 .pattern-doc-info {

@@ -4,11 +4,9 @@
  */
 ?>
 
-<section class="section-pattern section-buttons">
+<section class="alcatraz-pattern">
 
-	<h2 class="section-heading"><?php esc_html_e( 'Buttons', 'alcatraz' ); ?></h2>
-
-	<div class="wrap">
+	<h2 class="alcatraz-pattern__heading"><?php esc_html_e( 'Buttons', 'alcatraz' ); ?></h2>
 
 		<?php alcatraz_pattern_doc( array(
 			'heading'     => 'Button',
@@ -19,10 +17,6 @@
 			'output'      => alcatraz_button( array( 'type' => 'button' ) ),
 		) ); ?>
 
-	</div>
-
-	<div class="wrap">
-
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Submit',
 			'description'  => 'This is an <code>input[type="submit"]</code>.',
@@ -32,10 +26,6 @@
 			'output'       => alcatraz_button( array( 'type' => 'submit' ) ),
 		) ); ?>
 
-	</div>
-
-	<div class="wrap">
-
 		<?php alcatraz_pattern_doc( array(
 			'heading'      => 'Text',
 			'description'  => 'This is an <code>a</code> button.',
@@ -44,7 +34,4 @@
 			'args'         => array( 'type' => 'text' ),
 			'output'       => alcatraz_button( array( 'type' => 'text' ) ),
 		) ); ?>
-
-	</div>
-
 </section>

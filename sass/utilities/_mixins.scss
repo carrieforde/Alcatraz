@@ -57,6 +57,23 @@
 
 
 //-------------------------------
+// Vertical Rhythm
+//
+// Use this mixin to easily add
+// vertical space between
+// successive instances of an
+// element.
+//-------------------------------
+@mixin vertical-rhythm($margin: rem(40)) {
+
+	& + & {
+		margin-top: $margin;
+		@content;
+	}
+}
+
+
+//-------------------------------
 // Hide Text
 //
 // Also known as Image Replacment
