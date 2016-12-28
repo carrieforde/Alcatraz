@@ -50,11 +50,11 @@
 	flex-wrap: wrap;
 	justify-content: center;
 
-	@include media($tablet-portrait) {
+	@include media($tablet-portrait-up) {
 		justify-content: space-around;
 	}
 
-	@include media($tablet-landscape) {
+	@include media($tablet-landscape-up) {
 		justify-content: flex-start;
 	}
 
@@ -95,7 +95,7 @@
 		&:first-child {
 			margin-bottom: rem(20);
 
-			@include media($tablet-portrait) {
+			@include media($tablet-portrait-up) {
 				margin-bottom: 0;
 			}
 		}

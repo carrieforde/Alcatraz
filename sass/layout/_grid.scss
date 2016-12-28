@@ -9,7 +9,7 @@
 	width: 100%;
 }
 
-@media (min-width: em(768)) {
+@include media($tablet-portrait-up) {
 
 	.alcatraz-col {
 		@include grid-classes;
@@ -17,7 +17,8 @@
 
 	// Grid without gutter
 	.no-gutter {
-		@include fill-parent();
+		@include fill-parent;
+		@include row;
 
 		.alcatraz-col {
 			@include grid-classes-no-gutter;
