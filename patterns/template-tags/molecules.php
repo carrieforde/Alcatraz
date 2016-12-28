@@ -5,6 +5,47 @@
  * @package alcatraz
  */
 
+/**
+ * Form element with Label
+ *
+ * @param   array   The args.
+ * @return  string  The HTML.
+ */
+function alcatraz_form_element_with_label( $args = array() ) {
+
+	$defaults = array(
+		'label_text'   => '',
+		'label_class'  => '',
+		'tag'          => 'input',
+		'type'         => '',
+		'name'         => '',
+		'value'        => '',
+		'placeholder'  => '',
+		'required'     => '',
+		'autocomplete' => false,
+		'class'        => '',
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	// Grab our allowed HTML tags.
+	$allowed_tags = alcatraz_pattern_allowed_html();
+
+	ob_start(); ?>
+
+	<label for="<?php echo esc_attr( $args['name'] ); ?>" class="<?php echo esc_attr( $args['label_class'] ); ?>"><?php echo esc_html( $args['label_text'] ); ?></label>
+	<?php echo wp_kses( alcatraz_form_elements( array(
+		'tag'           => $args['tag'],
+		'type'          => $args['type'],
+		'name'          => $args['name'],
+		'value'         => $args['value'],
+		'placeholder'   => $args['placeholder'],
+		'required'      => $args['required'],
+		'autocomplete'  => $args['autocomplete'],
+		'class'         => $args['class'],
+	) ), $allowed_tags ); ?>
+
+	<?php return ob_get_clean();
+}
 
 /**
  * The Alcatraz Grid

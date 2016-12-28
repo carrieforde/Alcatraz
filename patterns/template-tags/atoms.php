@@ -99,6 +99,7 @@ function alcatraz_pattern_allowed_html() {
 	$allowed_tags = array_merge( wp_kses_allowed_html( 'post' ), array(
 		'input' => array(
 			'type'         => true,
+			'name'         => true,
 			'value'        => true,
 			'placeholder'  => true,
 			'required'     => true,
@@ -322,6 +323,7 @@ function alcatraz_inputs( $args = array() ) {
 
 	$defaults = array(
 		'type'          => 'text',
+		'name'          => '',
 		'value'         => '',
 		'placeholder'   => '',
 		'required'      => false,
@@ -334,6 +336,9 @@ function alcatraz_inputs( $args = array() ) {
 	$attributes = array();
 	$attributes[] .= 'type=' . $args['type'];
 
+	if ( ! empty( $args['name'] ) ) {
+		$attributes[] .= 'name=' . $args['name'];
+	}
 	if ( ! empty( $args['value'] ) ) {
 		$attributes[] .= 'value=' . $args['value'];
 	}
@@ -366,6 +371,7 @@ function alcatraz_form_elements( $args = array() ) {
 	$defaults = array(
 		'tag'          => 'input',
 		'type'         => '',
+		'name'         => '',
 		'value'        => '',
 		'placeholder'  => '',
 		'required'     => '',
@@ -388,6 +394,7 @@ function alcatraz_form_elements( $args = array() ) {
 			// Here we make a call to our alcatraz_inputs function to get the clean attributes.
 			$attributes = alcatraz_inputs( array(
 				'type'          => $args['type'],
+				'name'          => $args['name'],
 				'value'         => $args['value'],
 				'placeholder'   => $args['placeholder'],
 				'autocomplete'  => $args['autocomplete'],
