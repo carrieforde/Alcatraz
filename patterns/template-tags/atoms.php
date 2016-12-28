@@ -37,40 +37,40 @@ function alcatraz_pattern_doc( $args = array() ) {
 		</header>
 
 		<div class="pattern-doc__info">
-			<?php if ( $args['description'] || $args['patterns_included'] ) : ?>
+			<?php if ( ! empty( $args['description'] ) || ! empty( $args['patterns_included'] ) ) : ?>
 			<div class="pattern-doc__details">
 				<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 
-				<?php if ( $args['patterns_included'] ) : ?>
+				<?php if ( ! empty( $args['patterns_included'] ) ) : ?>
 				<p><?php echo esc_html( $args['patterns_included'] ); ?></p>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 
-			<?php if ( $args['function'] || $args['output'] ) : ?>
+			<?php if ( ! empty( $args['function'] ) || ! empty( $args['output'] ) ) : ?>
 			<div class="pattern-doc__details">
-				<?php if ( $args['function'] ) : ?>
+				<?php if ( ! empty( $args['function'] ) ) : ?>
 				<h4><?php esc_html_e( 'Template Tag', 'alcatraz' ); ?></h4>
 				<pre>&lt;?php <?php echo esc_html( $args['function'] ); ?>; ?&gt;</pre>
 				<?php endif; ?>
 
-				<?php if ( $args['output'] ) : ?>
+				<?php if ( ! empty( $args['output'] ) ) : ?>
 				<h4><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
 				<pre><?php echo esc_html( trim( $args['output'] ) ); ?></pre>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 
-			<?php if ( $args['params'] || $args['args'] ) : ?>
+			<?php if ( ! empty( $args['params'] ) || ! empty( $args['args'] ) ) : ?>
 			<div class="pattern-doc__details">
-				<?php if ( $args['params'] ) : ?>
+				<?php if ( ! empty( $args['params'] ) ) : ?>
 				<h4><?php esc_html_e( 'Params', 'alcatraz' ); ?></h4>
 					<?php foreach ( $args['params'] as $key => $value ) : ?>
 						<p><code><?php echo esc_html( $key ); ?></code> <?php echo esc_html( $value ); ?></p>
 					<?php endforeach; ?>
 				<?php endif; ?>
 
-				<?php if ( $args['args'] ) : ?>
+				<?php if ( ! empty( $args['args'] ) ) : ?>
 				<h4><?php esc_html_e( 'Arguments', 'alcatraz' ); ?></h4>
 					<?php foreach ( $args['args'] as $key => $value ) : ?>
 						<p><code><?php echo esc_html( $key ); ?></code> <?php echo esc_html( $value ); ?></p>
