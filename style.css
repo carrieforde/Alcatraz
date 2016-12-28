@@ -665,11 +665,6 @@ pre {
   width: 100%;
 }
 
-.left-sidebar .content-area {
-  float: right;
-  margin-right: 0;
-}
-
 .social-nav__menu {
   margin: 0;
   padding: 0;
@@ -870,6 +865,13 @@ pre {
   .left-sidebar .primary-sidebar:last-child,
   .right-sidebar .primary-sidebar:last-child{
     margin-right: 0;
+  }
+  .left-sidebar .content-area{
+    float: right;
+    margin-right: 0;
+  }
+  .left-sidebar .primary-sidebar{
+    float: left;
   }
 }
 
