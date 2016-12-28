@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// POST NAVIGATION
+//--------------------------------------------------------------
+.post-navigation {
+
+	.nav-previous,
+	.nav-next {
+		display: inline-block;
+	}
+
+	.nav-previous {
+		float: left;
+	}
+
+	.nav-next {
+		float: right;
+	}
+}

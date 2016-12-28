@@ -804,6 +804,19 @@ pre {
   content: '\f167';
 }
 
+.post-navigation .nav-previous,
+.post-navigation .nav-next {
+  display: inline-block;
+}
+
+.post-navigation .nav-previous {
+  float: left;
+}
+
+.post-navigation .nav-next {
+  float: right;
+}
+
 @media screen and (min-width: 40em){
   body:before{
     background-image: linear-gradient(to left, transparent 0, #cfe8f1 0, #cfe8f1 10.5769230769%, transparent 10.5769230769%, transparent 12.7747252747%, #cfe8f1 12.7747252747%, #cfe8f1 23.3516483516%, transparent 23.3516483516%, transparent 25.5494505495%, #cfe8f1 25.5494505495%, #cfe8f1 36.1263736264%, transparent 36.1263736264%, transparent 38.3241758242%, #cfe8f1 38.3241758242%, #cfe8f1 48.9010989011%, transparent 48.9010989011%, transparent 51.0989010989%, #cfe8f1 51.0989010989%, #cfe8f1 61.6758241758%, transparent 61.6758241758%, transparent 63.8736263736%, #cfe8f1 63.8736263736%, #cfe8f1 74.4505494505%, transparent 74.4505494505%, transparent 76.6483516484%, #cfe8f1 76.6483516484%, #cfe8f1 87.2252747253%, transparent 87.2252747253%, transparent 89.4230769231%, #cfe8f1 89.4230769231%, #cfe8f1 100%, transparent 100%);
