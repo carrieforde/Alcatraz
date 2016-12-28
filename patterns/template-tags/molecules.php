@@ -236,3 +236,24 @@ function alcatraz_lists( $args = array() ) {
 
 	return ob_get_clean();
 }
+
+function alcatraz_blockquote( $args = array() ) {
+
+	$defaults = array(
+		'quote' => 'I am an optimist, and I believe that people are inherently good and that if you give everyone a voice and freedom of expression, the truth and the good will outweigh the bad.',
+		'cite'  => 'Matt Mullenweg',
+		'class' => '',
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	ob_start(); ?>
+
+	<blockquote <?php echo ( ! empty( $args['class'] ) ) ? 'class="' . esc_attr( $args['class'] ) . '"' : ''; ?>>
+		<?php echo esc_html( $args['quote'] ); ?>
+		<?php if ( ! empty( $args['cite'] ) ) : ?>
+			<cite><?php echo esc_html( $args['cite'] ); ?></cite>
+		<?php endif; ?>
+	</blockquote>
+
+	<?php return ob_get_clean();
+}
