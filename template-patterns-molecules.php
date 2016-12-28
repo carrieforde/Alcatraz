@@ -24,6 +24,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/navigation' ); ?>
 
+				<?php get_template_part( 'patterns/template-parts/molecules/typography' ); ?>
+
 				<?php the_post_navigation(); ?>
 
 				<?php

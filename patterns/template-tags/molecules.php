@@ -6,7 +6,7 @@
  */
 
 /**
- * Form element with Label
+ * Form Element with Label
  *
  * @param   array   The args.
  * @return  string  The HTML.
@@ -151,4 +151,88 @@ function alcatraz_social_nav() {
 	</nav>
 
 	<?php return ob_get_clean();
+}
+
+/**
+ * Alcatraz Lists
+ *
+ * @param  array  The args.
+ */
+function alcatraz_lists( $args = array() ) {
+
+	$defaults = array(
+		'type' => 'unordered',
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	ob_start();
+
+	switch ( $args['type'] ) :
+
+		case 'unordered' : ?>
+
+			<ul>
+				<li>unordered item</li>
+				<li>unordered item
+					<ul>
+						<li>unordered item</li>
+						<li>unordered item
+							<ul>
+								<li>unordered item</li>
+								<li>unordered item</li>
+							</ul>
+						</li>
+					</ul>
+				</li>
+				<li>unordered item</li>
+				<li>unordered item</li>
+			</ul>
+
+			<?php break;
+
+		case 'ordered' : ?>
+
+			<ol>
+				<li>ordered item</li>
+				<li>ordered item
+					<ol>
+						<li>ordered item</li>
+						<li>ordered item
+							<ol>
+								<li>ordered item</li>
+								<li>ordered item</li>
+							</ol>
+						</li>
+					</ol>
+				</li>
+				<li>ordered item</li>
+				<li>ordered item</li>
+			</ol>
+
+			<?php break;
+
+		case 'mixed' : ?>
+
+			<ol>
+				<li>ordered item</li>
+				<li>ordered item
+					<ul>
+						<li>ordered item</li>
+						<li>ordered item
+							<ol>
+								<li>ordered item</li>
+								<li>ordered item</li>
+							</ol>
+						</li>
+					</ul>
+				</li>
+				<li>ordered item</li>
+				<li>ordered item</li>
+			</ol>
+
+			<?php break;
+
+	endswitch;
+
+	return ob_get_clean();
 }
