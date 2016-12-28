@@ -74,8 +74,8 @@ function alcatraz_grid( $args = array() ) {
 		$col_2 = 12 - $i; ?>
 
 	<div class="<?php echo esc_attr( $classes ); ?>">
-		<div class="alcatraz-col-<?php echo esc_attr( $col_1 ); ?>"><?php echo esc_html( $col_1 ); ?></div>
-		<div class="alcatraz-col-<?php echo esc_attr( $col_2 ); ?>"><?php echo esc_html( $col_2 ); ?></div>
+		<div class="alcatraz-col--<?php echo esc_attr( $col_1 ); ?>"><?php echo esc_html( $col_1 ); ?></div>
+		<div class="alcatraz-col--<?php echo esc_attr( $col_2 ); ?>"><?php echo esc_html( $col_2 ); ?></div>
 	</div>
 
 	<?php endfor; ?>
@@ -96,18 +96,18 @@ function alcatraz_grid( $args = array() ) {
 function alcatraz_card( $args = array() ) {
 
 	$defaults = array(
-		'src'         => 'https://unsplash.it/300/200/?random',
-		'use_img_src' => true,
-		'title'     => 'Lorem ipsum dolor',
-		'excerpt'     => 'Vel ad enim nostrum, eam te odio ubique corpora. Ne eum tota tation ancillae, reque altera mea te. Integre commune indoctum his ea.',
-		'link'        => '#',
-		'class'       => '',
+		'type'    => 'url',
+		'src'     => 'https://unsplash.it/1200/740/?random',
+		'title'   => 'Lorem ipsum dolor',
+		'excerpt' => 'Vel ad enim nostrum, eam te odio ubique corpora. Ne eum tota tation ancillae, reque altera mea te. Integre commune indoctum his ea.',
+		'link'    => '#',
+		'class'   => '',
 	);
 	$args = wp_parse_args( $args, $defaults );
 
 	ob_start(); ?>
 
-	<div class="alcatraz-card alcatraz-col-4 <?php echo esc_attr( $args['class'] ); ?>">
+	<div class="alcatraz-card <?php echo ( ! empty( $args['class'] ) ) ? esc_attr( $args['class'] ) : ''; ?>">
 
 		<div class="alcatraz-card__image">
 			<?php echo wp_kses_post( alcatraz_image( array( 'src' => $args['src'], 'use_img_src' => true ) ) ); ?>
