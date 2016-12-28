@@ -68,19 +68,19 @@ function alcatraz_card( $args = array() ) {
 
 	<div class="alcatraz-card alcatraz-col-4 <?php echo esc_attr( $args['class'] ); ?>">
 
-		<div class="card-image">
+		<div class="alcatraz-card__image">
 			<?php echo wp_kses_post( alcatraz_image( array( 'src' => $args['src'], 'use_img_src' => true ) ) ); ?>
 		</div>
 
-		<header class="card-header">
-			<h3 class="card-title"><a href="<?php echo esc_url( $args['link'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a></h3>
+		<header class="alcatraz-card__header">
+			<h3 class="alcatraz-card__title"><a href="<?php echo esc_url( $args['link'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a></h3>
 		</header>
 
-		<div class="card-content">
+		<div class="alcatraz-card__content">
 			<?php echo esc_html( $args['excerpt'] ); ?>
 		</div>
 
-		<footer class="card-footer">
+		<footer class="alcatraz-card__footer">
 			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'text', 'link' => $args['link'], 'button_text' => 'Read More' ) ) ); ?>
 		</footer>
 
