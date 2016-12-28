@@ -119,6 +119,11 @@ function alcatraz_pattern_allowed_html() {
 	return apply_filters( 'alcatraz_set_allowed_html', $allowed_tags );
 }
 
+/**
+ * Build pattern documentation for globals.
+ *
+ * @param  array  The args.
+ */
 function alcatraz_global_pattern( $args = array() ) {
 
 	$defaults = array(
@@ -160,7 +165,7 @@ function alcatraz_global_pattern( $args = array() ) {
 
 						<div class="color-group">
 							<h4 class="color-group__heading"><?php echo esc_html( $group ); ?></h4>
-							<?php foreach( $colors as $key => $value ) : ?>
+							<?php foreach ( $colors as $key => $value ) : ?>
 							<div class="color">
 								<div class="color__chip" style="background: <?php echo esc_attr( $value ); ?>"></div>
 								<span class="color__name">$<?php echo esc_html( $key ); ?> : <?php echo esc_html( $value ); ?></span>
@@ -195,7 +200,7 @@ function alcatraz_global_pattern( $args = array() ) {
 				<?php endif; ?>
 
 				<div class="pattern-doc__output">
-					<?php foreach( $fonts as $key => $value ) : ?>
+					<?php foreach ( $fonts as $key => $value ) : ?>
 					<div class="font-stack">
 
 						<div style="font-family: <?php echo esc_attr( $value ); ?>">$<?php echo esc_html( $key ); ?>: <?php echo esc_html( $value ); ?></div>
