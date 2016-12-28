@@ -20,8 +20,8 @@ window.AlcatrazPattern = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
-			patternDocToggle: $( '.pattern-doc-toggle' ),
-			patternDocInfo: $( '.pattern-doc-info' ),
+			patternDocToggle: $( '.pattern-doc__toggle' ),
+			patternDocInfo: $( '.pattern-doc__info' ),
 		};
 	};
 
@@ -41,7 +41,7 @@ window.AlcatrazPattern = {};
 	app.openPatternDocInfo = function() {
 
 		// Open that Doc info panel!
-		$( this ).parent().siblings( '.pattern-doc-info' ).slideToggle( 'slow' );
+		$( this ).parent().siblings( '.pattern-doc__info' ).slideToggle( 'slow' );
 	};
 
 	// Engage!
