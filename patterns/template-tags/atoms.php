@@ -451,28 +451,34 @@ function alcatraz_form_elements( $args = array() ) {
 function alcatraz_image( $args = array() ) {
 
 	$defaults = array(
-		'src'         => 'https://unsplash.it/300/200/?random',
-		'size'        => '',
-		'use_img_url' => true,
+		'type' => 'url',
+		'src'  => 'https://unsplash.it/1200/740/?random',
+		'size' => '',
 	);
 	$args = wp_parse_args( $args, $defaults );
 
 	// Let's figure out the type of image we're working with.
-	switch ( $args['use_img_url'] ) {
+	switch ( $args['type'] ) {
 
-		case true : ?>
+		case 'url' : ?>
 
 			<?php ob_start(); ?>
 
-			<img src="<?php echo esc_url( $args['src'] ); ?>" />
+				<img src="<?php echo esc_url( $args['src'] ); ?>" />
 
 			<?php return ob_get_clean(); ?>
 
 		<?php break;
 
-		case false :
+		case 'attachment' :
 
-			return wp_get_attachment_image( $args['size'] );
+			return wp_get_attachment_image( $args['src'], $args['size'] );
+
+		break;
+
+		case 'thumbnail' :
+
+			return get_the_post_thumbnail( $args['src'], $args['size'] );
 
 		break;
 	}
