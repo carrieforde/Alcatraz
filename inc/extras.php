@@ -107,23 +107,6 @@ function alcatraz_body_classes( $classes ) {
 }
 
 /**
- * Return either an empty string or the integer value of the passed in value.
- *
- * @since   1.0.0
- *
- * @param   string|int  $value  The value to test.
- *
- * @return  string|int
- */
-function alcatraz_empty_or_int( $value ) {
-	if ( '' === $value ) {
-		return '';
-	} else {
-		return intval( $value );
-	}
-}
-
-/**
  * Filter post types passed to our Custom Meta box.
  */
 function alcatraz_allowed_post_types( $context = '' ) {
