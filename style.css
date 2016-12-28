@@ -546,6 +546,10 @@ select {
   width: 25%;
 }
 
+img {
+  max-width: 100%;
+}
+
 body,
 button,
 input,
