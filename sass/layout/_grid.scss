@@ -15,6 +15,7 @@
 		@include grid-classes;
 	} // .alcatraz-col
 
+	// Grid without gutter
 	.no-gutter {
 		@include fill-parent();
 

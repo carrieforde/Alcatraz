@@ -134,7 +134,7 @@
 	@for $i from 1 through $grid-columns {
 
 		// Generate the column classes.
-		&-#{$i} {
+		@include modifier(#{$i}) {
 			@include span-columns($i);
 		}
 	}
