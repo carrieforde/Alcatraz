@@ -38,7 +38,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 			<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 
 			<?php if ( $args['patterns_included'] ) : ?>
-			<p><?php esc_html_e( $args['patterns_included'] ); ?></p>
+			<p><?php echo esc_html( $args['patterns_included'] ); ?></p>
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
@@ -47,12 +47,12 @@ function alcatraz_pattern_doc( $args = array() ) {
 		<div class="pattern-doc-details">
 			<?php if ( $args['function'] ) : ?>
 			<h4><?php esc_html_e( 'Template Tag', 'alcatraz' ); ?></h4>
-			<pre>&lt;?php <?php esc_html_e( $args['function'] ); ?>; ?&gt;</pre>
+			<pre>&lt;?php <?php echo esc_html( $args['function'] ); ?>; ?&gt;</pre>
 			<?php endif; ?>
 
 			<?php if ( $args['output'] ) : ?>
 			<h4><?php esc_html_e( 'HTML Output', 'alcatraz' ); ?></h4>
-			<pre><?php esc_html_e( trim( $args['output'] ) ); ?></pre>
+			<pre><?php echo esc_html( trim( $args['output'] ) ); ?></pre>
 			<?php endif; ?>
 		</div>
 		<?php endif; ?>
@@ -62,14 +62,14 @@ function alcatraz_pattern_doc( $args = array() ) {
 			<?php if ( $args['params'] ) : ?>
 			<h4><?php esc_html_e( 'Params', 'alcatraz' ); ?></h4>
 				<?php foreach ( $args['params'] as $key => $value ) : ?>
-					<p><code><?php esc_html_e( $key ); ?></code> <?php esc_html_e( $value ); ?></p>
+					<p><code><?php echo esc_html( $key ); ?></code> <?php echo esc_html( $value ); ?></p>
 				<?php endforeach; ?>
 			<?php endif; ?>
 
 			<?php if ( $args['args'] ) : ?>
 			<h4><?php esc_html_e( 'Arguments', 'alcatraz' ); ?></h4>
 				<?php foreach ( $args['args'] as $key => $value ) : ?>
-					<p><code><?php esc_html_e( $key ); ?></code> <?php esc_html_e( $value ); ?></p>
+					<p><code><?php echo esc_html( $key ); ?></code> <?php echo esc_html( $value ); ?></p>
 				<?php endforeach; ?>
 			<?php endif; ?>
 		</div>
@@ -180,7 +180,7 @@ function alcatraz_button( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<button class="button <?php esc_attr_e( $args['class'] ); ?>"><?php esc_html_e( $args['button_text'] ); ?></button>
+			<button class="button <?php echo esc_attr( $args['class'] ); ?>"><?php echo esc_html( $args['button_text'] ); ?></button>
 
 			<?php return ob_get_clean(); ?>
 
@@ -190,7 +190,7 @@ function alcatraz_button( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<input type="submit" value="<?php esc_attr_e( $args['button_text'] ); ?>" class="button button-submit <?php esc_attr_e( $args['class'] ); ?>" />
+			<input type="submit" value="<?php echo esc_attr( $args['button_text'] ); ?>" class="button button-submit <?php echo esc_attr( $args['class'] ); ?>" />
 
 			<?php return ob_get_clean(); ?>
 
@@ -200,7 +200,7 @@ function alcatraz_button( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button-text <?php esc_attr_e( $args['class'] ); ?>" target="<?php esc_attr_e( $args['target'] ); ?>"><?php esc_html_e( $args['button_text'] ); ?></a>
+			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button-text <?php esc_attr_e( $args['class'] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $args['button_text'] ); ?></a>
 
 			<?php return ob_get_clean(); ?>
 
@@ -292,7 +292,7 @@ function alcatraz_form_elements( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<input <?php esc_attr_e( $attributes ); ?> />
+			<input <?php echo esc_attr( $attributes ); ?>>
 
 			<?php return ob_get_clean(); ?>
 
@@ -302,7 +302,7 @@ function alcatraz_form_elements( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<textarea class="<?php esc_attr_e( $args['class'] ); ?>" placeholder="<?php esc_attr_e( $args['placeholder'] ); ?>"></textarea>
+			<textarea class="<?php echo esc_attr( $args['class'] ); ?>" placeholder="<?php echo esc_attr( $args['placeholder'] ); ?>"></textarea>
 
 			<?php return ob_get_clean(); ?>
 
@@ -314,12 +314,12 @@ function alcatraz_form_elements( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<select class="<?php esc_attr_e( $args['class'] ); ?>">
+			<select class="<?php echo esc_attr( $args['class'] ); ?>">
 
 				<optgroup>
 				<?php foreach ( $options as $option ) : ?>
 
-					<option><?php esc_html_e( $option ); ?></option>
+					<option><?php echo esc_html( $option ); ?></option>
 
 				<?php endforeach; ?>
 				</optgroup>

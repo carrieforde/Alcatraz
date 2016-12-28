@@ -32,15 +32,15 @@ function alcatraz_grid( $args = array() ) {
 		$col_1 = $i;
 		$col_2 = 12 - $i; ?>
 
-	<div class="<?php esc_attr_e( $classes ); ?>">
-		<div class="alcatraz-col-<?php esc_attr_e( $col_1 ); ?>"><?php esc_html_e( $col_1 ); ?></div>
-		<div class="alcatraz-col-<?php esc_attr_e( $col_2 ); ?>"><?php esc_html_e( $col_2 ); ?></div>
+	<div class="<?php echo esc_attr( $classes ); ?>">
+		<div class="alcatraz-col-<?php echo esc_attr( $col_1 ); ?>"><?php echo esc_html( $col_1 ); ?></div>
+		<div class="alcatraz-col-<?php echo esc_attr( $col_2 ); ?>"><?php echo esc_html( $col_2 ); ?></div>
 	</div>
 
 	<?php endfor; ?>
 
-	<div class="<?php esc_attr_e( $classes ); ?>">
-		<div class="alcatraz-col-12"><?php esc_html_e( '12', 'alcatraz' ); ?></div>
+	<div class="<?php echo esc_attr( $classes ); ?>">
+		<div class="alcatraz-col-12"><?php echo esc_html( '12', 'alcatraz' ); ?></div>
 	</div>
 
 	<?php return ob_get_clean();
@@ -66,18 +66,18 @@ function alcatraz_card( $args = array() ) {
 
 	ob_start(); ?>
 
-	<div class="alcatraz-card alcatraz-col-4 <?php esc_attr_e( $args['class'] ); ?>">
+	<div class="alcatraz-card alcatraz-col-4 <?php echo esc_attr( $args['class'] ); ?>">
 
 		<div class="card-image">
 			<?php echo wp_kses_post( alcatraz_image( array( 'src' => $args['src'], 'use_img_src' => true ) ) ); ?>
 		</div>
 
 		<header class="card-header">
-			<h3 class="card-title"><a href="<?php echo esc_url( $args['link'] ); ?>"><?php esc_html_e( $args['title'] ); ?></a></h3>
+			<h3 class="card-title"><a href="<?php echo esc_url( $args['link'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a></h3>
 		</header>
 
 		<div class="card-content">
-			<?php esc_html_e( $args['excerpt'] ); ?>
+			<?php echo esc_html( $args['excerpt'] ); ?>
 		</div>
 
 		<footer class="card-footer">
