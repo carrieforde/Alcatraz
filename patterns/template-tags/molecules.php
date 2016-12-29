@@ -237,6 +237,12 @@ function alcatraz_lists( $args = array() ) {
 	return ob_get_clean();
 }
 
+/**
+ * Build and return a blockquote.
+ *
+ * @params  array   The args.
+ * @return  string  The HTML.
+ */
 function alcatraz_blockquote( $args = array() ) {
 
 	$defaults = array(
@@ -254,6 +260,35 @@ function alcatraz_blockquote( $args = array() ) {
 			<cite><?php echo esc_html( $args['cite'] ); ?></cite>
 		<?php endif; ?>
 	</blockquote>
+
+	<?php return ob_get_clean();
+}
+
+/**
+ * Build and return an image with caption.
+ *
+ * @param   array   The args.
+ * @return  string  The HTML.
+ */
+function alcatraz_image_with_caption( $args = array() ) {
+
+	$defaults = array(
+		'type'    => 'url',
+		'src'     => 'https://unsplash.it/600/370/?random',
+		'size'    => '',
+		'class'   => '',
+		'caption' => 'It is a thing of absolute, stunning beauty.',
+	);
+	$args = wp_parse_args( $args, $defaults );
+
+	ob_start(); ?>
+
+	<figure <?php echo ( ! empty( $args['class'] ) ) ? 'class="' . esc_attr( $args['class'] ) . '"' : ''; ?>>
+		<?php echo wp_kses_post( alcatraz_image( array( 'type' => $args['type'], 'src' => $args['src'], 'size' => $args['size'] ) ) ); ?>
+		<?php if ( ! empty( $args['caption'] ) ) : ?>
+		<figcaption class="wp-caption"><?php echo wp_kses_post( $args['caption'] ); ?></figcaption>
+		<?php endif; ?>
+	</figure>
 
 	<?php return ob_get_clean();
 }

@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 
 //-------------------------------
-// Image Alignments
+// Alignments
 //-------------------------------
 .alignleft {
 	float: left;
@@ -19,4 +19,11 @@
 .alignright {
 	float: right;
 	margin: 0 0 $size__padding $size__padding;
+}
+
+//-------------------------------
+// WP Caption
+//-------------------------------
+.wp-caption {
+	font-size: 0.8em; // using em to keep it proportional other container text
 }

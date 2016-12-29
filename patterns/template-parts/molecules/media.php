@@ -37,4 +37,14 @@
 				'class' => 'alignright'
 			) ),
 		) ); ?>
+
+		<?php alcatraz_pattern_doc( array(
+			'heading'           => 'Image with Caption',
+			'description'       => 'This illustrates how images with captions will appear.',
+			'patterns_included' => 'alcatraz_image()',
+			'function'          => 'alcatraz_image_with_caption()',
+			'output'            => alcatraz_image_with_caption( array() ),
+			'params'            => array(),
+			'args'              => array(),
+		) ); ?>
 </section>

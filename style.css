@@ -557,6 +557,11 @@ select {
   width: 25%;
 }
 
+figure {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 img {
   max-width: 100%;
 }
@@ -655,6 +660,10 @@ pre {
 .alignright {
   float: right;
   margin: 0 0 1.25rem 1.25rem;
+}
+
+.wp-caption {
+  font-size: 0.8em;
 }
 
 .content-area,
