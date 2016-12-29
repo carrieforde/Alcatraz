@@ -12,8 +12,8 @@
 			'heading'     => 'Align Left',
 			'description' => 'This image utilizes the WordPress <code>alignleft</code> class.',
 			'output'      => alcatraz_image( array(
-				'type' => 'url',
-				'src' => 'https://unsplash.it/600/370/?random',
+				'type'  => 'url',
+				'src'   => 'https://unsplash.it/600/370/?random',
 				'class' => 'alignleft',
 			) ),
 		) ); ?>
@@ -22,8 +22,8 @@
 			'heading'     => 'Align Center',
 			'description' => 'This image utilizes the WordPress <code>aligncenter</code> class.',
 			'output'      => alcatraz_image( array(
-				'type' => 'url',
-				'src' => 'https://unsplash.it/600/370/?random',
+				'type'  => 'url',
+				'src'   => 'https://unsplash.it/600/370/?random',
 				'class' => 'aligncenter',
 			) ),
 		) ); ?>
@@ -32,8 +32,8 @@
 			'heading'     => 'Align Right',
 			'description' => 'This image utilizes the WordPress <code>alignright</code> class.',
 			'output'      => alcatraz_image( array(
-				'type' => 'url',
-				'src' => 'https://unsplash.it/600/370/?random',
+				'type'  => 'url',
+				'src'   => 'https://unsplash.it/600/370/?random',
 				'class' => 'alignright',
 			) ),
 		) ); ?>
