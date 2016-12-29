@@ -119,15 +119,13 @@ function alcatraz_entry_header( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 
-	ob_start();
+	ob_start(); ?>
 
-	echo '<header class="entry-header">';
+	<header class="entry-header">
+		<?php do_action( 'alcatraz_entry_header_inside', $post_id ); ?>
+	</header>
 
-	do_action( 'alcatraz_entry_header_inside', $post_id );
-
-	echo '</header>';
-
-	return apply_filters( 'alcatraz_entry_header', ob_get_clean(), $post_id );
+	<?php return apply_filters( 'alcatraz_entry_header', ob_get_clean(), $post_id );
 }
 
 /**
@@ -248,15 +246,13 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 
-	ob_start();
+	ob_start(); ?>
 
-	echo '<footer class="entry-footer">';
+	<footer class="entry-footer">
+		<?php do_action( 'alcatraz_entry_footer_inside', $post_id ); ?>
+	</footer>
 
-	do_action( 'alcatraz_entry_footer_inside', $post_id );
-
-	echo '</footer>';
-
-	return apply_filters( 'alcatraz_entry_footer', ob_get_clean(), $post_id );
+	<?php return apply_filters( 'alcatraz_entry_footer', ob_get_clean(), $post_id );
 }
 
 /**
@@ -288,7 +284,7 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
 		return false;
 	}
 
-	$output   = '';
+	$output = '';
 
 	// Find the top level page id.
 	if ( ! $post->post_parent ) {
