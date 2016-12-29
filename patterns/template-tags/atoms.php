@@ -451,9 +451,10 @@ function alcatraz_form_elements( $args = array() ) {
 function alcatraz_image( $args = array() ) {
 
 	$defaults = array(
-		'type' => 'url',
-		'src'  => 'https://unsplash.it/1200/740/?random',
-		'size' => '',
+		'type'  => 'url',
+		'src'   => 'https://unsplash.it/1200/740/?random',
+		'size'  => '',
+		'class' => '',
 	);
 	$args = wp_parse_args( $args, $defaults );
 
@@ -464,7 +465,7 @@ function alcatraz_image( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-				<img src="<?php echo esc_url( $args['src'] ); ?>" />
+				<img <?php echo ( ! empty( $args['class'] ) ) ? 'class="' . esc_attr( $args['class'] ) . '"' : ''; ?> src="<?php echo esc_url( $args['src'] ); ?>" />
 
 			<?php return ob_get_clean(); ?>
 

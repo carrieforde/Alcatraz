@@ -22,6 +22,8 @@ get_header(); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/grid' ); ?>
 
+				<?php get_template_part( 'patterns/template-parts/molecules/media' ); ?>
+
 				<?php get_template_part( 'patterns/template-parts/molecules/navigation' ); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/typography' ); ?>

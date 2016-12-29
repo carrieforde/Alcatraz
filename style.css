@@ -640,6 +640,23 @@ pre {
   position: absolute;
 }
 
+.alignleft {
+  float: left;
+  margin: 0 1.25rem 1.25rem 0;
+}
+
+.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1.25rem;
+}
+
+.alignright {
+  float: right;
+  margin: 0 0 1.25rem 1.25rem;
+}
+
 .content-area,
 .primary-sidebar {
   padding: 2.5rem 1.25rem;

@@ -1,0 +1,22 @@
+//--------------------------------------------------------------
+// WordPress Classes
+//--------------------------------------------------------------
+
+//-------------------------------
+// Image Alignments
+//-------------------------------
+.alignleft {
+	float: left;
+	margin: 0 $size__padding $size__padding 0;
+}
+
+.aligncenter {
+	@include center-block;
+
+	margin-bottom: $size__padding;
+}
+
+.alignright {
+	float: right;
+	margin: 0 0 $size__padding $size__padding;
+}
