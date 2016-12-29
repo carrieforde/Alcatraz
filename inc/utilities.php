@@ -13,7 +13,7 @@
  *
  * @since  1.0.0
  */
-function alcatraz_log( $log )  {
+function alcatraz_log( $log ) {
 	if ( is_array( $log ) || is_object( $log ) ) {
 		error_log( print_r( $log, true ) );
 	} else {

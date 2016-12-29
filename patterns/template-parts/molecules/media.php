@@ -34,7 +34,7 @@
 			'output'      => alcatraz_image( array(
 				'type' => 'url',
 				'src' => 'https://unsplash.it/600/370/?random',
-				'class' => 'alignright'
+				'class' => 'alignright',
 			) ),
 		) ); ?>
 

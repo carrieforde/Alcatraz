@@ -49,15 +49,15 @@ function alcatraz_activation_notice() {
 
 		$documentation_link = sprintf(
 			'<a href="%s" target="_blank">%s</a>',
-			'https://github.com/carrieforde/Alcatraz/wiki',
+			esc_url( 'https://github.com/carrieforde/Alcatraz/wiki' ),
 			__( 'Alcatraz documentation on Github', 'alcatraz' )
 		);
 
 		?>
 		<div id="alcatraz-activation-notice" class="updated notice is-dismissible" style="padding-bottom: 5px;">
-			<h2><?php _e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
-			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo $customizer_link; ?></p>
-			<p><?php _e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo $documentation_link; ?></p>
+			<h2><?php esc_html_e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
+			<p><?php esc_html_e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo $customizer_link; // WPCS: XSS ok. ?></p>
+			<p><?php esc_html_e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo $documentation_link; // WPCS: XSS ok. ?></p>
 		</div>
 		<?php
 	}

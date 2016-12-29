@@ -24,7 +24,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Site layout class.
 	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
-	if ( $page_layout && 'default' != $page_layout ) {
+	if ( $page_layout && 'default' !== $page_layout ) {
 		$classes[] = esc_attr( $page_layout );
 	} elseif ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
 		$classes[] = esc_attr( $options['site_layout'] );
@@ -32,11 +32,11 @@ function alcatraz_body_classes( $classes ) {
 
 	// Site sidebar class.
 	$page_sidebar = get_post_meta( $post->ID, '_alcatraz_page_sidebar', true );
-	if ( $page_sidebar && 'default' != $page_sidebar ) {
-		if ( 'no-sidebar' != $page_sidebar ) {
+	if ( $page_sidebar && 'default' !== $page_sidebar ) {
+		if ( 'no-sidebar' !== $page_sidebar ) {
 			$classes[] = esc_attr( $page_sidebar );
 		}
-	} elseif ( isset( $options['site_sidebar'] ) && 'no-sidebar' != $options['site_sidebar'] ) {
+	} elseif ( isset( $options['site_sidebar'] ) && 'no-sidebar' !== $options['site_sidebar'] ) {
 		$classes[] = esc_attr( $options['site_sidebar'] );
 	}
 
@@ -62,7 +62,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Transparent header class.
 	$transparent_header = get_post_meta( $post->ID, '_alcatraz_transparent_header', true );
-	if ( $transparent_header && 'on' == $transparent_header ) {
+	if ( $transparent_header && 'on' === $transparent_header ) {
 		$classes[] = 'transparent-header';
 	}
 
@@ -83,7 +83,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Header text color class.
 	$header_text_color = get_post_meta( $post->ID, '_alcatraz_header_text_color', true );
-	if ( $header_text_color && 'default' != $header_text_color ) {
+	if ( $header_text_color && 'default' !== $header_text_color ) {
 		$classes[] = 'header-' . esc_attr( $header_text_color );
 	}
 
@@ -93,8 +93,8 @@ function alcatraz_body_classes( $classes ) {
 	}
 
 	// Footer widget areas class.
-	if ( isset( $options['footer_widget_areas'] ) && 0 < (int)$options['footer_widget_areas'] ) {
-		$classes[] = 'footer-widget-areas-' . (int)$options['footer_widget_areas'];
+	if ( isset( $options['footer_widget_areas'] ) && 0 < (int) $options['footer_widget_areas'] ) {
+		$classes[] = 'footer-widget-areas-' . (int) $options['footer_widget_areas'];
 	}
 
 	// Custom page classes.

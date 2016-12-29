@@ -21,12 +21,10 @@ get_header(); ?>
 
 			<?php the_post_navigation(); ?>
 
-			<?php
-				// Maybe load comments.
-				if ( comments_open() || get_comments_number() ) {
-					comments_template();
-				}
-			?>
+			<?php // Maybe load comments. ?>
+			<?php if ( comments_open() || get_comments_number() ) :
+				comments_template();
+			endif; ?>
 
 		<?php endwhile; ?>
 

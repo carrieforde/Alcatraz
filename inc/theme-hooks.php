@@ -34,13 +34,13 @@ function alcatraz_output_site_title() {
 		printf(
 			'<h1 class="site-title"><a href="%s" rel="home">%s</a></h1>',
 			esc_url( home_url( '/' ) ),
-			get_bloginfo( 'name' )
+			esc_html( get_bloginfo( 'name' ) )
 		);
 	} else {
 		printf(
 			'<p class="site-title"><a href="%s" rel="home">%s</a></p>',
 			esc_url( home_url( '/' ) ),
-			get_bloginfo( 'name' )
+			esc_html( get_bloginfo( 'name' ) )
 		);
 	}
 }
@@ -59,7 +59,7 @@ function alcatraz_output_site_description() {
 		printf(
 			'<p class="%s">%s</p>',
 			'site-description',
-			$description
+			esc_html( $description )
 		);
 	}
 }
