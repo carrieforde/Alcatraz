@@ -199,6 +199,6 @@ function alcatraz_social_menu_in_footer() {
 
 	if ( ! empty( $options['social_icons_in_footer'] ) && has_nav_menu( 'social' ) ) {
 
-		echo alcatraz_social_nav();
+		alcatraz_the_social_nav();
 	}
 }

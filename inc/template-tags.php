@@ -420,3 +420,34 @@ function alcatraz_the_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label =
 
 	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator );
 }
+
+/**
+ * Build and return the Social Nav HTML.
+ *
+ * @return  string  The HTML.
+ */
+function alcatraz_get_social_nav() {
+
+	ob_start(); ?>
+
+	<nav id="social-nav" class="social-nav" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
+
+		<?php wp_nav_menu( array(
+			'theme_location' => 'social',
+			'menu_class'     => 'social-nav__menu',
+			'depth'          => 1,
+			'link_before'    => '<span class="screen-reader-text">',
+			'link_after'     => '</span>',
+		) ); ?>
+	</nav>
+
+	<?php return ob_get_clean();
+}
+
+/**
+ * Echo the Social Navigation menu.
+ */
+function alcatraz_the_social_nav() {
+
+	echo alcatraz_get_social_nav();
+}
