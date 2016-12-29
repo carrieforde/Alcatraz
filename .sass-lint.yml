@@ -77,7 +77,7 @@ rules:
   mixins-before-declarations:
     - 2
     -
-      exclude: ['media']
+      exclude: ['media', 'element', 'modifier']
   nesting-depth:
     - 1
     -
