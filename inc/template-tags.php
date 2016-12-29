@@ -56,7 +56,7 @@ function alcatraz_posted_on( $post_id = 0 ) {
  */
 function alcatraz_the_posted_on( $post_id = 0 ) {
 
-	echo alcatraz_posted_on( $post_id );
+	echo alcatraz_posted_on( $post_id ); // WPCS: XSS ok.
 }
 
 /**
@@ -101,7 +101,8 @@ function alcatraz_edit_post_link( $post_id = 0 ) {
  * @param   int  $post_id  The post ID to use (optional).
  */
 function alcatraz_the_edit_post_link( $post_id = 0 ) {
-	echo alcatraz_edit_post_link( $post_id );
+
+	echo alcatraz_edit_post_link( $post_id ); // WPCS: XSS ok.
 }
 
 /**
@@ -137,7 +138,7 @@ function alcatraz_entry_header( $post_id = 0 ) {
  */
 function alcatraz_the_entry_header( $post_id = 0 ) {
 
-	echo alcatraz_entry_header( $post_id );
+	echo alcatraz_entry_header( $post_id ); // WPCS: XSS ok.
 }
 
 /**
@@ -163,7 +164,6 @@ function alcatraz_entry_title( $post_id = 0 ) {
 		if ( 'on' !== $hide_title ) {
 			$title = '<h1 class="entry-title">' . get_the_title( $post_id ) . '</h1>';
 		}
-
 	} else {
 
 		$title = sprintf(
@@ -185,7 +185,7 @@ function alcatraz_entry_title( $post_id = 0 ) {
  */
 function alcatraz_the_entry_title( $post_id = 0 ) {
 
-	echo alcatraz_entry_title( $post_id );
+	echo alcatraz_entry_title( $post_id ); // WPCS: XSS ok.
 }
 
 /**
@@ -228,7 +228,7 @@ function alcatraz_entry_meta( $post_id = 0 ) {
  */
 function alcatraz_the_entry_meta( $post_id = 0 ) {
 
-	echo alcatraz_entry_meta( $post_id );
+	echo alcatraz_entry_meta( $post_id ); // WPCS: XSS ok.
 }
 
 /**
@@ -263,7 +263,8 @@ function alcatraz_entry_footer( $post_id = 0 ) {
  * @param   int  $post_id  The post ID to use (optional).
  */
 function alcatraz_the_entry_footer( $post_id = 0 ) {
-	echo alcatraz_entry_footer( $post_id );
+
+	echo alcatraz_entry_footer( $post_id ); // WPCS: XSS ok.
 }
 
 /**
@@ -337,7 +338,7 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
  */
 function alcatraz_the_sub_page_nav( $args = array() ) {
 
-	echo alcatraz_get_sub_page_nav( $args );
+	echo alcatraz_get_sub_page_nav( $args ); // WPCS: XSS ok.
 }
 
 /**
@@ -418,7 +419,7 @@ function alcatraz_get_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label =
  */
 function alcatraz_the_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
 
-	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator );
+	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator ); // WPCS: XSS ok.
 }
 
 /**
@@ -449,5 +450,5 @@ function alcatraz_get_social_nav() {
  */
 function alcatraz_the_social_nav() {
 
-	echo alcatraz_get_social_nav();
+	echo alcatraz_get_social_nav(); // WPCS: XSS ok.
 }
