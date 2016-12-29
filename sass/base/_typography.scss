@@ -6,7 +6,7 @@ button,
 input,
 select {
 	color: $color__body-text;
-	font: 400 18px/#{$font__body-line-height} $font__body;
+	font: 400 18px / #{$font__body-line-height} $font__body;
 }
 
 h1,
@@ -61,19 +61,11 @@ pre,
 samp,
 tt,
 var {
-	font: 400 14px/#{$font__code-line-height} $font__code;
+	font: 400 14px / #{$font__code-line-height} $font__code;
 }
 
 pre {
 	border: $border__pre;
 	overflow: scroll;
-	padding: rem(25);
-}
-
-
-//-------------------------------
-// Utility
-//-------------------------------
-.screen-reader-text {
-	@include hide-text;
+	padding: $size__padding;
 }

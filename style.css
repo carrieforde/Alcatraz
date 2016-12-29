@@ -560,9 +560,11 @@ select {
 figure {
   margin-left: 0;
   margin-right: 0;
+  max-width: 100%;
 }
 
 img {
+  height: auto;
   max-width: 100%;
 }
 
@@ -571,7 +573,7 @@ button,
 input,
 select {
   color: #040a04;
-  font: 400 18px/1.5 "Source Sans Pro", sans-serif;
+  font: 400 18px / 1.5 "Source Sans Pro", sans-serif;
 }
 
 h1,
@@ -625,24 +627,13 @@ pre,
 samp,
 tt,
 var {
-  font: 400 14px/1.6 "Source Code Pro", Courier, monospace;
+  font: 400 14px / 1.6 "Source Code Pro", Courier, monospace;
 }
 
 pre {
   border: 0.0625rem solid #95a0a3;
   overflow: scroll;
-  padding: 1.5625rem;
-}
-
-.screen-reader-text {
-  height: 0.0625rem;
-  width: 0.0625rem;
-  border: 0;
-  clip: rect(0 0 0 0);
-  margin: -0.0625rem;
-  overflow: hidden;
-  padding: 0;
-  position: absolute;
+  padding: 1.25rem;
 }
 
 .alignleft {
@@ -666,6 +657,17 @@ pre {
   font-size: 0.8em;
 }
 
+.screen-reader-text {
+  height: 0.0625rem;
+  width: 0.0625rem;
+  border: none;
+  clip: rect(0 0 0 0);
+  margin: -0.0625rem;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+}
+
 .content-area,
 .primary-sidebar {
   padding: 2.5rem 1.25rem;
@@ -686,7 +688,7 @@ pre {
   width: 1100px;
 }
 
-[class^='alcatraz-col-'] {
+[class^='alcatraz-col--'] {
   padding: 0.9375rem;
   width: 100%;
 }
@@ -720,123 +722,123 @@ pre {
   text-align: center;
 }
 
-.social-nav__menu .menu-item > a[href*="behance.net"]:before {
+.social-nav__menu .menu-item > a[href*='behance.net']:before {
   content: '\f1b4';
 }
 
-.social-nav__menu .menu-item > a[href*="bitbucket.org"]:before {
+.social-nav__menu .menu-item > a[href*='bitbucket.org']:before {
   content: '\f171';
 }
 
-.social-nav__menu .menu-item > a[href*="codepen.io"]:before {
+.social-nav__menu .menu-item > a[href*='codepen.io']:before {
   content: '\f1cb';
 }
 
-.social-nav__menu .menu-item > a[href*="deviantart.com"]:before {
+.social-nav__menu .menu-item > a[href*='deviantart.com']:before {
   content: '\f1bd';
 }
 
-.social-nav__menu .menu-item > a[href*="digg.com"]:before {
+.social-nav__menu .menu-item > a[href*='digg.com']:before {
   content: '\f1a6';
 }
 
-.social-nav__menu .menu-item > a[href*="dribbble.com"]:before {
+.social-nav__menu .menu-item > a[href*='dribbble.com']:before {
   content: '\f17d';
 }
 
-.social-nav__menu .menu-item > a[href^="mailto:"]:before {
+.social-nav__menu .menu-item > a[href^='mailto:']:before {
   content: '\f0e0';
 }
 
-.social-nav__menu .menu-item > a[href*="facebook.com"]:before {
+.social-nav__menu .menu-item > a[href*='facebook.com']:before {
   content: '\f09a';
 }
 
-.social-nav__menu .menu-item > a[href*="github.com"]:before, .social-nav__menu .menu-item > a[href*="github.io"]:before {
+.social-nav__menu .menu-item > a[href*='github.com']:before, .social-nav__menu .menu-item > a[href*='github.io']:before {
   content: '\f09b';
 }
 
-.social-nav__menu .menu-item > a[href*="plus.google.com"]:before {
+.social-nav__menu .menu-item > a[href*='plus.google.com']:before {
   content: '\f0d5';
 }
 
-.social-nav__menu .menu-item > a[href*="instagram.com"]:before {
+.social-nav__menu .menu-item > a[href*='instagram.com']:before {
   content: '\f16d';
 }
 
-.social-nav__menu .menu-item > a[href*="jsfiddle.net"]:before {
+.social-nav__menu .menu-item > a[href*='jsfiddle.net']:before {
   content: '\f1cc';
 }
 
-.social-nav__menu .menu-item > a[href*="linkedin.com"]:before {
+.social-nav__menu .menu-item > a[href*='linkedin.com']:before {
   content: '\f0e1';
 }
 
-.social-nav__menu .menu-item > a[href*="medium.com"]:before {
+.social-nav__menu .menu-item > a[href*='medium.com']:before {
   content: '\f23a';
 }
 
-.social-nav__menu .menu-item > a[href*="pinterest.com"]:before {
+.social-nav__menu .menu-item > a[href*='pinterest.com']:before {
   content: '\f0d2';
 }
 
-.social-nav__menu .menu-item > a[href*="reddit.com"]:before {
+.social-nav__menu .menu-item > a[href*='reddit.com']:before {
   content: '\f1a1';
 }
 
-.social-nav__menu .menu-item > a[href*="skype.com"]:before {
+.social-nav__menu .menu-item > a[href*='skype.com']:before {
   content: '\f17e';
 }
 
-.social-nav__menu .menu-item > a[href*="slack.com"]:before {
+.social-nav__menu .menu-item > a[href*='slack.com']:before {
   content: '\f198';
 }
 
-.social-nav__menu .menu-item > a[href*="slideshare.net"]:before {
+.social-nav__menu .menu-item > a[href*='slideshare.net']:before {
   content: '\f1e7';
 }
 
-.social-nav__menu .menu-item > a[href*="snapchat.com"]:before {
+.social-nav__menu .menu-item > a[href*='snapchat.com']:before {
   content: '\f2ab';
 }
 
-.social-nav__menu .menu-item > a[href*="soundcloud.com"]:before {
+.social-nav__menu .menu-item > a[href*='soundcloud.com']:before {
   content: '\f1be';
 }
 
-.social-nav__menu .menu-item > a[href*="spotify.com"]:before {
+.social-nav__menu .menu-item > a[href*='spotify.com']:before {
   content: '\f1bc';
 }
 
-.social-nav__menu .menu-item > a[href*="tumblr.com"]:before {
+.social-nav__menu .menu-item > a[href*='tumblr.com']:before {
   content: '\f173';
 }
 
-.social-nav__menu .menu-item > a[href*="twitter.com"]:before {
+.social-nav__menu .menu-item > a[href*='twitter.com']:before {
   content: '\f099';
 }
 
-.social-nav__menu .menu-item > a[href*="vimeo.com"]:before {
+.social-nav__menu .menu-item > a[href*='vimeo.com']:before {
   content: '\f27d';
 }
 
-.social-nav__menu .menu-item > a[href*="vine.co"]:before {
+.social-nav__menu .menu-item > a[href*='vine.co']:before {
   content: '\f1ca';
 }
 
-.social-nav__menu .menu-item > a[href*="whatsapp.com"]:before {
+.social-nav__menu .menu-item > a[href*='whatsapp.com']:before {
   content: '\f232';
 }
 
-.social-nav__menu .menu-item > a[href*="wordpress.com"]:before, .social-nav__menu .menu-item > a[href*="wordpress.org"]:before {
+.social-nav__menu .menu-item > a[href*='wordpress.com']:before, .social-nav__menu .menu-item > a[href*='wordpress.org']:before {
   content: '\f19a';
 }
 
-.social-nav__menu .menu-item > a[href*="yelp.com"]:before {
+.social-nav__menu .menu-item > a[href*='yelp.com']:before {
   content: '\f1e9';
 }
 
-.social-nav__menu .menu-item > a[href*="youtube.com"]:before {
+.social-nav__menu .menu-item > a[href*='youtube.com']:before {
   content: '\f167';
 }
 
@@ -978,112 +980,112 @@ pre {
     content: "";
     display: block;
   }
-  .no-gutter .alcatraz-col-1{
+  .no-gutter .alcatraz-col--1{
     margin-right: 0;
     float: left;
     display: block;
     width: 8.4545454545%;
   }
-  .no-gutter .alcatraz-col-1:last-child{
+  .no-gutter .alcatraz-col--1:last-child{
     width: 7%;
   }
-  .no-gutter .alcatraz-col-2{
+  .no-gutter .alcatraz-col--2{
     margin-right: 0;
     float: left;
     display: block;
     width: 16.9090909091%;
   }
-  .no-gutter .alcatraz-col-2:last-child{
+  .no-gutter .alcatraz-col--2:last-child{
     width: 15.4545454545%;
   }
-  .no-gutter .alcatraz-col-3{
+  .no-gutter .alcatraz-col--3{
     margin-right: 0;
     float: left;
     display: block;
     width: 25.3636363636%;
   }
-  .no-gutter .alcatraz-col-3:last-child{
+  .no-gutter .alcatraz-col--3:last-child{
     width: 23.9090909091%;
   }
-  .no-gutter .alcatraz-col-4{
+  .no-gutter .alcatraz-col--4{
     margin-right: 0;
     float: left;
     display: block;
     width: 33.8181818182%;
   }
-  .no-gutter .alcatraz-col-4:last-child{
+  .no-gutter .alcatraz-col--4:last-child{
     width: 32.3636363636%;
   }
-  .no-gutter .alcatraz-col-5{
+  .no-gutter .alcatraz-col--5{
     margin-right: 0;
     float: left;
     display: block;
     width: 42.2727272727%;
   }
-  .no-gutter .alcatraz-col-5:last-child{
+  .no-gutter .alcatraz-col--5:last-child{
     width: 40.8181818182%;
   }
-  .no-gutter .alcatraz-col-6{
+  .no-gutter .alcatraz-col--6{
     margin-right: 0;
     float: left;
     display: block;
     width: 50.7272727273%;
   }
-  .no-gutter .alcatraz-col-6:last-child{
+  .no-gutter .alcatraz-col--6:last-child{
     width: 49.2727272727%;
   }
-  .no-gutter .alcatraz-col-7{
+  .no-gutter .alcatraz-col--7{
     margin-right: 0;
     float: left;
     display: block;
     width: 59.1818181818%;
   }
-  .no-gutter .alcatraz-col-7:last-child{
+  .no-gutter .alcatraz-col--7:last-child{
     width: 57.7272727273%;
   }
-  .no-gutter .alcatraz-col-8{
+  .no-gutter .alcatraz-col--8{
     margin-right: 0;
     float: left;
     display: block;
     width: 67.6363636364%;
   }
-  .no-gutter .alcatraz-col-8:last-child{
+  .no-gutter .alcatraz-col--8:last-child{
     width: 66.1818181818%;
   }
-  .no-gutter .alcatraz-col-9{
+  .no-gutter .alcatraz-col--9{
     margin-right: 0;
     float: left;
     display: block;
     width: 76.0909090909%;
   }
-  .no-gutter .alcatraz-col-9:last-child{
+  .no-gutter .alcatraz-col--9:last-child{
     width: 74.6363636364%;
   }
-  .no-gutter .alcatraz-col-10{
+  .no-gutter .alcatraz-col--10{
     margin-right: 0;
     float: left;
     display: block;
     width: 84.5454545455%;
   }
-  .no-gutter .alcatraz-col-10:last-child{
+  .no-gutter .alcatraz-col--10:last-child{
     width: 83.0909090909%;
   }
-  .no-gutter .alcatraz-col-11{
+  .no-gutter .alcatraz-col--11{
     margin-right: 0;
     float: left;
     display: block;
     width: 93%;
   }
-  .no-gutter .alcatraz-col-11:last-child{
+  .no-gutter .alcatraz-col--11:last-child{
     width: 91.5454545455%;
   }
-  .no-gutter .alcatraz-col-12{
+  .no-gutter .alcatraz-col--12{
     margin-right: 0;
     float: left;
     display: block;
     width: 101.454545455%;
   }
-  .no-gutter .alcatraz-col-12:last-child{
+  .no-gutter .alcatraz-col--12:last-child{
     width: 100%;
   }
   .left-sidebar .content-area,

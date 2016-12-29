@@ -27,3 +27,11 @@
 .wp-caption {
 	font-size: 0.8em; // using em to keep it proportional other container text
 }
+
+
+//-------------------------------
+// Utility
+//-------------------------------
+.screen-reader-text {
+	@include hide-text;
+}

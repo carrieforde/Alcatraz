@@ -36,12 +36,12 @@
 // for more info.
 //-------------------------------
 @mixin full-width {
-	width: 100vw;
-	position: relative;
 	left: 50%;
-	right: 50%;
 	margin-left: calc(-50vw + 30px);
 	margin-right: -50vw;
+	position: relative;
+	right: 50%;
+	width: 100vw;
 }
 
 
@@ -84,7 +84,7 @@
 @mixin hide-text {
 	@include size(rem(1));
 
-	border: 0;
+	border: none;
 	clip: rect(0 0 0 0);
 	margin: rem(-1);
 	overflow: hidden;
@@ -152,7 +152,7 @@
 
 	@for $i from 1 through $grid-columns {
 
-		&-#{$i} {
+		@include modifier(#{$i}) {
 			@include omega;
 			@include span-columns($i, block-collapse);
 		}
@@ -183,11 +183,11 @@
 // easily reset omega.
 //-------------------------------
 @mixin omega-reset($nth) {
-	&:nth-child(#{nth}) {
+	&:nth-child(#{$nth}) {
 		margin-right: flex-gutter();
 	}
 
-	&:nth-child(#{nth}+1) {
+	&:nth-child(#{$nth}+#{1}) {
 		clear: none;
 	}
 }
