@@ -81,7 +81,7 @@ function alcatraz_grid( $args = array() ) {
 	<?php endfor; ?>
 
 	<div class="<?php echo esc_attr( $classes ); ?>">
-		<div class="alcatraz-col-12"><?php echo esc_html( '12', 'alcatraz' ); ?></div>
+		<div class="alcatraz-col--12"><?php echo esc_html( '12', 'alcatraz' ); ?></div>
 	</div>
 
 	<?php return ob_get_clean();
