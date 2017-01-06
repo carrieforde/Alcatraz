@@ -51,15 +51,6 @@ function alcatraz_validate_options( $input ) {
 	// Start with any existing options.
 	$options = get_option( 'alcatraz_options' );
 
-	$networks = alcatraz_get_social_networks();
-
-	// Update options on the options page.
-	foreach ( $networks as $network => $network_data ) {
-		if ( isset( $input[ $network . '_url' ] ) ) {
-			$options[ $network . '_url' ] = sanitize_text_field( $input[ $network . '_url' ] );
-		}
-	}
-
 	// Update options in the Customizer.
 	if ( isset( $input['site_layout'] ) ) {
 		$options['site_layout'] = sanitize_text_field( $input['site_layout'] );
