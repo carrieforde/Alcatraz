@@ -32,6 +32,7 @@
 
 	&-has-children {
 		padding-bottom: 0;
+		padding-top: 0;
 	}
 }
 
@@ -40,6 +41,7 @@
 // Sub Menu
 //-------------------------------
 .sub-menu {
+	display: none;
 	padding-left: $size__padding;
 }
 
@@ -51,4 +53,47 @@
 .menu-toggle {
 	display: block;
 	width: 100%;
+}
+
+
+//-------------------------------
+// Sub Menu Toggle Style Chevron
+//-------------------------------
+.sub-menu-toggle-style-chevron {
+
+	.sub-level-toggle {
+		@include size(rem(35));
+
+		background-color: transparent;
+		float: right;
+		overflow: hidden;
+		position: relative;
+		text-indent: 9999px;
+
+		@include element(bar) {
+			@include size(rem(11) rem(2));
+
+			background-color: $color__menu-sub-toggle;
+			display: block;
+			margin: auto;
+			position: absolute;
+			top: rem(10); // helps compensate for the 10px padding.
+
+			&.span-1 {
+				left: rem(10);
+				transform: rotate(45deg);
+				transform-origin: 0;
+			}
+
+			&.span-2 {
+				display: none;
+			}
+
+			&.span-3 {
+				right: rem(10);
+				transform: rotate(-45deg);
+				transform-origin: 100%;
+			}
+		}
+	}
 }
