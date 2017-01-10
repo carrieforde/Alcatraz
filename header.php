@@ -43,18 +43,12 @@
 		<nav id="site-navigation" class="main-navigation" role="navigation">
 			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 				<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
-				<span class="menu-toggle-span span-1"></span>
-				<span class="menu-toggle-span span-2"></span>
-				<span class="menu-toggle-span span-3"></span>
 			</div>
-			<div class="menu-overlay"></div>
 			<?php wp_nav_menu( array(
 				'theme_location' => 'primary',
 				'menu_id'        => 'primary-menu',
 				'container_id'   => 'primary-menu-wrap',
 			) ); ?>
-			<div id="mobile-nav-left-swipe-zone"></div>
-			<div id="mobile-nav-right-swipe-zone"></div>
 		</nav>
 
 		<?php endif; ?>
