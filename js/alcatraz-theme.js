@@ -484,16 +484,16 @@ var AlcatrazNavigation = ( function( $ ) {
 			var $subList       = $items.has( 'ul' );
 			var safeToggleText = Alcatraz.Utils.escapeHtml( toggleText );
 
-			var toggle = '<a class="sub-level-toggle">' + safeToggleText +
-			                 '<span class="sub-level-toggle-span span-1"></span>' +
-			                 '<span class="sub-level-toggle-span span-2"></span>' +
-			                 '<span class="sub-level-toggle-span span-3"></span>' +
-			             '</a>';
+			var toggle = '<button type="button" class="sub-level-toggle">' + safeToggleText +
+			                 '<span class="sub-level-toggle__bar span-1"></span>' +
+			                 '<span class="sub-level-toggle__bar span-2"></span>' +
+			                 '<span class="sub-level-toggle__bar span-3"></span>' +
+			             '</button>';
 
 			// Add classes to indicate levels and items.
 			$list.addClass( 'top-level' );
 			$list.find( 'ul' ).addClass( 'sub-level' );
-			$items.addClass( 'list-item' );
+			// $items.addClass( 'list-item' );
 
 			// Loop over each item that has a sub level and inject the toggle.
 			$subList.each( function() {
