@@ -14,7 +14,33 @@
 // Primary Menu
 //-------------------------------
 .primary-menu {
+	@include margin-padding-reset;
+
 	display: none;
+}
+
+
+//-------------------------------
+// Menu Items
+//-------------------------------
+.menu-item {
+	padding: rem(5) 0;
+
+	> a {
+		text-decoration: none;
+	}
+
+	&-has-children {
+		padding-bottom: 0;
+	}
+}
+
+
+//-------------------------------
+// Sub Menu
+//-------------------------------
+.sub-menu {
+	padding-left: $size__padding;
 }
 
 
