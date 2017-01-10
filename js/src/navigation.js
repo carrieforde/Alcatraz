@@ -317,16 +317,15 @@ var AlcatrazNavigation = ( function( $ ) {
 	 * @returns  {object}  The original this.
 	 */
 	var toggleMobileNav = function() {
-		var $container = $( '#site-navigation' );
-		var $menu      = $container.find( '#primary-menu' );
+		var $menu      = $( '#primary-menu' );
 
-		if ( $container.hasClass( 'toggled' ) ) {
+		if ( $menu.hasClass( 'open' ) ) {
 			$window.trigger( 'closeMobileNav.alcatraz' );
-			$container.removeClass( 'toggled' );
+			$menu.removeClass( 'open' );
 			$menu.attr( 'aria-expanded', 'false' );
 		} else {
 			$window.trigger( 'openMobileNav.alcatraz' );
-			$container.addClass( 'toggled' );
+			$menu.addClass( 'open' );
 			$menu.attr( 'aria-expanded', 'true' );
 		}
 
@@ -511,11 +510,11 @@ var AlcatrazNavigation = ( function( $ ) {
 		var $innerMenuToggle = $( '<div class="inner-menu-toggle"></div>' );
 
 		// Use jQuery's $.text() method to escape HTML entities.
-		$innerMenuToggle.text( closeText ).append(
-			'<span class="inner-menu-toggle-span span-1"></span>' +
-			'<span class="inner-menu-toggle-span span-2"></span>' +
-			'<span class="inner-menu-toggle-span span-3"></span>'
-		);
+		// $innerMenuToggle.text( closeText ).append(
+		// 	'<span class="inner-menu-toggle-span span-1"></span>' +
+		// 	'<span class="inner-menu-toggle-span span-2"></span>' +
+		// 	'<span class="inner-menu-toggle-span span-3"></span>'
+		// );
 
 		// Inject the inner menu toggles.
 		$menu.before( $innerMenuToggle );
