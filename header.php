@@ -41,13 +41,14 @@
 		<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
-			</div>
+			<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+				<span class="menu-toggle__text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
+			</button>
 			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id'        => 'primary-menu',
-				'container_id'   => 'primary-menu-wrap',
+				'theme_location'  => 'primary',
+				'menu_id'         => 'primary-menu',
+				'menu_class'      => 'primary-menu',
+				'container_class' => 'main-navigation__menu',
 			) ); ?>
 		</nav>
 
