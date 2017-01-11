@@ -24,15 +24,15 @@
 // Menu Items
 //-------------------------------
 .menu-item {
-	padding: rem(5) 0;
 
 	> a {
+		display: block;
+		padding: rem(5) 0;
 		text-decoration: none;
 	}
 
 	&-has-children {
-		padding-bottom: 0;
-		padding-top: 0;
+		position: relative;
 	}
 }
 
@@ -62,11 +62,10 @@
 .sub-menu-toggle-style-chevron {
 
 	.sub-level-toggle {
+		@include position(absolute, 0 0 null null);
 		@include size(rem(35));
 
 		background-color: transparent;
-		float: right;
-		position: relative;
 		text-indent: 9999px;
 		transition: $transition__click;
 
@@ -86,10 +85,6 @@
 			}
 
 			&.span-2 {
-				display: none;
-			}
-
-			&.span-3 {
 				right: rem(5);
 				transform: rotate(-45deg) translateY(-50%);
 				transform-origin: 0;
