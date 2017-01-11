@@ -403,7 +403,6 @@ var AlcatrazNavigation = ( function( $ ) {
 			var toggle = '<button type="button" class="sub-level-toggle">' + safeToggleText +
 			                 '<span class="sub-level-toggle__bar span-1"></span>' +
 			                 '<span class="sub-level-toggle__bar span-2"></span>' +
-			                 '<span class="sub-level-toggle__bar span-3"></span>' +
 			             '</button>';
 
 			// Add classes to indicate levels and items.
