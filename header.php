@@ -38,12 +38,15 @@
 
 		</div>
 
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
+		<?php if ( has_nav_menu( 'primary' ) ) :
+
+			$options = get_option( 'alcatraz_options' );
+		?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="menu-toggle__text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
-			</button>
+
+			<?php alcatraz_the_mobile_nav_toggle(); ?>
+			
 			<?php wp_nav_menu( array(
 				'theme_location'  => 'primary',
 				'menu_id'         => 'primary-menu',

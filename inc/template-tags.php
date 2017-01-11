@@ -6,6 +6,46 @@
  */
 
 /**
+ * Build and return the mobile navigation toggle style HTML.
+ *
+ * @since   1.0.0
+ *
+ * @return  string  The toggle HTML.
+ */
+function alcatraz_get_mobile_nav_toggle() {
+
+	$options = get_option( 'alcatraz_options' );
+
+	ob_start();
+
+	if ( 'button' === $options['mobile_nav_toggle_style'] ) : ?>
+		<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="menu-toggle__text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
+		</button>
+	<?php endif; ?>
+
+	<?php if ( 'hamburger' === $options['mobile_nav_toggle_style'] ) : ?>
+		<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
+			<span class="menu-toggle__bar bar-1"></span>
+			<span class="menu-toggle__bar bar-2"></span>
+			<span class="menu-toggle__bar bar-3"></span>
+		</button>
+	<?php endif;
+
+	return ob_get_clean();
+}
+
+/**
+ * Echo the mobile navigation toggle.
+ *
+ * @since  1.0.0
+ */
+function alcatraz_the_mobile_nav_toggle() {
+
+	echo alcatraz_get_mobile_nav_toggle(); // WPCS: XSS OK.
+}
+
+/**
  * Build and return the "Posted on ..." HTML.
  *
  * @since   1.0.0
