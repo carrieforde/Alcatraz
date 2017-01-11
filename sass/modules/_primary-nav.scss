@@ -17,6 +17,13 @@
 	@include margin-padding-reset;
 
 	display: none;
+
+	@include media($tablet-portrait-up) {
+		display: flex;
+		justify-content: space-around;
+		margin: 0 auto;
+		max-width: $size__navigation;
+	}
 }
 
 
@@ -24,15 +31,28 @@
 // Menu Items
 //-------------------------------
 .menu-item {
+	display: inline-block;
 
 	> a {
 		display: block;
 		padding: rem(5) 0;
 		text-decoration: none;
+
+		@include media($tablet-portrait-up) {
+			display: inline-block;
+			padding: rem(10);
+		}
 	}
 
 	&-has-children {
 		position: relative;
+
+		@include media($tablet-portrait-up) {
+
+			> a {
+				padding-right: rem(50);
+			}
+		}
 	}
 }
 
@@ -43,6 +63,24 @@
 .sub-menu {
 	display: none;
 	padding-left: $size__padding;
+
+	@include media($tablet-portrait-up) {
+		min-width: rem(175);
+		padding-left: 0;
+		position: absolute;
+		text-align: left;
+		top: 101%;
+		width: 100%;
+	}
+
+	.menu-item {
+		display: block;
+	}
+
+	.sub-menu {
+		left: 100%;
+		top: 0;
+	}
 }
 
 
@@ -53,6 +91,10 @@
 .menu-toggle {
 	display: block;
 	width: 100%;
+
+	@include media($tablet-portrait-up) {
+		display: none;
+	}
 }
 
 
@@ -68,6 +110,10 @@
 		background-color: transparent;
 		text-indent: 9999px;
 		transition: $transition__click;
+
+		@include media($tablet-portrait-up) {
+			top: rem(5);
+		}
 
 		@include element(bar) {
 			@include size(rem(12) rem(3));
