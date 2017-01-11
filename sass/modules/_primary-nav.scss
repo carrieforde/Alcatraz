@@ -31,7 +31,10 @@
 // Menu Items
 //-------------------------------
 .menu-item {
-	display: inline-block;
+	
+	@include media($tablet-portrait-up) {
+		display: inline-block;
+	}
 
 	> a {
 		display: block;
@@ -80,6 +83,10 @@
 	.sub-menu {
 		left: 100%;
 		top: 0;
+	}
+
+	.reverse-expand > & {
+		left: -100%;
 	}
 }
 

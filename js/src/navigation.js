@@ -421,9 +421,9 @@ var AlcatrazNavigation = ( function( $ ) {
 
 				var $item = $( this ).parent( 'li' ),
 					data  = {
-					item: $item,
-					args: args,
-				};
+						item: $item,
+						args: args,
+					};
 
 				$window.trigger( 'toggleListItem.alcatraz', data );
 			});
