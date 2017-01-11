@@ -317,16 +317,21 @@ var AlcatrazNavigation = ( function( $ ) {
 	 * @returns  {object}  The original this.
 	 */
 	var toggleMobileNav = function() {
-		var $menu      = $( '#primary-menu' );
+		var $menu      = $( '#primary-menu' ),
+			$toggle    = $( '.menu-toggle' );
+
+			console.log( $toggle );
 
 		if ( $menu.hasClass( 'open' ) ) {
 			$window.trigger( 'closeMobileNav.alcatraz' );
 			$menu.removeClass( 'open' );
 			$menu.attr( 'aria-expanded', 'false' );
+			$toggle.removeClass( 'toggled' );
 		} else {
 			$window.trigger( 'openMobileNav.alcatraz' );
 			$menu.addClass( 'open' );
 			$menu.attr( 'aria-expanded', 'true' );
+			$toggle.addClass( 'toggled' );
 		}
 
 		return this;

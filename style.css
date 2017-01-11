@@ -879,9 +879,53 @@ pre {
   padding-left: 1.25rem;
 }
 
+.sub-menu .menu-item {
+  display: block;
+}
+
+.sub-menu .sub-menu {
+  left: 100%;
+  top: 0;
+}
+
+.reverse-expand > .sub-menu {
+  left: -100%;
+}
+
 .menu-toggle {
   display: block;
   width: 100%;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle {
+  height: 2.1875rem;
+  width: 2.1875rem;
+  background-color: transparent;
+  position: relative;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle__bar {
+  position: absolute;
+  right: 0;
+  left: 0;
+  height: 0.1875rem;
+  width: 2.1875rem;
+  background-color: #0d8bb7;
+  margin: auto;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle__bar.bar-1 {
+  top: 0.3125rem;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle__bar.bar-2 {
+  bottom: 0;
+  top: 0;
+}
+
+.mobile-nav-toggle-style-hamburger .menu-toggle__bar.bar-3 {
+  bottom: 0.3125rem;
 }
 
 .sub-menu-toggle-style-chevron .sub-level-toggle {
@@ -919,6 +963,23 @@ pre {
 
 .open {
   display: block;
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle__bar {
+  bottom: 0;
+  top: 0;
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle__bar.bar-1 {
+  transform: rotate(45deg);
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle__bar.bar-2 {
+  display: none;
+}
+
+.mobile-nav-toggle-style-hamburger .toggled .menu-toggle__bar.bar-3 {
+  transform: rotate(-45deg);
 }
 
 .sub-menu-toggle-style-chevron .toggled.sub-level-toggle {
@@ -1186,6 +1247,38 @@ pre {
   }
   .left-sidebar .primary-sidebar{
     float: left;
+  }
+  .primary-menu{
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    margin: 0 auto;
+    max-width: 1100px;
+  }
+  .menu-item{
+    display: inline-block;
+  }
+  .menu-item > a{
+    display: inline-block;
+    padding: 0.625rem;
+  }
+  .menu-item-has-children > a{
+    padding-right: 3.125rem;
+  }
+  .sub-menu{
+    min-width: 10.9375rem;
+    padding-left: 0;
+    position: absolute;
+    text-align: left;
+    top: 101%;
+    width: 100%;
+  }
+  .menu-toggle{
+    display: none;
+  }
+  .sub-menu-toggle-style-chevron .sub-level-toggle{
+    top: 0.3125rem;
   }
 }
 

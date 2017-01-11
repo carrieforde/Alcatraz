@@ -2,6 +2,33 @@
 // TOGGLED
 //--------------------------------------------------------------
 
+//-------------------------------
+// Mobile Nav Toggle - Hamburger
+//-------------------------------
+.mobile-nav-toggle-style-hamburger {
+
+	.toggled {
+
+		.menu-toggle__bar {
+			bottom: 0;
+			top: 0;
+			
+			&.bar-1 {
+				transform: rotate(45deg);
+			}
+
+			&.bar-2 {
+				display: none;
+			}
+
+			&.bar-3 {
+				transform: rotate(-45deg);
+			}
+		}
+	}
+}
+
+
 .sub-menu-toggle-style-chevron {
 
 	.toggled {
