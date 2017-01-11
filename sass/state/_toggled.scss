@@ -4,17 +4,10 @@
 
 .sub-menu-toggle-style-chevron {
 
-	.sub-level-toggle {
-
-		@include element(bar) {
-
-			&.span-1 {
-				transform: rotate(90deg);
-			}
-
-			&.span-2 {
-				transform: rotate(-90deg);
-			}
+	.toggled {
+		
+		&.sub-level-toggle {
+			transform: rotateX(180deg);
 		}
 	}
 }

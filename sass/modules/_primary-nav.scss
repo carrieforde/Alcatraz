@@ -66,23 +66,23 @@
 
 		background-color: transparent;
 		float: right;
-		overflow: hidden;
 		position: relative;
 		text-indent: 9999px;
+		transition: $transition__click;
 
 		@include element(bar) {
-			@include size(rem(11) rem(2));
+			@include size(rem(12) rem(3));
 
 			background-color: $color__menu-sub-toggle;
 			display: block;
 			margin: auto;
 			position: absolute;
-			top: rem(10); // helps compensate for the 10px padding.
+			top: 60%;
 
 			&.span-1 {
-				left: rem(10);
-				transform: rotate(45deg);
-				transform-origin: 0;
+				left: rem(5);
+				transform: rotate(45deg) translateY(-50%);
+				transform-origin: 100%;
 			}
 
 			&.span-2 {
@@ -90,9 +90,9 @@
 			}
 
 			&.span-3 {
-				right: rem(10);
-				transform: rotate(-45deg);
-				transform-origin: 100%;
+				right: rem(5);
+				transform: rotate(-45deg) translateY(-50%);
+				transform-origin: 0;
 			}
 		}
 	}
