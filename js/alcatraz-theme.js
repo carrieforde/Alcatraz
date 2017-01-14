@@ -402,7 +402,8 @@ var AlcatrazNavigation = ( function( $ ) {
 	 */
 	var toggleMobileNav = function() {
 		var $menu      = $( '#primary-menu' ),
-			$toggle    = $( '.menu-toggle' );
+			$toggle    = $( '.menu-toggle' ),
+			$close     = $( '.close-toggle' );
 
 			console.log( $toggle );
 
@@ -411,11 +412,13 @@ var AlcatrazNavigation = ( function( $ ) {
 			$menu.removeClass( 'open' );
 			$menu.attr( 'aria-expanded', 'false' );
 			$toggle.removeClass( 'toggled' );
+			$close.removeClass( 'toggled' );
 		} else {
 			$window.trigger( 'openMobileNav.alcatraz' );
 			$menu.addClass( 'open' );
 			$menu.attr( 'aria-expanded', 'true' );
 			$toggle.addClass( 'toggled' );
+			$close.addClass( 'toggled' );
 		}
 
 		return this;
@@ -490,9 +493,9 @@ var AlcatrazNavigation = ( function( $ ) {
 				safeToggleText = Alcatraz.Utils.escapeHtml( toggleText );
 
 			var toggle = '<button type="button" class="sub-level-toggle">' + safeToggleText +
-			                 '<span class="sub-level-toggle__bar span-1"></span>' +
-			                 '<span class="sub-level-toggle__bar span-2"></span>' +
-			             '</button>';
+							 '<span class="sub-level-toggle__bar span-1"></span>' +
+							 '<span class="sub-level-toggle__bar span-2"></span>' +
+						 '</button>';
 
 			// Add classes to indicate levels and items.
 			$list.addClass( 'top-level' );
@@ -539,7 +542,7 @@ var AlcatrazNavigation = ( function( $ ) {
 	 *
 	 * @since    1.0.0
 	 *
- 	 * @returns  {object}  The original this.
+	  * @returns  {object}  The original this.
 	 */
 	var initPrimaryNavigation = function() {
 		var $container = $( '#site-navigation' );
@@ -594,23 +597,10 @@ var AlcatrazNavigation = ( function( $ ) {
 		};
 		initListToggle( $menu, toggleOptions );
 
-		// Build the inner menu toggle.
-		// var $innerMenuToggle = $( '<div class="inner-menu-toggle"></div>' );
-
-		// Use jQuery's $.text() method to escape HTML entities.
-		// $innerMenuToggle.text( closeText ).append(
-		// 	'<span class="inner-menu-toggle-span span-1"></span>' +
-		// 	'<span class="inner-menu-toggle-span span-2"></span>' +
-		// 	'<span class="inner-menu-toggle-span span-3"></span>'
-		// );
-
-		// Inject the inner menu toggles.
-		// $menu.before( $innerMenuToggle );
-
-		// // Close the main nav when the inner menu toggle is clicked.
-		// $( '.inner-menu-toggle' ).on( 'click', function() {
-		// 	$window.trigger( 'toggleMobileNav.alcatraz' );
-		// });
+		 // Close the main nav when the inner menu toggle is clicked.
+		 $( '.close-toggle' ).on( 'click', function() {
+			 $window.trigger( 'toggleMobileNav.alcatraz' );
+		 });
 
 		// Set menu items with sub menus to aria-haspopup="true".
 		$subMenus.each( function() {
@@ -695,6 +685,7 @@ var AlcatrazNavigation = ( function( $ ) {
 	};
 
 })( jQuery );
+
 
 /**
  * Alcatraz JS object.
