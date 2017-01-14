@@ -6,6 +6,7 @@ input,
 select {
 	color: $color__body-text;
 	font: 400 18px / #{$font__body-line-height} $font__body;
+	word-wrap: break-word;
 }
 
 h1,
