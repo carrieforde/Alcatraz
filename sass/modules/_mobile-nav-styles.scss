@@ -1,0 +1,32 @@
+//--------------------------------------------------------------
+// MOBILE NAVIGATION STYLES
+//--------------------------------------------------------------
+
+//-------------------------------
+// Full Screen
+//-------------------------------
+.mobile-nav-style-full-screen {
+
+	.primary-menu {
+
+		&.open {
+			@include position(fixed, 0 0 0 0);
+
+			background-color: $color__mobile-nav-full-screen-background;
+			min-height: 100vh;
+			overflow-y: scroll;
+			padding: $size__padding;
+		}
+	}
+
+	// When we're logged in, we need to account for the admin bar.
+	&.logged-in {
+
+		.primary-menu {
+
+			&.open {
+				top: rem(46);
+			}
+		}
+	}
+}
