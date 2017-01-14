@@ -31,7 +31,7 @@
 // Menu Items
 //-------------------------------
 .menu-item {
-	
+
 	@include media($tablet-portrait-up) {
 		display: inline-block;
 	}
@@ -142,32 +142,40 @@
 }
 
 
-
 //-------------------------------
 // Sub Menu Toggle Style Chevron
 //-------------------------------
-.sub-menu-toggle-style-chevron {
+.sub-level-toggle {
+	@include position(absolute, 0 0 null null);
+	@include size(rem(35));
 
-	.sub-level-toggle {
-		@include position(absolute, 0 0 null null);
-		@include size(rem(35));
+	background-color: transparent;
+	overflow: hidden;
+	text-indent: 9999px;
+	transition: $transition__click;
 
+	@include media($tablet-portrait-up) {
+		top: rem(5);
+	}
+
+	&:hover {
 		background-color: transparent;
-		text-indent: 9999px;
+	}
+
+	@include element(bar) {
+		@include size(rem(12) rem(2));
+
+		background-color: $color__menu-sub-toggle;
+		display: block;
+		margin: auto;
+		position: absolute;
+		top: 60%;
 		transition: $transition__click;
 
-		@include media($tablet-portrait-up) {
-			top: rem(5);
-		}
-
-		@include element(bar) {
-			@include size(rem(12) rem(3));
-
-			background-color: $color__menu-sub-toggle;
-			display: block;
-			margin: auto;
-			position: absolute;
-			top: 60%;
+		//-------------------------------
+		// Chevron Toggle Style
+		//-------------------------------
+		.sub-menu-toggle-style-chevron & {
 
 			&.span-1 {
 				left: rem(5);
@@ -181,6 +189,23 @@
 				transform-origin: 0;
 			}
 		}
+
+		//-------------------------------
+		// Plus-Minus Toggle Style
+		//-------------------------------
+		.sub-menu-toggle-style-plus-minus & {
+
+			&.span-1,
+			&.span-2 {
+				bottom: 0;
+				left: 0;
+				right: 0;
+				top: 0;
+			}
+
+			&.span-2 {
+				transform: rotate(90deg);
+			}
+		}
 	}
 }
-

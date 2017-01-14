@@ -12,7 +12,7 @@
 		.menu-toggle__bar {
 			bottom: 0;
 			top: 0;
-			
+
 			&.bar-1 {
 				transform: rotate(45deg);
 			}
@@ -29,12 +29,31 @@
 }
 
 
+//-------------------------------
+// Sub Menu Toggle - Chevron
+//-------------------------------
 .sub-menu-toggle-style-chevron {
 
 	.toggled {
-		
+
 		&.sub-level-toggle {
 			transform: rotateX(180deg);
+		}
+	}
+}
+
+//-------------------------------
+// Sub Menu Toggle - Plus Minus
+//-------------------------------
+.sub-menu-toggle-style-plus-minus {
+
+	.toggled {
+
+		.sub-level-toggle__bar {
+
+			&.span-2 {
+				transform: rotate(180deg);
+			}
 		}
 	}
 }
