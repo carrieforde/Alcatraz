@@ -15,7 +15,7 @@
 			background-color: $color__mobile-nav-full-screen-background;
 			min-height: 100vh;
 			overflow-y: scroll;
-			padding: $size__padding;
+			padding: ($size__padding * 2) $size__padding $size__padding;
 		}
 	}
 
@@ -28,5 +28,38 @@
 				top: rem(46);
 			}
 		}
+	}
+}
+
+
+//-------------------------------
+// Close Toggle
+//-------------------------------
+.close-toggle {
+	@include position(absolute, rem(20) rem(20) null null);
+	@include size(rem(35));
+
+	background-color: $color__toggle-background;
+	z-index: 2;
+
+	@include element(bar) {
+		@include position(absolute, null 0 null 0);
+		@include size(rem(35) rem(3));
+
+		background-color: $color__button-background;
+		margin: auto;
+		transition: $transition__click;
+
+		&.bar-1 {
+			transform: rotate(45deg);
+		}
+
+		&.bar-2 {
+			transform: rotate(-45deg);
+		}
+	}
+
+	.logged-in & {
+		top: rem(66); // 20px + 46px
 	}
 }

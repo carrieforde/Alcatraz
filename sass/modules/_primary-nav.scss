@@ -114,7 +114,7 @@
 	.menu-toggle {
 		@include size(rem(35));
 
-		background-color: transparent;
+		background-color: $color__toggle-background;
 		position: relative;
 
 		@include element(bar) {
