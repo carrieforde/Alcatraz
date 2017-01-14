@@ -57,7 +57,7 @@ function alcatraz_get_mobile_nav_close_toggle() {
 	$options = get_option( 'alcatraz_options' );
 
 	// We don't need a special toggle with our default style.
-	if ( 'default' === $options['mobile_nav_style'] || 'hamburger' === $options['mobile_nav_toggle_style'] ) {
+	if ( 'default' === $options['mobile_nav_style'] && 'hamburger' === $options['mobile_nav_toggle_style'] ) {
 		return;
 	}
 
