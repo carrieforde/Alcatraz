@@ -49,7 +49,7 @@
 
 	.toggled {
 
-		.sub-level-toggle__bar {
+		> .sub-level-toggle__bar {
 
 			&.span-2 {
 				transform: rotate(180deg);
