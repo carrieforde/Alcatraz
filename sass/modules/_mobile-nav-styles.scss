@@ -6,6 +6,7 @@
 // Full Screen
 //-------------------------------
 .mobile-nav-style-full-screen {
+	overflow: hidden; // keeps the screen from scrolling behind the menu
 
 	.primary-menu {
 
@@ -27,6 +28,64 @@
 			&.open {
 				top: rem(46);
 			}
+		}
+	}
+}
+
+
+//-------------------------------
+// Mobile Nav Menu Toggle Button
+//-------------------------------
+.menu-toggle {
+	display: block;
+	width: 100%;
+
+	@include media($tablet-portrait-up) {
+		display: none;
+	}
+}
+
+
+//-------------------------------
+// Mobile Nav Menu Toggle
+// Hamburger
+//-------------------------------
+.mobile-nav-toggle-style-hamburger {
+
+	.menu-toggle {
+		@include position(absolute, rem(20) rem(20) null null);
+		@include size(rem(35));
+
+		background-color: $color__toggle-background;
+		z-index: 2;
+
+		@include element(bar) {
+			@include position(absolute, null 0 null 0);
+			@include size(rem(35) rem(3));
+
+			background-color: $color__button-background;
+			margin: auto;
+			transition: $transition__click;
+
+			&.bar-1 {
+				top: rem(5);
+			}
+
+			&.bar-2 {
+				bottom: 0;
+				top: 0;
+			}
+
+			&.bar-3 {
+				bottom: rem(5);
+			}
+		}
+	}
+
+	&.logged-in {
+
+		.menu-toggle {
+			top: rem(66); // 20px + 46px
 		}
 	}
 }

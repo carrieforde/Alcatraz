@@ -91,57 +91,6 @@
 }
 
 
-
-//-------------------------------
-// Mobile Nav Menu Toggle Button
-//-------------------------------
-.menu-toggle {
-	display: block;
-	width: 100%;
-
-	@include media($tablet-portrait-up) {
-		display: none;
-	}
-}
-
-
-//-------------------------------
-// Mobile Nav Menu Toggle
-// Hamburger
-//-------------------------------
-.mobile-nav-toggle-style-hamburger {
-
-	.menu-toggle {
-		@include size(rem(35));
-
-		background-color: $color__toggle-background;
-		position: relative;
-
-		@include element(bar) {
-			@include position(absolute, null 0 null 0);
-			@include size(rem(35) rem(3));
-
-			background-color: $color__button-background;
-			margin: auto;
-			transition: $transition__click;
-
-			&.bar-1 {
-				top: rem(5);
-			}
-
-			&.bar-2 {
-				bottom: 0;
-				top: 0;
-			}
-
-			&.bar-3 {
-				bottom: rem(5);
-			}
-		}
-	}
-}
-
-
 //-------------------------------
 // Sub Menu Toggle Style Chevron
 //-------------------------------
