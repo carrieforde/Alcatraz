@@ -403,7 +403,8 @@ var AlcatrazNavigation = ( function( $ ) {
 	var toggleMobileNav = function() {
 		var $menu      = $( '#primary-menu' ),
 			$toggle    = $( '.menu-toggle' ),
-			$close     = $( '.close-toggle' );
+			$close     = $( '.close-toggle' ),
+			$body      = $( 'body' );
 
 			console.log( $toggle );
 
@@ -413,12 +414,14 @@ var AlcatrazNavigation = ( function( $ ) {
 			$menu.attr( 'aria-expanded', 'false' );
 			$toggle.removeClass( 'toggled' );
 			$close.removeClass( 'toggled' );
+			$body.removeClass( 'menu-open' );
 		} else {
 			$window.trigger( 'openMobileNav.alcatraz' );
 			$menu.addClass( 'open' );
 			$menu.attr( 'aria-expanded', 'true' );
 			$toggle.addClass( 'toggled' );
 			$close.addClass( 'toggled' );
+			$body.addClass( 'menu-open' );
 		}
 
 		return this;
