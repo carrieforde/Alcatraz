@@ -39,6 +39,7 @@
 	@include position(absolute, rem(20) rem(20) null null);
 	@include size(rem(35));
 
+	display: none;
 	background-color: $color__toggle-background;
 	z-index: 2;
 
