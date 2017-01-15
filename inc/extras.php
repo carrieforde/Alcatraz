@@ -52,6 +52,11 @@ function alcatraz_body_classes( $classes ) {
 
 	// Mobile navigation style class.
 	if ( isset( $options['mobile_nav_style'] ) && $options['mobile_nav_style'] ) {
+
+		if ( 'slide-left' === $options['mobile_nav_style'] || 'slide-right' === $options['mobile_nav_style'] ) {
+			$classes[] = 'mobile-nav-style-slide';
+			$classes[] = 'mobile-nav-style-' .esc_attr( $options['mobile_nav_style'] );
+		}
 		$classes[] = 'mobile-nav-style-' . esc_attr( $options['mobile_nav_style'] );
 	}
 
