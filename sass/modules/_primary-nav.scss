@@ -2,11 +2,12 @@
 // PRIMARY NAVIGATION
 //--------------------------------------------------------------
 
+
 //-------------------------------
 // Main Navigation
 //-------------------------------
 .main-navigation {
-	padding: $size__padding;
+	overflow: hidden;
 }
 
 
@@ -17,12 +18,25 @@
 	@include margin-padding-reset;
 
 	display: none;
+	padding: $size__padding;
+	transition: $transition__click;
 
 	@include media($tablet-portrait-up) {
 		display: flex;
 		justify-content: space-around;
 		margin: 0 auto;
 		max-width: $size__navigation;
+	}
+
+	.logged-in & {
+
+		&.open {
+			top: rem(46);
+
+			@include media ($tablet-portrait-up) {
+				top: auto;
+			}
+		}
 	}
 }
 

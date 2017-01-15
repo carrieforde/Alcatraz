@@ -11,31 +11,23 @@
 	.primary-menu {
 
 		&.open {
-			@include position(fixed, 0 0 0 0);
+			@include position(fixed, null 0 0 0);
 
 			background-color: $color__mobile-nav-full-screen-background;
 			min-height: 100vh;
 			overflow-y: scroll;
-			padding: ($size__padding * 2) $size__padding $size__padding;
-		}
-	}
-
-	// When we're logged in, we need to account for the admin bar.
-	&.logged-in {
-
-		.primary-menu {
-
-			&.open {
-				top: rem(46);
-			}
+			padding-top: ($size__padding * 2);
 		}
 	}
 }
 
 //-------------------------------
 // Slide-In Mobile Nav
+//
+// This should only be *up* to
+// $tablet-portrait.
 //-------------------------------
-.mobile-nav-style-slide-left {
+.mobile-nav-style-slide {
 
 	&.menu-open {
 		overflow: hidden;
@@ -55,25 +47,38 @@
 		}
 	}
 
+	.main-navigation {
+		padding: 0;
+	}
+
 	.primary-menu {
 		@include position(absolute, 0 0 0 0);
-		@include size(50% 100vh);
+		@include size(rem(275) 100vh);
 
 		background-color: $color__mobile-nav-slide-background;
 		display: block;
-		padding: ($size__padding * 2) $size__padding $size__padding;
-		transition: $transition__click;
-		transform: translateX(-100%);
+		padding-top: ($size__padding * 2);
+	}
 
-		&.open {
-			transform: translateX(0);
+	&-left {
+
+		.primary-menu {
+			transform: translateX(-100%);
+
+			&.open {
+				transform: translateX(0);
+			}
 		}
 	}
 
-	&.logged-in {
+	&-right {
 
 		.primary-menu {
-			top: rem(46);
+			transform: translateX(200%);
+
+			&.open {
+				transform: translateX(100%);
+			}
 		}
 	}
 }
@@ -100,21 +105,21 @@
 
 	.menu-toggle {
 		@include position(absolute, rem(20) rem(20) null null);
-		@include size(rem(35));
+		@include size(rem(40));
 
 		background-color: $color__toggle-background;
 		z-index: 2;
 
 		@include element(bar) {
 			@include position(absolute, null 0 null 0);
-			@include size(rem(35) rem(3));
+			@include size(rem(30) rem(3));
 
 			background-color: $color__button-background;
 			margin: auto;
 			transition: $transition__click;
 
 			&.bar-1 {
-				top: rem(5);
+				top: rem(7.5);
 			}
 
 			&.bar-2 {
@@ -123,7 +128,7 @@
 			}
 
 			&.bar-3 {
-				bottom: rem(5);
+				bottom: rem(7.5);
 			}
 		}
 	}
