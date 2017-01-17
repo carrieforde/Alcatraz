@@ -32,7 +32,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 
 	<div class="pattern-doc pattern-doc--<?php echo esc_attr( $class ); ?>">
 		<header class="pattern-doc__header">
-			<h3><?php esc_html_e( $args['heading'] ); ?></h3>
+			<h3><?php echo esc_html( $args['heading'] ); ?></h3>
 			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc__toggle' ) ) ); ?>
 		</header>
 
@@ -305,7 +305,7 @@ function alcatraz_button( $args = array() ) {
 
 			<?php ob_start(); ?>
 
-			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button-text <?php esc_attr_e( $args['class'] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $args['button_text'] ); ?></a>
+			<a href="<?php echo esc_url( $args['link'] ); ?>" class="button-text <?php echo esc_attr( $args['class'] ); ?>" target="<?php echo esc_attr( $args['target'] ); ?>"><?php echo esc_html( $args['button_text'] ); ?></a>
 
 			<?php return ob_get_clean(); ?>
 
