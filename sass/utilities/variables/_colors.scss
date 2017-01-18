@@ -60,4 +60,5 @@ $color__pre-border: $sf-fog;
 $color__toggle-background: transparent;
 $color__menu-sub-toggle: $alcatraz-blue;
 $color__mobile-nav-full-screen-background: rgba($true-white, 0.85);
-$color__mobile-nav-slide-background: ($true-white);
+$color__mobile-nav-slide-background: $true-white;
+$color__mobile-nav-slide-overlay: rgba($true-black, 0.85);

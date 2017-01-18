@@ -36,7 +36,7 @@
 			@include position(fixed, 0 0 0 0);
 			@include size(100vw 100vh);
 
-			background-color: rgba($true-black, 0.8);
+			background-color: $color__mobile-nav-slide-overlay;
 			content: '';
 			display: block;
 			transition: $transition__click;
@@ -45,18 +45,27 @@
 		.menu-toggle {
 			display: none;
 		}
+
+		.main-navigation__menu {
+			width: 100vw;
+		}
 	}
 
-	.main-navigation {
+	.main-navigation__menu {
+		@include position(fixed, 0 0 0 0);
+		@include size(rem(1) 100vh);
+		
+		overflow: hidden;
 		padding: 0;
 	}
 
 	.primary-menu {
 		@include position(absolute, 0 0 0 0);
-		@include size(rem(275) 100vh);
+		@include size(75% 100vh);
 
 		background-color: $color__mobile-nav-slide-background;
 		display: block;
+		max-width: rem(275);
 		padding-top: ($size__padding * 2);
 	}
 
@@ -74,10 +83,11 @@
 	&-right {
 
 		.primary-menu {
-			transform: translateX(200%);
+			left: auto;
+			transform: translateX(100%);
 
 			&.open {
-				transform: translateX(100%);
+				transform: translateX(0);
 			}
 		}
 	}
