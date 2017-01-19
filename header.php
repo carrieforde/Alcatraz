@@ -47,8 +47,6 @@
 
 			<?php alcatraz_the_mobile_nav_toggle(); ?>
 
-			<?php alcatraz_the_mobile_nav_close_toggle(); ?>
-
 			<?php wp_nav_menu( array(
 				'theme_location'  => 'primary',
 				'menu_id'         => 'primary-menu',

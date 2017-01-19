@@ -30,17 +30,6 @@
 
 
 //-------------------------------
-// Close Menu Toggle
-//-------------------------------
-.close-toggle {
-
-	&.toggled {
-		display: block;
-	}
-}
-
-
-//-------------------------------
 // Sub Menu Toggle - Chevron
 //-------------------------------
 .sub-menu-toggle-style-chevron {
@@ -52,6 +41,7 @@
 		}
 	}
 }
+
 
 //-------------------------------
 // Sub Menu Toggle - Plus Minus

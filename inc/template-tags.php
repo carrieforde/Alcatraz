@@ -46,43 +46,6 @@ function alcatraz_the_mobile_nav_toggle() {
 }
 
 /**
- * Build and return the mobile menu close toggle.
- *
- * @since 1.0.0
- *
- * @return  string  The HTML.
- */
-function alcatraz_get_mobile_nav_close_toggle() {
-
-	$options = get_option( 'alcatraz_options' );
-
-	// We don't need a special toggle with our default style.
-	if ( 'default' === $options['mobile_nav_style'] && 'hamburger' === $options['mobile_nav_toggle_style'] ) {
-		return;
-	}
-
-	ob_start(); ?>
-
-	<button type="button" class="close-toggle" aria-controls="primary-menu" aria-expanded="true">
-		<span class="screen-reader-text">Close</span>
-		<span class="close-toggle__bar bar-1"></span>
-		<span class="close-toggle__bar bar-2"></span>
-	</button>
-
-	<?php return ob_get_clean();
-}
-
-/**
- * Echo the mobile nav close toggle.
- *
- * @since 1.0.0
- */
-function alcatraz_the_mobile_nav_close_toggle() {
-
-	echo alcatraz_get_mobile_nav_close_toggle(); // WPCS: XXS ok.
-}
-
-/**
  * Build and return the "Posted on ..." HTML.
  *
  * @since   1.0.0

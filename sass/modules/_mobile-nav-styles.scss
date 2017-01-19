@@ -44,10 +44,6 @@
 				transition: $transition__click;
 			}
 
-			.menu-toggle {
-				display: none;
-			}
-
 			.main-navigation__menu {
 				width: 100vw;
 			}
@@ -73,8 +69,11 @@
 
 		&-left {
 
-			.close-toggle {
-				left: rem(220); // max of 275px - 55px (width of toggle + padding).
+			&.menu-open {
+				
+				.menu-toggle {
+					left: rem(220); // max of 275px - 55px (width of toggle + padding).
+				}
 			}
 
 			.primary-menu {
@@ -155,43 +154,5 @@
 		.menu-toggle {
 			top: rem(66); // 20px + 46px
 		}
-	}
-}
-
-
-//-------------------------------
-// Close Toggle
-//-------------------------------
-.close-toggle {
-	@include position(absolute, rem(20) rem(20) null null);
-	@include size(rem(35));
-
-	display: none;
-	background-color: $color__toggle-background;
-	z-index: 2;
-
-	&:hover {
-		background-color: $color__toggle-background;
-	}
-
-	@include element(bar) {
-		@include position(absolute, null 0 null 0);
-		@include size(rem(35) rem(3));
-
-		background-color: $color__button-background;
-		margin: auto;
-		transition: $transition__click;
-
-		&.bar-1 {
-			transform: rotate(45deg);
-		}
-
-		&.bar-2 {
-			transform: rotate(-45deg);
-		}
-	}
-
-	.logged-in & {
-		top: rem(66); // 20px + 46px
 	}
 }
