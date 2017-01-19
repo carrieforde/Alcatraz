@@ -1331,6 +1331,7 @@ pre {
     width: 0.9375rem;
     content: '';
     display: block;
+    z-index: 10;
   }
   .mobile-nav-style-slide.menu-open{
     overflow: hidden;
