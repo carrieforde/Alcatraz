@@ -73,6 +73,10 @@
 
 		&-left {
 
+			.close-toggle {
+				left: rem(220); // max of 275px - 55px (width of toggle + padding).
+			}
+
 			.primary-menu {
 				transform: translateX(-100%);
 
@@ -167,7 +171,7 @@
 	z-index: 2;
 
 	&:hover {
-		color: $color__toggle-background;
+		background-color: $color__toggle-background;
 	}
 
 	@include element(bar) {
