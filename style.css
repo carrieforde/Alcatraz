@@ -987,44 +987,6 @@ pre {
   top: 4.125rem;
 }
 
-.close-toggle {
-  position: absolute;
-  top: 1.25rem;
-  right: 1.25rem;
-  height: 2.1875rem;
-  width: 2.1875rem;
-  display: none;
-  background-color: transparent;
-  z-index: 2;
-}
-
-.close-toggle:hover {
-  color: transparent;
-}
-
-.close-toggle__bar {
-  position: absolute;
-  right: 0;
-  left: 0;
-  height: 0.1875rem;
-  width: 2.1875rem;
-  background-color: #0d8bb7;
-  margin: auto;
-  transition: transform 0.3s ease-in-out;
-}
-
-.close-toggle__bar.bar-1 {
-  transform: rotate(45deg);
-}
-
-.close-toggle__bar.bar-2 {
-  transform: rotate(-45deg);
-}
-
-.logged-in .close-toggle {
-  top: 4.125rem;
-}
-
 .open {
   display: block;
 }
@@ -1044,10 +1006,6 @@ pre {
 
 .mobile-nav-toggle-style-hamburger .toggled .menu-toggle__bar.bar-3 {
   transform: rotate(-45deg);
-}
-
-.close-toggle.toggled {
-  display: block;
 }
 
 .sub-menu-toggle-style-chevron .toggled.sub-level-toggle {
@@ -1365,6 +1323,15 @@ pre {
 }
 
 @media screen and (max-width: 37.4375em){
+  .mobile-nav-style-slide:before{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100vh;
+    width: 0.9375rem;
+    content: '';
+    display: block;
+  }
   .mobile-nav-style-slide.menu-open{
     overflow: hidden;
   }
@@ -1374,15 +1341,9 @@ pre {
     right: 0;
     bottom: 0;
     left: 0;
-    height: 100vh;
-    width: 100vw;
     background-color: rgba(0, 0, 0, 0.85);
-    content: '';
-    display: block;
     transition: transform 0.3s ease-in-out;
-  }
-  .mobile-nav-style-slide.menu-open .menu-toggle{
-    display: none;
+    width: 100%;
   }
   .mobile-nav-style-slide.menu-open .main-navigation__menu{
     width: 100vw;
@@ -1411,11 +1372,20 @@ pre {
     max-width: 17.1875rem;
     padding-top: 2.5rem;
   }
+  .mobile-nav-style-slide-left:before{
+    left: 0;
+  }
+  .mobile-nav-style-slide-left.menu-open .menu-toggle{
+    left: 13.75rem;
+  }
   .mobile-nav-style-slide-left .primary-menu{
     transform: translateX(-100%);
   }
   .mobile-nav-style-slide-left .primary-menu.open{
     transform: translateX(0);
+  }
+  .mobile-nav-style-slide-right:before{
+    right: 0;
   }
   .mobile-nav-style-slide-right .primary-menu{
     left: auto;

@@ -579,17 +579,16 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		// Set up swipe-to-open support for the mobile nav.
 		if ( $.mobile ) {
-			if ( $body.hasClass( 'mobile-nav-style-slide-left' ) ||
-				 $body.hasClass( 'mobile-nav-style-slide-right' ) ) {
+			if ( $body.hasClass( 'mobile-nav-style-slide' ) ) {
 				$.event.special.swipe.horizontalDistanceThreshold = 15;
-				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation .menu-overlay' ).on( 'swipeleft swiperight', function() {
+				$( '.mobile-nav-style-slide:before, .mobile-nav-style-slide.menu-open:before' ).on( 'swipeleft swiperight', function() {
 					$window.trigger( 'toggleMobileNav.alcatraz' );
 				});
 			}
 		}
 
 		// Set up the mobile nav toggle.
-		$toggle.add( '.main-navigation .menu-overlay' ).on( 'click', function() {
+		$toggle.on( 'click', function() {
 			$window.trigger( 'toggleMobileNav.alcatraz' );
 		});
 
