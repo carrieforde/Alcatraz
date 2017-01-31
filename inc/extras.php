@@ -24,7 +24,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Site layout class.
 	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
-	if ( isset( $page_layout ) && 'default' !== $page_layout ) {
+	if ( ! empty( $page_layout ) && 'default' !== $page_layout ) {
 		$classes[] = esc_attr( $page_layout );
 	} elseif ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
 		$classes[] = esc_attr( $options['site_layout'] );
@@ -32,7 +32,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Site sidebar class.
 	$page_sidebar = get_post_meta( $post->ID, '_alcatraz_page_sidebar', true );
-	if ( isset( $page_sidebar ) && 'default' !== $page_sidebar ) {
+	if ( ! empty( $page_sidebar ) && 'default' !== $page_sidebar ) {
 		if ( 'no-sidebar' !== $page_sidebar ) {
 			$classes[] = esc_attr( $page_sidebar );
 		}
