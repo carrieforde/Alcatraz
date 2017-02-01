@@ -554,10 +554,12 @@ img {
 }
 
 body,
+button,
 input,
-select {
+select,
+textarea {
   color: #040a04;
-  font: 400 18px / 1.5 "Source Sans Pro", sans-serif;
+  font: 400 10.6666666667px "Source Sans Pro", sans-serif;
   word-wrap: break-word;
 }
 
