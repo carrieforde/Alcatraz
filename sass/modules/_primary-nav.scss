@@ -41,7 +41,8 @@
 		display: inline-block;
 	}
 
-	> a {
+	// This needs to be scoped to the primary menu so it doesn't break the social navigation.
+	.primary-menu & > a {
 		display: block;
 		padding: rem(5) 0;
 		text-decoration: none;
