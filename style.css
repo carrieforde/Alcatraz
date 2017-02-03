@@ -559,7 +559,7 @@ input,
 select,
 textarea {
   color: #040a04;
-  font: 400 10.6666666667px "Source Sans Pro", sans-serif;
+  font: 400 16px / 1.5 "Source Sans Pro", sans-serif;
   word-wrap: break-word;
 }
 
@@ -854,7 +854,7 @@ pre {
   top: 2.875rem;
 }
 
-.menu-item > a {
+.primary-menu .menu-item > a {
   display: block;
   padding: 0.3125rem 0;
   text-decoration: none;
@@ -1295,7 +1295,7 @@ pre {
   .menu-item{
     display: inline-block;
   }
-  .menu-item > a{
+  .primary-menu .menu-item > a{
     display: inline-block;
     padding: 0.625rem;
   }
