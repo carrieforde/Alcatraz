@@ -91,6 +91,7 @@
 
 	[class^='alcatraz-col'] {
 		background-color: $mist;
+		padding: rem(15);
 
 		&:first-child {
 			margin-bottom: rem(20);

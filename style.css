@@ -394,6 +394,7 @@ textarea,
 
 [class*='pattern-doc--grid'] [class^='alcatraz-col'] {
   background-color: #ddd;
+  padding: 0.9375rem;
 }
 
 [class*='pattern-doc--grid'] [class^='alcatraz-col']:first-child {
