@@ -115,6 +115,10 @@ function alcatraz_pattern_allowed_html() {
 		'option' => array(
 			'class' => true,
 		),
+		'article' => array(
+			'id' => true,
+			'class' => true,
+		),
 	) );
 
 	return apply_filters( 'alcatraz_set_allowed_html', $allowed_tags );
