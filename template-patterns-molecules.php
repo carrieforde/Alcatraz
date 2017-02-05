@@ -16,6 +16,8 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
+				<?php do_action( 'alcatraz_before_patterns_molecules' ); ?>
+
 				<?php get_template_part( 'patterns/template-parts/molecules/cards' ); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/forms' ); ?>
@@ -27,6 +29,8 @@ get_header(); ?>
 				<?php get_template_part( 'patterns/template-parts/molecules/navigation' ); ?>
 
 				<?php get_template_part( 'patterns/template-parts/molecules/typography' ); ?>
+
+				<?php do_action( 'alcatraz_after_patterns_molecules' ); ?>
 
 				<?php the_post_navigation(); ?>
 
