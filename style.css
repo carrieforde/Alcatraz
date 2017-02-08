@@ -358,6 +358,11 @@ textarea,
   display: none;
 }
 
+.pattern-doc__output {
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
 .color-group {
   display: -ms-flexbox;
   display: flex;

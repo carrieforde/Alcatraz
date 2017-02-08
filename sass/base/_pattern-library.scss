@@ -39,6 +39,11 @@
 	@include element(info) {
 		display: none;
 	}
+
+	@include element(output) {
+		overflow: hidden;
+		padding: $size__padding;
+	}
 }
 
 
