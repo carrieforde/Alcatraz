@@ -462,8 +462,6 @@ function alcatraz_image( $args = array() ) {
 	);
 	$args = wp_parse_args( $args, $defaults );
 
-	var_dump( $args['image_id'] );
-
 	if ( isset( $args['image_id'] ) && $args['image_id'] ) {
 
 		$output = wp_get_attachment_image( $args['image_id'], $args['image_size'], array( 'class' => $args['class'] ) );
@@ -471,8 +469,11 @@ function alcatraz_image( $args = array() ) {
 		return $output;
 	}
 
+	if ( 'full' === $args['image_size'] ) {
+		return 'Please use a defined image size, e.g. "post-thumbnail" or "medium".';
+	}
+
 	$image_sizes = alcatraz_get_image_sizes();
-	var_dump( $image_sizes );
 	$image_w = $image_sizes[$args['image_size']]['width'];
 	$image_h = $image_sizes[$args['image_size']]['height'];
 
