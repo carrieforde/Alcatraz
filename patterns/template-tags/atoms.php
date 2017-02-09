@@ -447,6 +447,7 @@ function alcatraz_form_elements( $args = array() ) {
 	}
 }
 
+
 /**
  * Images
  *
@@ -455,38 +456,31 @@ function alcatraz_form_elements( $args = array() ) {
 function alcatraz_image( $args = array() ) {
 
 	$defaults = array(
-		'type'  => 'url',
-		'src'   => 'https://unsplash.it/1200/740/?random',
-		'size'  => '',
-		'class' => '',
+		'image_id'    => 0,
+		'image_size'  => 'medium',
+		'class'       => '',
 	);
 	$args = wp_parse_args( $args, $defaults );
 
-	// Let's figure out the type of image we're working with.
-	switch ( $args['type'] ) {
+	var_dump( $args['image_id'] );
 
-		case 'url' : ?>
+	if ( isset( $args['image_id'] ) && $args['image_id'] ) {
 
-			<?php ob_start(); ?>
+		$output = wp_get_attachment_image( $args['image_id'], $args['image_size'], array( 'class' => $args['class'] ) );
 
-				<img <?php echo ( ! empty( $args['class'] ) ) ? 'class="' . esc_attr( $args['class'] ) . '"' : ''; ?> src="<?php echo esc_url( $args['src'] ); ?>" />
-
-			<?php return ob_get_clean(); ?>
-
-		<?php break;
-
-		case 'attachment' :
-
-			return wp_get_attachment_image( $args['src'], $args['size'] );
-
-		break;
-
-		case 'thumbnail' :
-
-			return get_the_post_thumbnail( $args['src'], $args['size'] );
-
-		break;
+		return $output;
 	}
+
+	$image_sizes = alcatraz_get_image_sizes();
+	var_dump( $image_sizes );
+	$image_w = $image_sizes[$args['image_size']]['width'];
+	$image_h = $image_sizes[$args['image_size']]['height'];
+
+	$img_url = 'https://unsplash.it/' . esc_attr( $image_w ) . '/' . esc_attr( $image_h ) . '/?random';
+
+	$output = sprintf( '<img src="%s" class="%s" >', esc_url( $img_url ), esc_attr( $args['class'] ) );
+
+	return $output;
 }
 
 
