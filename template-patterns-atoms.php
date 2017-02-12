@@ -16,7 +16,7 @@ get_header(); ?>
 
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php do_action( 'alcatraz_before_patterns_atoms' ); ?>
+				<?php do_action( 'alcatraz_before_patterns' ); ?>
 
 				<?php get_template_part( 'patterns/template-parts/atoms/globals' ); ?>
 
@@ -28,7 +28,7 @@ get_header(); ?>
 
 				<?php get_template_part( 'patterns/template-parts/atoms/typography' ); ?>
 
-				<?php do_action( 'alcatraz_after_patterns_atoms' ); ?>
+				<?php do_action( 'alcatraz_after_patterns' ); ?>
 
 				<?php the_post_navigation(); ?>
 
