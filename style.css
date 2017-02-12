@@ -837,6 +837,7 @@ pre {
 .post-navigation .nav-previous,
 .post-navigation .nav-next {
   display: inline-block;
+  width: 50%;
 }
 
 .post-navigation .nav-previous {
@@ -845,6 +846,7 @@ pre {
 
 .post-navigation .nav-next {
   float: right;
+  text-align: right;
 }
 
 .primary-menu {

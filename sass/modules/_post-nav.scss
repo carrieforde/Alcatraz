@@ -6,6 +6,7 @@
 	.nav-previous,
 	.nav-next {
 		display: inline-block;
+		width: 50%;
 	}
 
 	.nav-previous {
@@ -14,5 +15,6 @@
 
 	.nav-next {
 		float: right;
+		text-align: right;
 	}
 }
