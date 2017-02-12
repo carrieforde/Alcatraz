@@ -834,6 +834,10 @@ pre {
   content: '\f167';
 }
 
+.post-navigation {
+  clear: both;
+}
+
 .post-navigation .nav-previous,
 .post-navigation .nav-next {
   display: inline-block;
