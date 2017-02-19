@@ -22,7 +22,7 @@
 	.logged-in & {
 
 		&.open {
-			top: rem(46);
+			top: 46px;
 
 			@include grid-media ($tablet-portrait-up) {
 				top: auto;

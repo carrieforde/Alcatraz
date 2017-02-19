@@ -854,7 +854,7 @@ pre {
 }
 
 .logged-in .primary-menu.open {
-  top: 2.875rem;
+  top: 46px;
 }
 
 .primary-menu .menu-item > a {
@@ -1261,14 +1261,14 @@ pre {
     width: 75%;
     background-color: #fff;
     display: block;
-    max-width: 17.1875rem;
+    max-width: 275px;
     padding-top: 40px;
   }
   .mobile-nav-style-slide-left:before{
     left: 0;
   }
   .mobile-nav-style-slide-left.menu-open .menu-toggle{
-    left: 13.75rem;
+    left: 220px;
   }
   .mobile-nav-style-slide-left .primary-menu{
     transform: translateX(-100%);

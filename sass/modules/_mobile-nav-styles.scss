@@ -70,7 +70,7 @@
 
 			background-color: $color__mobile-nav-slide-background;
 			display: block;
-			max-width: rem(275);
+			max-width: 275px;
 			padding-top: ($size__padding * 2);
 		}
 
@@ -83,7 +83,7 @@
 			&.menu-open {
 
 				.menu-toggle {
-					left: rem(220); // max of 275px - 55px (width of toggle + padding).
+					left: 220px; // max of 275px - 55px (width of toggle + padding).
 				}
 			}
 
