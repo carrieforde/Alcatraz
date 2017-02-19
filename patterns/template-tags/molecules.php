@@ -88,49 +88,6 @@ function alcatraz_grid( $args = array() ) {
 }
 
 /**
- * Cards
- *
- * @param   array   The arguments.
- * @return  string  The HTML.
- */
-function alcatraz_card( $args = array() ) {
-
-	$defaults = array(
-		'type'    => 'url',
-		'src'     => 'https://unsplash.it/1200/740/?random',
-		'title'   => 'Lorem ipsum dolor',
-		'excerpt' => 'Vel ad enim nostrum, eam te odio ubique corpora. Ne eum tota tation ancillae, reque altera mea te. Integre commune indoctum his ea.',
-		'link'    => '#',
-		'class'   => '',
-	);
-	$args = wp_parse_args( $args, $defaults );
-
-	ob_start(); ?>
-
-	<div class="alcatraz-card <?php echo ( ! empty( $args['class'] ) ) ? esc_attr( $args['class'] ) : ''; ?>">
-
-		<div class="alcatraz-card__image">
-			<?php echo wp_kses_post( alcatraz_image( array( 'src' => $args['src'], 'use_img_src' => true ) ) ); ?>
-		</div>
-
-		<header class="alcatraz-card__header">
-			<h3 class="alcatraz-card__title"><a href="<?php echo esc_url( $args['link'] ); ?>"><?php echo esc_html( $args['title'] ); ?></a></h3>
-		</header>
-
-		<div class="alcatraz-card__content">
-			<?php echo esc_html( $args['excerpt'] ); ?>
-		</div>
-
-		<footer class="alcatraz-card__footer">
-			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'text', 'link' => $args['link'], 'button_text' => 'Read More' ) ) ); ?>
-		</footer>
-
-	</div>
-
-	<?php return ob_get_clean();
-}
-
-/**
  * Alcatraz Lists
  *
  * @param  array  The args.
