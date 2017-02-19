@@ -37,7 +37,7 @@
 //-------------------------------
 @mixin full-width {
 	left: 50%;
-	margin-left: calc(-50vw + 30px);
+	margin-left: -50vw;
 	margin-right: -50vw;
 	position: relative;
 	right: 50%;
@@ -64,7 +64,7 @@
 // successive instances of an
 // element.
 //-------------------------------
-@mixin vertical-rhythm($margin: rem(40)) {
+@mixin vertical-rhythm($margin: 40px) {
 
 	& + & {
 		margin-top: $margin;
