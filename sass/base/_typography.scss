@@ -2,10 +2,12 @@
 // TYPOGRAPHY
 //--------------------------------------------------------------
 body,
+button,
 input,
-select {
+select,
+textarea {
 	color: $color__body-text;
-	font: 400 18px / #{$font__body-line-height} $font__body;
+	font: $font__body-weight #{$font__body-size} / #{$font__body-line-height} $font__body;
 	word-wrap: break-word;
 }
 

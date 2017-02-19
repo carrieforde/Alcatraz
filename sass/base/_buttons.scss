@@ -11,6 +11,7 @@ input[type='submit'] {
 	color: $color__button-text;
 	cursor: pointer;
 	display: inline-block;
+	font-family: $text__button;
 	outline: none;
 	padding: rem(10);
 	transition: $transition__hover;

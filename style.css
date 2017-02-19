@@ -358,6 +358,11 @@ textarea,
   display: none;
 }
 
+.pattern-doc__output {
+  overflow: hidden;
+  padding: 1.25rem;
+}
+
 .color-group {
   display: -ms-flexbox;
   display: flex;
@@ -394,6 +399,7 @@ textarea,
 
 [class*='pattern-doc--grid'] [class^='alcatraz-col'] {
   background-color: #ddd;
+  padding: 0.9375rem;
 }
 
 [class*='pattern-doc--grid'] [class^='alcatraz-col']:first-child {
@@ -417,6 +423,7 @@ input[type='submit'] {
   color: #fff;
   cursor: pointer;
   display: inline-block;
+  font-family: "Source Sans Pro", sans-serif;
   outline: none;
   padding: 0.625rem;
   transition: all 0.2s ease-in-out;
@@ -553,10 +560,12 @@ img {
 }
 
 body,
+button,
 input,
-select {
+select,
+textarea {
   color: #040a04;
-  font: 400 18px / 1.5 "Source Sans Pro", sans-serif;
+  font: 400 16px / 1.5 "Source Sans Pro", sans-serif;
   word-wrap: break-word;
 }
 
@@ -673,7 +682,6 @@ pre {
 }
 
 [class^='alcatraz-col--'] {
-  padding: 0.9375rem;
   width: 100%;
 }
 
@@ -826,9 +834,14 @@ pre {
   content: '\f167';
 }
 
+.post-navigation {
+  clear: both;
+}
+
 .post-navigation .nav-previous,
 .post-navigation .nav-next {
   display: inline-block;
+  width: 50%;
 }
 
 .post-navigation .nav-previous {
@@ -837,6 +850,7 @@ pre {
 
 .post-navigation .nav-next {
   float: right;
+  text-align: right;
 }
 
 .primary-menu {
@@ -851,7 +865,7 @@ pre {
   top: 2.875rem;
 }
 
-.menu-item > a {
+.primary-menu .menu-item > a {
   display: block;
   padding: 0.3125rem 0;
   text-decoration: none;
@@ -1292,7 +1306,7 @@ pre {
   .menu-item{
     display: inline-block;
   }
-  .menu-item > a{
+  .primary-menu .menu-item > a{
     display: inline-block;
     padding: 0.625rem;
   }

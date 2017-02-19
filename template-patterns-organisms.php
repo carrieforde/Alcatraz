@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: Patterns - Molecules
+ * Template Name: Patterns - Organisms
  * Template Post Type: alcatraz_patterns, patterns
  */
 
@@ -17,18 +17,6 @@ get_header(); ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php do_action( 'alcatraz_before_patterns' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/molecules/cards' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/molecules/forms' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/molecules/grid' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/molecules/media' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/molecules/navigation' ); ?>
-
-				<?php get_template_part( 'patterns/template-parts/molecules/typography' ); ?>
 
 				<?php do_action( 'alcatraz_after_patterns' ); ?>
 
