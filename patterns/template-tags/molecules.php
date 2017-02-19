@@ -60,10 +60,14 @@ function alcatraz_grid( $args = array() ) {
 	);
 	$args = wp_parse_args( $args, $defaults );
 
-	// Build our classes string.
-	$classes = 'row';
+	// Build our classes strings.
+	$row_classes = 'row';
+	if( ! $args['gutter'] ) {
+		$row_classes .= ' no-gutter';
+	}
+	$col_class .= 'alcatraz-col--';
 	if ( ! $args['gutter'] ) {
-		$classes .= ' no-gutter';
+		$col_class .= 'no-gutter--';
 	}
 
 	ob_start();
@@ -73,15 +77,15 @@ function alcatraz_grid( $args = array() ) {
 		$col_1 = $i;
 		$col_2 = 12 - $i; ?>
 
-	<div class="<?php echo esc_attr( $classes ); ?>">
-		<div class="alcatraz-col--<?php echo esc_attr( $col_1 ); ?>"><?php echo esc_html( $col_1 ); ?></div>
-		<div class="alcatraz-col--<?php echo esc_attr( $col_2 ); ?>"><?php echo esc_html( $col_2 ); ?></div>
+	<div class="<?php echo esc_attr( $row_classes ); ?>">
+		<div class="<?php echo esc_attr( $col_class . $col_1 ); ?>"><?php echo esc_html( $col_1 ); ?></div>
+		<div class="<?php echo esc_attr( $col_class . $col_2 ); ?>"><?php echo esc_html( $col_2 ); ?></div>
 	</div>
 
 	<?php endfor; ?>
 
-	<div class="<?php echo esc_attr( $classes ); ?>">
-		<div class="alcatraz-col--12"><?php echo esc_html( '12', 'alcatraz' ); ?></div>
+	<div class="<?php echo esc_attr( $row_classes ); ?>">
+		<div class="<?php echo esc_attr( $col_class ); ?>12"><?php echo esc_html( '12', 'alcatraz' ); ?></div>
 	</div>
 
 	<?php return ob_get_clean();
