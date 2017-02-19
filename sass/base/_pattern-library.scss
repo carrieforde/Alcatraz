@@ -10,7 +10,7 @@
 // Sections Patterns
 //-------------------------------
 .alcatraz-pattern {
-	@include vertical-rhythm(rem(60));
+	@include vertical-rhythm(60px);
 
 	overflow: hidden;
 }
@@ -28,8 +28,8 @@
 		border-bottom: $border__patterns-header;
 		display: flex;
 		justify-content: space-between;
-		margin: 0 0 rem(25);
-		padding: 0 0 rem(5);
+		margin: 0 0 25px;
+		padding: 0 0 5px;
 
 		h3 {
 			margin: 0;
@@ -70,16 +70,16 @@
 
 .color {
 	color: $dim-gray;
-	font-size: rem(14);
-	margin-bottom: rem(30);
+	font-size: 14px;
+	margin-bottom: 30px;
 	text-align: center;
-	width: rem(200);
+	width: 200px;
 
 	@include element(chip) {
-		@include size(rem(100));
+		@include size(100px);
 		@include center;
 
-		margin-bottom: rem(5);
+		margin-bottom: 5px;
 	}
 }
 
@@ -90,16 +90,16 @@
 [class*='pattern-doc--grid'] { // grab both .pattern-doc--grid & .pattern-doc--grid-without-gutter
 
 	.row {
-		margin: 0 0 rem(20);
+		margin: 0 0 20px;
 		overflow: hidden;
 	}
 
 	[class^='alcatraz-col'] {
 		background-color: $mist;
-		padding: rem(15);
+		padding: 15px;
 
 		&:first-child {
-			margin-bottom: rem(20);
+			margin-bottom: 20px;
 
 			@include grid-media($tablet-portrait-up) {
 				margin-bottom: 0;

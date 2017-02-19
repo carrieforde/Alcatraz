@@ -63,7 +63,7 @@ pre,
 samp,
 tt,
 var {
-	font: 400 14px / #{$font__code-line-height} $font__code;
+	font: 400 #{$font__code-size} / #{$font__code-line-height} $font__code;
 }
 
 pre {

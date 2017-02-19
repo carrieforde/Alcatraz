@@ -13,17 +13,17 @@
 
 		.menu-item > a {
 			// sass-lint:disable-block force-pseudo-nesting
-			@include size(rem(25));
+			@include size(25px);
 
 			display: block;
-			margin: 0 rem(5);
+			margin: 0 5px;
 			text-align: center;
 			text-decoration: none;
 
 			&:before {
 				display: inline-block;
 				font-family: $font__social-icons;
-				font-size: rem(20);
+				font-size: 20px;
 				font-style: normal;
 				line-height: 1;
 				text-align: center;

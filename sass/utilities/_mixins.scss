@@ -82,11 +82,11 @@
 // accessibility.
 //-------------------------------
 @mixin hide-text {
-	@include size(rem(1));
+	@include size(1px);
 
 	border: none;
 	clip: rect(0 0 0 0);
-	margin: rem(-1);
+	margin: -1px;
 	overflow: hidden;
 	padding: 0;
 	position: absolute;

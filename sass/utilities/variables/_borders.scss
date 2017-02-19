@@ -5,20 +5,20 @@
 //-------------------------------
 // Patterns
 //-------------------------------
-$border__patterns-header: rem(1) solid $silver;
+$border__patterns-header: 1px solid $silver;
 
 
 //-------------------------------
 // Forms
 //-------------------------------
-$border__forms: rem(1) solid $color__forms-border;
-$border__forms-focus: rem(1) solid $color__forms-border-focus;
-$border__checkbox: rem(1) solid $color__checkbox-border;
+$border__forms: 1px solid $color__forms-border;
+$border__forms-focus: 1px solid $color__forms-border-focus;
+$border__checkbox: 1px solid $color__checkbox-border;
 
 
 //-------------------------------
 // Typography
 //-------------------------------
-$border__hr: rem(1) solid $color__hr;
-$border__pre: rem(1) solid $color__pre-border;
-$border__abbr: rem(1) dotted;
+$border__hr: 1px solid $color__hr;
+$border__pre: 1px solid $color__pre-border;
+$border__abbr: 1px dotted;

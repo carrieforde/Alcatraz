@@ -44,12 +44,12 @@
 	// This needs to be scoped to the primary menu so it doesn't break the social navigation.
 	.primary-menu & > a {
 		display: block;
-		padding: rem(5) 0;
+		padding: 5px 0;
 		text-decoration: none;
 
 		@include grid-media($tablet-portrait-up) {
 			display: inline-block;
-			padding: rem(10);
+			padding: 10px;
 		}
 	}
 
@@ -59,7 +59,7 @@
 		@include grid-media($tablet-portrait-up) {
 
 			> a {
-				padding-right: rem(50);
+				padding-right: 50px;
 			}
 		}
 	}
@@ -74,7 +74,7 @@
 	padding-left: $size__padding;
 
 	@include grid-media($tablet-portrait-up) {
-		min-width: rem(175);
+		min-width: 175px;
 		padding-left: 0;
 		position: absolute;
 		text-align: left;
@@ -102,7 +102,7 @@
 //-------------------------------
 .sub-level-toggle {
 	@include position(absolute, 0 0 null null);
-	@include size(rem(35));
+	@include size(35px);
 
 	background-color: transparent;
 	overflow: hidden;
@@ -110,7 +110,7 @@
 	transition: $transition__click;
 
 	@include grid-media($tablet-portrait-up) {
-		top: rem(5);
+		top: 5px;
 	}
 
 	&:hover {
@@ -118,7 +118,7 @@
 	}
 
 	@include element(bar) {
-		@include size(rem(12) rem(2));
+		@include size(12px 2px);
 
 		background-color: $color__menu-sub-toggle;
 		display: block;
@@ -133,13 +133,13 @@
 		.sub-menu-toggle-style-chevron & {
 
 			&.span-1 {
-				left: rem(5);
+				left: 5px;
 				transform: rotate(45deg) translateY(-50%);
 				transform-origin: 100%;
 			}
 
 			&.span-2 {
-				right: rem(5);
+				right: 5px;
 				transform: rotate(-45deg) translateY(-50%);
 				transform-origin: 0;
 			}

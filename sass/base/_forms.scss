@@ -12,7 +12,7 @@ textarea {
 	box-sizing: border-box;
 	color: $color__forms-text;
 	max-width: 100%;
-	padding: rem(5);
+	padding: 5px;
 
 	&:focus {
 		border: $border__forms-focus;
@@ -22,11 +22,11 @@ textarea {
 
 input[type='checkbox'],
 input[type='radio'] {
-	@include size(rem(20));
+	@include size(20px);
 
 	appearance: none;
 	border: $border__checkbox;
-	border-radius: rem(3);
+	border-radius: 3px;
 	outline: none;
 	position: relative;
 
@@ -52,8 +52,8 @@ input[type='checkbox'] {
 			@include position(absolute, 0 0 0 0);
 
 			content: $text__checkbox-checked;
-			line-height: rem(20);
-			width: rem(18);
+			line-height: 20px;
+			width: 18px;
 		}
 	}
 }
@@ -64,7 +64,7 @@ input[type='radio'] {
 	&:checked {
 
 		&:before {
-			@include size(rem(8));
+			@include size(8px);
 
 			background-color: $color__radio-background-checked;
 			border-radius: 50%;
@@ -85,12 +85,12 @@ select {
 .search-form {
 
 	.search-field {
-		margin: 0 rem(10) 0 0;
+		margin: 0 10px 0 0;
 		width: calc(75% - 15px);
 	}
 
 	.search-submit {
-		padding: rem(5);
+		padding: 5px;
 		width: 25%;
 	}
 }

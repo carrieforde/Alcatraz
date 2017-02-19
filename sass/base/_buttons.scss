@@ -13,7 +13,7 @@ input[type='submit'] {
 	display: inline-block;
 	font-family: $text__button;
 	outline: none;
-	padding: rem(10);
+	padding: 10px;
 	transition: $transition__hover;
 
 	&:hover {
@@ -30,14 +30,14 @@ input[type='submit'] {
 		content: $text__button-text-caret;
 		display: inline-block;
 		font-family: $text__button-text-font;
-		margin: 0 0 0 rem(5);
+		margin: 0 0 0 5px;
 		transition: $transition__hover;
 	}
 
 	&:hover {
 
 		&:after {
-			transform: translateX(rem(3));
+			transform: translateX(3px);
 		}
 	}
 }

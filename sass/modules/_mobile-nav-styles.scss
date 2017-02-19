@@ -33,7 +33,7 @@
 
 		&:before {
 			@include position(fixed, 0 null 0 null);
-			@include size(rem(15) 100vh);
+			@include size(15px 100vh);
 
 			content: '';
 			display: block;
@@ -58,7 +58,7 @@
 
 		.main-navigation__menu {
 			@include position(fixed, 0 0 0 0);
-			@include size(rem(1) 100vh);
+			@include size(1px 100vh);
 
 			overflow: hidden;
 			padding: 0;
@@ -135,22 +135,22 @@
 .mobile-nav-toggle-style-hamburger {
 
 	.menu-toggle {
-		@include position(absolute, rem(20) rem(20) null null);
-		@include size(rem(40));
+		@include position(absolute, 20px 20px null null);
+		@include size(40px);
 
 		background-color: $color__toggle-background;
 		z-index: 2;
 
 		@include element(bar) {
 			@include position(absolute, null 0 null 0);
-			@include size(rem(30) rem(3));
+			@include size(30px 3px);
 
 			background-color: $color__button-background;
 			margin: auto;
 			transition: $transition__click;
 
 			&.bar-1 {
-				top: rem(7.5);
+				top: 7.5px;
 			}
 
 			&.bar-2 {
@@ -159,7 +159,7 @@
 			}
 
 			&.bar-3 {
-				bottom: rem(7.5);
+				bottom: 7.5px;
 			}
 		}
 	}
@@ -167,7 +167,7 @@
 	&.logged-in {
 
 		.menu-toggle {
-			top: rem(66); // 20px + 46px
+			top: 66px; // 20px + 46px
 		}
 	}
 }
