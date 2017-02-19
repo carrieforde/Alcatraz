@@ -18,14 +18,6 @@ Underscores is distributed under the terms of the GNU GPL v2 or later.
 Normalizing styles have been helped along thanks to the fine work of
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 */
-html {
-  box-sizing: border-box;
-}
-
-*, *::after, *::before {
-  box-sizing: inherit;
-}
-
 /*! sanitize.css v4.1.0 | CC0 License | github.com/jonathantneal/sanitize.css */
 article,
 aside,
@@ -1030,7 +1022,7 @@ pre {
   transform: rotate(180deg);
 }
 
-@media screen and (min-width: 37.5em){
+@media only screen and (min-width: 600px){
   .color-group{
     -ms-flex-pack: distribute;
     justify-content: space-around;
@@ -1039,251 +1031,136 @@ pre {
     margin-bottom: 0;
   }
   .alcatraz-col--1{
+    width: calc(8.3333333333% - 21.6666666667px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 7%;
-  }
-  .alcatraz-col--1:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--2{
+    width: calc(16.6666666667% - 23.3333333333px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 15.4545454545%;
-  }
-  .alcatraz-col--2:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--3{
+    width: calc(25% - 25px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 23.9090909091%;
-  }
-  .alcatraz-col--3:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--4{
+    width: calc(33.3333333333% - 26.6666666667px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 32.3636363636%;
-  }
-  .alcatraz-col--4:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--5{
+    width: calc(41.6666666667% - 28.3333333333px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 40.8181818182%;
-  }
-  .alcatraz-col--5:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--6{
+    width: calc(50% - 30px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 49.2727272727%;
-  }
-  .alcatraz-col--6:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--7{
+    width: calc(58.3333333333% - 31.6666666667px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 57.7272727273%;
-  }
-  .alcatraz-col--7:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--8{
+    width: calc(66.6666666667% - 33.3333333333px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 66.1818181818%;
-  }
-  .alcatraz-col--8:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--9{
+    width: calc(75% - 35px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 74.6363636364%;
-  }
-  .alcatraz-col--9:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--10{
+    width: calc(83.3333333333% - 36.6666666667px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 83.0909090909%;
-  }
-  .alcatraz-col--10:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--11{
+    width: calc(91.6666666667% - 38.3333333333px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 91.5454545455%;
-  }
-  .alcatraz-col--11:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .alcatraz-col--12{
+    width: calc(100% - 40px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 100%;
+    margin-left: 20px;
   }
-  .alcatraz-col--12:last-child{
-    margin-right: 0;
-  }
-  .no-gutter{
-    width: 100%;
-    display: block;
-  }
-  .no-gutter::after{
-    clear: both;
-    content: "";
-    display: block;
-  }
-  .no-gutter .alcatraz-col--1{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--1{
+    width: calc(8.3333333333%);
     float: left;
-    display: block;
-    width: 8.4545454545%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--1:last-child{
-    width: 7%;
-  }
-  .no-gutter .alcatraz-col--2{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--2{
+    width: calc(16.6666666667%);
     float: left;
-    display: block;
-    width: 16.9090909091%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--2:last-child{
-    width: 15.4545454545%;
-  }
-  .no-gutter .alcatraz-col--3{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--3{
+    width: calc(25%);
     float: left;
-    display: block;
-    width: 25.3636363636%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--3:last-child{
-    width: 23.9090909091%;
-  }
-  .no-gutter .alcatraz-col--4{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--4{
+    width: calc(33.3333333333%);
     float: left;
-    display: block;
-    width: 33.8181818182%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--4:last-child{
-    width: 32.3636363636%;
-  }
-  .no-gutter .alcatraz-col--5{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--5{
+    width: calc(41.6666666667%);
     float: left;
-    display: block;
-    width: 42.2727272727%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--5:last-child{
-    width: 40.8181818182%;
-  }
-  .no-gutter .alcatraz-col--6{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--6{
+    width: calc(50%);
     float: left;
-    display: block;
-    width: 50.7272727273%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--6:last-child{
-    width: 49.2727272727%;
-  }
-  .no-gutter .alcatraz-col--7{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--7{
+    width: calc(58.3333333333%);
     float: left;
-    display: block;
-    width: 59.1818181818%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--7:last-child{
-    width: 57.7272727273%;
-  }
-  .no-gutter .alcatraz-col--8{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--8{
+    width: calc(66.6666666667%);
     float: left;
-    display: block;
-    width: 67.6363636364%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--8:last-child{
-    width: 66.1818181818%;
-  }
-  .no-gutter .alcatraz-col--9{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--9{
+    width: calc(75%);
     float: left;
-    display: block;
-    width: 76.0909090909%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--9:last-child{
-    width: 74.6363636364%;
-  }
-  .no-gutter .alcatraz-col--10{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--10{
+    width: calc(83.3333333333%);
     float: left;
-    display: block;
-    width: 84.5454545455%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--10:last-child{
-    width: 83.0909090909%;
-  }
-  .no-gutter .alcatraz-col--11{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--11{
+    width: calc(91.6666666667%);
     float: left;
-    display: block;
-    width: 93%;
+    margin-left: 0;
   }
-  .no-gutter .alcatraz-col--11:last-child{
-    width: 91.5454545455%;
-  }
-  .no-gutter .alcatraz-col--12{
-    margin-right: 0;
+  .alcatraz-col--no-gutter--12{
+    width: calc(100%);
     float: left;
-    display: block;
-    width: 101.454545455%;
-  }
-  .no-gutter .alcatraz-col--12:last-child{
-    width: 100%;
+    margin-left: 0;
   }
   .left-sidebar .content-area,
   .right-sidebar .content-area{
+    width: calc(66.6666666667% - 33.3333333333px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 66.1818181818%;
-  }
-  .left-sidebar .content-area:last-child,
-  .right-sidebar .content-area:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .left-sidebar .primary-sidebar,
   .right-sidebar .primary-sidebar{
+    width: calc(33.3333333333% - 26.6666666667px);
     float: left;
-    display: block;
-    margin-right: 1.4545454545%;
-    width: 32.3636363636%;
-  }
-  .left-sidebar .primary-sidebar:last-child,
-  .right-sidebar .primary-sidebar:last-child{
-    margin-right: 0;
+    margin-left: 20px;
   }
   .left-sidebar .content-area{
     float: right;
@@ -1329,14 +1206,14 @@ pre {
   }
 }
 
-@media screen and (min-width: 56.25em){
+@media only screen and (min-width: 900px){
   .color-group{
     -ms-flex-pack: start;
     justify-content: flex-start;
   }
 }
 
-@media screen and (max-width: 37.4375em){
+@media (max-width: 600px){
   .mobile-nav-style-slide:before{
     position: fixed;
     top: 0;

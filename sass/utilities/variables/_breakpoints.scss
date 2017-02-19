@@ -8,8 +8,18 @@
 
 
 // Common breakpoints
-$phone-only: (max-width em(599));
-$tablet-portrait-up: em(600);
-$tablet-landscape-up: em(900);
-$desktop-up: em(1200);
-$desktop-large-up: em(1800);
+//$phone-only: (
+//	media: max-width 599px,
+//);
+$tablet-portrait-up: (
+	media: 600px,
+);
+$tablet-landscape-up: (
+	media: 900px,
+);
+$desktop-up: (
+	media: 1200px,
+);
+$desktop-large-up: (
+	media: 1800px,
+);

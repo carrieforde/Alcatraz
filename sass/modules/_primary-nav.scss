@@ -12,7 +12,7 @@
 	padding: $size__padding;
 	transition: $transition__click;
 
-	@include media($tablet-portrait-up) {
+	@include grid-media($tablet-portrait-up) {
 		display: flex;
 		justify-content: space-around;
 		margin: 0 auto;
@@ -24,7 +24,7 @@
 		&.open {
 			top: rem(46);
 
-			@include media ($tablet-portrait-up) {
+			@include grid-media ($tablet-portrait-up) {
 				top: auto;
 			}
 		}
@@ -37,7 +37,7 @@
 //-------------------------------
 .menu-item {
 
-	@include media($tablet-portrait-up) {
+	@include grid-media($tablet-portrait-up) {
 		display: inline-block;
 	}
 
@@ -47,7 +47,7 @@
 		padding: rem(5) 0;
 		text-decoration: none;
 
-		@include media($tablet-portrait-up) {
+		@include grid-media($tablet-portrait-up) {
 			display: inline-block;
 			padding: rem(10);
 		}
@@ -56,7 +56,7 @@
 	&-has-children {
 		position: relative;
 
-		@include media($tablet-portrait-up) {
+		@include grid-media($tablet-portrait-up) {
 
 			> a {
 				padding-right: rem(50);
@@ -73,7 +73,7 @@
 	display: none;
 	padding-left: $size__padding;
 
-	@include media($tablet-portrait-up) {
+	@include grid-media($tablet-portrait-up) {
 		min-width: rem(175);
 		padding-left: 0;
 		position: absolute;
@@ -109,7 +109,7 @@
 	text-indent: 9999px;
 	transition: $transition__click;
 
-	@include media($tablet-portrait-up) {
+	@include grid-media($tablet-portrait-up) {
 		top: rem(5);
 	}
 

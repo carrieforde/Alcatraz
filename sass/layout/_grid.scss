@@ -8,19 +8,13 @@
 	width: 100%;
 }
 
-@include media($tablet-portrait-up) {
+@include grid-media($tablet-portrait-up) {
 
 	.alcatraz-col {
 		@include grid-classes;
-	} // .alcatraz-col
 
-	// Grid without gutter
-	.no-gutter {
-		@include fill-parent;
-		@include row;
-
-		.alcatraz-col {
+		@include modifier(no-gutter) {
 			@include grid-classes-no-gutter;
 		}
-	}
+	} // .alcatraz-col
 }

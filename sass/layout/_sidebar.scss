@@ -6,22 +6,22 @@
 
 	.content-area {
 
-		@include media($tablet-portrait-up) {
-			@include span-columns(8);
+		@include grid-media($tablet-portrait-up) {
+			@include grid-column(8);
 		}
 	}
 
 	.primary-sidebar {
 
-		@include media($tablet-portrait-up) {
-			@include span-columns(4);
+		@include grid-media($tablet-portrait-up) {
+			@include grid-column(4);
 		}
 	}
 }
 
 .left-sidebar {
 
-	@include media ($tablet-portrait-up) {
+	@include grid-media ($tablet-portrait-up) {
 		.content-area {
 			float: right;
 			margin-right: 0;

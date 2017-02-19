@@ -29,7 +29,7 @@
 //-------------------------------
 .mobile-nav-style-slide {
 
-	@include media($phone-only) {
+	@media (max-width: 600px) {
 
 		&:before {
 			@include position(fixed, 0 null 0 null);
@@ -39,7 +39,7 @@
 			display: block;
 			z-index: 10;
 		}
-		
+
 		&.menu-open {
 			overflow: hidden;
 
@@ -59,7 +59,7 @@
 		.main-navigation__menu {
 			@include position(fixed, 0 0 0 0);
 			@include size(rem(1) 100vh);
-			
+
 			overflow: hidden;
 			padding: 0;
 		}
@@ -81,7 +81,7 @@
 			}
 
 			&.menu-open {
-				
+
 				.menu-toggle {
 					left: rem(220); // max of 275px - 55px (width of toggle + padding).
 				}
@@ -122,7 +122,7 @@
 	display: block;
 	width: 100%;
 
-	@include media($tablet-portrait-up) {
+	@include grid-media($tablet-portrait-up) {
 		display: none;
 	}
 }

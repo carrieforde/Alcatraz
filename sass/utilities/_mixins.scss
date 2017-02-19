@@ -135,7 +135,7 @@
 
 		// Generate the column classes.
 		@include modifier(#{$i}) {
-			@include span-columns($i);
+			@include grid-column($i);
 		}
 	}
 }
@@ -153,8 +153,7 @@
 	@for $i from 1 through $grid-columns {
 
 		@include modifier(#{$i}) {
-			@include omega;
-			@include span-columns($i, block-collapse);
+			@include grid-column($i, $no-gutter);
 		}
 	}
 }
