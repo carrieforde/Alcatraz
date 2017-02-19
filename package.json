@@ -16,7 +16,7 @@
   "devDependencies": {
     "autoprefixer": "^6.0.3",
     "bourbon": "^4.2.7",
-    "bourbon-neat": "^1.8.0",
+    "bourbon-neat": "^2.0.0",
     "css-mqpacker": "^4.0.0",
     "grunt": "^0.4.5",
     "grunt-contrib-concat": "~0.5.1",
