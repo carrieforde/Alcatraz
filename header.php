@@ -44,6 +44,7 @@
 		?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
+			<?php do_action( 'alcatraz_before_primary_nav' ); ?>
 
 			<?php alcatraz_the_mobile_nav_toggle(); ?>
 
@@ -53,6 +54,8 @@
 				'menu_class'      => 'primary-menu',
 				'container_class' => 'main-navigation__menu',
 			) ); ?>
+
+			<?php do_action( 'alcatraz_after_primary_nav' ); ?>
 		</nav>
 
 		<?php endif; ?>
