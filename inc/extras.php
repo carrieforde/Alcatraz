@@ -18,12 +18,16 @@ add_filter( 'body_class', 'alcatraz_body_classes' );
  */
 function alcatraz_body_classes( $classes ) {
 
-	global $post;
+	if ( is_home() ) {
+		$post_id = get_option( 'page_for_posts' );
+	} else {
+		$post_id = get_the_ID();
+	}
 
 	$options = get_option( 'alcatraz_options' );
 
 	// Site layout class.
-	$page_layout = get_post_meta( $post->ID, '_alcatraz_page_layout', true );
+	$page_layout = get_post_meta( $post_id, '_alcatraz_page_layout', true );
 	if ( ! empty( $page_layout ) && 'default' !== $page_layout ) {
 		$classes[] = esc_attr( $page_layout );
 	} elseif ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
@@ -31,7 +35,7 @@ function alcatraz_body_classes( $classes ) {
 	}
 
 	// Site sidebar class.
-	$page_sidebar = get_post_meta( $post->ID, '_alcatraz_page_sidebar', true );
+	$page_sidebar = get_post_meta( $post_id, '_alcatraz_page_sidebar', true );
 	if ( ! empty( $page_sidebar ) && 'default' !== $page_sidebar ) {
 		if ( 'no-sidebar' !== $page_sidebar ) {
 			$classes[] = esc_attr( $page_sidebar );

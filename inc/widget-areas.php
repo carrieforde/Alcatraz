@@ -74,23 +74,29 @@ add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_primary_sidebar' );
  *
  * @since  1.0.0
  */
-function alcatraz_output_primary_sidebar() {
+function alcatraz_output_primary_sidebar( $post_id = 0 ) {
 
-	global $post;
+	if ( ! $post_id ) {
+
+		if ( is_home() ) {
+			$post_id = get_option( 'page_for_posts' );
+		}
+		$post_id = get_the_ID();
+	}
 
 	$options = get_option( 'alcatraz_options' );
 
-	$page_sidebar = get_post_meta( $post->ID, '_alcatraz_page_sidebar', true );
+	$page_sidebar = get_post_meta( $post_id, '_alcatraz_page_sidebar', true );
 
 	// Bail if the page layout is set to no sidebar.
-	if ( $page_sidebar ) {
+	if ( ! empty( $page_sidebar ) ) {
 		if ( 'no-sidebar' === $page_sidebar ) {
 			return;
-		} elseif ( 'default' === $page_sidebar && isset( $options['site_sidebar'] ) && 'no-sidebar' === $options['site_sidebar'] ) {
+		} elseif ( 'default' === $page_sidebar && 'no-sidebar' === ( isset( $options['site_sidebar'] ) && $options['site_sidebar'] ) ) {
 			return;
 		}
 	} else {
-		if ( isset( $options['site_sidebar'] ) && 'no-sidebar' === $options['site_sidebar'] ) {
+		if ( 'no-sidebar' === isset( $options['site_sidebar'] ) && $options['site_sidebar'] ) {
 			return;
 		}
 	}
