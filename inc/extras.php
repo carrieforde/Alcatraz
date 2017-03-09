@@ -21,7 +21,8 @@ function alcatraz_body_classes( $classes ) {
 	if ( is_home() ) {
 		$post_id = get_option( 'page_for_posts' );
 	} else {
-		$post_id = get_the_ID();
+		global $post;
+		$post_id = $post->ID;
 	}
 
 	$options = get_option( 'alcatraz_options' );

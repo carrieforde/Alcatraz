@@ -74,14 +74,12 @@ add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_primary_sidebar' );
  *
  * @since  1.0.0
  */
-function alcatraz_output_primary_sidebar( $post_id = 0 ) {
+function alcatraz_output_primary_sidebar() {
 
-	if ( ! $post_id ) {
-
-		if ( is_home() ) {
-			$post_id = get_option( 'page_for_posts' );
-		}
-		$post_id = get_the_ID();
+	if ( is_home() ) {
+		$post_id = get_option( 'page_for_posts' );
+	} else {
+		$post_id = get_queried_object_id();
 	}
 
 	$options = get_option( 'alcatraz_options' );
