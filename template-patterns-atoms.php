@@ -18,15 +18,15 @@ get_header(); ?>
 
 				<?php do_action( 'alcatraz_before_patterns' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/atoms/globals' ); ?>
+				<?php get_template_part( 'template-parts/patterns/atoms/globals' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/atoms/buttons' ); ?>
+				<?php get_template_part( 'template-parts/patterns/atoms/buttons' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/atoms/forms' ); ?>
+				<?php get_template_part( 'template-parts/patterns/atoms/forms' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/atoms/images' ); ?>
+				<?php get_template_part( 'template-parts/patterns/atoms/images' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/atoms/typography' ); ?>
+				<?php get_template_part( 'template-parts/patterns/atoms/typography' ); ?>
 
 				<?php do_action( 'alcatraz_after_patterns' ); ?>
 

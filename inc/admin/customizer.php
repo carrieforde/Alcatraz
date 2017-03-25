@@ -14,11 +14,6 @@ add_action( 'customize_register', 'alcatraz_customize_register' );
 function alcatraz_customize_register( $wp_customize ) {
 
 	/**
-	 * Include our custom Customizer control types.
-	 */
-	require_once ALCATRAZ_PATH . 'lib/alpha-color-picker/alpha-color-picker.php';
-
-	/**
 	 * Get the default values for our options.
 	 */
 	$option_defaults = alcatraz_get_option_defaults();

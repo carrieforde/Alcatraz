@@ -18,17 +18,17 @@ get_header(); ?>
 
 				<?php do_action( 'alcatraz_before_patterns' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/molecules/cards' ); ?>
+				<?php get_template_part( 'template-parts/patterns/molecules/cards' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/molecules/forms' ); ?>
+				<?php get_template_part( 'template-parts/patterns/molecules/forms' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/molecules/grid' ); ?>
+				<?php get_template_part( 'template-parts/patterns/molecules/grid' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/molecules/media' ); ?>
+				<?php get_template_part( 'template-parts/patterns/molecules/media' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/molecules/navigation' ); ?>
+				<?php get_template_part( 'template-parts/patterns/molecules/navigation' ); ?>
 
-				<?php get_template_part( 'patterns/template-parts/molecules/typography' ); ?>
+				<?php get_template_part( 'template-parts/patterns/molecules/typography' ); ?>
 
 				<?php do_action( 'alcatraz_after_patterns' ); ?>
 

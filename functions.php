@@ -231,11 +231,15 @@ require_once ALCATRAZ_PATH . 'inc/utilities.php';
 require_once ALCATRAZ_PATH . 'inc/ajax.php';
 
 /**
- * Our pattern library template tags.
+ * Pattern library template tags.
  */
-require_once ALCATRAZ_PATH . 'patterns/template-tags/queries.php';
-require_once ALCATRAZ_PATH . 'patterns/template-tags/atoms.php';
-require_once ALCATRAZ_PATH . 'patterns/template-tags/molecules.php';
+require_once ALCATRAZ_PATH . 'inc/patterns/atoms.php';
+require_once ALCATRAZ_PATH . 'inc/patterns/molecules.php';
+
+/**
+ * Theme queries.
+ */
+require_once ALCATRAZ_PATH . 'inc/queries.php';
 
 /**
  * Custom template tags for this theme.
