@@ -218,6 +218,17 @@ function alcatraz_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+
+	// Pattern Library JS.
+	if ( is_page_template( 'template-patterns-atoms.php' ) || is_page_template( 'template-patterns-molecules.php' ) || is_page_template( 'template-patterns-organisms.php' ) ) {
+		wp_enqueue_script(
+			'alcatraz-patterns-js',
+			ALCATRAZ_URL . 'assets/js/patterns.js',
+			array( 'jquery' ),
+			ALCATRAZ_VERSION,
+			true
+		);
+	}
 }
 
 /**
