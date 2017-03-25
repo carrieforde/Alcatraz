@@ -59,7 +59,7 @@ module.exports = function( grunt ) {
 					'assets/js/src/patterns.js',
 					'assets/js/src/init.js' // This should be last.
 				],
-				dest: 'js/<%= pkg.name %>-theme.js'
+				dest: 'assets/js/<%= pkg.name %>-theme.js'
 			}
 		},
 		uglify: {
