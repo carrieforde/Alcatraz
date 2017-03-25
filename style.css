@@ -935,10 +935,6 @@ pre {
   transform: rotate(90deg);
 }
 
-.mobile-nav-style-full-screen {
-  overflow: hidden;
-}
-
 .mobile-nav-style-full-screen .primary-menu.open {
   position: fixed;
   right: 0;

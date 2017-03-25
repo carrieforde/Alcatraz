@@ -15,7 +15,7 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				files: {
-					'style.css': 'sass/style.scss'
+					'style.css': 'assets/sass/style.scss'
 				},
 			},
 		},
@@ -75,7 +75,7 @@ module.exports = function( grunt ) {
 		},
 		watch: {
 			css: {
-				files: ['sass/**/*.scss'],
+				files: ['assets/sass/**/*.scss'],
 				tasks: ['styles'],
 				options: {
 					livereload: true
