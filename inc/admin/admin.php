@@ -7,9 +7,6 @@
  * @package alcatraz
  */
 
-// Include CMB2.
-require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';
-
 add_action( 'admin_enqueue_scripts', 'alcatraz_admin_enqueue_scripts' );
 /**
  * Enqueue our admin JS.
@@ -75,88 +72,4 @@ function alcatraz_add_editor_styles() {
 
 	add_editor_style( $alcatraz_google_fonts );
 	add_editor_style( get_stylesheet_uri() );
-}
-
-add_action( 'cmb2_admin_init', 'alcatraz_page_options_metabox' );
-/**
- * Setup our Page Options metabox.
- *
- * @since  1.0.0
- */
-function alcatraz_page_options_metabox() {
-
-	$prefix = '_alcatraz_';
-	$post_type = alcatraz_allowed_post_types();
-
-	/**
-	 * Initialize the metabox.
-	 */
-	$page_options = new_cmb2_box( array(
-		'id'            => 'page_options_metabox',
-		'title'         => __( 'Page Options', 'alcatraz' ),
-		'object_types'  => $post_type,
-		'context'       => 'normal',
-		'priority'      => 'high',
-		'show_names'    => true,
-	) );
-
-	// Page layout.
-	$page_options->add_field( array(
-		'name'    => __( 'Layout', 'alcatraz' ),
-		'desc'    => __( 'Set the layout for this page', 'alcatraz' ),
-		'id'      => $prefix . 'page_layout',
-		'type'    => 'select',
-		'options' => array(
-			'default'        => __( 'Default', 'alcatraz' ),
-			'full-width'     => __( 'Full Width', 'alcatraz' ),
-			'boxed'          => __( 'Boxed', 'alcatraz' ),
-			'boxed-content'  => __( 'Boxed Content', 'alcatraz' ),
-		),
-	) );
-
-	// Page sidebar.
-	$page_options->add_field( array(
-		'name'    => __( 'Sidebar', 'alcatraz' ),
-		'desc'    => __( 'Select the sidebar position for this page', 'alcatraz' ),
-		'id'      => $prefix . 'page_sidebar',
-		'type'    => 'select',
-		'options' => array(
-			'default'       => __( 'Default', 'alcatraz' ),
-			'no-sidebar'    => __( 'No Sidebar', 'alcatraz' ),
-			'left-sidebar'  => __( 'Left Sidebar', 'alcatraz' ),
-			'right-sidebar' => __( 'Right Sidebar', 'alcatraz' ),
-		),
-	) );
-
-	// Hide Title.
-	$page_options->add_field( array(
-		'name' => __( 'Hide Page Title?', 'alcatraz' ),
-		'id'   => $prefix . 'hide_title',
-		'type' => 'checkbox',
-	) );
-
-	// Transparent header.
-	$page_options->add_field( array(
-		'name' => __( 'Transparent Header', 'alcatraz' ),
-		'desc' => __( 'Position the page content at the top of the screen and make the header transparent', 'alcatraz' ),
-		'id'   => $prefix . 'transparent_header',
-		'type' => 'checkbox',
-	) );
-
-	// Header text color.
-	$page_options->add_field( array(
-		'name'    => __( 'Header Text Color', 'alcatraz' ),
-		'desc'    => __( 'Select a Header Text Color for this page', 'alcatraz' ),
-		'id'      => $prefix . 'header_text_color',
-		'type'    => 'select',
-		'options' => alcatraz_get_text_colors( 'header' ),
-	) );
-
-	// Body class.
-	$page_options->add_field( array(
-		'name' => __( 'Body Class', 'alcatraz' ),
-		'desc' => __( 'Add a custom class to the &lt;body&gt; tag for this page', 'alcatraz' ),
-		'id'   => $prefix . 'body_class',
-		'type' => 'text',
-	) );
 }
