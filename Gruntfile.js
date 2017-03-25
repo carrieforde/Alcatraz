@@ -52,13 +52,12 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				src: [
-					'lib/jquery-mobile/jquery.mobile.custom.min.js',
-					'js/src/utilities.js',
-					'js/src/skip-link-focus-fix.js',
-					'js/src/navigation.js',
-					'js/src/alcatraz.js', // This must be included after all other objects.
-					'js/src/patterns.js',
-					'js/src/init.js' // This should be last.
+					'assets/js/src/utilities.js',
+					'assets/js/src/skip-link-focus-fix.js',
+					'assets/js/src/navigation.js',
+					'assets/js/src/alcatraz.js', // This must be included after all other objects.
+					'assets/js/src/patterns.js',
+					'assets/js/src/init.js' // This should be last.
 				],
 				dest: 'js/<%= pkg.name %>-theme.js'
 			}
@@ -70,7 +69,7 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				files: {
-					'js/<%= pkg.name %>-theme.min.js': ['<%= concat.dist.dest %>']
+					'assets/js/<%= pkg.name %>-theme.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
