@@ -11,3 +11,19 @@ img {
 	height: auto;
 	max-width: 100%;
 }
+
+
+//-----------------------------------------
+// Site Logo
+//-----------------------------------------
+.wp-custom-logo {
+	
+	.logo-wrap {
+		max-width: rem(300);
+	}
+
+	.site-title,
+	.site-description {
+		@extend .screen-reader-text;
+	}
+}

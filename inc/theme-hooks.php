@@ -72,40 +72,15 @@ add_action( 'alcatraz_header', 'alcatraz_output_logo', 2 );
  */
 function alcatraz_output_logo() {
 
-	$options = get_option( 'alcatraz_options' );
+	if ( ! has_custom_logo() ) {
+		return;
+	} ?>
 
-	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
+	<div class="logo-wrap">
+		<?php the_custom_logo(); ?>
+	</div>
 
-		echo '<div class="logo-wrap">';
-
-		printf(
-			'<a href="%s" title="%s" rel="home">',
-			esc_url( home_url( '/' ) ),
-			esc_attr( get_bloginfo( 'name', 'display' ) )
-		);
-
-		if ( ! empty( $options['logo_id'] ) ) {
-
-			printf(
-				'<img class="logo logo-regular" src="%s" alt="%s">',
-				esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
-				esc_attr( get_bloginfo( 'name', 'display' ) )
-			);
-
-		}
-
-		if ( ! empty( $options['mobile_logo_id'] ) ) {
-			printf(
-				'<img class="logo logo-mobile" src="%s" alt="%s">',
-				esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
-				esc_attr( get_bloginfo( 'name', 'display' ) )
-			);
-		}
-
-		echo '</a>';
-
-		echo '</div>';
-	}
+	<?php
 }
 
 add_action( 'alcatraz_entry_header_inside', 'alcatraz_output_default_entry_header' );
