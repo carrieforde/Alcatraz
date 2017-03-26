@@ -13,8 +13,6 @@ add_action( 'widgets_init', 'alcatraz_register_widget_areas' );
  */
 function alcatraz_register_widget_areas() {
 
-	$options = get_option( 'alcatraz_options' );
-
 	// Primary Sidebar.
 	register_sidebar( array(
 		'name'          => esc_html__( 'Primary Sidebar', 'alcatraz' ),
@@ -25,19 +23,6 @@ function alcatraz_register_widget_areas() {
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
-
-	// Page Banner.
-	if ( ! empty( $options['page_banner_widget_area'] ) ) {
-		register_sidebar( array(
-			'name'          => esc_html__( 'Page Banner', 'alcatraz' ),
-			'id'            => 'page-banner',
-			'description'   => __( 'Shows on the top of the page in between the menu and the main content area', 'alcatraz' ),
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
-			'before_title'  => '<h2 class="widget-title">',
-			'after_title'   => '</h2>',
-		) );
-	}
 
 	// Footer.
 	if ( ! empty( $options['footer_widget_areas'] ) ) {
@@ -76,33 +61,11 @@ add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_primary_sidebar' );
  */
 function alcatraz_output_primary_sidebar() {
 
-	if ( is_home() ) {
-		$post_id = get_option( 'page_for_posts' );
-	} else {
-		$post_id = get_queried_object_id();
-	}
-
-	$options = get_option( 'alcatraz_options' );
-
-	$page_sidebar = get_post_meta( $post_id, '_alcatraz_page_sidebar', true );
-
-	// Bail if the page layout is set to no sidebar.
-	if ( ! empty( $page_sidebar ) ) {
-		if ( 'no-sidebar' === $page_sidebar ) {
-			return;
-		} elseif ( 'default' === $page_sidebar && 'no-sidebar' === ( isset( $options['site_sidebar'] ) && $options['site_sidebar'] ) ) {
-			return;
-		}
-	} else {
-		if ( 'no-sidebar' === isset( $options['site_sidebar'] ) && $options['site_sidebar'] ) {
-			return;
-		}
-	}
-
 	?>
+
 	<div id="secondary" class="primary-sidebar sidebar" role="complementary">
 		<?php do_action( 'alcatraz_before_primary_sidebar' ); ?>
-		<?php if ( is_active_sidebar( 'primary-sidebar' ) ) : ?>
+	<?php if ( is_active_sidebar( 'primary-sidebar' ) ) : ?>
 			<div class="primary-sidebar-widget-area widget-area">
 				<?php dynamic_sidebar( 'primary-sidebar' ); ?>
 			</div>
@@ -110,25 +73,6 @@ function alcatraz_output_primary_sidebar() {
 		<?php do_action( 'alcatraz_after_primary_sidebar' ); ?>
 	</div>
 	<?php
-}
-
-add_action( 'alcatraz_before_content_inside', 'alcatraz_output_page_banner_widget_area' );
-/**
- * Maybe output the Page Banner widget area.
- *
- * @since  1.0.0
- */
-function alcatraz_output_page_banner_widget_area() {
-
-	$options = get_option( 'alcatraz_options' );
-
-	if ( ! empty( $options['page_banner_widget_area'] ) && is_active_sidebar( 'page-banner' ) ) {
-		?>
-		<section id="page-banner" class="page-banner page-banner-widget-area widget-area" role="complementary">
-			<?php dynamic_sidebar( 'page-banner' ); ?>
-		</section>
-		<?php
-	}
 }
 
 add_action( 'alcatraz_footer', 'alcatraz_output_footer_widget_areas', 8 );
