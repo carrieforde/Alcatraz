@@ -18,6 +18,11 @@ add_filter( 'body_class', 'alcatraz_body_classes' );
  */
 function alcatraz_body_classes( $classes ) {
 
+	// Primary sidebar.
+	if ( is_active_sidebar( 'primary-sidebar' ) ) {
+		$classes[] = 'has-sidebar';
+	}
+
 	// Footer widget areas class.
 	if ( isset( $options['footer_widget_areas'] ) && 0 < (int) $options['footer_widget_areas'] ) {
 		$classes[] = 'footer-widget-areas-' . (int) $options['footer_widget_areas'];
