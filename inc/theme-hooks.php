@@ -38,7 +38,7 @@ function alcatraz_output_site_title() {
 		);
 	} else {
 		printf(
-			'<p class="site-title"><a href="%s" rel="home">%s</a></p>',
+			'<p class="site-title h1"><a href="%s" rel="home">%s</a></p>',
 			esc_url( home_url( '/' ) ),
 			esc_html( get_bloginfo( 'name' ) )
 		);

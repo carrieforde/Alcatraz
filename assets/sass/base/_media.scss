@@ -17,13 +17,14 @@ img {
 // Site Logo
 //-----------------------------------------
 .wp-custom-logo {
-	
-	.logo-wrap {
-		max-width: rem(300);
-	}
 
 	.site-title,
 	.site-description {
 		@extend .screen-reader-text;
 	}
+}
+
+.logo-wrap {
+	margin: 0 auto;
+	max-width: rem(300);
 }

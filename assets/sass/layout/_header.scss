@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// HEADER 
+//--------------------------------------------------------------
+.site-header {
+	padding: $size__padding * 2 $size__padding $size__padding;
+	text-align: center;
+}
+
+.header-inner {
+	margin-bottom: $size__padding;
+}
+
+.site-title {
+	margin-bottom: 0.25em;
+	text-decoration: none;
+}
