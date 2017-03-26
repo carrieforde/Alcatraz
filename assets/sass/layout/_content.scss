@@ -1,33 +1,19 @@
 //--------------------------------------------------------------
 // CONTENT
 //--------------------------------------------------------------
-.content-area,
-.primary-sidebar {
-	padding: $size__padding * 2 $size__padding;
-}
-
-
-//-------------------------------
-// Boxed
-//-------------------------------
-.boxed {
+.site-content {
 	@include center;
+	@include grid-container;
 
 	max-width: 100%;
-	width: $size__layout-boxed;
+	overflow: hidden;
+	width: $size__layout-boxed-content;
 }
 
+.content-area {
+	padding: $size__padding * 2 $size__padding;
 
-//-------------------------------
-// Boxed Content
-//-------------------------------
-.boxed-content {
-
-	.site-content {
-		@include center;
-
-		max-width: 100%;
-		overflow: hidden;
-		width: $size__layout-boxed-content;
+	.has-sidebar & {
+		@include grid-column(8);
 	}
 }

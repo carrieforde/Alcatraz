@@ -1,34 +1,8 @@
 //--------------------------------------------------------------
 // SIDEBAR
 //--------------------------------------------------------------
-.left-sidebar,
-.right-sidebar {
+.primary-sidebar {
+	@include grid-column(4);
 
-	.content-area {
-
-		@include grid-media($tablet-portrait-up) {
-			@include grid-column(8);
-		}
-	}
-
-	.primary-sidebar {
-
-		@include grid-media($tablet-portrait-up) {
-			@include grid-column(4);
-		}
-	}
-}
-
-.left-sidebar {
-
-	@include grid-media ($tablet-portrait-up) {
-		.content-area {
-			float: right;
-			margin-right: 0;
-		}
-
-		.primary-sidebar {
-			float: left;
-		}
-	}
+	padding: $size__padding * 2 $size__padding;
 }
