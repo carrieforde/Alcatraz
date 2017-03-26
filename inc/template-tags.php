@@ -6,46 +6,6 @@
  */
 
 /**
- * Build and return the mobile navigation toggle style HTML.
- *
- * @since   1.0.0
- *
- * @return  string  The toggle HTML.
- */
-function alcatraz_get_mobile_nav_toggle() {
-
-	$options = get_option( 'alcatraz_options' );
-
-	ob_start();
-
-	if ( 'button' === $options['mobile_nav_toggle_style'] ) : ?>
-		<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<span class="menu-toggle__text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
-		</button>
-	<?php endif; ?>
-
-	<?php if ( 'hamburger' === $options['mobile_nav_toggle_style'] ) : ?>
-		<button type="button" class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-			<span class="menu-toggle__bar bar-1"></span>
-			<span class="menu-toggle__bar bar-2"></span>
-			<span class="menu-toggle__bar bar-3"></span>
-		</button>
-	<?php endif;
-
-	return ob_get_clean();
-}
-
-/**
- * Echo the mobile navigation toggle.
- *
- * @since  1.0.0
- */
-function alcatraz_the_mobile_nav_toggle() {
-
-	echo alcatraz_get_mobile_nav_toggle(); // WPCS: XSS OK.
-}
-
-/**
  * Build and return the "Posted on ..." HTML.
  *
  * @since   1.0.0
@@ -196,16 +156,11 @@ function alcatraz_entry_title( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 
-	$hide_title = get_post_meta( $post_id, '_alcatraz_hide_title', true );
-	$title      = '';
+	$title = '';
 
 	if ( is_singular() ) {
 
-		if ( 'on' === $hide_title ) {
-			$title = '<h1 class="entry-title screen-reader-text">' . get_the_title( $post_id ) . '</h1>';
-		} else {
-			$title = '<h1 class="entry-title screen-reader-text">' . get_the_title( $post_id ) . '</h1>';
-		}
+		$title = '<h1 class="entry-title">' . get_the_title( $post_id ) . '</h1>';
 	} else {
 
 		$title = sprintf(
@@ -307,80 +262,6 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 function alcatraz_the_entry_footer( $post_id = 0 ) {
 
 	echo alcatraz_entry_footer( $post_id ); // WPCS: XSS ok.
-}
-
-/**
- * Build and return the Sub Page Navigation HTML.
- *
- * @since   1.0.0
- *
- * @param   array  $args  The args for wp_list_pages().
- *
- * @return  string        The sub page nav HTML.
- */
-function alcatraz_get_sub_page_nav( $args = array() ) {
-
-	global $post;
-
-	// Only proceed if we have a post object and we're displaying a page.
-	if ( ! $post || ! is_page() ) {
-		return false;
-	}
-
-	$output = '';
-
-	// Find the top level page id.
-	if ( ! $post->post_parent ) {
-		$top_page_id = $post->ID;
-	} else {
-		$ancestors    = get_post_ancestors( $post );
-		$top_page_id = $ancestors ? end( $ancestors ) : $post->ID;
-	}
-
-	$default_args = array(
-		'depth'       => 5,
-		'echo'        => 0,
-		'title_li'    => '',
-	);
-	$args = wp_parse_args( $args, $default_args );
-
-	// Use the top level page id.
-	$args['child_of'] = $top_page_id;
-
-	// Generate the page list.
-	$page_list = wp_list_pages( $args );
-
-	if ( $page_list ) {
-
-		// Get our top page title.
-		$page_title = sprintf(
-			'<h2 class="%s"><a href="%s">%s</a></h2>',
-			'alcatraz-sub-page-nav-title',
-			get_permalink( $top_page_id ),
-			get_the_title( $top_page_id )
-		);
-
-		$output = sprintf( '<nav class="%s">%s<ul class="%s">%s</ul></nav>',
-			'alcatraz-sub-page-nav sub-page-nav',
-			$page_title,
-			'sub-page-nav-top-level',
-			$page_list
-		);
-	}
-
-	return apply_filters( 'alcatraz_sub_page_nav', $output, $args );
-}
-
-/**
- * Display the Sub Page Navigation output.
- *
- * @since  1.0.0
- *
- * @param  array  $args  The args for wp_list_pages().
- */
-function alcatraz_the_sub_page_nav( $args = array() ) {
-
-	echo alcatraz_get_sub_page_nav( $args ); // WPCS: XSS ok.
 }
 
 /**
