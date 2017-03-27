@@ -13,7 +13,9 @@
 .content-area {
 	padding: $size__padding * 2 $size__padding;
 
-	.has-sidebar & {
-		@include grid-column(8);
+	@include grid-media($tablet-portrait-up) {
+		.has-sidebar & {
+			@include grid-column(8);
+		}
 	}
 }

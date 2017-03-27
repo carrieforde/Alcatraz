@@ -2,7 +2,9 @@
 // SIDEBAR
 //--------------------------------------------------------------
 .primary-sidebar {
-	@include grid-column(4);
-
 	padding: $size__padding * 2 $size__padding;
+
+	@include grid-media($tablet-portrait-up) {
+		@include grid-column(4);
+	}
 }
