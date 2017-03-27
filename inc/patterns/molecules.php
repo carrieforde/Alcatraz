@@ -62,10 +62,10 @@ function alcatraz_grid( $args = array() ) {
 
 	// Build our classes strings.
 	$row_classes = 'row';
-	if( ! $args['gutter'] ) {
+	if ( ! $args['gutter'] ) {
 		$row_classes .= ' no-gutter';
 	}
-	$col_class .= 'alcatraz-col--';
+	$col_class = 'alcatraz-col--';
 	if ( ! $args['gutter'] ) {
 		$col_class .= 'no-gutter--';
 	}
