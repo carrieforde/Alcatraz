@@ -1,7 +1,8 @@
 //--------------------------------------------------------------
-// STATE
+// IS VISIBLE 
 //--------------------------------------------------------------
-
-@import 'is-hidden';
-@import 'is-toggled';
-@import 'is-visible';
+.is-visible {
+	background-color: $true-white;
+	opacity: 1;
+	z-index: 10;
+}

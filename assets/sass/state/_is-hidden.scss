@@ -1,7 +1,8 @@
 //--------------------------------------------------------------
-// STATE
+// IS HIDDEN 
 //--------------------------------------------------------------
-
-@import 'is-hidden';
-@import 'is-toggled';
-@import 'is-visible';
+.is-hidden {
+	height: 0;
+	opacity: 0;
+	transition: height, opacity 0.35s ease-in-out;
+}
