@@ -1,13 +1,18 @@
 //--------------------------------------------------------------
 // PRIMARY NAVIGATION
 //--------------------------------------------------------------
+.menu-screen {
+	background-color: transparent;
+	transition: background-color 0.3s ease-in-out;
+}
+
 .main-navigation {
 	@include position(absolute, 0 0 0 null);
-	@include size(rem(400) 100vh);
+	@include size(0 100vh);
 
-	background-color: $true-black;
+	background-color: $true-white;
 	max-width: 100%;
-	padding: $size__padding;
+	overflow-y: scroll;
 }
 
 .primary-menu {

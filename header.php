@@ -19,6 +19,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+	<div class="menu-screen"></div>
 
 <?php do_action( 'alcatraz_before' ); ?>
 

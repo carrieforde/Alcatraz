@@ -42,8 +42,8 @@
 window.alcatrazNavigation = {};
 ( function( window, $, app ) {
 
-	app.$var = {
-		navHeight: 0,
+	app.$config = {
+		navWidth: 400
 	}
 
 	// Constructor.
@@ -58,57 +58,42 @@ window.alcatrazNavigation = {};
 	app.cache = function() {
 		app.$c = {
 			window: $( window ),
+			body: $( 'body' ),
 			siteNavigation: $( '#site-navigation' ),
 			mobileMenuToggle: $( '.mobile-menu-toggle' ),
-			mainNavigationMenu: $( '.main-navigation__menu' ),
-			primaryMenu: $( '#primary-menu' )
+			menuScreen: $( '.menu-screen' )
 		};
 	};
 
 	// Combine all events.
 	app.bindEvents = function() {
-		
-		app.$c.window.on( 'load', app.loadMenu );
+	
 		app.$c.mobileMenuToggle.on( 'click', app.openMenu );
+		app.$c.menuScreen.on( 'click', app.openMenu );
 	};
 
 	// Do we meet the requirements?
 	app.meetsRequirements = function() {
-		return app.$c.primaryMenu.length;
+		return app.$c.siteNavigation.length;
 	};
 
 	// Some function.
 	app.openMenu = function() {
-		
-		$( this ).toggleClass( 'is-toggled' );
 
-		if ( app.$c.primaryMenu.hasClass( 'is-hidden' ) ) {
-			app.$c.primaryMenu.removeClass( 'is-hidden' );
-			app.$c.primaryMenu.addClass( 'is-visible' );
+		if ( ! app.$c.body.hasClass( 'mobile-menu-is-visible' ) ) {
+			app.$c.body.addClass( 'mobile-menu-is-visible' );
 
-			app.$c.primaryMenu.animate({
-				height: app.$var.navHeight + 'px'
+			app.$c.siteNavigation.animate({
+				width: app.$config.navWidth + 'px'
 			}, 350 );
 		} else {
-			app.$c.primaryMenu.removeClass( 'is-visible' );
-			app.$c.primaryMenu.addClass( 'is-hidden' );
+			app.$c.body.removeClass( 'mobile-menu-is-visible' );
 
-			app.$c.primaryMenu.animate({
-				height: 0
+			app.$c.siteNavigation.animate({
+				width: 0
 			}, 350 );
 		}
 	};
-
-	app.loadMenu = function() {
-
-		app.$var.navHeight = app.$c.mainNavigationMenu.outerHeight();
-
-		console.log( app.$var.navHeight );
-
-		app.$c.primaryMenu.addClass( 'is-hidden' );
-
-		return app.$var.navHeight;
-	}
 
 	// Engage!
 	$( app.init );
