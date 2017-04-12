@@ -127,18 +127,33 @@
 		left: 0;
 		margin: auto;
 		position: absolute;
+		transition: transform 0.3s ease-in-out;
 
 		&.bar-1 {
 			top: 0;
+
+			.mobile-menu-is-visible & {
+				bottom: 0;
+				transform: rotate(45deg);
+			}
 		}
 
 		&.bar-2 {
 			bottom: 0;
 			top: 0;
+
+			.mobile-menu-is-visible & {
+				display: none;
+			}
 		}
 
 		&.bar-3 {
 			bottom: 0;
+
+			.mobile-menu-is-visible & {
+				top: 0;
+				transform: rotate(-45deg);
+			}
 		}
 	}
 }
