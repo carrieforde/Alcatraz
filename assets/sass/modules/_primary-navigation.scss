@@ -1,10 +1,19 @@
 //--------------------------------------------------------------
 // PRIMARY NAVIGATION
 //--------------------------------------------------------------
+.main-navigation {
+	@include position(absolute, 0 0 0 null);
+	@include size(rem(400) 100vh);
+
+	background-color: $true-black;
+	max-width: 100%;
+	padding: $size__padding;
+}
+
 .primary-menu {
 	@include margin-padding-reset;
 
-	padding: $size__padding;
+	padding-top: $size__padding * 2;
 	transition: $transition__click;
 
 	@include grid-media($tablet-portrait-up) {
@@ -99,6 +108,7 @@
 
 	background-color: transparent;
 	position: relative;
+	z-index: 6;
 
 	&:hover {
 		background-color: transparent;

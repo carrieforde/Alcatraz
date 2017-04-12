@@ -2,8 +2,10 @@
 // HEADER 
 //--------------------------------------------------------------
 .site-header {
-	padding: $size__padding * 2 $size__padding $size__padding;
-	text-align: center;
+	display: flex;
+	justify-content: space-between;
+	padding: $size__padding;
+	position: relative;
 }
 
 .header-inner {
