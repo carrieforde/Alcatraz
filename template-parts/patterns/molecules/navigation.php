@@ -9,6 +9,23 @@
 	<h2 class="alcatraz-pattern__heading"><?php esc_html_e( 'Navigation', 'alcatraz' ); ?></h2>
 
 	<?php alcatraz_pattern_doc( array(
+		'heading' => 'Primary Navigation',
+		'description' => 'Add the primary menu in the Dashboard unter Appearance > Menus. Save the menu to the Primary Menu location.',
+		'function' => "wp_nav_menu( array(
+					'theme_location'  => 'primary',
+					'menu_id'         => 'primary-menu',
+					'menu_class'      => 'primary-menu menu',
+					'container_class' => 'main-navigation__menu',
+				) )",
+		'output' => wp_nav_menu( array(
+					'theme_location'  => 'primary',
+					'menu_class'      => 'primary-menu menu',
+					'container_class' => 'main-navigation__menu',
+					'echo' => false,
+				) ),
+	) ); ?>
+
+	<?php alcatraz_pattern_doc( array(
 		'heading'      => 'Social Menu',
 		'description'  => 'Add a social menu in the Dashboard under Appearance > Menus. Create a new menu with links to your social media sites. Save the menu to the Social Menu location. You may show the menu in the footer by ticking the box in the Customizer, or show it any widget area with the Alcatraz Extras plugin.',
 		'function'     => 'alcatraz_social_nav()',
