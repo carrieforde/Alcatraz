@@ -82,7 +82,7 @@ window.alcatrazNavigation = {};
 	 */
 	app.toggleSubMenu = function() {
 
-		$( this ).siblings( '.sub-menu' ).slideToggle( 'slow' );
+		$( this ).siblings( '.sub-menu' ).slideToggle();
 		$( this ).parent( '.menu-item-has-children' ).toggleClass( 'is-toggled' );
 	}
 

@@ -91,6 +91,7 @@
 	padding-left: $size__padding;
 
 	@include grid-media($tablet-portrait-up) {
+		background-color: $true-white;
 		min-width: 175px;
 		padding-left: 0;
 		position: absolute;
@@ -108,8 +109,10 @@
 		top: 0;
 	}
 
-	.reverse-expand > & {
-		left: -100%;
+	@include grid-media($tablet-landscape-up) {
+		.menu-item:last-child > & {
+			right: 0;
+		}
 	}
 }
 
