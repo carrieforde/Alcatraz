@@ -66,17 +66,17 @@
 
 		@include grid-media($tablet-landscape-up) {
 			display: inline-block;
-			padding: 10px;
+			padding: $size__padding / 2;
 		}
 	}
 
-	&-has-children {
+	&.menu-item-has-children {
 		position: relative;
 
 		@include grid-media($tablet-landscape-up) {
 
 			> a {
-				padding-right: 50px;
+				padding-right: rem(40);
 			}
 		}
 	}
@@ -169,6 +169,40 @@
 				top: 0;
 				transform: rotate(-45deg);
 			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Sub Menu Toggle
+//-----------------------------------------
+.sub-menu-toggle {
+	@include position(absolute, rem(10) 0 null null); // 10px accounts for the link padding
+	@include size(rem(25));
+	
+	background-color: transparent;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+	}
+
+	.bar {
+		@include position(absolute, 0 0 0 0);
+		@include size(rem(15) rem(2));
+
+		background-color: $alcatraz-blue;
+		margin: auto;
+	}
+
+	.bar-2 {
+		transform: rotate(90deg);
+		transition: transform 0.3s ease-in-out;
+
+		.is-toggled & {
+			transform: rotate(0);
 		}
 	}
 }
