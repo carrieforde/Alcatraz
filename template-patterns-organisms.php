@@ -1,7 +1,7 @@
 <?php
 /**
  * Template Name: Patterns - Organisms
- * Template Post Type: alcatraz_patterns, patterns
+ * Template Post Type: alcatraz-patterns, alcatraz_patterns, patterns
  */
 
 get_header(); ?>
