@@ -40,8 +40,11 @@ window.AlcatrazPattern = {};
 	// Do foo function.
 	app.openPatternDocInfo = function() {
 
+		// Toggle a class onto the button.
+		$( this ).toggleClass( 'is-toggled' );
+
 		// Open that Doc info panel!
-		$( this ).parent().siblings( '.pattern-doc__info' ).slideToggle( 'slow' );
+		$( this ).parent().siblings( '.pattern-doc__info' ).slideToggle( 350 );
 	};
 
 	// Engage!

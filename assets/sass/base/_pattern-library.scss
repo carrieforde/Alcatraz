@@ -36,6 +36,27 @@
 		}
 	}
 
+	@include element(toggle) {
+		@include size(rem(25));
+
+		overflow: hidden;
+		position: relative;
+		transition: transform 0.35s ease-in-out;
+		text-indent: -9999px;
+
+		&:after{
+			@include position(absolute, 0 0 0 0);
+			@include triangle(rem(11), $true-white, down);
+
+			content: '';
+			margin: auto;
+		}
+
+		&.is-toggled {
+			transform: rotateX(180deg);
+		}
+	}
+
 	@include element(info) {
 		display: none;
 	}
