@@ -18,6 +18,8 @@ get_header(); ?>
 
 				<?php do_action( 'alcatraz_before_patterns' ); ?>
 
+				<?php get_template_part( 'template-parts/patterns/organisms/global-elements' ); ?>
+
 				<?php do_action( 'alcatraz_after_patterns' ); ?>
 
 				<?php the_post_navigation(); ?>
