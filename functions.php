@@ -249,6 +249,7 @@ require_once ALCATRAZ_PATH . 'inc/ajax.php';
  */
 require_once ALCATRAZ_PATH . 'inc/patterns/atoms.php';
 require_once ALCATRAZ_PATH . 'inc/patterns/molecules.php';
+require_once ALCATRAZ_PATH . 'inc/patterns/organisms.php';
 
 /**
  * Theme queries.
