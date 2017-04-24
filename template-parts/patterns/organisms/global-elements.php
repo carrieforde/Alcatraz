@@ -11,7 +11,7 @@
 	<?php alcatraz_pattern_doc( array(
 		'heading'           => 'Site Header',
 		'description'       => '',
-		'patterns_included' => 'Primary Navigation',
+		'patterns_included' => 'The <strong>Site Header</strong> pattern contains the <strong>Primary Navigation</strong> pattern.',
 		'function'          => '',
 		'output'            => alcatraz_get_global_element( 'site-header' ),
 	) ); ?>
@@ -19,7 +19,7 @@
 	<?php alcatraz_pattern_doc( array(
 		'heading'           => 'Site Footer',
 		'description'       => '',
-		'patterns_included' => 'Footer Bottom, Social Navigation',
+		'patterns_included' => 'The <strong>Site Footer</strong> contains the <strong>Footer Bottom</strong>, <strong>Social Navigation</strong> patterns.',
 		'output'            => alcatraz_get_global_element( 'site-footer' ),
 	) ); ?>
 </section>
