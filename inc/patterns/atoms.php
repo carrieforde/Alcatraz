@@ -30,7 +30,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 	// Grab our allowed HTML tags.
 	$allowed_tags = alcatraz_pattern_allowed_html(); ?>
 
-	<div class="pattern-doc pattern-doc--<?php echo esc_attr( $class ); ?>">
+	<div id="pattern-doc--<?php echo esc_attr( $class ); ?>" class="pattern-doc pattern-doc--<?php echo esc_attr( $class ); ?>">
 		<header class="pattern-doc__header">
 			<h3><?php echo esc_html( $args['heading'] ); ?></h3>
 			<?php echo wp_kses_post( alcatraz_button( array( 'type' => 'button', 'button_text' => 'Show Details', 'class' => 'pattern-doc__toggle' ) ) ); ?>
@@ -42,7 +42,7 @@ function alcatraz_pattern_doc( $args = array() ) {
 				<p><?php echo wp_kses_post( $args['description'] ); ?></p>
 
 				<?php if ( ! empty( $args['patterns_included'] ) ) : ?>
-				<p><?php echo esc_html( $args['patterns_included'] ); ?></p>
+				<p><?php echo wp_kses_post( $args['patterns_included'] ); ?></p>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
