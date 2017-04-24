@@ -17,11 +17,7 @@
 
 	<?php do_action( 'alcatraz_before_footer' ); ?>
 
-	<footer id="site-footer" class="site-footer" role="contentinfo">
-
-		<?php do_action( 'alcatraz_footer' ); ?>
-
-	</footer>
+	<?php get_template_part( 'template-parts/globals/global', 'site-footer' ); ?>
 
 	<?php do_action( 'alcatraz_after_footer' ); ?>
 
