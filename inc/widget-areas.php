@@ -13,6 +13,8 @@ add_action( 'widgets_init', 'alcatraz_register_widget_areas' );
  */
 function alcatraz_register_widget_areas() {
 
+	$options = get_option( 'alcatraz_options' );
+
 	// Primary Sidebar.
 	register_sidebar( array(
 		'name'          => esc_html__( 'Primary Sidebar', 'alcatraz' ),

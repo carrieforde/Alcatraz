@@ -49,7 +49,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	/**
 	 * Alcatraz theme controls.
 	 */
-	 
+
 	/* Footer */
 
 	// Number of footer widget areas.
