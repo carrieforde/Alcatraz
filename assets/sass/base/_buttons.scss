@@ -14,10 +14,17 @@ input[type='submit'] {
 	font-family: $text__button;
 	outline: none;
 	padding: 10px;
+	text-decoration: none;
 	transition: $transition__hover;
+
+	&:visited {
+		background-color: $color__button-background;
+		color: $color__button-text;
+	}
 
 	&:hover {
 		background-color: $color__button-background-hover;
+		color: $color__button-text;
 	}
 }
 
