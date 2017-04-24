@@ -446,7 +446,16 @@ input[type='submit'] {
   font-family: "Source Sans Pro", sans-serif;
   outline: none;
   padding: 10px;
+  text-decoration: none;
   transition: all 0.2s ease-in-out;
+}
+
+.button:visited,
+button:visited,
+input[type='button']:visited,
+input[type='submit']:visited {
+  background-color: #0d8bb7;
+  color: #fff;
 }
 
 .button:hover,
@@ -454,6 +463,7 @@ button:hover,
 input[type='button']:hover,
 input[type='submit']:hover {
   background-color: #319cc2;
+  color: #fff;
 }
 
 .button-text {
@@ -761,6 +771,28 @@ blockquote cite {
 
 .primary-sidebar {
   padding: 40px 20px;
+}
+
+.site-footer {
+  padding: 20px;
+  text-align: center;
+}
+
+.footer-widget-areas {
+  overflow: hidden;
+}
+
+.footer-widget-areas + .footer-bottom,
+.footer-widget-areas + .social-nav {
+  margin-top: 20px;
+}
+
+.footer-widget-area + .footer-widget-area {
+  margin-top: 20px;
+}
+
+.footer-bottom + .social-nav {
+  margin-top: 20px;
 }
 
 .social-nav__menu {
@@ -1221,6 +1253,27 @@ blockquote cite {
   }
   .primary-sidebar{
     width: calc(33.3333333333% - 26.6666666667px);
+    float: left;
+    margin-left: 20px;
+  }
+  .footer-widget-area{
+    text-align: left;
+  }
+  .footer-widget-area + .footer-widget-area{
+    margin-top: 0;
+  }
+  .footer-widget-areas-2 .footer-widget-area{
+    width: calc(50% - 30px);
+    float: left;
+    margin-left: 20px;
+  }
+  .footer-widget-areas-3 .footer-widget-area{
+    width: calc(33.3333333333% - 26.6666666667px);
+    float: left;
+    margin-left: 20px;
+  }
+  .footer-widget-areas-4 .footer-widget-area{
+    width: calc(25% - 25px);
     float: left;
     margin-left: 20px;
   }
