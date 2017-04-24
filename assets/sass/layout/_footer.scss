@@ -30,6 +30,10 @@
 	.footer-widget-area {
 		text-align: left;
 
+		+ .footer-widget-area {
+			margin-top: 0;
+		}
+
 		.footer-widget-areas-2 & {
 			@include grid-column(6);
 		}
