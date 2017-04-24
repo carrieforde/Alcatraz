@@ -15,4 +15,11 @@
 		'function'          => '',
 		'output'            => alcatraz_get_global_element( 'site-header' ),
 	) ); ?>
+
+	<?php alcatraz_pattern_doc( array(
+		'heading'           => 'Site Footer',
+		'description'       => '',
+		'patterns_included' => 'Footer Bottom, Social Navigation',
+		'output'            => alcatraz_get_global_element( 'site-footer' ),
+	) ); ?>
 </section>
