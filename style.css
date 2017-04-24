@@ -346,6 +346,34 @@ textarea,
   margin: 0;
 }
 
+.pattern-doc__toggle {
+  height: 1.5625rem;
+  width: 1.5625rem;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.35s ease-in-out;
+  text-indent: -9999px;
+}
+
+.pattern-doc__toggle:after {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0;
+  width: 0;
+  border-left: 0.34375rem solid transparent;
+  border-right: 0.34375rem solid transparent;
+  border-top: 0.34375rem solid #fff;
+  content: '';
+  margin: auto;
+}
+
+.pattern-doc__toggle.is-toggled {
+  transform: rotateX(180deg);
+}
+
 .pattern-doc__info {
   display: none;
 }
@@ -651,6 +679,10 @@ pre {
   padding: 20px;
 }
 
+blockquote cite {
+  display: block;
+}
+
 .alignleft {
   float: left;
   margin: 0 20px 20px 0;
@@ -933,7 +965,7 @@ pre {
   text-decoration: none;
 }
 
-.menu-item-has-children {
+.menu-item.menu-item-has-children {
   position: relative;
 }
 
@@ -949,10 +981,6 @@ pre {
 .sub-menu .sub-menu {
   left: 100%;
   top: 0;
-}
-
-.reverse-expand > .sub-menu {
-  left: -100%;
 }
 
 .mobile-menu-toggle {
@@ -1003,6 +1031,40 @@ pre {
 .mobile-menu-is-visible .mobile-menu-toggle__bar.bar-3 {
   top: 0;
   transform: rotate(-45deg);
+}
+
+.sub-menu-toggle {
+  position: absolute;
+  top: 0.625rem;
+  right: 0;
+  height: 1.5625rem;
+  width: 1.5625rem;
+  background-color: transparent;
+}
+
+.sub-menu-toggle:hover, .sub-menu-toggle:active, .sub-menu-toggle:focus {
+  background-color: transparent;
+}
+
+.sub-menu-toggle .bar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 0.125rem;
+  width: 0.9375rem;
+  background-color: #0d8bb7;
+  margin: auto;
+}
+
+.sub-menu-toggle .bar-2 {
+  transform: rotate(90deg);
+  transition: transform 0.3s ease-in-out;
+}
+
+.is-toggled .sub-menu-toggle .bar-2 {
+  transform: rotate(0);
 }
 
 .mobile-menu-is-visible {
@@ -1166,6 +1228,7 @@ pre {
     top: auto;
   }
   .sub-menu{
+    background-color: #fff;
     min-width: 175px;
     padding-left: 0;
     position: absolute;
@@ -1206,8 +1269,11 @@ pre {
     display: inline-block;
     padding: 10px;
   }
-  .menu-item-has-children > a{
-    padding-right: 50px;
+  .menu-item.menu-item-has-children > a{
+    padding-right: 2.5rem;
+  }
+  .menu-item:last-child > .sub-menu{
+    right: 0;
   }
   .mobile-menu-toggle{
     display: none;

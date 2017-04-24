@@ -61,7 +61,8 @@ window.alcatrazNavigation = {};
 			body: $( 'body' ),
 			siteNavigation: $( '#site-navigation' ),
 			mobileMenuToggle: $( '.mobile-menu-toggle' ),
-			menuScreen: $( '.menu-screen' )
+			menuScreen: $( '.menu-screen' ),
+			hasSubMenu: $( '.menu-item-has-children' )
 		};
 	};
 
@@ -70,6 +71,11 @@ window.alcatrazNavigation = {};
 	
 		app.$c.mobileMenuToggle.on( 'click', app.openMenu );
 		app.$c.menuScreen.on( 'click', app.openMenu );
+
+		app.$c.window.on( 'load', app.addSubMenuToggle );
+
+		// When clicking the mobile nav toggle or nav toggle, fire a nav toggle function.
+		$( document.body ).on( 'click', '.sub-menu-toggle', app.toggleSubMenu );
 	};
 
 	// Do we meet the requirements?
@@ -77,7 +83,9 @@ window.alcatrazNavigation = {};
 		return app.$c.siteNavigation.length;
 	};
 
-	// Some function.
+	/**
+	 * Open and close the main navigation menu on mobile devices.
+	 */
 	app.openMenu = function() {
 
 		if ( ! app.$c.body.hasClass( 'mobile-menu-is-visible' ) ) {
@@ -94,6 +102,25 @@ window.alcatrazNavigation = {};
 			}, 350 );
 		}
 	};
+
+	/**
+	 * Inject sub-menu toggles into the DOM.
+	 */
+	app.addSubMenuToggle = function() {
+
+		var $toggle = '<button class="button sub-menu-toggle" type="button"><span class="bar bar-1"></span><span class="bar bar-2"></span><span class="screen-reader-text">Open</span></button>';
+
+		app.$c.hasSubMenu.append( $toggle );
+	};
+
+	/**
+	 * Use the sub-menu toggles to open and close the sub-menus.
+	 */
+	app.toggleSubMenu = function() {
+
+		$( this ).siblings( '.sub-menu' ).slideToggle();
+		$( this ).parent( '.menu-item-has-children' ).toggleClass( 'is-toggled' );
+	}
 
 	// Engage!
 	$( app.init );
