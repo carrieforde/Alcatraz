@@ -22,7 +22,7 @@ function alcatraz_admin_enqueue_scripts( $hook ) {
 
 	wp_enqueue_script(
 		'alcatraz-admin-scripts',
-		ALCATRAZ_URL . 'js/alcatraz-admin.js',
+		ALCATRAZ_URL . 'assets/scripts/alcatraz-admin.js',
 		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true

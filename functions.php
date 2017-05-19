@@ -189,7 +189,7 @@ function alcatraz_scripts() {
 	// Main theme JS.
 	wp_register_script(
 		'alcatraz-scripts',
-		ALCATRAZ_URL . 'js/alcatraz-theme' . $min . '.js',
+		ALCATRAZ_URL . 'assets/scripts/alcatraz-theme' . $min . '.js',
 		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true
