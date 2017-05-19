@@ -42,7 +42,7 @@ module.exports = function( grunt ) {
 			},
 		},
 		jshint: {
-			files: ['Gruntfile.js', 'js/src/*.js']
+			files: ['Gruntfile.js', 'assets/scripts/src/*.js']
 		},
 		concat: {
 			options: {
@@ -68,13 +68,13 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				files: {
-					'js/<%= pkg.name %>-theme.min.js': ['<%= concat.dist.dest %>']
+					'assets/scripts/<%= pkg.name %>-theme.min.js': ['<%= concat.dist.dest %>']
 				}
 			}
 		},
 		watch: {
 			css: {
-				files: ['sass/**/*.scss'],
+				files: ['assets/sass/**/*.scss'],
 				tasks: ['styles'],
 				options: {
 					livereload: true
