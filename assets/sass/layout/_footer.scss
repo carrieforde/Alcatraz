@@ -74,21 +74,21 @@
 	.footer-widget-areas-2 {
 
 		.footer-widget-area {
-			@include span-columns(6);
+			@include grid-column(6);
 		}
 	}
 
 	.footer-widget-areas-3 {
 
 		.footer-widget-area {
-			@include span-columns(4);
+			@include grid-column(4);
 		}
 	}
 
 	.footer-widget-areas-4 {
 
 		.footer-widget-area {
-			@include span-columns(3);
+			@include grid-column(3);
 		}
 	}
 }

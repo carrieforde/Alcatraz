@@ -81,14 +81,13 @@
 	.header-style-short {
 
 		.header-inner {
-			@include span-columns(4 of 12);
+			@include grid-column(4);
 
 			padding: $size__padding-default;
 		}
 
 		.main-navigation {
-			@include span-columns(8 of 12);
-			@include omega();
+			@include grid-column(8);
 		}
 	}
 }
