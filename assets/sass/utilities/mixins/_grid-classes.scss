@@ -1,0 +1,28 @@
+//--------------------------------------------------------------
+// GRID CLASSES 
+//--------------------------------------------------------------
+
+/// @group  Alcatraz
+/// @author Carrie Forde
+///
+/// @param {map} $context [$neat-grid] - The Sass map on which the grid is based.
+///
+/// @example - scss Grid Gutter Function
+///  .my-custom-grid {
+///    @include grid-classes($neat-grid);
+///  }
+///  // .my-custom-grid-col-# {}
+///
+
+
+@mixin grid-classes($context: $neat-grid) {
+
+	$columns: map-get($context, columns);
+
+	@for $i from 1 through $columns {
+
+		&-#{$i} {
+			@include grid-column($i, $context);
+		}
+	}
+}
