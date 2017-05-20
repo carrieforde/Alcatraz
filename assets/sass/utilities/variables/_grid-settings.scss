@@ -1,39 +1,43 @@
 //--------------------------------------------------------------
-//   GRID SETTINGS
+// GRID SETTINGS
 //
-//   Use this file to override Bourbon & Neat's default settings
+// Use this file to override Bourbon & Neat's default settings
 //
-//   Calculate your own grid using
-//   http://gridcalculator.dk/#/1100/12/16/0
+// Calculate your own grid using
+// http://gridcalculator.dk/#/1100/12/16/0
 //--------------------------------------------------------------
 
 
-// Import Neat's helpers to setup visual grid breakpoints.
-@import "neat-helpers";
+// Grid Settings.
+$neat-grid: (
+	columns: 12,
+	gutter: 20px
+);
 
 
-// Grid
-$column: em(77);      // the default width of the columns
-$gutter: em(16);      // the default width of the gutters
-$grid-columns: 12;    // the total number of columns
-$max-width: em(1100); // the max-width of the grid
+// Custom Grid Settings
+$cg-phone-only: (
+	columns: 4,
+);
+$cg-tablet-portrait-up: (
+	columns: 8,
+	media: 600px,
+);
+$cg-tablet-landscape-up: (
+	columns: 8,
+	media: 900px,
+);
+$cg-desktop-up: (
+	columns: 12,
+	media: 1200px,
+);
 
 
-// Flex-Grid
-$fg-column: $column;
-$fg-gutter: $gutter;
+// Grid columns -- used to create grid classes.
+$grid-columns: 12;
 
-
-// Visual Grid - Neat's optional settings for visualizing the
-// grid.
-$visual-grid: false;
-$visual-grid-color: $color__background-visual-grid;
-$visual-grid-index: back;
-$visual-grid-opacity: 0.4;
-
-
-// Visual Grid Media Query Settings
-$vg-phone-portrait: new-breakpoint(max-width em(640) 4);
-$vg-phone-landscape: new-breakpoint(min-width em(640) 8);
-$vg-tablet-portrait: new-breakpoint(min-width em(768) 8);
-$vg-tablet-landscape: new-breakpoint(min-width em(1024) 12);
+// Grid without gutters.
+$no-gutter: (
+	columns: 12,
+	gutter: 0,
+);

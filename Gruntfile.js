@@ -9,13 +9,13 @@ module.exports = function( grunt ) {
 				sourceMap: true,
 				includePaths: [
 					'node_modules/bourbon/app/assets/stylesheets',
-					'node_modules/bourbon-neat/app/core',
+					'node_modules/bourbon-neat/core',
 					'node_modules/sanitize.scss'
 				]
 			},
 			dist: {
 				files: {
-					'style.css': 'sass/style.scss'
+					'style.css': 'assets/sass/style.scss'
 				},
 			},
 		},
