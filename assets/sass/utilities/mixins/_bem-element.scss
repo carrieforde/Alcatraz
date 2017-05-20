@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// BEM ELEMENT
+//--------------------------------------------------------------
+
+
+/// Appends `__$element` to the block class.
+///
+/// @author Carrie Forde
+///
+/// @param {string} $element - The name of the BEM element.
+
+
+@mixin element($element) {
+
+	&__#{$element} {
+		@content;
+	}
+}

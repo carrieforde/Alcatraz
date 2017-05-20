@@ -1,0 +1,18 @@
+//--------------------------------------------------------------
+// VERTICAL RHYTHM
+//--------------------------------------------------------------
+
+
+/// Use this mixin to easily add vertical space between successive instances of an element.
+///
+/// @author Carrie Forde
+///
+/// @param {number} $margin [rem(40)] - The space between items.
+
+
+@mixin vertical-rhythm($margin: rem(40)) {
+
+	& + & {
+		margin-top: $margin;
+	}
+}
