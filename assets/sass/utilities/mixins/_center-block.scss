@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// CENTER BLOCK
+//--------------------------------------------------------------
+
+
+/// @author Carrie Forde
+///
+/// @example - scss Sets `display: block` and centers an element.
+///  @include center;
+
+
+@mixin center-block {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}

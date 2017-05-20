@@ -1,0 +1,20 @@
+//--------------------------------------------------------------
+// HIDE TEXT
+//--------------------------------------------------------------
+
+/// Image replacements - hides text, but doesn't make it disappear.
+/// Great for accessibility.
+///
+/// @example - scss Use to hide text when using a logo as background
+///  @include hide-text
+
+@mixin hide-text {
+	@include size(rem(1));
+
+	border: 0;
+	clip: rect(0 0 0 0);
+	margin: rem(-1);
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+}

@@ -1,0 +1,16 @@
+//--------------------------------------------------------------
+// LIST RESET
+//--------------------------------------------------------------
+
+
+/// @author Carrie Forde
+///
+/// @example - scss Removes margin, padding, and list style
+///  @include list-reset;
+
+
+@mixin list-reset {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}

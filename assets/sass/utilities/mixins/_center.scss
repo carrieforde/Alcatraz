@@ -1,0 +1,14 @@
+//--------------------------------------------------------------
+// CENTER
+//--------------------------------------------------------------
+
+
+/// @author Carrie Forde
+///
+/// @example - scss Centers an element that is already `display: block`
+///  @include center;
+
+@mixin center {
+	margin-left: auto;
+	margin-right: auto;
+}

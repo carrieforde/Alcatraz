@@ -1,57 +1,14 @@
 //--------------------------------------------------------------
-//   MIXINS
+// LARGE SCREEN NAV DISPLAY
 //--------------------------------------------------------------
 
 
-// Center - makes the assumption the element is already block
-@mixin center {
-	margin-left: auto;
-	margin-right: auto;
-}
+/// @author Braad Martin
+///
+/// @param {string} $display [inline-block] - The display for the navigation type.
+///
+/// @todo Refactor and make navigation more efficient and less dependent on mixin.
 
-
-// Center block - displays block and centers
-@mixin center-block {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-
-// Margin-Padding reset - useful for styling <ul>s
-@mixin margin-padding-reset {
-	margin: 0;
-	padding: 0;
-}
-
-
-// Image replacement - hides text, but doesn't make it disappear.
-// Great for accessibility.
-@mixin hide-text {
-	@include size(rem(1));
-
-	border: 0;
-	clip: rect(0 0 0 0);
-	margin: rem(-1);
-	overflow: hidden;
-	padding: 0;
-	position: absolute;
-}
-
-
-// Omega Reset - Use with Neat columns to easily reset omega.
-@mixin omega-reset($nth) {
-	&:nth-child(#{nth}) {
-		margin-right: flex-gutter();
-	}
-
-	&:nth-child(#{nth}+1) {
-		clear: none;
-	}
-}
-
-
-// Larger Screen Nav Display Styles
 @mixin large-screen-nav-display( $display: 'inline-block' ) {
 
 	.main-navigation #primary-menu-wrap,

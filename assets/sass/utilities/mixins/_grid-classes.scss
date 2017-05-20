@@ -2,12 +2,12 @@
 // GRID CLASSES 
 //--------------------------------------------------------------
 
-/// @group  Alcatraz
+
 /// @author Carrie Forde
 ///
 /// @param {map} $context [$neat-grid] - The Sass map on which the grid is based.
 ///
-/// @example - scss Grid Gutter Function
+/// @example - scss Create grid classes.
 ///  .my-custom-grid {
 ///    @include grid-classes($neat-grid);
 ///  }
