@@ -52,13 +52,13 @@ module.exports = function( grunt ) {
 			dist: {
 				src: [
 					'lib/jquery-mobile/jquery.mobile.custom.min.js',
-					'js/src/utilities.js',
-					'js/src/skip-link-focus-fix.js',
-					'js/src/navigation.js',
-					'js/src/alcatraz.js', // This must be included after all other objects.
-					'js/src/init.js' // This should be last.
+					'assets/scripts/src/utilities.js',
+					'assets/scripts/src/skip-link-focus-fix.js',
+					'assets/scripts/src/navigation.js',
+					'assets/scripts/src/alcatraz.js', // This must be included after all other objects.
+					'assets/scripts/src/init.js' // This should be last.
 				],
-				dest: 'js/<%= pkg.name %>-theme.js'
+				dest: 'assets/scripts/<%= pkg.name %>-theme.js'
 			}
 		},
 		uglify: {
