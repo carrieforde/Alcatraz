@@ -1,8 +1,9 @@
 //--------------------------------------------------------------
-// UTILITIES
+// BASE CONTEXT
 //--------------------------------------------------------------
 
-@import 'settins/index';
-@import 'functions/index';
-@import 'variables/index';
-@import 'mixins/index';
+/// A global settings for the root's (`html`) font size.
+///
+/// @type Number
+
+$base-context: 16 !default;
