@@ -28,6 +28,7 @@
     "grunt-postcss": "latest",
     "grunt-sass": "latest",
     "grunt-sass-lint": "latest",
+    "grunt-sassdoc": "^2.0.2",
     "grunt-wp-i18n": "latest",
     "grunt-wp-readme-to-markdown": "latest",
     "sanitize.scss": "latest"

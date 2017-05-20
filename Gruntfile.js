@@ -42,6 +42,11 @@ module.exports = function( grunt ) {
 				},
 			},
 		},
+		sassdoc: {
+			default: {
+				src: 'assets/sass/**/*.scss'
+			}
+		},
 		jshint: {
 			files: ['Gruntfile.js', 'assets/scripts/src/*.js']
 		},
@@ -76,7 +81,7 @@ module.exports = function( grunt ) {
 		watch: {
 			css: {
 				files: ['assets/sass/**/*.scss'],
-				tasks: ['styles'],
+				tasks: ['styles', 'sassdoc'],
 				options: {
 					livereload: true
 				},
@@ -115,9 +120,10 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-contrib-watch' );
 	grunt.loadNpmTasks( 'grunt-wp-readme-to-markdown' );
 	grunt.loadNpmTasks( 'grunt-wp-i18n' );
+	grunt.loadNpmTasks( 'grunt-sassdoc' );
 
 	// Configure tasks.
-	grunt.registerTask( 'styles', ['sass', 'postcss', 'cssnano'] );
+	grunt.registerTask( 'styles', ['sass', 'postcss', 'cssnano', 'sassdoc'] );
 	grunt.registerTask( 'scripts', ['jshint', 'concat', 'uglify'] );
 	grunt.registerTask( 'build', ['sass', 'postcss', 'jshint', 'concat', 'uglify', 'wp_readme_to_markdown', 'makepot'] );
 };
