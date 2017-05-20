@@ -1,0 +1,27 @@
+//--------------------------------------------------------------
+// HEADINGS
+//--------------------------------------------------------------
+
+/// Generate heading elements + classes quickly for shared styling.
+///
+/// @author Carrie Forde
+///
+/// @example scss - Usage
+///   #{headings(1) {
+///     font-family: $font-headings;
+///   }
+///
+/// @example css - Output
+///   h1, h1 {
+///     font-family: 'Source Sans Pro', sans-serif;
+///   }
+
+
+@function headings($from: 1, $to: 6) {
+
+	@if $from == $to {
+		@return 'h#{$from}, .h#{from}';
+	} @else {
+		@return 'h#{$from}, .h#{$from},' + headings($from + 1, $to);
+	}
+}
