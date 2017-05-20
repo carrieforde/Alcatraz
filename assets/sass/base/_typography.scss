@@ -1,7 +1,11 @@
 //--------------------------------------------------------------
-//   2.3 TYPOGRAPHY
+// TYPOGRAPHY
 //--------------------------------------------------------------
 
+// Set the base font size.
+html {
+	font-size: $base-context;
+}
 
 body,
 button,
@@ -9,60 +13,41 @@ input,
 select,
 textarea {
 	color: $color__text-body;
-	font: 400 18px/#{$font__line-height-body} $font__body;
+	font: 400 1em/#{$font__line-height-body} $font__body;
 }
 
+//-----------------------------------------
 // Headings
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	clear: both;
-	font: {
-		family: $font__headings;
-		weight: 700;
-	}
-	line-height: $font__line-height-headings;
-	margin: $font__margin-headings;
+//-----------------------------------------
+#{headings(1, 6)} {
+	margin: 0 0 0.5em; // Use em to keep space proportional to font size.
 }
 
-h1 {
-	font-size: rem(36);
-}
+h1 {}
 
-h2 {
-	font-size: rem(30);
-}
+h2 {}
 
-h3 {
-	font-size: rem(24);
-}
+h3 {}
 
-h4 {
-	font-size: rem(20);
-}
+h4 {}
 
-h5 {
-	font-size: rem(18);
-}
+h5 {}
 
-h6 {
-	font-size: rem(16);
-}
+h6 {}
 
 
-// Copy
+//-----------------------------------------
+// Inline Elements
+//-----------------------------------------
 p {
-	margin: 0 0 rem(20);
+	margin: 0 0 1.5em;
 }
 
-dfn,
-em,
-i {
-	font-style: italic;
-}
+// dfn,
+// em,
+// i {
+// 	font-style: italic;
+// }
 
 blockquote {
 	background-color: $color__background-blockquote;
