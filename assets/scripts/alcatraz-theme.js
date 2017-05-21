@@ -541,7 +541,7 @@ var AlcatrazNavigation = ( function( $ ) {
 			return false;
 		}
 
-		var $toggle = $container.find( '.menu-toggle' );
+		var $toggle = $container.find( '.mobile-menu-toggle' );
 
 		if ( 'undefined' === typeof $toggle ) {
 			return false;
@@ -572,7 +572,7 @@ var AlcatrazNavigation = ( function( $ ) {
 		}
 
 		// Set up the mobile nav toggle.
-		$toggle.add( '.main-navigation .menu-overlay' ).on( 'click', function() {
+		$toggle.on( 'click', function() {
 			$window.trigger( 'toggleMobileNav.alcatraz' );
 		});
 
