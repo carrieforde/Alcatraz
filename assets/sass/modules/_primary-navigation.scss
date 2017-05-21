@@ -1,0 +1,19 @@
+//--------------------------------------------------------------
+// PRIMARY NAVIGATION
+//--------------------------------------------------------------
+
+
+//-----------------------------------------
+// Mobile Style Default
+//-----------------------------------------
+.primary-menu {
+	display: none;
+
+	@include grid-media($tablet-portrait-up) {
+		display: block;
+	}
+
+	.toggled & {
+		display: block;
+	}
+}
