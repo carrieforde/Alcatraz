@@ -1,12 +1,16 @@
 //--------------------------------------------------------------
-//   CONTENT
+// CONTENT
 //
-//   This sets basic styling for all pages including blog post
-//   pages.
+// This sets basic styling for all pages including blog post
+// pages.
 //--------------------------------------------------------------
 
 
+//-----------------------------------------
 // Structure
+//
+// `.site` is a direct decendant of <body />
+//-----------------------------------------
 .site {
 	@include clearfix;
 
@@ -32,7 +36,6 @@
 
 		.header-style-side & {
 			float: right;
-			width: 72%;
 			width: calc(100% - 280px);
 		}
 
@@ -41,7 +44,6 @@
 			left: 140px;
 			margin: 0 auto;
 			max-width: rem(680);
-			max-width: calc(680px);
 			position: relative;
 		}
 	}
@@ -49,7 +51,6 @@
 	@media (min-width: em(1040)) {
 
 		.header-style-side & {
-			width: 70%;
 			width: calc(100% - 300px);
 		}
 
@@ -57,14 +58,12 @@
 			left: 150px;
 			margin: 0 auto;
 			max-width: rem(740);
-			max-width: calc(740px);
 		}
 	}
 
 	@media (min-width: em(1150)) {
 
 		.header-style-side & {
-			width: 70%;
 			width: calc(100% - 320px);
 		}
 
