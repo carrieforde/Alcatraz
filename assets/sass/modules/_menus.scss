@@ -7,7 +7,6 @@
 // Menu Toggles
 //-----------------------------------------
 .mobile-menu-toggle {
-	display: block;
 	width: 100%;
 
 	.mobile-nav-toggle-style-hamburger & {
@@ -52,6 +51,12 @@
 			&.bar-3 {
 				bottom: 0;
 			}
+		}
+
+		// Hide the "Menu" text.
+		.menu-text {
+			display: block;
+			text-indent: -9999px;
 		}
 	}
 }
