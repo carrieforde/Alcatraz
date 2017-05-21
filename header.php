@@ -48,7 +48,7 @@
 						<span class="mobile-menu-toggle__bar bar-1"></span>
 						<span class="mobile-menu-toggle__bar bar-2"></span>
 						<span class="mobile-menu-toggle__bar bar-3"></span>
-						<span class="screen-reader-text">Menu</span>
+						<span><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
 					</button>
 
 					<?php wp_nav_menu( array(
