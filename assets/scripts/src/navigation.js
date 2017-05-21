@@ -405,7 +405,6 @@ var AlcatrazNavigation = ( function( $ ) {
 			                 '<span class="screen-reader-text">' + safeToggleText + '</span>' +
 			                 '<span class="sub-level-toggle-span span-1"></span>' +
 			                 '<span class="sub-level-toggle-span span-2"></span>' +
-			                 '<span class="sub-level-toggle-span span-3"></span>' +
 			             '</button>';
 
 			// Loop over each item that has a sub level and inject the toggle.
