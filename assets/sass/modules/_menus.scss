@@ -9,6 +9,11 @@
 .mobile-menu-toggle {
 	width: 100%;
 
+
+	@include grid-media($tablet-landscape-up) {
+		display: none;
+	}
+
 	.mobile-nav-toggle-style-hamburger & {
 		@include size(rem(25) rem(21));
 
@@ -20,10 +25,6 @@
 		&:active,
 		&:focus {
 			background-color: transparent;
-		}
-
-		@include grid-media($tablet-landscape-up) {
-			display: none;
 		}
 
 		@include element(bar) {
@@ -93,6 +94,21 @@
 //-----------------------------------------
 .menu {
 	@include list-reset;
+
+	@include grid-media($tablet-landscape-up) {
+		text-align: center;
+	}
+
+	> .menu-item {
+
+		@include grid-media($tablet-landscape-up) {
+			display: inline-block;
+
+			+ .menu-item {
+				margin-left: rem(20);
+			}
+		}
+	}
 }
 
 .menu-item {
@@ -101,6 +117,11 @@
 		display: block;
 		padding: rem(5) 0;
 		text-decoration: none;
+
+		@include grid-media($tablet-landscape-up) {
+			padding-left: rem(10);
+			padding-right: rem(10);
+		}
 	}
 
 	&.menu-item-has-children {
@@ -123,6 +144,15 @@
 	@include list-reset;
 
 	display: none;
+
+	@include grid-media($tablet-landscape-up) {
+		@include position(absolute, 101% null null 0);
+
+		background-color: $color__sub-menu-background;
+		min-width: rem(175);
+		text-align: left;
+		width: 100%;
+	}
 }
 
 .sub-level-toggle {
