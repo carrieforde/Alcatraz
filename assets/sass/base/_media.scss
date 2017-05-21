@@ -8,35 +8,10 @@ img {
 	max-width: 100%;
 }
 
-.page-content .wp-smiley,
-.entry-content .wp-smiley,
-.comment-content .wp-smiley {
-	border: none;
-	margin: 0;
-	padding: 0;
-}
 
-
-// Make sure embeds and iframes fit their containers.
-embed,
-iframe,
-object {
-	max-width: 100%;
-}
-
-
-// Post Thumbnail
-.post-thumbnail {
-	display: block;
-
-	img {
-		@include center-block;
-		margin-bottom: rem(20);
-	}
-}
-
-
+//-----------------------------------------
 // Captions
+//-----------------------------------------
 .wp-caption {
 	max-width: 100%;
 
@@ -53,11 +28,55 @@ object {
 }
 
 
+//-----------------------------------------
+// Alignments
+//-----------------------------------------
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
+
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	@include center-block;
+
+	clear: both;
+}
+
+.alignnone {
+	display: inline;
+}
+
+
+//-----------------------------------------
+// Post Thumbnail
+//-----------------------------------------
+.post-thumbnail {
+
+	img {
+		@include center-block;
+
+		margin-bottom: rem(20);
+	}
+}
+
+
+//-----------------------------------------
 // Galleries
+//-----------------------------------------
 .gallery {
 	margin-bottom: rem(25);
 	overflow: hidden;
+
+	@include grid-media($tablet-landscape-up) {
+		@include grid-collapse;
+	}
 }
+
 
 .gallery-item {
 	display: inline-block;
@@ -66,132 +85,68 @@ object {
 	vertical-align: top;
 	width: 100%;
 
-	.gallery-columns-1 &,
-	.gallery-columns-2 &,
-	.gallery-columns-3 &,
-	.gallery-columns-4 &,
-	.gallery-columns-5 &,
-	.gallery-columns-6 &,
-	.gallery-columns-7 &,
-	.gallery-columns-8 &,
-	.gallery-columns-9 & {
-		padding: rem(15);
-		width: 100%;
+	@include grid-media($tablet-landscape-up) {
+
+		.gallery-columns-1 & {
+			@include grid-column(12);
+		}
+
+		.gallery-columns-2 & {
+			@include grid-column(6);
+		}
+
+		.gallery-columns-3 & {
+			@include grid-column(4);
+		}
+
+		.gallery-columns-4 & {
+			@include grid-column(3);
+		}
+
+		.gallery-columns-5 & {
+			$col-5: (
+				columns: 5,
+			);
+
+			@include grid-column(1, $col-5);
+		}
+
+		.gallery-columns-6 & {
+			@include grid-column(2);
+		}
+
+		.gallery-columns-7 & {
+			$col-7: (
+				columns: 7,
+			);
+
+			@include grid-column(1, $col-7);
+		}
+
+		.gallery-columns-8 & {
+			$col-8: (
+				columns: 8,
+			);
+
+			@include grid-column(1, $col-8);
+		}
+
+		.gallery-columns-9 & {
+			$col-9: (
+				columns: 9,
+			);
+
+			@include grid-column(1, $col-9);
+		}
+
+		.gallery-columns-10 & {
+			$col-10: (
+				columns: 10,
+			);
+
+			@include grid-column(1, $col-10);
+		}
 	}
-
-	// @media (min-width: em(768)) {
-	// 	.gallery-columns-1 & {
-	// 		@include span-columns(10 of 10);
-	// 	}
-
-	// 	.gallery-columns-2 & {
-	// 		@include span-columns(5 of 10);
-
-	// 		&:nth-child(2n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(2n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-3 & {
-	// 		@include span-columns(3.33333 of 10);
-
-	// 		&:nth-child(3n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(3n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-4 & {
-	// 		@include span-columns(2.5 of 10);
-
-	// 		&:nth-child(4n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(4n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-5 & {
-	// 		@include span-columns(2 of 10);
-
-	// 		&:nth-child(5n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(5n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-6 & {
-	// 		@include span-columns(1.66667 of 10);
-
-	// 		&:nth-child(6n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(6n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-7 & {
-	// 		@include span-columns(1.42857 of 10);
-
-	// 		&:nth-child(7n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(7n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-8 & {
-	// 		@include span-columns(1.25 of 10);
-
-	// 		&:nth-child(8n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(8n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-9 & {
-	// 		@include span-columns(1.11111 of 10);
-
-	// 		&:nth-child(9n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(9n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-
-	// 	.gallery-columns-10 & {
-	// 		@include span-columns(1 of 10);
-
-	// 		&:nth-child(10n) {
-	// 			margin-right: 0;
-	// 		}
-
-	// 		&:nth-child(10n+1) {
-	// 			clear: both;
-	// 		}
-	// 	}
-	// }
 }
 
 .gallery-caption {
@@ -204,6 +159,17 @@ object {
 	&:last-child {
 		margin-bottom: em(25);
 	}
+}
+
+
+//-----------------------------------------
+// Other media
+//-----------------------------------------
+// Make sure embeds and iframes fit their containers.
+embed,
+iframe,
+object {
+	max-width: 100%;
 }
 
 // oEmbeds
