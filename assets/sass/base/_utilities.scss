@@ -15,7 +15,7 @@
 }
 
 body {
-	background: $color__background-body; // Fallback for when there is no custom background color defined.
+	background: $color__body-background; // Fallback for when there is no custom background color defined.
 	overflow-x: hidden;
 }
 
@@ -27,7 +27,7 @@ hr {
 	height: rem(2);
 	border: 0;
 	margin: 1em 0;
-	background-color: $color__background-hr;
+	background-color: $color__hr;
 }
 
 // Do not show the outline on the skip link target.

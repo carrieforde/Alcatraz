@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-//   4.3 MENUS
+// MENUS
 //--------------------------------------------------------------
 
 
@@ -21,14 +21,10 @@
 	text-indent: 9999%;
 	width: rem(45);
 
-	&:hover .inner-menu-toggle-span {
-		background-color: $color__background-menu-toggle-hover;
-	}
-
 	.inner-menu-toggle-span {
 		@include position(absolute, rem(22) null null rem(9));
 
-		background-color: $color__background-menu-toggle;
+		background-color: $color__toggle-background;
 		height: rem(3);
 		transition: all 0.2s ease;
 		width: rem(25);
@@ -60,20 +56,15 @@
 	}
 
 	.menu-toggle {
-		background-color: $color__background-menu-toggle;
+		background-color: $color__toggle-background;
 		border-radius: rem(5);
-		color: $color__text-menu-toggle;
+		color: $color__toggle-background;
 		font-weight: 400;
 		margin: rem(20) rem(20) 0;
 		padding: rem(15) rem(20);
 		text: {
 			align: center;
 			transform: uppercase;
-		}
-
-		&:hover {
-			background-color: $color__background-menu-toggle-hover;
-			color: $color__text-menu-toggle-hover;
 		}
 	}
 }
@@ -91,7 +82,7 @@
 		.menu-toggle-span {
 			@include size(rem(25) rem(3));
 
-			background-color: $color__background-menu-toggle;
+			background-color: $color__toggle-background;
 			position: absolute;
 			transition: all 0.2s ease-in;
 
@@ -106,10 +97,6 @@
 			&.span-3 {
 				top: rem(30);
 			}
-		}
-
-		&:hover .menu-toggle-span {
-			background-color: $color__background-menu-toggle-hover;
 		}
 
 		.menu-text {
@@ -173,12 +160,8 @@
 	width: rem(50);
 
 	.sub-level-toggle-span {
-		background-color: $color__background-sub-menu-toggle;
+		background-color: $color__menu-sub-toggle;
 		display: none;
-	}
-
-	&:hover .sub-level-toggle-span {
-		background-color: $color__background-sub-menu-toggle-hover;
 	}
 }
 
@@ -278,10 +261,10 @@
 	}
 
 	a {
-		color: $color__link-nav;
+		color: $color__link;
 
 		&:hover {
-			color: $color__link-nav-hover;
+			color: $color__link-hover;
 		}
 	}
 
@@ -330,12 +313,12 @@
 		}
 
 		.sub-menu {
-			background-color: $color__background-sub-menu;
+			background-color: $color__sub-menu-background;
 			display: none;
 			list-style-type: none;
 			margin: 0;
 			min-width: rem(165);
-			padding-left: $size__padding-default;
+			padding-left: $size__padding;
 			position: relative;
 			width: 100%;
 			z-index: 99;
@@ -354,8 +337,7 @@
 .mobile-nav-style-default {
 
 	#primary-menu {
-		box-shadow: $color__box-shadow-mobile-primary-menu;
-		padding: 0 $size__padding-default-half;
+		padding: 0 $size__padding / 2;
 	}
 
 
@@ -406,13 +388,13 @@
 
 		@media (max-width: em(767)) {
 
-			background-color: $color__background-mobile-nav;
+			background-color: $color__mobile-nav-background;
 		}
 
 		a {
 			@media (max-width: em(767)) {
 
-				color: $color__link-mobile-nav;
+				color: $color__link;
 			}
 		}
 	}
@@ -420,12 +402,12 @@
 	&.header-style-side #primary-menu-wrap {
 
 		@media (max-width: em(959)) {
-			background-color: $color__background-mobile-nav;
+			background-color: $color__mobile-nav-background;
 		}
 
 		a {
 			@media (max-width: em(959)) {
-				color: $color__link-mobile-nav;
+				color: $color__link;
 			}
 		}
 	}
@@ -457,7 +439,7 @@
 			@include position(fixed, 0 null null null);
 			@include size(100% 150vh);
 
-			background-color: $color__overlay-transparent;
+			background-color: $color__mobile-nav-slide-overlay-background;
 			display: block;
 			overflow: hidden;
 			z-index: 99;
@@ -555,7 +537,7 @@
 	}
 
 	.main-navigation.toggled #primary-menu-wrap {
-		background-color: $color__background-mobile-nav;
+		background-color: $color__mobile-nav-background;
 		min-height: 100vh;
 		opacity: 0;
 		overflow-y: auto;
@@ -655,7 +637,7 @@
 		.main-navigation {
 			clear: none;
 			float: right;
-			padding: $size__padding-default;
+			padding: $size__padding;
 			text-align: right;
 
 			#primary-menu {

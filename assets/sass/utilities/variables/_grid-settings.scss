@@ -8,14 +8,22 @@
 //--------------------------------------------------------------
 
 
-// Grid Settings.
+// Default grid.
 $neat-grid: (
 	columns: 12,
 	gutter: 20px
 );
 
+// Grid, no gutter.
+$no-gutter: (
+	columns: 12,
+	gutter: 0,
+);
 
+
+//-----------------------------------------
 // Custom Grid Settings
+//-----------------------------------------
 $cg-phone-only: (
 	columns: 4,
 );
@@ -30,14 +38,4 @@ $cg-tablet-landscape-up: (
 $cg-desktop-up: (
 	columns: 12,
 	media: 1200px,
-);
-
-
-// Grid columns -- used to create grid classes.
-$grid-columns: 12;
-
-// Grid without gutters.
-$no-gutter: (
-	columns: 12,
-	gutter: 0,
 );

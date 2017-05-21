@@ -1,94 +1,74 @@
 //--------------------------------------------------------------
-//   COLORS
+// COLORS
 //--------------------------------------------------------------
 
 
-// Color Palette
-$alcatraz-blue: #0d8bb7;
-$black-as-night: #040a04;
-$mist: #ddd;
-$dim-gray: #666;
-$hope: #fff9c0;
-$prision-cell-gray: #535d65;
-$prussian-blue: #21759b;
-$silver: #c0c0c0;
-$sf-fog: #95a0a3;
-$the-coast-is-clear: transparent;
-$true-white: #fff;
-$true-black: #000;
-$white-smoke: #f1f1f1;
-
-
-// Social Media Colors
-$facebook: #3b5998;
-$google-plus: #dd4b39;
-$instagram: #517fa4;
-$linkedin: #007bb6;
-$pinterest: #cb2027;
-$twitter: #00aced;
-$youtube: #bb0000;
-
-// $social-colors() map
-$social-colors: (
-	facebook: $facebook,
-	google-plus: $google-plus,
-	instagram: $instagram,
-	linkedin: $linkedin,
-	pinterest: $pinterest,
-	twitter: $twitter,
-	youtube: $youtube,
+$theme-colors: (
+	alcatraz-blue: #0d8bb7,
+	jelly-bean: #21759b,
+	hope: #fff9c0,
+	black: #000,
+	mine-shaft: #333,
+	dim-gray: #666,
+	aluminum: #999,
+	silver-sand: #bbb,
+	gainsboro: #ddd,
+	white-smoke: #f1f1f1,
+	white: #fff,
 );
 
 
-// Background Colors
-$color__background-blockquote: $mist;
-$color__background-body: $true-white;
-$color__background-body-boxed: $mist;
-$color__background-boxed-site: $true-white;
-$color__background-button: $alcatraz-blue;
-$color__background-button-hover: $the-coast-is-clear;
-$color__background-hr: $mist;
-$color__background-ins: $hope;
-$color__background-menu-toggle: $alcatraz-blue;
-$color__background-menu-toggle-hover: darken($color__background-menu-toggle, 10%);
-$color__background-mobile-nav: $true-white;
-$color__background-screen: $white-smoke;
-$color__background-sub-menu: $true-white;
-$color__background-sub-menu-toggle: $prision-cell-gray;
-$color__background-sub-menu-toggle-hover: lighten($color__background-sub-menu-toggle, 15%);
-$color__background-table-row: $mist;
-$color__background-table-thead: darken($color__background-table-row, 30%);
-$color__background-visual-grid: tint($alcatraz-blue, 80%); // for use with Neat
+//-----------------------------------------
+// Global Elements
+//-----------------------------------------
+$color__body-background: color(white);
 
 
-// Overlay Colors
-$color__overlay-transparent: rgba($true-black, 0.4);
+//-------------------------------
+// Buttons
+//-------------------------------
+$color__button-background: color(alcatraz-blue);
+$color__button-background-hover: tint(color(alcatraz-blue), 15%);
+$color__button-text: color(white);
 
 
-// Text Colors
-$color__text-body: $black-as-night;
-$color__text-button: $true-white;
-$color__text-button-hover: $alcatraz-blue;
-$color__text-input: $prision-cell-gray;
-$color__text-input-focus: $prision-cell-gray;
-$color__text-menu-toggle: $true-white;
-$color__text-menu-toggle-hover: $true-white;
-$color__text-screen: $prussian-blue;
-$color__text-table-thead: $true-white;
+//-------------------------------
+// Forms
+//-------------------------------
+$color__forms-text: color(mine-shaft);
+$color__forms-border: color(dim-gray);
+$color__forms-border-focus: shade(color(dim-gray), 20%);
+$color__checkbox-border: color(dim-gray);
+$color__checkbox-background-checked: color(alcatraz-blue);
+$color__checkbox-text-checked: color(white);
+$color__radio-background-checked: color(white);
 
 
-// Link Colors
-$color__link: $alcatraz-blue;
-$color__link-hover: darken($color__link, 20%);
-$color__link-mobile-nav: $alcatraz-blue;
-$color__link-nav: $alcatraz-blue;
-$color__link-nav-hover: darken($color__link-nav, 20%);
-$color__link-nav-sub-menu: $prision-cell-gray;
-$color__link-nav-sub-menu-hover: darken($color__link-nav-sub-menu, 10%);
-$color__link-visited: darken($color__link, 30%);
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+$color__table-border: color(dim-gray);
 
 
-// Box Shadow
-$color__box-shadow-mobile-primary-menu: 0 rem(4) rem(8) rem(-2) rgba(0, 0, 0, 0.2);
-$color__box-shadow-screen: 0 0 rem(2) rem(2) rgba(0, 0, 0, 0.6);
-$color__box-shadow-sub-menu: 0 rem(3) rem(10) rem(-3) rgba(0, 0, 0, 0.5);
+//-------------------------------
+// Typography
+//-------------------------------
+$color__body-text: color(black);
+$color__hr: color(dim-gray);
+$color__link: color(alcatraz-blue);
+$color__link-hover: tint(color(alcatraz-blue), 15%);
+$color__link-visited: shade(color(alcatraz-blue), 15%);
+$color__ins: color(hope);
+$color__pre-border: color(alumninum);
+
+
+//-------------------------------
+// Navigation
+//-------------------------------
+$color__toggle-background: color(alcatraz-blue);
+$color__menu-sub-toggle: color(alcatraz-blue);
+$color__mobile-nav-background: color(white);
+$color__mobile-nav-full-screen-background: rgba(color(white), 0.85);
+$color__mobile-nav-slide-background: color(white);
+$color__mobile-nav-slide-overlay-background: rgba(color(black), 0.85);
+$color__sub-menu-background: color(white);

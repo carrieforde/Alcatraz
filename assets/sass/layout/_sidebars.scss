@@ -5,16 +5,16 @@
 
 .primary-sidebar {
 	margin: 0;
-	padding: $size__padding-default;
+	padding: $size__padding;
 
 	@media (min-width: em(768)) {
-		padding: $size__padding-default-double $size__padding-default;
+		padding: $size__padding * 2 $size__padding;
 	}
 
 	@media (min-width: em(1150)) {
 
 		.header-style-side & {
-			padding: $size__padding-default-double ($size__padding-default * 1.5) $size__padding-default-double $size__padding-default;
+			padding: $size__padding * 2 $size__padding * 1.5 $size__padding * 2 $size__padding;
 		}
 	}
 }

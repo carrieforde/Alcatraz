@@ -15,13 +15,8 @@
 	.boxed & {
 		@include center;
 
-		background-color: $color__background-boxed-site;
-		max-width: $size__width-boxed;
+		max-width: $size__layout-boxed;
 	}
-}
-
-.boxed {
-	background-color: $color__background-body-boxed;
 }
 
 .site-content {
@@ -30,7 +25,7 @@
 	.boxed-content & {
 		@include center;
 
-		max-width: $size__width-boxed-content;
+		max-width: $size__layout-boxed-content;
 	}
 
 	@media (min-width: em(960)) {
@@ -75,7 +70,7 @@
 
 		.header-style-side.boxed-content & {
 			left: rem(160);
-			max-width: $size__width-boxed-content;
+			max-width: $size__layout-boxed-content;
 			margin: 0 auto;
 		}
 	}
@@ -83,21 +78,20 @@
 
 .content-area {
 	margin: 0 auto;
-	padding: $size__padding-default;
-	width: $size__width-site;
+	padding: $size__padding;
 
 	@media (min-width: em(900)) {
-		padding: $size__padding-default-double $size__padding-default;
+		padding: $size__padding * 2 $size__padding;
 	}
 
 	.header-style-side & {
 
 		@media (min-width: em(960)) {
-			padding: ($size__padding-default * 1.5) $size__padding-default;
+			padding: $size__padding * 1.5 $size__padding;
 		}
 
 		@media (min-width: em(1150)) {
-			padding: $size__padding-default-double ($size__padding-default * 1.5);
+			padding: $size__padding * 2 $size__padding * 1.5;
 		}
 	}
 }
@@ -130,12 +124,6 @@
 .post-edit-link {
 	display: block;
 	margin: rem(5) 0;
-
-	&::before {
-		content: '\f040';
-		padding-right: rem(5);
-		font: rem(14) $font-awesome;
-	}
 }
 
 .page-content,

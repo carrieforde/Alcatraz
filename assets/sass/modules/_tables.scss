@@ -10,13 +10,7 @@ table {
 }
 
 thead {
-	background-color: $color__background-table-thead;
-	border-bottom: $border__table;
-	color: $color__text-table-thead;
-}
-
-tr:nth-child(even) {
-	background-color: $color__background-table-row;
+	font-weight: 700;
 }
 
 th,

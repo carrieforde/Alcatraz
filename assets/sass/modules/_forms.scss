@@ -1,5 +1,5 @@
 //--------------------------------------------------------------
-//   3.3 FORMS
+// FORMS
 //-------------------------------------------------------------
 
 // Labels
@@ -15,13 +15,13 @@ input[type="url"],
 input[type="password"],
 input[type="search"],
 textarea {
-	border: $border__input;
-	color: $color__text-input;
+	border: $border__forms;
+	color: $color__forms-text;
 	vertical-align: text-bottom;
 
 	&:focus {
-		border: $border__input-focus;
-		color: $color__text-input-focus;
+		border: $border__forms-focus;
+		color: $color__forms-text;
 		outline: none;
 	}
 }
@@ -45,19 +45,16 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	padding: rem(10) rem(15);
-	border: $border__button;
-	background-color: $color__background-button;
-	color: $color__text-button;
+	background-color: $color__button-background;
+	color: $color__button-text;
 	font-weight: 500;
 	letter-spacing: rem(0.5);
 	text-transform: uppercase;
-	transition: all 0.2s ease-in;
+	transition: $transition__hover-background;
 
 	&:hover,
 	&:active,
 	&:focus {
-		border: $border__button-hover;
-		background-color: $color__background-button-hover;
-		color: $color__text-button-hover;
+		background-color: $color__button-background-hover;
 	}
 }

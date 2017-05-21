@@ -77,7 +77,6 @@ a {
 	}
 
 	li {
-		border-bottom: $border__sub-page-nav-item;
 		margin: 0;
 		padding: 0;
 		position: relative;
@@ -89,13 +88,8 @@ a {
 	}
 
 	li a {
-		color: $color__link-nav;
 		display: block;
 		padding: rem(10) rem(15);
-
-		&:hover {
-			color: $color__link-nav-hover;
-		}
 	}
 
 	.page_item_has_children > a {
@@ -115,18 +109,6 @@ a {
 
 	.current_page_ancestor > ul {
 		display: block;
-	}
-
-	.children.toggled li {
-		border-bottom: $border__sub-page-nav-item;
-
-		&:first-child {
-			border-top: $border__sub-page-nav-item;
-		}
-
-		&:last-child {
-			border-bottom: none;
-		}
 	}
 
 	.current_page_item {

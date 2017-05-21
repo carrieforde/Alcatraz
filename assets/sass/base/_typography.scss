@@ -12,8 +12,8 @@ button,
 input,
 select,
 textarea {
-	color: $color__text-body;
-	font: 400 1em/#{$font__line-height-body} $font__body;
+	color: $color__body-text;
+	font: 400 1em/#{$font__body-line-height} $font__body;
 }
 
 //-----------------------------------------
@@ -43,125 +43,60 @@ p {
 	margin: 0 0 1.5em;
 }
 
-// dfn,
-// em,
-// i {
-// 	font-style: italic;
-// }
+a {
+	color: $color__link;
+	cursor: pointer;
+
+	&:visted {
+		color: $color__link-visited;
+	}
+
+	&:hover,
+	&:active {
+		color: $color__link-hover;
+	}
+}
+
+abbr[title] {
+	border-bottom: $border__abbr;
+	text-decoration: none;
+
+	&:hover {
+		cursor: help;
+	}
+}
 
 blockquote {
-	background-color: $color__background-blockquote;
-	border-left: $border__blockquote;
-	font-style: italic;
-	margin: 0 rem(25) rem(25);
-	padding: rem(15) rem(20) rem(15) rem(15);
+	font-size: 1.25em;
 
-	&::before {
-		content: "\f10d";
-		float: left;
-		font: normal rem(20) $font-awesome;
-	}
-
-	p {
-		padding-left: rem(35);
-		margin: 0;
-	}
-}
-
-blockquote p {
-	margin: 0;
-}
-
-q {
-	&::before {
-		@extend blockquote::before;
-
-		font-size: rem(18);
-		padding-right: rem(10);
+	cite {
+		display: block;
 	}
 }
 
 cite {
-	display: inline-block;
-	font: {
-		style: normal;
-		weight: 700;
-	}
-	margin-top: rem(10);
+	font-weight: 700;
 }
 
-address {
-	margin: 0 0 rem(25);
-}
-
-pre {
-	border: $border__pre;
-	font: 14px/#{$font__line-height-pre} $font__pre;
-	margin-bottom: rem(25);
-	max-width: 100%;
-	overflow: auto;
-	padding: rem(25);
-	word-wrap: break-word;
+ins,
+mark {
+	background-color: $color__ins;
+	text-decoration: none;
 }
 
 code,
 kbd,
+pre,
+samp,
 tt,
 var {
-	font: rem(14) $font__code;
+	font: 400 #{$font__code-size} / #{$font__code-line-height} $font__code;
 }
 
-abbr,
-acronym {
-	border-bottom: $border__abbr;
-	cursor: help;
-}
-
-mark,
-ins {
-	background: $color__background-ins;
-	text-decoration: none;
-}
-
-big {
-	font-size: 125%;
-}
-
-
-// Lists
-ul,
-ol {
-	padding-left: rem(20);
-	margin: 0 0 rem(22) rem(20);
-}
-
-ul {
-	list-style: disc;
-}
-
-ol {
-	list-style: decimal;
-}
-
-li > ul,
-li > ol {
-	margin: 0 0 0 rem(5);
-}
-
-li > ul {
-	list-style-type: circle;
-
-	li > ul {
-		list-style-type: square;
-	}
-}
-
-li > ol {
-	list-style-type: lower-alpha;
-
-	li > ol {
-		list-style-type: lower-roman;
-	}
+pre {
+	border: $border__pre;
+	overflow-x: scroll;
+	padding: $size__padding;
 }
 
 dt {
@@ -169,5 +104,5 @@ dt {
 }
 
 dd {
-	margin: 0 rem(25) rem(25);
+	margin-bottom: 1.25em;
 }

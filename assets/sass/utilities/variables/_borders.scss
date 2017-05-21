@@ -1,16 +1,24 @@
 //--------------------------------------------------------------
-//   BORDERS
+// BORDERS
 //--------------------------------------------------------------
 
 
-$border__abbr: rem(1) dotted $dim-gray;
-$border__blockquote: rem(5) solid darken($color__background-blockquote, 80%);
-$border__button: rem(2) solid $alcatraz-blue;
-$border__button-hover: rem(2) solid $alcatraz-blue;
-$border__fieldset: rem(1) solid $silver;
-$border__input: rem(1) solid $sf-fog;
-$border__input-focus: rem(1) solid $prision-cell-gray;
-$border__nav-sub-menu: rem(3) solid $prision-cell-gray;
-$border__pre: rem(1) solid $sf-fog;
-$border__sub-page-nav-item: rem(1) dotted $mist;
-$border__table: rem(1) solid $mist;
+//-----------------------------------------
+// Forms
+//-----------------------------------------
+$border__forms: 1px solid $color__forms-border;
+$border__forms-focus: 1px solid $color__forms-border-focus;
+
+
+//-----------------------------------------
+// Tables
+//-----------------------------------------
+$border__table: 1px solid $color__table-border;
+
+
+//-----------------------------------------
+// Typography
+//-----------------------------------------
+$border__hr: 1px solid $color__hr;
+$border__pre: 1px solid $color__pre-border;
+$border__abbr: 1px dotted;

@@ -5,8 +5,7 @@
 
 .site-footer {
 	clear: both;
-	padding: $size__padding-default;
-	width: $size__width-site;
+	padding: $size__padding;
 
 	@media (min-width: em(960)) {
 
@@ -50,7 +49,7 @@
 
 		.header-style-side.boxed-content & {
 			left: rem(160);
-			max-width: $size__width-boxed-content;
+			max-width: $size__layout-boxed-content;
 			margin: 0 auto;
 		}
 	}

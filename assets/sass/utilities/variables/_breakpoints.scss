@@ -1,29 +1,22 @@
 //--------------------------------------------------------------
-//   BREAKPOINTS
+// BREAKPOINTS
 //
-//   Breakpoints are based on common shared widths from
-//   http://mydevice.io/devices/ and
-//   https://css-tricks.com/snippets/css/media-queries-for-standard-devices/.
-//   Add additional widths as needed.
+// Breakpoints are based on those discussed in
+// https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.or3duno2h.
+// Add additional widths as needed.
 //--------------------------------------------------------------
 
 
 // Common breakpoints
-$phone-landscape: em(640);
-$tablet-portrait: em(768);
-$tablet-landscape: em(1024);
-$desktop-small: em(1200);
-$desktop-large: em(1440);
-$desktop-xlarge: em(1600);
-
-
-// Others widths we're currently using:
-// (will need to revisit names--not currently being used).
-// $900: em(900);
-// $960: em(960);
-// $1040: em(1040);
-// $1120: em(1120);
-// $1150: em(1150);
-// $1340: em(1340);
-// $767: em(767);
-// $959: em(959);
+$tablet-portrait-up: (
+	media: em(600),
+);
+$tablet-landscape-up: (
+	media: em(900),
+);
+$desktop-up: (
+	media: em(1200),
+);
+$desktop-large-up: (
+	media: em(1800),
+);
