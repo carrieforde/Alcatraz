@@ -29,3 +29,23 @@ textarea {
 textarea {
 	width: 100%;
 }
+
+
+//-----------------------------------------
+// Search Field
+//-----------------------------------------
+.search-form {
+	line-height: 1; // keeps the submit from overflowing the form.
+	position: relative;
+
+	.search-field {
+		width: 100%;
+	}
+
+	.search-submit {
+		@include position(absolute, 0 0 0 null);
+
+		line-height: 1; // keeps the search text centered.
+		margin: 1px; // makes the button visually fit within the search better.
+	}
+}
