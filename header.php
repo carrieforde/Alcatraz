@@ -42,15 +42,14 @@
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-				<button class="mobile-menu-toggle" type="button">
-					<span class="mobile-menu-toggle__bar bar-1"></span>
-					<span class="mobile-menu-toggle__bar bar-2"></span>
-					<span class="mobile-menu-toggle__bar bar-3"></span>
-					<span class="screen-reader-text">Menu</span>
-				</button>
-
 				<nav id="site-navigation" class="main-navigation" role="navigation">
-					<?php do_action( 'alcatraz_before_primary_nav' ); ?>
+
+					<button class="mobile-menu-toggle" type="button">
+						<span class="mobile-menu-toggle__bar bar-1"></span>
+						<span class="mobile-menu-toggle__bar bar-2"></span>
+						<span class="mobile-menu-toggle__bar bar-3"></span>
+						<span class="screen-reader-text">Menu</span>
+					</button>
 
 					<?php wp_nav_menu( array(
 						'theme_location'  => 'primary',
@@ -59,7 +58,6 @@
 						'container_class' => 'main-navigation__menu',
 					) ); ?>
 
-					<?php do_action( 'alcatraz_after_primary_nav' ); ?>
 				</nav>
 
 			<?php endif; ?>
