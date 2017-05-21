@@ -1,66 +1,6 @@
 //--------------------------------------------------------------
-//   4.2 NAVIGATION
+// NAVIGATION
 //--------------------------------------------------------------
-
-
-// Links
-a {
-	color: $color__link;
-	text-decoration: none;
-
-	&:visited {
-		color: $color__link-visited;
-	}
-
-	&:hover,
-	&:focus,
-	&:active {
-		color: $color__link-hover;
-	}
-
-	&:focus {
-		outline: thin dotted;
-	}
-
-	&:hover,
-	&:active {
-		outline: 0;
-	}
-}
-
-
-/* Pagination Styles */
-.comment-navigation,
-.posts-navigation,
-.post-navigation {
-
-	.site-main & {
-		margin: 0 0 rem(1.5);
-		overflow: hidden;
-	}
-
-	.nav-previous {
-		float: left;
-		width: 50%;
-
-		a::before {
-			content: '\00ab';
-			margin-right: rem(5);
-		}
-	}
-
-	.nav-next {
-		float: right;
-		text-align: right;
-		width: 50%;
-
-		a::after {
-			content: '\00bb';
-			margin-left: rem(5);
-		}
-	}
-}
-
 
 // Sub Page Nav Styles
 .alcatraz-sub-page-nav {

@@ -1,0 +1,21 @@
+//--------------------------------------------------------------
+// PAGINATION
+//--------------------------------------------------------------
+.comment-navigation,
+.posts-navigation,
+.post-navigation {
+
+	.nav-links {
+		align-items: center;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	.nav-previous {
+		margin-right: auto; // if it's the only item, make sure it's still on the left.
+	}
+
+	.nav-next {
+		margin-left: auto; // if it's the only item, make sure it's still on the right.
+	}
+}
