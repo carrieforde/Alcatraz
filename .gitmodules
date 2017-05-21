@@ -1,3 +1,6 @@
 [submodule "cmb2"]
 	path = vendor/cmb2
 	url = https://github.com/CMB2/CMB2.git
+[submodule "better-font-awesome-library"]
+	path = vendor/better-font-awesome-library
+	url = https://github.com/MickeyKay/better-font-awesome-library.git
