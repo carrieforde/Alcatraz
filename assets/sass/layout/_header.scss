@@ -33,21 +33,11 @@
 	font-size: em(36);
 	font-weight: 700;
 	margin: 0 0 10px;
-
-	.has-logo &,
-	.has-mobile-logo & {
-		@include hide-text;
-	}
 }
 
 .site-description {
 	font-weight: 600;
 	margin: rem(10) 0;
-
-	.has-logo &,
-	.has-mobile-logo & {
-		@include hide-text;
-	}
 }
 
 .transparent-header .site-header {
@@ -130,88 +120,26 @@
 	}
 }
 
-
-// Logo styling
+//-----------------------------------------
+// Logo
+//-----------------------------------------
 .has-logo {
+
+	.site-title,
+	.site-description {
+		@extend .screen-reader-text;
+	}
+}
+
+.custom-logo-link {
 	display: block;
-
-	@media (min-width: em(768)) {
-
-		.logo-mobile &.header-style-default.has-mobile-logo,
-		.logo-mobile &.header-style-short.has-mobile-logo {
-			display: none;
-		}
-
-		.logo-regular &.header-style-default.has-mobile-logo,
-		.logo-regular &.header-style-short.has-mobile-logo {
-			display: block;
-		}
-	}
-
-	@media (min-width: em(960)) {
-
-		.logo-mobile &.header-style-side.has-mobile-logo {
-			display: none;
-		}
-
-		.logo-regular &.header-style-side.has-mobile-logo {
-			display: block;
-		}
-	}
+	line-height: 1;
 }
 
-.has-mobile-logo {
-
-	.logo-mobile {
-		display: block;
-	}
-
-	.logo-regular {
-		display: none;
-	}
-
-	@media (min-width: em(768)) {
-
-		&.has-logo.header-style-default,
-		&.has-logo.header-style-short {
-			.logo-mobile {
-				display: none;
-			}
-
-			.logo-regular {
-				display: block;
-			}
-		}
-	}
-
-	@media (min-width: em(960)) {
-
-		&.has-logo.header-style-side {
-			.logo-mobile {
-				display: none;
-			}
-
-			.logo-regular {
-				display: block;
-			}
-		}
-	}
-}
-
-.logo {
+.custom-logo {
+	line-height: 1;
 
 	.mobile-nav-toggle-style-button & {
-		@include center;
-	}
-
-	@media (min-width: em(768)) {
-		@include center;
-	}
-
-	@media (min-width: em(960)) {
-
-		.header-style-side & {
-			margin-bottom: rem(20);
-		}
+		@include center-block;
 	}
 }
