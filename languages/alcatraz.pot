@@ -111,7 +111,7 @@ msgstr ""
 
 #: inc/admin/admin.php:110 inc/admin/admin.php:124 inc/theme-options.php:124
 #: inc/theme-options.php:184 inc/theme-options.php:204
-#: lib/cmb2/includes/CMB2_JS.php:87
+#: vendor/cmb2/includes/CMB2_JS.php:87
 msgid "Default"
 msgstr ""
 
@@ -237,8 +237,8 @@ msgstr ""
 msgid "Number of Footer Widget Areas"
 msgstr ""
 
-#: inc/admin/customizer.php:315 lib/cmb2/includes/CMB2_Field.php:978
-#: lib/cmb2/includes/CMB2_Field.php:982 lib/cmb2/tests/test-cmb-field.php:216
+#: inc/admin/customizer.php:315 vendor/cmb2/includes/CMB2_Field.php:978
+#: vendor/cmb2/includes/CMB2_Field.php:982 vendor/cmb2/tests/test-cmb-field.php:216
 msgid "None"
 msgstr ""
 
@@ -336,476 +336,476 @@ msgstr ""
 msgid "Footer %d"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:504
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:504
 msgid "The jsDelivr API servers appear to be temporarily unavailable."
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1053
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1053
 msgid "Insert Icon"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1073
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1073
 msgid "Better Font Awesome"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1079
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1079
 msgid "API Error"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1081
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1081
 msgid ""
 "The attempt to reach the jsDelivr API server failed with the following "
 "error: %s"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1091
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1091
 msgid "Remote CSS Error"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1093
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1093
 msgid ""
 "The attempt to fetch the remote Font Awesome stylesheet failed with the "
 "following error: %s %s The embedded fallback Font Awesome will be used "
 "instead (version: %s)."
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1103
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1103
 msgid ""
 "<b>Don't worry! Better Font Awesome will still render using the included "
 "fallback version:</b> "
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1107
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1107
 msgid "Solution"
 msgstr ""
 
-#: lib/better-font-awesome-library/better-font-awesome-library.php:1109
+#: vendor/better-font-awesome-library/better-font-awesome-library.php:1109
 msgid ""
 "This may be the result of a temporary server or connectivity issue which "
 "will resolve shortly. However if the problem persists please file a support "
 "ticket on the %splugin forum%s, citing the errors listed above. "
 msgstr ""
 
-#: lib/cmb2/example-functions.php:82 lib/cmb2/tests/test-cmb-field.php:244
+#: vendor/cmb2/example-functions.php:82 vendor/cmb2/tests/test-cmb-field.php:244
 msgid "Test Metabox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:93 lib/cmb2/example-functions.php:380
+#: vendor/cmb2/example-functions.php:93 vendor/cmb2/example-functions.php:380
 msgid "Test Text"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:94 lib/cmb2/example-functions.php:106
-#: lib/cmb2/example-functions.php:114 lib/cmb2/example-functions.php:122
-#: lib/cmb2/example-functions.php:131 lib/cmb2/example-functions.php:139
-#: lib/cmb2/example-functions.php:153 lib/cmb2/example-functions.php:160
-#: lib/cmb2/example-functions.php:168 lib/cmb2/example-functions.php:185
-#: lib/cmb2/example-functions.php:194 lib/cmb2/example-functions.php:202
-#: lib/cmb2/example-functions.php:209 lib/cmb2/example-functions.php:216
-#: lib/cmb2/example-functions.php:230 lib/cmb2/example-functions.php:243
-#: lib/cmb2/example-functions.php:256 lib/cmb2/example-functions.php:268
-#: lib/cmb2/example-functions.php:277 lib/cmb2/example-functions.php:285
-#: lib/cmb2/example-functions.php:294 lib/cmb2/example-functions.php:301
-#: lib/cmb2/example-functions.php:315 lib/cmb2/example-functions.php:381
-#: lib/cmb2/example-functions.php:476 lib/cmb2/example-functions.php:484
-#: lib/cmb2/example-functions.php:491 lib/cmb2/example-functions.php:498
-#: lib/cmb2/example-functions.php:505 lib/cmb2/example-functions.php:512
-#: lib/cmb2/example-functions.php:519 lib/cmb2/example-functions.php:557
-#: lib/cmb2/tests/test-cmb-field.php:256
+#: vendor/cmb2/example-functions.php:94 vendor/cmb2/example-functions.php:106
+#: vendor/cmb2/example-functions.php:114 vendor/cmb2/example-functions.php:122
+#: vendor/cmb2/example-functions.php:131 vendor/cmb2/example-functions.php:139
+#: vendor/cmb2/example-functions.php:153 vendor/cmb2/example-functions.php:160
+#: vendor/cmb2/example-functions.php:168 vendor/cmb2/example-functions.php:185
+#: vendor/cmb2/example-functions.php:194 vendor/cmb2/example-functions.php:202
+#: vendor/cmb2/example-functions.php:209 vendor/cmb2/example-functions.php:216
+#: vendor/cmb2/example-functions.php:230 vendor/cmb2/example-functions.php:243
+#: vendor/cmb2/example-functions.php:256 vendor/cmb2/example-functions.php:268
+#: vendor/cmb2/example-functions.php:277 vendor/cmb2/example-functions.php:285
+#: vendor/cmb2/example-functions.php:294 vendor/cmb2/example-functions.php:301
+#: vendor/cmb2/example-functions.php:315 vendor/cmb2/example-functions.php:381
+#: vendor/cmb2/example-functions.php:476 vendor/cmb2/example-functions.php:484
+#: vendor/cmb2/example-functions.php:491 vendor/cmb2/example-functions.php:498
+#: vendor/cmb2/example-functions.php:505 vendor/cmb2/example-functions.php:512
+#: vendor/cmb2/example-functions.php:519 vendor/cmb2/example-functions.php:557
+#: vendor/cmb2/tests/test-cmb-field.php:256
 msgid "field description (optional)"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:105
+#: vendor/cmb2/example-functions.php:105
 msgid "Test Text Small"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:113
+#: vendor/cmb2/example-functions.php:113
 msgid "Test Text Medium"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:121
+#: vendor/cmb2/example-functions.php:121
 msgid "Website URL"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:130
+#: vendor/cmb2/example-functions.php:130
 msgid "Test Text Email"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:138
+#: vendor/cmb2/example-functions.php:138
 msgid "Test Time"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:145 lib/cmb2/example-functions.php:146
+#: vendor/cmb2/example-functions.php:145 vendor/cmb2/example-functions.php:146
 msgid "Time zone"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:152
+#: vendor/cmb2/example-functions.php:152
 msgid "Test Date Picker"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:159
+#: vendor/cmb2/example-functions.php:159
 msgid "Test Date Picker (UNIX timestamp)"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:167
+#: vendor/cmb2/example-functions.php:167
 msgid "Test Date/Time Picker Combo (UNIX timestamp)"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:184
+#: vendor/cmb2/example-functions.php:184
 msgid "Test Money"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:193
+#: vendor/cmb2/example-functions.php:193
 msgid "Test Color Picker"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:201
+#: vendor/cmb2/example-functions.php:201
 msgid "Test Text Area"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:208
+#: vendor/cmb2/example-functions.php:208
 msgid "Test Text Area Small"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:215
+#: vendor/cmb2/example-functions.php:215
 msgid "Test Text Area for Code"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:222
+#: vendor/cmb2/example-functions.php:222
 msgid "Test Title Weeeee"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:223
+#: vendor/cmb2/example-functions.php:223
 msgid "This is a title description"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:229
+#: vendor/cmb2/example-functions.php:229
 msgid "Test Select"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:235 lib/cmb2/example-functions.php:248
-#: lib/cmb2/example-functions.php:260
+#: vendor/cmb2/example-functions.php:235 vendor/cmb2/example-functions.php:248
+#: vendor/cmb2/example-functions.php:260
 msgid "Option One"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:236 lib/cmb2/example-functions.php:249
-#: lib/cmb2/example-functions.php:261
+#: vendor/cmb2/example-functions.php:236 vendor/cmb2/example-functions.php:249
+#: vendor/cmb2/example-functions.php:261
 msgid "Option Two"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:237 lib/cmb2/example-functions.php:250
-#: lib/cmb2/example-functions.php:262
+#: vendor/cmb2/example-functions.php:237 vendor/cmb2/example-functions.php:250
+#: vendor/cmb2/example-functions.php:262
 msgid "Option Three"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:242
+#: vendor/cmb2/example-functions.php:242
 msgid "Test Radio inline"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:255
+#: vendor/cmb2/example-functions.php:255
 msgid "Test Radio"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:267
+#: vendor/cmb2/example-functions.php:267
 msgid "Test Taxonomy Radio"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:276
+#: vendor/cmb2/example-functions.php:276
 msgid "Test Taxonomy Select"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:284
+#: vendor/cmb2/example-functions.php:284
 msgid "Test Taxonomy Multi Checkbox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:293
+#: vendor/cmb2/example-functions.php:293
 msgid "Test Checkbox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:300 lib/cmb2/tests/test-cmb-field.php:255
+#: vendor/cmb2/example-functions.php:300 vendor/cmb2/tests/test-cmb-field.php:255
 msgid "Test Multi Checkbox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:306 lib/cmb2/tests/test-cmb-field.php:261
+#: vendor/cmb2/example-functions.php:306 vendor/cmb2/tests/test-cmb-field.php:261
 msgid "Check One"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:307 lib/cmb2/tests/test-cmb-field.php:262
+#: vendor/cmb2/example-functions.php:307 vendor/cmb2/tests/test-cmb-field.php:262
 msgid "Check Two"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:308 lib/cmb2/tests/test-cmb-field.php:263
+#: vendor/cmb2/example-functions.php:308 vendor/cmb2/tests/test-cmb-field.php:263
 msgid "Check Three"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:314
+#: vendor/cmb2/example-functions.php:314
 msgid "Test wysiwyg"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:322
+#: vendor/cmb2/example-functions.php:322
 msgid "Test Image"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:323
+#: vendor/cmb2/example-functions.php:323
 msgid "Upload an image or enter a URL."
 msgstr ""
 
-#: lib/cmb2/example-functions.php:329
+#: vendor/cmb2/example-functions.php:329
 msgid "Multiple Files"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:330
+#: vendor/cmb2/example-functions.php:330
 msgid "Upload or add multiple images/attachments."
 msgstr ""
 
-#: lib/cmb2/example-functions.php:337
+#: vendor/cmb2/example-functions.php:337
 msgid "oEmbed"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:338
+#: vendor/cmb2/example-functions.php:338
 msgid ""
 "Enter a youtube, twitter, or instagram URL. Supports services listed at <a "
 "href=\"http://codex.wordpress.org/Embeds\">http://codex.wordpress.org/"
 "Embeds</a>."
 msgstr ""
 
-#: lib/cmb2/example-functions.php:371
+#: vendor/cmb2/example-functions.php:371
 msgid "About Page Metabox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:402
+#: vendor/cmb2/example-functions.php:402
 msgid "Repeating Field Group"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:410
+#: vendor/cmb2/example-functions.php:410
 msgid "Generates reusable form entries"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:412
+#: vendor/cmb2/example-functions.php:412
 msgid "Entry {#}"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:413
+#: vendor/cmb2/example-functions.php:413
 msgid "Add Another Entry"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:414
+#: vendor/cmb2/example-functions.php:414
 msgid "Remove Entry"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:427
+#: vendor/cmb2/example-functions.php:427
 msgid "Entry Title"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:434
+#: vendor/cmb2/example-functions.php:434
 msgid "Description"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:435
+#: vendor/cmb2/example-functions.php:435
 msgid "Write a short description for this entry"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:441
+#: vendor/cmb2/example-functions.php:441
 msgid "Entry Image"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:447
+#: vendor/cmb2/example-functions.php:447
 msgid "Image Caption"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:468
+#: vendor/cmb2/example-functions.php:468
 msgid "User Profile Metabox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:475
+#: vendor/cmb2/example-functions.php:475
 msgid "Extra Info"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:483
+#: vendor/cmb2/example-functions.php:483
 msgid "Avatar"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:490
+#: vendor/cmb2/example-functions.php:490
 msgid "Facebook URL"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:497
+#: vendor/cmb2/example-functions.php:497
 msgid "Twitter URL"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:504
+#: vendor/cmb2/example-functions.php:504
 msgid "Google+ URL"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:511
+#: vendor/cmb2/example-functions.php:511
 msgid "Linkedin URL"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:518
+#: vendor/cmb2/example-functions.php:518
 msgid "User Field"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:541
+#: vendor/cmb2/example-functions.php:541
 msgid "Theme Options Metabox"
 msgstr ""
 
-#: lib/cmb2/example-functions.php:556
+#: vendor/cmb2/example-functions.php:556
 msgid "Site Background Color"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2.php:120
+#: vendor/cmb2/includes/CMB2.php:120
 msgid "Metabox configuration is required to have an ID parameter"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2.php:332
+#: vendor/cmb2/includes/CMB2.php:332
 msgid "Click to toggle"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Ajax.php:40
+#: vendor/cmb2/includes/CMB2_Ajax.php:40
 msgid "Please Try Again"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Ajax.php:135 lib/cmb2/tests/test-cmb-types.php:811
+#: vendor/cmb2/includes/CMB2_Ajax.php:135 vendor/cmb2/tests/test-cmb-types.php:811
 msgid "Remove Embed"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Ajax.php:139 lib/cmb2/tests/test-cmb-types.php:812
+#: vendor/cmb2/includes/CMB2_Ajax.php:139 vendor/cmb2/tests/test-cmb-types.php:812
 msgid "No oEmbed Results Found for %s. View more info at"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Field.php:955
+#: vendor/cmb2/includes/CMB2_Field.php:955
 msgid "Add Group"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Field.php:956
+#: vendor/cmb2/includes/CMB2_Field.php:956
 msgid "Remove Group"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:86 lib/cmb2/includes/CMB2_JS.php:119
+#: vendor/cmb2/includes/CMB2_JS.php:86 vendor/cmb2/includes/CMB2_JS.php:119
 msgid "Clear"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:88
+#: vendor/cmb2/includes/CMB2_JS.php:88
 msgid "Select Color"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:89
+#: vendor/cmb2/includes/CMB2_JS.php:89
 msgid "Current Color"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:110
+#: vendor/cmb2/includes/CMB2_JS.php:110
 msgid "Sunday, Monday, Tuesday, Wednesday, Thursday, Friday, Saturday"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:111
+#: vendor/cmb2/includes/CMB2_JS.php:111
 msgid "Su, Mo, Tu, We, Th, Fr, Sa"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:112
+#: vendor/cmb2/includes/CMB2_JS.php:112
 msgid "Sun, Mon, Tue, Wed, Thu, Fri, Sat"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:113
+#: vendor/cmb2/includes/CMB2_JS.php:113
 msgid ""
 "January, February, March, April, May, June, July, August, September, "
 "October, November, December"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:114
+#: vendor/cmb2/includes/CMB2_JS.php:114
 msgid "Jan, Feb, Mar, Apr, May, Jun, Jul, Aug, Sep, Oct, Nov, Dec"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:115
+#: vendor/cmb2/includes/CMB2_JS.php:115
 msgid "Next"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:116
+#: vendor/cmb2/includes/CMB2_JS.php:116
 msgid "Prev"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:117
+#: vendor/cmb2/includes/CMB2_JS.php:117
 msgid "Today"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:118 lib/cmb2/includes/CMB2_JS.php:128
+#: vendor/cmb2/includes/CMB2_JS.php:118 vendor/cmb2/includes/CMB2_JS.php:128
 msgid "Done"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:122
+#: vendor/cmb2/includes/CMB2_JS.php:122
 msgid "Choose Time"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:123
+#: vendor/cmb2/includes/CMB2_JS.php:123
 msgid "Time"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:124
+#: vendor/cmb2/includes/CMB2_JS.php:124
 msgid "Hour"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:125
+#: vendor/cmb2/includes/CMB2_JS.php:125
 msgid "Minute"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:126
+#: vendor/cmb2/includes/CMB2_JS.php:126
 msgid "Second"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:127
+#: vendor/cmb2/includes/CMB2_JS.php:127
 msgid "Now"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:135
+#: vendor/cmb2/includes/CMB2_JS.php:135
 msgid "Use this file"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:136
+#: vendor/cmb2/includes/CMB2_JS.php:136
 msgid "Use these files"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:137 lib/cmb2/includes/CMB2_Types.php:1004
+#: vendor/cmb2/includes/CMB2_JS.php:137 vendor/cmb2/includes/CMB2_Types.php:1004
 msgid "Remove Image"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:138 lib/cmb2/includes/CMB2_Types.php:357
-#: lib/cmb2/includes/CMB2_Types.php:1023 lib/cmb2/tests/test-cmb-types.php:155
-#: lib/cmb2/tests/test-cmb-types.php:163 lib/cmb2/tests/test-cmb-types.php:760
-#: lib/cmb2/tests/test-cmb-types.php:785
+#: vendor/cmb2/includes/CMB2_JS.php:138 vendor/cmb2/includes/CMB2_Types.php:357
+#: vendor/cmb2/includes/CMB2_Types.php:1023 vendor/cmb2/tests/test-cmb-types.php:155
+#: vendor/cmb2/tests/test-cmb-types.php:163 vendor/cmb2/tests/test-cmb-types.php:760
+#: vendor/cmb2/tests/test-cmb-types.php:785
 msgid "Remove"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:139 lib/cmb2/includes/CMB2_Types.php:1018
-#: lib/cmb2/tests/test-cmb-types.php:761 lib/cmb2/tests/test-cmb-types.php:786
+#: vendor/cmb2/includes/CMB2_JS.php:139 vendor/cmb2/includes/CMB2_Types.php:1018
+#: vendor/cmb2/tests/test-cmb-types.php:761 vendor/cmb2/tests/test-cmb-types.php:786
 msgid "File:"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:140 lib/cmb2/includes/CMB2_Types.php:1021
-#: lib/cmb2/tests/test-cmb-types.php:759 lib/cmb2/tests/test-cmb-types.php:784
+#: vendor/cmb2/includes/CMB2_JS.php:140 vendor/cmb2/includes/CMB2_Types.php:1021
+#: vendor/cmb2/tests/test-cmb-types.php:759 vendor/cmb2/tests/test-cmb-types.php:784
 msgid "Download"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:141
+#: vendor/cmb2/includes/CMB2_JS.php:141
 msgid "Select / Deselect All"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Types.php:298
+#: vendor/cmb2/includes/CMB2_Types.php:298
 msgid "Add Row"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Types.php:749 lib/cmb2/includes/CMB2_Types.php:797
+#: vendor/cmb2/includes/CMB2_Types.php:749 vendor/cmb2/includes/CMB2_Types.php:797
 msgid "No terms"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Types.php:864 lib/cmb2/tests/test-cmb-types.php:736
-#: lib/cmb2/tests/test-cmb-types.php:762
+#: vendor/cmb2/includes/CMB2_Types.php:864 vendor/cmb2/tests/test-cmb-types.php:736
+#: vendor/cmb2/tests/test-cmb-types.php:762
 msgid "Add or Upload Files"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_Types.php:926 lib/cmb2/tests/test-cmb-types.php:772
-#: lib/cmb2/tests/test-cmb-types.php:787
+#: vendor/cmb2/includes/CMB2_Types.php:926 vendor/cmb2/tests/test-cmb-types.php:772
+#: vendor/cmb2/tests/test-cmb-types.php:787
 msgid "Add or Upload File"
 msgstr ""
 
-#: lib/cmb2/includes/helper-functions.php:250
+#: vendor/cmb2/includes/helper-functions.php:250
 msgid "Save"
 msgstr ""
 
@@ -867,12 +867,12 @@ msgctxt "post author"
 msgid "by %s"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:109
+#: vendor/cmb2/includes/CMB2_JS.php:109
 msgctxt "Valid formatDate string for jquery-ui datepicker"
 msgid "mm/dd/yy"
 msgstr ""
 
-#: lib/cmb2/includes/CMB2_JS.php:129
+#: vendor/cmb2/includes/CMB2_JS.php:129
 msgctxt ""
 "Valid formatting string, as per "
 "http://trentrichardson.com/examples/timepicker/"

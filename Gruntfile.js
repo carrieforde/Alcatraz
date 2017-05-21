@@ -57,7 +57,7 @@ module.exports = function( grunt ) {
 			},
 			dist: {
 				src: [
-					'lib/jquery-mobile/jquery.mobile.custom.min.js',
+					'vendor/jquery-mobile/jquery.mobile.custom.min.js',
 					'assets/scripts/src/utilities.js',
 					'assets/scripts/src/skip-link-focus-fix.js',
 					'assets/scripts/src/navigation.js',

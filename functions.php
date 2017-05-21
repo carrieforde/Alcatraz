@@ -292,7 +292,7 @@ require_once ALCATRAZ_PATH . 'inc/jetpack.php';
 /**
  * Better Font Awesome Library.
  */
-require_once ALCATRAZ_PATH . 'lib/better-font-awesome-library/better-font-awesome-library.php';
+require_once ALCATRAZ_PATH . 'vendor/better-font-awesome-library/better-font-awesome-library.php';
 
 /**
  * Admin-only functionality.

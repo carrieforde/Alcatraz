@@ -8,7 +8,7 @@
  */
 
 // Include CMB2.
-require_once ALCATRAZ_PATH . 'lib/cmb2/init.php';
+require_once ALCATRAZ_PATH . 'vendor/cmb2/init.php';
 
 add_action( 'admin_enqueue_scripts', 'alcatraz_admin_enqueue_scripts' );
 /**
