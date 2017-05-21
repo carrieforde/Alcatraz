@@ -77,6 +77,11 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'header-' . esc_attr( $header_text_color );
 	}
 
+	// Custom logo class.
+	if ( has_custom_logo() ) {
+		$classes[] = 'has-logo';
+	}
+
 	// Page Banner class.
 	if ( isset( $options['page_banner_widget_area'] ) && $options['page_banner_widget_area'] && is_active_sidebar( 'page-banner' ) ) {
 		$classes[] = 'has-page-banner';

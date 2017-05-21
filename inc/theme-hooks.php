@@ -64,7 +64,25 @@ function alcatraz_output_site_description() {
 	}
 }
 
+add_action( 'alcatraz_header', 'alcatraz_output_logo' );
+/**
+ * Output the site logo.
+ *
+ * @since 1.0.1
+ */
+function alcatraz_output_logo() {
 
+	if ( ! has_custom_logo() ) {
+		return;
+	}
+
+	// Start logo markup. 🎉 ?>
+	<div class="logo-wrap">
+		<?php the_custom_logo(); ?>
+	</div>
+
+	<?php
+}
 
 add_action( 'alcatraz_before_primary_sidebar', 'alcatraz_output_sub_page_nav' );
 /**
