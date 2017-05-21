@@ -81,7 +81,7 @@ module.exports = function( grunt ) {
 		watch: {
 			css: {
 				files: ['assets/sass/**/*.scss'],
-				tasks: ['styles', 'sassdoc'],
+				tasks: ['styles'],
 				options: {
 					livereload: true
 				},
@@ -123,7 +123,7 @@ module.exports = function( grunt ) {
 	grunt.loadNpmTasks( 'grunt-sassdoc' );
 
 	// Configure tasks.
-	grunt.registerTask( 'styles', ['sass', 'postcss', 'cssnano', 'sassdoc'] );
+	grunt.registerTask( 'styles', ['sass', 'postcss', 'cssnano'] );
 	grunt.registerTask( 'scripts', ['jshint', 'concat', 'uglify'] );
 	grunt.registerTask( 'build', ['sass', 'postcss', 'jshint', 'concat', 'uglify', 'wp_readme_to_markdown', 'makepot'] );
 };
