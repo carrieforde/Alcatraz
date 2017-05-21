@@ -24,8 +24,6 @@ function alcatraz_get_option_defaults() {
 		'mobile_nav_toggle_style' => 'hamburger',
 		'mobile_nav_style'        => 'default',
 		'sub_menu_toggle_style'   => 'chevron',
-		'logo_id'                 => '',
-		'mobile_logo_id'          => '',
 		'footer_widget_areas'     => 3,
 		'footer_bottom'           => '',
 		'social_icons_in_footer'  => '',
@@ -81,12 +79,6 @@ function alcatraz_validate_options( $input ) {
 	}
 	if ( isset( $input['sub_menu_toggle_style'] ) ) {
 		$options['sub_menu_toggle_style'] = sanitize_text_field( $input['sub_menu_toggle_style'] );
-	}
-	if ( isset( $input['logo_id'] ) ) {
-		$options['logo_id'] = alcatraz_empty_or_int( $input['logo_id'] );
-	}
-	if ( isset( $input['mobile_logo_id'] ) ) {
-		$options['mobile_logo_id'] = alcatraz_empty_or_int( $input['mobile_logo_id'] );
 	}
 	if ( isset( $input['footer_widget_areas'] ) ) {
 		$options['footer_widget_areas'] = absint( $input['footer_widget_areas'] );

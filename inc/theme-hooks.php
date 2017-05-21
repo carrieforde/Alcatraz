@@ -64,49 +64,7 @@ function alcatraz_output_site_description() {
 	}
 }
 
-add_action( 'alcatraz_header', 'alcatraz_output_logo', 2 );
-/**
- * Output the site logo.
- *
- * @since  1.0.0
- */
-function alcatraz_output_logo() {
 
-	$options = get_option( 'alcatraz_options' );
-
-	if ( ! empty( $options['logo_id'] ) || ! empty( $options['mobile_logo_id'] ) ) {
-
-		echo '<div class="logo-wrap">';
-
-		printf(
-			'<a href="%s" title="%s" rel="home">',
-			esc_url( home_url( '/' ) ),
-			esc_attr( get_bloginfo( 'name', 'display' ) )
-		);
-
-		if ( ! empty( $options['logo_id'] ) ) {
-
-			printf(
-				'<img class="logo logo-regular" src="%s" alt="%s">',
-				esc_url( wp_get_attachment_image_src( $options['logo_id'], 'full' )[0] ),
-				esc_attr( get_bloginfo( 'name', 'display' ) )
-			);
-
-		}
-
-		if ( ! empty( $options['mobile_logo_id'] ) ) {
-			printf(
-				'<img class="logo logo-mobile" src="%s" alt="%s">',
-				esc_url( wp_get_attachment_image_src( $options['mobile_logo_id'], 'full' )[0] ),
-				esc_attr( get_bloginfo( 'name', 'display' ) )
-			);
-		}
-
-		echo '</a>';
-
-		echo '</div>';
-	}
-}
 
 add_action( 'alcatraz_before_primary_sidebar', 'alcatraz_output_sub_page_nav' );
 /**
