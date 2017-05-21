@@ -89,6 +89,74 @@
 
 
 //-----------------------------------------
+// General Menu Styles
+//-----------------------------------------
+.menu {
+	@include list-reset;
+}
+
+.menu-item {
+	
+	> a {
+		display: block;
+		padding: rem(5) 0;
+		text-decoration: none;
+	}
+
+	&.menu-item-has-children {
+		position: relative;
+
+		@include grid-media($tablet-landscape-up) {
+
+			> a {
+				padding-right: rem(40);
+			}
+		}
+	}
+}
+
+
+//-----------------------------------------
+// Sub Menus
+//-----------------------------------------
+.sub-menu {
+	@include list-reset;
+
+	display: none;
+}
+
+.sub-level-toggle {
+	@include position(absolute, 0 0 null null);
+	@include size(rem(34));
+
+	background-color: transparent;
+
+	&:hover,
+	&:active,
+	&:focus {
+		background-color: transparent;
+	}
+
+	.sub-level-toggle-span {
+		@include position(absolute, 0 0 0 0);
+		@include size(rem(12) rem(2));
+
+		background-color: $color__menu-sub-toggle;
+		margin: auto;
+	}
+
+	.span-2 {
+		transform: rotate(90deg);
+		transition: $transition__transform;
+
+		.toggled > & {
+			transform: rotate(0);
+		}
+	}
+}
+
+
+//-----------------------------------------
 // Main Navigation
 //-----------------------------------------
 .main-navigation {
