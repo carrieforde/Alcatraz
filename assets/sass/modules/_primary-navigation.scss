@@ -6,14 +6,37 @@
 //-----------------------------------------
 // Mobile Style Default
 //-----------------------------------------
-.primary-menu {
+.main-navigation__menu {
 	display: none;
 
-	@include grid-media($tablet-portrait-up) {
+	@include grid-media($tablet-landscape-up) {
 		display: block;
 	}
 
 	.toggled & {
 		display: block;
+	}
+}
+
+
+//-----------------------------------------
+// Full Screen Menu Style
+//-----------------------------------------
+.mobile-nav-style-full-screen {
+
+	.toggled {
+
+		&.main-navigation {
+			@include position(absolute, 0 0 0 0);
+
+			background-color: color(white);
+		}
+	}
+
+	&.admin-bar {
+
+		.main-navigation {
+			top: rem(46);
+		}
 	}
 }
