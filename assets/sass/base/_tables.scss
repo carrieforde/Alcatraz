@@ -1,12 +1,8 @@
 //--------------------------------------------------------------
-//   3.5 TABLES
+// TABLES
 //--------------------------------------------------------------
-
-
 table {
-	border: $border__table;
 	margin: 0 0 rem(25);
-	width: 100%;
 }
 
 thead {
@@ -16,9 +12,5 @@ thead {
 th,
 td {
 	padding: em(8);
-	border-right: $border__table;
-
-	:last-child {
-		border: none;
-	}
+	border: $border__table;
 }
