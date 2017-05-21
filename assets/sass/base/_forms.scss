@@ -17,44 +17,15 @@ input[type="search"],
 textarea {
 	border: $border__forms;
 	color: $color__forms-text;
+	padding: rem(5);
 	vertical-align: text-bottom;
 
 	&:focus {
 		border: $border__forms-focus;
-		color: $color__forms-text;
 		outline: none;
 	}
 }
 
-input[type="text"],
-input[type="email"],
-input[type="url"],
-input[type="password"],
-input[type="search"] {
-	padding: rem(5);
-}
-
 textarea {
 	width: 100%;
-	padding: rem(5);
-}
-
-// Buttons
-button,
-input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	padding: rem(10) rem(15);
-	background-color: $color__button-background;
-	color: $color__button-text;
-	font-weight: 500;
-	letter-spacing: rem(0.5);
-	text-transform: uppercase;
-	transition: $transition__hover-background;
-
-	&:hover,
-	&:active,
-	&:focus {
-		background-color: $color__button-background-hover;
-	}
 }
