@@ -20,53 +20,58 @@
 
 <body <?php body_class(); ?>>
 
-<?php do_action( 'alcatraz_before' ); ?>
+	<div class="menu-screen"></div>
 
-<div id="page" class="site">
+	<?php do_action( 'alcatraz_before' ); ?>
 
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'alcatraz' ); ?></a>
+	<div id="page" class="site">
 
-	<?php do_action( 'alcatraz_before_header' ); ?>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'alcatraz' ); ?></a>
 
-	<header id="site-header" class="site-header" role="banner">
+		<?php do_action( 'alcatraz_before_header' ); ?>
 
-		<?php do_action( 'alcatraz_before_header_inside' ); ?>
+		<header id="site-header" class="site-header" role="banner">
 
-		<div class="header-inner">
+			<?php do_action( 'alcatraz_before_header_inside' ); ?>
 
-			<?php do_action( 'alcatraz_header' ); ?>
+			<div class="header-inner">
 
-		</div>
+				<?php do_action( 'alcatraz_header' ); ?>
 
-		<?php if ( has_nav_menu( 'primary' ) ) : ?>
-
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-			<div class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
-				<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
-				<span class="menu-toggle-span span-1"></span>
-				<span class="menu-toggle-span span-2"></span>
-				<span class="menu-toggle-span span-3"></span>
 			</div>
-			<div class="menu-overlay"></div>
-			<?php wp_nav_menu( array(
-				'theme_location' => 'primary',
-				'menu_id'        => 'primary-menu',
-				'container_id'   => 'primary-menu-wrap',
-			) ); ?>
-			<div id="mobile-nav-left-swipe-zone"></div>
-			<div id="mobile-nav-right-swipe-zone"></div>
-		</nav>
 
-		<?php endif; ?>
+			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-		<?php do_action( 'alcatraz_after_header_inside' ); ?>
+				<button class="mobile-menu-toggle" type="button">
+					<span class="mobile-menu-toggle__bar bar-1"></span>
+					<span class="mobile-menu-toggle__bar bar-2"></span>
+					<span class="mobile-menu-toggle__bar bar-3"></span>
+					<span class="screen-reader-text">Menu</span>
+				</button>
 
-	</header>
+				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php do_action( 'alcatraz_before_primary_nav' ); ?>
 
-	<?php do_action( 'alcatraz_after_header' ); ?>
+					<?php wp_nav_menu( array(
+						'theme_location'  => 'primary',
+						'menu_id'         => 'primary-menu',
+						'menu_class'      => 'primary-menu menu',
+						'container_class' => 'main-navigation__menu',
+					) ); ?>
 
-	<?php do_action( 'alcatraz_before_content' ); ?>
+					<?php do_action( 'alcatraz_after_primary_nav' ); ?>
+				</nav>
 
-	<div id="content" class="site-content">
+			<?php endif; ?>
 
-		<?php do_action( 'alcatraz_before_content_inside' ); ?>
+			<?php do_action( 'alcatraz_after_header_inside' ); ?>
+
+		</header>
+
+		<?php do_action( 'alcatraz_after_header' ); ?>
+
+		<?php do_action( 'alcatraz_before_content' ); ?>
+
+		<div id="content" class="site-content">
+
+			<?php do_action( 'alcatraz_before_content_inside' ); ?>
