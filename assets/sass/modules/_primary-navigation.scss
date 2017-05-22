@@ -6,7 +6,8 @@
 //-----------------------------------------
 // Mobile Style Default
 //-----------------------------------------
-.main-navigation__menu {
+.main-navigation {
+	background-color: color(white);
 	display: none;
 
 	@include grid-media($tablet-landscape-up) {
@@ -37,6 +38,65 @@
 
 		.main-navigation {
 			top: rem(46);
+
+			@include grid-media($wp-admin-bar) {
+				top: rem(32);
+			}
 		}
+	}
+}
+
+
+//-----------------------------------------
+// Slide-in Mobile Navigation
+//-----------------------------------------
+
+// Shared styles.
+.mobile-nav-style-slide-left,
+.mobile-nav-style-slide-right {
+	
+	&.admin-bar {
+
+		.main-navigation {
+			top: rem(46);
+
+			@include grid-media($wp-admin-bar) {
+				top: rem(32);
+			}
+		}
+	}
+
+	.main-navigation {
+		@include size(rem(400) 100vh);
+
+		background-color: color(white);
+		display: block;
+		max-width: 100%;
+		overflow-y: scroll;
+		transition: $transition__transform;
+
+		&.toggled {
+			transform: translateX(0);
+		}
+	}
+}
+
+// Slide from left.
+.mobile-nav-style-slide-left {
+
+	.main-navigation {
+		@include position(absolute, 0 null 0 0);
+
+		transform: translateX(-400px);
+	}
+}
+
+// Slide from right.
+.mobile-nav-style-slide-right {
+
+	.main-navigation {
+		@include position(absolute, 0 0 0 null);
+
+		transform: translateX(400px);
 	}
 }
