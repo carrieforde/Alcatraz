@@ -74,9 +74,22 @@
 		max-width: 100%;
 		overflow-y: scroll;
 		transition: $transition__transform;
+		z-index: 2;
 
 		&.toggled {
 			transform: translateX(0);
+		}
+	}
+
+	// When the menu is open.
+	&.menu-open {
+		overflow: hidden; // prevents body from scrolling.
+
+		.menu-screen {
+			@include position(absolute, 0 0 0 0);
+
+			background-color: rgba(color(black), 0.7);
+			z-index: 1;
 		}
 	}
 }
