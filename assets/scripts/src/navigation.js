@@ -317,15 +317,16 @@ var AlcatrazNavigation = ( function( $ ) {
 	 * @returns  {object}  The original this.
 	 */
 	var toggleMobileNav = function() {
-		var $container = $( '#site-navigation' );
-		var $menu      = $container.find( '#primary-menu' );
+		var $body      = $( 'body' ),
+			$container = $( '#site-navigation' ),
+			$menu      = $container.find( '#primary-menu' );
 
 		if ( $container.hasClass( 'toggled' ) ) {
-			$window.trigger( 'closeMobileNav.alcatraz' );
+			$body.removeClass( 'menu-open' );
 			$container.removeClass( 'toggled' );
 			$menu.attr( 'aria-expanded', 'false' );
 		} else {
-			$window.trigger( 'openMobileNav.alcatraz' );
+			$body.addClass( 'menu-open' );
 			$container.addClass( 'toggled' );
 			$menu.attr( 'aria-expanded', 'true' );
 		}
@@ -456,9 +457,15 @@ var AlcatrazNavigation = ( function( $ ) {
 			return false;
 		}
 
-		var $toggle = $container.find( '.mobile-menu-toggle' );
+		var $toggle = $container.prev( '.mobile-menu-toggle' );
 
 		if ( 'undefined' === typeof $toggle ) {
+			return false;
+		}
+
+		var $screen = $( '.menu-screen' );
+
+		if ( ! $screen ) {
 			return false;
 		}
 
@@ -480,7 +487,7 @@ var AlcatrazNavigation = ( function( $ ) {
 			if ( $body.hasClass( 'mobile-nav-style-slide-left' ) ||
 				 $body.hasClass( 'mobile-nav-style-slide-right' ) ) {
 				$.event.special.swipe.horizontalDistanceThreshold = 15;
-				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation .menu-overlay' ).on( 'swipeleft swiperight', function() {
+				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation' ).on( 'swipeleft swiperight', function() {
 					$window.trigger( 'toggleMobileNav.alcatraz' );
 				});
 			}
@@ -488,6 +495,11 @@ var AlcatrazNavigation = ( function( $ ) {
 
 		// Set up the mobile nav toggle.
 		$toggle.on( 'click', function() {
+			$window.trigger( 'toggleMobileNav.alcatraz' );
+		});
+
+		// Allow click on screen to close menu.
+		$screen.on( 'click', function() {
 			$window.trigger( 'toggleMobileNav.alcatraz' );
 		});
 
