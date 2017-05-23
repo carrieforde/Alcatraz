@@ -77,7 +77,8 @@
 // Menu Toggle Positioning
 //-----------------------------------------
 body:not(.mobile-nav-style-default) {
-		
+	
+	// Add extra padding at the top to give the menu breathing room.
 	.main-navigation {
 
 		@include media(null, $tablet-landscape-up) {
