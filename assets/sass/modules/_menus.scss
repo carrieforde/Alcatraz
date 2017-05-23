@@ -201,6 +201,10 @@ body:not(.mobile-nav-style-default) {
 	}
 }
 
+
+//-----------------------------------------
+// Sub Menu Toggles
+//-----------------------------------------
 .sub-level-toggle {
 	@include position(absolute, 0 0 null null);
 	@include size(rem(34));
@@ -227,6 +231,34 @@ body:not(.mobile-nav-style-default) {
 
 		.toggled > & {
 			transform: rotate(0);
+		}
+	}
+
+	// The chevron sub menu toggle.
+	.sub-menu-toggle-style-chevron & {
+
+		.sub-level-toggle-span {
+			@include position(absolute, 25% auto 0 auto);
+
+			transition: $transition__transform;
+			transform: rotate 0.3s ease-in-out;
+			width: rem(11);
+		}
+
+		.span-1 {
+			right: 48.5%;
+			transform: rotate(45deg);
+			transform-origin: 100%;
+		}
+
+		.span-2 {
+			left: 48.5%;
+			transform: rotate(-45deg);
+			transform-origin: 0;
+		}
+
+		&.toggled {
+			transform: rotateX(180deg);
 		}
 	}
 }
