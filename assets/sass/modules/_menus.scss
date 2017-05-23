@@ -17,10 +17,11 @@
 	}
 
 	.mobile-nav-toggle-style-hamburger & {
+		@include position(absolute, $size__padding $size__padding null null);
 		@include size(rem(25) rem(21));
 
 		background-color: transparent;
-		position: relative;
+		margin: 0;
 		z-index: 6;
 
 		&:hover,
@@ -62,6 +63,48 @@
 			text-indent: -9999px;
 		}
 	}
+
+	.mobile-nav-toggle-style-hamburger.admin-bar & {
+		top: ($size__padding * 2) + rem(46);
+
+		@include grid-media($wp-admin-bar) {
+			top: ($size__padding + 2) + rem(32);
+		}
+	}
+}
+
+//-----------------------------------------
+// Menu Toggle Positioning
+//-----------------------------------------
+body:not(.mobile-nav-style-default) {
+		
+	.main-navigation {
+
+		@include media(null, $tablet-landscape-up) {
+			padding-top: $size__padding * 4;
+		}
+	}
+
+	// Position the menu close toggle.
+	&.menu-open {
+		
+		.mobile-menu-toggle {
+			position: absolute;
+			top: $size__padding;
+			z-index: 3;
+		}
+
+		&.admin-bar {
+			
+			.mobile-menu-toggle {
+				top: ($size__padding * 2) + rem(46);
+
+				@include grid-media($wp-admin-bar) {
+					top: ($size__padding + 2) + rem(32);
+				}
+			}
+		}
+	}
 }
 
 //-----------------------------------------
@@ -69,7 +112,7 @@
 //-----------------------------------------
 .mobile-nav-toggle-style-hamburger {
 	
-	.toggled {
+	&.menu-open {
 
 		.mobile-menu-toggle__bar {
 
