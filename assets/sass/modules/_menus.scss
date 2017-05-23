@@ -7,7 +7,9 @@
 // Menu Toggles
 //-----------------------------------------
 .mobile-menu-toggle {
-	width: 100%;
+	display: block;
+	margin: 0 auto;
+	width: rem(200);
 
 
 	@include grid-media($tablet-landscape-up) {
