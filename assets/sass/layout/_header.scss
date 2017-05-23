@@ -17,12 +17,6 @@
 .header-inner {
 	padding: $size__padding $size__padding 0;
 	position: relative;
-
-	.mobile-nav-toggle-style-hamburger & {
-		float: left;
-		max-width: 65%;
-		max-width: calc(100% - 120px);
-	}
 }
 
 .site-title {
@@ -52,14 +46,6 @@
 		.header-inner {
 			padding: rem(20);
 			text-align: center;
-		}
-
-		&.mobile-nav-toggle-style-hamburger {
-
-			.header-inner {
-				float: none;
-				max-width: 100%;
-			}
 		}
 	}
 
