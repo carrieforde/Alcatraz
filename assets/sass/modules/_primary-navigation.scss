@@ -9,6 +9,7 @@
 .main-navigation {
 	background-color: color(white);
 	display: none;
+	padding: $size__padding;
 
 	@include grid-media($tablet-landscape-up) {
 		display: block;
