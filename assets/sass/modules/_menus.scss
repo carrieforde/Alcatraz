@@ -242,17 +242,17 @@ body:not(.mobile-nav-style-default) {
 
 			transition: $transition__transform;
 			transform: rotate 0.3s ease-in-out;
-			width: rem(11);
+			width: rem(11.5);
 		}
 
 		.span-1 {
-			right: 48.5%;
+			right: 49%;
 			transform: rotate(45deg);
 			transform-origin: 100%;
 		}
 
 		.span-2 {
-			left: 48.5%;
+			left: 49%;
 			transform: rotate(-45deg);
 			transform-origin: 0;
 		}
