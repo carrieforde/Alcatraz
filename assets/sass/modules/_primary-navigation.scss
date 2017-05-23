@@ -92,6 +92,34 @@
 			z-index: 1;
 		}
 	}
+
+	&.mobile-nav-toggle-style-button {
+		
+		.main-navigation {
+			padding-top: $size__padding * 4;
+		}
+	}
+
+	// Position the menu close toggle.
+	&.menu-open {
+		
+		.mobile-menu-toggle {
+			position: absolute;
+			top: $size__padding;
+			z-index: 3;
+		}
+
+		&.admin-bar {
+			
+			.mobile-menu-toggle {
+				top: $size__padding + rem(46);
+
+				@include grid-media($wp-admin-bar) {
+					top: $size__padding + rem(32);
+				}
+			}
+		}
+	}
 }
 
 // Slide from left.
@@ -102,6 +130,13 @@
 
 		transform: translateX(-400px);
 	}
+
+	&.menu-open {
+		
+		.mobile-menu-toggle {
+			left: calc(400px - (200px + #{$size__padding}));
+		}
+	}
 }
 
 // Slide from right.
@@ -111,5 +146,12 @@
 		@include position(absolute, 0 0 0 null);
 
 		transform: translateX(400px);
+	}
+
+	&.menu-open {
+		
+		.mobile-menu-toggle {
+			right: $size__padding;
+		}
 	}
 }
