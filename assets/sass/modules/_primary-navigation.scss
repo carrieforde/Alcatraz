@@ -106,7 +106,10 @@
 .mobile-nav-style-slide-left {
 
 	.main-navigation {
-		@include position(absolute, 0 null 0 0);
+
+		@include media(null, $tablet-landscape-up) {
+			@include position(absolute, 0 null 0 0);
+		}
 
 		transform: translateX(-400px);
 	}
@@ -130,7 +133,10 @@
 .mobile-nav-style-slide-right {
 
 	.main-navigation {
-		@include position(absolute, 0 0 0 null);
+
+		@include media(null, $tablet-landscape-up) {
+			@include position(absolute, 0 0 0 null);
+		}
 
 		transform: translateX(400px);
 	}
