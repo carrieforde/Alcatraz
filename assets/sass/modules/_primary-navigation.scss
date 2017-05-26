@@ -118,14 +118,27 @@
 
 	&.menu-open {
 		
-		.mobile-menu-toggle {
-			left: calc(400px - (200px + #{$size__padding}));
+		&:not(.mobile-nav-toggle-style-hamburger) {
+			
+			.mobile-menu-toggle {
+				right: $size__padding;
+
+				@include media(em(400), null) {
+
+					
+					left: calc(400px - (200px + #{$size__padding}));
+					right: auto;
+				}
+			}
 		}
 
-		&.mobile-nav-toggle-style-hamburger {
+		@include media(em(400), null) {
 
-			.mobile-menu-toggle {
-				left: calc(400px - (25px + #{$size__padding}));
+			&.mobile-nav-toggle-style-hamburger {
+
+				.mobile-menu-toggle {
+					left: calc(400px - (25px + #{$size__padding}));
+				}
 			}
 		}
 	}
