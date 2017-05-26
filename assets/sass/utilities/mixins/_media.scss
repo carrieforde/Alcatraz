@@ -24,6 +24,7 @@
 	}
 	@if type-of($max) == 'map' {
 		$max: map-get($max, media);
+		$max: $max - 1;
 	}
 
 	// Create the media query.
