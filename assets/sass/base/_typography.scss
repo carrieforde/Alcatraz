@@ -4,7 +4,7 @@
 
 // Set the base font size.
 html {
-	font-size: $base-context;
+	font-size: $base-context * 1px;
 }
 
 body,
