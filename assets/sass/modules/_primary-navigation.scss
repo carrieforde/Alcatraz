@@ -75,14 +75,16 @@
 	}
 
 	.main-navigation {
-		@include size(rem(400) 100vh);
-
 		background-color: color(white);
 		display: block;
 		max-width: 100%;
 		overflow-y: scroll;
 		transition: $transition__transform;
 		z-index: 2;
+
+		@include media(null, $tablet-landscape-up) {
+			@include size(rem(400) 100vh);
+		}
 
 		&.toggled {
 			transform: translateX(0);
@@ -109,9 +111,9 @@
 
 		@include media(null, $tablet-landscape-up) {
 			@include position(fixed, 0 null 0 0);
-		}
 
-		transform: translateX(-400px);
+			transform: translateX(-400px);
+		}
 	}
 
 	&.menu-open {
@@ -136,9 +138,9 @@
 
 		@include media(null, $tablet-landscape-up) {
 			@include position(fixed, 0 0 0 null);
-		}
 
-		transform: translateX(400px);
+			transform: translateX(400px);
+		}
 	}
 
 	&.menu-open {
