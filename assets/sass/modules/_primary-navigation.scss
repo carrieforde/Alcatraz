@@ -86,6 +86,10 @@
 			@include size(rem(400) 100vh);
 		}
 
+		@include grid-media($tablet-landscape-up) {
+			overflow-y: initial;
+		}
+
 		&.toggled {
 			transform: translateX(0);
 		}
@@ -102,13 +106,21 @@
 			z-index: 1;
 		}
 	}
+}
 
-	// Mobile swipe area.
-	#mobile-nav-swipe-zone {
-		@include position(fixed, 0 null 0 null);
-		
-		width: rem(20);
-		z-index: 20;
+// Mobile swipe area.
+#mobile-nav-swipe-zone {
+	@include position(fixed, 0 null 0 null);
+	
+	width: rem(20);
+	z-index: 20;
+
+	.toggled + & {
+		display: none;
+	}
+
+	@include grid-media($tablet-landscape-up) {
+		display: none;
 	}
 }
 
