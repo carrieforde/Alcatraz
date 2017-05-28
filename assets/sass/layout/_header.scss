@@ -55,6 +55,7 @@
 			@include position(fixed, 0 null 0 null);
 
 			background-color: color(white);
+			box-shadow: $color__header-style-side-box-shadow;
 			overflow-y: scroll;
 			padding-top: $size__padding * 2;
 			width: rem(300);
