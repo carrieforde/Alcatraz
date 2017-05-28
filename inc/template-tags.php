@@ -290,20 +290,20 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
 		return false;
 	}
 
-	$output   = '';
+	$output = '';
 
 	// Find the top level page id.
 	if ( ! $post->post_parent ) {
 		$top_page_id = $post->ID;
 	} else {
-		$ancestors    = get_post_ancestors( $post );
+		$ancestors   = get_post_ancestors( $post );
 		$top_page_id = $ancestors ? end( $ancestors ) : $post->ID;
 	}
 
 	$default_args = array(
-		'depth'       => 5,
-		'echo'        => 0,
-		'title_li'    => '',
+		'depth'    => 5,
+		'echo'     => 0,
+		'title_li' => '',
 	);
 	$args = wp_parse_args( $args, $default_args );
 
@@ -326,7 +326,7 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
 		$output = sprintf( '<nav class="%s">%s<ul class="%s">%s</ul></nav>',
 			'alcatraz-sub-page-nav sub-page-nav',
 			$page_title,
-			'sub-page-nav-top-level',
+			'sub-page-nav-top-level menu',
 			$page_list
 		);
 	}
