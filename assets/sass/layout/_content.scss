@@ -25,6 +25,7 @@
 
 .site-content {
 	overflow: hidden;
+	padding: 0 $size__padding 0;
 
 	.boxed-content & {
 		@include center;
