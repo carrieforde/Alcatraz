@@ -57,8 +57,8 @@
 						'menu_class'      => 'primary-menu menu',
 						'container_class' => 'main-navigation__menu',
 					) ); ?>
-
 				</nav>
+				<div id="mobile-nav-swipe-zone"></div>
 
 			<?php endif; ?>
 
