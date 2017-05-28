@@ -3,6 +3,13 @@
 //--------------------------------------------------------------
 .site-header {
 	padding: $size__padding;
+
+	.header-style-default & {
+		
+		@include grid-media($tablet-landscape-up) {
+			text-align: center;
+		}
+	}
 }
 
 .site-title {
