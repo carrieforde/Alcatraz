@@ -6,7 +6,7 @@
 	padding: $size__padding;
 }
 
-@media (min-width: em(768)) {
+@include grid-media($tablet-landscape-up) {
 
 	// Left Sidebar
 	.left-sidebar {
