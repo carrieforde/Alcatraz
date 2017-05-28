@@ -1077,6 +1077,7 @@ body:not(.header-style-side) .reverse-expand .sub-menu .sub-menu {
   bottom: 0;
   left: 0;
   background-color: #fff;
+  z-index: 5;
 }
 
 .mobile-nav-style-full-screen.admin-bar .main-navigation {
@@ -1127,13 +1128,16 @@ body:not(.header-style-side) .reverse-expand .sub-menu .sub-menu {
   z-index: 1;
 }
 
-.mobile-nav-style-slide-left #mobile-nav-swipe-zone,
-.mobile-nav-style-slide-right #mobile-nav-swipe-zone {
+#mobile-nav-swipe-zone {
   position: fixed;
   top: 0;
   bottom: 0;
   width: 1.25rem;
   z-index: 20;
+}
+
+.toggled + #mobile-nav-swipe-zone {
+  display: none;
 }
 
 .mobile-nav-style-slide-left.menu-open:not(.mobile-nav-toggle-style-hamburger) .mobile-menu-toggle {
@@ -1481,6 +1485,13 @@ body:not(.header-style-side) .reverse-expand .sub-menu .sub-menu {
   }
   .main-navigation {
     display: block;
+  }
+  .mobile-nav-style-slide-left .main-navigation,
+  .mobile-nav-style-slide-right .main-navigation {
+    overflow-y: initial;
+  }
+  #mobile-nav-swipe-zone {
+    display: none;
   }
   .header-style-default .site-header {
     text-align: center;
