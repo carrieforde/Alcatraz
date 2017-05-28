@@ -5,51 +5,28 @@
 	margin: 0 0 rem(25);
 	position: relative;
 
-	.sub-page-nav-top-level {
-		margin: 0;
-		padding: 0;
+	.menu {
+		@include margin-padding-reset;
+
+		text-align: left;
 	}
 
-	ul {
-		list-style: none;
+	.page_item {
+		
+		> a {
+			display: block;
+			padding: rem(5) 0;
+		}
 	}
-
-	li {
-		margin: 0;
-		padding: 0;
+	
+	.page_item_has_children {
 		position: relative;
-		width: 100%;
-
-		&:last-child {
-			border-bottom: none;
-		}
 	}
 
-	li a {
-		display: block;
-		padding: rem(10) rem(15);
-	}
+	.children {
+		@include margin-padding-reset;
 
-	.page_item_has_children > a {
-		padding-right: rem(50);
-
-		&.sub-level-toggle {
-			padding: rem(10) 0;
-			right: rem(5);
-		}
-	}
-
-	ul ul {
 		display: none;
-		margin: 0;
-		padding: 0 0 0 rem(20);
 	}
 
-	.current_page_ancestor > ul {
-		display: block;
-	}
-
-	.current_page_item {
-		font-weight: 500;
-	}
 }
