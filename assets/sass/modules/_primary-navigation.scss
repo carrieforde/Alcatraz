@@ -32,6 +32,7 @@
 			@include position(absolute, 0 0 0 0);
 
 			background-color: color(white);
+			z-index: 5;
 		}
 	}
 
