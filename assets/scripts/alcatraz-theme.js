@@ -571,7 +571,7 @@ var AlcatrazNavigation = ( function( $ ) {
 			if ( $body.hasClass( 'mobile-nav-style-slide-left' ) ||
 				 $body.hasClass( 'mobile-nav-style-slide-right' ) ) {
 				$.event.special.swipe.horizontalDistanceThreshold = 15;
-				$( '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation' ).on( 'swipeleft swiperight', function() {
+				$( '#mobile-nav-swipe-zone, .main-navigation' ).on( 'swipeleft swiperight', function() {
 					$window.trigger( 'toggleMobileNav.alcatraz' );
 				});
 			}

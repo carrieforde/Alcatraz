@@ -1127,12 +1127,29 @@ body:not(.header-style-side) .reverse-expand .sub-menu .sub-menu {
   z-index: 1;
 }
 
+.mobile-nav-style-slide-left #mobile-nav-swipe-zone,
+.mobile-nav-style-slide-right #mobile-nav-swipe-zone {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1.25rem;
+  z-index: 20;
+}
+
 .mobile-nav-style-slide-left.menu-open:not(.mobile-nav-toggle-style-hamburger) .mobile-menu-toggle {
   right: 1.25rem;
 }
 
+.mobile-nav-style-slide-left #mobile-nav-swipe-zone {
+  left: 0;
+}
+
 .mobile-nav-style-slide-right.menu-open .mobile-menu-toggle {
   right: 1.25rem;
+}
+
+.mobile-nav-style-slide-right #mobile-nav-swipe-zone {
+  right: 0;
 }
 
 .site-header {
