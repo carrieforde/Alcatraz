@@ -198,6 +198,18 @@ body:not(.mobile-nav-style-default) {
 		min-width: rem(175);
 		text-align: left;
 		width: 100%;
+
+		.sub-menu {
+			left: 100%;
+			top: 0;
+		}
+
+		.reverse-expand {
+			
+			.sub-menu {
+				left: -100%;
+			}
+		}
 	}
 }
 
