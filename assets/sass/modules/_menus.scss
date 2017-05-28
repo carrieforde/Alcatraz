@@ -143,6 +143,10 @@ body:not(.mobile-nav-style-default) {
 
 	@include grid-media($tablet-landscape-up) {
 		text-align: center;
+
+		.header-style-side & {
+			text-align: left;
+		}
 	}
 
 	> .menu-item {
@@ -150,8 +154,16 @@ body:not(.mobile-nav-style-default) {
 		@include grid-media($tablet-landscape-up) {
 			display: inline-block;
 
+			.header-style-side & {
+				display: block;
+			}
+
 			+ .menu-item {
 				margin-left: rem(20);
+
+				.header-style-side & {
+					margin-left: 0;
+				}
 			}
 		}
 	}
@@ -167,6 +179,11 @@ body:not(.mobile-nav-style-default) {
 		@include grid-media($tablet-landscape-up) {
 			padding-left: rem(10);
 			padding-right: rem(10);
+
+			.header-style-side & {
+				padding-left: 0;
+				padding-right: 0;
+			}
 		}
 	}
 
@@ -185,32 +202,46 @@ body:not(.mobile-nav-style-default) {
 
 //-----------------------------------------
 // Sub Menus
+//
+// The header style side menu should
+// function like a mobile menu, so most styles
+// are scoped to the default & short headers.
 //-----------------------------------------
 .sub-menu {
 	@include list-reset;
 
 	display: none;
+}
 
-	@include grid-media($tablet-landscape-up) {
-		@include position(absolute, 101% null null 0);
+// Not the side header style.
+body:not(.header-style-side) {
 
-		background-color: $color__sub-menu-background;
-		min-width: rem(175);
-		text-align: left;
-		width: 100%;
+	.reverse-expand {
 
-		.reverse-expand & {
+		.sub-menu {
 			left: auto;
 			right: 0;
 
 			.sub-menu {
 				left: -100%;
 			}
-		}
+		}	
+	}
 
-		.sub-menu {
-			left: 100%;
-			top: 0;
+	.sub-menu {
+		
+		@include grid-media($tablet-landscape-up) {
+			@include position(absolute, 101% null null 0);
+
+			background-color: $color__sub-menu-background;
+			min-width: rem(175);
+			text-align: left;
+			width: 100%;
+
+			.sub-menu {
+				left: 100%;
+				top: 0;
+			}
 		}
 	}
 }
