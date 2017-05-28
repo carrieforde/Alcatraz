@@ -102,6 +102,14 @@
 			z-index: 1;
 		}
 	}
+
+	// Mobile swipe area.
+	#mobile-nav-swipe-zone {
+		@include position(fixed, 0 null 0 null);
+		
+		width: rem(20);
+		z-index: 20;
+	}
 }
 
 // Slide from left.
@@ -142,6 +150,10 @@
 			}
 		}
 	}
+
+	#mobile-nav-swipe-zone {
+		left: 0;
+	}
 }
 
 // Slide from right.
@@ -161,5 +173,9 @@
 		.mobile-menu-toggle {
 			right: $size__padding;
 		}
+	}
+
+	#mobile-nav-swipe-zone {
+		right: 0;
 	}
 }
