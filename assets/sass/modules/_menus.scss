@@ -17,11 +17,11 @@
 	}
 
 	.mobile-nav-toggle-style-hamburger & {
+		@include margin-padding-reset;
 		@include position(absolute, $size__padding $size__padding null null);
 		@include size(rem(25) rem(21));
 
 		background-color: transparent;
-		margin: 0;
 		z-index: 6;
 
 		&:hover,
@@ -199,16 +199,18 @@ body:not(.mobile-nav-style-default) {
 		text-align: left;
 		width: 100%;
 
-		.sub-menu {
-			left: 100%;
-			top: 0;
-		}
+		.reverse-expand & {
+			left: auto;
+			right: 0;
 
-		.reverse-expand {
-			
 			.sub-menu {
 				left: -100%;
 			}
+		}
+
+		.sub-menu {
+			left: 100%;
+			top: 0;
 		}
 	}
 }
