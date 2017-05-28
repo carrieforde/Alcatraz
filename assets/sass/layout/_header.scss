@@ -52,7 +52,7 @@
 	@include grid-media($tablet-landscape-up) {
 		
 		.site-header {
-			@include position(fixed, 0 null 0 0);
+			@include position(fixed, 0 null 0 null);
 
 			background-color: color(white);
 			overflow-y: scroll;

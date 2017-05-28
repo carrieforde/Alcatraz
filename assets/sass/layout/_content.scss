@@ -36,6 +36,13 @@
 		float: right;
 		width: calc(100% - 300px);
 	}
+
+	.header-style-side.boxed-content & {
+		@include position(relative, null 0 null rem(150));
+		
+		float: none;
+		max-width: $size__layout-boxed-content;
+	}
 }
 
 .content-area {
