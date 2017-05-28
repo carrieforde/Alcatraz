@@ -1,105 +1,20 @@
 //--------------------------------------------------------------
 // HEADER
 //--------------------------------------------------------------
-.header-image-wrap {
-	@include size(100%);
-
-	display: block;
-	overflow: hidden;
-	position: absolute;
-}
-
-.header-image {
-	display: block;
-	width: 100%;
-}
-
-.header-inner {
-	padding: $size__padding $size__padding 0;
-	position: relative;
+.site-header {
+	padding: $size__padding;
+	text-align: center;
 }
 
 .site-title {
-	font-size: em(36);
-	font-weight: 700;
-	margin: 0 0 10px;
+	@extend .h1;
+
+	line-height: 1;
+	margin-bottom: 0.25em;
 }
 
 .site-description {
-	font-weight: 600;
-	margin: rem(10) 0;
-}
-
-.transparent-header .site-header {
-	position: absolute;
-	z-index: 99;
-
-	.header-image-wrap {
-		display: none;
-	}
-}
-
-@media (min-width: em(768)) {
-
-	.header-style-default {
-
-		.header-inner {
-			padding: rem(20);
-			text-align: center;
-		}
-	}
-
-	.header-style-short {
-
-		.header-inner {
-			@include grid-column(4);
-
-			padding: $size__padding;
-		}
-
-		.main-navigation {
-			@include grid-column(8);
-		}
-	}
-}
-
-@media (min-width: em(960)) {
-
-	.header-style-side {
-
-		.site-header {
-			@include size(rem(280) 100%);
-
-			padding: $size__padding / 2 0;
-			position: fixed;
-			overflow-y: auto;
-
-			.header-inner {
-				max-width: 100%;
-			}
-		}
-	}
-}
-
-@media (min-width: em(1040)) {
-
-	.header-style-side {
-
-		.site-header {
-			width: rem(300);
-		}
-	}
-}
-
-@media (min-width: em(1150)) {
-
-	.header-style-side {
-
-		.site-header {
-			padding: $size__padding $size__padding / 2;
-			width: rem(320);
-		}
-	}
+	margin-bottom: 0;
 }
 
 //-----------------------------------------
