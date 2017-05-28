@@ -32,7 +32,7 @@
 	text-align: center;
 }
 
-@media (min-width: em(768)) {
+@include grid-media($tablet-landscape-up) {
 
 	.footer-widget-areas-2 {
 

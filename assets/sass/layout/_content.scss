@@ -48,15 +48,13 @@
 
 .content-area {
 	margin: 0 auto;
-	padding: $size__padding;
-
-	@media (min-width: em(900)) {
-		padding: $size__padding * 2 $size__padding;
-	}
+	padding: $size__padding * 2 $size__padding;
 }
 
 
+//-----------------------------------------
 // Posts & Pages
+//-----------------------------------------
 .sticky {
 	display: block;
 }
@@ -65,7 +63,7 @@
 	margin-bottom: em(40);
 	word-wrap: break-word;
 
-	@media (min-width: em(900)) {
+	@include grid-media($tablet-landscape-up) {
 		margin-bottom: rem(50);
 	}
 }
@@ -103,7 +101,9 @@
 }
 
 
+//-----------------------------------------
 // Comments
+//-----------------------------------------
 .comments-area {
 	margin: rem(30) 0 0;
 }
