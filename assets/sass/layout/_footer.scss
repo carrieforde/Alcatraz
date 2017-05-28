@@ -4,6 +4,19 @@
 .site-footer {
 	clear: both;
 	padding: $size__padding;
+
+	.header-style-side & {
+		float: right;
+		width: calc(100% - 300px);
+	}
+
+	.header-style-side.boxed-content & {
+		@include position(relative, null 0 null rem(150));
+
+		float: none;
+		margin: 0 auto;
+		max-width: $size__layout-boxed-content;
+	}
 }
 
 .footer-widget-areas::after {
