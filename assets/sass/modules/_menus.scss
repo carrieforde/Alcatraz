@@ -144,7 +144,8 @@ body:not(.mobile-nav-style-default) {
 	@include grid-media($tablet-landscape-up) {
 		text-align: center;
 
-		.header-style-side & {
+		.header-style-side &,
+		.widget_nav_menu & {
 			text-align: left;
 		}
 	}
@@ -154,14 +155,16 @@ body:not(.mobile-nav-style-default) {
 		@include grid-media($tablet-landscape-up) {
 			display: inline-block;
 
-			.header-style-side & {
+			.header-style-side &,
+			.widget_nav_menu & {
 				display: block;
 			}
 
 			+ .menu-item {
 				margin-left: rem(20);
 
-				.header-style-side & {
+				.header-style-side &,
+				.widget_nav_menu & {
 					margin-left: 0;
 				}
 			}
@@ -180,7 +183,8 @@ body:not(.mobile-nav-style-default) {
 			padding-left: rem(10);
 			padding-right: rem(10);
 
-			.header-style-side & {
+			.header-style-side &,
+			.widget_nav_menu & {
 				padding-left: 0;
 				padding-right: 0;
 			}
