@@ -3,7 +3,7 @@
 //--------------------------------------------------------------
 .primary-sidebar {
 	margin: 0;
-	padding: $size__padding;
+	padding: $size__padding * 2 $size__padding;
 }
 
 @include grid-media($tablet-landscape-up) {
