@@ -3,18 +3,41 @@
 //--------------------------------------------------------------
 .site-header {
 	padding: $size__padding;
-	text-align: center;
 }
 
 .site-title {
-	@extend .h1;
+	@extend h1;
 
+	font-weight: 700;
 	line-height: 1;
 	margin-bottom: 0.25em;
 }
 
 .site-description {
 	margin-bottom: 0;
+}
+
+//-----------------------------------------
+// Header Style Short
+//-----------------------------------------
+.header-style-short {
+
+	@include grid-media($tablet-portrait-up) {
+
+		.site-header {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		.header-inner {
+			text-align: left;
+		}
+
+		.main-navigation {
+			margin-left: auto;
+			padding-right: 0;
+		}
+	}
 }
 
 //-----------------------------------------
