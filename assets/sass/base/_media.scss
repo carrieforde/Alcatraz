@@ -65,6 +65,18 @@ img {
 
 
 //-----------------------------------------
+// Image as Background
+//
+// Good for accessibility when using back-
+// ground images.
+//-----------------------------------------
+.image-as-background {
+	background-size: cover;
+	background-position: center;
+}
+
+
+//-----------------------------------------
 // Galleries
 //-----------------------------------------
 .gallery {
