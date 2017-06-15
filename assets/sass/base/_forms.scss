@@ -30,6 +30,11 @@ textarea {
 	width: 100%;
 }
 
+// Sanitize.scss removes the border 😬
+select {
+	border: $border__forms;
+}
+
 
 //-----------------------------------------
 // Search Field

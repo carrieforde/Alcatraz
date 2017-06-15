@@ -486,6 +486,10 @@ textarea {
   width: 100%;
 }
 
+select {
+  border: 1px solid #666;
+}
+
 .search-form {
   line-height: 1;
   position: relative;
