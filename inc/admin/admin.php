@@ -8,7 +8,7 @@
  */
 
 // Include CMB2.
-if ( file_exists( 'vendor/cmb2/init.php' ) ) {
+if ( file_exists( ALCATRAZ_PATH . 'vendor/cmb2/init.php' ) ) {
 	require_once ALCATRAZ_PATH . 'vendor/cmb2/init.php';
 }
 
