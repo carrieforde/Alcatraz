@@ -16,7 +16,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	/**
 	 * Include our custom Customizer control types.
 	 */
-	require_once ALCATRAZ_PATH . 'vendor/alpha-color-picker/alpha-color-picker.php';
+	if ( file_exists( 'vendor/alpha-color-picker/alpha-color-picker.php' ) ) {
+		require_once ALCATRAZ_PATH . 'vendor/alpha-color-picker/alpha-color-picker.php';
+	}
 
 	/**
 	 * Get the default values for our options.
