@@ -223,25 +223,28 @@ function alcatraz_scripts() {
 	}
 }
 
-add_action( 'init', 'alcatraz_init_bfa' );
-/**
- * Include and initialize the Better Font Awesome Library.
- *
- * @since  1.0.0
- */
-function alcatraz_init_bfa() {
+if ( class_exists( 'Better_Font_Awesome_Library' ) ) {
 
-	$args = array(
-		'version'             => 'latest',
-		'minified'            => true,
-		'remove_existing_fa'  => false,
-		'load_styles'         => true,
-		'load_admin_styles'   => true,
-		'load_shortcode'      => true,
-		'load_tinymce_plugin' => true,
-	);
+	add_action( 'init', 'alcatraz_init_bfa' );
+	/**
+	* Include and initialize the Better Font Awesome Library.
+	*
+	* @since  1.0.0
+	*/
+	function alcatraz_init_bfa() {
 
-	Better_Font_Awesome_Library::get_instance( $args );
+		$args = array(
+			'version'             => 'latest',
+			'minified'            => true,
+			'remove_existing_fa'  => false,
+			'load_styles'         => true,
+			'load_admin_styles'   => true,
+			'load_shortcode'      => true,
+			'load_tinymce_plugin' => true,
+		);
+
+		Better_Font_Awesome_Library::get_instance( $args );
+	}
 }
 
 /**
