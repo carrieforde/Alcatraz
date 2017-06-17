@@ -45,6 +45,7 @@ p {
 
 a {
 	color: $color__link;
+	transition: $transition__hover-color;
 
 	&:visted {
 		color: $color__link-visited;
