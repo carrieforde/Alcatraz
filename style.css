@@ -333,6 +333,7 @@ p {
 
 a {
   color: #0d8bb7;
+  transition: color 0.3s ease-in-out;
 }
 
 a:visted {
@@ -592,6 +593,8 @@ img {
 embed,
 iframe,
 object {
+  height: 50vw;
+  width: 100%;
   max-width: 100%;
 }
 
