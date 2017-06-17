@@ -35,15 +35,27 @@ Because Alcatraz is meant as a developer's theme, a basic grasp of the command l
 
 ## Installation ##
 
-Alcatraz uses Bower to manage the Bourbon and Neat libraries, and Node to run the Grunt tasks. You will need to install these dependencies before beginning developement.
+Alcatraz uses git submodules to manage some of the repository's dependencies like Better Font Awesome and CMB2. In order to use these features, you will need to init the submodules. To do so:
 
 1. Open your command line program and navigate to your theme directory:
 ```shell
 cd /your-project/wp-content/themes/alcatraz
 ```
-1. Install NPM dependencies:
+
+2. Init the submodules:
 ```shell
-npm install && bower install
+git submodule update --init --recursive
+```
+
+Alcatraz uses NPM to manage the Bourbon and Neat libraries, and Node to run the Grunt tasks. You will need to install these dependencies before beginning developement.
+
+1. Open your command line program and navigate to your theme directory:
+```shell
+cd /your-project/wp-content/themes/alcatraz
+```
+2. Install NPM dependencies:
+```shell
+npm install
 ```
 1. Move onto activating your theme!
 
@@ -67,7 +79,7 @@ Alcatraz supports all of the plugins.
 ## Credits ##
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2015 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* Bourbon and Neat http://bourbon.io/, (C) 2011-2015 thoughtbot, inc., [MIT](http://opensource.org/licenses/MIT)
-* Better Font Awesome https://github.com/MickeyKay/better-font-awesome-library, Mickey Kay
-* cmb2 https://github.com/WebDevStudios/cmb2, WebDevStudios
+* sanitize.scss https://www.npmjs.com/package/sanitize.scss, (C) Jonathan Neal https://github.com/jonathantneal/sanitize.css
+* [Bourbon and Neat](http://bourbon.io/), (C) 2011-2017 thoughtbot, inc., [MIT](http://opensource.org/licenses/MIT)
+* [Better Font Awesome](https://github.com/MickeyKay/better-font-awesome-library), Mickey Kay
+* [CMB2](https://github.com/WebDevStudios/cmb2), WebDevStudios
