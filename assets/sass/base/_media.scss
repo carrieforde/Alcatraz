@@ -180,6 +180,8 @@ img {
 embed,
 iframe,
 object {
+	@include size(100% 50vw);
+	
 	max-width: 100%;
 }
 
