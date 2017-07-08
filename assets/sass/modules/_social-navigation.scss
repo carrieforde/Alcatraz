@@ -36,6 +36,10 @@
 				content: '\f171';
 			}
 
+			&[href*="bloglovin.com"]:before {
+				content: '\f067';
+			}
+
 			&[href*="codepen.io"]:before {
 				content: '\f1cb';
 			}
