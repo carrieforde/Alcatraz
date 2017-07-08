@@ -76,11 +76,15 @@ add_action( 'alcatraz_primary_sidebar', 'alcatraz_output_primary_sidebar' );
  */
 function alcatraz_output_primary_sidebar() {
 
-	global $post;
+	if ( is_home() ) {
+		$post_id = get_option( 'page_for_posts' );
+	} else {
+		$post_id = get_the_ID();
+	}
 
 	$options = get_option( 'alcatraz_options' );
 
-	$page_sidebar = get_post_meta( $post->ID, '_alcatraz_page_sidebar', true );
+	$page_sidebar = get_post_meta( $post_id, '_alcatraz_page_sidebar', true );
 
 	// Bail if the page layout is set to no sidebar.
 	if ( $page_sidebar ) {
