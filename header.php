@@ -50,6 +50,7 @@
 				</button>
 				
 				<nav id="site-navigation" class="main-navigation" role="navigation">
+					<?php do_action( 'alcatraz_before_nav_inside' ); ?>
 
 					<?php wp_nav_menu( array(
 						'theme_location'  => 'primary',
@@ -57,6 +58,8 @@
 						'menu_class'      => 'primary-menu menu',
 						'container_class' => 'main-navigation__menu',
 					) ); ?>
+
+					<?php do_action( 'alcatraz_after_nav_inside' ); ?>
 				</nav>
 				<div id="mobile-nav-swipe-zone"></div>
 
