@@ -14,7 +14,7 @@ input[type="submit"] {
 	font-weight: 500;
 	outline: 0;
 	text-transform: uppercase;
-	transition: $transition__hover-background;
+	transition: $transition__hover-background, $transition__hover-color;
 
 	&:hover,
 	&:active,
