@@ -13,7 +13,7 @@ input,
 select,
 textarea {
 	color: $color__body-text;
-	font: 400 1em/#{$font__body-line-height} $font__body;
+	font: $font__body-weight 1em/#{$font__body-line-height} $font__body;
 }
 
 //-----------------------------------------
