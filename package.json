@@ -17,7 +17,7 @@
   "dependencies": {
     "autoprefixer": "latest",
     "bourbon": "latest",
-    "bourbon-neat": "latest",
+    "bourbon-neat": "2.0.0",
     "css-mqpacker": "latest",
     "grunt": "latest",
     "grunt-contrib-concat": "latest",

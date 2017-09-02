@@ -1,6 +1,6 @@
 # Alcatraz #
 
-**Contributors:** carrieforde, braad, jgonzo127  
+**Contributors:** [carrieforde](https://profiles.wordpress.org/carrieforde), [braad](https://profiles.wordpress.org/braad), [jgonzo127](https://profiles.wordpress.org/jgonzo127)  
 **Tags:** translation-ready, custom-background, upload-custom-logo, header-layout options, navigation-style-options, layout-options, theme-options, custom-menu, threaded-comments, responsive, mobile-first, retina-ready  
 
 **Requires at least:** 4.0  
