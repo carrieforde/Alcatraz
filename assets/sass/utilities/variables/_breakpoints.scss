@@ -9,17 +9,17 @@
 
 // Common breakpoints
 $tablet-portrait-up: (
-	media: em(600),
+	media: 600px,
 );
 $wp-admin-bar: (
-	media: em(783),
+	media: 783px,
 );
 $tablet-landscape-up: (
-	media: em(900),
+	media: 900px,
 );
 $desktop-up: (
-	media: em(1200),
+	media: 1200px,
 );
 $desktop-large-up: (
-	media: em(1800),
+	media: 1800px,
 );
