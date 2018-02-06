@@ -19,10 +19,11 @@
 	.mobile-nav-toggle-style-hamburger & {
 		@include margin-padding-reset;
 		@include position(absolute, $size__padding $size__padding null null);
-		@include size(rem(25) rem(21));
 
+		height: rem(21);
 		background-color: transparent;
 		z-index: 6;
+		width: rem(25);
 
 		&:hover,
 		&:active,
@@ -31,14 +32,14 @@
 		}
 
 		@include element(bar) {
-			@include size(rem(25) rem(3));
-
 			background-color: $color__toggle-background;
 			display: block;
+			height: rem(3);
 			left: 0;
 			margin: auto;
 			position: absolute;
 			transition: $transition__transform;
+			width: rem(25);
 
 			//-----------------------------------------
 			// Hamburger bars
@@ -268,10 +269,11 @@ body:not(.header-style-side) {
 
 	.sub-level-toggle-span {
 		@include position(absolute, 0 0 0 0);
-		@include size(rem(12) rem(2));
 
 		background-color: $color__menu-sub-toggle;
+		height: rem(2);
 		margin: auto;
+		width: rem(12);
 	}
 
 	.span-2 {

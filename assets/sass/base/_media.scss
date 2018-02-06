@@ -180,9 +180,9 @@ img {
 embed,
 iframe,
 object {
-	@include size(100% 50vw);
-	
+	height: 50vw;
 	max-width: 100%;
+	width: 100%;
 }
 
 // oEmbeds

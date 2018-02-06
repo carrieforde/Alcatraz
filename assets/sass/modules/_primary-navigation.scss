@@ -84,7 +84,8 @@
 		z-index: 2;
 
 		@include media(null, $tablet-landscape-up) {
-			@include size(rem(400) 100vh);
+			height: 100vh;
+			width: rem(400);
 		}
 
 		@include grid-media($tablet-landscape-up) {
