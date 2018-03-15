@@ -102,6 +102,18 @@ module.exports = function(grunt) {
 				tasks: ["scripts"]
 			}
 		},
+		browserSync: {
+			dev: {
+				bsFiles: {
+					src: ["*.php", "*.css", "assets/scripts/*.js"]
+				},
+				options: {
+					watchTask: true,
+					proxy: "alcatraz.local", // add your local dev url here.
+					injectChanges: true
+				}
+			}
+		},
 		wp_readme_to_markdown: {
 			your_target: {
 				files: {
@@ -122,6 +134,8 @@ module.exports = function(grunt) {
 	});
 
 	// Configure tasks.
+	grunt.registerTask("default", ["browserSync", "watch"]);
+
 	grunt.registerTask("styles", ["sass", "postcss", "cssnano"]);
 	grunt.registerTask("scripts", ["jshint", "concat", "uglify"]);
 	grunt.registerTask("build", [
