@@ -5,6 +5,14 @@ module.exports = function(grunt) {
 	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
+		stylelint: {
+			options: {
+				configFile: ".stylelintrc",
+				failOnError: false,
+				syntax: "scss"
+			},
+			src: ["assets/sass/**/*.scss"]
+		},
 		sass: {
 			options: {
 				outputStyle: "expanded",
@@ -169,7 +177,7 @@ module.exports = function(grunt) {
 	// Configure tasks.
 	grunt.registerTask("default", ["browserSync", "watch"]);
 
-	grunt.registerTask("styles", ["sass", "postcss"]);
+	grunt.registerTask("styles", ["stylelint", "sass", "postcss"]);
 
 	grunt.registerTask("scripts", ["eslint", "concat", "babel"]);
 
