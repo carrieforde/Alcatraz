@@ -100,6 +100,10 @@ module.exports = function(grunt) {
 			js: {
 				files: ["<%= jshint.files %>"],
 				tasks: ["scripts"]
+			},
+			sprites: {
+				files: ["assets/icons/*.svg"],
+				tasks: ["svgmin", "svgstore"]
 			}
 		},
 		browserSync: {
@@ -112,6 +116,32 @@ module.exports = function(grunt) {
 					proxy: "alcatraz.local", // add your local dev url here.
 					injectChanges: true
 				}
+			}
+		},
+		svgmin: {
+			options: {
+				plugins: [{ removeViewBox: false }]
+			},
+			dist: {
+				files: [
+					{
+						expand: true,
+						cwd: "assets/",
+						src: ["icons/*.svg"],
+						dest: "assets/icons",
+						flatten: true
+					}
+				]
+			}
+		},
+		svgstore: {
+			dist: {
+				files: {
+					"assets/icons/svg-defs.svg": ["assets/icons/svg/*.svg"]
+				}
+			},
+			options: {
+				cleanup: true
 			}
 		},
 		wp_readme_to_markdown: {
@@ -135,6 +165,8 @@ module.exports = function(grunt) {
 
 	// Configure tasks.
 	grunt.registerTask("default", ["browserSync", "watch"]);
+
+	grunt.registerTask("icons", ["svgmin", "svgstore"]);
 
 	grunt.registerTask("styles", ["sass", "postcss", "cssnano"]);
 	grunt.registerTask("scripts", ["jshint", "concat", "uglify"]);
