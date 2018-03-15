@@ -38,24 +38,16 @@ module.exports = function(grunt) {
 				src: "*.css"
 			}
 		},
-		cssnano: {
-			options: {
-				autoprefixer: false,
-				safe: true
-			},
-			dist: {
-				files: {
-					"style.min.css": "style.css"
-				}
-			}
-		},
 		sassdoc: {
 			default: {
 				src: "assets/sass/**/*.scss"
 			}
 		},
-		jshint: {
-			files: ["Gruntfile.js", "assets/scripts/src/*.js"]
+		eslint: {
+			options: {
+				configFile: ".eslintrc.json"
+			},
+			target: ["assets/scripts/**/*.js"]
 		},
 		concat: {
 			options: {
@@ -73,6 +65,17 @@ module.exports = function(grunt) {
 					"assets/scripts/src/init.js" // This should be last.
 				],
 				dest: "assets/scripts/<%= pkg.name %>-theme.js"
+			}
+		},
+		babel: {
+			options: {
+				sourceMap: false
+			},
+			dist: {
+				files: {
+					"assets/scripts/<%= pkg.name %>-theme.js":
+						"assets/scripts/<%= pkg.name %>-theme.js"
+				}
 			}
 		},
 		uglify: {
@@ -166,10 +169,12 @@ module.exports = function(grunt) {
 	// Configure tasks.
 	grunt.registerTask("default", ["browserSync", "watch"]);
 
+	grunt.registerTask("styles", ["sass", "postcss"]);
+
+	grunt.registerTask("scripts", ["eslint", "concat", "babel"]);
+
 	grunt.registerTask("icons", ["svgmin", "svgstore"]);
 
-	grunt.registerTask("styles", ["sass", "postcss", "cssnano"]);
-	grunt.registerTask("scripts", ["jshint", "concat", "uglify"]);
 	grunt.registerTask("build", [
 		"sass",
 		"postcss",
