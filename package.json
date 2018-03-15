@@ -4,6 +4,7 @@
   "description": "",
   "main": "Gruntfile.js",
   "scripts": {
+    "format": "prettier --write --single-quote \"assets/**/*.{js,jsx}\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

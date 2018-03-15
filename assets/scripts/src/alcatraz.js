@@ -11,20 +11,18 @@
  * @since  1.0.0
  */
 
-var Alcatraz = ( function( $ ) {
+var Alcatraz = (function($) {
+  /**
+   * Save component objects as properties.
+   */
+  var Utils = AlcatrazUtilities || false;
+  var Nav = AlcatrazNavigation || false;
 
-	/**
-	 * Save component objects as properties.
-	 */
-	var Utils = AlcatrazUtilities || false;
-	var Nav = AlcatrazNavigation || false;
-
-	/**
-	 * Expose public methods.
-	 */
-	return {
-		Utils : Utils,
-		Nav : Nav,
-	};
-
-})( jQuery );
+  /**
+   * Expose public methods.
+   */
+  return {
+    Utils: Utils,
+    Nav: Nav
+  };
+})(jQuery);
