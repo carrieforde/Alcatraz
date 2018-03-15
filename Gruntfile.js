@@ -1,4 +1,8 @@
 module.exports = function(grunt) {
+	// Load all packages.
+	require("load-grunt-tasks")(grunt);
+
+	// Project configuration.
 	grunt.initConfig({
 		pkg: grunt.file.readJSON("package.json"),
 		sass: {
@@ -25,7 +29,9 @@ module.exports = function(grunt) {
 					require("autoprefixer")({
 						browsers: "last 2 versions"
 					}), // Add vendor prefixes.
-					require("css-mqpacker")({ sort: true })
+					require("css-mqpacker")({
+						sort: true
+					})
 				]
 			},
 			dist: {
@@ -114,18 +120,6 @@ module.exports = function(grunt) {
 			}
 		}
 	});
-
-	// Load plugins.
-	grunt.loadNpmTasks("grunt-sass");
-	grunt.loadNpmTasks("grunt-postcss");
-	grunt.loadNpmTasks("grunt-cssnano");
-	grunt.loadNpmTasks("grunt-contrib-jshint");
-	grunt.loadNpmTasks("grunt-contrib-concat");
-	grunt.loadNpmTasks("grunt-contrib-uglify");
-	grunt.loadNpmTasks("grunt-contrib-watch");
-	grunt.loadNpmTasks("grunt-wp-readme-to-markdown");
-	grunt.loadNpmTasks("grunt-wp-i18n");
-	grunt.loadNpmTasks("grunt-sassdoc");
 
 	// Configure tasks.
 	grunt.registerTask("styles", ["sass", "postcss", "cssnano"]);
