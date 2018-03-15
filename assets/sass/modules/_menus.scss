@@ -2,7 +2,6 @@
 // MENUS
 //--------------------------------------------------------------
 
-
 //-----------------------------------------
 // Menu Toggles
 //-----------------------------------------
@@ -10,7 +9,6 @@
 	display: block;
 	margin: 0 auto;
 	width: rem(200);
-
 
 	@include grid-media($tablet-landscape-up) {
 		display: none;
@@ -78,10 +76,8 @@
 // Menu Toggle Positioning
 //-----------------------------------------
 body:not(.mobile-nav-style-default) {
-	
 	// Add extra padding at the top to give the menu breathing room.
 	.main-navigation {
-
 		@include media(null, $tablet-landscape-up) {
 			padding-top: $size__padding * 4;
 		}
@@ -89,7 +85,6 @@ body:not(.mobile-nav-style-default) {
 
 	// Position the menu close toggle.
 	&.menu-open {
-		
 		.mobile-menu-toggle {
 			position: absolute;
 			top: $size__padding;
@@ -97,7 +92,6 @@ body:not(.mobile-nav-style-default) {
 		}
 
 		&.admin-bar {
-			
 			.mobile-menu-toggle {
 				top: ($size__padding * 2) + rem(46);
 
@@ -113,11 +107,8 @@ body:not(.mobile-nav-style-default) {
 // Toggled Bars
 //-----------------------------------------
 .mobile-nav-toggle-style-hamburger {
-	
 	&.menu-open {
-
 		.mobile-menu-toggle__bar {
-
 			&.bar-1 {
 				bottom: 0;
 				transform: rotate(45deg);
@@ -135,7 +126,6 @@ body:not(.mobile-nav-style-default) {
 	}
 }
 
-
 //-----------------------------------------
 // General Menu Styles
 //-----------------------------------------
@@ -152,7 +142,6 @@ body:not(.mobile-nav-style-default) {
 	}
 
 	> .menu-item {
-
 		@include grid-media($tablet-landscape-up) {
 			display: inline-block;
 
@@ -174,7 +163,6 @@ body:not(.mobile-nav-style-default) {
 }
 
 .menu-item {
-	
 	> a {
 		display: block;
 		padding: rem(5) 0;
@@ -196,14 +184,12 @@ body:not(.mobile-nav-style-default) {
 		position: relative;
 
 		@include grid-media($tablet-landscape-up) {
-
 			> a {
 				padding-right: rem(40);
 			}
 		}
 	}
 }
-
 
 //-----------------------------------------
 // Sub Menus
@@ -220,9 +206,7 @@ body:not(.mobile-nav-style-default) {
 
 // Not the side header style.
 body:not(.header-style-side) {
-
 	.reverse-expand {
-
 		.sub-menu {
 			left: auto;
 			right: 0;
@@ -230,11 +214,10 @@ body:not(.header-style-side) {
 			.sub-menu {
 				left: -100%;
 			}
-		}	
+		}
 	}
 
 	.sub-menu {
-		
 		@include grid-media($tablet-landscape-up) {
 			@include position(absolute, 101% null null 0);
 
@@ -251,13 +234,12 @@ body:not(.header-style-side) {
 	}
 }
 
-
 //-----------------------------------------
 // Sub Menu Toggles
 //-----------------------------------------
 .sub-level-toggle {
 	@include position(absolute, 0 0 null null);
-	@include size(rem(34));
+	@include size(rem(34), rem(34));
 
 	background-color: transparent;
 
@@ -287,7 +269,6 @@ body:not(.header-style-side) {
 
 	// The chevron sub menu toggle.
 	.sub-menu-toggle-style-chevron & {
-
 		.sub-level-toggle-span {
 			@include position(absolute, 25% auto 0 auto);
 
