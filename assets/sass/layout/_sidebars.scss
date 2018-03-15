@@ -12,12 +12,14 @@
 	.left-sidebar {
 
 		.content-area {
+
 			@include grid-column(8);
 
 			float: right;
 		}
 
 		.primary-sidebar {
+
 			@include grid-column(4);
 
 			float: left;
@@ -28,10 +30,12 @@
 	.right-sidebar {
 
 		.content-area {
+
 			@include grid-column(8);
 		}
 
 		.primary-sidebar {
+
 			@include grid-column(4);
 		}
 	}

@@ -5,6 +5,7 @@
 	padding: $size__padding;
 
 	.header-style-default & {
+
 		@include grid-media($tablet-landscape-up) {
 			text-align: center;
 		}
@@ -12,6 +13,7 @@
 }
 
 .site-title {
+
 	@extend h1 !optional;
 
 	font-weight: 700;
@@ -27,7 +29,9 @@
 // Header Style Short
 //-----------------------------------------
 .header-style-short {
+
 	@include grid-media($tablet-landscape-up) {
+
 		.site-header {
 			display: flex;
 			justify-content: space-between;
@@ -44,8 +48,11 @@
 // Header Style Side
 //-----------------------------------------
 .header-style-side {
+
 	@include grid-media($tablet-landscape-up) {
+
 		.site-header {
+
 			@include position(fixed, 0 null 0 null);
 
 			background-color: color(white);
@@ -61,6 +68,7 @@
 		}
 
 		&.admin-bar {
+
 			.site-header {
 				top: rem(32);
 			}
@@ -72,8 +80,10 @@
 // Logo
 //-----------------------------------------
 .has-logo {
+
 	.site-title,
 	.site-description {
+
 		@extend .screen-reader-text !optional;
 	}
 }
@@ -87,6 +97,7 @@
 	line-height: 1;
 
 	.mobile-nav-toggle-style-button & {
+
 		@include center-block;
 	}
 }

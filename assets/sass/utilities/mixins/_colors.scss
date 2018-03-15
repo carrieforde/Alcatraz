@@ -23,7 +23,8 @@
 			} @else if $color-type == fill{
 				fill: $color;
 			} @else {
-				@error 'Please check the $color-type. It should be `color`, `fill`, `background`, or `background-color`.';
+
+				@error "Please check the $color-type. It should be `color`, `fill`, `background`, or `background-color`.";
 			}
 		}
 	}

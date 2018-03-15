@@ -12,11 +12,13 @@
 // `.site` is a direct decendant of <body />
 //-----------------------------------------
 .site {
+
 	@include clearfix;
 
 	overflow: hidden;
 
 	.boxed & {
+
 		@include center;
 
 		max-width: $size__layout-boxed;
@@ -28,6 +30,7 @@
 	padding: 0 $size__padding 0;
 
 	.boxed-content & {
+
 		@include center;
 
 		max-width: $size__layout-boxed-content;
@@ -39,6 +42,7 @@
 	}
 
 	.header-style-side.boxed-content & {
+
 		@include position(relative, null 0 null rem(150));
 		
 		float: none;
@@ -109,6 +113,7 @@
 }
 
 .comment-list {
+
 	@include margin-padding-reset;
 
 	list-style-type: none;

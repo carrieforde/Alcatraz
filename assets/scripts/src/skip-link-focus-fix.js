@@ -6,9 +6,9 @@
  * Learn more: https://git.io/vWdr2
  */
 (function() {
-  var is_webkit = navigator.userAgent.toLowerCase().indexOf('webkit') > -1,
-    is_opera = navigator.userAgent.toLowerCase().indexOf('opera') > -1,
-    is_ie = navigator.userAgent.toLowerCase().indexOf('msie') > -1;
+  var is_webkit = -1 < navigator.userAgent.toLowerCase().indexOf('webkit'),
+    is_opera = -1 < navigator.userAgent.toLowerCase().indexOf('opera'),
+    is_ie = -1 < navigator.userAgent.toLowerCase().indexOf('msie');
 
   if (
     (is_webkit || is_opera || is_ie) &&

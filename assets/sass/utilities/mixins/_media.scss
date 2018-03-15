@@ -19,25 +19,32 @@
 @mixin media($min, $max) {
 
 	// If the user passes a grid Sass map, set the variable to the media's value.
-	@if type-of($min) == 'map' {
+	@if type-of($min) == "map" {
 		$min: map-get($min, media);
 	}
-	@if type-of($max) == 'map' {
+
+	@if type-of($max) == "map" {
 		$max: map-get($max, media);
 		$max: $max - 1;
 	}
 
 	// Create the media query.
 	@if $min == null {
+
 		@media only screen and (max-width: $max) {
+
 			@content;
 		}
 	} @else if $max == null {
+
 		@media only screen and (min-width: $min) {
+
 			@content;
 		}
 	} @else {
+
 		@media only screen and (min-width: $min) and (max-width: $max) {
+
 			@content;
 		}
 	}

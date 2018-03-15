@@ -9,6 +9,7 @@
 ///  @include hide-text
 
 @mixin hide-text {
+
 	@include size(rem(1), rem(1));
 
 	border: 0;

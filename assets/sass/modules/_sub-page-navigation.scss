@@ -6,6 +6,7 @@
 	position: relative;
 
 	.menu {
+
 		@include margin-padding-reset;
 
 		text-align: left;
@@ -24,6 +25,7 @@
 	}
 
 	.children {
+
 		@include margin-padding-reset;
 
 		display: none;

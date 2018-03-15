@@ -5,14 +5,16 @@
 	margin: rem(15) 0 0;
 
 	.social-links-menu {
+
 		@include margin-padding-reset;
 
 		align-items: center;
 		display: flex;
-		list-style-type: none;
 		justify-content: center;
+		list-style-type: none;
 
 		.menu-item > a {
+
 			@include size(rem(25), rem(25));
 
 			display: block;

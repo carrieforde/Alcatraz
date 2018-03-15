@@ -7,12 +7,12 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-	padding: em(10) em(15);
 	background-color: $color__button-background;
 	color: $color__button-text;
 	display: inline-block;
 	font-weight: 500;
 	outline: 0;
+	padding: em(10) em(15);
 	text-transform: uppercase;
 	transition: $transition__hover-background, $transition__hover-color;
 

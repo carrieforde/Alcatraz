@@ -4,8 +4,11 @@
   "description": "",
   "main": "Gruntfile.js",
   "scripts": {
+    "eslint": "eslint \"assets/**/*.{js,jsx}\" --quiet",
+    "eslint:fix": "eslint \"assets/**/*.{js,jsx}\" --quiet --fix",
     "format": "prettier --write --single-quote \"assets/**/*.{js,jsx}\"",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "stylelint": "stylelint \"assets/**/*.{scss,css}\"",
+    "stylelint:fix": "stylelint \"assets/**/*.{scss,css}\" --fix"
   },
   "repository": {
     "type": "git",

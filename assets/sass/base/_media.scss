@@ -15,6 +15,7 @@ img {
 	max-width: 100%;
 
 	img[class*="wp-image-"] {
+
 		@include center-block;
 	}
 }
@@ -41,6 +42,7 @@ img {
 }
 
 .aligncenter {
+
 	@include center-block;
 
 	clear: both;
@@ -57,6 +59,7 @@ img {
 .post-thumbnail {
 
 	img {
+
 		@include center-block;
 
 		margin-bottom: rem(20);
@@ -71,8 +74,8 @@ img {
 // ground images.
 //-----------------------------------------
 .image-as-background {
-	background-size: cover;
 	background-position: center;
+	background-size: cover;
 }
 
 
@@ -84,6 +87,7 @@ img {
 	overflow: hidden;
 
 	@include grid-media($tablet-landscape-up) {
+
 		@include grid-collapse;
 	}
 }
@@ -99,18 +103,22 @@ img {
 	@include grid-media($tablet-landscape-up) {
 
 		.gallery-columns-1 & {
+
 			@include grid-column(12);
 		}
 
 		.gallery-columns-2 & {
+
 			@include grid-column(6);
 		}
 
 		.gallery-columns-3 & {
+
 			@include grid-column(4);
 		}
 
 		.gallery-columns-4 & {
+
 			@include grid-column(3);
 		}
 
@@ -123,6 +131,7 @@ img {
 		}
 
 		.gallery-columns-6 & {
+
 			@include grid-column(2);
 		}
 

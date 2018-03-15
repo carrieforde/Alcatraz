@@ -24,10 +24,10 @@ body.mce-content-body {
 }
 
 hr {
-	height: rem(2);
-	border: 0;
-	margin: 1em 0;
 	background-color: $color__hr;
+	border: 0;
+	height: rem(2);
+	margin: 1em 0;
 }
 
 // Do not show the outline on the skip link target.
@@ -40,6 +40,7 @@ hr {
 // Utility classes
 //-----------------------------------------
 .screen-reader-text {
+
 	@include hide-text;
 }
 
@@ -51,6 +52,7 @@ hr {
 .site-content,
 .site-footer,
 .site-header {
+
 	@include clearfix;
 }
 

@@ -48,6 +48,7 @@ select {
 	}
 
 	.search-submit {
+
 		@include position(absolute, 0 0 0 null);
 
 		line-height: 1; // keeps the search text centered.
