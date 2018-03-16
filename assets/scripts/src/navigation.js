@@ -432,13 +432,12 @@ const AlcatrazNavigation = (function($) {
         $subList = $items.has('ul'),
         safeToggleText = Alcatraz.Utils.escapeHtml(toggleText);
 
-      const toggle =
-        '<a class="sub-level-toggle">' +
-        safeToggleText +
-        '<span class="sub-level-toggle-span span-1"></span>' +
-        '<span class="sub-level-toggle-span span-2"></span>' +
-        '<span class="sub-level-toggle-span span-3"></span>' +
-        '</a>';
+      const toggle = `
+        <button type="button" class="sub-level-toggle">
+          <span class="screen-reader-text">${safeToggleText}</span>
+          <span class="sub-level-toggle-span span-1"></span>
+          <span class="sub-level-toggle-span span-2"></span>
+        </button>`;
 
       // Add classes to indicate levels and items.
       $list.addClass('top-level');
@@ -497,7 +496,7 @@ const AlcatrazNavigation = (function($) {
       return false;
     }
 
-    const $toggle = $container.find('.menu-toggle');
+    const $toggle = $container.find('.mobile-menu-toggle');
 
     if ('undefined' === typeof $toggle) {
       return false;
@@ -528,7 +527,7 @@ const AlcatrazNavigation = (function($) {
       ) {
         $.event.special.swipe.horizontalDistanceThreshold = 15;
         $(
-          '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation .menu-overlay'
+          '#mobile-nav-swipe-zone, #mobile-navr-swipe-zone, .main-navigation .menu-overlay'
         ).on('swipeleft swiperight', function() {
           $window.trigger('toggleMobileNav.alcatraz');
         });
