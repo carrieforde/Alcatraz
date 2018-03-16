@@ -543,26 +543,6 @@ const AlcatrazNavigation = (function($) {
     const toggleOptions = { autoClose: true, duration: slideDuration };
     initListToggle($menu, toggleOptions);
 
-    // Build the inner menu toggle.
-    const $innerMenuToggle = $('<div class="inner-menu-toggle"></div>');
-
-    // Use jQuery's $.text() method to escape HTML entities.
-    $innerMenuToggle
-      .text(closeText)
-      .append(
-        '<span class="inner-menu-toggle-span span-1"></span>' +
-          '<span class="inner-menu-toggle-span span-2"></span>' +
-          '<span class="inner-menu-toggle-span span-3"></span>'
-      );
-
-    // Inject the inner menu toggles.
-    $menu.before($innerMenuToggle);
-
-    // Close the main nav when the inner menu toggle is clicked.
-    $('.inner-menu-toggle').on('click', function() {
-      $window.trigger('toggleMobileNav.alcatraz');
-    });
-
     // Set menu items with sub menus to aria-haspopup="true".
     $subMenus.each(function() {
       $(this)
