@@ -321,6 +321,7 @@ var AlcatrazUtilities = function ($) {
   };
 }(jQuery);
 
+/* eslint-disable camelcase */
 /**
  * skip-link-focus-fix.js
  *
@@ -383,11 +384,13 @@ var AlcatrazUtilities = function ($) {
 var AlcatrazNavigation = function ($) {
   'use strict';
 
-  var $body = $('body');
-  var $window = $(window);
-  var toggleText = alcatraz_vars.menu_toggle || '';
-  var closeText = alcatraz_vars.menu_close || '';
-  var slideDuration = alcatraz_vars.slide_duration || 300;
+  var $body = $('body'),
+      $window = $(window),
+      toggleText = alcatraz_vars.menu_toggle || '',
+      // eslint-disable-line camelcase
+  closeText = alcatraz_vars.menu_close || '',
+      // eslint-disable-line camelcase
+  slideDuration = alcatraz_vars.slide_duration || 300; // eslint-disable-line camelcase
 
   /**
    * Toggle a 'focus' class on list items when using keyboard navigation.
@@ -397,8 +400,8 @@ var AlcatrazNavigation = function ($) {
    * @param  {object}  event  The focus or blur event.
    */
   var _toggleListFocus = function _toggleListFocus(event) {
-    var $this = $(this);
-    var $item = $this.parent('li');
+    var $this = $(this),
+        $item = $this.parent('li');
 
     if ('focus' === event.type) {
       $item.addClass('focus');
@@ -418,8 +421,8 @@ var AlcatrazNavigation = function ($) {
    * @param  {object}  data   The event data.
    */
   var _toggleListItem = function _toggleListItem(event, data) {
-    var item = data.item || {};
-    var args = data.args || {};
+    var item = data.item || {},
+        args = data.args || {};
 
     toggleListItem(item, args);
   };
@@ -432,8 +435,8 @@ var AlcatrazNavigation = function ($) {
    * @param  {object}  event  The keyup event object.
    */
   var _toggleNavItemWithKeyboard = function _toggleNavItemWithKeyboard(event) {
-    var code = event.keyCode ? event.keyCode : event.which;
-    var $el = $(document.activeElement);
+    var code = event.keyCode ? event.keyCode : event.which,
+        $el = $(document.activeElement);
 
     // Bail if a modified key has been pressed.
     if (event.altKey || event.ctrlKey) {
@@ -446,23 +449,14 @@ var AlcatrazNavigation = function ($) {
     }
 
     // Get the '<li>' element.
-    var $item = $el.parent();
-    var $list = $item.parent();
-    var $target;
+    var $item = $el.parent(),
+        $list = $item.parent(),
+        $target = void 0;
 
     // Build args for the toggleListItem event.
-    var args = {
-      autoClose: true,
-      duration: slideDuration
-    };
-    var closeArgs = {
-      autoClose: false,
-      duration: slideDuration
-    };
-    var data = {
-      item: $item,
-      args: args
-    };
+    var args = { autoClose: true, duration: slideDuration },
+        closeArgs = { autoClose: false, duration: slideDuration },
+        data = { item: $item, args: args };
 
     switch (code) {
       case 9:
@@ -651,16 +645,15 @@ var AlcatrazNavigation = function ($) {
    * @returns  {object}  The original this.
    */
   var toggleMobileNav = function toggleMobileNav() {
-    var $body = $('body'),
-        $container = $('#site-navigation'),
+    var $container = $('#site-navigation'),
         $menu = $container.find('#primary-menu');
 
     if ($container.hasClass('toggled')) {
-      $body.removeClass('menu-open');
+      $window.trigger('closeMobileNav.alcatraz');
       $container.removeClass('toggled');
       $menu.attr('aria-expanded', 'false');
     } else {
-      $body.addClass('menu-open');
+      $window.trigger('openMobileNav.alcatraz');
       $container.addClass('toggled');
       $menu.attr('aria-expanded', 'true');
     }
@@ -679,13 +672,13 @@ var AlcatrazNavigation = function ($) {
    * @returns  {object}           The original this.
    */
   var toggleListItem = function toggleListItem($item, options) {
-    var $list = $item.parents('ul').last();
-    var $toggle = $item.find('.sub-level-toggle').first();
-    var $parent = $toggle.parents('li').last();
-    var $sub = $item.find('ul').first();
-    var args = options || {};
-    var autoClose = args.autoClose || false;
-    var duration = args.duration || 500;
+    var $list = $item.parents('ul').last(),
+        $toggle = $item.find('.sub-level-toggle').first(),
+        $parent = $toggle.parents('li').last(),
+        $sub = $item.find('ul').first(),
+        args = options || {},
+        autoClose = args.autoClose || false,
+        duration = args.duration || 500;
 
     if (autoClose) {
       $list.find('ul').not($parent.find('ul')).slideUp(duration);
@@ -697,8 +690,8 @@ var AlcatrazNavigation = function ($) {
     // If we're toggling a menu item on the primary nav and the menu item has children,
     // detect whether they may be overflowing off the screen and add a class if they are.
     if ($list.is('#primary-menu') && $item.hasClass('menu-item-has-children') && $item.hasClass('toggled')) {
-      var rightEdge = $sub.width() + $sub.offset().left;
-      var screenWidth = $window.width();
+      var rightEdge = $sub.width() + $sub.offset().left,
+          screenWidth = $window.width();
 
       if (rightEdge > screenWidth) {
         $item.addClass('reverse-expand');
@@ -730,12 +723,17 @@ var AlcatrazNavigation = function ($) {
     var args = options || {};
 
     return $(el).each(function () {
-      var $list = $(this);
-      var $items = $list.find('li');
-      var $subList = $items.has('ul');
-      var safeToggleText = Alcatraz.Utils.escapeHtml(toggleText);
+      var $list = $(this),
+          $items = $list.find('li'),
+          $subList = $items.has('ul'),
+          safeToggleText = Alcatraz.Utils.escapeHtml(toggleText);
 
-      var toggle = '<button type="button" class="sub-level-toggle">' + '<span class="screen-reader-text">' + safeToggleText + '</span>' + '<span class="sub-level-toggle-span span-1"></span>' + '<span class="sub-level-toggle-span span-2"></span>' + '</button>';
+      var toggle = "\n        <button type=\"button\" class=\"sub-level-toggle\">\n          <span class=\"screen-reader-text\">" + safeToggleText + "</span>\n          <span class=\"sub-level-toggle-span span-1\"></span>\n          <span class=\"sub-level-toggle-span span-2\"></span>\n        </button>";
+
+      // Add classes to indicate levels and items.
+      $list.addClass('top-level');
+      $list.find('ul').addClass('sub-level');
+      $items.addClass('list-item');
 
       // Loop over each item that has a sub level and inject the toggle.
       $subList.each(function () {
@@ -746,8 +744,8 @@ var AlcatrazNavigation = function ($) {
       $list.find('.sub-level-toggle').on('click', function (e) {
         e.preventDefault();
 
-        var $item = $(this).parent('li');
-        var data = {
+        var $item = $(this).parent('li'),
+            data = {
           item: $item,
           args: args
         };
@@ -786,15 +784,9 @@ var AlcatrazNavigation = function ($) {
       return false;
     }
 
-    var $toggle = $container.prev('.mobile-menu-toggle');
+    var $toggle = $container.find('.mobile-menu-toggle');
 
     if ('undefined' === typeof $toggle) {
-      return false;
-    }
-
-    var $screen = $('.menu-screen');
-
-    if (!$screen) {
       return false;
     }
 
@@ -805,38 +797,48 @@ var AlcatrazNavigation = function ($) {
       return false;
     }
 
-    var $links = $menu.find('a');
-    var $subMenus = $menu.find('ul');
-    var $subLinks = $subMenus.find('a');
+    var $links = $menu.find('a'),
+        $subMenus = $menu.find('ul'),
+        $subLinks = $subMenus.find('a');
 
     $menu.attr('aria-expanded', 'false');
+
+    if (!$menu.hasClass('nav-menu')) {
+      $menu.addClass('nav-menu');
+    }
 
     // Set up swipe-to-open support for the mobile nav.
     if ($.mobile) {
       if ($body.hasClass('mobile-nav-style-slide-left') || $body.hasClass('mobile-nav-style-slide-right')) {
         $.event.special.swipe.horizontalDistanceThreshold = 15;
-        $('#mobile-nav-swipe-zone, .main-navigation').on('swipeleft swiperight', function () {
+        $('#mobile-nav-swipe-zone, #mobile-navr-swipe-zone, .main-navigation .menu-overlay').on('swipeleft swiperight', function () {
           $window.trigger('toggleMobileNav.alcatraz');
         });
       }
     }
 
     // Set up the mobile nav toggle.
-    $toggle.on('click', function () {
-      $window.trigger('toggleMobileNav.alcatraz');
-    });
-
-    // Allow click on screen to close menu.
-    $screen.on('click', function () {
+    $toggle.add('.main-navigation .menu-overlay').on('click', function () {
       $window.trigger('toggleMobileNav.alcatraz');
     });
 
     // Set up the sub menu dropdown toggles.
-    var toggleOptions = {
-      autoClose: true,
-      duration: slideDuration
-    };
+    var toggleOptions = { autoClose: true, duration: slideDuration };
     initListToggle($menu, toggleOptions);
+
+    // Build the inner menu toggle.
+    var $innerMenuToggle = $('<div class="inner-menu-toggle"></div>');
+
+    // Use jQuery's $.text() method to escape HTML entities.
+    $innerMenuToggle.text(closeText).append('<span class="inner-menu-toggle-span span-1"></span>' + '<span class="inner-menu-toggle-span span-2"></span>' + '<span class="inner-menu-toggle-span span-3"></span>');
+
+    // Inject the inner menu toggles.
+    $menu.before($innerMenuToggle);
+
+    // Close the main nav when the inner menu toggle is clicked.
+    $('.inner-menu-toggle').on('click', function () {
+      $window.trigger('toggleMobileNav.alcatraz');
+    });
 
     // Set menu items with sub menus to aria-haspopup="true".
     $subMenus.each(function () {
@@ -868,10 +870,7 @@ var AlcatrazNavigation = function ($) {
       return false;
     }
 
-    var toggleOptions = {
-      autoClose: false,
-      duration: slideDuration
-    };
+    var toggleOptions = { autoClose: false, duration: slideDuration };
 
     initListToggle($subNav, toggleOptions);
 
