@@ -649,11 +649,11 @@ var AlcatrazNavigation = function ($) {
         $menu = $container.find('#primary-menu');
 
     if ($container.hasClass('toggled')) {
-      $window.trigger('closeMobileNav.alcatraz');
+      $body.removeClass('menu-open');
       $container.removeClass('toggled');
       $menu.attr('aria-expanded', 'false');
     } else {
-      $window.trigger('openMobileNav.alcatraz');
+      $body.addClass('menu-open');
       $container.addClass('toggled');
       $menu.attr('aria-expanded', 'true');
     }
@@ -784,7 +784,7 @@ var AlcatrazNavigation = function ($) {
       return false;
     }
 
-    var $toggle = $container.find('.mobile-menu-toggle');
+    var $toggle = $container.prev('.mobile-menu-toggle');
 
     if ('undefined' === typeof $toggle) {
       return false;
@@ -818,33 +818,22 @@ var AlcatrazNavigation = function ($) {
     }
 
     // Set up the mobile nav toggle.
-    $toggle.add('.main-navigation .menu-overlay').on('click', function () {
+    $toggle.on('click', function () {
       $window.trigger('toggleMobileNav.alcatraz');
     });
+
+    var $screen = $('.menu-screen');
+
+    if ('undefined' !== typeof $screen) {
+      // Allow a click on the screen to close the menu.
+      $screen.on('click', function () {
+        $window.trigger('toggleMobileNav.alcatraz');
+      });
+    }
 
     // Set up the sub menu dropdown toggles.
     var toggleOptions = { autoClose: true, duration: slideDuration };
     initListToggle($menu, toggleOptions);
-
-    // // Build the inner menu toggle.
-    // const $innerMenuToggle = $('<div class="inner-menu-toggle"></div>');
-
-    // // Use jQuery's $.text() method to escape HTML entities.
-    // $innerMenuToggle
-    //   .text(closeText)
-    //   .append(
-    //     '<span class="inner-menu-toggle-span span-1"></span>' +
-    //       '<span class="inner-menu-toggle-span span-2"></span>' +
-    //       '<span class="inner-menu-toggle-span span-3"></span>'
-    //   );
-
-    // // Inject the inner menu toggles.
-    // $menu.before($innerMenuToggle);
-
-    // // Close the main nav when the inner menu toggle is clicked.
-    // $('.inner-menu-toggle').on('click', function() {
-    //   $window.trigger('toggleMobileNav.alcatraz');
-    // });
 
     // Set menu items with sub menus to aria-haspopup="true".
     $subMenus.each(function () {

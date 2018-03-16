@@ -743,7 +743,7 @@ input[type="submit"]:focus {
 body:not(.mobile-nav-style-default).menu-open .mobile-menu-toggle {
   position: absolute;
   top: 1.25rem;
-  z-index: 3;
+  z-index: 10;
 }
 
 body:not(.mobile-nav-style-default).menu-open.admin-bar .mobile-menu-toggle {
