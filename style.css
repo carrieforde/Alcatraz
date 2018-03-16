@@ -418,10 +418,10 @@ body.mce-content-body {
 }
 
 hr {
-  height: 0.125rem;
-  border: 0;
-  margin: 1em 0;
   background-color: #666;
+  border: 0;
+  height: 0.125rem;
+  margin: 1em 0;
 }
 
 #content[tabindex="-1"]:focus {
@@ -565,8 +565,8 @@ img {
 }
 
 .image-as-background {
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .gallery {
@@ -616,8 +616,8 @@ thead {
 
 th,
 td {
-  padding: 0.5em;
   border: 1px solid #666;
+  padding: 0.5em;
 }
 
 button,
@@ -626,12 +626,12 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-  padding: 0.625em 0.9375em;
   background-color: #0d8bb7;
   color: #fff;
   display: inline-block;
   font-weight: 500;
   outline: 0;
+  padding: 0.625em 0.9375em;
   text-transform: uppercase;
   -webkit-transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
@@ -694,10 +694,10 @@ input[type="submit"]:focus {
   position: absolute;
   top: 1.25rem;
   right: 1.25rem;
-  height: 1.3125rem;
   background-color: transparent;
-  z-index: 6;
+  height: 1.3125rem;
   width: 1.5625rem;
+  z-index: 6;
 }
 
 .mobile-nav-toggle-style-hamburger .mobile-menu-toggle:hover, .mobile-nav-toggle-style-hamburger .mobile-menu-toggle:active, .mobile-nav-toggle-style-hamburger .mobile-menu-toggle:focus {
@@ -843,12 +843,12 @@ body:not(.header-style-side) .reverse-expand .sub-menu .sub-menu {
   right: auto;
   bottom: 0;
   left: auto;
+  -webkit-transform: rotate 0.3s ease-in-out;
+          transform: rotate 0.3s ease-in-out;
   -webkit-transition: -webkit-transform 0.3s ease-in-out;
   transition: -webkit-transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out;
   transition: transform 0.3s ease-in-out, -webkit-transform 0.3s ease-in-out;
-  -webkit-transform: rotate 0.3s ease-in-out;
-          transform: rotate 0.3s ease-in-out;
   width: 0.71875rem;
 }
 
@@ -904,10 +904,10 @@ body:not(.header-style-side) .reverse-expand .sub-menu .sub-menu {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  list-style-type: none;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  list-style-type: none;
 }
 
 .social-navigation .social-links-menu .menu-item > a {
