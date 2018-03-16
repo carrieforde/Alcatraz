@@ -91,7 +91,7 @@ body:not(.mobile-nav-style-default) {
 		.mobile-menu-toggle {
 			position: absolute;
 			top: $size__padding;
-			z-index: 3;
+			z-index: 10;
 		}
 
 		&.admin-bar {

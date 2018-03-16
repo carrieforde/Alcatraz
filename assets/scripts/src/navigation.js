@@ -337,11 +337,11 @@ const AlcatrazNavigation = (function($) {
       $menu = $container.find('#primary-menu');
 
     if ($container.hasClass('toggled')) {
-      $window.trigger('closeMobileNav.alcatraz');
+      $body.removeClass('menu-open');
       $container.removeClass('toggled');
       $menu.attr('aria-expanded', 'false');
     } else {
-      $window.trigger('openMobileNav.alcatraz');
+      $body.addClass('menu-open');
       $container.addClass('toggled');
       $menu.attr('aria-expanded', 'true');
     }
@@ -496,7 +496,7 @@ const AlcatrazNavigation = (function($) {
       return false;
     }
 
-    const $toggle = $container.find('.mobile-menu-toggle');
+    const $toggle = $container.prev('.mobile-menu-toggle');
 
     if ('undefined' === typeof $toggle) {
       return false;
@@ -535,9 +535,18 @@ const AlcatrazNavigation = (function($) {
     }
 
     // Set up the mobile nav toggle.
-    $toggle.add('.main-navigation .menu-overlay').on('click', function() {
+    $toggle.on('click', function() {
       $window.trigger('toggleMobileNav.alcatraz');
     });
+
+    const $screen = $('.menu-screen');
+
+    if ('undefined' !== typeof $screen) {
+      // Allow a click on the screen to close the menu.
+      $screen.on('click', function() {
+        $window.trigger('toggleMobileNav.alcatraz');
+      });
+    }
 
     // Set up the sub menu dropdown toggles.
     const toggleOptions = { autoClose: true, duration: slideDuration };
