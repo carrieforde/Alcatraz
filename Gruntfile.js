@@ -47,6 +47,17 @@ module.exports = function(grunt) {
         src: '*.css'
       }
     },
+    cssnano: {
+      options: {
+        autoprefixer: false,
+        safe: true
+      },
+      dist: {
+        files: {
+          'style.min.css': 'style.css'
+        }
+      }
+    },
     sassdoc: {
       default: {
         src: 'assets/sass/**/*.scss'
@@ -111,7 +122,7 @@ module.exports = function(grunt) {
         }
       },
       js: {
-        files: ['<%= jshint.files %>'],
+        files: ['assets/scripts/**/*.js'],
         tasks: ['scripts']
       },
       sprites: {
@@ -187,7 +198,7 @@ module.exports = function(grunt) {
 
   grunt.registerTask('lint', ['stylelint', 'eslint']);
 
-  grunt.registerTask('minify', ['uglify', 'icons']);
+  grunt.registerTask('minify', ['cssnano', 'uglify', 'icons']);
 
   grunt.registerTask('build', [
     'styles',
