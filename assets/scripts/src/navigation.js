@@ -342,16 +342,15 @@ var AlcatrazNavigation = (function($) {
    * @returns  {object}  The original this.
    */
   var toggleMobileNav = function() {
-    var $body = $('body'),
-      $container = $('#site-navigation'),
-      $menu = $container.find('#primary-menu');
+    var $container = $('#site-navigation');
+    var $menu = $container.find('#primary-menu');
 
     if ($container.hasClass('toggled')) {
-      $body.removeClass('menu-open');
+      $window.trigger('closeMobileNav.alcatraz');
       $container.removeClass('toggled');
       $menu.attr('aria-expanded', 'false');
     } else {
-      $body.addClass('menu-open');
+      $window.trigger('openMobileNav.alcatraz');
       $container.addClass('toggled');
       $menu.attr('aria-expanded', 'true');
     }
@@ -443,13 +442,17 @@ var AlcatrazNavigation = (function($) {
       var safeToggleText = Alcatraz.Utils.escapeHtml(toggleText);
 
       var toggle =
-        '<button type="button" class="sub-level-toggle">' +
-        '<span class="screen-reader-text">' +
+        '<a class="sub-level-toggle">' +
         safeToggleText +
-        '</span>' +
         '<span class="sub-level-toggle-span span-1"></span>' +
         '<span class="sub-level-toggle-span span-2"></span>' +
-        '</button>';
+        '<span class="sub-level-toggle-span span-3"></span>' +
+        '</a>';
+
+      // Add classes to indicate levels and items.
+      $list.addClass('top-level');
+      $list.find('ul').addClass('sub-level');
+      $items.addClass('list-item');
 
       // Loop over each item that has a sub level and inject the toggle.
       $subList.each(function() {
@@ -503,15 +506,9 @@ var AlcatrazNavigation = (function($) {
       return false;
     }
 
-    var $toggle = $container.prev('.mobile-menu-toggle');
+    var $toggle = $container.find('.menu-toggle');
 
     if ('undefined' === typeof $toggle) {
-      return false;
-    }
-
-    var $screen = $('.menu-screen');
-
-    if (!$screen) {
       return false;
     }
 
@@ -528,6 +525,10 @@ var AlcatrazNavigation = (function($) {
 
     $menu.attr('aria-expanded', 'false');
 
+    if (!$menu.hasClass('nav-menu')) {
+      $menu.addClass('nav-menu');
+    }
+
     // Set up swipe-to-open support for the mobile nav.
     if ($.mobile) {
       if (
@@ -535,22 +536,16 @@ var AlcatrazNavigation = (function($) {
         $body.hasClass('mobile-nav-style-slide-right')
       ) {
         $.event.special.swipe.horizontalDistanceThreshold = 15;
-        $('#mobile-nav-swipe-zone, .main-navigation').on(
-          'swipeleft swiperight',
-          function() {
-            $window.trigger('toggleMobileNav.alcatraz');
-          }
-        );
+        $(
+          '#mobile-nav-left-swipe-zone, #mobile-nav-right-swipe-zone, .main-navigation .menu-overlay'
+        ).on('swipeleft swiperight', function() {
+          $window.trigger('toggleMobileNav.alcatraz');
+        });
       }
     }
 
     // Set up the mobile nav toggle.
-    $toggle.on('click', function() {
-      $window.trigger('toggleMobileNav.alcatraz');
-    });
-
-    // Allow click on screen to close menu.
-    $screen.on('click', function() {
+    $toggle.add('.main-navigation .menu-overlay').on('click', function() {
       $window.trigger('toggleMobileNav.alcatraz');
     });
 
@@ -560,6 +555,26 @@ var AlcatrazNavigation = (function($) {
       duration: slideDuration
     };
     initListToggle($menu, toggleOptions);
+
+    // Build the inner menu toggle.
+    var $innerMenuToggle = $('<div class="inner-menu-toggle"></div>');
+
+    // Use jQuery's $.text() method to escape HTML entities.
+    $innerMenuToggle
+      .text(closeText)
+      .append(
+        '<span class="inner-menu-toggle-span span-1"></span>' +
+          '<span class="inner-menu-toggle-span span-2"></span>' +
+          '<span class="inner-menu-toggle-span span-3"></span>'
+      );
+
+    // Inject the inner menu toggles.
+    $menu.before($innerMenuToggle);
+
+    // Close the main nav when the inner menu toggle is clicked.
+    $('.inner-menu-toggle').on('click', function() {
+      $window.trigger('toggleMobileNav.alcatraz');
+    });
 
     // Set menu items with sub menus to aria-haspopup="true".
     $subMenus.each(function() {
