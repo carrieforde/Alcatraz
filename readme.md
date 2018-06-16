@@ -4,7 +4,7 @@
 **Tags:** translation-ready, custom-background, upload-custom-logo, header-layout options, navigation-style-options, layout-options, theme-options, custom-menu, threaded-comments, responsive, mobile-first, retina-ready  
 
 **Requires at least:** 4.0  
-**Tested up to:** 4.4  
+**Tested up to:** 4.9  
 **Stable tag:** 1.0.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
@@ -13,48 +13,54 @@ Alcatraz is a theme designed and developed with the WordPress theme developer in
 
 ## Description ##
 
-Alcatraz is a developer's theme packed with all kinds of goodies including:
+Alcatraz is a developer's theme packed with all kinds of goodies to improve your development workflow:
 
-* Theme hooks
-* Sass
-* PostCSS
-* [Bourbon](http://bourbon.io)
-* [Neat](http://neat.bourbon.io)
-* Grunt
-* Live reload
-* CSS minification
-* Better Font Awesome Library
+- Theme hooks
+- Lightweight CSS Normalization with [Sanitize.css](https://github.com/jonathantneal/sanitize.css)
+- Sass
+  * Sensible configuration
+  * Flexible architecture
+  * Linting with [Stylelint](https://stylelint.io/)
+  * Compilation
+  * Minification
+- JavaScript
+  * Focused on Vanilla JS, but ready for anything (including jQuery & React!)
+  * Supports ES Next with Babel
+  * Linting with [ESLint](https://eslint.org/)
+  * Concatenation
+  * Uglification / minification
+- Icon (SVG) concatenation & minification
+- Image minification
+- Test-driven development (TDD) support with [Jest](https://facebook.github.io/jest/)
+- Type-checking support using [Flow](https://flow.org/en/)
 
 ## Pre-Installation ##
 
 Because Alcatraz is meant as a developer's theme, a basic grasp of the command line as well as the following dependencies is beneficial:
 
 * [Node](http://node.js)
-* [Grunt CLI](http://gruntjs.com) - `npm install -g grunt-cli`
-* [Sass](http://sass-lang.com) - Ruby not required!
+* [Webpack](https://webpack.js.org/)
+* [Sass](http://sass-lang.com)
 
 ## Installation ##
 
-Alcatraz uses git submodules to manage some of the repository's dependencies like Better Font Awesome and CMB2. In order to use these features, you will need to init the submodules. To do so:
+Alcatraz uses git submodules to manage some of the themes' optional dependencies like Better Font Awesome and CMB2. In order to use these features, you will need to init the submodules. To do so:
 
 1. Open your command line program and navigate to your theme directory:
-```shell
+```sh
 cd /your-project/wp-content/themes/alcatraz
 ```
 
 2. Init the submodules:
-```shell
+```sh
 git submodule update --init --recursive
 ```
 
 Alcatraz uses NPM to manage the Bourbon and Neat libraries, and Node to run the Grunt tasks. You will need to install these dependencies before beginning developement.
 
-1. Open your command line program and navigate to your theme directory:
-```shell
-cd /your-project/wp-content/themes/alcatraz
-```
-2. Install NPM dependencies:
-```shell
+Alcatraz uses NPM to manage external dependencies. You will need to install these packages before beginning development:
+
+```sh
 npm install
 ```
 1. Move onto activating your theme!
