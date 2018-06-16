@@ -1,14 +1,27 @@
 {
-  "extends": ["wordpress", "prettier", "prettier/react"],
-  "plugins": ["prettier"],
   "env": {
     "browser": true,
     "es6": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
+  "extends": [
+    "wordpress",
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "flowtype"
+  ],
   "parser": "babel-eslint",
   "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
     "ecmaVersion": 2016,
     "sourceType": "module"
+  },
+  "globals": {
+    "wp": true,
+    "jQuery": true
   }
 }
