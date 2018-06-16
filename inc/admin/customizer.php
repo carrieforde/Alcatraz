@@ -333,7 +333,7 @@ add_action( 'customize_preview_init', 'alcatraz_customize_preview_js' );
 function alcatraz_customize_preview_js() {
 	wp_enqueue_script(
 		'alcatraz_customizer',
-		ALCATRAZ_URL . 'assets/scripts/customizer.js',
+		ALCATRAZ_URL . 'dist/customizer-bundle.js',
 		array( 'customize-preview' ),
 		ALCATRAZ_VERSION,
 		true
