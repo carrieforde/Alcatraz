@@ -2,7 +2,6 @@
 // COLOR
 //--------------------------------------------------------------
 
-
 /// Gets the color value from a color Sass map.
 ///
 /// @author Carrie Forde
@@ -22,9 +21,7 @@
 ///
 /// @return {Hex Code}
 
-
 @function color($key, $color-map: $theme-colors) {
-	
 	$color: map-get($color-map, $key);
 
 	@return $color;

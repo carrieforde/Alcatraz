@@ -10,17 +10,19 @@
 	margin: 0 auto;
 	width: rem(200);
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 		display: none;
 	}
 
 	.mobile-nav-toggle-style-hamburger & {
 
 		@include margin-padding-reset;
-		@include position(absolute, $size__padding $size__padding null null);
 		background-color: transparent;
-
 		height: rem(21);
+
+		position: absolute;
+		right: $size__padding;
+		top: $size__padding;
 		width: rem(25);
 		z-index: 6;
 
@@ -67,7 +69,7 @@
 	.mobile-nav-toggle-style-hamburger.admin-bar & {
 		top: ($size__padding * 2) + rem(46);
 
-		@include grid-media($wp-admin-bar) {
+		@include mq-min($wp-admin-bar) {
 			top: ($size__padding + 2) + rem(32);
 		}
 	}
@@ -99,7 +101,7 @@ body:not(.mobile-nav-style-default) {
 			.mobile-menu-toggle {
 				top: ($size__padding * 2) + rem(46);
 
-				@include grid-media($wp-admin-bar) {
+				@include mq-min($wp-admin-bar) {
 					top: ($size__padding + 2) + rem(32);
 				}
 			}
@@ -140,7 +142,7 @@ body:not(.mobile-nav-style-default) {
 
 	@include list-reset;
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 		text-align: center;
 
 		.header-style-side &,
@@ -151,7 +153,7 @@ body:not(.mobile-nav-style-default) {
 
 	> .menu-item {
 
-		@include grid-media($tablet-landscape-up) {
+		@include mq-min($tablet-landscape-up) {
 			display: inline-block;
 
 			.header-style-side &,
@@ -178,7 +180,7 @@ body:not(.mobile-nav-style-default) {
 		padding: rem(5) 0;
 		text-decoration: none;
 
-		@include grid-media($tablet-landscape-up) {
+		@include mq-min($tablet-landscape-up) {
 			padding-left: rem(10);
 			padding-right: rem(10);
 
@@ -193,7 +195,7 @@ body:not(.mobile-nav-style-default) {
 	&.menu-item-has-children {
 		position: relative;
 
-		@include grid-media($tablet-landscape-up) {
+		@include mq-min($tablet-landscape-up) {
 
 			> a {
 				padding-right: rem(40);
@@ -233,13 +235,13 @@ body:not(.header-style-side) {
 
 	.sub-menu {
 
-		@include grid-media($tablet-landscape-up) {
-
-			@include position(absolute, 101% null null 0);
-
+		@include mq-min($tablet-landscape-up) {
 			background-color: $color__sub-menu-background;
+			left: 0;
 			min-width: rem(175);
+			position: absolute;
 			text-align: left;
+			top: 101%;
 			width: 100%;
 
 			.sub-menu {
@@ -255,10 +257,12 @@ body:not(.header-style-side) {
 //-----------------------------------------
 .sub-level-toggle {
 
-	@include position(absolute, 0 0 null null);
 	@include size(rem(34), rem(34));
 
 	background-color: transparent;
+	position: absolute;
+	right: 0;
+	top: 0;
 
 	&:hover,
 	&:active,
@@ -268,7 +272,7 @@ body:not(.header-style-side) {
 
 	.sub-level-toggle-span {
 
-		@include position(absolute, 0 0 0 0);
+		@include absolute-center;
 
 		background-color: $color__menu-sub-toggle;
 		height: rem(2);
@@ -289,10 +293,12 @@ body:not(.header-style-side) {
 	.sub-menu-toggle-style-chevron & {
 
 		.sub-level-toggle-span {
-
-			@include position(absolute, 25% auto 0 auto);
+			bottom: 0;
+			left: auto;
+			position: absolute;
+			right: auto;
+			top: 25%;
 			transform: rotate 0.3s ease-in-out;
-
 			transition: $transition__transform;
 			width: rem(11.5);
 		}

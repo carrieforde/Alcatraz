@@ -104,11 +104,11 @@ function alcatraz_setup() {
 		add_theme_support(
 			'custom-header',
 			apply_filters( 'alcatraz_custom_header_args', array(
-				'default-image'          => '',
-				'default-text-color'     => '000000',
-				'width'                  => 1200,
-				'height'                 => 320,
-				'flex-height'            => true,
+				'default-image'      => '',
+				'default-text-color' => '000000',
+				'width'              => 1200,
+				'height'             => 320,
+				'flex-height'        => true,
 			) )
 		);
 	}
@@ -171,7 +171,6 @@ function alcatraz_scripts() {
 	global $alcatraz_google_fonts;
 
 	$current_theme = wp_get_theme();
-	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	// Google fonts.
 	wp_register_style(
@@ -181,10 +180,20 @@ function alcatraz_scripts() {
 		ALCATRAZ_VERSION
 	);
 
+	// Theme header CSS.
+	if ( is_admin() ) {
+		wp_enqueue_style(
+			'alcatraz-style',
+			ALCATRAZ_URL . 'style.css',
+			array(),
+			ALCATRAZ_VERSION
+		);
+	}
+
 	// Main theme CSS.
 	wp_register_style(
 		'alcatraz-style',
-		ALCATRAZ_URL . 'style' . $min . '.css',
+		ALCATRAZ_URL . 'dist/main.css',
 		array(),
 		ALCATRAZ_VERSION
 	);
@@ -192,7 +201,7 @@ function alcatraz_scripts() {
 	// Main theme JS.
 	wp_register_script(
 		'alcatraz-scripts',
-		ALCATRAZ_URL . 'assets/scripts/alcatraz-theme' . $min . '.js',
+		ALCATRAZ_URL . 'dist/frontend-bundle.js',
 		array( 'jquery' ),
 		ALCATRAZ_VERSION,
 		true

@@ -5,7 +5,6 @@
 // pages.
 //--------------------------------------------------------------
 
-
 //-----------------------------------------
 // Structure
 //
@@ -42,11 +41,10 @@
 	}
 
 	.header-style-side.boxed-content & {
-
-		@include position(relative, null 0 null rem(150));
-		
 		float: none;
+		left: rem(150);
 		max-width: $size__layout-boxed-content;
+		right: 0;
 	}
 }
 
@@ -54,7 +52,6 @@
 	margin: 0 auto;
 	padding: $size__padding * 2 $size__padding;
 }
-
 
 //-----------------------------------------
 // Posts & Pages
@@ -67,7 +64,7 @@
 	margin-bottom: em(40);
 	word-wrap: break-word;
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 		margin-bottom: rem(50);
 	}
 }
@@ -103,7 +100,6 @@
 .archive .format-aside .entry-title {
 	display: none;
 }
-
 
 //-----------------------------------------
 // Comments

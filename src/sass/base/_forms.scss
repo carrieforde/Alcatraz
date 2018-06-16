@@ -35,7 +35,6 @@ select {
 	border: $border__forms;
 }
 
-
 //-----------------------------------------
 // Search Field
 //-----------------------------------------
@@ -48,10 +47,10 @@ select {
 	}
 
 	.search-submit {
-
-		@include position(absolute, 0 0 0 null);
-
+		bottom: 0;
 		line-height: 1; // keeps the search text centered.
 		margin: 1px; // makes the button visually fit within the search better.
+		right: 0;
+		top: 0;
 	}
 }

@@ -2,6 +2,7 @@
 // COLORS
 //--------------------------------------------------------------
 
+// stylelint-disable color-named
 
 $theme-colors: (
 	alcatraz-blue: #0d8bb7,
@@ -14,15 +15,13 @@ $theme-colors: (
 	silver-sand: #bbb,
 	gainsboro: #ddd,
 	white-smoke: #f1f1f1,
-	white: #fff,
+	white: #fff
 );
-
 
 //-----------------------------------------
 // Global Elements
 //-----------------------------------------
 $color__body-background: color(white);
-
 
 //-------------------------------
 // Buttons
@@ -31,7 +30,6 @@ $color__button-background: color(alcatraz-blue);
 $color__button-background-hover: tint(color(alcatraz-blue), 15%);
 $color__button-text: color(white);
 
-
 //-------------------------------
 // Forms
 //-------------------------------
@@ -39,12 +37,10 @@ $color__forms-text: color(mine-shaft);
 $color__forms-border: color(dim-gray);
 $color__forms-border-focus: color(aluminum);
 
-
 //-----------------------------------------
 // Tables
 //-----------------------------------------
 $color__table-border: color(dim-gray);
-
 
 //-------------------------------
 // Typography
@@ -57,7 +53,6 @@ $color__link-visited: shade(color(alcatraz-blue), 15%);
 $color__ins: color(hope);
 $color__pre-border: color(aluminum);
 
-
 //-------------------------------
 // Navigation
 //-------------------------------
@@ -69,8 +64,7 @@ $color__mobile-nav-slide-background: color(white);
 $color__mobile-nav-slide-overlay-background: rgba(color(black), 0.85);
 $color__sub-menu-background: color(white);
 
-
 //-----------------------------------------
 // Header
 //-----------------------------------------
-$color__header-style-side-box-shadow: -1px 0 15px 0 rgba(color(black), 0.3)
+$color__header-style-side-box-shadow: -1px 0 15px 0 rgba(color(black), 0.3);

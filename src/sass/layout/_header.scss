@@ -1,12 +1,13 @@
 //--------------------------------------------------------------
 // HEADER
 //--------------------------------------------------------------
+// stylelint-disable color-named
 .site-header {
 	padding: $size__padding;
 
 	.header-style-default & {
 
-		@include grid-media($tablet-landscape-up) {
+		@include mq-min($tablet-landscape-up) {
 			text-align: center;
 		}
 	}
@@ -30,7 +31,7 @@
 //-----------------------------------------
 .header-style-short {
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 
 		.site-header {
 			display: flex;
@@ -49,16 +50,16 @@
 //-----------------------------------------
 .header-style-side {
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 
 		.site-header {
-
-			@include position(fixed, 0 null 0 null);
-
 			background-color: color(white);
+			bottom: 0;
 			box-shadow: $color__header-style-side-box-shadow;
 			overflow-y: scroll;
 			padding-top: $size__padding * 2;
+			position: fixed;
+			top: 0;
 			width: rem(300);
 		}
 

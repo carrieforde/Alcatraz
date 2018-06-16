@@ -35,7 +35,6 @@ hr {
 	outline: 0;
 }
 
-
 //-----------------------------------------
 // Utility classes
 //-----------------------------------------
@@ -44,7 +43,6 @@ hr {
 	@include hide-text;
 }
 
-
 // Clearings
 .clear,
 .comment-content,
@@ -52,14 +50,13 @@ hr {
 .site-content,
 .site-footer,
 .site-header {
-
-	@include clearfix;
+	clear: both;
 }
-
 
 // Infinite scroll
 .infinite-scroll .posts-navigation, // Older / Newer Posts Navigation (always hidden)
-.infinite-scroll.neverending .site-footer { // Theme Footer (when set to scrolling)
+.infinite-scroll.neverending .site-footer {
+	// Theme Footer (when set to scrolling)
 	display: none;
 }
 

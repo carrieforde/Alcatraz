@@ -23,7 +23,7 @@
 
 		&-#{$i} {
 
-			@include grid-column($i, $context);
+			// @include grid-columngrid-column($i, $context);
 		}
 	}
 }

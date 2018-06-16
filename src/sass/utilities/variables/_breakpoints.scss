@@ -6,20 +6,9 @@
 // Add additional widths as needed.
 //--------------------------------------------------------------
 
-
 // Common breakpoints
-$tablet-portrait-up: (
-	media: 600px,
-);
-$wp-admin-bar: (
-	media: 783px,
-);
-$tablet-landscape-up: (
-	media: 900px,
-);
-$desktop-up: (
-	media: 1200px,
-);
-$desktop-large-up: (
-	media: 1800px,
-);
+$tablet-portrait-up: 600px;
+$wp-admin-bar: 783px;
+$tablet-landscape-up: 900px;
+$desktop-up: 1200px;
+$desktop-large-up: 1800px;

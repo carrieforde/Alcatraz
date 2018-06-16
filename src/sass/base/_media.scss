@@ -7,7 +7,6 @@ img {
 	max-width: 100%;
 }
 
-
 //-----------------------------------------
 // Captions
 //-----------------------------------------
@@ -26,7 +25,6 @@ img {
 	margin: rem(10) 0;
 	text-align: center;
 }
-
 
 //-----------------------------------------
 // Alignments
@@ -52,7 +50,6 @@ img {
 	display: inline;
 }
 
-
 //-----------------------------------------
 // Post Thumbnail
 //-----------------------------------------
@@ -66,7 +63,6 @@ img {
 	}
 }
 
-
 //-----------------------------------------
 // Image as Background
 //
@@ -78,20 +74,13 @@ img {
 	background-size: cover;
 }
 
-
 //-----------------------------------------
 // Galleries
 //-----------------------------------------
 .gallery {
 	margin-bottom: rem(25);
 	overflow: hidden;
-
-	@include grid-media($tablet-landscape-up) {
-
-		@include grid-collapse;
-	}
 }
-
 
 .gallery-item {
 	display: inline-block;
@@ -100,73 +89,63 @@ img {
 	vertical-align: top;
 	width: 100%;
 
-	@include grid-media($tablet-landscape-up) {
+	// @include mq-min($tablet-landscape-up) {
 
-		.gallery-columns-1 & {
+	// 	.gallery-columns-1 & {
 
-			@include grid-column(12);
-		}
+	// 		@include grid-column(12);
+	// 	}
 
-		.gallery-columns-2 & {
+	// 	.gallery-columns-2 & {
 
-			@include grid-column(6);
-		}
+	// 		@include grid-column(6);
+	// 	}
 
-		.gallery-columns-3 & {
+	// 	.gallery-columns-3 & {
 
-			@include grid-column(4);
-		}
+	// 		@include grid-column(4);
+	// 	}
 
-		.gallery-columns-4 & {
+	// 	.gallery-columns-4 & {
 
-			@include grid-column(3);
-		}
+	// 		@include grid-column(3);
+	// 	}
 
-		.gallery-columns-5 & {
-			$col-5: (
-				columns: 5,
-			);
+	// 	.gallery-columns-5 & {
+	// 		$col-5: (columns: 5);
 
-			@include grid-column(1, $col-5);
-		}
+	// 		@include grid-column(1, $col-5);
+	// 	}
 
-		.gallery-columns-6 & {
+	// 	.gallery-columns-6 & {
 
-			@include grid-column(2);
-		}
+	// 		@include grid-column(2);
+	// 	}
 
-		.gallery-columns-7 & {
-			$col-7: (
-				columns: 7,
-			);
+	// 	.gallery-columns-7 & {
+	// 		$col-7: (columns: 7);
 
-			@include grid-column(1, $col-7);
-		}
+	// 		@include grid-column(1, $col-7);
+	// 	}
 
-		.gallery-columns-8 & {
-			$col-8: (
-				columns: 8,
-			);
+	// 	.gallery-columns-8 & {
+	// 		$col-8: (columns: 8);
 
-			@include grid-column(1, $col-8);
-		}
+	// 		@include grid-column(1, $col-8);
+	// 	}
 
-		.gallery-columns-9 & {
-			$col-9: (
-				columns: 9,
-			);
+	// 	.gallery-columns-9 & {
+	// 		$col-9: (columns: 9);
 
-			@include grid-column(1, $col-9);
-		}
+	// 		@include grid-column(1, $col-9);
+	// 	}
 
-		.gallery-columns-10 & {
-			$col-10: (
-				columns: 10,
-			);
+	// 	.gallery-columns-10 & {
+	// 		$col-10: (columns: 10);
 
-			@include grid-column(1, $col-10);
-		}
-	}
+	// 		@include grid-column(1, $col-10);
+	// 	}
+	// }
 }
 
 .gallery-caption {
@@ -180,7 +159,6 @@ img {
 		margin-bottom: em(25);
 	}
 }
-
 
 //-----------------------------------------
 // Other media

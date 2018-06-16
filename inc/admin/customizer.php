@@ -94,10 +94,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[site_layout]',
 		array(
-			'default'           => $option_defaults['site_layout'],
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
+			'default'    => $option_defaults['site_layout'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -115,9 +115,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[site_sidebar]',
 		array(
-			'default'           => $option_defaults['site_sidebar'],
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
+			'default'    => $option_defaults['site_sidebar'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
@@ -135,9 +135,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[page_banner_widget_area]',
 		array(
-			'default'           => $option_defaults['page_banner_widget_area'],
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
+			'default'    => $option_defaults['page_banner_widget_area'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
@@ -156,10 +156,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[header_style]',
 		array(
-			'default'           => $option_defaults['header_style'],
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
-			'transport'         => 'postMessage',
+			'default'    => $option_defaults['header_style'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
+			'transport'  => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
@@ -308,9 +308,9 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'alcatraz_options[social_icons_in_footer]',
 		array(
-			'default'           => $option_defaults['social_icons_in_footer'],
-			'type'              => 'option',
-			'capability'        => 'edit_theme_options',
+			'default'    => $option_defaults['social_icons_in_footer'],
+			'type'       => 'option',
+			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(

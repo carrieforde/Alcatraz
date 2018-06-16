@@ -2,6 +2,7 @@
 // PRIMARY NAVIGATION
 //--------------------------------------------------------------
 
+// stylelint-disable color-named
 
 //-----------------------------------------
 // Mobile Style Default
@@ -11,7 +12,7 @@
 	display: none;
 	padding: $size__padding;
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 		display: block;
 	}
 
@@ -19,7 +20,6 @@
 		display: block;
 	}
 }
-
 
 //-----------------------------------------
 // Full Screen Menu Style
@@ -30,7 +30,7 @@
 
 		&.main-navigation {
 
-			@include position(absolute, 0 0 0 0);
+			@include absolute-center;
 
 			background-color: color(white);
 			z-index: 5;
@@ -42,20 +42,19 @@
 		.main-navigation {
 			top: rem(46);
 
-			@include grid-media($wp-admin-bar) {
+			@include mq-min($wp-admin-bar) {
 				top: rem(32);
 			}
 		}
 	}
 
 	&.menu-open {
-		
+
 		.mobile-menu-toggle {
 			right: $size__padding;
 		}
 	}
 }
-
 
 //-----------------------------------------
 // Slide-in Mobile Navigation
@@ -64,13 +63,13 @@
 // Shared styles.
 .mobile-nav-style-slide-left,
 .mobile-nav-style-slide-right {
-	
+
 	&.admin-bar {
 
 		.main-navigation {
 			top: rem(46);
 
-			@include grid-media($wp-admin-bar) {
+			@include mq-min($wp-admin-bar) {
 				top: rem(32);
 			}
 		}
@@ -89,7 +88,7 @@
 			width: rem(400);
 		}
 
-		@include grid-media($tablet-landscape-up) {
+		@include mq-min($tablet-landscape-up) {
 			overflow-y: initial;
 		}
 
@@ -103,10 +102,12 @@
 		overflow: hidden; // prevents body from scrolling.
 
 		.menu-screen {
-
-			@include position(fixed, 0 0 0 0);
-
 			background-color: rgba(color(black), 0.7);
+			bottom: 0;
+			left: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
 			z-index: 2;
 		}
 	}
@@ -114,9 +115,9 @@
 
 // Mobile swipe area.
 #mobile-nav-swipe-zone {
-
-	@include position(fixed, 0 null 0 null);
-	
+	bottom: 0;
+	position: fixed;
+	top: 0;
 	width: rem(20);
 	z-index: 20;
 
@@ -124,7 +125,7 @@
 		display: none;
 	}
 
-	@include grid-media($tablet-landscape-up) {
+	@include mq-min($tablet-landscape-up) {
 		display: none;
 	}
 }
@@ -135,23 +136,22 @@
 	.main-navigation {
 
 		@include media(null, $tablet-landscape-up) {
-
-			@include position(fixed, 0 null 0 0);
-
+			bottom: 0;
+			left: 0;
+			position: fixed;
+			top: 0;
 			transform: translateX(-400px);
 		}
 	}
 
 	&.menu-open {
-		
+
 		&:not(.mobile-nav-toggle-style-hamburger) {
-			
+
 			.mobile-menu-toggle {
 				right: $size__padding;
 
 				@include media(em(400), null) {
-
-					
 					left: calc(400px - (200px + #{$size__padding}));
 					right: auto;
 				}
@@ -180,15 +180,16 @@
 	.main-navigation {
 
 		@include media(null, $tablet-landscape-up) {
-
-			@include position(fixed, 0 0 0 null);
-
+			bottom: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
 			transform: translateX(400px);
 		}
 	}
 
 	&.menu-open {
-		
+
 		.mobile-menu-toggle {
 			right: $size__padding;
 		}

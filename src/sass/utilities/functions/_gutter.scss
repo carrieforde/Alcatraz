@@ -16,9 +16,7 @@
 ///
 /// @return {Number (with unit)}
 
-
 @function gutter($grid: $neat-grid) {
-	
 	$gutter: map-get($grid, gutter);
 
 	@return $gutter;

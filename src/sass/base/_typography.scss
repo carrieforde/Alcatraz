@@ -13,7 +13,7 @@ input,
 select,
 textarea {
 	color: $color__body-text;
-	font: $font__body-weight 1em/#{$font__body-line-height} $font__body;
+	font: $font__body-weight 1em /#{$font__body-line-height} $font__body;
 }
 
 //-----------------------------------------
@@ -22,19 +22,6 @@ textarea {
 #{headings(1, 6)} {
 	margin: 0 0 0.5em; // Use em to keep space proportional to font size.
 }
-
-h1 {}
-
-h2 {}
-
-h3 {}
-
-h4 {}
-
-h5 {}
-
-h6 {}
-
 
 //-----------------------------------------
 // Inline Elements
@@ -47,7 +34,7 @@ a {
 	color: $color__link;
 	transition: $transition__hover-color;
 
-	&:visted {
+	&:visited {
 		color: $color__link-visited;
 	}
 

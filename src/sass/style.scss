@@ -15,11 +15,8 @@ alcatraz is based on Underscores http://underscores.me/, (C) 2012-2015 Automatti
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 */
 
-$output-bourbon-deprecation-warnings: false;
-
-@import "bourbon";
+@import "aurora-utilities";
 @import "utilities/index";
-@import "neat";
 @import "sanitize";
 @import "base/index";
 @import "modules/index";

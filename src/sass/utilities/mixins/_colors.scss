@@ -2,13 +2,11 @@
 // COLORS
 //--------------------------------------------------------------
 
-
 /// Set up color classes quickly by looping through a color Sass map.
 ///
 /// @author Carrie Forde
 ///
 /// @param {map} $colors [$colors] - The map of colors to loop through.
-
 
 @mixin colors($color-map, $color-type: color) {
 
@@ -20,7 +18,7 @@
 				color: $color;
 			} @else if $color-type == background or $color-type == background-color {
 				background-color: $color;
-			} @else if $color-type == fill{
+			} @else if $color-type == fill {
 				fill: $color;
 			} @else {
 
