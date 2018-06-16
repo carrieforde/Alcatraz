@@ -9,8 +9,6 @@
     "eslint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "eslint:fix": "eslint \"src/**/*.{js,jsx}\" --quiet --fix",
     "format": "prettier --write \"src/**/*.{js,jsx,scss}\"",
-    "kss": "kss --config kss-config.json",
-    "kss:watch": "onchange 'src/assets/sass/**/*.scss' -- npm run kss",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "test": "NODE_ENV=test jest"
