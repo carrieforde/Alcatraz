@@ -1,3 +1,4 @@
+import { Alcatraz } from './alcatraz';
 /**
  * Alcatraz Navigation JS object.
  *
@@ -23,7 +24,7 @@
  *
  * @since  1.0.0
  */
-const AlcatrazNavigation = (function($) {
+export const AlcatrazNavigation = (function($) {
   ('use strict');
 
   const $body = $('body'),

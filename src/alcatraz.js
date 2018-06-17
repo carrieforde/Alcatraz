@@ -1,3 +1,5 @@
+import { AlcatrazUtilities } from './utilities';
+import { AlcatrazNavigation } from './navigation';
 /**
  * Alcatraz JS object.
  *
@@ -11,7 +13,7 @@
  * @since  1.0.0
  */
 
-var Alcatraz = (function($) {
+export var Alcatraz = (function($) {
   /**
    * Save component objects as properties.
    */

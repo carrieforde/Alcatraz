@@ -1,3 +1,4 @@
+import { Alcatraz } from './alcatraz';
 /**
  * Initialization JS.
  *

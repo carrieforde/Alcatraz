@@ -7,7 +7,7 @@
  * @since  1.0.0
  */
 
-var AlcatrazUtilities = (function($) {
+export var AlcatrazUtilities = (function($) {
   var htmlEntityMap = {
     '&': '&amp;',
     '<': '&lt;',
