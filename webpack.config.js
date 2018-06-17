@@ -9,7 +9,8 @@ const config = {
   context: __dirname,
   entry: {
     frontend: './src/index.js',
-    customizer: './src/customizer.js'
+    customizer: './src/customizer.js',
+    admin: './src/admin.js'
   },
   output: {
     path: path.join(__dirname, 'dist'),
