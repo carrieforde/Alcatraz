@@ -1,5 +1,4 @@
 .menu {
-	display: none;
 	margin: 0;
 	padding: 0;
 
@@ -22,9 +21,11 @@
 }
 
 .sub-menu {
+	background-color: $white;
 	display: none;
 	margin: 0;
 	padding: 0;
+	z-index: z(sub-menu);
 
 	@include mq-min($tablet-landscape) {
 		left: 0;

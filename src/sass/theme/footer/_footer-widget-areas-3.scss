@@ -1,0 +1,10 @@
+.footer-widget-areas-3 {
+
+	@include mq-min($tablet-landscape) {
+
+		.footer-widget-areas {
+			grid-gap: $sp-single;
+			grid-template-columns: repeat(3, calc(#{(100 / 3) * 1%} - #{($sp-single / 3) * 2}));
+		}
+	}
+}

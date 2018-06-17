@@ -1,0 +1,10 @@
+.left-sidebar {
+
+	.site-content {
+		grid-template-columns: $sidebar-width minmax(auto, calc(100% - (#{$sidebar-width} + #{$sp-single})));
+	}
+
+	.sidebar {
+		order: -1;
+	}
+}

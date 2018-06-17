@@ -71,6 +71,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Footer widget areas class.
 	if ( isset( $options['footer_widget_areas'] ) && 0 < (int) $options['footer_widget_areas'] ) {
+		$classes[] = 'has-footer-widgets';
 		$classes[] = 'footer-widget-areas-' . (int) $options['footer_widget_areas'];
 	}
 

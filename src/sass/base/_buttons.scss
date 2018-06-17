@@ -8,13 +8,22 @@ input[type="reset"] {
 	padding: 0.5em 1em;
 }
 
-.button {
+.mobile-menu-toggle {
 
-	&--menu-toggle {
+	@include hamburger-button($color-primary);
 
-		@include mq-min($tablet-landscape) {
-			display: none;
-		}
+	position: absolute;
+	right: $sp-single;
+	top: $sp-single;
+	z-index: z(menu-toggle);
+
+	@include mq-min($tablet-landscape) {
+		display: none;
+	}
+
+	.menu-open & {
+
+		@include hamburger-button-active($color-primary);
 	}
 }
 
@@ -22,7 +31,7 @@ input[type="reset"] {
 	background: url(../icons/chevron-down.svg);
 	height: 1rem;
 	position: absolute;
-	right: rem(-30);
+	right: 0;
 	top: rem(5);
 	width: 1rem;
 

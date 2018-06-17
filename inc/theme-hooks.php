@@ -144,20 +144,20 @@ function alcatraz_output_default_entry_footer( $post_id = 0 ) {
 	}
 }
 
-add_action( 'alcatraz_footer', 'alcatraz_output_footer_bottom', 30 );
+add_action( 'alcatraz_footer', 'alcatraz_output_footer_credits', 30 );
 /**
  * Output the footer bottom.
  *
  * @since  1.0.0
  */
-function alcatraz_output_footer_bottom() {
+function alcatraz_output_footer_credits() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( ! empty( $options['footer_bottom'] ) ) {
+	if ( ! empty( $options['footer_credits'] ) ) {
 		printf(
-			'<div class="footer-bottom">%s</div>',
-			wp_kses_post( do_shortcode( $options['footer_bottom'] ) )
+			'<div class="footer-credits">%s</div>',
+			wp_kses_post( do_shortcode( $options['footer_credits'] ) )
 		);
 	}
 }
@@ -177,13 +177,15 @@ function alcatraz_social_menu_in_footer() {
 
 		<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
 
-			<?php wp_nav_menu( array(
+			<?php
+			wp_nav_menu( array(
 				'theme_location' => 'social',
-				'menu_class' => 'social-links-menu',
-				'depth' => 1,
-				'link_before' => '<span class="screen-reader-text">',
-				'link_after'  => '</span>',
-			) ); ?>
+				'menu_class'     => 'menu social-links-menu',
+				'depth'          => 1,
+				'link_before'    => '<span class="screen-reader-text">',
+				'link_after'     => '</span>',
+			) );
+			?>
 		</nav>
 	<?php }
 }

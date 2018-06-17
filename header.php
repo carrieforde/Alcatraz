@@ -43,7 +43,8 @@
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
 				<button class="button button--menu-toggle mobile-menu-toggle" type="button">
-					<span class="button--menu-toggle"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
+					<?php esc_html_e( 'Menu', 'alcatraz' ); ?>
+					<span class="bars"></span>
 				</button>
 
 				<nav id="site-navigation" class="main-navigation" role="navigation">

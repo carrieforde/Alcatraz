@@ -205,20 +205,20 @@ function alcatraz_customize_register( $wp_customize ) {
 
 	// Footer bottom.
 	$wp_customize->add_setting(
-		'alcatraz_options[footer_bottom]',
+		'alcatraz_options[footer_credits]',
 		array(
-			'default'    => $option_defaults['footer_bottom'],
+			'default'    => $option_defaults['footer_credits'],
 			'type'       => 'option',
 			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
-		'alcatraz_footer_bottom_control',
+		'alcatraz_footer_credits_control',
 		array(
 			'type'     => 'textarea',
-			'label'    => __( 'Footer Bottom Content', 'alcatraz' ),
+			'label'    => __( 'Footer Credits Content', 'alcatraz' ),
 			'section'  => 'alcatraz_footer_section',
-			'settings' => 'alcatraz_options[footer_bottom]',
+			'settings' => 'alcatraz_options[footer_credits]',
 		)
 	);
 

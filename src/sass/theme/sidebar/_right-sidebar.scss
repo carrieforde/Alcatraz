@@ -1,0 +1,6 @@
+.right-sidebar {
+
+	.site-content {
+		grid-template-columns: minmax(auto, calc(100% - (#{$sidebar-width} + #{$sp-single}))) $sidebar-width;
+	}
+}

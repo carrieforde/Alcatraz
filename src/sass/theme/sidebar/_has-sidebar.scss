@@ -1,0 +1,10 @@
+@include mq-min($tablet-landscape) {
+
+	.has-sidebar {
+
+		.site-content {
+			display: grid;
+			grid-column-gap: $sp-single;
+		}
+	}
+}

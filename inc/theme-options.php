@@ -18,10 +18,10 @@ function alcatraz_get_option_defaults() {
 		'show_activation_notice'  => 1,
 		'site_sidebar'            => 'right-sidebar',
 		'sub_page_nav_in_sidebar' => 0,
-		'header_style'            => 'default',
+		'header_style'            => 'inline',
 		'mobile_nav_style'        => 'slide-out',
 		'footer_widget_areas'     => 3,
-		'footer_bottom'           => '',
+		'footer_credits'          => '',
 		'social_icons_in_footer'  => '',
 	);
 
@@ -58,8 +58,8 @@ function alcatraz_validate_options( $input ) {
 	if ( isset( $input['footer_widget_areas'] ) ) {
 		$options['footer_widget_areas'] = absint( $input['footer_widget_areas'] );
 	}
-	if ( isset( $input['footer_bottom'] ) ) {
-		$options['footer_bottom'] = wp_kses_post( $input['footer_bottom'] );
+	if ( isset( $input['footer_credits'] ) ) {
+		$options['footer_credits'] = wp_kses_post( $input['footer_credits'] );
 	}
 	if ( isset( $input['sub_page_nav_in_sidebar'] ) ) {
 		$options['sub_page_nav_in_sidebar'] = absint( $input['sub_page_nav_in_sidebar'] );
@@ -128,9 +128,8 @@ function alcatraz_get_site_sidebar( $context = '' ) {
 function alcatraz_get_header_styles( $context = '' ) {
 
 	$styles = array(
-		'default' => __( 'Default', 'alcatraz' ),
-		'short'   => __( 'Short', 'alcatraz' ),
-		'side'    => __( 'Side', 'alcatraz' ),
+		'inline'  => __( 'Inline', 'alcatraz' ),
+		'stacked' => __( 'Stacked', 'alcatraz' ),
 	);
 
 	return apply_filters( 'alcatraz_header_styles', $styles, $context );
