@@ -60,7 +60,6 @@
 
 					<?php do_action( 'alcatraz_after_nav_inside' ); ?>
 				</nav>
-				<div id="mobile-nav-swipe-zone"></div>
 
 			<?php endif; ?>
 

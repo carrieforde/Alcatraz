@@ -90,27 +90,6 @@ function alcatraz_customize_register( $wp_customize ) {
 
 	/* Layout */
 
-	// Site layout.
-	$wp_customize->add_setting(
-		'alcatraz_options[site_layout]',
-		array(
-			'default'    => $option_defaults['site_layout'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_site_layout_control',
-		array(
-			'type'     => 'radio',
-			'label'    => __( 'Site Layout', 'alcatraz' ),
-			'section'  => 'alcatraz_layout_section',
-			'settings' => 'alcatraz_options[site_layout]',
-			'choices'  => alcatraz_get_site_layouts(),
-		)
-	);
-
 	// Site sidebar.
 	$wp_customize->add_setting(
 		'alcatraz_options[site_sidebar]',

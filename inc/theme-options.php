@@ -16,11 +16,10 @@ function alcatraz_get_option_defaults() {
 
 	$defaults = array(
 		'show_activation_notice'  => 1,
-		'site_layout'             => 'full-width',
 		'site_sidebar'            => 'right-sidebar',
 		'sub_page_nav_in_sidebar' => 0,
 		'header_style'            => 'default',
-		'mobile_nav_style'        => 'default',
+		'mobile_nav_style'        => 'slide-out',
 		'footer_widget_areas'     => 3,
 		'footer_bottom'           => '',
 		'social_icons_in_footer'  => '',
@@ -47,9 +46,6 @@ function alcatraz_validate_options( $input ) {
 	$options = get_option( 'alcatraz_options' );
 
 	// Update options in the Customizer.
-	if ( isset( $input['site_layout'] ) ) {
-		$options['site_layout'] = sanitize_text_field( $input['site_layout'] );
-	}
 	if ( isset( $input['site_sidebar'] ) ) {
 		$options['site_sidebar'] = sanitize_text_field( $input['site_sidebar'] );
 	}
@@ -98,26 +94,6 @@ function alcatraz_get_text_colors( $context = '' ) {
 	);
 
 	return apply_filters( 'alcatraz_text_colors', $default_colors, $context );
-}
-
-/**
- * Return an array of Site Layout options.
- *
- * @since   1.0.0
- *
- * @param   string  $context  The context to pass to our filter.
- *
- * @return  array
- */
-function alcatraz_get_site_layouts( $context = '' ) {
-
-	$styles = array(
-		'full-width'    => __( 'Full Width', 'alcatraz' ),
-		'boxed'         => __( 'Boxed', 'alcatraz' ),
-		'boxed-content' => __( 'Boxed Content', 'alcatraz' ),
-	);
-
-	return apply_filters( 'alcatraz_site_layouts', $styles, $context );
 }
 
 /**
@@ -172,9 +148,7 @@ function alcatraz_get_header_styles( $context = '' ) {
 function alcatraz_get_mobile_nav_styles( $context = '' ) {
 
 	$styles = array(
-		'default'     => __( 'Default', 'alcatraz' ),
-		'slide-left'  => __( 'Slide from Left', 'alcatraz' ),
-		'slide-right' => __( 'Slide from Right', 'alcatraz' ),
+		'slide-out'   => __( 'Slide Out', 'alcatraz' ),
 		'full-screen' => __( 'Full Screen', 'alcatraz' ),
 	);
 

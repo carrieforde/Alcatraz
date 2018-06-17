@@ -87,7 +87,7 @@ add_action( 'cmb2_admin_init', 'alcatraz_page_options_metabox' );
  */
 function alcatraz_page_options_metabox() {
 
-	$prefix = '_alcatraz_';
+	$prefix    = '_alcatraz_';
 	$post_type = alcatraz_allowed_post_types();
 
 	/**
@@ -100,20 +100,6 @@ function alcatraz_page_options_metabox() {
 		'context'       => 'normal',
 		'priority'      => 'high',
 		'show_names'    => true,
-	) );
-
-	// Page layout.
-	$page_options->add_field( array(
-		'name'    => __( 'Layout', 'alcatraz' ),
-		'desc'    => __( 'Set the layout for this page', 'alcatraz' ),
-		'id'      => $prefix . 'page_layout',
-		'type'    => 'select',
-		'options' => array(
-			'default'        => __( 'Default', 'alcatraz' ),
-			'full-width'     => __( 'Full Width', 'alcatraz' ),
-			'boxed'          => __( 'Boxed', 'alcatraz' ),
-			'boxed-content'  => __( 'Boxed Content', 'alcatraz' ),
-		),
 	) );
 
 	// Page sidebar.

@@ -26,14 +26,6 @@ function alcatraz_body_classes( $classes ) {
 		$post_id = get_the_ID();
 	}
 
-	// Site layout class.
-	$page_layout = get_post_meta( $post_id, '_alcatraz_page_layout', true );
-	if ( $page_layout && 'default' !== $page_layout ) {
-		$classes[] = esc_attr( $page_layout );
-	} elseif ( isset( $options['site_layout'] ) && $options['site_layout'] ) {
-		$classes[] = esc_attr( $options['site_layout'] );
-	}
-
 	// Site sidebar class.
 	$page_sidebar = get_post_meta( $post_id, '_alcatraz_page_sidebar', true );
 	if ( $page_sidebar && 'default' !== $page_sidebar ) {
@@ -41,6 +33,7 @@ function alcatraz_body_classes( $classes ) {
 			$classes[] = esc_attr( $page_sidebar );
 		}
 	} elseif ( isset( $options['site_sidebar'] ) && 'no-sidebar' !== $options['site_sidebar'] ) {
+		$classes[] = esc_attr( 'has-sidebar' );
 		$classes[] = esc_attr( $options['site_sidebar'] );
 	}
 
