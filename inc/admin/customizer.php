@@ -131,25 +131,6 @@ function alcatraz_customize_register( $wp_customize ) {
 		)
 	);
 
-	// Page Banner widget area.
-	$wp_customize->add_setting(
-		'alcatraz_options[page_banner_widget_area]',
-		array(
-			'default'    => $option_defaults['page_banner_widget_area'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_page_banner_widget_area_control',
-		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Include Page Banner Widget Area?', 'alcatraz' ),
-			'section'  => 'alcatraz_layout_section',
-			'settings' => 'alcatraz_options[page_banner_widget_area]',
-		)
-	);
-
 	/* Header */
 
 	// Header style.
@@ -193,48 +174,6 @@ function alcatraz_customize_register( $wp_customize ) {
 			'section'  => 'alcatraz_menu_options_section',
 			'settings' => 'alcatraz_options[mobile_nav_style]',
 			'choices'  => alcatraz_get_mobile_nav_styles( 'mobile-nav-style' ),
-		)
-	);
-
-	// Mobile navigation toggle style.
-	$wp_customize->add_setting(
-		'alcatraz_options[mobile_nav_toggle_style]',
-		array(
-			'default'    => $option_defaults['mobile_nav_toggle_style'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_mobile_nav_toggle_control',
-		array(
-			'type'     => 'radio',
-			'label'    => __( 'Mobile Navigation Toggle Style', 'alcatraz' ),
-			'section'  => 'alcatraz_menu_options_section',
-			'settings' => 'alcatraz_options[mobile_nav_toggle_style]',
-			'choices'  => alcatraz_get_mobile_nav_toggles( 'mobile-nav-toggle-style' ),
-		)
-	);
-
-	// Sub menu toggle style.
-	$wp_customize->add_setting(
-		'alcatraz_options[sub_menu_toggle_style]',
-		array(
-			'default'    => $option_defaults['sub_menu_toggle_style'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_sub_menu_toggle_style',
-		array(
-			'type'     => 'radio',
-			'label'    => __( 'Sub Menu Toggle Style', 'alcatraz' ),
-			'section'  => 'alcatraz_menu_options_section',
-			'settings' => 'alcatraz_options[sub_menu_toggle_style]',
-			'choices'  => alcatraz_get_sub_menu_toggles( 'sub-menu-toggle-style' ),
 		)
 	);
 

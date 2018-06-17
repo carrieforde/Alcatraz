@@ -17,13 +17,10 @@ function alcatraz_get_option_defaults() {
 	$defaults = array(
 		'show_activation_notice'  => 1,
 		'site_layout'             => 'full-width',
-		'site_sidebar'             => 'right-sidebar',
-		'page_banner_widget_area' => 0,
+		'site_sidebar'            => 'right-sidebar',
 		'sub_page_nav_in_sidebar' => 0,
 		'header_style'            => 'default',
-		'mobile_nav_toggle_style' => 'hamburger',
 		'mobile_nav_style'        => 'default',
-		'sub_menu_toggle_style'   => 'chevron',
 		'footer_widget_areas'     => 3,
 		'footer_bottom'           => '',
 		'social_icons_in_footer'  => '',
@@ -49,15 +46,6 @@ function alcatraz_validate_options( $input ) {
 	// Start with any existing options.
 	$options = get_option( 'alcatraz_options' );
 
-	$networks = alcatraz_get_social_networks();
-
-	// Update options on the options page.
-	foreach ( $networks as $network => $network_data ) {
-		if ( isset( $input[ $network . '_url' ] ) ) {
-			$options[ $network . '_url' ] = sanitize_text_field( $input[ $network . '_url' ] );
-		}
-	}
-
 	// Update options in the Customizer.
 	if ( isset( $input['site_layout'] ) ) {
 		$options['site_layout'] = sanitize_text_field( $input['site_layout'] );
@@ -65,20 +53,11 @@ function alcatraz_validate_options( $input ) {
 	if ( isset( $input['site_sidebar'] ) ) {
 		$options['site_sidebar'] = sanitize_text_field( $input['site_sidebar'] );
 	}
-	if ( isset( $input['page_banner_widget_area'] ) ) {
-		$options['page_banner_widget_area'] = absint( $input['page_banner_widget_area'] );
-	}
 	if ( isset( $input['header_style'] ) ) {
 		$options['header_style'] = sanitize_text_field( $input['header_style'] );
 	}
-	if ( isset( $input['mobile_nav_toggle_style'] ) ) {
-		$options['mobile_nav_toggle_style'] = sanitize_text_field( $input['mobile_nav_toggle_style'] );
-	}
 	if ( isset( $input['mobile_nav_style'] ) ) {
 		$options['mobile_nav_style'] = sanitize_text_field( $input['mobile_nav_style'] );
-	}
-	if ( isset( $input['sub_menu_toggle_style'] ) ) {
-		$options['sub_menu_toggle_style'] = sanitize_text_field( $input['sub_menu_toggle_style'] );
 	}
 	if ( isset( $input['footer_widget_areas'] ) ) {
 		$options['footer_widget_areas'] = absint( $input['footer_widget_areas'] );
@@ -200,42 +179,4 @@ function alcatraz_get_mobile_nav_styles( $context = '' ) {
 	);
 
 	return apply_filters( 'alcatraz_mobile_nav_styles', $styles, $context );
-}
-
-/**
- * Return an array of mobile nav toggle style options.
- *
- * @since   1.0.0
- *
- * @param   string  $context  The context to pass to our filter.
- *
- * @return  array             The array of options.
- */
-function alcatraz_get_mobile_nav_toggles( $context = '' ) {
-
-	$toggles = array(
-		'button'    => __( 'Button', 'alcatraz' ),
-		'hamburger' => __( 'Hamburger', 'alcatraz' ),
-	);
-
-	return apply_filters( 'alcatraz_mobile_nav_toggles', $toggles, $context );
-}
-
-/**
- * Return an array of sub-menu toggle style options.
- *
- * @since   1.0.0
- *
- * @param   string  $context  The context to pass to our filter.
- *
- * @return  array             The array of options.
- */
-function alcatraz_get_sub_menu_toggles( $context = '' ) {
-
-	$toggles = array(
-		'chevron'    => __( 'Chevron', 'alcatraz' ),
-		'plus-minus' => __( 'Plus-Minus', 'alcatraz' ),
-	);
-
-	return apply_filters( 'alcatraz_sub_menu_toggle_styles', $toggles, $context );
 }

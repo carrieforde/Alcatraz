@@ -49,24 +49,14 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'header-style-' . esc_attr( $options['header_style'] );
 	}
 
-	// Mobile navigation toggle style class.
-	if ( isset( $options['mobile_nav_toggle_style'] ) && $options['mobile_nav_toggle_style'] ) {
-		$classes[] = 'mobile-nav-toggle-style-' . esc_attr( $options['mobile_nav_toggle_style'] );
-	}
-
 	// Mobile navigation style class.
 	if ( isset( $options['mobile_nav_style'] ) && $options['mobile_nav_style'] ) {
 		$classes[] = 'mobile-nav-style-' . esc_attr( $options['mobile_nav_style'] );
 	}
 
-	// Sub-menu toggle style class.
-	if ( isset( $options['sub_menu_toggle_style'] ) && $options['sub_menu_toggle_style'] ) {
-		$classes[] = 'sub-menu-toggle-style-' . esc_attr( $options['sub_menu_toggle_style'] );
-	}
-
 	// Transparent header class.
 	$transparent_header = get_post_meta( $post_id, '_alcatraz_transparent_header', true );
-	if ( $transparent_header && 'on' == $transparent_header ) {
+	if ( $transparent_header && 'on' === $transparent_header ) {
 		$classes[] = 'transparent-header';
 	}
 
@@ -77,7 +67,7 @@ function alcatraz_body_classes( $classes ) {
 
 	// Header text color class.
 	$header_text_color = get_post_meta( $post_id, '_alcatraz_header_text_color', true );
-	if ( $header_text_color && 'default' != $header_text_color ) {
+	if ( $header_text_color && 'default' !== $header_text_color ) {
 		$classes[] = 'header-' . esc_attr( $header_text_color );
 	}
 
@@ -86,14 +76,9 @@ function alcatraz_body_classes( $classes ) {
 		$classes[] = 'has-logo';
 	}
 
-	// Page Banner class.
-	if ( isset( $options['page_banner_widget_area'] ) && $options['page_banner_widget_area'] && is_active_sidebar( 'page-banner' ) ) {
-		$classes[] = 'has-page-banner';
-	}
-
 	// Footer widget areas class.
-	if ( isset( $options['footer_widget_areas'] ) && 0 < (int)$options['footer_widget_areas'] ) {
-		$classes[] = 'footer-widget-areas-' . (int)$options['footer_widget_areas'];
+	if ( isset( $options['footer_widget_areas'] ) && 0 < (int) $options['footer_widget_areas'] ) {
+		$classes[] = 'footer-widget-areas-' . (int) $options['footer_widget_areas'];
 	}
 
 	// Custom page classes.
