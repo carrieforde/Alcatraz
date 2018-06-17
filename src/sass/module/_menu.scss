@@ -1,0 +1,59 @@
+.menu {
+	display: none;
+	margin: 0;
+	padding: 0;
+
+	@include mq-min($tablet-landscape) {
+		align-items: center;
+		display: flex;
+	}
+
+	.toggled & {
+		display: block;
+	}
+
+	a {
+		padding: 0.5em;
+	}
+}
+
+.sub-menu {
+	display: none;
+	margin: 0;
+	padding: 0;
+
+	@include mq-min($tablet-landscape) {
+		left: 0;
+		position: absolute;
+		top: 100%;
+		width: rem(250);
+	}
+
+	.sub-menu {
+		margin-left: $sp-single;
+	}
+}
+
+.menu-item-has-children {
+	position: relative;
+
+	@include mq-min($tablet-landscape) {
+		align-items: center;
+		display: inline-flex;
+
+		&:after {
+			background: url(../icons/chevron-down.svg) no-repeat;
+			content: "";
+			display: block;
+			height: 1rem;
+			width: 1rem;
+		}
+
+		&:hover {
+
+			> .sub-menu {
+				display: block;
+			}
+		}
+	}
+}

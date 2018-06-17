@@ -1,24 +1,26 @@
-//--------------------------------------------------------------
-// BUTTONS
-//--------------------------------------------------------------
 button,
-.button,
-.button:visited,
+input[type="submit"],
 input[type="button"],
-input[type="reset"],
-input[type="submit"] {
-	background-color: $color__button-background;
-	color: $color__button-text;
+input[type="reset"] {
+	background-color: $color-primary;
+	color: $white;
 	display: inline-block;
-	font-weight: 500;
-	outline: 0;
-	padding: em(10) em(15);
-	text-transform: uppercase;
-	transition: $transition__hover-background, $transition__hover-color;
+	padding: 0.5em 1em;
+}
 
-	&:hover,
-	&:active,
-	&:focus {
-		background-color: $color__button-background-hover;
+.button {
+
+	&--menu-toggle {
+
+		@include mq-min($tablet-landscape) {
+			display: none;
+		}
+	}
+}
+
+.sub-level-toggle {
+
+	@include mq-min($tablet-landscape) {
+		display: none;
 	}
 }

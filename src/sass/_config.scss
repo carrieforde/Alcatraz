@@ -1,0 +1,135 @@
+// ====================================
+// COLORS
+// ====================================
+
+// Descriptive colors.
+$bay-of-many: #1f4483;
+$puerto-rico: #58b7a1;
+$white: #fff;
+$mine-shaft: #363a42;
+$white-smoke: #ebecee;
+
+// Secondary colors.
+$biscay: #16305c;
+$hoki: #637da9;
+$veridian: #3e8071;
+$bermuda: #8bcdbe;
+$cinder: #26292e;
+$raven: #73767b;
+$gray-chateau: #a4a5a6;
+$concrete: #f1f2f3;
+$black: #000;
+
+// Utility colors.
+$apple: #54a236;
+$well-read: #b13134;
+$tacha: #dbc15b;
+
+// Main colors.
+$color-primary: $bay-of-many !default;
+$color-accent: $puerto-rico !default;
+$color-success: $apple !default;
+$color-danger: $well-read !default;
+$color-light-gray: $white-smoke !default;
+$color-dark-gray: $raven !default;
+$color-shadow: rgba($cinder, 0.15);
+
+/// The main colors used throughout the site. This map can be used to automatically add color classes.
+///
+/// @type Map
+$theme-colors: (
+	"primary": $color-primary,
+	"accent": $color-accent,
+	"success": $color-success,
+	"danger": $color-danger,
+	"light-gray": $color-light-gray,
+	"dark-gray": $color-dark-gray,
+	"shadow": $color-shadow
+);
+
+// Elements.
+$body-background: $white;
+
+$text-default-dark: $black;
+$text-default-light: $white-smoke;
+
+$link: $color-primary;
+$link-hover: $color-accent;
+$link-visited: $link;
+
+// ====================================
+// TYPOGRAPHY
+// ====================================
+
+// stylelint-disable value-keyword-case
+$font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif,
+	"Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol" !default;
+$font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
+// stylelint-enable
+
+/// Set the `body` font family.
+///
+/// @type String
+$base-font-family: $font-family-sans-serif;
+
+/// Set the base (`root`) font size for the project. This should be unitless!
+///
+/// @type Number
+$base-font-size: 16 !default;
+
+/// Set the base line height for the project. This value should be unitless and represent the pixel equivalent.
+///
+/// @type Number
+$base-line-height: 24 !default;
+
+/// Set the base font weight for the project.
+///
+/// @type {Number|String}
+$base-font-weight: 400 !default;
+
+// ====================================
+// SIZES
+// ====================================
+
+/// Set the max width of the site.
+///
+/// @type Number
+$site-width: rem(1600);
+
+/// Set the width of the site's content.
+///
+/// @type Number
+$content-width: rem(1200);
+
+/// Set a default gutter width.
+///
+/// @type Number
+$gutter: rem(20);
+
+// Spacing
+$sp-half: 0.5rem;
+$sp-single: 1rem;
+$sp-double: 2rem;
+
+// ====================================
+// BREAKPOINTS
+// ====================================
+
+/// Breakpoints - add more as needed.
+///
+/// @type Number
+/// @link https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.or3duno2h
+$tablet-portrait: rem(600);
+$tablet-landscape: rem(900);
+$desktop: rem(1200);
+$desktop-xl: rem(1800);
+
+// ====================================
+// Z-INDEX
+// ====================================
+
+/// Keep your sanity while managing your z-indeces.
+///
+/// @type Map
+/// @link https://github.com/minamarkham/sassy-starter/blob/master/src/scss/utilities/_config.scss#L39
+$z-index: (default: 1);

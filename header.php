@@ -34,7 +34,7 @@
 
 			<?php do_action( 'alcatraz_before_header_inside' ); ?>
 
-			<div class="header-inner">
+			<div class="site-branding">
 
 				<?php do_action( 'alcatraz_header' ); ?>
 
@@ -42,22 +42,21 @@
 
 			<?php if ( has_nav_menu( 'primary' ) ) : ?>
 
-				<button class="mobile-menu-toggle" type="button">
-					<span class="mobile-menu-toggle__bar bar-1"></span>
-					<span class="mobile-menu-toggle__bar bar-2"></span>
-					<span class="mobile-menu-toggle__bar bar-3"></span>
-					<span class="menu-text"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
+				<button class="button button--menu-toggle mobile-menu-toggle" type="button">
+					<span class="button--menu-toggle"><?php esc_html_e( 'Menu', 'alcatraz' ); ?></span>
 				</button>
-				
+
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<?php do_action( 'alcatraz_before_nav_inside' ); ?>
 
-					<?php wp_nav_menu( array(
+					<?php
+					wp_nav_menu( array(
 						'theme_location'  => 'primary',
 						'menu_id'         => 'primary-menu',
 						'menu_class'      => 'primary-menu menu',
 						'container_class' => 'main-navigation__menu',
-					) ); ?>
+					) );
+					?>
 
 					<?php do_action( 'alcatraz_after_nav_inside' ); ?>
 				</nav>
