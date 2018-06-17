@@ -17,6 +17,10 @@
 	}
 }
 
+.menu-item {
+	position: relative;
+}
+
 .sub-menu {
 	display: none;
 	margin: 0;
@@ -35,7 +39,6 @@
 }
 
 .menu-item-has-children {
-	position: relative;
 
 	@include mq-min($tablet-landscape) {
 		align-items: center;

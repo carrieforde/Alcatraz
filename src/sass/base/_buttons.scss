@@ -19,6 +19,12 @@ input[type="reset"] {
 }
 
 .sub-level-toggle {
+	background: url(../icons/chevron-down.svg);
+	height: 1rem;
+	position: absolute;
+	right: rem(-30);
+	top: rem(5);
+	width: 1rem;
 
 	@include mq-min($tablet-landscape) {
 		display: none;

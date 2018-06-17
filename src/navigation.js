@@ -436,8 +436,6 @@ export const AlcatrazNavigation = (function($) {
       const toggle = `
         <button type="button" class="sub-level-toggle">
           <span class="screen-reader-text">${safeToggleText}</span>
-          <span class="sub-level-toggle-span span-1"></span>
-          <span class="sub-level-toggle-span span-2"></span>
         </button>`;
 
       // Add classes to indicate levels and items.
