@@ -1,22 +1,25 @@
 .mobile-nav-style-full-screen {
 
-	.main-navigation {
-		background-color: $white;
-		bottom: 0;
-		left: 0;
-		opacity: 0;
-		position: fixed;
-		right: 0;
-		top: 0;
-		transition: $transition-z-index, $transition-opacity;
-		z-index: z(mobile-menu-full-screen);
-	}
-
-	&.menu-open {
+	@include mq-max($tablet-landscape) {
 
 		.main-navigation {
-			opacity: 1;
-			z-index: z(main-navigation);
+			background-color: $white;
+			bottom: 0;
+			left: 0;
+			opacity: 0;
+			position: fixed;
+			right: 0;
+			top: 0;
+			transition: $transition-z-index, $transition-opacity;
+			z-index: z(mobile-menu-full-screen);
+		}
+
+		&.menu-open {
+
+			.main-navigation {
+				opacity: 1;
+				z-index: z(main-navigation);
+			}
 		}
 	}
 }
