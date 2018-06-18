@@ -199,3 +199,41 @@ function alcatraz_social_menu_in_footer() {
 		</nav>
 	<?php }
 }
+
+add_filter( 'style_loader_src', 'alcatraz_remove_core_version_numbers', 9999 );
+add_filter( 'script_loader_src', 'alcatraz_remove_core_version_numbers', 9999 );
+/**
+ * Remove version numbers from WP Core styles & scripts.
+ *
+ * @since 1.0.0
+ *
+ * @param string $src The file src being loaded.
+ * @return string The new src without a version number.
+ * @link https://www.coreymcollins.com/2018/02/13/i-boosted-the-crap-out-of-my-site-speed-in-a-weekend/
+ */
+function alcatraz_remove_core_version_numbers( $src ) {
+
+	$src = remove_query_arg( 'ver', $src );
+	return $src;
+}
+
+add_action( 'wp_default_scripts', 'alcatraz_wp_default_scripts' );
+/**
+ * Load jQuery & associated scripts in the footer.
+ *
+ * @since 1.0.0
+ *
+ * @param array $scripts Files to be moved.
+ * @link https://www.coreymcollins.com/2018/02/13/i-boosted-the-crap-out-of-my-site-speed-in-a-weekend/
+ */
+function alcatraz_wp_default_scripts( $scripts ) {
+
+	// Bail if we're in the admin.
+	if ( is_admin() ) {
+		return;
+	}
+
+	$scripts->add_data( 'jquery', 'group', 1 );
+	$scripts->add_data( 'jquery-core', 'group', 1 );
+	$scripts->add_data( 'jquery-migrate', 'group', 1 );
+}
