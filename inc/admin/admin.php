@@ -57,9 +57,9 @@ function alcatraz_activation_notice() {
 
 		?>
 		<div id="alcatraz-activation-notice" class="updated notice is-dismissible" style="padding-bottom: 5px;">
-			<h2><?php esc_html__e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
-			<p><?php esc_html__e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo esc_html( $customizer_link ); ?></p>
-			<p><?php esc_html__e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo esc_html( $documentation_link ); ?></p>
+			<h2><?php _e( 'Welcome to Alcatraz', 'alcatraz' ); // WPCS: XSS OK. ?></h2>
+			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); // WPCS: XSS OK. ?> <?php echo esc_html( $customizer_link ); ?></p>
+			<p><?php _e( 'For development resources visit the', 'alcatraz' ); // WPCS: XSS OK. ?> <?php echo esc_html( $documentation_link ); ?></p>
 		</div>
 		<?php
 	}
