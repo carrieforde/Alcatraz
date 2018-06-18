@@ -58,8 +58,8 @@ function alcatraz_activation_notice() {
 		?>
 		<div id="alcatraz-activation-notice" class="updated notice is-dismissible" style="padding-bottom: 5px;">
 			<h2><?php _e( 'Welcome to Alcatraz', 'alcatraz' ); // WPCS: XSS OK. ?></h2>
-			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); // WPCS: XSS OK. ?> <?php echo esc_html( $customizer_link ); ?></p>
-			<p><?php _e( 'For development resources visit the', 'alcatraz' ); // WPCS: XSS OK. ?> <?php echo esc_html( $documentation_link ); ?></p>
+			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); // WPCS: XSS OK. ?> <?php echo $customizer_link; // WPCS: XSS OK. ?></p>
+			<p><?php _e( 'For development resources visit the', 'alcatraz' ); // WPCS: XSS OK. ?> <?php echo $documentation_link; // WPCS: XSS OK. ?></p>
 		</div>
 		<?php
 	}
