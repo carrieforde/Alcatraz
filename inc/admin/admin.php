@@ -73,9 +73,6 @@ add_action( 'admin_init', 'alcatraz_add_editor_styles' );
  */
 function alcatraz_add_editor_styles() {
 
-	global $alcatraz_google_fonts;
-
-	add_editor_style( $alcatraz_google_fonts );
 	add_editor_style( get_stylesheet_uri() );
 }
 

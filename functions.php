@@ -146,20 +146,6 @@ function alcatraz_register_image_sizes() {
 	set_post_thumbnail_size( 1200, 740, true );
 }
 
-add_action( 'after_setup_theme', 'alcatraz_google_fonts', 0 );
-/**
- * Define our theme Google fonts
- *
- * @since  1.0.0
- */
-function alcatraz_google_fonts() {
-
-	$google_fonts = '//fonts.googleapis.com/css?family=Source+Code+Pro|Source+Sans+Pro:400,400i,700,700i';
-	$google_fonts = apply_filters( 'alcatraz_google_fonts', $google_fonts );
-
-	$GLOBALS['alcatraz_google_fonts'] = str_replace( ',', '%2C', $google_fonts );
-}
-
 add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
 /**
  * Enqueue scripts and styles.
@@ -168,17 +154,7 @@ add_action( 'wp_enqueue_scripts', 'alcatraz_scripts' );
  */
 function alcatraz_scripts() {
 
-	global $alcatraz_google_fonts;
-
 	$current_theme = wp_get_theme();
-
-	// Google fonts.
-	wp_register_style(
-		'alcatraz-fonts',
-		$alcatraz_google_fonts,
-		array(),
-		ALCATRAZ_VERSION
-	);
 
 	// Theme header CSS.
 	if ( is_admin() ) {
