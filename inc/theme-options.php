@@ -16,13 +16,14 @@ function alcatraz_get_option_defaults() {
 
 	$defaults = array(
 		'show_activation_notice'  => 1,
+		'hide_tagline'            => 0,
 		'site_sidebar'            => 'right-sidebar',
 		'sub_page_nav_in_sidebar' => 0,
 		'header_style'            => 'inline',
 		'mobile_nav_style'        => 'slide-out',
 		'footer_widget_areas'     => 3,
 		'footer_credits'          => '',
-		'social_icons_in_footer'  => '',
+		'social_icons_in_footer'  => 0,
 	);
 
 	return apply_filters( 'alcatraz_option_defaults', $defaults );
@@ -74,6 +75,20 @@ function alcatraz_validate_options( $input ) {
 	}
 
 	return $options;
+}
+
+/**
+ * Sanitize checkbox input.
+ *
+ * @since 1.0.0
+ *
+ * @param bool $checked The value to validate.
+ *
+ * @return bool Whether the box is checked.
+ */
+function alcatraz_validate_checkbox( $checked ) {
+
+	return ( ( isset( $checked ) && true === $checked ) ? true : false );
 }
 
 /**
