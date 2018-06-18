@@ -22,7 +22,7 @@ function alcatraz_output_header_image() {
 	<?php endif;
 }
 
-add_action( 'alcatraz_header', 'alcatraz_output_site_title', 5 );
+add_action( 'alcatraz_header', 'alcatraz_output_site_title', 10 );
 /**
  * Output the site title.
  *
@@ -30,17 +30,25 @@ add_action( 'alcatraz_header', 'alcatraz_output_site_title', 5 );
  */
 function alcatraz_output_site_title() {
 
+	$classes = 'site-title';
+
+	if ( has_custom_logo() ) {
+		$classes .= ' screen-reader-text';
+	}
+
 	if ( is_front_page() && is_home() ) {
 		printf(
-			'<h1 class="site-title"><a href="%s" rel="home">%s</a></h1>',
+			'<h1 class="%s"><a href="%s" rel="home">%s</a></h1>',
+			esc_attr( $classes ),
 			esc_url( home_url( '/' ) ),
-			get_bloginfo( 'name' )
+			esc_html( get_bloginfo( 'name' ) )
 		);
 	} else {
 		printf(
-			'<p class="site-title"><a href="%s" rel="home">%s</a></p>',
+			'<p class="%s"><a href="%s" rel="home">%s</a></p>',
+			esc_attr( $classes ),
 			esc_url( home_url( '/' ) ),
-			get_bloginfo( 'name' )
+			esc_html( get_bloginfo( 'name' ) )
 		);
 	}
 }
@@ -53,18 +61,25 @@ add_action( 'alcatraz_header', 'alcatraz_output_site_description', 15 );
  */
 function alcatraz_output_site_description() {
 
+	$classes = 'site-description';
+	$options = get_option( 'alcatraz_options' );
+
+	if ( isset( $options['hide_tagline'] ) && $options['hide_tagline'] ) {
+		$classes .= ' screen-reader-text';
+	}
+
 	$description = get_bloginfo( 'description', 'display' );
 
 	if ( $description || is_customize_preview() ) {
 		printf(
 			'<p class="%s">%s</p>',
-			'site-description',
-			$description
+			esc_attr( $classes ),
+			esc_html( $description )
 		);
 	}
 }
 
-add_action( 'alcatraz_header', 'alcatraz_output_logo' );
+add_action( 'alcatraz_header', 'alcatraz_output_logo', 5 );
 /**
  * Output the site logo.
  *
@@ -76,12 +91,7 @@ function alcatraz_output_logo() {
 		return;
 	}
 
-	// Start logo markup. 🎉 ?>
-	<div class="logo-wrap">
-		<?php the_custom_logo(); ?>
-	</div>
-
-	<?php
+	the_custom_logo();
 }
 
 add_action( 'alcatraz_before_primary_sidebar', 'alcatraz_output_sub_page_nav' );
