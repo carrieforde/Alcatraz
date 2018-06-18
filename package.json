@@ -11,7 +11,9 @@
     "format": "prettier --write \"src/**/*.{js,jsx,scss}\"",
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
-    "test": "NODE_ENV=test jest"
+    "test": "NODE_ENV=test jest",
+    "wp-pot":
+      "wp-pot --src '*.php' --dest-file 'languages/alcatraz.pot' --domain 'alcatraz'"
   },
   "repository": {
     "type": "git",
@@ -63,7 +65,8 @@
     "svg-sprite-loader": "^3.8.0",
     "svgo": "^1.0.5",
     "svgo-loader": "^2.1.0",
-    "webpack": "^3.12.0"
+    "webpack": "^3.12.0",
+    "wp-pot-cli": "^1.2.1"
   },
   "dependencies": {}
 }
