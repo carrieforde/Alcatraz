@@ -16,9 +16,9 @@ add_action( 'admin_enqueue_scripts', 'alcatraz_admin_enqueue_scripts' );
 /**
  * Enqueue our admin JS.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  string  $hook  The page being displayed.
+ * @param string $hook The page being displayed.
  */
 function alcatraz_admin_enqueue_scripts( $hook ) {
 
@@ -57,9 +57,9 @@ function alcatraz_activation_notice() {
 
 		?>
 		<div id="alcatraz-activation-notice" class="updated notice is-dismissible" style="padding-bottom: 5px;">
-			<h2><?php _e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
-			<p><?php _e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo $customizer_link; ?></p>
-			<p><?php _e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo $documentation_link; ?></p>
+			<h2><?php esc_html__e( 'Welcome to Alcatraz', 'alcatraz' ); ?></h2>
+			<p><?php esc_html__e( 'Get started by configuring visual options in the', 'alcatraz' ); ?> <?php echo esc_html( $customizer_link ); ?></p>
+			<p><?php esc_html__e( 'For development resources visit the', 'alcatraz' ); ?> <?php echo esc_html( $documentation_link ); ?></p>
 		</div>
 		<?php
 	}
@@ -91,12 +91,12 @@ function alcatraz_page_options_metabox() {
 	 * Initialize the metabox.
 	 */
 	$page_options = new_cmb2_box( array(
-		'id'            => 'page_options_metabox',
-		'title'         => __( 'Page Options', 'alcatraz' ),
-		'object_types'  => $post_type,
-		'context'       => 'normal',
-		'priority'      => 'high',
-		'show_names'    => true,
+		'id'           => 'page_options_metabox',
+		'title'        => __( 'Page Options', 'alcatraz' ),
+		'object_types' => $post_type,
+		'context'      => 'normal',
+		'priority'     => 'high',
+		'show_names'   => true,
 	) );
 
 	// Page sidebar.

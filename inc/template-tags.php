@@ -8,11 +8,11 @@
 /**
  * Build and return the "Posted on ..." HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  *
- * @return  string         The "Posted on ..." HTML.
+ * @return string The "Posted on ..." HTML.
  */
 function alcatraz_posted_on( $post_id = 0 ) {
 
@@ -33,6 +33,7 @@ function alcatraz_posted_on( $post_id = 0 ) {
 	);
 
 	$posted_on = sprintf(
+		/* translators: %s: posted date */
 		esc_html_x( 'Posted on %s', 'post date', 'alcatraz' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
@@ -40,6 +41,7 @@ function alcatraz_posted_on( $post_id = 0 ) {
 	$author_id = get_post_field( 'post_author', $post_id );
 
 	$byline = sprintf(
+		/* translators: %s: the post author */
 		esc_html_x( 'by %s', 'post author', 'alcatraz' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( $author_id ) ) . '">' . esc_html( get_the_author_meta( 'display_name', $author_id ) ) . '</a></span>'
 	);
@@ -52,21 +54,20 @@ function alcatraz_posted_on( $post_id = 0 ) {
 /**
  * Echo the "Posted on ..." HTML.
  *
- * @param  int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  */
 function alcatraz_the_posted_on( $post_id = 0 ) {
-
-	echo alcatraz_posted_on( $post_id );
+	echo alcatraz_posted_on( $post_id ); // WPCS: XSS OK.
 }
 
 /**
  * Build the return edit post link HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  *
- * @return  string         The edit post link HTML.
+ * @return string The edit post link HTML.
  */
 function alcatraz_edit_post_link( $post_id = 0 ) {
 
@@ -96,22 +97,22 @@ function alcatraz_edit_post_link( $post_id = 0 ) {
 /**
  * Echo the return edit post link HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  */
 function alcatraz_the_edit_post_link( $post_id = 0 ) {
-	echo alcatraz_edit_post_link( $post_id );
+	echo alcatraz_edit_post_link( $post_id ); // WPCS: XSS OK.
 }
 
 /**
  * Build and return the entry header HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  *
- * @return  string         The entry header HTML.
+ * @return string The entry header HTML.
  */
 function alcatraz_entry_header( $post_id = 0 ) {
 
@@ -133,23 +134,22 @@ function alcatraz_entry_header( $post_id = 0 ) {
 /**
  * Echo the entry header HTML.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  */
 function alcatraz_the_entry_header( $post_id = 0 ) {
-
-	echo alcatraz_entry_header( $post_id );
+	echo alcatraz_entry_header( $post_id ); // WPCS: XSS OK.
 }
 
 /**
  * Build and return the entry title HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  *
- * @return  string         The entry title HTML.
+ * @return string The entry title HTML.
  */
 function alcatraz_entry_title( $post_id = 0 ) {
 
@@ -167,7 +167,6 @@ function alcatraz_entry_title( $post_id = 0 ) {
 		} else {
 			$title = '<h1 class="entry-title screen-reader-text">' . get_the_title( $post_id ) . '</h1>';
 		}
-
 	} else {
 
 		$title = sprintf(
@@ -183,23 +182,22 @@ function alcatraz_entry_title( $post_id = 0 ) {
 /**
  * Echo the entry title HTML.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  */
 function alcatraz_the_entry_title( $post_id = 0 ) {
-
-	echo alcatraz_entry_title( $post_id );
+	echo alcatraz_entry_title( $post_id ); // WPCS: XSS OK.
 }
 
 /**
  * Build and return the entry meta HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  *
- * @return  string         The entry meta HTML.
+ * @return string The entry meta HTML.
  */
 function alcatraz_entry_meta( $post_id = 0 ) {
 
@@ -226,23 +224,22 @@ function alcatraz_entry_meta( $post_id = 0 ) {
 /**
  * Echo the entry meta HTML.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  */
 function alcatraz_the_entry_meta( $post_id = 0 ) {
-
-	echo alcatraz_entry_meta( $post_id );
+	echo alcatraz_entry_meta( $post_id ); // WPCS: XSS OK.
 }
 
 /**
  * Build and return the entry footer HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  *
- * @return  string         The entry footer HTML.
+ * @return string The entry footer HTML.
  */
 function alcatraz_entry_footer( $post_id = 0 ) {
 
@@ -264,22 +261,22 @@ function alcatraz_entry_footer( $post_id = 0 ) {
 /**
  * Echo the entry footer HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int  $post_id  The post ID to use (optional).
+ * @param int $post_id The post ID to use (optional).
  */
 function alcatraz_the_entry_footer( $post_id = 0 ) {
-	echo alcatraz_entry_footer( $post_id );
+	echo alcatraz_entry_footer( $post_id ); // WPCS: XSS OK.
 }
 
 /**
  * Build and return the Sub Page Navigation HTML.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   array  $args  The args for wp_list_pages().
+ * @param array $args The args for wp_list_pages().
  *
- * @return  string        The sub page nav HTML.
+ * @return string The sub page nav HTML.
  */
 function alcatraz_get_sub_page_nav( $args = array() ) {
 
@@ -305,7 +302,7 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
 		'echo'     => 0,
 		'title_li' => '',
 	);
-	$args = wp_parse_args( $args, $default_args );
+	$args         = wp_parse_args( $args, $default_args );
 
 	// Use the top level page id.
 	$args['child_of'] = $top_page_id;
@@ -337,26 +334,25 @@ function alcatraz_get_sub_page_nav( $args = array() ) {
 /**
  * Display the Sub Page Navigation output.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  array  $args  The args for wp_list_pages().
+ * @param array $args The args for wp_list_pages().
  */
 function alcatraz_the_sub_page_nav( $args = array() ) {
-
-	echo alcatraz_get_sub_page_nav( $args );
+	echo alcatraz_get_sub_page_nav( $args ); // WPCS: XSS OK.
 }
 
 /**
  * Build and return the HTML for a taxonomy term list.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int     $post_id    The post ID to use.
- * @param   string  $taxonomy   The taxonomy slug to output terms from.
- * @param   string  $label      The label to use.
- * @param   string  $separator  The separation string.
+ * @param int    $post_id   The post ID to use.
+ * @param string $taxonomy  The taxonomy slug to output terms from.
+ * @param string $label     The label to use.
+ * @param string $separator The separation string.
  *
- * @return  string              The term list HTML.
+ * @return string The term list HTML.
  */
 function alcatraz_get_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
 
@@ -415,14 +411,13 @@ function alcatraz_get_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label =
 /**
  * Echo the HTML for a taxonomy term list.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   int     $post_id    The post ID to use.
- * @param   string  $taxonomy   The taxonomy slug to output terms from.
- * @param   string  $label      The label to use.
- * @param   string  $separator  The separation string.
+ * @param int    $post_id   The post ID to use.
+ * @param string $taxonomy  The taxonomy slug to output terms from.
+ * @param string $label     The label to use.
+ * @param string $separator The separation string.
  */
 function alcatraz_the_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
-
-	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator );
+	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator ); // WPCS: XSS OK.
 }

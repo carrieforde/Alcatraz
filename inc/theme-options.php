@@ -35,11 +35,11 @@ function alcatraz_get_option_defaults() {
  * This function serves as the one and only place for all option validation.
  * Other functions that need to validate options should call this function.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   array  $input  The options to update.
+ * @param array $input The options to update.
  *
- * @return  array          The updated options.
+ * @return array The updated options.
  */
 function alcatraz_validate_options( $input ) {
 
@@ -94,11 +94,11 @@ function alcatraz_validate_checkbox( $checked ) {
 /**
  * Return an array of text color classes and display names.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   string  $context  The context to pass to our filter.
+ * @param string $context The context to pass to our filter.
  *
- * @return  array
+ * @return array
  */
 function alcatraz_get_text_colors( $context = '' ) {
 
@@ -114,11 +114,11 @@ function alcatraz_get_text_colors( $context = '' ) {
 /**
  * Return an array of Page Layout options.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   string  $context  The context to pass to our filter.
+ * @param string $context The context to pass to our filter.
  *
- * @return  array
+ * @return array
  */
 function alcatraz_get_site_sidebar( $context = '' ) {
 
@@ -134,11 +134,11 @@ function alcatraz_get_site_sidebar( $context = '' ) {
 /**
  * Return an array of Header Style options.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   string  $context  The context to pass to our filter.
+ * @param string $context The context to pass to our filter.
  *
- * @return  array
+ * @return array
  */
 function alcatraz_get_header_styles( $context = '' ) {
 
@@ -153,11 +153,11 @@ function alcatraz_get_header_styles( $context = '' ) {
 /**
  * Return an array of mobile nav style options.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   string  $context  The context to pass to our filter.
+ * @param string $context The context to pass to our filter.
  *
- * @return  array             The array of options.
+ * @return array The array of options.
  */
 function alcatraz_get_mobile_nav_styles( $context = '' ) {
 

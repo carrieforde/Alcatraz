@@ -210,10 +210,10 @@ function alcatraz_scripts() {
 
 add_action( 'init', 'alcatraz_init_bfa' );
 /**
-* Include and initialize the Better Font Awesome Library.
-*
-* @since  1.0.0
-*/
+ * Include and initialize the Better Font Awesome Library.
+ *
+ * @since  1.0.0
+ */
 function alcatraz_init_bfa() {
 
 	if ( ! class_exists( 'Better_Font_Awesome_Library' ) ) {

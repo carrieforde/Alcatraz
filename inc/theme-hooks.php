@@ -19,7 +19,9 @@ function alcatraz_output_header_image() {
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="header-image-wrap" rel="home">
 			<img src="<?php header_image(); ?>" class="header-image" width="<?php echo esc_attr( get_custom_header()->width ); ?>" height="<?php echo esc_attr( get_custom_header()->height ); ?>" alt="">
 		</a>
-	<?php endif;
+
+	<?php
+	endif;
 }
 
 add_action( 'alcatraz_header', 'alcatraz_output_site_title', 10 );
@@ -115,7 +117,7 @@ add_action( 'alcatraz_entry_header_inside', 'alcatraz_output_default_entry_heade
  *
  * @since  1.0.0
  *
- * @param  int  $post_id  The current post ID.
+ * @param int $post_id The current post ID.
  */
 function alcatraz_output_default_entry_header( $post_id = 0 ) {
 
@@ -131,9 +133,9 @@ add_action( 'alcatraz_entry_footer_inside', 'alcatraz_output_default_entry_foote
 /**
  * Output the default entry footer inner content.
  *
- * @since  1.0.0
+ * @since 1.0.0
  *
- * @param  int  $post_id  The current post ID.
+ * @param int $post_id The current post ID.
  */
 function alcatraz_output_default_entry_footer( $post_id = 0 ) {
 
@@ -183,7 +185,9 @@ function alcatraz_social_menu_in_footer() {
 
 	$options = get_option( 'alcatraz_options' );
 
-	if ( ! empty( $options['social_icons_in_footer'] ) && has_nav_menu( 'social' ) ) { ?>
+	if ( ! empty( $options['social_icons_in_footer'] ) && has_nav_menu( 'social' ) ) {
+
+	?>
 
 		<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
 
@@ -197,7 +201,9 @@ function alcatraz_social_menu_in_footer() {
 			) );
 			?>
 		</nav>
-	<?php }
+
+	<?php
+	}
 }
 
 add_filter( 'style_loader_src', 'alcatraz_remove_core_version_numbers', 9999 );

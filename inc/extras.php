@@ -11,10 +11,10 @@ add_filter( 'body_class', 'alcatraz_body_classes' );
 /**
  * Add custom body classes.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   array  $classes  Classes for the body element.
- * @return  array
+ * @param array $classes Classes for the body element.
+ * @return array
  */
 function alcatraz_body_classes( $classes ) {
 
@@ -87,11 +87,11 @@ function alcatraz_body_classes( $classes ) {
 /**
  * Return either an empty string or the integer value of the passed in value.
  *
- * @since   1.0.0
+ * @since 1.0.0
  *
- * @param   string|int  $value  The value to test.
+ * @param string|int $value The value to test.
  *
- * @return  string|int
+ * @return string|int
  */
 function alcatraz_empty_or_int( $value ) {
 	if ( '' === $value ) {
@@ -103,8 +103,10 @@ function alcatraz_empty_or_int( $value ) {
 
 /**
  * Filter post types passed to our Custom Meta box.
+ *
+ * @param array $context The post types on which the CMB2 metaboxes display.
  */
-function alcatraz_allowed_post_types( $context = '' ) {
+function alcatraz_allowed_post_types( $context = array() ) {
 
 	$post_type = array(
 		'page',

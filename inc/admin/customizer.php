@@ -10,6 +10,8 @@ add_action( 'customize_register', 'alcatraz_customize_register' );
  * Modify the $wp_customize object.
  *
  * @since  1.0.0
+ *
+ * @param array $wp_customize The Customizer object.
  */
 function alcatraz_customize_register( $wp_customize ) {
 
