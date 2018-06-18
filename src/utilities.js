@@ -7,8 +7,8 @@
  * @since  1.0.0
  */
 
-export var AlcatrazUtilities = (function($) {
-  var htmlEntityMap = {
+export const AlcatrazUtilities = (function() {
+  const htmlEntityMap = {
     '&': '&amp;',
     '<': '&lt;',
     '>': '&gt;',
@@ -27,9 +27,7 @@ export var AlcatrazUtilities = (function($) {
    * @returns  {string}          The escaped string.
    */
   function escapeHtml(string) {
-    return String(string).replace(/[&<>"'\/]/g, function(s) {
-      return htmlEntityMap[s];
-    });
+    return String(string).replace(/[&<>"'\/]/g, s => htmlEntityMap[s]);
   }
 
   /**
@@ -38,4 +36,4 @@ export var AlcatrazUtilities = (function($) {
   return {
     escapeHtml: escapeHtml
   };
-})(jQuery);
+})();

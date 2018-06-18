@@ -8,14 +8,15 @@ import { Alcatraz } from './alcatraz';
  * @since  1.0.0
  */
 
-(function($) {
+(function() {
   // When the DOM is ready, initialize all the things.
-  $(document).ready(function() {
-    Alcatraz.Nav.initSiteNavigation();
-  });
+  document.addEventListener(
+    'DOMContentLoaded',
+    () => Alcatraz.Nav.initSiteNavigation
+  );
 
   // Reset the primary nav when a Customizer partial refresh happens.
-  $(document).on('customize-preview-menu-refreshed', function() {
-    Alcatraz.Nav.initPrimaryNavigation();
-  });
-})(jQuery);
+  document.addEventListener('customize-preview-menu-refreshed', () =>
+    Alcatraz.Nav.initPrimaryNavigation()
+  );
+})();

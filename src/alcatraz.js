@@ -13,7 +13,7 @@ import { AlcatrazNavigation } from './navigation';
  * @since  1.0.0
  */
 
-export var Alcatraz = (function($) {
+export const Alcatraz = (function() {
   /**
    * Save component objects as properties.
    */
@@ -27,4 +27,4 @@ export var Alcatraz = (function($) {
     Utils: Utils,
     Nav: Nav
   };
-})(jQuery);
+})();
