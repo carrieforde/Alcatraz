@@ -44,86 +44,88 @@ function alcatraz_first_setup() {
 	update_option( 'alcatraz_options', $options, 'yes' );
 }
 
-add_action( 'after_setup_theme', 'alcatraz_setup', 0 );
-/**
- * Load translations and register support for various WordPress features.
- *
- * @since  1.0.0
- */
-function alcatraz_setup() {
+if ( ! function_exists( 'alcatraz_setup' ) ) :
+	add_action( 'after_setup_theme', 'alcatraz_setup', 0 );
+	/**
+	 * Load translations and register support for various WordPress features.
+	 *
+	 * @since  1.0.0
+	 */
+	function alcatraz_setup() {
 
-	// Load translation files.
-	load_theme_textdomain( 'alcatraz', ALCATRAZ_PATH . 'languages' );
+		// Load translation files.
+		load_theme_textdomain( 'alcatraz', ALCATRAZ_PATH . 'languages' );
 
-	// Add default posts and comments RSS feed links to head.
-	add_theme_support( 'automatic-feed-links' );
+		// Add default posts and comments RSS feed links to head.
+		add_theme_support( 'automatic-feed-links' );
 
-	// Let WordPress generate our title tags.
-	add_theme_support( 'title-tag' );
+		// Let WordPress generate our title tags.
+		add_theme_support( 'title-tag' );
 
-	// Enable support for Post Thumbnails on posts and pages.
-	add_theme_support( 'post-thumbnails' );
+		// Enable support for Post Thumbnails on posts and pages.
+		add_theme_support( 'post-thumbnails' );
 
-	// Enable support for a custom logo.
-	add_theme_support( 'custom-logo' );
+		// Enable support for a custom logo.
+		add_theme_support( 'custom-logo' );
 
-	// Register a primary menu.
-	register_nav_menus( array(
-		'menu-1' => esc_html__( 'Primary', 'alcatraz' ),
-		'social' => esc_html__( 'Social', 'alcatraz' ),
-	) );
+		// Register a primary menu.
+		register_nav_menus( array(
+			'menu-1' => esc_html__( 'Primary', 'alcatraz' ),
+			'social' => esc_html__( 'Social', 'alcatraz' ),
+		) );
 
-	// Use html5 markup for certain features.
-	add_theme_support(
-		'html5',
-		apply_filters( 'alcatraz_html5_supports', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) )
-	);
-
-	// Maybe enable post formats.
-	if ( apply_filters( 'alcatraz_enable_post_formats', false ) ) {
+		// Use html5 markup for certain features.
 		add_theme_support(
-			'post-formats',
-			apply_filters( 'alcatraz_custom_header_args', array(
-				'aside',
-				'image',
-				'video',
-				'quote',
-				'link',
+			'html5',
+			apply_filters( 'alcatraz_html5_supports', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
 			) )
 		);
-	}
 
-	// Maybe enable the custom header feature.
-	if ( apply_filters( 'alcatraz_enable_custom_header', false ) ) {
-		add_theme_support(
-			'custom-header',
-			apply_filters( 'alcatraz_custom_header_args', array(
-				'default-image'      => '',
-				'default-text-color' => '000000',
-				'width'              => 1200,
-				'height'             => 320,
-				'flex-height'        => true,
-			) )
-		);
-	}
+		// Maybe enable post formats.
+		if ( apply_filters( 'alcatraz_enable_post_formats', false ) ) {
+			add_theme_support(
+				'post-formats',
+				apply_filters( 'alcatraz_custom_header_args', array(
+					'aside',
+					'image',
+					'video',
+					'quote',
+					'link',
+				) )
+			);
+		}
 
-	// Maybe enable the custom background feature.
-	if ( apply_filters( 'alcatraz_enable_custom_background', false ) ) {
-		add_theme_support(
-			'custom-background',
-			apply_filters( 'alcatraz_custom_background_args', array(
-				'default-color' => 'ffffff',
-				'default-image' => '',
-			) )
-		);
+		// Maybe enable the custom header feature.
+		if ( apply_filters( 'alcatraz_enable_custom_header', false ) ) {
+			add_theme_support(
+				'custom-header',
+				apply_filters( 'alcatraz_custom_header_args', array(
+					'default-image'      => '',
+					'default-text-color' => '000000',
+					'width'              => 1200,
+					'height'             => 320,
+					'flex-height'        => true,
+				) )
+			);
+		}
+
+		// Maybe enable the custom background feature.
+		if ( apply_filters( 'alcatraz_enable_custom_background', false ) ) {
+			add_theme_support(
+				'custom-background',
+				apply_filters( 'alcatraz_custom_background_args', array(
+					'default-color' => 'ffffff',
+					'default-image' => '',
+				) )
+			);
+		}
 	}
-}
+endif;
 
 add_action( 'after_setup_theme', 'alcatraz_content_width', 0 );
 /**
