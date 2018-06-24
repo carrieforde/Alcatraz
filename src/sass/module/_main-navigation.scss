@@ -1,3 +1,6 @@
 .main-navigation {
-	padding: $sp-triple $sp-single $sp-single;
+
+	@include mq-max($tablet-landscape) {
+		padding: $sp-triple $sp-single $sp-single;
+	}
 }
