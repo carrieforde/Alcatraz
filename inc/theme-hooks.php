@@ -96,7 +96,7 @@ function alcatraz_output_logo() {
 	the_custom_logo();
 }
 
-add_action( 'alcatraz_before_primary_sidebar', 'alcatraz_output_sub_page_nav' );
+add_action( 'alcatraz_before_sidebar', 'alcatraz_output_sub_page_nav' );
 /**
  * Output the Sub Page Navigation.
  *

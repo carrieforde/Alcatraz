@@ -5,4 +5,4 @@
  * @package alcatraz
  */
 
-do_action( 'alcatraz_primary_sidebar' );
+do_action( 'alcatraz_sidebar' );
