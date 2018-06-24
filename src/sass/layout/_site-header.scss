@@ -3,4 +3,8 @@
 	display: flex;
 	overflow-x: hidden;
 	position: relative;
+
+	@include mq-min($tablet-landscape) {
+		overflow: visible;
+	}
 }
