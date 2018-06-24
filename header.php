@@ -40,7 +40,7 @@
 
 			</div>
 
-			<?php if ( has_nav_menu( 'primary' ) ) : ?>
+			<?php if ( has_nav_menu( 'menu-1' ) ) : ?>
 
 				<button class="button button--menu-toggle mobile-menu-toggle" type="button">
 					<?php esc_html_e( 'Menu', 'alcatraz' ); ?>
@@ -52,10 +52,10 @@
 
 					<?php
 					wp_nav_menu( array(
-						'theme_location'  => 'primary',
-						'menu_id'         => 'primary-menu',
-						'menu_class'      => 'primary-menu menu',
-						'container_class' => 'main-navigation__menu',
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'menu-1',
+						'menu_class'     => 'menu primary-menu',
+						'container'      => '',
 					) );
 					?>
 
