@@ -106,6 +106,9 @@ Runs Stylelint to enforce rules for style files (.css, .scss, etc.) in the `/src
 #### `npm run stylelint:fix`
 A subtask for Stylelint that not only checks against style rules, but automatically fixes fixable issues.
 
+### `npm run wp-pot`
+This script looks for all translatable strings within the theme's PHP files, and produces a `.pot` file for translations (within the `languages` folder).
+
 ## Linting
 Alcatraz includes style and JavaScript linting by default using Stylelint and ES Lint, respectively. Alcatraz adheres to the [WordPress Coding Standards](https://codex.wordpress.org/WordPress_Coding_Standards)
 
