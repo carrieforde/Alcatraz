@@ -43,6 +43,17 @@ $theme-colors: (
 	"shadow": $color-shadow
 );
 
+/// The used within the content editor (editor-palette). This map can be used to automatically add color classes.
+///
+/// @type Map
+$editor-palette: (
+	"bay-of-many": $bay-of-many,
+	"puerto-rico": $puerto-rico,
+	"white": $white,
+	"raven": $raven,
+	"mine-shaft": $mine-shaft
+);
+
 // Elements.
 $body-background: $white;
 

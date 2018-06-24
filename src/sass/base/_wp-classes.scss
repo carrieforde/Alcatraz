@@ -25,3 +25,15 @@
 	float: right;
 	margin-left: $sp-single;
 }
+
+// Editor color palette classes.
+@each $name, $color in $editor-palette {
+
+	.has-#{$name}-color {
+		color: $color;
+	}
+
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}

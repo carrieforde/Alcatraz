@@ -124,6 +124,30 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 				) )
 			);
 		}
+
+		// Add support for editor color palette.
+		add_theme_support( 'editor-color-palette',
+			array(
+				'name'  => 'bay-of-many',
+				'color' => '#1f4483',
+			),
+			array(
+				'name'  => 'puerto-rico',
+				'color' => '#58b7a1',
+			),
+			array(
+				'name'  => 'mine-shaft',
+				'color' => '#363a42',
+			),
+			array(
+				'name'  => 'raven',
+				'color' => '#73767b',
+			),
+			array(
+				'name'  => 'white',
+				'color' => '#fff',
+			)
+		);
 	}
 endif;
 
