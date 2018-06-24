@@ -10,9 +10,8 @@ import { Alcatraz } from './alcatraz';
 
 (function() {
   // When the DOM is ready, initialize all the things.
-  document.addEventListener(
-    'DOMContentLoaded',
-    () => Alcatraz.Nav.initSiteNavigation
+  document.addEventListener('DOMContentLoaded', () =>
+    Alcatraz.Nav.initSiteNavigation()
   );
 
   // Reset the primary nav when a Customizer partial refresh happens.
