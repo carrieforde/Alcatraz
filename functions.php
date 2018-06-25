@@ -148,6 +148,9 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 				'color' => '#fff',
 			)
 		);
+
+		// Disable custom colors from editor palette.
+		add_theme_support( 'disable-custom-colors' );
 	}
 endif;
 
