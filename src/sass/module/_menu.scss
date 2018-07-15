@@ -32,6 +32,11 @@
 		position: absolute;
 		top: 100%;
 		width: rem(250);
+
+		.menu-item-has-children:last-of-type & {
+			left: auto;
+			right: 0;
+		}
 	}
 
 	.sub-menu {
