@@ -1,9 +1,0 @@
-.header-style-inline {
-
-	@include mq-min($tablet-portrait) {
-
-		.site-header {
-			justify-content: space-between;
-		}
-	}
-}

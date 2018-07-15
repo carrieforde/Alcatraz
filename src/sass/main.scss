@@ -30,16 +30,12 @@
 // Layout
 @import "layout/site";
 @import "layout/site-header";
+@import "layout/footer/has-footer-widgets";
+@import "layout/footer/footer-widget-areas-2";
+@import "layout/footer/footer-widget-areas-3";
+@import "layout/footer/footer-widget-areas-4";
 
 // Theme
 @import "theme/sidebar/has-sidebar";
 @import "theme/sidebar/left-sidebar";
 @import "theme/sidebar/right-sidebar";
-@import "theme/header/header-style-inline";
-@import "theme/header/header-style-stacked";
-@import "theme/footer/has-footer-widgets";
-@import "theme/footer/footer-widget-areas-2";
-@import "theme/footer/footer-widget-areas-3";
-@import "theme/footer/footer-widget-areas-4";
-@import "theme/mobile-nav-style/mobile-nav-style-slide-out";
-@import "theme/mobile-nav-style/mobile-nav-style-full-screen";
