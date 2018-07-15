@@ -12,9 +12,8 @@ input[type="reset"] {
 
 	@include hamburger-button($color-primary);
 
-	position: absolute;
+	margin-left: auto;
 	right: $sp-single;
-	top: $sp-single;
 	z-index: z(menu-toggle);
 
 	@include mq-min($tablet-landscape) {
