@@ -1,6 +1,7 @@
 <?php
 /**
- * Template for displaying all single posts.
+ * Template Name: Layout with Sidebar
+ * Template Post Type: page, post
  *
  * @package alcatraz
  */
@@ -39,4 +40,5 @@ get_header(); ?>
 
 	</div>
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
