@@ -343,3 +343,29 @@ function alcatraz_get_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label =
 function alcatraz_the_taxonomy_term_list( $post_id = 0, $taxonomy = '', $label = '', $separator = ', ' ) {
 	echo alcatraz_get_taxonomy_term_list( $post_id, $taxonomy, $label, $separator ); // WPCS: XSS OK.
 }
+
+/**
+ * Display the social icons menu.
+ */
+function alcatraz_the_social_icons_menu() {
+
+	if ( has_nav_menu( 'social' ) ) {
+
+	?>
+
+	<nav id="social-navigation" class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Social Links Menu', 'alcatraz' ); ?>">
+
+		<?php
+		wp_nav_menu( array(
+			'theme_location' => 'social',
+			'menu_class'     => 'menu social-links-menu',
+			'depth'          => 1,
+			'link_before'    => '<span class="screen-reader-text">',
+			'link_after'     => '</span>',
+		) );
+		?>
+	</nav>
+
+	<?php
+	}
+}

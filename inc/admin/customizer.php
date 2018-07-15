@@ -63,22 +63,21 @@ function alcatraz_customize_register( $wp_customize ) {
 
 	// Hide tagline.
 	$wp_customize->add_setting(
-		'alcatraz_options[hide_tagline]',
+		'hide_tagline',
 		array(
 			'default'           => $option_defaults['hide_tagline'],
-			'type'              => 'option',
+			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_validate_checkbox',
 			'transport'         => 'postMessage',
 		)
 	);
 	$wp_customize->add_control(
-		'alcatraz_options_hide_tagline',
+		'hide_tagline',
 		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Hide the site description?', 'alcatraz' ),
-			'section'  => 'title_tagline',
-			'settings' => 'alcatraz_options[hide_tagline]',
+			'type'    => 'checkbox',
+			'label'   => __( 'Hide the site description?', 'alcatraz' ),
+			'section' => 'title_tagline',
 		)
 	);
 
@@ -86,21 +85,20 @@ function alcatraz_customize_register( $wp_customize ) {
 
 	// Number of footer widget areas.
 	$wp_customize->add_setting(
-		'alcatraz_options[footer_widget_areas]',
+		'footer_widget_areas',
 		array(
 			'default'    => $option_defaults['footer_widget_areas'],
-			'type'       => 'option',
+			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
-		'alcatraz_footer_widget_areas_control',
+		'footer_widget_areas',
 		array(
-			'type'     => 'select',
-			'label'    => __( 'Number of Footer Widget Areas', 'alcatraz' ),
-			'section'  => 'alcatraz_footer_section',
-			'settings' => 'alcatraz_options[footer_widget_areas]',
-			'choices'  => array(
+			'type'    => 'select',
+			'label'   => __( 'Number of Footer Widget Areas', 'alcatraz' ),
+			'section' => 'alcatraz_footer_section',
+			'choices' => array(
 				0 => __( 'None', 'alcatraz' ),
 				1 => __( '1', 'alcatraz' ),
 				2 => __( '2', 'alcatraz' ),
@@ -112,39 +110,37 @@ function alcatraz_customize_register( $wp_customize ) {
 
 	// Footer bottom.
 	$wp_customize->add_setting(
-		'alcatraz_options[footer_credits]',
+		'footer_credits',
 		array(
 			'default'    => $option_defaults['footer_credits'],
-			'type'       => 'option',
+			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
-		'alcatraz_footer_credits_control',
+		'footer_credits',
 		array(
-			'type'     => 'textarea',
-			'label'    => __( 'Footer Credits Content', 'alcatraz' ),
-			'section'  => 'alcatraz_footer_section',
-			'settings' => 'alcatraz_options[footer_credits]',
+			'type'    => 'textarea',
+			'label'   => __( 'Footer Credits Content', 'alcatraz' ),
+			'section' => 'alcatraz_footer_section',
 		)
 	);
 
 	// Social network icons.
 	$wp_customize->add_setting(
-		'alcatraz_options[social_icons_in_footer]',
+		'social_icons_in_footer',
 		array(
 			'default'    => $option_defaults['social_icons_in_footer'],
-			'type'       => 'option',
+			'type'       => 'theme_mod',
 			'capability' => 'edit_theme_options',
 		)
 	);
 	$wp_customize->add_control(
-		'alcatraz_social_icons_in_footer_control',
+		'social_icons_in_footer',
 		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Show Social Icons in Footer?', 'alcatraz' ),
-			'section'  => 'alcatraz_footer_section',
-			'settings' => 'alcatraz_options[social_icons_in_footer]',
+			'type'    => 'checkbox',
+			'label'   => __( 'Show Social Icons in Footer?', 'alcatraz' ),
+			'section' => 'alcatraz_footer_section',
 		)
 	);
 }

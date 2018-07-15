@@ -9,41 +9,6 @@ define( 'ALCATRAZ_VERSION', '1.0.0' );
 define( 'ALCATRAZ_PATH', trailingslashit( get_template_directory() ) );
 define( 'ALCATRAZ_URL', trailingslashit( get_template_directory_uri() ) );
 
-add_action( 'after_switch_theme', 'alcatraz_first_setup' );
-/**
- * Check for our theme options and set defaults for any options that don't already exist.
- *
- * This only runs one time right after the user activates the theme.
- *
- * @since  1.0.0
- */
-function alcatraz_first_setup() {
-
-	// Look for existing options.
-	$options = get_option( 'alcatraz_options' );
-
-	if ( ! $options ) {
-		$options = array();
-	}
-
-	$defaults = alcatraz_get_option_defaults();
-
-	// Bail early if the existing options match the defaults.
-	if ( $options === $defaults ) {
-		return;
-	}
-
-	// Populate any defaults that are missing.
-	foreach ( $defaults as $key => $value ) {
-		if ( ! array_key_exists( $key, $options ) ) {
-			$options[ $key ] = $value;
-		}
-	}
-
-	// Update options with defaults.
-	update_option( 'alcatraz_options', $options, 'yes' );
-}
-
 if ( ! function_exists( 'alcatraz_setup' ) ) :
 	add_action( 'after_setup_theme', 'alcatraz_setup', 0 );
 	/**
@@ -68,7 +33,7 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 		// Enable support for a custom logo.
 		add_theme_support( 'custom-logo' );
 
-		// Register a primary menu.
+		// Register menus.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'alcatraz' ),
 			'social' => esc_html__( 'Social', 'alcatraz' ),
@@ -235,31 +200,6 @@ function alcatraz_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
-}
-
-add_action( 'init', 'alcatraz_init_bfa' );
-/**
- * Include and initialize the Better Font Awesome Library.
- *
- * @since  1.0.0
- */
-function alcatraz_init_bfa() {
-
-	if ( ! class_exists( 'Better_Font_Awesome_Library' ) ) {
-		return;
-	}
-
-	$args = array(
-		'version'             => 'latest',
-		'minified'            => true,
-		'remove_existing_fa'  => false,
-		'load_styles'         => true,
-		'load_admin_styles'   => true,
-		'load_shortcode'      => true,
-		'load_tinymce_plugin' => true,
-	);
-
-	Better_Font_Awesome_Library::get_instance( $args );
 }
 
 /**

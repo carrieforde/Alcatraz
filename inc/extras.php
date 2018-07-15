@@ -18,7 +18,7 @@ add_filter( 'body_class', 'alcatraz_body_classes' );
  */
 function alcatraz_body_classes( $classes ) {
 
-	$options = get_option( 'alcatraz_options' );
+	$footer_widgets = get_theme_mod( 'footer_widget_areas', 3 );
 
 	// Header image class.
 	if ( get_header_image() ) {
@@ -31,9 +31,9 @@ function alcatraz_body_classes( $classes ) {
 	}
 
 	// Footer widget areas class.
-	if ( isset( $options['footer_widget_areas'] ) && 0 < (int) $options['footer_widget_areas'] ) {
+	if ( 0 < (int) $footer_widgets ) {
 		$classes[] = 'has-footer-widgets';
-		$classes[] = 'footer-widget-areas-' . (int) $options['footer_widget_areas'];
+		$classes[] = 'footer-widget-areas-' . (int) $footer_widgets;
 	}
 
 	return $classes;
