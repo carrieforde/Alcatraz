@@ -33,7 +33,7 @@
   });
 
   // Hides / unhides site tagline.
-  wp.customize('alcatraz_options[hide_tagline]', setting => {
+  wp.customize('hide_tagline', setting => {
     setting.bind(hide => {
       const siteTagline = document.querySelector('.site-description');
 
