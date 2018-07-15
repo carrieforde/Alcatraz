@@ -157,16 +157,11 @@ function alcatraz_entry_title( $post_id = 0 ) {
 		$post_id = get_the_ID();
 	}
 
-	$hide_title = get_post_meta( $post_id, '_alcatraz_hide_title', true );
-	$title      = '';
+	$title = '';
 
 	if ( is_singular() ) {
 
-		if ( 'on' !== $hide_title ) {
-			$title = '<h1 class="entry-title">' . get_the_title( $post_id ) . '</h1>';
-		} else {
-			$title = '<h1 class="entry-title screen-reader-text">' . get_the_title( $post_id ) . '</h1>';
-		}
+		$title = '<h1 class="entry-title screen-reader-text">' . get_the_title( $post_id ) . '</h1>';
 	} else {
 
 		$title = sprintf(

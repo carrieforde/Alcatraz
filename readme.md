@@ -58,13 +58,6 @@ cd /path/to/project
 npm install
 ```
 
-If you would like to use any of Alcatraz's optional dependencies, like Better Font Awesome or CMB2, you'll need to init their submodules:  
-
-```sh
-cd /path/to/project
-git submodule update --init --recursive
-```
-
 Finally, after running `npm install`, you'll need to tell Webpack about your local site domain so you can use BrowserSync to monitor changes during development:  
 
 1. Search for `https://alcatraz.test` in `webpack.config.js` and replace it with the URL for your local site.
@@ -72,7 +65,7 @@ Finally, after running `npm install`, you'll need to tell Webpack about your loc
 
 
 ### Using Alcatraz as a starter theme
-If you want to use `Alcatraz` as a starter theme, you'll like want to replace all instances of `Alcatraz` the name of your new theme. You'll need to do a six-step find and replace to capture all instances of `alcatraz` throughout the theme:  
+If you want to use `Alcatraz` as a starter theme, you'll likely want to replace all instances of `Alcatraz` with the name of your new theme. You'll need to do a six-step find and replace to capture all instances of `alcatraz` throughout the theme:  
 
 1. Search for `'ALCATRAZ_'` (capitalization matters!) to capture the theme constants.
 1. Search for `'alcatraz'` (inside single quotations) to capture the text domain.
@@ -145,5 +138,3 @@ https://eslint.org/docs/user-guide/configuring
 * Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * sanitize.scss https://www.npmjs.com/package/sanitize.scss, (C) Jonathan Neal https://github.com/jonathantneal/sanitize.css
 * [Aurora Utilities](https://www.npmjs.com/package/aurora-utilities)
-* [Better Font Awesome](https://github.com/MickeyKay/better-font-awesome-library), Mickey Kay
-* [CMB2](https://github.com/CMB2/CMB2)

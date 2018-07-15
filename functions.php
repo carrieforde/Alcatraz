@@ -308,13 +308,6 @@ require_once ALCATRAZ_PATH . 'inc/admin/customizer.php';
 require_once ALCATRAZ_PATH . 'inc/jetpack.php';
 
 /**
- * Better Font Awesome Library.
- */
-if ( file_exists( ALCATRAZ_PATH . 'vendor/better-font-awesome-library/better-font-awesome-library.php' ) ) {
-	require_once ALCATRAZ_PATH . 'vendor/better-font-awesome-library/better-font-awesome-library.php';
-}
-
-/**
  * Admin-only functionality.
  */
 if ( is_admin() ) {
