@@ -93,29 +93,37 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 		// Add support for editor color palette.
 		add_theme_support( 'editor-color-palette',
 			array(
-				'name'  => 'bay-of-many',
+				'name'  => __( 'Bay of Many', 'alcatraz' ),
+				'slug'  => 'bay-of-many',
 				'color' => '#1f4483',
 			),
 			array(
-				'name'  => 'puerto-rico',
+				'name'  => __( 'Puerto Rico', 'alcatraz' ),
+				'slug'  => 'puerto-rico',
 				'color' => '#58b7a1',
 			),
 			array(
-				'name'  => 'mine-shaft',
+				'name'  => __( 'Mine Shaft', 'alcatraz' ),
+				'slug'  => 'mine-shaft',
 				'color' => '#363a42',
 			),
 			array(
-				'name'  => 'raven',
+				'name'  => __( 'Raven', 'alcatraz' ),
+				'slug'  => 'raven',
 				'color' => '#73767b',
 			),
 			array(
-				'name'  => 'white',
+				'name'  => __( 'White', 'alcatraz' ),
+				'slug'  => 'white',
 				'color' => '#fff',
 			)
 		);
 
 		// Disable custom colors from editor palette.
 		add_theme_support( 'disable-custom-colors' );
+
+		// Enable wide & full alignment for editor blocks.
+		add_theme_support( 'align-wide' );
 	}
 endif;
 
@@ -163,7 +171,7 @@ function alcatraz_scripts() {
 	// Main theme CSS.
 	wp_register_style(
 		'alcatraz-style',
-		ALCATRAZ_URL . 'dist/main.css',
+		ALCATRAZ_URL . 'dist/frontend.css',
 		array(),
 		ALCATRAZ_VERSION
 	);
@@ -200,6 +208,21 @@ function alcatraz_scripts() {
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
+}
+
+add_action( 'enqueue_block_editor_assets', 'alcatraz_block_editor_styles' );
+/**
+ * Enqueue block editor styles.
+ */
+function alcatraz_block_editor_styles() {
+
+	// Admin styles.
+	wp_enqueue_style(
+		'alcatraz-style',
+		ALCATRAZ_URL . 'dist/admin.css',
+		array(),
+		ALCATRAZ_VERSION
+	);
 }
 
 /**

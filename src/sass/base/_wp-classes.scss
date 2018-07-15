@@ -26,11 +26,29 @@
 	margin-left: $sp-single;
 }
 
+.alignfull {
+
+	@include full-width;
+}
+
+.alignwide {
+	width: 100%;
+}
+
 // Editor color palette classes.
 @each $name, $color in $editor-palette {
 
 	.has-#{$name}-color {
 		color: $color;
+
+		h2,
+		h3,
+		h4,
+		h5,
+		h6,
+		a {
+			color: $color;
+		}
 	}
 
 	.has-#{$name}-background-color {

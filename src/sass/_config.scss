@@ -113,6 +113,11 @@ $content-width: rem(1200);
 /// @type Number
 $sidebar-width: rem(300);
 
+/// Set the width of the page content.
+///
+/// @type Number
+$page-content-width: rem(660);
+
 // Spacing
 $sp-half: 0.5rem;
 $sp-single: 1rem;

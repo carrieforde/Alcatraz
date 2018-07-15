@@ -94,7 +94,7 @@ const config = {
   },
   plugins: [
     new StyleLintPlugin(),
-    new ExtractTextPlugin('main.css'),
+    new ExtractTextPlugin('[name].css'),
     new SpriteLoaderPlugin(),
     new BrowserSyncPlugin({
       files: '**/*.php',
