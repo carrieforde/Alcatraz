@@ -1,4 +1,6 @@
+.post-navigation,
 .posts-navigation {
+	margin-top: $sp-double;
 	padding: $sp-single 0;
 }
 
@@ -8,7 +10,8 @@
 
 .nav-previous,
 .nav-next {
-	flex: 0 1 50%;
+	flex: 0 0 50%;
+	overflow: hidden; // keeps long works from breaking out of container.
 }
 
 .nav-next {
