@@ -20,22 +20,6 @@ function alcatraz_body_classes( $classes ) {
 
 	$options = get_option( 'alcatraz_options' );
 
-	// Site sidebar class.
-	if ( isset( $options['site_sidebar'] ) && 'no-sidebar' !== $options['site_sidebar'] ) {
-		$classes[] = esc_attr( 'has-sidebar' );
-		$classes[] = esc_attr( $options['site_sidebar'] );
-	}
-
-	// Header style class.
-	if ( isset( $options['header_style'] ) && $options['header_style'] ) {
-		$classes[] = 'header-style-' . esc_attr( $options['header_style'] );
-	}
-
-	// Mobile navigation style class.
-	if ( isset( $options['mobile_nav_style'] ) && $options['mobile_nav_style'] ) {
-		$classes[] = 'mobile-nav-style-' . esc_attr( $options['mobile_nav_style'] );
-	}
-
 	// Header image class.
 	if ( get_header_image() ) {
 		$classes[] = 'has-header-image';

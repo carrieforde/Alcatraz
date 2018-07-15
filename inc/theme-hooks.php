@@ -96,21 +96,6 @@ function alcatraz_output_logo() {
 	the_custom_logo();
 }
 
-add_action( 'alcatraz_before_sidebar', 'alcatraz_output_sub_page_nav' );
-/**
- * Output the Sub Page Navigation.
- *
- * @since  1.0.0
- */
-function alcatraz_output_sub_page_nav() {
-
-	$options = get_option( 'alcatraz_options' );
-
-	if ( ! empty( $options['sub_page_nav_in_sidebar'] ) ) {
-		alcatraz_the_sub_page_nav();
-	}
-}
-
 add_action( 'alcatraz_entry_header_inside', 'alcatraz_output_default_entry_header' );
 /**
  * Output the default entry header inner content.

@@ -64,30 +64,8 @@ add_action( 'alcatraz_sidebar', 'alcatraz_output_primary_sidebar' );
  */
 function alcatraz_output_primary_sidebar() {
 
-	if ( is_home() ) {
-		$post_id = get_option( 'page_for_posts' );
-	} else {
-		$post_id = get_the_ID();
-	}
-
-	$options = get_option( 'alcatraz_options' );
-
-	$page_sidebar = get_post_meta( $post_id, '_alcatraz_page_sidebar', true );
-
-	// Bail if the page layout is set to no sidebar.
-	if ( $page_sidebar ) {
-		if ( 'no-sidebar' === $page_sidebar ) {
-			return;
-		} elseif ( 'default' === $page_sidebar && isset( $options['site_sidebar'] ) && 'no-sidebar' === $options['site_sidebar'] ) {
-			return;
-		}
-	} else {
-		if ( isset( $options['site_sidebar'] ) && 'no-sidebar' === $options['site_sidebar'] ) {
-			return;
-		}
-	}
-
 	?>
+
 	<aside id="secondary" class="sidebar widget-area">
 		<?php do_action( 'alcatraz_before_sidebar' ); ?>
 		<?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
@@ -95,6 +73,7 @@ function alcatraz_output_primary_sidebar() {
 		<?php endif; ?>
 		<?php do_action( 'alcatraz_after_sidebar' ); ?>
 	</aside>
+
 	<?php
 }
 

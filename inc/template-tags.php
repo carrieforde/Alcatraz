@@ -95,7 +95,7 @@ function alcatraz_edit_post_link( $post_id = 0 ) {
 }
 
 /**
- * Echo the return edit post link HTML.
+ * Echo the edit post link HTML.
  *
  * @since 1.0.0
  *
@@ -262,79 +262,6 @@ function alcatraz_entry_footer( $post_id = 0 ) {
  */
 function alcatraz_the_entry_footer( $post_id = 0 ) {
 	echo alcatraz_entry_footer( $post_id ); // WPCS: XSS OK.
-}
-
-/**
- * Build and return the Sub Page Navigation HTML.
- *
- * @since 1.0.0
- *
- * @param array $args The args for wp_list_pages().
- *
- * @return string The sub page nav HTML.
- */
-function alcatraz_get_sub_page_nav( $args = array() ) {
-
-	global $post;
-
-	// Only proceed if we have a post object and we're displaying a page.
-	if ( ! $post || ! is_page() ) {
-		return false;
-	}
-
-	$output = '';
-
-	// Find the top level page id.
-	if ( ! $post->post_parent ) {
-		$top_page_id = $post->ID;
-	} else {
-		$ancestors   = get_post_ancestors( $post );
-		$top_page_id = $ancestors ? end( $ancestors ) : $post->ID;
-	}
-
-	$default_args = array(
-		'depth'    => 5,
-		'echo'     => 0,
-		'title_li' => '',
-	);
-	$args         = wp_parse_args( $args, $default_args );
-
-	// Use the top level page id.
-	$args['child_of'] = $top_page_id;
-
-	// Generate the page list.
-	$page_list = wp_list_pages( $args );
-
-	if ( $page_list ) {
-
-		// Get our top page title.
-		$page_title = sprintf(
-			'<h2 class="%s"><a href="%s">%s</a></h2>',
-			'alcatraz-sub-page-nav-title',
-			get_permalink( $top_page_id ),
-			get_the_title( $top_page_id )
-		);
-
-		$output = sprintf( '<nav class="%s">%s<ul class="%s">%s</ul></nav>',
-			'alcatraz-sub-page-nav sub-page-nav',
-			$page_title,
-			'sub-page-nav-top-level menu',
-			$page_list
-		);
-	}
-
-	return apply_filters( 'alcatraz_sub_page_nav', $output, $args );
-}
-
-/**
- * Display the Sub Page Navigation output.
- *
- * @since 1.0.0
- *
- * @param array $args The args for wp_list_pages().
- */
-function alcatraz_the_sub_page_nav( $args = array() ) {
-	echo alcatraz_get_sub_page_nav( $args ); // WPCS: XSS OK.
 }
 
 /**

@@ -46,30 +46,4 @@
       }
     });
   });
-
-  // Handle live previewing for the header style.
-  wp.customize('alcatraz_options[header_style]', value => {
-    value.bind(to => {
-      // Remove existing header class(es).
-      document.body.classList.remove(
-        'header-style-stacked',
-        'header-style-inline'
-      );
-
-      document.body.classList.add(`header-style-${to}`);
-    });
-  });
-
-  // Handle live previewing for the mobile nav style.
-  wp.customize('alcatraz_options[mobile_nav_style]', value => {
-    value.bind(to => {
-      // Remove existing mobile menu classes.
-      document.body.classList.remove(
-        'mobile-nav-style-slide-out',
-        'mobile-nav-style-full-screen'
-      );
-
-      document.body.classList.add(`mobile-nav-style-${to}`);
-    });
-  });
 })();

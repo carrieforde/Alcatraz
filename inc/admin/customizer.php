@@ -45,37 +45,6 @@ function alcatraz_customize_register( $wp_customize ) {
 	 * Alcatraz theme sections.
 	 */
 
-	// Layout section.
-	$wp_customize->add_section(
-		'alcatraz_layout_section',
-		array(
-			'title'      => __( 'Layout', 'alcatraz' ),
-			'priority'   => 22,
-			'capability' => 'edit_theme_options',
-		)
-	);
-
-	// Header section.
-	$wp_customize->add_section(
-		'alcatraz_header_section',
-		array(
-			'title'      => __( 'Header', 'alcatraz' ),
-			'priority'   => 90,
-			'capability' => 'edit_theme_options',
-		)
-	);
-
-	// Menu Options section.
-	$wp_customize->add_section(
-		'alcatraz_menu_options_section',
-		array(
-			'title'      => __( 'Menu Options', 'alcatraz' ),
-			'priority'   => 5,
-			'panel'      => 'nav_menus',
-			'capability' => 'edit_theme_options',
-		)
-	);
-
 	// Footer section.
 	$wp_customize->add_section(
 		'alcatraz_footer_section',
@@ -110,93 +79,6 @@ function alcatraz_customize_register( $wp_customize ) {
 			'label'    => __( 'Hide the site description?', 'alcatraz' ),
 			'section'  => 'title_tagline',
 			'settings' => 'alcatraz_options[hide_tagline]',
-		)
-	);
-
-	/* Layout */
-
-	// Site sidebar.
-	$wp_customize->add_setting(
-		'alcatraz_options[site_sidebar]',
-		array(
-			'default'    => $option_defaults['site_sidebar'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_site_sidebar_control',
-		array(
-			'type'     => 'radio',
-			'label'    => __( 'Site Sidebar', 'alcatraz' ),
-			'section'  => 'alcatraz_layout_section',
-			'settings' => 'alcatraz_options[site_sidebar]',
-			'choices'  => alcatraz_get_site_sidebar(),
-		)
-	);
-
-	/* Header */
-
-	// Header style.
-	$wp_customize->add_setting(
-		'alcatraz_options[header_style]',
-		array(
-			'default'    => $option_defaults['header_style'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_header_style_control',
-		array(
-			'type'     => 'radio',
-			'label'    => __( 'Header Style', 'alcatraz' ),
-			'section'  => 'alcatraz_header_section',
-			'settings' => 'alcatraz_options[header_style]',
-			'choices'  => alcatraz_get_header_styles(),
-		)
-	);
-
-	/* Menu Options */
-
-	// Mobile navigation style.
-	$wp_customize->add_setting(
-		'alcatraz_options[mobile_nav_style]',
-		array(
-			'default'    => $option_defaults['mobile_nav_style'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-			'transport'  => 'postMessage',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_mobile_nav_style_control',
-		array(
-			'type'     => 'select',
-			'label'    => __( 'Mobile Navigation Style', 'alcatraz' ),
-			'section'  => 'alcatraz_menu_options_section',
-			'settings' => 'alcatraz_options[mobile_nav_style]',
-			'choices'  => alcatraz_get_mobile_nav_styles( 'mobile-nav-style' ),
-		)
-	);
-
-	// Sub Page Nav.
-	$wp_customize->add_setting(
-		'alcatraz_options[sub_page_nav_in_sidebar]',
-		array(
-			'default'    => $option_defaults['sub_page_nav_in_sidebar'],
-			'type'       => 'option',
-			'capability' => 'edit_theme_options',
-		)
-	);
-	$wp_customize->add_control(
-		'alcatraz_sub_page_nav_in_sidebar_control',
-		array(
-			'type'     => 'checkbox',
-			'label'    => __( 'Show Page Navigation in the Sidebar on Pages?', 'alcatraz' ),
-			'section'  => 'alcatraz_menu_options_section',
-			'settings' => 'alcatraz_options[sub_page_nav_in_sidebar]',
 		)
 	);
 
