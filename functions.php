@@ -218,11 +218,6 @@ require_once ALCATRAZ_PATH . 'inc/ajax.php';
 require_once ALCATRAZ_PATH . 'inc/template-tags.php';
 
 /**
- * Theme options.
- */
-require_once ALCATRAZ_PATH . 'inc/theme-options.php';
-
-/**
  * Theme hook output.
  */
 require_once ALCATRAZ_PATH . 'inc/theme-hooks.php';

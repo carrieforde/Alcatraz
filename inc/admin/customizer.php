@@ -23,11 +23,6 @@ function alcatraz_customize_register( $wp_customize ) {
 	}
 
 	/**
-	 * Get the default values for our options.
-	 */
-	$option_defaults = alcatraz_get_option_defaults();
-
-	/**
 	 * Modifications to core sections and controls.
 	 */
 
@@ -65,7 +60,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'hide_tagline',
 		array(
-			'default'           => $option_defaults['hide_tagline'],
+			'default'           => false,
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_validate_checkbox',
@@ -87,9 +82,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_widget_areas',
 		array(
-			'default'    => $option_defaults['footer_widget_areas'],
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
+			'default'           => 3,
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control(
@@ -112,9 +108,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_credits',
 		array(
-			'default'    => $option_defaults['footer_credits'],
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
+			'default'               => '',
+			'type'                  => 'theme_mod',
+			'capability'            => 'edit_theme_options',
+			'sanitization_callback' => 'wp_filter_post_kses',
 		)
 	);
 	$wp_customize->add_control(
@@ -130,9 +127,10 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'social_icons_in_footer',
 		array(
-			'default'    => $option_defaults['social_icons_in_footer'],
-			'type'       => 'theme_mod',
-			'capability' => 'edit_theme_options',
+			'default'           => false,
+			'type'              => 'theme_mod',
+			'capability'        => 'edit_theme_options',
+			'sanitize_callback' => 'alcatraz_validate_checkbox',
 		)
 	);
 	$wp_customize->add_control(
