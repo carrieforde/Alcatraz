@@ -67,8 +67,10 @@ Finally, after running `npm install`, you'll need to tell Webpack about your loc
 ### Using Alcatraz as a starter theme
 If you want to use `Alcatraz` as a starter theme, you'll likely want to replace all instances of `Alcatraz` with the name of your new theme. You'll need to do a six-step find and replace to capture all instances of `alcatraz` throughout the theme:  
 
-1. Search for `'ALCATRAZ_'` (capitalization matters!) to capture the theme constants.
-1. Search for `'alcatraz'` (inside single quotations) to capture the text domain.
+1. Search for `ALCATRAZ_` (capitalization matters!) to capture the theme constants.
+1. Search for `Alcatraz` (capitalization matters!) to capture the theme name.
+1. Search for `'alcatraz'` (inside single quotes) to capture the text domain.
+1. Search for `"alcatraz"` (inside double quotes) to capture PHPCS text domain.
 1. Search for `alcatraz_` to capture all the function names.
 1. Search for `Text Domain: alcatraz` in style.css.
 1. Search for ` alcatraz` (with a space before it) to capture DocBlocks.
