@@ -161,7 +161,7 @@ function alcatraz_entry_title( $post_id = 0 ) {
 
 	if ( is_singular() ) {
 
-		$title = '<h1 class="entry-title screen-reader-text">' . get_the_title( $post_id ) . '</h1>';
+		$title = '<h1 class="entry-title">' . get_the_title( $post_id ) . '</h1>';
 	} else {
 
 		$title = sprintf(
