@@ -12,8 +12,7 @@
     "stylelint": "stylelint \"src/**/*.{css,scss}\"",
     "stylelint:fix": "stylelint \"src/**/*.{css,scss}\" --fix",
     "test": "NODE_ENV=test jest",
-    "wp-pot":
-      "wp-pot --src '*.php' --dest-file 'languages/alcatraz.pot' --domain 'alcatraz'"
+    "wp-pot": "wp-pot --src '*.php' --dest-file 'languages/alcatraz.pot' --domain 'alcatraz'"
   },
   "repository": {
     "type": "git",
