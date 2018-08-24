@@ -119,6 +119,33 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 			),
 		) );
 
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+				'name'      => __( 'small', 'alcatraz' ),
+				'shortName' => __( 'S', 'alcatraz' ),
+				'size'      => 12,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'regular', 'alcatraz' ),
+				'shortName' => __( 'M', 'alcatraz' ),
+				'size'      => 16,
+				'slug'      => 'regular',
+			),
+			array(
+				'name'      => __( 'large', 'alcatraz' ),
+				'shortName' => __( 'L', 'alcatraz' ),
+				'size'      => 30,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => __( 'larger', 'alcatraz' ),
+				'shortName' => __( 'XL', 'alcatraz' ),
+				'size'      => 42,
+				'slug'      => 'larger',
+			),
+		) );
+
 		// Disable custom colors from editor palette.
 		add_theme_support( 'disable-custom-colors' );
 

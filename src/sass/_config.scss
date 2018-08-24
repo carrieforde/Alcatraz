@@ -96,6 +96,13 @@ $base-line-height: 24 !default;
 /// @type {Number|String}
 $base-font-weight: 400 !default;
 
+$editor-font-sizes: (
+	"small": 12,
+	"regular": $base-font-size,
+	"large": 30,
+	"larger": 42
+);
+
 // ====================================
 // SIZES
 // ====================================
