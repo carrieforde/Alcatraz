@@ -91,7 +91,7 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 		}
 
 		// Add support for editor color palette.
-		add_theme_support( 'editor-color-palette',
+		add_theme_support( 'editor-color-palette', array(
 			array(
 				'name'  => __( 'Bay of Many', 'alcatraz' ),
 				'slug'  => 'bay-of-many',
@@ -116,8 +116,8 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 				'name'  => __( 'White', 'alcatraz' ),
 				'slug'  => 'white',
 				'color' => '#fff',
-			)
-		);
+			),
+		) );
 
 		// Disable custom colors from editor palette.
 		add_theme_support( 'disable-custom-colors' );
