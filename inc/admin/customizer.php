@@ -23,6 +23,11 @@ function alcatraz_customize_register( $wp_customize ) {
 	}
 
 	/**
+	 * Get the default values for our options.
+	 */
+	$option_defaults = alcatraz_get_theme_mod_defaults();
+
+	/**
 	 * Modifications to core sections and controls.
 	 */
 
@@ -60,7 +65,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'hide_tagline',
 		array(
-			'default'           => false,
+			'default'           => $option_defaults['hide_tagline'],
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_validate_checkbox',
@@ -82,7 +87,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_widget_areas',
 		array(
-			'default'           => 3,
+			'default'           => $option_defaults['footer_widget_areas'],
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'sanitize_text_field',
@@ -108,7 +113,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'footer_credits',
 		array(
-			'default'               => '',
+			'default'               => $option_defaults['footer_credits'],
 			'type'                  => 'theme_mod',
 			'capability'            => 'edit_theme_options',
 			'sanitization_callback' => 'wp_filter_post_kses',
@@ -127,7 +132,7 @@ function alcatraz_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'social_icons_in_footer',
 		array(
-			'default'           => false,
+			'default'           => $option_defaults['social_icons_in_footer'],
 			'type'              => 'theme_mod',
 			'capability'        => 'edit_theme_options',
 			'sanitize_callback' => 'alcatraz_validate_checkbox',
