@@ -217,7 +217,6 @@ function alcatraz_scripts() {
 
 	// Enqueue the CSS and fonts only if a child theme is not being used.
 	if ( 'Alcatraz' === $current_theme->get( 'Name' ) ) {
-		wp_enqueue_style( 'alcatraz-fonts' );
 		wp_enqueue_style( 'alcatraz-style' );
 	}
 
