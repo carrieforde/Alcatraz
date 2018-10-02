@@ -31,5 +31,7 @@
 
 <?php wp_footer(); ?>
 
+<?php do_action( 'alcatraz_before_body_close' ); ?>
+
 </body>
 </html>
