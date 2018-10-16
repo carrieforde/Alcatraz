@@ -1,39 +1,44 @@
-// Aurora Utilities
-@import "aurora-utilities";
+// Settings
+@import "01-settings/settings.breakpoints";
+@import "01-settings/settings.colors";
+@import "01-settings/settings.sizes";
+@import "01-settings/settings.social-icons";
+@import "01-settings/settings.transitions";
+@import "01-settings/settings.typography";
+@import "01-settings/settings.z-index";
 
-// Theme utilities.
-@import "utilities/background-icon";
+// Tools
+@import "02-tools/tools.aurora-utilities";
 
-// Theme config
-@import "config";
+// Generic
+@import "03-generic/generic.sanitize";
 
-// Reset
-@import "sanitize";
+// Elements
+@import "04-elements/elements.base";
+@import "04-elements/elements.buttons";
+@import "04-elements/elements.forms";
+@import "04-elements/elements.media";
+@import "04-elements/elements.typography";
 
-// Base
-@import "base/base";
-@import "base/utilities";
-@import "base/buttons";
-@import "base/media";
-@import "base/forms";
-@import "base/wp-classes";
+// Objects
+@import "05-objects/objects.comments";
+@import "05-objects/objects.footer-credits";
+@import "05-objects/objects.footer-widget-area";
+@import "05-objects/objects.menu";
+@import "05-objects/objects.page-with-sidebar";
+@import "05-objects/objects.posts-navigation";
+@import "05-objects/objects.site-header";
+@import "05-objects/objects.site";
+@import "05-objects/objects.wp-caption";
 
-// Module
-@import "module/posts-navigation";
-@import "module/menu";
-@import "module/main-navigation";
-@import "module/social-links-menu";
-@import "module/footer-credits";
-@import "module/site-title";
-@import "module/comments";
+// Components
+@import "06-components/components.main-navigation";
+@import "06-components/components.site-title";
+@import "06-components/components.social-links-menu";
+@import "06-components/components.toggles";
 
-// Layout
-@import "layout/site";
-@import "layout/site-header";
-@import "layout/footer/has-footer-widgets";
-@import "layout/footer/footer-widget-areas-2";
-@import "layout/footer/footer-widget-areas-3";
-@import "layout/footer/footer-widget-areas-4";
-
-// Templates
-@import "templates/layout-with-sidebar";
+// Utilities
+@import "07-utilities/utilities.alignments";
+@import "07-utilities/utilities.colors";
+@import "07-utilities/utilities.font-sizes";
+@import "07-utilities/utilities.screen-reader-text";

@@ -18,19 +18,16 @@
 		@each $network, $icon in $social-links {
 
 			&[href*="#{$network}"] {
-
-				@include background-icon(#{$icon});
+				background: url(../icons/#{$icon}.svg) no-repeat;
 			}
 		}
 
 		&[href*="mailto"] {
-
-			@include background-icon(envelope-square);
+			background: url(../icons/envelope-square.svg) no-repeat;
 		}
 
 		&[href*="tel"] {
-
-			@include background-icon(phone-square);
+			background: url(../icons/phone-square.svg);
 		}
 	}
 }

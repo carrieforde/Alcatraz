@@ -1,14 +1,98 @@
-// Aurora Utilities
-@import "aurora-utilities";
+// Settings
+@import "01-settings/settings.breakpoints";
+@import "01-settings/settings.colors";
+@import "01-settings/settings.sizes";
+@import "01-settings/settings.social-icons";
+@import "01-settings/settings.transitions";
+@import "01-settings/settings.typography";
+@import "01-settings/settings.z-index";
 
-// Theme utilities.
-@import "utilities/background-icon";
+// Tools
+@import "02-tools/tools.aurora-utilities";
 
-// Theme config
-@import "config";
+// Generic
+@import "03-generic/generic.sanitize";
 
-// Base
-@import "admin/base";
-@import "base/wp-classes";
+// Elements
+@import "04-elements/elements.base";
+@import "04-elements/elements.buttons";
+@import "04-elements/elements.forms";
+@import "04-elements/elements.media";
+@import "04-elements/elements.typography";
 
-// Block styles
+// Objects
+@import "05-objects/objects.comments";
+@import "05-objects/objects.footer-credits";
+@import "05-objects/objects.footer-widget-area";
+@import "05-objects/objects.menu";
+@import "05-objects/objects.page-with-sidebar";
+@import "05-objects/objects.posts-navigation";
+@import "05-objects/objects.site-header";
+@import "05-objects/objects.site";
+@import "05-objects/objects.wp-caption";
+
+// Components
+@import "06-components/components.main-navigation";
+@import "06-components/components.site-title";
+@import "06-components/components.social-links-menu";
+@import "06-components/components.toggles";
+
+// Utilities
+@import "07-utilities/utilities.alignments";
+@import "07-utilities/utilities.colors";
+@import "07-utilities/utilities.font-sizes";
+@import "07-utilities/utilities.screen-reader-text";
+
+body {
+
+	&.gutenberg-editor-page {
+
+		.editor-post-title__block,
+		.editor-default-block-appender,
+		.editor-block-list__block {
+			max-width: $page-content-width;
+		}
+
+		.editor-post-title__block,
+		.editor-default-block-appender,
+		.editor-block-list__block,
+		p {
+			color: inherit;
+			font-family: $base-font-family;
+			-webkit-font-smoothing: antialiased;
+			font-weight: $base-font-weight;
+			line-height: unitless-calc($base-line-height, $base-font-size);
+			word-wrap: break-word;
+		}
+
+		.editor-block-list__block[data-align="wide"] {
+			max-width: $content-width;
+		}
+
+		.editor-block-list__block[data-align="full"] {
+			max-width: none;
+		}
+
+		code,
+		kbd,
+		pre,
+		samp,
+		tt,
+		var {
+			font-family: $font-family-monospace;
+		}
+
+		a {
+			color: $link;
+			transition: color 0.3s ease-in-out;
+
+			&:visited {
+				color: $link-visited;
+			}
+
+			&:hover {
+				color: $link-hover;
+			}
+		}
+	}
+}
