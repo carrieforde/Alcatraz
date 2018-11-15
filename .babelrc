@@ -1,22 +1,12 @@
 {
   "presets": [
-    "flow",
     [
-      "env",
+      "@babel/env",
       {
         "targets": {
-          "browsers": "last 2 versions"
-        },
-        "loose": true,
-        "modules": false
+          "browsers": ["last 2 versions"]
+        }
       }
     ]
-  ],
-  "env": {
-    "test": {
-      "plugins": [
-        "babel-plugin-transform-es2015-modules-commonjs"
-      ]
-    }
-  }
+  ]
 }

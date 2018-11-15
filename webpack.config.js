@@ -1,11 +1,12 @@
-const webpack = require('webpack'),
-  path = require('path'),
-  ExtractTextPlugin = require('extract-text-webpack-plugin'),
-  StyleLintPlugin = require('stylelint-webpack-plugin'),
+const path = require('path'),
+  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
+  UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
+  OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
   BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
+  StyleLintPlugin = require('stylelint-webpack-plugin'),
   SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
-const config = {
+module.exports = {
   context: __dirname,
   entry: {
     frontend: './src/index.js',
@@ -13,51 +14,51 @@ const config = {
     admin: './src/admin.js'
   },
   output: {
-    path: path.join(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name]-bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.json']
+    extensions: ['.js', '.jsx', '.scss', '.css', '.json']
   },
+  mode: 'development',
   devtool: 'source-map',
   module: {
     rules: [
       {
+        enforce: 'pre',
+        exclude: /node_modules/,
+        test: /\.jsx?$/,
+        loader: 'eslint-loader'
+      },
+      {
+        test: /\.jsx?$/,
+        loader: 'babel-loader'
+      },
+      {
         test: /\.s?css$/,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            {
-              loader: 'css-loader',
-              options: {
-                importLoaders: 1,
-                sourceMap: process.env.NODE_ENV ? false : true,
-                minimize: process.env.NODE_ENV ? true : false
-              }
-            },
-            {
-              loader: 'postcss-loader',
-              options: {
-                ident: 'postcss',
-                plugins: [
-                  require('autoprefixer')({ browsers: 'last 2 versions' }),
-                  require('css-mqpacker')({ sort: true })
-                ],
-                sourceMap: process.env.NODE_ENV ? 'inline' : true
-              }
-            },
-            {
-              loader: 'sass-loader',
-              options: {
-                includePaths: [
-                  'node_modules/sanitize.scss',
-                  'node_modules/aurora-utilities/sass'
-                ],
-                sourceMap: process.env.NODE_ENV ? false : true
-              }
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          {
+            loader: 'postcss-loader',
+            options: {
+              indent: 'postcss',
+              plugins: [
+                require('autoprefixer')({ browsers: 'last 2 versions' }),
+                require('css-mqpacker')({ sort: true })
+              ]
             }
-          ]
-        })
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              includePaths: [
+                'node_modules/sanitize.scss',
+                'node_modules/aurora-utilities/sass'
+              ]
+            }
+          }
+        ]
       },
       {
         test: /\.svg$/,
@@ -79,45 +80,16 @@ const config = {
           },
           'img-loader'
         ]
-      },
-      {
-        enforce: 'pre',
-        test: /\.jsx$/,
-        loader: 'eslint-loader',
-        exclude: /node_modules/
-      },
-      {
-        test: /\.jsx?$/,
-        loader: 'babel-loader'
       }
     ]
   },
   plugins: [
     new StyleLintPlugin(),
-    new ExtractTextPlugin('[name].css'),
+    new MiniCssExtractPlugin({ filename: '[name].css' }),
     new SpriteLoaderPlugin(),
-    new BrowserSyncPlugin({
-      files: '**/*.php',
-      injectChanges: true,
-      proxy: 'https://alcatraz.test'
-    })
-  ]
+    new BrowserSyncPlugin({ files: '**/*.php', proxy: 'https://alcatraz.test' })
+  ],
+  optimization: {
+    minimizer: [new UglifyJSPlugin(), new OptimizeCssAssetsPlugin()]
+  }
 };
-
-if ('production' === process.env.NODE_ENV) {
-  config.devtool = false;
-  config.plugins.push(
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
-    })
-  );
-  config.plugins.push(
-    new webpack.optimize.UglifyJsPlugin({
-      compress: {
-        comparisons: false
-      }
-    })
-  );
-}
-
-module.exports = config;
