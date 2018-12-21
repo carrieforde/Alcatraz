@@ -4,7 +4,7 @@
 **Tags:** two-columns, left-sidebar, right-sidebar, flexible-header, accessibility-ready, custom-menu, custom-logo, editor-style, featured-images, theme-options, threaded-comments, translation-ready  
 
 **Requires at least:** 4.0  
-**Tested up to:** 4.9  
+**Tested up to:** 5.0.2  
 **Stable tag:** 1.0.0  
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  

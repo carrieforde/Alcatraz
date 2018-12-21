@@ -183,6 +183,12 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 		// Disable custom colors from editor palette.
 		add_theme_support( 'disable-custom-colors' );
 
+		// Enable editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		add_editor_style( 'dist/editor.css' );
+
 		// Enable wide & full alignment for editor blocks.
 		add_theme_support( 'align-wide' );
 	}

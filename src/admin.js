@@ -1,4 +1,3 @@
-import './sass/admin';
 /**
  * Alcatraz Admin JS.
  */

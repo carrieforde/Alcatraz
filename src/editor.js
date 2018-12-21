@@ -1,0 +1,3 @@
+/**
+ * Alcatraz Editor JS.
+ */

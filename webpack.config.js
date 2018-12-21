@@ -9,7 +9,8 @@ const path = require('path'),
 module.exports = {
   context: __dirname,
   entry: {
-    frontend: './src/index.js',
+    frontend: ['babel-polyfill', './src/index.js', './src/sass/main.scss'],
+    editor: ['./src/editor.js', './src/sass/editor.scss'],
     customizer: './src/customizer.js',
     admin: './src/admin.js'
   },
