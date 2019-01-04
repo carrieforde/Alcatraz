@@ -50,7 +50,7 @@
 		align-items: center;
 		display: inline-flex;
 
-		&:after {
+		&::after {
 			background: url(../icons/chevron-down.svg) no-repeat;
 			content: "";
 			display: block;
