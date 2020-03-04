@@ -1,34 +1,34 @@
-const path = require('path'),
-  MiniCssExtractPlugin = require('mini-css-extract-plugin'),
-  UglifyJSPlugin = require('uglifyjs-webpack-plugin'),
-  OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin'),
-  BrowserSyncPlugin = require('browser-sync-webpack-plugin'),
-  StyleLintPlugin = require('stylelint-webpack-plugin'),
-  SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const StyleLintPlugin = require('stylelint-webpack-plugin');
+const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 
 module.exports = {
   context: __dirname,
   entry: {
-    frontend: ['babel-polyfill', './src/index.js', './src/sass/main.scss'],
+    frontend: ['@babel/polyfill', './src/index.js', './src/sass/main.scss'],
     editor: ['./src/editor.js', './src/sass/editor.scss'],
     customizer: './src/customizer.js',
-    admin: './src/admin.js'
+    admin: './src/admin'
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
+    path: path.resolve(__dirname, 'public'),
     filename: '[name]-bundle.js'
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.scss', '.css', '.json']
+    extensions: ['.js', '.scss']
   },
   mode: 'development',
-  devtool: 'source-map',
+  devtool: 'cheap-eval-source-map',
   module: {
     rules: [
       {
         enforce: 'pre',
         exclude: /node_modules/,
-        test: /\.jsx?$/,
+        test: /\.jsx$/,
         loader: 'eslint-loader'
       },
       {
@@ -45,7 +45,7 @@ module.exports = {
             options: {
               indent: 'postcss',
               plugins: [
-                require('autoprefixer')({ browsers: 'last 2 versions' }),
+                require('autoprefixer')(),
                 require('css-mqpacker')({ sort: true })
               ]
             }
@@ -53,10 +53,12 @@ module.exports = {
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [
-                'node_modules/sanitize.scss',
-                'node_modules/aurora-utilities/sass'
-              ]
+              sassOptions: {
+                includePaths: [
+                  'node_modules/normalize-scss/sass',
+                  'node_modules/aurora-utilities'
+                ]
+              }
             }
           }
         ]
@@ -70,7 +72,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(jpe?g|png|gif)$/,
+        test: /\.(jpe?g|png|gif)\$/,
         use: [
           {
             loader: 'file-loader',
@@ -86,11 +88,16 @@ module.exports = {
   },
   plugins: [
     new StyleLintPlugin(),
-    new MiniCssExtractPlugin({ filename: '[name].css' }),
-    new SpriteLoaderPlugin(),
-    new BrowserSyncPlugin({ files: '**/*.php', proxy: 'https://alcatraz.test' })
+    new MiniCssExtractPlugin({
+      filename: '[name].css'
+    }),
+    new BrowserSyncPlugin({
+      files: '**/*.php',
+      proxy: 'http://one.wordpress.test'
+    }),
+    new SpriteLoaderPlugin()
   ],
   optimization: {
-    minimizer: [new UglifyJSPlugin(), new OptimizeCssAssetsPlugin()]
+    minimizer: [new UglifyJsPlugin(), new OptimizeCssAssetsPlugin()]
   }
 };
