@@ -1,10 +1,9 @@
 .main-navigation {
-
-	@include mq-max($tablet-landscape) {
-		background-color: $white;
+	@include mq-max($breakpoint-3) {
+		background-color: $color-white;
 		bottom: 0;
 		max-width: 100%;
-		padding: $sp-triple $sp-single $sp-single;
+		padding: $size-7 $size-4 $size-4;
 		position: fixed;
 		right: 0;
 		top: 0;

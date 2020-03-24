@@ -4,7 +4,7 @@ pre,
 samp,
 tt,
 var {
-	font-family: $font-family-monospace;
+	font-family: $font-monospace;
 }
 
 pre {
@@ -12,14 +12,5 @@ pre {
 }
 
 a {
-	color: $link;
-	transition: color 0.3s ease-in-out;
-
-	&:visited {
-		color: $link-visited;
-	}
-
-	&:hover {
-		color: $link-hover;
-	}
+	@include link($color-primary, $color-primary-6);
 }

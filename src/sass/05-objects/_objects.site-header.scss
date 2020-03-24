@@ -5,7 +5,7 @@
 	overflow-x: hidden;
 	position: relative;
 
-	@include mq-min($tablet-landscape) {
+	@include mq-min($breakpoint-3) {
 		overflow: visible;
 	}
 }

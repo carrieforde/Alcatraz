@@ -1,7 +1,44 @@
+// Spacing
+$size-1: 4px;
+$size-2: 8px;
+$size-3: 12px;
+$size-4: 16px;
+$size-5: 24px;
+$size-6: 32px;
+$size-7: 48px;
+$size-8: 64px;
+$size-9: 96px;
+$size-10: 128px;
+$size-11: 192px;
+$size-12: 256px;
+$size-13: 384px;
+$size-14: 512px;
+$size-15: 640px;
+$size-16: 768px;
+
+$sizes: (
+	1: $size-1,
+	2: $size-2,
+	3: $size-3,
+	4: $size-4,
+	5: $size-5,
+	6: $size-6,
+	7: $size-7,
+	8: $size-8,
+	9: $size-9,
+	10: $size-10,
+	11: $size-11,
+	12: $size-12,
+	13: $size-13,
+	14: $size-14,
+	15: $size-15,
+	16: $size-16
+);
+
 /// Set the max width of the site.
 ///
 /// @type Number
-$site-width: 1600px;
+$site-width: 100%;
 
 /// Set the width of the site's content.
 ///
@@ -11,15 +48,9 @@ $content-width: 1200px;
 /// Set the width of the site's [optional] sidebar.
 ///
 /// @type Number
-$sidebar-width: 300px;
+$sidebar-width: $size-13;
 
 /// Set the width of the page content.
 ///
 /// @type Number
-$page-content-width: 660px;
-
-// Spacing
-$sp-half: 0.5rem;
-$sp-single: 1rem;
-$sp-double: 2rem;
-$sp-triple: 3rem;
+$page-content-width: $size-15;

@@ -1,8 +1,22 @@
-/// Breakpoints - add more as needed.
+////
+/// @group 01-breakpoints
 ///
-/// @type Number
+/// @since 1.0.0
+////
+
+$breakpoint-1: 350px;
+$breakpoint-2: 600px;
+$breakpoint-3: 900px;
+$breakpoint-4: 1800px;
+
+/// Breakpoints
+/// @sizes breakpoints {output-only}
+///
+/// @type Map
 /// @link https://medium.freecodecamp.com/the-100-correct-way-to-do-css-breakpoints-88d6a5ba1862#.or3duno2h
-$tablet-portrait: 600px;
-$tablet-landscape: 900px;
-$desktop: 1200px;
-$desktop-xl: 1800px;
+$breakpoints: (
+	1: $breakpoint-1,
+	2: $breakpoint-2,
+	3: $breakpoint-3,
+	4: $breakpoint-4
+);

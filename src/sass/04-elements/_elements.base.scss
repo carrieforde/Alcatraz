@@ -1,5 +1,5 @@
 html {
-	font-size: $base-font-size * 1px;
+	font-size: unitless-calc($base-font-size, 16) * 100%;
 }
 
 body,

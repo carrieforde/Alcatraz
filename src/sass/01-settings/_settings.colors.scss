@@ -1,67 +1,205 @@
-// ====================================
-// COLORS
-// ====================================
+////
+/// @group 01-colors
+////
 
-// Descriptive colors.
-$bay-of-many: #1f4483;
-$puerto-rico: #58b7a1;
-$white: #fff;
-$mine-shaft: #363a42;
-$white-smoke: #ebecee;
+$color-primary-10: #19216c;
+$color-primary-9: #2d3a8c;
+$color-primary-8: #35469c;
+$color-primary-7: #4055a8;
+$color-primary-6: #4c63b6;
+$color-primary-5: #647acb;
+$color-primary-4: #7b93db;
+$color-primary-3: #98aeeb;
+$color-primary-2: #bed0f7;
+$color-primary-1: #e0e8f9;
 
-// Secondary colors.
-$cinder: #26292e;
-$raven: #73767b;
-$gray-chateau: #a4a5a6;
-$concrete: #f1f2f3;
-$black: #000;
+/// Primary colors
+///
+/// @type Map
+/// @colors colors-primary
+$colors-primary: (
+	10: $color-primary-10,
+	9: $color-primary-9,
+	8: $color-primary-8,
+	7: $color-primary-7,
+	6: $color-primary-6,
+	5: $color-primary-5,
+	4: $color-primary-4,
+	3: $color-primary-3,
+	2: $color-primary-2,
+	1: $color-primary-1
+) !default;
 
-// Utility colors.
-$apple: #54a236;
-$well-read: #b13134;
-$tacha: #dbc15b;
+$color-neutral-10: #1f2933;
+$color-neutral-9: #323f4b;
+$color-neutral-8: #3e4c59;
+$color-neutral-7: #52606d;
+$color-neutral-6: #616e7c;
+$color-neutral-5: #7b8794;
+$color-neutral-4: #9aa5b1;
+$color-neutral-3: #cbd2d9;
+$color-neutral-2: #e4e7eb;
+$color-neutral-1: #f5f7fa;
+
+/// Neutral colors
+///
+/// @type Map
+/// @colors colors-neutral
+$colors-neutrals: (
+	10: $color-neutral-10,
+	9: $color-neutral-9,
+	8: $color-neutral-8,
+	7: $color-neutral-7,
+	6: $color-neutral-6,
+	5: $color-neutral-5,
+	4: $color-neutral-4,
+	3: $color-neutral-3,
+	2: $color-neutral-2,
+	1: $color-neutral-1
+) !default;
+
+$color-info-10: #035388;
+$color-info-9: #0b69a3;
+$color-info-8: #127fbf;
+$color-info-7: #1992d4;
+$color-info-6: #2bb0ed;
+$color-info-5: #40c3f7;
+$color-info-4: #5ed0fa;
+$color-info-3: #81defd;
+$color-info-2: #b3ecff;
+$color-info-1: #e3f8ff;
+
+/// Info colors
+///
+/// @type Map
+/// @colors colors-info
+$colors-info: (
+	10: $color-info-10,
+	9: $color-info-9,
+	8: $color-info-8,
+	7: $color-info-7,
+	6: $color-info-6,
+	5: $color-info-5,
+	4: $color-info-4,
+	3: $color-info-3,
+	2: $color-info-2,
+	1: $color-info-1
+) !default;
+
+$color-success-10: #014d40;
+$color-success-9: #0c6b58;
+$color-success-8: #147d64;
+$color-success-7: #199473;
+$color-success-6: #27ab83;
+$color-success-5: #3ebd93;
+$color-success-4: #65d6ad;
+$color-success-3: #8eedc7;
+$color-success-2: #c6f7e2;
+$color-success-1: #effcf6;
+
+/// Success colors
+///
+/// @type Map
+/// @colors colors-success
+$colors-success: (
+	10: $color-success-10,
+	9: $color-success-9,
+	8: $color-success-8,
+	7: $color-success-7,
+	6: $color-success-6,
+	5: $color-success-5,
+	4: $color-success-4,
+	3: $color-success-3,
+	2: $color-success-2,
+	1: $color-success-1
+) !default;
+
+$color-warning-10: #8d2b0b;
+$color-warning-9: #b44d12;
+$color-warning-8: #cb6e17;
+$color-warning-7: #de911d;
+$color-warning-6: #f0b429;
+$color-warning-5: #f7c948;
+$color-warning-4: #fadb5f;
+$color-warning-3: #fce588;
+$color-warning-2: #fff3c4;
+$color-warning-1: #fffbea;
+
+/// Warning colors
+///
+/// @type Map
+/// @colors colors-warning
+$colors-warning: (
+	10: $color-warning-10,
+	9: $color-warning-9,
+	8: $color-warning-8,
+	7: $color-warning-7,
+	6: $color-warning-6,
+	5: $color-warning-5,
+	4: $color-warning-4,
+	3: $color-warning-3,
+	2: $color-warning-2,
+	1: $color-warning-1
+) !default;
+
+$color-danger-10: #610316;
+$color-danger-9: #8a041a;
+$color-danger-8: #ab091e;
+$color-danger-7: #cf1124;
+$color-danger-6: #e12d39;
+$color-danger-5: #ef4e4e;
+$color-danger-4: #f86a6a;
+$color-danger-3: #ff9b9b;
+$color-danger-2: #ffbdbd;
+$color-danger-1: #ffe3e3;
+
+/// Danger colors
+///
+/// @type Map
+/// @colors colors-danger
+$colors-danger: (
+	10: $color-danger-10,
+	9: $color-danger-9,
+	8: $color-danger-8,
+	7: $color-danger-7,
+	6: $color-danger-6,
+	5: $color-danger-5,
+	4: $color-danger-4,
+	3: $color-danger-3,
+	2: $color-danger-2,
+	1: $color-danger-1
+) !default;
 
 // Main colors.
-$color-primary: $bay-of-many !default;
-$color-accent: $puerto-rico !default;
-$color-success: $apple !default;
-$color-danger: $well-read !default;
-$color-light-gray: $white-smoke !default;
-$color-dark-gray: $raven !default;
-$color-shadow: rgba($cinder, 0.15);
+$color-primary: $color-primary-8 !default;
+$color-success: $color-success-7 !default;
+$color-warning: $color-warning-6 !default;
+$color-danger: $color-danger-7 !default;
+$color-gray-light: $color-neutral-1 !default;
+$color-gray-mid: $color-neutral-4 !default;
+$color-gray-dark: $color-neutral-9 !default;
+$color-white: #fff;
+$color-black: #000;
+$color-shadow: rgba($color-gray-dark, 0.15);
 
-/// The main colors used throughout the site. This map can be used to automatically add color classes.
+/// Color palette
 ///
 /// @type Map
+/// @colors colors-palette
 $theme-colors: (
 	"primary": $color-primary,
-	"accent": $color-accent,
 	"success": $color-success,
+	"warning": $color-warning,
 	"danger": $color-danger,
-	"light-gray": $color-light-gray,
-	"dark-gray": $color-dark-gray,
-	"shadow": $color-shadow
-);
-
-/// The used within the content editor (editor-palette). This map can be used to automatically add color classes.
-///
-/// @type Map
-$editor-palette: (
-	"bay-of-many": $bay-of-many,
-	"puerto-rico": $puerto-rico,
-	"white": $white,
-	"raven": $raven,
-	"mine-shaft": $mine-shaft
-);
+	"gray-light": $color-gray-light,
+	"gray-mid": $color-gray-mid,
+	"gray-dark": $color-gray-dark,
+	"white": $color-white,
+	"black": $color-black
+) !default;
 
 // Elements.
-$body-background: $white;
+$body-background: $color-white;
 
-$text-default-dark: $black;
-$text-default-light: $white-smoke;
-
-$link: $color-primary;
-$link-hover: $color-accent;
-$link-visited: $link;
-
-$form-border: $color-dark-gray;
+$text-default-dark: $color-neutral-10;
+$text-default-light: $color-white;

@@ -1,0 +1,123 @@
+/// Sans Serif
+///
+/// @group 01-typography
+///
+/// @type Map
+/// @font sans-serif (100, 100 italic, 200, 200 italic, 300, 300 italic, 400, 400 italic, 500, 500 italic, 600, 600 italic, 700, 700 italic)
+$sans-serif: (
+	name: 'Sans Serif',
+	stack: (
+		-apple-system,
+		BlinkMacSystemFont,
+		'Segoe UI',
+		Roboto,
+		'Helvetica Neue',
+		Arial,
+		sans-serif,
+		'Apple Color Emoji',
+		'Segoe UI Emoji',
+		'Segoe UI Symbol'
+	)
+) !default;
+
+/// Serif
+///
+/// @group 01-typography
+///
+/// @type Map
+/// @font serif (400, 400 italic, 700, 700 italic)
+$serif: (
+	name: 'Serif',
+	stack: (
+		'Palatino Linotype',
+		Palatino,
+		Palladio,
+		'URW Palladio L',
+		'Book Antiqua',
+		Baskerville,
+		'Bookman Old Style',
+		'Bitstream Charter',
+		'Nimbus Roman No9 L',
+		Garamond,
+		'Apple Garamond',
+		'ITC Garamond Narrow',
+		'New Century Schoolbook',
+		'Century Schoolbook',
+		'Century Schoolbook L',
+		Georgia,
+		serif
+	)
+) !default;
+
+/// Monospace
+///
+/// @group 01-typography
+///
+/// @type Map
+/// @font monospace (400, 400 italic, 700, 700 italic)
+$monospace: (
+	name: 'Monospace',
+	stack: (
+		SFMono-Regular,
+		Menlo,
+		Monaco,
+		Consolas,
+		'Liberation Mono',
+		'Courier New',
+		monospace
+	)
+) !default;
+
+$font-sans-serif: map-get($sans-serif, stack) !default;
+$font-serif: map-get($serif, stack) !default;
+$font-monospace: map-get($monospace, stack) !default;
+
+/// Set the `body` font family.
+///
+/// @group 01-typography
+///
+/// @type String
+$base-font-family: $font-sans-serif !default;
+
+/// Set the base (`root`) font size for the project. This should be unitless!
+///
+/// @group 01-typography
+///
+/// @type Number
+$base-font-size: 16 !default;
+
+/// Set the base line height for the project. This value should be unitless and represent the pixel equivalent.
+///
+/// @group 01-typography
+///
+/// @type Number
+$base-line-height: 24 !default;
+
+/// Set the base font weight for the project.
+///
+/// @group 01-typography
+///
+/// @type {Number|String}
+$base-font-weight: 400 !default;
+
+$font-size-1: 12px;
+$font-size-2: 14px;
+$font-size-3: 16px;
+$font-size-4: 18px;
+$font-size-5: 20px;
+$font-size-6: 24px;
+$font-size-7: 30px;
+$font-size-8: 36px;
+$font-size-9: 48px;
+$font-size-10: 60px;
+$font-size-11: 72px;
+
+/// The Font Sizes available within the content editor.
+///
+/// @type Map
+$editor-font-sizes: (
+	'small': $font-size-1,
+	'regular': $base-font-size,
+	'large': $font-size-8,
+	'larger': $font-size-10
+);

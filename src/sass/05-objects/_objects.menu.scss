@@ -2,7 +2,7 @@
 	margin: 0;
 	padding: 0;
 
-	@include mq-min($tablet-landscape) {
+	@include mq-min($breakpoint-3) {
 		align-items: center;
 		display: flex;
 	}
@@ -21,13 +21,13 @@
 }
 
 .sub-menu {
-	background-color: $white;
+	background-color: $color-white;
 	display: none;
 	margin: 0;
 	padding: 0;
 	z-index: z(sub-menu);
 
-	@include mq-min($tablet-landscape) {
+	@include mq-min($breakpoint-3) {
 		left: 0;
 		position: absolute;
 		top: 100%;
@@ -40,13 +40,12 @@
 	}
 
 	.sub-menu {
-		margin-left: $sp-single;
+		margin-left: $size-4;
 	}
 }
 
 .menu-item-has-children {
-
-	@include mq-min($tablet-landscape) {
+	@include mq-min($breakpoint-3) {
 		align-items: center;
 		display: inline-flex;
 
@@ -59,7 +58,6 @@
 		}
 
 		&:hover {
-
 			> .sub-menu {
 				display: block;
 			}

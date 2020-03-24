@@ -1,11 +1,11 @@
 .page-template-layout-with-sidebar {
-
-	@include mq-min($tablet-landscape) {
-
+	@include mq-min($breakpoint-3) {
 		.site-content {
 			display: grid;
-			grid-column-gap: $sp-single;
-			grid-template-columns: minmax(auto, calc(100% - (#{$sidebar-width} + #{$sp-single}))) $sidebar-width;
+			grid-column-gap: $size-4;
+			grid-template-columns:
+				minmax(auto, calc(100% - (#{$sidebar-width} + #{$size-4})))
+				$sidebar-width;
 		}
 	}
 }

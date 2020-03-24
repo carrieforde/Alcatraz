@@ -1,12 +1,11 @@
 .social-links-menu {
 	display: flex;
 	justify-content: center;
-	padding: $sp-single 0;
+	padding: $size-4 0;
 
 	.menu-item {
-
 		+ .menu-item {
-			margin-left: $sp-single;
+			margin-left: $size-4;
 		}
 	}
 
@@ -16,17 +15,16 @@
 		width: rem(24);
 
 		@each $network, $icon in $social-links {
-
-			&[href*="#{$network}"] {
+			&[href*='#{$network}'] {
 				background: url(../icons/#{$icon}.svg) no-repeat;
 			}
 		}
 
-		&[href*="mailto"] {
+		&[href*='mailto'] {
 			background: url(../icons/envelope-square.svg) no-repeat;
 		}
 
-		&[href*="tel"] {
+		&[href*='tel'] {
 			background: url(../icons/phone-square.svg);
 		}
 	}

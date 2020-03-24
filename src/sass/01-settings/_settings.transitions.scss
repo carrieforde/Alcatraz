@@ -1,3 +1,24 @@
+////
+/// @group 01-transitions
+////
+
+$transition-bg-color: background-color 0.3s ease-in-out;
+$transition-border-color: border-color 0.3s ease-in-out;
+$transition-box-shadow: box-shadow 0.3s ease-in-out;
+$transition-color: color 0.3s ease-in-out;
+$transition-opacity: opacity 0.3s ease-in-out;
 $transition-transform: transform 0.3s ease-in-out;
 $transition-z-index: z-index 0.3s ease-in-out;
-$transition-opacity: opacity 0.3s ease-in-out;
+
+/// Transitions
+///
+/// @type Map
+$transitions: (
+	"bg-color": $transition-bg-color,
+	"border-color": $transition-border-color,
+	"box-shadow": $transition-box-shadow,
+	"color": $transition-color,
+	"opacity": $transition-opacity,
+	"transform": $transition-transform,
+	"z-index": $transition-z-index
+);

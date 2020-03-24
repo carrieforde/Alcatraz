@@ -9,16 +9,15 @@
 
 .alignleft {
 	float: left;
-	margin-right: $sp-single;
+	margin-right: $size-4;
 }
 
 .alignright {
 	float: right;
-	margin-left: $sp-single;
+	margin-left: $size-4;
 }
 
 .alignfull {
-
 	@include full-width;
 }
 

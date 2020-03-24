@@ -1,17 +1,15 @@
 .mobile-menu-toggle {
-
 	@include hamburger-button($color-primary);
 
 	margin-left: auto;
-	right: $sp-single;
+	right: $size-4;
 	z-index: z(menu-toggle);
 
-	@include mq-min($tablet-landscape) {
+	@include mq-min($breakpoint-3) {
 		display: none;
 	}
 
 	.menu-open & {
-
 		@include hamburger-button-active($color-primary);
 	}
 }
@@ -24,7 +22,7 @@
 	top: rem(5);
 	width: 1rem;
 
-	@include mq-min($tablet-landscape) {
+	@include mq-min($breakpoint-3) {
 		display: none;
 	}
 }
