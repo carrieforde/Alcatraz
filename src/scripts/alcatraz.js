@@ -1,5 +1,5 @@
-import { AlcatrazUtilities } from './utilities';
-import { AlcatrazNavigation } from './navigation';
+import { AlcatrazUtilities } from "./utilities";
+import { AlcatrazNavigation } from "./navigation";
 /**
  * Alcatraz JS object.
  *

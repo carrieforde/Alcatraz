@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "webpack --mode=production",
+    "build:prod": "npm run format && npm run eslint:fix && npm run stylelint:fix && npm run wp-pot && npm run build",
     "dev": "webpack --watch",
     "eslint": "eslint \"src/**/*.{js,jsx}\" --quiet",
     "eslint:fix": "eslint \"src/**/*.{js,jsx}\" --quiet --fix",

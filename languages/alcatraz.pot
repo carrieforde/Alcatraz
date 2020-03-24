@@ -1,4 +1,4 @@
-# Copyright (C) 2018 alcatraz
+# Copyright (C) 2020 alcatraz
 # This file is distributed under the same license as the alcatraz package.
 msgid ""
 msgstr ""
@@ -21,42 +21,111 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: ../comments.php:29
+#. translators: %2$s: post name
+#: ../comments.php:30
 msgctxt "comments title"
 msgid "One thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: ../comments.php:38, ../comments.php:60
+#: ../comments.php:39, ../comments.php:61
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:41, ../comments.php:63
+#: ../comments.php:42, ../comments.php:64
 msgid "Older Comments"
 msgstr ""
 
-#: ../comments.php:42, ../comments.php:64
+#: ../comments.php:43, ../comments.php:65
 msgid "Newer Comments"
 msgstr ""
 
-#: ../comments.php:76
+#: ../comments.php:77
 msgid "Comments are closed."
 msgstr ""
 
-#: ../functions.php:72
-msgid "Primary Menu"
+#: ../functions.php:72, ../functions.php:130
+msgid "Primary"
 msgstr ""
 
 #: ../functions.php:73
-msgid "Social Menu"
+msgid "Social"
 msgstr ""
 
-#: ../functions.php:221
+#: ../functions.php:135
+msgid "White"
+msgstr ""
+
+#: ../functions.php:140
+msgid "Gray Light"
+msgstr ""
+
+#: ../functions.php:145
+msgid "Gray Mid"
+msgstr ""
+
+#: ../functions.php:150
+msgid "Gray Dark"
+msgstr ""
+
+#: ../functions.php:155
+msgid "Black"
+msgstr ""
+
+#: ../functions.php:160
+msgid "Info"
+msgstr ""
+
+#: ../functions.php:165
+msgid "Success"
+msgstr ""
+
+#: ../functions.php:170
+msgid "Warning"
+msgstr ""
+
+#: ../functions.php:175
+msgid "Danger"
+msgstr ""
+
+#: ../functions.php:184
+msgid "small"
+msgstr ""
+
+#: ../functions.php:185
+msgid "S"
+msgstr ""
+
+#: ../functions.php:190
+msgid "regular"
+msgstr ""
+
+#: ../functions.php:191
+msgid "M"
+msgstr ""
+
+#: ../functions.php:196
+msgid "large"
+msgstr ""
+
+#: ../functions.php:197
+msgid "L"
+msgstr ""
+
+#: ../functions.php:202
+msgid "larger"
+msgstr ""
+
+#: ../functions.php:203
+msgid "XL"
+msgstr ""
+
+#: ../functions.php:291
 msgid "Toggle"
 msgstr ""
 
-#: ../functions.php:222
+#: ../functions.php:292
 msgid "Close"
 msgstr ""
 
@@ -68,6 +137,7 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: ../search.php:21
+#. translators: %s: the searched term(s).
+#: ../search.php:24
 msgid "Search Results for: %s"
 msgstr ""

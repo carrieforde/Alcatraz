@@ -4,9 +4,9 @@
 
 (function($) {
   $(document).ready(function() {
-    $('#alcatraz-activation-notice .notice-dismiss').on('click', function() {
+    $("#alcatraz-activation-notice .notice-dismiss").on("click", function() {
       var data = {
-        action: 'alcatraz_hide_activation_notice'
+        action: "alcatraz_hide_activation_notice"
       };
 
       $.post(ajaxurl, data, function(response) {

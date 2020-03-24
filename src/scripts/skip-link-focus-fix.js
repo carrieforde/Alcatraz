@@ -7,9 +7,9 @@
  * Learn more: https://git.io/vWdr2
  */
 (function() {
-  const is_webkit = -1 < navigator.userAgent.toLowerCase().indexOf('webkit'),
-    is_opera = -1 < navigator.userAgent.toLowerCase().indexOf('opera'),
-    is_ie = -1 < navigator.userAgent.toLowerCase().indexOf('msie');
+  const is_webkit = -1 < navigator.userAgent.toLowerCase().indexOf("webkit"),
+    is_opera = -1 < navigator.userAgent.toLowerCase().indexOf("opera"),
+    is_ie = -1 < navigator.userAgent.toLowerCase().indexOf("msie");
 
   if (
     (is_webkit || is_opera || is_ie) &&
@@ -17,7 +17,7 @@
     window.addEventListener
   ) {
     window.addEventListener(
-      'hashchange',
+      "hashchange",
       function() {
         var id = location.hash.substring(1),
           element;

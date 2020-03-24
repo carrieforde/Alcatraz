@@ -1,4 +1,4 @@
-import { Alcatraz } from './alcatraz';
+import { Alcatraz } from "./alcatraz";
 /**
  * Alcatraz Navigation JS object.
  *
@@ -25,12 +25,12 @@ import { Alcatraz } from './alcatraz';
  * @since  1.0.0
  */
 export const AlcatrazNavigation = (function($) {
-  ('use strict');
+  ("use strict");
 
-  const $body = $('body'),
+  const $body = $("body"),
     $window = $(window),
-    toggleText = alcatraz_vars.menu_toggle || '', // eslint-disable-line camelcase
-    closeText = alcatraz_vars.menu_close || '', // eslint-disable-line camelcase
+    toggleText = alcatraz_vars.menu_toggle || "", // eslint-disable-line camelcase
+    closeText = alcatraz_vars.menu_close || "", // eslint-disable-line camelcase
     slideDuration = alcatraz_vars.slide_duration || 300; // eslint-disable-line camelcase
 
   /**
@@ -42,14 +42,14 @@ export const AlcatrazNavigation = (function($) {
    */
   const _toggleListFocus = function(event) {
     const $this = $(this),
-      $item = $this.parent('li');
+      $item = $this.parent("li");
 
-    if ('focus' === event.type) {
-      $item.addClass('focus');
+    if ("focus" === event.type) {
+      $item.addClass("focus");
     }
 
-    if ('blur' === event.type) {
-      $item.removeClass('focus');
+    if ("blur" === event.type) {
+      $item.removeClass("focus");
     }
   };
 
@@ -85,7 +85,7 @@ export const AlcatrazNavigation = (function($) {
     }
 
     // Bail if we don't have focus on a nav.
-    if (!$el.is('nav a:focus')) {
+    if (!$el.is("nav a:focus")) {
       return true;
     }
 
@@ -101,91 +101,91 @@ export const AlcatrazNavigation = (function($) {
 
     switch (code) {
       case 9: // Tab key.
-        if ('keydown' === event.type) {
+        if ("keydown" === event.type) {
           return true;
         }
 
-        if ($item.children('ul').length && $list.hasClass('top-level')) {
+        if ($item.children("ul").length && $list.hasClass("top-level")) {
           // The focused nav item has children and is on the top level, so toggle it.
-          $window.trigger('toggleListItem.alcatraz', data);
-        } else if ($list.hasClass('top-level')) {
+          $window.trigger("toggleListItem.alcatraz", data);
+        } else if ($list.hasClass("top-level")) {
           // The focused nav item doesn't have children and is on the top level, so
           // close any previously toggled top level list items.
-          $list.children('li.toggled').each(function() {
+          $list.children("li.toggled").each(function() {
             const closeData = {
               item: $(this),
               args: closeArgs
             };
-            $window.trigger('toggleListItem.alcatraz', closeData);
+            $window.trigger("toggleListItem.alcatraz", closeData);
           });
         }
 
         break;
 
       case 32: // Spacebar.
-        if ('keydown' === event.type) {
+        if ("keydown" === event.type) {
           event.preventDefault();
           return true;
         }
 
-        if ($item.children('ul').length) {
-          $window.trigger('toggleListItem.alcatraz', data);
+        if ($item.children("ul").length) {
+          $window.trigger("toggleListItem.alcatraz", data);
         }
 
         break;
 
       case 37: // Left arrow key.
         // Prevent window scrolling.
-        if ('keydown' === event.type) {
+        if ("keydown" === event.type) {
           event.preventDefault();
           return true;
         }
 
-        if ($list.hasClass('top-level') && $item.prev('li').length) {
+        if ($list.hasClass("top-level") && $item.prev("li").length) {
           // The focused nav item is on the top level and has a sibling before it,
           // so move focus to the left one item.
-          $target = $item.prev('li');
+          $target = $item.prev("li");
 
-          $window.trigger('toggleListItem.alcatraz', {
+          $window.trigger("toggleListItem.alcatraz", {
             item: $target,
             args: args
           });
 
           $target
-            .find('a')
+            .find("a")
             .first()
             .focus();
         } else if (
           $list
-            .parent('li')
-            .parent('ul')
-            .hasClass('top-level')
+            .parent("li")
+            .parent("ul")
+            .hasClass("top-level")
         ) {
           // The focused nav item is on a second level sub level, so move focus up
           // one level to the sibling to the left of the parent item.
-          $target = $list.parent('li').prev('li');
+          $target = $list.parent("li").prev("li");
 
-          $window.trigger('toggleListItem.alcatraz', {
+          $window.trigger("toggleListItem.alcatraz", {
             item: $target,
             args: args
           });
 
           $target
-            .find('a')
+            .find("a")
             .first()
             .focus();
-        } else if (!$list.hasClass('top-level')) {
+        } else if (!$list.hasClass("top-level")) {
           // The focused nav item is on a third level sub level or deeper, so move
           // focus up one level and toggle the parent item.
-          $target = $list.parent('li');
+          $target = $list.parent("li");
 
-          $window.trigger('toggleListItem.alcatraz', {
+          $window.trigger("toggleListItem.alcatraz", {
             item: $target,
             args: args
           });
 
           $target
-            .find('a')
+            .find("a")
             .first()
             .focus();
         }
@@ -194,25 +194,25 @@ export const AlcatrazNavigation = (function($) {
 
       case 38: // Up arrow key.
         // Prevent window scrolling.
-        if ('keydown' === event.type) {
+        if ("keydown" === event.type) {
           event.preventDefault();
           return true;
         }
 
-        if (!$list.hasClass('top-level') && !$item.prev('li').length) {
+        if (!$list.hasClass("top-level") && !$item.prev("li").length) {
           // The focused nav item is on a sub level but lacks a sibling before it,
           // so move focus up one item.
           $list
-            .parent('li')
-            .find('a')
+            .parent("li")
+            .find("a")
             .first()
             .focus();
-        } else if (!$list.hasClass('top-level') && $item.prev('li').length) {
+        } else if (!$list.hasClass("top-level") && $item.prev("li").length) {
           // The focused nav item is on a sub level and has a sibling before it,
           // so move focus up one item.
           $item
-            .prev('li')
-            .find('a')
+            .prev("li")
+            .find("a")
             .first()
             .focus();
         }
@@ -221,73 +221,73 @@ export const AlcatrazNavigation = (function($) {
 
       case 39: // Right arrow key.
         // Prevent window scrolling.
-        if ('keydown' === event.type) {
+        if ("keydown" === event.type) {
           event.preventDefault();
           return true;
         }
 
-        if ($list.hasClass('top-level') && $item.next('li').length) {
+        if ($list.hasClass("top-level") && $item.next("li").length) {
           // The focused hav item is on the top level and has a sibling after it,
           // so move focus to the right one item.
-          $target = $item.next('li');
+          $target = $item.next("li");
 
-          $window.trigger('toggleListItem.alcatraz', {
+          $window.trigger("toggleListItem.alcatraz", {
             item: $target,
             args: args
           });
 
           $target
-            .find('a')
+            .find("a")
             .first()
             .focus();
         } else if (
-          !$list.hasClass('top-level') &&
-          $item.children('ul').length
+          !$list.hasClass("top-level") &&
+          $item.children("ul").length
         ) {
           // The focused nav item is on a sub level and has children, so toggle it if
           // it isn't toggled already.
-          if (!$item.hasClass('toggled')) {
-            $window.trigger('toggleListItem.alcatraz', data);
+          if (!$item.hasClass("toggled")) {
+            $window.trigger("toggleListItem.alcatraz", data);
           }
 
           $item
-            .children('ul')
+            .children("ul")
             .first()
-            .find('a')
+            .find("a")
             .first()
             .focus();
         } else if (
           $list
-            .parent('li')
-            .parent('ul')
-            .hasClass('top-level')
+            .parent("li")
+            .parent("ul")
+            .hasClass("top-level")
         ) {
           // The focused nav item is on a second level sub level, so move focus up
           // one level to the sibling to the right of the parent item.
-          $target = $list.parent('li').next('li');
+          $target = $list.parent("li").next("li");
 
-          $window.trigger('toggleListItem.alcatraz', {
+          $window.trigger("toggleListItem.alcatraz", {
             item: $target,
             args: args
           });
 
           $target
-            .find('a')
+            .find("a")
             .first()
             .focus();
-        } else if (!$list.hasClass('top-level')) {
+        } else if (!$list.hasClass("top-level")) {
           // The focused nav item is on a third level sub level or deeper, so move
           // focus up one level and toggle the parent item's next sibling.
-          $target = $list.parent('li');
+          $target = $list.parent("li");
 
-          $window.trigger('toggleListItem.alcatraz', {
+          $window.trigger("toggleListItem.alcatraz", {
             item: $target,
             args: args
           });
 
           $target
-            .next('li')
-            .find('a')
+            .next("li")
+            .find("a")
             .first()
             .focus();
         }
@@ -296,26 +296,26 @@ export const AlcatrazNavigation = (function($) {
 
       case 40: // Down arrow key.
         // Prevent window scrolling.
-        if ('keydown' === event.type) {
+        if ("keydown" === event.type) {
           event.preventDefault();
           return true;
         }
 
-        if ($item.children('ul').length && $list.hasClass('top-level')) {
+        if ($item.children("ul").length && $list.hasClass("top-level")) {
           // The focused nav item has children and is on the top level,
           // so move focus down one level.
           $item
-            .find('ul li')
+            .find("ul li")
             .first()
-            .find('a')
+            .find("a")
             .first()
             .focus();
-        } else if (!$list.hasClass('top-level') && $item.next('li').length) {
+        } else if (!$list.hasClass("top-level") && $item.next("li").length) {
           // The focused nav item is on a sub level and has a sibling after it,
           // so move focus down one item.
           $item
-            .next('li')
-            .find('a')
+            .next("li")
+            .find("a")
             .first()
             .focus();
         }
@@ -334,17 +334,17 @@ export const AlcatrazNavigation = (function($) {
    * @returns  {object}  The original this.
    */
   const toggleMobileNav = function() {
-    const $container = $('#site-navigation'),
-      $menu = $container.find('#primary-menu');
+    const $container = $("#site-navigation"),
+      $menu = $container.find("#primary-menu");
 
-    if ($container.hasClass('toggled')) {
-      $body.removeClass('menu-open');
-      $container.removeClass('toggled');
-      $menu.attr('aria-expanded', 'false');
+    if ($container.hasClass("toggled")) {
+      $body.removeClass("menu-open");
+      $container.removeClass("toggled");
+      $menu.attr("aria-expanded", "false");
     } else {
-      $body.addClass('menu-open');
-      $container.addClass('toggled');
-      $menu.attr('aria-expanded', 'true');
+      $body.addClass("menu-open");
+      $container.addClass("toggled");
+      $menu.attr("aria-expanded", "true");
     }
 
     return this;
@@ -361,55 +361,55 @@ export const AlcatrazNavigation = (function($) {
    * @returns  {object}           The original this.
    */
   const toggleListItem = function($item, options) {
-    const $list = $item.parents('ul').last(),
-      $toggle = $item.find('.sub-level-toggle').first(),
-      $parent = $toggle.parents('li').last(),
-      $sub = $item.find('ul').first(),
+    const $list = $item.parents("ul").last(),
+      $toggle = $item.find(".sub-level-toggle").first(),
+      $parent = $toggle.parents("li").last(),
+      $sub = $item.find("ul").first(),
       args = options || {},
       autoClose = args.autoClose || false,
       duration = args.duration || 500;
 
     if (autoClose) {
       $list
-        .find('ul')
-        .not($parent.find('ul'))
+        .find("ul")
+        .not($parent.find("ul"))
         .slideUp(duration);
     }
 
-    $item.toggleClass('toggled');
+    $item.toggleClass("toggled");
     $toggle
-      .toggleClass('toggled')
+      .toggleClass("toggled")
       .blur()
-      .next('ul')
+      .next("ul")
       .slideToggle(duration)
-      .toggleClass('toggled');
+      .toggleClass("toggled");
 
     // If we're toggling a menu item on the primary nav and the menu item has children,
     // detect whether they may be overflowing off the screen and add a class if they are.
     if (
-      $list.is('#primary-menu') &&
-      $item.hasClass('menu-item-has-children') &&
-      $item.hasClass('toggled')
+      $list.is("#primary-menu") &&
+      $item.hasClass("menu-item-has-children") &&
+      $item.hasClass("toggled")
     ) {
       const rightEdge = $sub.width() + $sub.offset().left,
         screenWidth = $window.width();
 
       if (rightEdge > screenWidth) {
-        $item.addClass('reverse-expand');
+        $item.addClass("reverse-expand");
       }
     } else {
       // Delay removing the class so the slideup animation can finish.
       setTimeout(function() {
-        $item.removeClass('reverse-expand');
+        $item.removeClass("reverse-expand");
       }, duration);
     }
 
     // Remove the 'toggled' class from lists and list items not in the current hierarchy.
     $list
-      .find('.toggled')
+      .find(".toggled")
       .not($parent)
-      .not($parent.find('.toggled'))
-      .removeClass('toggled');
+      .not($parent.find(".toggled"))
+      .removeClass("toggled");
 
     return this;
   };
@@ -429,8 +429,8 @@ export const AlcatrazNavigation = (function($) {
 
     return $(el).each(function() {
       const $list = $(this),
-        $items = $list.find('li'),
-        $subList = $items.has('ul'),
+        $items = $list.find("li"),
+        $subList = $items.has("ul"),
         safeToggleText = Alcatraz.Utils.escapeHtml(toggleText);
 
       const toggle = `
@@ -439,29 +439,29 @@ export const AlcatrazNavigation = (function($) {
         </button>`;
 
       // Add classes to indicate levels and items.
-      $list.addClass('top-level');
-      $list.find('ul').addClass('sub-level');
-      $items.addClass('list-item');
+      $list.addClass("top-level");
+      $list.find("ul").addClass("sub-level");
+      $items.addClass("list-item");
 
       // Loop over each item that has a sub level and inject the toggle.
       $subList.each(function() {
         $(this)
-          .find('a')
+          .find("a")
           .first()
           .after(toggle);
       });
 
       // Toggle the expanded state of sub levels when the toggles are clicked.
-      $list.find('.sub-level-toggle').on('click', function(e) {
+      $list.find(".sub-level-toggle").on("click", function(e) {
         e.preventDefault();
 
-        const $item = $(this).parent('li'),
+        const $item = $(this).parent("li"),
           data = {
             item: $item,
             args: args
           };
 
-        $window.trigger('toggleListItem.alcatraz', data);
+        $window.trigger("toggleListItem.alcatraz", data);
       });
     });
   };
@@ -489,61 +489,61 @@ export const AlcatrazNavigation = (function($) {
    * @returns  {object}  The original this.
    */
   const initPrimaryNavigation = function() {
-    const $container = $('#site-navigation');
+    const $container = $("#site-navigation");
 
     if (!$container) {
       return false;
     }
 
-    const $toggle = $container.prev('.mobile-menu-toggle');
+    const $toggle = $container.prev(".mobile-menu-toggle");
 
-    if ('undefined' === typeof $toggle) {
+    if ("undefined" === typeof $toggle) {
       return false;
     }
 
-    const $menu = $container.find('#primary-menu');
+    const $menu = $container.find("#primary-menu");
 
-    if ('undefined' === typeof $menu) {
-      $toggle.css('display', 'none');
+    if ("undefined" === typeof $menu) {
+      $toggle.css("display", "none");
       return false;
     }
 
-    const $links = $menu.find('a'),
-      $subMenus = $menu.find('ul'),
-      $subLinks = $subMenus.find('a');
+    const $links = $menu.find("a"),
+      $subMenus = $menu.find("ul"),
+      $subLinks = $subMenus.find("a");
 
-    $menu.attr('aria-expanded', 'false');
+    $menu.attr("aria-expanded", "false");
 
-    if (!$menu.hasClass('nav-menu')) {
-      $menu.addClass('nav-menu');
+    if (!$menu.hasClass("nav-menu")) {
+      $menu.addClass("nav-menu");
     }
 
     // Set up swipe-to-open support for the mobile nav.
     if ($.mobile) {
       if (
-        $body.hasClass('mobile-nav-style-slide-left') ||
-        $body.hasClass('mobile-nav-style-slide-right')
+        $body.hasClass("mobile-nav-style-slide-left") ||
+        $body.hasClass("mobile-nav-style-slide-right")
       ) {
         $.event.special.swipe.horizontalDistanceThreshold = 15;
         $(
-          '#mobile-nav-swipe-zone, #mobile-navr-swipe-zone, .main-navigation .menu-overlay'
-        ).on('swipeleft swiperight', function() {
-          $window.trigger('toggleMobileNav.alcatraz');
+          "#mobile-nav-swipe-zone, #mobile-navr-swipe-zone, .main-navigation .menu-overlay"
+        ).on("swipeleft swiperight", function() {
+          $window.trigger("toggleMobileNav.alcatraz");
         });
       }
     }
 
     // Set up the mobile nav toggle.
-    $toggle.on('click', function() {
-      $window.trigger('toggleMobileNav.alcatraz');
+    $toggle.on("click", function() {
+      $window.trigger("toggleMobileNav.alcatraz");
     });
 
-    const $screen = $('.menu-screen');
+    const $screen = $(".menu-screen");
 
-    if ('undefined' !== typeof $screen) {
+    if ("undefined" !== typeof $screen) {
       // Allow a click on the screen to close the menu.
-      $screen.on('click', function() {
-        $window.trigger('toggleMobileNav.alcatraz');
+      $screen.on("click", function() {
+        $window.trigger("toggleMobileNav.alcatraz");
       });
     }
 
@@ -555,15 +555,15 @@ export const AlcatrazNavigation = (function($) {
     $subMenus.each(function() {
       $(this)
         .parent()
-        .attr('aria-haspopup', 'true');
+        .attr("aria-haspopup", "true");
     });
 
     // Set menu item links inside sub menus to not be accessible via tabIndex.
-    $subLinks.attr('tabIndex', '-1');
+    $subLinks.attr("tabIndex", "-1");
 
     // Each time a menu link is focused or blurred, toggle focus.
     $links.each(function() {
-      $(this).on('focus blur', _toggleListFocus);
+      $(this).on("focus blur", _toggleListFocus);
     });
 
     return this;
@@ -577,7 +577,7 @@ export const AlcatrazNavigation = (function($) {
    * @returns  {object}  The original this.
    */
   const initSubPageNavigation = function() {
-    const $subNav = $('.alcatraz-sub-page-nav > ul');
+    const $subNav = $(".alcatraz-sub-page-nav > ul");
 
     if (!$subNav.length) {
       return false;
@@ -588,8 +588,8 @@ export const AlcatrazNavigation = (function($) {
     initListToggle($subNav, toggleOptions);
 
     // Each time a link is focused or blurred, toggle our 'focus' class.
-    $subNav.find('a').each(function() {
-      $(this).on('focus blur', _toggleListFocus);
+    $subNav.find("a").each(function() {
+      $(this).on("focus blur", _toggleListFocus);
     });
 
     return this;
@@ -604,16 +604,16 @@ export const AlcatrazNavigation = (function($) {
    */
   const resetNavEventListeners = function() {
     // Mobile nav toggle.
-    $window.off('toggleMobileNav.alcatraz', toggleMobileNav);
-    $window.on('toggleMobileNav.alcatraz', toggleMobileNav);
+    $window.off("toggleMobileNav.alcatraz", toggleMobileNav);
+    $window.on("toggleMobileNav.alcatraz", toggleMobileNav);
 
     // List item toggle.
-    $window.off('toggleListItem.alcatraz', _toggleListItem);
-    $window.on('toggleListItem.alcatraz', _toggleListItem);
+    $window.off("toggleListItem.alcatraz", _toggleListItem);
+    $window.on("toggleListItem.alcatraz", _toggleListItem);
 
     // Nav item keyboard navigation.
-    $window.off('keydown keyup', _toggleNavItemWithKeyboard);
-    $window.on('keydown keyup', _toggleNavItemWithKeyboard);
+    $window.off("keydown keyup", _toggleNavItemWithKeyboard);
+    $window.on("keydown keyup", _toggleNavItemWithKeyboard);
 
     return this;
   };

@@ -1,9 +1,11 @@
 .footer-widget-areas {
+
 	.has-footer-widgets & {
 		display: grid;
 	}
 
 	@include mq-min($breakpoint-3) {
+
 		.footer-widget-areas-2 & {
 			grid-gap: $size-4;
 			grid-template-columns: repeat(2, 1fr);

@@ -1,4 +1,4 @@
-import { Alcatraz } from './alcatraz';
+import { Alcatraz } from "./alcatraz";
 /**
  * Initialization JS.
  *
@@ -10,12 +10,12 @@ import { Alcatraz } from './alcatraz';
 
 (function() {
   // When the DOM is ready, initialize all the things.
-  document.addEventListener('DOMContentLoaded', () =>
+  document.addEventListener("DOMContentLoaded", () =>
     Alcatraz.Nav.initSiteNavigation()
   );
 
   // Reset the primary nav when a Customizer partial refresh happens.
-  document.addEventListener('customize-preview-menu-refreshed', () =>
+  document.addEventListener("customize-preview-menu-refreshed", () =>
     Alcatraz.Nav.initPrimaryNavigation()
   );
 })();

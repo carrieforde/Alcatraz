@@ -5,13 +5,7 @@
     "node": true,
     "jest": true
   },
-  "extends": [
-    "wordpress",
-    "plugin:prettier/recommended"
-  ],
-  "plugins": [
-    "flowtype"
-  ],
+  "extends": ["wordpress", "plugin:prettier/recommended"],
   "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {

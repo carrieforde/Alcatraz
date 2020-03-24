@@ -1,4 +1,5 @@
 .main-navigation {
+
 	@include mq-max($breakpoint-3) {
 		background-color: $color-white;
 		bottom: 0;

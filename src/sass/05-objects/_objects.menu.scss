@@ -45,6 +45,7 @@
 }
 
 .menu-item-has-children {
+
 	@include mq-min($breakpoint-3) {
 		align-items: center;
 		display: inline-flex;
@@ -58,6 +59,7 @@
 		}
 
 		&:hover {
+
 			> .sub-menu {
 				display: block;
 			}

@@ -1,5 +1,7 @@
 .page-template-layout-with-sidebar {
+
 	@include mq-min($breakpoint-3) {
+
 		.site-content {
 			display: grid;
 			grid-column-gap: $size-4;

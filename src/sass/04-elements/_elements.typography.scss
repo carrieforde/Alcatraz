@@ -12,5 +12,6 @@ pre {
 }
 
 a {
+
 	@include link($color-primary, $color-primary-6);
 }
