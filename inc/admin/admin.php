@@ -59,14 +59,3 @@ function alcatraz_activation_notice() {
 		<?php
 	}
 }
-
-add_action( 'admin_init', 'alcatraz_add_editor_styles' );
-/**
- * Include our theme CSS in the TinyMCE editor.
- *
- * @since  1.0.0
- */
-function alcatraz_add_editor_styles() {
-
-	add_editor_style( get_stylesheet_uri() );
-}
