@@ -20,11 +20,9 @@
 
 <body <?php body_class(); ?>>
 
-	<?php do_action( 'alcatraz_after_body_open' ); ?>
+	<?php do_action( 'alcatraz_before' ); ?>
 
 	<div class="menu-screen"></div>
-
-	<?php do_action( 'alcatraz_before' ); ?>
 
 	<div id="page" class="site">
 
