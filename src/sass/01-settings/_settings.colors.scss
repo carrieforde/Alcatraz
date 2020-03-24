@@ -172,6 +172,7 @@ $colors-danger: (
 
 // Main colors.
 $color-primary: $color-primary-8 !default;
+$color-info: $color-info-6 !default;
 $color-success: $color-success-7 !default;
 $color-warning: $color-warning-6 !default;
 $color-danger: $color-danger-7 !default;
@@ -188,6 +189,7 @@ $color-shadow: rgba($color-gray-dark, 0.15);
 /// @colors colors-palette
 $theme-colors: (
 	"primary": $color-primary,
+	"info": $color-info,
 	"success": $color-success,
 	"warning": $color-warning,
 	"danger": $color-danger,

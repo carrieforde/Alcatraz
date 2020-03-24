@@ -127,30 +127,56 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 		// Add support for editor color palette.
 		add_theme_support( 'editor-color-palette', array(
 			array(
-				'name'  => __( 'Bay of Many', 'alcatraz' ),
-				'slug'  => 'bay-of-many',
-				'color' => '#1f4483',
-			),
-			array(
-				'name'  => __( 'Puerto Rico', 'alcatraz' ),
-				'slug'  => 'puerto-rico',
-				'color' => '#58b7a1',
-			),
-			array(
-				'name'  => __( 'Mine Shaft', 'alcatraz' ),
-				'slug'  => 'mine-shaft',
-				'color' => '#363a42',
-			),
-			array(
-				'name'  => __( 'Raven', 'alcatraz' ),
-				'slug'  => 'raven',
-				'color' => '#73767b',
+				'name'  => __( 'Primary', 'alcatraz' ),
+				'slug'  => 'primary',
+				'color' => '#35469c',
 			),
 			array(
 				'name'  => __( 'White', 'alcatraz' ),
 				'slug'  => 'white',
 				'color' => '#fff',
 			),
+			array(
+				'name'  => __( 'Gray Light', 'alcatraz' ),
+				'slug'  => 'gray-light',
+				'color' => '#f5f7fa',
+			),
+			array(
+				'name'  => __( 'Gray Mid', 'alcatraz' ),
+				'slug'  => 'gray-mid',
+				'color' => '#9aa5b1',
+			),
+			array(
+				'name'  => __( 'Gray Dark', 'alcatraz' ),
+				'slug'  => 'gray-dark',
+				'color' => '#323f4b',
+			),
+			array(
+				'name'  => __( 'Black', 'alcatraz' ),
+				'slug'  => 'black',
+				'color' => '#000',
+			),
+			array(
+				'name'  => __( 'Info', 'alcatraz' ),
+				'slug'  => 'info',
+				'color' => '#2bb0ed',
+			),
+			array(
+				'name'  => __( 'Success', 'alcatraz' ),
+				'slug'  => 'success',
+				'color' => '#199473',
+			),
+			array(
+				'name'  => __( 'Warning', 'alcatraz' ),
+				'slug'  => 'warning',
+				'color' => '#f0b429',
+			),
+			array(
+				'name'  => __( 'Danger', 'alcatraz' ),
+				'slug'  => 'danger',
+				'color' => '#cf1124',
+			),
+
 		) );
 
 		add_theme_support( 'editor-font-sizes', array(
@@ -169,13 +195,13 @@ if ( ! function_exists( 'alcatraz_setup' ) ) :
 			array(
 				'name'      => __( 'large', 'alcatraz' ),
 				'shortName' => __( 'L', 'alcatraz' ),
-				'size'      => 30,
+				'size'      => 36,
 				'slug'      => 'large',
 			),
 			array(
 				'name'      => __( 'larger', 'alcatraz' ),
 				'shortName' => __( 'XL', 'alcatraz' ),
-				'size'      => 42,
+				'size'      => 48,
 				'slug'      => 'larger',
 			),
 		) );
